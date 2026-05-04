@@ -1,0 +1,39 @@
+name: 読みの追加・修正提案
+description: 「この単語の読みを追加 / 修正してほしい」という提案
+labels: ["reading-request"]
+body:
+  - type: markdown
+    attributes:
+      value: |
+        PR を直接出せる方は [`core/jukugo.toml`](../../tree/master/core/jukugo.toml) を直接編集して PR を投げてください (このフォームより速いです)。
+  - type: input
+    id: surface
+    attributes:
+      label: 表層 (漢字)
+      placeholder: "灰桜"
+    validations:
+      required: true
+  - type: input
+    id: reading
+    attributes:
+      label: 読み (全角カタカナ)
+      placeholder: "ハイザクラ"
+    validations:
+      required: true
+  - type: textarea
+    id: reason
+    attributes:
+      label: 理由 / 出典 (任意)
+      placeholder: |
+        例: 配信で読み上げ時に「ハイ・サクラ」と棒読みになってしまう。
+        辞書: 大辞林 第三版 / 自作品の固有名詞 / 等
+  - type: dropdown
+    id: file
+    attributes:
+      label: 追加先ファイル
+      options:
+        - core/jukugo.toml (一般熟語・固有名詞)
+        - core/unihan.toml (単漢字)
+        - core/compat.toml (異体字)
+    validations:
+      required: true

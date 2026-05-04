@@ -1,0 +1,33 @@
+name: バグ報告
+description: 既存エントリの読みが間違っている / フォーマット問題等
+labels: ["bug"]
+body:
+  - type: textarea
+    id: description
+    attributes:
+      label: 何が起きてる?
+      placeholder: |
+        例: core/jukugo.toml の「灰桜」が「ハイザクラ」になっているが
+        正しくは「ハイザクラ」ではなく「ハイサクラ」(濁点なし) では?
+    validations:
+      required: true
+  - type: input
+    id: surface
+    attributes:
+      label: 該当 surface
+      placeholder: "灰桜"
+  - type: input
+    id: current
+    attributes:
+      label: 現在の読み
+      placeholder: "ハイザクラ"
+  - type: input
+    id: proposed
+    attributes:
+      label: 提案する読み
+      placeholder: "ハイサクラ"
+  - type: textarea
+    id: reference
+    attributes:
+      label: 出典・確認方法
+      placeholder: 例: 国会図書館蔵書「○○」p.42 / Wikipedia / 公式サイト URL

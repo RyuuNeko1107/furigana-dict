@@ -1,0 +1,16 @@
+# OS / Editor
+.DS_Store
+Thumbs.db
+.idea/
+.vscode/
+*.swp
+*.swo
+
+# Build / Release artifacts
+/dist/
+/release/
+*.tar.gz
+*.zip
+
+# Local config / dev
+.env
