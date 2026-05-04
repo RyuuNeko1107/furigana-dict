@@ -8,7 +8,7 @@ on:
 
 jobs:
   toml-syntax:
-    name: TOML 構文チェック
+    name: TOML 構文チェック (taplo)
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v4
@@ -20,44 +20,30 @@ jobs:
           chmod +x /usr/local/bin/taplo
 
       - name: taplo check (core/*.toml)
-        run: taplo check core/*.toml
-
-      - name: 各ファイルがロード可能か (Python toml で sanity check)
         run: |
-          python3 -c "
-          import sys, tomllib, glob
-          ok = True
-          for f in sorted(glob.glob('core/*.toml')):
-              try:
-                  with open(f, 'rb') as fh:
-                      data = tomllib.load(fh)
-                  count = len(data.get('entries', data.get('map', {})))
-                  print(f'{f}: {count} entries OK')
-              except Exception as e:
-                  print(f'{f}: PARSE ERROR: {e}', file=sys.stderr)
-                  ok = False
-          sys.exit(0 if ok else 1)
-          "
+          if ls core/*.toml >/dev/null 2>&1; then
+            taplo check core/*.toml
+          else
+            echo "no core/*.toml; skip"
+          fi
 
-  duplicate-check:
-    name: 重複キー検出 (cross-file)
+      - name: taplo check (rules/*.toml)
+        run: |
+          if ls rules/*.toml >/dev/null 2>&1; then
+            taplo check rules/*.toml
+          else
+            echo "no rules/*.toml; skip"
+          fi
+
+  schema-validate:
+    name: スキーマ + カタカナ検証 (validate.py)
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v4
 
-      - name: jukugo.toml 内で同じ surface が複数回現れていないか
-        run: |
-          python3 -c "
-          import sys, tomllib
-          from collections import Counter
-          # entries 配下のキーは TOML パーサが二重登録を弾くので、
-          # ここでは正常パース後の件数だけログ出力
-          for path in ['core/jukugo.toml', 'core/unihan.toml']:
-              with open(path, 'rb') as f:
-                  data = tomllib.load(f)
-              entries = data.get('entries', {})
-              print(f'{path}: {len(entries)} unique entries')
-          with open('core/compat.toml', 'rb') as f:
-              cmap = tomllib.load(f).get('map', {})
-              print(f'core/compat.toml: {len(cmap)} unique entries')
-          "
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.11'
+
+      - name: 検証実行
+        run: python3 tools/validate.py
