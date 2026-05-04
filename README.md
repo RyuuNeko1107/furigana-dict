@@ -21,9 +21,28 @@
 
 ```
 core/
-├── jukugo.toml      ← 熟語・固有名詞 (PR が主に飛んでくる場所)
-├── unihan.toml      ← 単漢字フォールバック
-└── compat.toml      ← 異体字 → 標準字 (本体の compat_map に上乗せ)
+├── jukugo/                    ← 熟語・固有名詞 (PR が主に飛んでくる場所)
+│   ├── general.toml           一般熟語・四字熟語
+│   ├── proper_nouns.toml      会社名・作品名・ブランド名
+│   ├── place_names.toml       地名 (国・都道府県・駅 等)
+│   └── personal_names.toml    人名 (姓・名・著名人)
+├── unihan.toml                ← 単漢字フォールバック
+└── compat.toml                ← 異体字 → 標準字 (上乗せ)
+
+rules/
+├── counters/                  ← 助数詞ルール (7 ファイル)
+│   ├── simple.toml            ・time.toml ・people.toml
+│   ├── objects.toml           ・places.toml ・percent.toml ・recursive.toml
+├── context/                   ← 文脈依存読み (3 ファイル)
+│   ├── numbers.toml           数字を含む慣用語句
+│   ├── homonyms.toml          同形異音語 (上手 / 下手 / 十分 等)
+│   └── special.toml           その他読み固定 (今日 / 何日 / 仲人 等)
+├── days.toml                  1〜31 日の特殊読み
+├── scales.toml                大数 (万 / 億 / 兆 / 京…)
+├── units.toml                 SI 単位
+├── symbols.toml               記号
+├── latin.toml                 ラテン文字
+└── numeric_phrases.toml       例外語句 (二十歳→ハタチ 等)
 ```
 
 ## TOML 形式
@@ -65,8 +84,8 @@ $ furigana dict pull --version v0.1.0   # ピン留め
 
 最も多いケース (読みを 1 件追加):
 
-1. 該当ファイル ([`core/jukugo.toml`](core/jukugo.toml) 等) を GitHub の Web UI で編集
+1. カテゴリに合うファイル (例: 一般語なら [`core/jukugo/general.toml`](core/jukugo/general.toml)) を GitHub の Web UI で編集
 2. 「Commit changes」→「Create pull request」
-3. CI (TOML 構文チェック) が通れば maintainer が merge
+3. CI (TOML 構文チェック + カタカナ検証) が通れば maintainer が merge
 
 Rust も Git のクローンも不要。

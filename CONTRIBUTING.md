@@ -48,7 +48,7 @@ gh pr create
 ### NG
 
 - 商標・固有名詞のうち **公的に認知されていない読み** (誤読をデフォルト化しない)
-- 文脈で読みが変わる語の片方だけを default にする (それは本体 [`furigana`](https://github.com/RyuuNeko1107/furigana) の `data/rules/context.toml` で扱う領域)
+- 文脈で読みが変わる語の片方だけを `core/jukugo/*` の default にする (それは [`rules/context/`](rules/context) 配下の文脈ルールで扱う領域)
 
 ## ファイル別ガイド
 
@@ -109,12 +109,12 @@ gh pr create
 ```
 
 > 単漢字は文脈で読みが変わるため、**最も一般的な音/訓読み 1 つ** を採用。
-> 文脈依存が必要な場合は本体 `data/rules/context.toml` で扱う。
+> 文脈依存が必要な場合は [`rules/context/`](rules/context) 配下のルールで扱う。
 
 ### `core/compat.toml` — 異体字 → 標準字
 
-本体 [`compat_map.toml`](https://github.com/RyuuNeko1107/furigana/blob/master/data/rules/compat_map.toml)
-の **上乗せ** 用。本体に既にあるエントリを再録する必要はない。
+「髙→高」のように、字形が違うが同じ漢字として扱いたい異体字の正規化マップ。
+エンジン側に他の compat 表は無いので、ここが正典 (上乗せではなく単独の出典)。
 
 例:
 ```toml
