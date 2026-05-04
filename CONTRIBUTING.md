@@ -93,10 +93,26 @@ gh pr create
 
 PR を出すと GitHub Actions で:
 
-1. **TOML 構文チェック** (taplo) — `[entries]` セクション + `"key" = "value"` 形式
-2. **ビルド確認** — 本体 `furigana` から実際にロードできるかの smoke test
+1. **TOML 構文チェック** (taplo) — 全 `*.toml` のパース可能性
+2. **スキーマ + カタカナ検証** (`tools/validate.py`):
+   - 各ファイルの構造 (`[entries]`, `[map]`, `[[entry]]`, `[[rule]]` 等)
+   - 必須フィールド (kana / kanji / surface 等) の存在
+   - **読み (value) が全角カタカナのみ** で書かれているか
+     - ❌ ひらがな (はいざくら)、ローマ字 (Haizakura)、半角カナ
+     - ✅ 全角カタカナ (ハイザクラ) + 長音 (ー) + 中点 (・)
+   - jukugo / unihan の **cross-file 重複** 検出
 
 これらが緑になれば merge 可能。
+
+### ローカルで事前チェック
+
+```sh
+python3 tools/validate.py
+# → [OK] 11 ファイル検査済 (jukugo X / unihan Y entries)
+# 失敗時は [FAIL] と詳細が出る
+```
+
+Python 3.11+ が必要 (`tomllib` 使用)。
 
 ## Release / 配布
 
