@@ -103,9 +103,7 @@ PR を出すと GitHub Actions で:
 `v*` タグを push すると Release workflow が `furigana-dict-vX.Y.Z.tar.gz` を生成し
 GitHub Release に upload する。利用側は `furigana dict pull --version vX.Y.Z` で取得。
 
-## 行動規範
+## レビュー方針
 
-- PR レビューは技術的指摘に限定 (人格・属性への言及はしない)
-- 「正しい読み」 vs 「自然な読み」 で意見が割れた場合は **本番 ryuuneko.com で実用上自然な方** を採用 (TTS 用途優先)
-
-ありがとうございます 🍀
+「正しい読み」 vs 「自然な読み」で意見が割れた場合は、**本番 ryuuneko.com で
+実用上自然な方** を採用する (TTS 読み上げ用途を優先)。
