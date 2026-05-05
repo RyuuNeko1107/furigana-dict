@@ -10,6 +10,75 @@
 
 (次の release で入れる変更をここに追記)
 
+## [0.1.2] - 2026-05-06
+
+語彙辞書の大規模拡充 (jukugo 605 → 1,163、約 +90%) + ルールエンジン側との連動。
+本番 ryuuneko.com の公開フリガナ API パイプラインに合わせて辞書 / context / units の
+構造を整え、ja-furigana lib (0.1.0-alpha.3) と協調動作する。
+
+### Added (語彙辞書 +560 件)
+
+- **新規ファイル 8 つ** (jukugo 細分化):
+  - `core/jukugo/animals.toml` (動植物 / 魚介、36 件)
+  - `core/jukugo/foods.toml` (食べ物 / 料理、26 件)
+  - `core/jukugo/specialized.toml` (医学 / 軍事 / 法学 / 学術、35 件 + 駆逐艦 / 戦艦 等)
+  - `core/jukugo/body_parts.toml` (体の部位 / 内臓、24 件)
+  - `core/jukugo/weather.toml` (気象 / 天候、40 件)
+  - `core/jukugo/colors.toml` (色名 / 染色 / 模様、30 件)
+  - `core/jukugo/arts.toml` (楽器 / 古典芸能 / 武道 / 茶華香、35 件)
+  - `core/jukugo/abstracts.toml` (美意識 / 古典文学 / 仏教 / 思想、29 件)
+- **既存ファイル拡充**:
+  - `general.toml`: +66 (季節 / 二十四節気 / 年中行事 / 慣用句 + 検証ループ補強)
+  - `personal_names.toml`: 0 → 71 (戦国 / 平安 / 古典作家 + 異体字姓)
+  - `place_names.toml`: 5 → 109 (47 都道府県 + 主要都市 + 駅 + 寺社仏閣 + 観光地)
+  - `proper_nouns.toml`: 0 → 67 (大学 / 中央官庁 / 元号 / 歴史的事象)
+- `core/unihan.toml` の override に「魚=サカナ」「魚=サカナ」を追加（旧 unihan の
+  「なまうお」を上書き）。
+- `tests/corpus/` を新設 (`should_read.toml` / `should_not_read_yet.toml` /
+  `out_of_scope.toml`)。`tools/run_corpus.py` で回帰テスト可能。
+
+### Changed (本番 ryuuneko 互換のため、単漢字 unihan を音読みに正規化)
+
+ja-furigana 0.1.0-alpha.3 で resolve_reading が
+`context rule → jukugo → Lindera reading → unihan` の本番互換 5 段階優先順位
+になったのに合わせて、unihan.toml の **動詞活用形 / 古訓 / 訓読みを音読みに
+正規化** (16 文字):
+
+- 能 (あたう → ノウ)、差 (さす → サ)、約 (つづまやか → ヤク)、本 (もと → ホン)、
+  率 (ひきいる → リツ)、半 (なかば → ハン)、屋 (オク → ヤ)、者 (もの → シャ)、
+  見 (みる → ミ、Lindera 動詞「見る」連用形「見」surface 用)、面 (オモテ → メン)、
+  階 (きざはし → カイ)、円 (まるい → エン)、度 (たび → ド)、札 (ふだ → サツ)、
+  史 (ふびと → シ)、間 (あいだ → カン)。
+
+### Added (ルール / 後処理)
+
+- `rules/context/special.toml` に検証ループ補強の default rule 一式を追加:
+  - 能 / 約 / 差 / 本 / 率 / 半 / 屋 / 者 / 市場 / 間 / 円 (default 音読み固定)。
+- `rules/context/homonyms.toml` の「上手」rule に `next_eq = "から"` →
+  カミテ の match を追加 (舞台用語)。
+- `rules/context/numbers.toml` の「一日」rule に `default = "イチニチ"` を追加
+  (期間文脈の fallback)。
+- `rules/units.toml` に「円」「%」を追加 (NumberChunker の N+漢字単位 連結用)。
+- `rules/counters/time.toml` に「年度 (ネンド)」「時間半 (ジカンハン)」「年」「時間」
+  を新設。
+- `rules/numeric_phrases.toml` に「百個 / 千個 / 百本 / 千本 / 百匹 / 百冊」追加。
+- `rules/symbols.toml` に「〜 / ~ → から」「・ → ナカグロ」「※ → コメ」追加。
+- **`rules/postprocess.toml`** を新設 (本番 Step 7 互換): regex ベースの mode 別
+  置換ルール。初期 rule として「ジュウパー → ジュッパー」(50% 促音化補正) を投入。
+
+### Validation
+
+- `tools/validate.py`: 全 `*.toml` 構文 + cross-file 重複 + カナ範囲チェック OK。
+- `tests/corpus/should_read.toml` の各 case を `tools/run_corpus.py` で回帰検証
+  可能 (CI gate にも組み込み予定)。
+- ja-furigana 側で実例文 75 件を回帰し、合計 75/75 (100%) で正解を確認。
+
+### Stats (master HEAD 時点)
+
+- 語彙辞書 (`core/`): 45,328 entries (~865 KB)
+- エンジンルール (`rules/`): ~260 entries (~19 KB) + postprocess.toml (新規)
+- 配布 tarball: ~240 KB (gzip 圧縮後、推定)
+
 ## [0.1.1] - 2026-05-05
 
 ### Added
@@ -58,6 +127,7 @@
 
 ## [一覧]
 
-[Unreleased]: https://github.com/RyuuNeko1107/ja-furigana-dict/compare/v0.1.1...HEAD
+[Unreleased]: https://github.com/RyuuNeko1107/ja-furigana-dict/compare/v0.1.2...HEAD
+[0.1.2]: https://github.com/RyuuNeko1107/ja-furigana-dict/releases/tag/v0.1.2
 [0.1.1]: https://github.com/RyuuNeko1107/ja-furigana-dict/releases/tag/v0.1.1
 [0.1.0]: https://github.com/RyuuNeko1107/ja-furigana-dict/releases/tag/v0.1.0
