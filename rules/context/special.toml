@@ -76,6 +76,16 @@ default = "リツ"
 surface = "半"
 default = "ハン"
 
+# 間: 訓「アイダ」「ハザマ」に倒れがち (時間・空間単位の「カン」)
+[[rule]]
+surface = "間"
+default = "カン"
+
+# 円: Lindera が「マル」「マルイ」と返しがち (通貨・図形の「エン」)
+[[rule]]
+surface = "円"
+default = "エン"
+
 # 屋: 訓読み「オク」(古語) に倒れがち。蕎麦屋・酒屋など店舗の「ヤ」
 [[rule]]
 surface = "屋"
