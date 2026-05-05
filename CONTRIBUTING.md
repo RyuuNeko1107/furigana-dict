@@ -52,15 +52,44 @@ gh pr create
 - 商標・固有名詞のうち **公的に認知されていない読み** (誤読をデフォルト化しない)
 - 文脈で読みが変わる語の片方だけを `core/jukugo/*` の default にする (それは [`rules/context/`](rules/context) 配下の文脈ルールで扱う領域)
 
+## ファイルが大きくなりすぎたら
+
+`core/jukugo/` `rules/counters/` `rules/context/` の 3 つは **同名サブディレクトリ
+配下の `*.toml` を全て自動 merge** する仕組みになっている (lib loader 側で対応済み)。
+1 ファイルが PR レビューしづらいサイズになったら、**自由に分割して構わない**:
+
+```
+core/jukugo/
+├── general.toml                # 既存
+├── general_a.toml              # 「あ」始まりだけ別ファイルに分けたい場合
+└── general_ka.toml             # ...等
+
+rules/counters/
+├── simple.toml                 # 既存カテゴリ
+├── time.toml
+├── objects.toml
+└── new_category.toml           # 新カテゴリも自由に追加 OK
+```
+
+- ファイル名は何でも構わない (lib は filename ソート順で全 toml を merge)
+- 同じ key を複数ファイルに書くと **後勝ち** (filename ソート後の最後が採用)
+- counters / context のように **複雑な構造の merge** が必要なものは `merge()` ロジックが
+  lib 側にあるので「分け方」は自由 (例: `01_basics.toml` `02_special.toml` 等の数字 prefix で順序制御も可)
+
+PR で大きく追加するときは:
+1. 1 PR あたり ~50 件程度に分割すると review が早い
+2. 分野別 (人名 / 地名 / IT 用語 / 古典文学 ...) で別 PR にすると merge conflict も避けやすい
+
 ## ファイル別ガイド
 
-### `core/jukugo/` — 一般熟語 + 固有名詞 (4 ファイルに細分化)
+### `core/jukugo/` — 一般熟語 + 固有名詞 (5 ファイルに細分化)
 
 カテゴリ別に分かれているので適切なファイルに追加する:
 
 | ファイル | 用途 | 例 |
 |---|---|---|
-| `general.toml`        | 一般熟語・四字熟語等 | 灰桜 / 黎明 / 曙光 / 所謂 |
+| `general.toml`        | 二字 / 三字の一般熟語 | 灰桜 / 黎明 / 曙光 / 所謂 |
+| `four_char.toml`      | 四字熟語 (4 字 + 全部 CJK 漢字) | 一期一会 / 四面楚歌 / 優柔不断 |
 | `proper_nouns.toml`   | 会社名・作品名・ブランド名等 | (拡充予定) |
 | `place_names.toml`    | 国名・都道府県名・市区町村名・駅名・著名スポット | 湯島天神 |
 | `personal_names.toml` | 姓・名・著名人のフルネーム | 金田一 |
@@ -98,6 +127,54 @@ gh pr create
 | `numbers.toml`  | 数字を含む慣用語句 (一日 / 一人 / 一月 / 一杯 等) |
 | `homonyms.toml` | 同形異音語 (上手 / 下手 / 人気 / 大人気 / 十分) |
 | `special.toml`  | 単純な読み固定 (大人 / 仲人 / 今日 / 何日 / 日本 等) |
+
+#### 書き方
+
+各ルールは「surface (対象表層) + match (条件 → 読み) のリスト + default (任意のフォールバック)」:
+
+```toml
+[[rule]]
+surface = "一日"
+default = "イチニチ"          # どの match にも当てはまらないときの読み (任意)
+
+[[rule.match]]
+prev_ends_with_month = true   # 前トークンが「1月」「12月」等で終わるなら…
+reading = "ツイタチ"          # 「ツイタチ」と読む
+```
+
+match は **上から順に評価** され、最初にマッチしたものが採用されます。
+1 つの match 内で複数条件を書くと **AND 条件** (全部満たす必要あり)。
+
+#### 使える条件一覧
+
+**前のトークン (prev) を見る**
+| 条件 | 意味 | 例 |
+|---|---|---|
+| `prev_eq = "X"` | 前のトークンが完全に `"X"` | `prev_eq = "毎"` |
+| `prev_ends_with_any = ["X", "Y"]` | 前のトークンの末尾が X か Y | `prev_ends_with_any = ["毎", "約", "丸"]` |
+| `prev_ends_with_month = true` | 前のトークンが「1月」〜「12月」 | (例: `「6月一日」の前=「6月」`) |
+
+**後のトークン (next) を見る**
+| 条件 | 意味 | 例 |
+|---|---|---|
+| `next_eq = "X"` | 次のトークンが完全に `"X"` | `next_eq = "が"` |
+| `next_starts_with = "X"` | 次のトークンが `"X"` で始まる | `next_starts_with = "な"` |
+| `next_starts_with_any = ["X", "Y"]` | 次のトークンが X か Y で始まる | `next_starts_with_any = ["中", "間", "分"]` |
+| `next_starts_with_digit = true` | 次のトークンが数字で始まる | (例: `「一月7日」の次=「7日」`) |
+
+**2 つ後のトークン (next-next) を見る**
+| 条件 | 意味 | 例 |
+|---|---|---|
+| `next_next_starts_with_any = ["X", "Y"]` | 2 つ後が X か Y で始まる | `next_next_starts_with_any = ["な", "無"]`  (`人気 が 無い` の判定) |
+
+**形態素解析の品詞 (pos) を見る**
+| 条件 | 意味 | 例 |
+|---|---|---|
+| `pos_eq = "X"` | 当該トークンの品詞が完全に X | `pos_eq = "名詞"`、`pos_eq = "形容詞"` |
+
+> ヒント: 条件名で迷ったら既存の `numbers.toml` / `homonyms.toml` / `special.toml`
+> をテンプレートとしてコピーするのが早道です。新ルールを追加する PR では
+> **どのテキストでどう変わるか** を 1-2 例書いてくれると review が楽です。
 
 ### `core/unihan.toml` — 単漢字フォールバック
 
