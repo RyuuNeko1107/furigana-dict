@@ -1,0 +1,34 @@
+# 出力後処理 regex ルール (本番 ryuuneko.com Step 7 互換)
+#
+# Furigana::to_hiragana / to_ruby / to_tts / to_romaji の出力直前に適用。
+# 辞書 / context rule で表現しづらい文字列レベルの最終調整に使う。
+#
+# ## 形式
+#
+# ```toml
+# [[rule]]
+# pattern = "ジュウパー"             # regex
+# replacement = "ジュッパー"          # 置換文字列 ($1, $2 で capture group 参照可)
+# modes = ["hiragana", "tts"]      # 適用 mode (空 or 省略 = 全 mode)
+# ```
+#
+# ## 注意
+#
+# - regex は Rust の `regex` crate (POSIX 風、`(?P<name>...)` も可)
+# - replacement で `$0` は全マッチ、`$1` は 1 番目の capture
+# - ruby mode (`{漢字|読み}` 構造) で適用するときは `|` `{` `}` が壊れない pattern にする
+
+# ─── 数値 + 単位の促音化補正 ─────────────────────────────────────────────
+# 「ゴジュウパーセント」→「ゴジュッパーセント」のような促音化補正。
+# euphonic_counter_read の助数詞ルートでは sokuonize_last が動くが、
+# si_unit (「%」) ルートでは promotion なしなので最後にここで補う。
+
+[[rule]]
+pattern = "ジュウパー"
+replacement = "ジュッパー"
+modes = []
+
+[[rule]]
+pattern = "じゅうぱー"
+replacement = "じゅっぱー"
+modes = []
