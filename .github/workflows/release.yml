@@ -47,7 +47,7 @@ jobs:
           cat "${ARCHIVE}.sha256"
 
       - name: GitHub Release に upload
-        uses: softprops/action-gh-release@v2
+        uses: softprops/action-gh-release@v3
         with:
           files: |
             ${{ env.ARCHIVE }}
