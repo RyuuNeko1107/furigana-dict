@@ -7,8 +7,8 @@
 [`furigana`](https://github.com/RyuuNeko1107/ja-furigana) (フリガナ API + ライブラリ) で利用される
 **語彙辞書** をホストする独立リポジトリ。読みの追加・修正は **TOML を編集して PR** だけで完結する。
 
-> **Status**: v0.1.2 — jukugo を **605 → 1,163** (約 +90%) に拡充、`postprocess.toml` 新設、
-> ja-furigana 0.1.0-alpha.3 の本番 ryuuneko 互換 5 段階優先順位に対応した unihan 音読み正規化済。
+> **Status**: v0.1.2 — jukugo を **605 → 1,832** (約 +200%、24 ファイルに分割) に拡充、`postprocess.toml` 新設、
+> ja-furigana 0.1.0-alpha.3 以降の本番 ryuuneko 互換 5 段階優先順位に対応した unihan 音読み正規化済。
 > 人名・固有名詞は更に手動 PR で拡充歓迎。詳細は [STATS.md](STATS.md) / [CHANGELOG.md](CHANGELOG.md)。
 
 ---
@@ -23,20 +23,31 @@
 
 ```
 core/
-├── jukugo/                    ← 熟語・固有名詞 + 自然 / 文化系 (13 ファイル、自由分割)
+├── jukugo/                    ← 熟語・固有名詞 + 自然 / 文化系 (24 ファイル、自由分割)
 │   ├── general.toml           一般熟語 + 季節 / 行事 / 慣用句 (594)
-│   ├── four_char.toml         四字熟語 (58、4 字 + 全部 CJK 漢字)
+│   ├── four_char.toml         四字熟語 (88、4 字 + 全部 CJK 漢字)
+│   ├── personal_names.toml    人名: 戦国 / 平安 / 古典作家 + 異体字姓 (116)
+│   ├── place_names.toml       地名: 47 都道府県 + 主要都市 + 駅 + 寺社仏閣 (169)
 │   ├── proper_nouns.toml      会社・大学・中央官庁・元号・歴史的事象 (67)
-│   ├── place_names.toml       地名: 47 都道府県 + 主要都市 + 駅 + 寺社仏閣 (109)
-│   ├── personal_names.toml    人名: 戦国 / 平安 / 古典作家 + 異体字姓 (71)
-│   ├── animals.toml           動植物 / 魚介の難読 (36)
-│   ├── foods.toml             食べ物 / 料理 (26)
-│   ├── specialized.toml       医学 / 軍事 / 法学 / 学術 (35)
-│   ├── body_parts.toml        体の部位 / 内臓 (24)
-│   ├── weather.toml           気象 / 天候 (40)
-│   ├── colors.toml            色名 / 染色 / 模様 (30)
+│   ├── animals.toml           動植物 / 魚介の難読 (62)
+│   ├── foods.toml             食べ物 / 料理 (69)
+│   ├── specialized.toml       医学 / 軍事 / 法学 / 学術 (74)
+│   ├── body_parts.toml        体の部位 / 内臓 (54)
+│   ├── weather.toml           気象 / 天候 (68)
+│   ├── colors.toml            色名 / 染色 / 模様 (62)
 │   ├── arts.toml              楽器 / 古典芸能 / 武道 (35)
-│   └── abstracts.toml         美意識 / 古典文学 / 仏教 / 思想 (29)
+│   ├── abstracts.toml         美意識 / 古典文学 / 仏教 / 思想 (29)
+│   ├── vehicles.toml          乗り物 / 交通手段 (32)
+│   ├── clothes.toml           衣服 / 装束 / アクセサリー (31)
+│   ├── architecture.toml      建築 / 建造物 (30)
+│   ├── literature.toml        古典文学 / 作品名 (29)
+│   ├── science.toml           自然科学 (天文 / 物理 / 化学 / 生物 / 地学) (30)
+│   ├── emotions.toml          感情 / 心理用語 (30)
+│   ├── idioms.toml            慣用句 / ことわざ (36)
+│   ├── politics.toml          政治 / 行政 (29)
+│   ├── religions.toml         神道 / 仏教 / キリスト教 / 概念 (30)
+│   ├── music.toml             音楽 / ジャンル / 楽典 / 西洋楽器 (41)
+│   └── sports.toml            近代スポーツ / 球技 / 陸上水泳 (28)
 ├── unihan.toml                ← 単漢字フォールバック (43,749 字、音読み正規化済)
 └── compat.toml                ← 異体字 → 標準字 (436)
 
