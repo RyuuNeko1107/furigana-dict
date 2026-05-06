@@ -130,8 +130,8 @@ expected = "さんぎがばいと"
 [[case]]
 input = "こんにちは。さようなら。"
 mode = "tts"
-expected = "こんにちは、、さようなら。"
-note = "句点を読点 2 つで pause 化、最後の。は残す"
+expected = "こんにちは。 さようなら。"
+note = "句点後に short_pause (default 半角スペース) を 1 個、句点保持 (default keep_period=true)"
 
 # ---------------------------------------------------------------------------
 # ローマ字 (alpha.2 で追加)
@@ -154,3 +154,259 @@ input = "新橋"
 mode = "romaji"
 expected = "shimbashi"
 note = "ヘボン式 ん + b で m"
+
+# ---------------------------------------------------------------------------
+# 0.1.0-alpha.3〜.5 の検証ループ (tools/check_samples.txt) で直した誤読
+# ---------------------------------------------------------------------------
+
+# === 単漢字音読み正規化 (unihan の動詞活用形 / 訓読みを音読みに正規化) ===
+
+[[case]]
+input = "3冊の本を借りた"
+mode = "hiragana"
+expected = "さんさつのほんをかりた"
+note = "alpha.3 で unihan 「本=もと」→「ホン」に正規化、context default も追加"
+
+[[case]]
+input = "素人と玄人の差は一目瞭然だった"
+mode = "hiragana"
+expected = "しろうととくろうとのさはいちもくりょうぜんだった"
+note = "「差=さす」(動詞誤認) を「差=サ」に正規化、四字熟語 jukugo に登録"
+
+[[case]]
+input = "歌舞伎の隈取と能の面の違い"
+mode = "hiragana"
+expected = "かぶきのくまどりとのうのめんのちがい"
+note = "「能=あたう」(動詞「能う」誤認) を「能=ノウ」に、面=メン に正規化"
+
+[[case]]
+input = "天気予報を見た"
+mode = "hiragana"
+expected = "てんきよほうをみた"
+note = "「見=みる」だと「みるた」になっていた、unihan 「見=ミ」に正規化"
+
+[[case]]
+input = "約100人の参加者が集まった"
+mode = "hiragana"
+expected = "やくひゃくにんのさんかしゃがあつまった"
+note = "「約=つづまやか」(形容動詞誤認) を「約=ヤク」に、者=シャ"
+
+[[case]]
+input = "1万円から5万円までの予算"
+mode = "hiragana"
+expected = "いちまんえんからごまんえんまでのよさん"
+note = "alpha.3 で scale + 漢字単位 (円) を 1 chunk 連結"
+
+# === jukugo 補強 (検証ループ補強用) ===
+
+[[case]]
+input = "一万円札を出した"
+mode = "hiragana"
+expected = "いちまんえんさつをだした"
+note = "「一/万/円/札」全部単漢字訓に分解されていた問題を熟語登録で修正"
+
+[[case]]
+input = "巡洋艦と駆逐艦の違いを説明する"
+mode = "hiragana"
+expected = "じゅんようかんとくちくかんのちがいをせつめいする"
+note = "specialized.toml に 駆逐艦 を追加 (元々 巡洋艦のみだった)"
+
+[[case]]
+input = "老舗の蕎麦屋で饂飩を食べた"
+mode = "hiragana"
+expected = "しにせのそばやでうどんをたべた"
+note = "蕎麦屋 = ソバヤ (foods.toml) を熟語登録、屋=ヤ も unihan 補正"
+
+[[case]]
+input = "卑弥呼から徳川家康までの日本史を学ぶ"
+mode = "hiragana"
+expected = "ひみこからとくがわいえやすまでのにほんしをまなぶ"
+note = "日本史 = ニホンシ (general.toml)、史=フビト 誤読を回避"
+
+[[case]]
+input = "鬱病の人に蕁麻疹が出ることがある"
+mode = "hiragana"
+expected = "うつびょうのひとにじんましんがでることがある"
+note = "蕁麻疹 = ジンマシン (specialized.toml)"
+
+[[case]]
+input = "神主と巫女が神社で儀式を行う"
+mode = "hiragana"
+expected = "かんぬしとみこがじんじゃでぎしきをおこなう"
+note = "巫女 = ミコ (general.toml)、デフォルトの「フジョ」を上書き"
+
+[[case]]
+input = "東京大学の研究者が新発見を発表した"
+mode = "hiragana"
+expected = "とうきょうだいがくのけんきゅうしゃがしんはっけんをはっぴょうした"
+note = "研究者 / 新発見 を熟語登録、「者=もの」「新=あたらしい」誤読を回避"
+
+[[case]]
+input = "文化庁が認定した重要文化財です"
+mode = "hiragana"
+expected = "ぶんかちょうがにんていしたじゅうようぶんかざいです"
+note = "重要文化財 = ジュウヨウブンカザイ (general.toml)、proper_nouns に 文化庁"
+
+# === NumberChunker 改修系 (alpha.3 漢数字対応 / counter 単独 = 期間) ===
+
+[[case]]
+input = "6月一日は私の誕生日"
+mode = "hiragana"
+expected = "ろくがつついたちはわたしのたんじょうび"
+note = "alpha.3 で漢数字 (一日) も DATE_KANJI_MD_RE にマッチ + read_counter_in_date 経路"
+
+[[case]]
+input = "1日に2〜3回服用する"
+mode = "hiragana"
+expected = "いちにちににからさんかいふくようする"
+note = "「N日」単独 chunk = 期間扱い (default ニチ)、〜 = から"
+
+[[case]]
+input = "百個の卵を割った"
+mode = "hiragana"
+expected = "ひゃっこのたまごをわった"
+note = "百個 = ヒャッコ (numeric_phrases.toml)"
+
+[[case]]
+input = "東京駅から京都駅まで新幹線で2時間半"
+mode = "hiragana"
+expected = "とうきょうえきからきょうとえきまでしんかんせんでにじかんはん"
+note = "二時間半 = ニジカンハン、間=カン unihan 正規化、半=ハン unihan 正規化"
+
+[[case]]
+input = "令和8年度の予算が承認された"
+mode = "hiragana"
+expected = "れいわはちねんどのよさんがしょうにんされた"
+note = "年度 を counters/time.toml に追加、度=ド unihan 正規化"
+
+[[case]]
+input = "3〜5本の傘が必要だ"
+mode = "hiragana"
+expected = "さんからごほんのかさがひつようだ"
+note = "〜 = カラ (symbols.toml に追加)"
+
+# === 後処理 regex (postprocess.toml) ===
+
+[[case]]
+input = "50%以上の確率で成功する"
+mode = "hiragana"
+expected = "ごじゅっぱーせんといじょうのかくりつでせいこうする"
+note = "postprocess.toml の 「ジュウパー → ジュッパー」rule で促音化補正"
+
+# ---------------------------------------------------------------------------
+# 同形異音語 (heteronym) — context rule の本領
+# ---------------------------------------------------------------------------
+
+[[case]]
+input = "上手な料理人が上手から登場"
+mode = "hiragana"
+expected = "じょうずなりょうりにんがかみてからとうじょう"
+note = "「上手」default ジョウズ + next_eq=「から」のとき カミテ (舞台用語)"
+
+[[case]]
+input = "下手な歌だったが、下手から退場した"
+mode = "hiragana"
+expected = "へたなうただったが、へたからたいじょうした"
+note = "「下手」default ヘタ (舞台用語シモテは現状未対応、優先度低)"
+
+[[case]]
+input = "一月一日は元旦、二月十四日はバレンタイン"
+mode = "hiragana"
+expected = "いちがつついたちはがんたん、にがつじゅうよっかはバレンタイン"
+note = "「一月」「二月」は日付文脈ならイチガツ/ニガツ、後ろが「日」"
+
+[[case]]
+input = "一月ほど待ってください、二月かかるでしょう"
+mode = "hiragana"
+expected = "ひとつきほどまってください、ふたつきかかるでしょう"
+note = "「一月/二月」が「ほど / かかる」など期間 cue で ヒトツキ/フタツキ"
+
+[[case]]
+input = "築地市場で魚を仕入れて株式市場で株を売買する"
+mode = "hiragana"
+expected = "つきじいちばでさかなをしいれてかぶしきしじょうでかぶをばいばいする"
+note = "築地市場 = ツキジイチバ (固有名詞)、株式市場 = カブシキシジョウ (default)"
+
+[[case]]
+input = "人気の店だが、深夜は人気がない"
+mode = "hiragana"
+expected = "にんきのみせだが、しんやはひとけがない"
+note = "人気: 通常はニンキ、「が無い」「の無い」文脈で ヒトケ"
+
+[[case]]
+input = "大人気の映画、大人気ない態度の俳優"
+mode = "hiragana"
+expected = "だいにんきのえいが、おとなげないたいどのはいゆう"
+note = "大人気: default ダイニンキ、「ない」が後続で オトナゲ"
+
+[[case]]
+input = "十分な準備で十分待った後、十分間の休憩を取った"
+mode = "hiragana"
+expected = "じゅうぶんなじゅんびでじゅっぷんまったのち、じゅっぷんかんのきゅうけいをとった"
+note = "「十分」default ジュウブン、時間文脈 ジュップン、「十分間」固定 numeric_phrases"
+
+[[case]]
+input = "仲人の仲介で結婚式、素人と玄人の差は大きい"
+mode = "hiragana"
+expected = "なこうどのちゅうかいでけっこんしき、しろうととくろうとのさはおおきい"
+note = "仲人 = ナコウド、素人 / 玄人 = シロウト / クロウト (special.toml)"
+
+[[case]]
+input = "私の意見ですが、私事ながら申し上げます"
+mode = "hiragana"
+expected = "わたしのいけんですが、わたくしごとながらもうしあげます"
+note = "私 default ワタシ、私事 = ワタクシゴト (general.toml)"
+
+[[case]]
+input = "強い風が吹く中、和風の建物を見学した"
+mode = "hiragana"
+expected = "つよいかぜがふくなか、わふうのたてものをけんがくした"
+note = "風: 単独 = カゼ、和風 等の熟語で フウ"
+
+[[case]]
+input = "今月の月見、12月は寒い月だ、月曜日に会議"
+mode = "hiragana"
+expected = "こんげつのつきみ、じゅうにがつはさむいつきだ、げつようびにかいぎ"
+note = "月: ツキ / ガツ / ゲツ を文脈で読み分け"
+
+[[case]]
+input = "新潟の米は美味しい、米国産の小麦も使う"
+mode = "hiragana"
+expected = "にいがたのこめはおいしい、べいこくさんのこむぎもつかう"
+note = "米: コメ (穀物) / ベイ (米国)"
+
+[[case]]
+input = "夏の海で泳ぐ、海外旅行の計画を立てる"
+mode = "hiragana"
+expected = "なつのうみでおよぐ、かいがいりょこうのけいかくをたてる"
+note = "海: ウミ (単独) / カイ (海外 等の熟語)"
+
+[[case]]
+input = "一行の旅団が出発、本の一行を音読する"
+mode = "hiragana"
+expected = "いっこうのりょだんがしゅっぱつ、ほんのいちぎょうをおんどくする"
+note = "一行 default イチギョウ (テキスト) / 集団 = next_next が「旅」「集団」のとき イッコウ"
+
+[[case]]
+input = "行間を読む、銀行で行員と話す、行脚の旅"
+mode = "hiragana"
+expected = "ぎょうかんをよむ、ぎんこうでこういんとはなす、あんぎゃのたび"
+note = "行: ギョウ / コウ / アン を熟語別に"
+
+[[case]]
+input = "神社で神を拝む、神話の神"
+mode = "hiragana"
+expected = "じんじゃでかみをおがむ、しんわのかみ"
+note = "神: 単独 = カミ、神社 / 神話 = ジン / シン"
+
+[[case]]
+input = "ドアが開く、本を開く"
+mode = "hiragana"
+expected = "ドアがひらく、ほんをひらく"
+note = "開く: ひらく (default、Lindera 動詞活用)"
+
+[[case]]
+input = "誤りを直す、姿勢を直す"
+mode = "hiragana"
+expected = "あやまりをなおす、しせいをなおす"
+note = "直す: ナオス (default、Lindera 動詞活用)"
