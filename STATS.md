@@ -3,7 +3,7 @@
 辞書ボリュームのスナップショット。配布時の中身を一覧で把握する用。
 git に commit されている master HEAD の状態を基準にする。
 
-> 最終更新: 2026-05-06 (`v0.1.1` 時点)
+> 最終更新: 2026-05-06 (ラウンド 7 expansion 直後、次回 release `v0.1.3` 候補)
 > 自動更新ではないので、release ごとに手動でメンテナーが更新する想定。
 > 再計測コマンドは末尾の [更新方法](#更新方法) を参照。
 
@@ -11,11 +11,12 @@ git に commit されている master HEAD の状態を基準にする。
 
 | カテゴリ | エントリ数 | ファイルサイズ |
 |---|---:|---:|
-| **語彙辞書** (`core/`) | **46,017** | **~905 KB** |
+| **語彙辞書** (`core/`) | **46,850** | **~931 KB** |
 | **エンジンルール** (`rules/`) | **~290** | **~22 KB** |
-| **合計** | **~46,309** | **~930 KB** |
+| **合計** | **~47,140** | **~953 KB** |
 
-配布物 (`furigana-dict-vX.Y.Z.tar.gz`) は約 226 KB (gzip 圧縮後)。
+配布物 (`furigana-dict-vX.Y.Z.tar.gz`) は約 226 KB (gzip 圧縮後、`v0.1.2` 時点。
+`v0.1.3` で +833 件 (jukugo 1,832→2,665) 増えたため次回 release で再計測予定)。
 
 ## 内訳
 
@@ -24,32 +25,32 @@ git に commit されている master HEAD の状態を基準にする。
 | ファイル | エントリ数 | サイズ | 用途 |
 |---|---:|---:|---|
 | `unihan.toml` | 43,749 | 815 KB | 単漢字フォールバック (本番 ryuuneko.com 由来 + override 14 件) |
-| `jukugo/general.toml` | 594 | ~18 KB | 二字・三字の一般熟語 (季節 / 行事 / 慣用句 含む) |
-| `jukugo/four_char.toml` | 58 | 3 KB | 四字熟語 (4 字 + 全 CJK 漢字) |
-| `jukugo/place_names.toml` | 109 | 4 KB | 地名 (47 都道府県 / 主要都市 / 駅 / 寺社仏閣 / 観光地) |
-| `jukugo/personal_names.toml` | 71 | 3 KB | 人名 (戦国 / 平安 / 古典文学 / 啓蒙期 + 異体字姓、**PR 募集中**) |
-| `jukugo/proper_nouns.toml` | 67 | 2.5 KB | 固有名詞 (大学 / 中央官庁 / 元号 / 歴史的事象、**PR 募集中**) |
-| `jukugo/animals.toml` | 36 | 1 KB | 動植物 / 魚介の難読 (蝙蝠 / 椿 / 躑躅 / 鰯 / 牡蠣 等) |
-| `jukugo/foods.toml` | 26 | 0.8 KB | 食べ物 / 料理の難読 (餃子 / 焼売 / 大福 / 抹茶 等) |
-| `jukugo/specialized.toml` | 35 | 1.2 KB | 専門用語 (医学 / 軍事 / 法学 / 哲学 / 経済) の難読 |
-| `jukugo/body_parts.toml` | 24 | 0.8 KB | 体の部位 / 内臓 / 医学呼称 (鳩尾 / 踝 / 喉仏 等) |
-| `jukugo/weather.toml` | 40 | 1.3 KB | 気象 / 天候の難読 (五月雨は general、霰/霙 は単漢字 unihan) |
-| `jukugo/colors.toml` | 30 | 1 KB | 色名 / 染色 / 模様 (茜色 / 浅葱 / 鶯色 / 友禅 等) |
-| `jukugo/arts.toml` | 35 | 1.2 KB | 楽器 / 古典芸能 / 武道 / 茶華香 (三味線 / 歌舞伎 / 文楽 等) |
-| `jukugo/abstracts.toml` | 29 | 1 KB | 美意識 / 古典文学 / 仏教 / 思想 (風雅 / 幽玄 / 涅槃 / 仁義 等) |
-| `jukugo/vehicles.toml` | 32 | 1 KB | 乗り物 / 交通手段 (駕籠 / 屋形船 / 蒸気機関車 / 装甲車 等) |
-| `jukugo/clothes.toml` | 31 | 1 KB | 衣服 / 装束 / アクセサリー (羽織 / 半纏 / 烏帽子 / 雪駄 等) |
-| `jukugo/architecture.toml` | 30 | 1 KB | 建築 / 建造物 (鳥居 / 灯籠 / 障子 / 衝立 / 屏風 等) |
-| `jukugo/literature.toml` | 29 | 1 KB | 古典文学 / 作品名 (源氏物語 / 万葉集 / 徒然草 / 奥の細道 等) |
-| `jukugo/science.toml` | 30 | 1 KB | 自然科学 (天文 / 物理 / 化学 / 生物 / 地学) (鍾乳洞 / 染色体 等) |
-| `jukugo/emotions.toml` | 30 | 1 KB | 感情 / 心理用語 (憂鬱 / 焦燥 / 嫉妬 / 憧憬 / 諦観 等) |
-| `jukugo/idioms.toml` | 36 | 1.4 KB | 慣用句 / ことわざ (急がば回れ / 馬の耳に念仏 等のフレーズ単位) |
-| `jukugo/politics.toml` | 29 | 1 KB | 政治 / 行政 (弾劾 / 不信任 / 政権 / 議院 / 与党 / 派閥 等) |
-| `jukugo/religions.toml` | 30 | 1 KB | 神道 / 仏教 / キリスト教 / 概念 (注連縄 / 真言宗 / 修道院 / 輪廻 等) |
-| `jukugo/music.toml` | 41 | 1.5 KB | 音楽 / ジャンル / 楽典 / 西洋楽器 / 演奏 (邦楽 / 弦楽器 / 楽典 等) |
-| `jukugo/sports.toml` | 28 | 1 KB | 近代スポーツ / 球技 / 陸上水泳 / 武道拡充 / 大会観戦 |
+| `jukugo/general.toml` | 610 | ~17 KB | 二字・三字の一般熟語 (季節 / 行事 / 慣用句 含む) |
+| `jukugo/four_char.toml` | 141 | 6.5 KB | 四字熟語 (4 字 + 全 CJK 漢字) |
+| `jukugo/place_names.toml` | 163 | 5.6 KB | 地名 (47 都道府県 / 主要都市 / 駅 / 寺社仏閣 / 観光地) |
+| `jukugo/personal_names.toml` | 121 | 5.6 KB | 人名 (戦国 / 平安 / 古典文学 / 啓蒙期 + 異体字姓、**PR 募集中**) |
+| `jukugo/proper_nouns.toml` | 116 | 6.3 KB | 固有名詞 (大学 / 中央官庁 / 元号 / 歴史的事象、**PR 募集中**) |
+| `jukugo/animals.toml` | 62 | 2.0 KB | 動植物 / 魚介の難読 (蝙蝠 / 椿 / 躑躅 / 鰯 / 牡蠣 等) |
+| `jukugo/foods.toml` | 70 | 2.6 KB | 食べ物 / 料理の難読 (餃子 / 焼売 / 大福 / 抹茶 等) |
+| `jukugo/specialized.toml` | 75 | 2.9 KB | 専門用語 (医学 / 軍事 / 法学 / 哲学 / 経済) の難読 |
+| `jukugo/body_parts.toml` | 95 | 3.3 KB | 体の部位 / 内臓 / 医学呼称 (鳩尾 / 副腎 / 三角筋 等) |
+| `jukugo/weather.toml` | 69 | 2.8 KB | 気象 / 天候の難読 (五月雨は general、霰/霙 は単漢字 unihan) |
+| `jukugo/colors.toml` | 62 | 2.4 KB | 色名 / 染色 / 模様 (茜色 / 浅葱 / 鶯色 / 友禅 等) |
+| `jukugo/arts.toml` | 95 | 5.8 KB | 古典芸能 / 武道 / 茶華香 / 工芸 (能 / 文楽 / 茶筅 / 蒔絵 等) |
+| `jukugo/abstracts.toml` | 86 | 3.2 KB | 美意識 / 古典文学 / 仏教 / 思想 (風雅 / 幽玄 / 因果応報 等) |
+| `jukugo/vehicles.toml` | 76 | 2.9 KB | 乗り物 / 交通手段 (駕籠 / 連絡船 / 蒸気機関車 / 埠頭 等) |
+| `jukugo/clothes.toml` | 86 | 2.8 KB | 衣服 / 装束 / アクセサリー (羽織 / 狩衣 / 烏帽子 / 雪駄 等) |
+| `jukugo/architecture.toml` | 84 | 5.4 KB | 建築 / 建造物 (鳥居 / 灯籠 / 天守 / 蹲踞 / 枯山水 等) |
+| `jukugo/literature.toml` | 73 | 6.4 KB | 古典文学 / 作品名 (源氏物語 / 万葉集 / 太平記 / 春琴抄 等) |
+| `jukugo/science.toml` | 76 | 3.1 KB | 自然科学 (天文 / 物理 / 化学 / 生物 / 地学) (鍾乳洞 / 染色体 等) |
+| `jukugo/emotions.toml` | 78 | 2.9 KB | 感情 / 心理用語 (憂鬱 / 焦燥 / 懊悩 / 瞋恚 等) |
+| `jukugo/idioms.toml` | 79 | 5.0 KB | 慣用句 / ことわざ (急がば回れ / 臥薪嘗胆 / 塞翁が馬 等のフレーズ単位) |
+| `jukugo/politics.toml` | 73 | 2.8 KB | 政治 / 行政 (弾劾 / 召集 / 提携 / 批准 等) |
+| `jukugo/religions.toml` | 91 | 3.5 KB | 神道 / 仏教 / キリスト教 / 概念 (注連縄 / 御祓 / 修道院 等) |
+| `jukugo/music.toml` | 107 | 6.4 KB | 音楽 / ジャンル / 楽典 / 西洋楽器 / 演奏 (邦楽 / 旋律 / 短調 等) |
+| `jukugo/sports.toml` | 77 | 5.5 KB | 近代スポーツ / 球技 / 陸上水泳 / 体操 / 大会観戦 |
 | `compat.toml` | 436 | 6 KB | 異体字 → 標準字 (髙→高 等) |
-| **小計** | **46,017** | **~905 KB** | |
+| **小計** | **46,850** | **~931 KB** | (jukugo 内訳: 24 ファイル / **2,665 件** / ~110 KB) |
 
 ### `rules/` — エンジンルール
 
