@@ -42,7 +42,7 @@ next_starts_with_digit = true
 reading = "イチガツ"
 
 [[rule.match]]
-next_starts_with_any = ["中", "間", "分", "以上", "以下", "程", "ほど", "かけて"]
+next_starts_with_any = ["中", "間", "分", "以上", "以下", "程", "ほど", "かけて", "かかる", "かかった", "かかれば"]
 reading = "ヒトツキ"
 
 [[rule]]
@@ -57,7 +57,7 @@ next_starts_with_digit = true
 reading = "ニガツ"
 
 [[rule.match]]
-next_starts_with_any = ["中", "間", "分", "以上", "以下", "程", "ほど", "かけて"]
+next_starts_with_any = ["中", "間", "分", "以上", "以下", "程", "ほど", "かけて", "かかる", "かかった", "かかれば"]
 reading = "フタツキ"
 
 # ─── 一時 ──────────────────────────────────────────────────────────────

@@ -75,12 +75,37 @@ next_eq = "です"
 reading = "ジュウブン"
 
 [[rule.match]]
-next_starts_with_any = ["前", "後", "間", "以内", "おき", "ごろ", "頃"]
+next_starts_with_any = ["前", "後", "間", "以内", "おき", "ごろ", "頃", "間の", "間で", "間に"]
+reading = "ジュップン"
+
+# 「十分間」全体マッチ (連続 surface)
+[[rule.match]]
+next_eq = "間"
 reading = "ジュップン"
 
 [[rule.match]]
 pos_eq = "名詞"
 reading = "ジュップン"
+
+# ─── 一行: イチギョウ (テキスト・行番号、default) / イッコウ (集団) ─────
+# 現代の頻度では「本の一行」「最後の一行」のような **テキスト・行番号** 用途が多い。
+# 「一行の旅団」「彼ら一行」のような集団用途は限定的なので match 側で対応。
+#
+# Lindera は「一行 の 旅団」と分割するので、next = の (1 文字) かつ
+# next_next の surface が「旅団 / 集団 / 一同 / 様」等で始まるかで判定する
+# (next_starts_with_any では next の surface 1 文字「の」しか見えないので不可)。
+[[rule]]
+surface = "一行"
+default = "イチギョウ"
+
+[[rule.match]]
+next_eq = "の"
+next_next_starts_with_any = ["旅", "集団", "一同", "御一行", "中"]
+reading = "イッコウ"
+
+[[rule.match]]
+prev_ends_with_any = ["私たち", "我々", "彼ら", "御", "総勢", "観光"]
+reading = "イッコウ"
 
 # ─── 大人気: 「大人気ない」→ オトナゲ、それ以外は ダイニンキ ─────────
 [[rule]]

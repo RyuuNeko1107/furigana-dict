@@ -102,6 +102,22 @@ default = "シャ"
 surface = "市場"
 default = "シジョウ"
 
+# prev が「市」で終わる固有名詞 (朝市 / 魚市 / 青果市 等) のとき → イチバ
+[[rule.match]]
+prev_eq = "の"
+prev_ends_with_any = ["市"]
+reading = "イチバ"
+
+# 「卸売市場」「中央卸売市場」「公設市場」のような連結 → イチバ
+# (「中央卸売市場」全体は jukugo place_names に登録済、ここは generic 経路の保険)
+[[rule.match]]
+prev_eq = "卸売"
+reading = "イチバ"
+
+[[rule.match]]
+prev_eq = "公設"
+reading = "イチバ"
+
 # ─── 今日 / 明日 / 昨日 / 今年 / 去年 / 来年 / 今月 ───────────────────
 [[rule]]
 surface = "今日"
