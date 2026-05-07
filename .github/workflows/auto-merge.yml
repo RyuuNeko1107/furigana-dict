@@ -1,0 +1,92 @@
+name: Auto-merge after 48h
+
+# 6 時間ごとに走り、`auto-mergeable` label が付いていて、
+# - 最終更新から 48h 以上経過
+# - CI status が all green
+# - merge 可能 (CLEAN 状態)
+# の PR を squash merge する。
+#
+# 48h grace は spam / 悪意ある PR や maintainer の preempt 反応時間として確保。
+# その間に label を剥がす / Close すれば auto-merge は走らない。
+
+on:
+  schedule:
+    - cron: '0 */6 * * *'   # 6 時間おき
+  workflow_dispatch:        # 手動トリガー (動作確認 / 強制)
+
+permissions:
+  pull-requests: write
+  contents: write
+  checks: read
+  statuses: read
+
+jobs:
+  merge:
+    name: 条件を満たす PR を merge
+    runs-on: ubuntu-latest
+    steps:
+      - name: 候補 PR を取得して merge
+        env:
+          GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+          REPO: ${{ github.repository }}
+        run: |
+          set -e
+          # 48h 前の epoch
+          NOW=$(date -u +%s)
+          THRESHOLD=$((NOW - 172800))   # 48 * 3600
+
+          PRS=$(gh pr list \
+            --repo "$REPO" \
+            --label auto-mergeable \
+            --state open \
+            --json number,updatedAt,mergeStateStatus,statusCheckRollup,isDraft)
+
+          if [ "$(echo "$PRS" | jq 'length')" -eq 0 ]; then
+            echo "No PR with auto-mergeable label, exiting."
+            exit 0
+          fi
+
+          echo "$PRS" | jq -c '.[]' | while read -r pr; do
+            NUM=$(echo "$pr" | jq -r '.number')
+            UPDATED=$(echo "$pr" | jq -r '.updatedAt')
+            MERGE_STATUS=$(echo "$pr" | jq -r '.mergeStateStatus')
+            IS_DRAFT=$(echo "$pr" | jq -r '.isDraft')
+            UPDATED_TS=$(date -u -d "$UPDATED" +%s)
+            AGE=$((NOW - UPDATED_TS))
+
+            echo "── PR #$NUM ──"
+            echo "  updated: $UPDATED (${AGE}s ago)"
+            echo "  merge_status: $MERGE_STATUS / draft: $IS_DRAFT"
+
+            if [ "$IS_DRAFT" = "true" ]; then
+              echo "  skip: draft"
+              continue
+            fi
+            if [ "$UPDATED_TS" -gt "$THRESHOLD" ]; then
+              echo "  skip: not yet 48h since last update"
+              continue
+            fi
+            if [ "$MERGE_STATUS" != "CLEAN" ]; then
+              echo "  skip: merge state is '$MERGE_STATUS' (need CLEAN)"
+              continue
+            fi
+            # status checks all green?
+            CHECKS_FAILED=$(echo "$pr" | jq '
+              [.statusCheckRollup[]?
+                | select(.conclusion != null
+                  and .conclusion != "SUCCESS"
+                  and .conclusion != "SKIPPED"
+                  and .conclusion != "NEUTRAL")
+              ] | length')
+            CHECKS_PENDING=$(echo "$pr" | jq '
+              [.statusCheckRollup[]?
+                | select(.status != null and .status != "COMPLETED")
+              ] | length')
+            if [ "$CHECKS_FAILED" != "0" ] || [ "$CHECKS_PENDING" != "0" ]; then
+              echo "  skip: $CHECKS_FAILED failed / $CHECKS_PENDING pending checks"
+              continue
+            fi
+
+            echo "  merging..."
+            gh pr merge "$NUM" --repo "$REPO" --squash --delete-branch
+          done

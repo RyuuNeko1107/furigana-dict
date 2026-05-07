@@ -1,0 +1,75 @@
+name: Auto-merge label
+
+# PR が「safe な辞書追加」か判定して `auto-mergeable` label を付ける。
+# 別 workflow (auto-merge.yml) が 48h 経過 + CI green の label 付き PR を
+# scheduled で merge する。
+#
+# safe 条件:
+# - 変更ファイルがすべて core/**/*.toml または rules/**/*.toml
+#   (workflow / script / docs / Cargo.toml 等 = 「重要な構成変更」を含まない)
+# - 行追加 ≤ 200 行 (大量追加は人手 review 推奨)
+# - 単漢字混入 / cross-file 重複は別の validate.yml ワークフローで CI fail として
+#   検出されるため、ここでは file path + size のみチェック
+
+on:
+  pull_request_target:
+    types: [opened, synchronize, reopened, edited]
+
+permissions:
+  pull-requests: write
+  contents: read
+
+jobs:
+  classify:
+    name: Safe PR を判定して label
+    runs-on: ubuntu-latest
+    steps:
+      - name: PR の変更ファイル / 行数を取得
+        id: pr
+        env:
+          GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+          PR_NUM: ${{ github.event.pull_request.number }}
+        run: |
+          gh pr view "$PR_NUM" \
+            --repo "${{ github.repository }}" \
+            --json files,additions,deletions \
+            > pr.json
+          cat pr.json
+
+      - name: Safe 判定
+        id: safe
+        run: |
+          ADDITIONS=$(jq -r '.additions' pr.json)
+          UNSAFE_FILES=$(jq -r '
+            .files[] | .path |
+            select((startswith("core/") or startswith("rules/")) | not)
+          ' pr.json)
+
+          REASON=""
+          if [ -n "$UNSAFE_FILES" ]; then
+            REASON="PR が dict 領域 (core/, rules/) 外を変更:"$'\n'"$UNSAFE_FILES"
+          elif [ "$ADDITIONS" -gt 200 ]; then
+            REASON="PR の行追加が 200 を超える ($ADDITIONS 行) — 人手 review 推奨"
+          fi
+
+          if [ -z "$REASON" ]; then
+            echo "safe=true" >> "$GITHUB_OUTPUT"
+            echo "PR is safe ($ADDITIONS additions, dict-only)"
+          else
+            echo "safe=false" >> "$GITHUB_OUTPUT"
+            echo "$REASON"
+          fi
+
+      - name: Label を付ける (safe なら)
+        if: steps.safe.outputs.safe == 'true'
+        env:
+          GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+          PR_NUM: ${{ github.event.pull_request.number }}
+        run: gh pr edit "$PR_NUM" --repo "${{ github.repository }}" --add-label auto-mergeable
+
+      - name: Label を外す (safe でなくなったら)
+        if: steps.safe.outputs.safe != 'true'
+        env:
+          GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+          PR_NUM: ${{ github.event.pull_request.number }}
+        run: gh pr edit "$PR_NUM" --repo "${{ github.repository }}" --remove-label auto-mergeable || true
