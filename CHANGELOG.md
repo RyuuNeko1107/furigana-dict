@@ -10,6 +10,50 @@
 
 (次の release で入れる変更をここに追記)
 
+## [0.1.3] - 2026-05-07
+
+語彙辞書の継続拡充 (jukugo 1,832 → 4,351、約 +138%、24 ファイル分類維持) +
+作品単位辞書ディレクトリ `core/works/` 新設 + STATS.md 自動生成基盤の整備。
+ja-furigana 0.1.0-alpha.6 (loader 全階層再帰対応) とペアの release。
+
+### Added (語彙辞書 +2,591 件 / works 72 件)
+
+- **ラウンド 7-10 で jukugo 24 ファイル全てを大幅拡充**:
+  - 平均 +108 件 / ファイル、最大 general.toml が 610 → 739 (+129)
+  - 詳細は [STATS.md](STATS.md) を参照 (各ファイルの最新件数 / サイズが自動反映)
+- **`core/works/` ディレクトリ新設 (作品単位 1 ファイル)**:
+  - サブポリシー: 公式読みのみ採録、出典 comment 必須、二次創作読み禁止
+  - `core/works/README.md` で運用ルール文書化
+  - `core/works/game/touhou.toml` (東方Project, 72 件) を seed として収録
+- **ja-furigana 0.1.0-alpha.6 の loader 全階層再帰対応**:
+  - `core/works/<medium>/<title>.toml` のような任意深度の構造を許容
+  - dict 側 v0.1.2 の `core/jukugo/*.toml` 1 階層構造は新 loader でも互換
+
+### Changed (用途説明を [meta] description に移行)
+
+各 TOML ファイル先頭に `[meta] description = "..."` を追加。
+`tools/regen_stats.py` がこれを読んで STATS.md の用途列を自動生成する仕組みに。
+README.md の構造ブロック (24 ファイル分の手書きツリー) は廃止して
+STATS.md ポインタ化 (更新が手動で面倒だったため)。
+
+### Added (CI / 開発基盤)
+
+- **`tools/regen_stats.py`**: STATS.md のサマリ / core / rules テーブルを自動再生成
+  - マーカー (`<!-- AUTO-GENERATED:* -->`) で囲んだ範囲だけ書き換え
+  - サマリは「単漢字 / 熟語 / 作品造語 / 異体字 / ルール」5 区分表示
+- **`.github/workflows/validate.yml` に stats-drift ジョブ追加**:
+  - regen 後 `git diff --exit-code STATS.md` が non-zero なら CI fail
+  - TOML 編集後の re-generation 忘れを検出
+- **`tools/validate.py` 全階層対応**: `core/jukugo/**/*.toml` および
+  `core/works/**/*.toml` を再帰スキャン (ja-furigana 0.1.0-alpha.6 loader と
+  挙動を揃える)
+
+### Fixed (単漢字混入の自動検出 + 一掃)
+
+ラウンド 7-9 で agent 拡充中に jukugo に紛れ込んだ単漢字 entry 22 件を
+全 jukugo ファイルから除去 (validate.py が cross-file 重複として検出済、
+これらは unihan.toml に既存だが jukugo は ≥2 字ルールに反するため不要)。
+
 ## [0.1.2] - 2026-05-06
 
 語彙辞書の大規模拡充 (jukugo 605 → 1,163、約 +90%) + ルールエンジン側との連動。

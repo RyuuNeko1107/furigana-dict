@@ -20,9 +20,6 @@ git に commit されている master HEAD の状態を基準にする。
 | **合計** | **48,857** | **1013 KB** |
 <!-- AUTO-GENERATED:SUMMARY:END -->
 
-配布物 (`furigana-dict-vX.Y.Z.tar.gz`) は gzip 圧縮後 ~226 KB (`v0.1.2` 時点)。
-ラウンド 7/8 で大幅拡充したため、次回 release で再計測予定。
-
 ## 内訳
 
 ### `core/` — 語彙辞書
