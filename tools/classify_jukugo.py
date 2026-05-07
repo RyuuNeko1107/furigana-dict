@@ -161,7 +161,7 @@ def main(argv: list[str]) -> int:
             # 単漢字 → unihan が正典。general からは落とす。
             dropped_singles[surface] = reading
             # ただし general と unihan の reading が「kata/hira 正規化後でも違う」場合は
-            # 本番 override の意図 (ryuuneko.com TTS で自然な読み) を unihan に伝播。
+            # 本番 override の意図 (TTS で自然な読み) を unihan に伝播。
             if surface in unihan and normalize_kana(unihan[surface]) != normalize_kana(reading):
                 unihan_overrides[surface] = (reading, unihan[surface])
             continue

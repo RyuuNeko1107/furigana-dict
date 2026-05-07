@@ -39,7 +39,7 @@ STATS_MD = ROOT / "STATS.md"
 # ファイル用 (rules は構造が複雑、unihan は機械生成 dump)。
 # 通常の jukugo / works ファイルは [meta] description で書く。
 DESCRIPTIONS_FALLBACK: dict[str, str] = {
-    "core/unihan.toml": "単漢字フォールバック (本番 ryuuneko.com 由来 + override 14 件)",
+    "core/unihan.toml": "単漢字フォールバック (初期 seed + override 14 件)",
     "core/compat.toml": "異体字 → 標準字 (髙→高 等)",
     "rules/days.toml": "1〜31 日の特殊読み (1→ツイタチ 等)",
     "rules/scales.toml": "万 / 億 / 兆 / 京 等の大数スケール",
@@ -47,7 +47,7 @@ DESCRIPTIONS_FALLBACK: dict[str, str] = {
     "rules/symbols.toml": "記号読み (+ / − / % / ‰ …)",
     "rules/latin.toml": "ラテン文字読み (A→エー …)",
     "rules/numeric_phrases.toml": "数字を含む例外語句 (二十歳→ハタチ 等)",
-    "rules/postprocess.toml": "後処理 regex 置換 (本番 Step 7 互換)",
+    "rules/postprocess.toml": "後処理 regex 置換 (Step 7、mode 別)",
     "rules/counters/*.toml": "助数詞ルール (本 / 匹 / 個 / 年 / 月 / 日 …、連濁 / 促音化 / kana 末尾置換)",
     "rules/context/*.toml": "文脈依存読み (一日→ツイタチ/イチニチ 等)",
 }
@@ -192,7 +192,7 @@ def gen_summary(core_rows: list, rules_rows: list) -> str:
     lines = [
         "| カテゴリ | エントリ数 | サイズ |",
         "|---|---:|---:|",
-        f"| **単漢字** (`core/unihan.toml`、本番 dump) | **{unihan_count:,}** | **{fmt_size(unihan_size)}** |",
+        f"| **単漢字** (`core/unihan.toml`、seed) | **{unihan_count:,}** | **{fmt_size(unihan_size)}** |",
         f"| **熟語** (`core/jukugo/*`、手動 PR メンテ) | **{jukugo_count:,}** | **{fmt_size(jukugo_size)}** |",
     ]
     if works_count > 0:

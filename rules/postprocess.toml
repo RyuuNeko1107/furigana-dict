@@ -1,4 +1,4 @@
-# 出力後処理 regex ルール (本番 ryuuneko.com Step 7 互換)
+# 出力後処理 regex ルール (Step 7 (mode 別後処理 regex))
 #
 # Furigana::to_hiragana / to_ruby / to_tts / to_romaji の出力直前に適用。
 # 辞書 / context rule で表現しづらい文字列レベルの最終調整に使う。

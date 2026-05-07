@@ -34,12 +34,12 @@ gh release view v0.1.2 --repo RyuuNeko1107/ja-furigana-dict
 
 利用者は次に `furigana dict pull` を回したタイミングで自動的に新版を取得する。
 
-## 本番 ryuuneko.com から seed を再投入
+## upstream (ryuuneko.com production DB) から seed を再投入
 
-新しい本番辞書を反映したい場合 (新熟語が追加された等):
+upstream で新熟語が追加された場合:
 
 ```sh
-# 1. 本番から TSV を export
+# 1. upstream から TSV を export
 ssh debian "docker exec kuroneko-postgres psql -U zunda -d kuroneko_cms \
   -t -A -F$'\t' -c \"COPY (SELECT character, reading FROM furigana_unihan \
   ORDER BY character) TO STDOUT\"" > tools/seed/unihan.tsv
@@ -57,7 +57,7 @@ python3 tools/validate.py
 
 # 5. commit + release
 git add core/
-git commit -m "data: 本番から seed 再投入 (unihan X / jukugo Y / compat Z)"
+git commit -m "data: upstream から seed 再投入 (unihan X / jukugo Y / compat Z)"
 git push origin master
 echo "v0.1.X" > VERSION && git add VERSION && git commit -m "chore: bump"
 git tag -a v0.1.X && git push origin v0.1.X
@@ -80,8 +80,8 @@ git tag -a v0.1.X && git push origin v0.1.X
 ## PR のレビュー方針
 
 `CONTRIBUTING.md` 末尾の「レビュー方針」に集約:
-> 「正しい読み」 vs 「自然な読み」で意見が割れた場合は、本番 ryuuneko.com で
-> 実用上自然な方を採用する (TTS 読み上げ用途を優先)。
+> 「正しい読み」 vs 「自然な読み」で意見が割れた場合は、TTS 読み上げで
+> 実用上自然な方を採用する。
 
 人名・固有名詞の追加 PR は出典を必須にしないが、判断付かない時は merge を保留して
 PR 上で議論するのが無難。

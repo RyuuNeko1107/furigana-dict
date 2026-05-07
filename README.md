@@ -25,7 +25,7 @@
 core/
 ├── jukugo/         ← 熟語・固有名詞 (一般熟語 / 地名 / 人名 / 専門 / 文化等のカテゴリ別 24 ファイル)
 ├── works/          ← 作品単位の固有名詞・造語 (例: works/game/touhou.toml — 公式読みのみ採録、サブポリシーあり)
-├── unihan.toml     ← 単漢字フォールバック (43k 字、本番 ryuuneko.com dump)
+├── unihan.toml     ← 単漢字フォールバック (43k 字、初期 seed 由来)
 └── compat.toml     ← 異体字 → 標準字 (髙→高 等)
 
 rules/
