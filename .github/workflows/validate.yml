@@ -47,3 +47,24 @@ jobs:
 
       - name: 検証実行
         run: python3 tools/validate.py
+
+  stats-drift:
+    name: STATS.md drift 検知 (regen_stats.py)
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v6
+
+      - uses: actions/setup-python@v6
+        with:
+          python-version: '3.11'
+
+      - name: 再生成
+        run: python3 tools/regen_stats.py
+
+      - name: drift チェック
+        run: |
+          if ! git diff --exit-code -- STATS.md; then
+            echo ""
+            echo "::error::STATS.md が stale です。手元で 'python3 tools/regen_stats.py' を実行して commit してください。"
+            exit 1
+          fi
