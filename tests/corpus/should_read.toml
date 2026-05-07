@@ -110,18 +110,20 @@ note = "1 + 本 で促音 + 半濁"
 [[case]]
 input = "5km"
 mode = "hiragana"
-expected = "ごきろめーとる"
+expected = "ゴキロメートル"
+note = "数字 + ASCII 単位の chunk は漢字を含まないため新出力ルールでカタカナ維持"
 
 [[case]]
 input = "5KM"
 mode = "hiragana"
-expected = "ごきろめーとる"
-note = "case-insensitive lookup、alpha.1 で fix"
+expected = "ゴキロメートル"
+note = "case-insensitive lookup + 出力ルール (漢字含まずカタカナ維持)"
 
 [[case]]
 input = "3GB"
 mode = "hiragana"
-expected = "さんぎがばいと"
+expected = "サンギガバイト"
+note = "数字 + ASCII 単位の chunk は漢字を含まないためカタカナ維持"
 
 # ---------------------------------------------------------------------------
 # TTS 整形
@@ -258,8 +260,8 @@ note = "alpha.3 で漢数字 (一日) も DATE_KANJI_MD_RE にマッチ + read_c
 [[case]]
 input = "1日に2〜3回服用する"
 mode = "hiragana"
-expected = "いちにちににからさんかいふくようする"
-note = "「N日」単独 chunk = 期間扱い (default ニチ)、〜 = から"
+expected = "いちにちにニカラさんかいふくようする"
+note = "「2」 単独 chunk + 「〜」 はカタカナ (新出力ルール)、 「3回」 は counter で 1 chunk (漢字「回」 含む) → ひらがな化、 「N日」 単独 chunk = 期間扱い (default ニチ)"
 
 [[case]]
 input = "百個の卵を割った"
@@ -282,16 +284,16 @@ note = "年度 を counters/time.toml に追加、度=ド unihan 正規化"
 [[case]]
 input = "3〜5本の傘が必要だ"
 mode = "hiragana"
-expected = "さんからごほんのかさがひつようだ"
-note = "〜 = カラ (symbols.toml に追加)"
+expected = "サンカラごほんのかさがひつようだ"
+note = "「3」 単独 chunk + 「〜」 + 「5本」 で分解。 漢字含まない 「3」 「〜」 はカタカナ維持 (symbols 「〜=から」 も hira_to_kata で カラ に揃える)、 「5本」 は漢字「本」 含むためひらがな化"
 
 # === 後処理 regex (postprocess.toml) ===
 
 [[case]]
 input = "50%以上の確率で成功する"
 mode = "hiragana"
-expected = "ごじゅっぱーせんといじょうのかくりつでせいこうする"
-note = "postprocess.toml の 「ジュウパー → ジュッパー」rule で促音化補正"
+expected = "ゴジュッパーセントいじょうのかくりつでせいこうする"
+note = "postprocess.toml の 「ジュウパー → ジュッパー」rule で促音化補正。 「50%」 は漢字含まない数字+記号 chunk のためカタカナ維持 (新出力ルール)"
 
 # ---------------------------------------------------------------------------
 # 同形異音語 (heteronym) — context rule の本領

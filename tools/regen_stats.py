@@ -146,6 +146,7 @@ def gather_core() -> list[tuple[str, int, int]]:
 
     rows.extend(collect("jukugo"))
     rows.extend(collect("works"))
+    rows.extend(collect("loanwords"))
     p = ROOT / "core/compat.toml"
     if p.exists():
         rows.append(("core/compat.toml", count_entries(p), p.stat().st_size))
@@ -186,11 +187,16 @@ def gen_summary(core_rows: list, rules_rows: list) -> str:
     unihan_count, unihan_size = slice_("core/unihan.toml")
     jukugo_count, jukugo_size = slice_("core/jukugo/")
     works_count, works_size = slice_("core/works/")
+    loanwords_count, loanwords_size = slice_("core/loanwords/")
     compat_count, compat_size = slice_("core/compat.toml")
     rules_count = sum(r[1] for r in rules_rows)
     rules_size = sum(r[2] for r in rules_rows)
-    total_count = unihan_count + jukugo_count + works_count + compat_count + rules_count
-    total_size = unihan_size + jukugo_size + works_size + compat_size + rules_size
+    total_count = (
+        unihan_count + jukugo_count + works_count + loanwords_count + compat_count + rules_count
+    )
+    total_size = (
+        unihan_size + jukugo_size + works_size + loanwords_size + compat_size + rules_size
+    )
 
     lines = [
         "| カテゴリ | エントリ数 | サイズ |",
@@ -201,6 +207,10 @@ def gen_summary(core_rows: list, rules_rows: list) -> str:
     if works_count > 0:
         lines.append(
             f"| **作品造語** (`core/works/*`、作品単位 1 ファイル) | **{works_count:,}** | **{fmt_size(works_size)}** |"
+        )
+    if loanwords_count > 0:
+        lines.append(
+            f"| **外来語** (`core/loanwords/*`、IT 用語等の英字 surface) | **{loanwords_count:,}** | **{fmt_size(loanwords_size)}** |"
         )
     lines.extend([
         f"| **異体字** (`core/compat.toml`) | **{compat_count:,}** | **{fmt_size(compat_size)}** |",

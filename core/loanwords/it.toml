@@ -1,0 +1,122 @@
+# 外来語 (IT 用語 / プログラミング言語 / OSS / クラウドサービス / 技術企業)
+#
+# ASCII 英字始まりの surface に対する カタカナ ヨミ。 ja-furigana は
+# chunks/split() の階層 4.7 でこのテーブルを完全一致 lookup する。
+#
+# - **完全一致のみ** (substring 切断ゼロ): 「PostgreSQL」 chunk は 「Post」 entry に
+#   部分一致しても採用されない。
+# - **正規化** (case-fold + 全角→半角) は ja-furigana 側で実施。 dict 登録 surface は
+#   canonical form (大文字始まり) で書く。
+# - reading は カタカナで統一 (lib 内で hiragana mode 出力時に自動 ひらがな化)。
+# - **長い surface ほど推奨** (PostgreSQL は Post より優先したいとき) — 完全一致なので
+#   どちらも独立、 ただし利用側が「長い形」 を入力するケース寄りの seed を選ぶ。
+#
+# alphabet 順に並べる (ASCII 順、 案件追加時 PR diff が読みやすい)。
+
+[meta]
+description = "IT 用語 / プログラミング言語 / OSS / クラウドサービス / 技術企業 (ASCII surface)"
+
+[entries]
+
+# ── A ──
+"Anthropic" = "アンソロピック"
+"Apache" = "アパッチ"
+"Apple" = "アップル"
+"AWS" = "エーダブリューエス"
+
+# ── B ──
+
+# ── C ──
+"Claude" = "クロード"
+"Cloudflare" = "クラウドフレア"
+
+# ── D ──
+"Debian" = "デビアン"
+"Discord" = "ディスコード"
+"Docker" = "ドッカー"
+
+# ── E ──
+"Elasticsearch" = "エラスティックサーチ"
+
+# ── F ──
+"Facebook" = "フェイスブック"
+"Firefox" = "ファイアフォックス"
+
+# ── G ──
+"GCP" = "ジーシーピー"
+"Git" = "ギット"
+"GitHub" = "ギットハブ"
+"GitLab" = "ギットラボ"
+"Google" = "グーグル"
+
+# ── H ──
+"Haskell" = "ハスケル"
+
+# ── I ──
+"iPhone" = "アイフォン"
+"iOS" = "アイオーエス"
+
+# ── J ──
+"Java" = "ジャバ"
+"JavaScript" = "ジャバスクリプト"
+"JSON" = "ジェイソン"
+
+# ── K ──
+"Kotlin" = "コトリン"
+"Kubernetes" = "クバネティス"
+
+# ── L ──
+"Linux" = "リナックス"
+
+# ── M ──
+"macOS" = "マックオーエス"
+"MariaDB" = "マリアディービー"
+"Microsoft" = "マイクロソフト"
+"MongoDB" = "モンゴディービー"
+"MySQL" = "マイエスキューエル"
+
+# ── N ──
+"Nginx" = "エンジンエックス"
+"Node" = "ノード"
+"npm" = "エヌピーエム"
+
+# ── O ──
+"OpenAI" = "オープンエーアイ"
+
+# ── P ──
+"Postgres" = "ポストグレス"
+"PostgreSQL" = "ポストグレスキューエル"
+"Python" = "パイソン"
+
+# ── R ──
+"React" = "リアクト"
+"Redis" = "レディス"
+"Ruby" = "ルビー"
+"Rust" = "ラスト"
+
+# ── S ──
+"Slack" = "スラック"
+"SQLite" = "エスキューライト"
+"Swift" = "スウィフト"
+
+# ── T ──
+"TypeScript" = "タイプスクリプト"
+
+# ── U ──
+"Ubuntu" = "ウブントゥ"
+
+# ── V ──
+"Vim" = "ヴィム"
+"VS" = "ブイエス"
+
+# ── W ──
+"WebAssembly" = "ウェブアセンブリ"
+"Windows" = "ウィンドウズ"
+
+# ── X ──
+
+# ── Y ──
+"YAML" = "ヤムル"
+
+# ── Z ──
+"Zenn" = "ゼン"

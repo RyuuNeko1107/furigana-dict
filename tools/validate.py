@@ -78,6 +78,32 @@ def validate_lookup(path: Path, errors: Errors) -> dict:
     return entries
 
 
+# ─── core/loanwords/*.toml ────────────────────────────────────────────────
+# ASCII / 全角英字 始まりの surface 専用 (IT 用語等)。 reading はカタカナ。
+LOANWORD_SURFACE_RE = re.compile(r'^[A-Za-zＡ-Ｚａ-ｚ][A-Za-z0-9Ａ-Ｚａ-ｚ０-９+#._\-＋＃．＿－]*$')
+
+
+def validate_loanwords(path: Path, errors: Errors) -> dict:
+    """[entries] section: 英字 surface (≥1 文字) → カタカナ読み"""
+    data = load_toml(path, errors)
+    if data is None:
+        return {}
+    entries = data.get('entries')
+    if not isinstance(entries, dict):
+        errors.add_for(path, "[entries] section が無い、または table ではない")
+        return {}
+    for surface, reading in entries.items():
+        if not isinstance(reading, str):
+            errors.add_for(path, f"loanword '{surface}': value が string ではない")
+            continue
+        if not LOANWORD_SURFACE_RE.fullmatch(surface):
+            errors.add_for(path, f"loanword '{surface}': surface は ASCII / 全角英字始まりの英数+記号 (+#._-) のみ可")
+            continue
+        if not is_kana(reading):
+            errors.add_for(path, f"loanword '{surface}' → '{reading}' (ひらがな または 全角カタカナで書いてください)")
+    return entries
+
+
 # ─── core/compat.toml ──────────────────────────────────────────────────────
 def validate_compat(path: Path, errors: Errors) -> None:
     """[map] section: variant → canonical (どちらも漢字 1〜数文字想定)"""
@@ -372,6 +398,7 @@ def main() -> int:
     targets: list[tuple[list[Path], callable]] = [
         (discover(core, 'jukugo', recursive=True), load_jukugo),
         (discover_works(core),                     load_jukugo),
+        (discover(core, 'loanwords', recursive=True), lambda p: validate_loanwords(p, errors)),
         (discover(core, 'unihan'),                 load_unihan),
         ([core / 'compat.toml'],             lambda p: validate_compat(p, errors)),
         ([rules / 'numeric_phrases.toml'],   lambda p: validate_simple_entries(p, errors)),
