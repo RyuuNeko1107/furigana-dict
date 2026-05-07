@@ -115,7 +115,10 @@ def fmt_size(n_bytes: int) -> str:
     kb = n_bytes / 1024
     if kb < 10:
         return f"{kb:.1f} KB"
-    return f"{round(kb)} KB"
+    if kb < 1024:
+        return f"{round(kb)} KB"
+    mb = kb / 1024
+    return f"{mb:.2f} MB"
 
 
 def gather_core() -> list[tuple[str, int, int]]:
