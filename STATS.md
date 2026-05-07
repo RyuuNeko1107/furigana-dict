@@ -14,12 +14,12 @@ git に commit されている master HEAD の状態を基準にする。
 | カテゴリ | エントリ数 | サイズ |
 |---|---:|---:|
 | **単漢字** (`core/unihan.toml`、seed) | **43,749** | **796 KB** |
-| **熟語** (`core/jukugo/*`、手動 PR メンテ) | **4,616** | **187 KB** |
+| **熟語** (`core/jukugo/*`、手動 PR メンテ) | **4,619** | **187 KB** |
 | **作品造語** (`core/works/*`、作品単位 1 ファイル) | **72** | **4.5 KB** |
 | **外来語** (`core/loanwords/*`、IT 用語等の英字 surface) | **53** | **3.2 KB** |
 | **異体字** (`core/compat.toml`) | **436** | **6.3 KB** |
 | **エンジンルール** (`rules/`) | **256** | **30 KB** |
-| **合計** | **49,182** | **1.00 MB** |
+| **合計** | **49,185** | **1.00 MB** |
 <!-- AUTO-GENERATED:SUMMARY:END -->
 
 ## 内訳
@@ -30,7 +30,7 @@ git に commit されている master HEAD の状態を基準にする。
 | ファイル | エントリ数 | サイズ | 用途 |
 |---|---:|---:|---|
 | `core/unihan.toml` | 43,749 | 796 KB | 単漢字フォールバック (初期 seed + override 14 件) |
-| `core/jukugo/general.toml` | 783 | 23 KB | 二字・三字の一般熟語 (季節 / 行事 / 慣用句 含む) |
+| `core/jukugo/general.toml` | 786 | 24 KB | 二字・三字の一般熟語 (季節 / 行事 / 慣用句 含む) |
 | `core/jukugo/personal_names.toml` | 214 | 9.5 KB | 人名 (戦国 / 平安 / 江戸 / 明治大正 / 古典作家、現代私人除く) |
 | `core/jukugo/colors.toml` | 201 | 6.9 KB | 色名 / 染色 / 模様 / 古典色 / 鉱物色 |
 | `core/jukugo/proper_nouns.toml` | 195 | 9.8 KB | 固有名詞 (大学 / 中央官庁 / 元号 / 歴史的事象、PR 募集中) |
@@ -57,7 +57,7 @@ git に commit されている master HEAD の状態を基準にする。
 | `core/works/game/touhou.toml` | 72 | 4.5 KB | 東方Project (上海アリス幻樂団): キャラクター名 / 場所 / 用語 (公式読みベース) |
 | `core/loanwords/it.toml` | 53 | 3.2 KB | IT 用語 / プログラミング言語 / OSS / クラウドサービス / 技術企業 (ASCII surface) |
 | `core/compat.toml` | 436 | 6.3 KB | 異体字 → 標準字 (髙→高 等) |
-| **小計** | **48,926** | **997 KB** | (jukugo: 24 ファイル / **4,616 件** / 187 KB ・ works: 1 ファイル / **72 件** / 4.5 KB) |
+| **小計** | **48,929** | **998 KB** | (jukugo: 24 ファイル / **4,619 件** / 187 KB ・ works: 1 ファイル / **72 件** / 4.5 KB) |
 <!-- AUTO-GENERATED:CORE:END -->
 
 ### `rules/` — エンジンルール
