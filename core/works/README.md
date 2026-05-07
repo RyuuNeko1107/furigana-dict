@@ -2,9 +2,9 @@
 
 特定の作品 (アニメ / ゲーム / ライトノベル / 漫画) の固有名詞・造語を
 **1 作品 = 1 ファイル** で集めるディレクトリ。
-ja-furigana 0.1.0-alpha.6 以降の loader が **全階層再帰** で `*.toml` を
-拾うため、`core/works/<medium>/<title>.toml` の構造で配置すれば
-そのまま jukugo (≥2 字 surface 固定読み) として lookup される。
+ja-furigana lib の loader が **全階層再帰** で `*.toml` を拾うため、
+`core/works/<medium>/<title>.toml` の構造で配置すればそのまま jukugo
+(≥2 字 surface 固定読み) として lookup される。
 
 ## なぜ jukugo と分けるのか
 

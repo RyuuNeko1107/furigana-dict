@@ -7,9 +7,9 @@
 [`furigana`](https://github.com/RyuuNeko1107/ja-furigana) (フリガナ API + ライブラリ) で利用される
 **語彙辞書** をホストする独立リポジトリ。読みの追加・修正は **TOML を編集して PR** だけで完結する。
 
-> **Status**: v0.1.3 リリース済。
 > 件数 / カテゴリ別内訳 / サイズの最新値は [**STATS.md**](STATS.md) を参照
 > (TOML 編集後の master push で GitHub Actions が auto-commit するので、contributor は何もしなくて OK)。
+> 最新リリースは [GitHub Releases](https://github.com/RyuuNeko1107/ja-furigana-dict/releases) を参照。
 
 ---
 

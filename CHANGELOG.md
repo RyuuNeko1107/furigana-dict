@@ -18,7 +18,7 @@ ja-furigana 0.1.0-alpha.6 (loader 全階層再帰対応) とペアの release。
 
 ### Added (語彙辞書 +2,591 件 / works 72 件)
 
-- **ラウンド 7-10 で jukugo 24 ファイル全てを大幅拡充**:
+- **jukugo 24 ファイル全てを大幅拡充**:
   - 平均 +108 件 / ファイル、最大 general.toml が 610 → 739 (+129)
   - 詳細は [STATS.md](STATS.md) を参照 (各ファイルの最新件数 / サイズが自動反映)
 - **`core/works/` ディレクトリ新設 (作品単位 1 ファイル)**:
@@ -41,17 +41,17 @@ STATS.md ポインタ化 (更新が手動で面倒だったため)。
 - **`tools/regen_stats.py`**: STATS.md のサマリ / core / rules テーブルを自動再生成
   - マーカー (`<!-- AUTO-GENERATED:* -->`) で囲んだ範囲だけ書き換え
   - サマリは「単漢字 / 熟語 / 作品造語 / 異体字 / ルール」5 区分表示
-- **`.github/workflows/validate.yml` に stats-drift ジョブ追加**:
-  - regen 後 `git diff --exit-code STATS.md` が non-zero なら CI fail
-  - TOML 編集後の re-generation 忘れを検出
+- **`.github/workflows/regen-stats.yml` 新設**: master push で TOML / regen_stats.py に
+  変更があれば auto-commit で STATS.md を更新 (contributor の手元実行不要)
 - **`tools/validate.py` 全階層対応**: `core/jukugo/**/*.toml` および
   `core/works/**/*.toml` を再帰スキャン (ja-furigana 0.1.0-alpha.6 loader と
   挙動を揃える)
 
 ### Fixed (単漢字混入の自動検出 + 一掃)
 
-ラウンド 7-9 で agent 拡充中に jukugo に紛れ込んだ単漢字 entry 22 件を
-全 jukugo ファイルから除去 (validate.py が cross-file 重複として検出済、
+agent 拡充中に jukugo に紛れ込んだ単漢字 entry 22 件 (袴 / 袷 / 韮 / 鯣 / 鯱 /
+禊 / 侘 / 種 / 属 / 科 / 目 / 庵 / 框 / 畳 / 庇 / 堀 / 櫓 / 舳 / 舵 / 艀 / 艫) を
+全 jukugo ファイルから除去 (validate.py が cross-file 重複として検出、
 これらは unihan.toml に既存だが jukugo は ≥2 字ルールに反するため不要)。
 
 ## [0.1.2] - 2026-05-06
