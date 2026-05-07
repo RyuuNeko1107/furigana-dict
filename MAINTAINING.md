@@ -5,34 +5,36 @@
 ## Release を打つ
 
 `ja-furigana-cli` は `ja-furigana-dict` の latest release tag を見て自動取得するので、
-辞書を更新したら必ず release を打つこと (master push だけだと利用者に届かない)。
+辞書を更新したら release を出す (ただし通常は手動不要、下記参照)。
 
-### 前提
-- `tools/validate.py` がローカルで pass
-- 大きい変更なら `CHANGELOG.md` を更新
-- 依存ある利用者がいる場合は破壊的変更 (cross-file 重複等) を避ける
+### 通常運用: daily auto-release で自動
 
-### 手順
+`.github/workflows/daily-release.yml` が JST 03:00 に走り、core/ または rules/ への
+変更が前回 tag 以降にあれば **`v<YYYY.MM.DD>` (CalVer) tag を自動で打つ**。
+そのまま `release.yml` が catch して tar.gz + sha256 を GitHub Releases に upload。
+
+つまり TOML 編集 → master push → 翌 JST 03:00 → 利用者が `furigana dict pull` で取得、
+の流れで maintainer の手動操作は不要。
+
+### 手動で release を打ちたい場合
+
+緊急 release / 修正 release を即時に出したいときのみ:
 
 ```sh
-# 1. VERSION ファイルを更新
-echo "v0.1.2" > VERSION
-git add VERSION CHANGELOG.md
-git commit -m "chore: bump VERSION to v0.1.2"
-git push origin master
+# 今日の date で tag を打つ (CalVer 形式)
+TODAY=$(date +%Y.%m.%d)
+git tag -a "v$TODAY" -m "v$TODAY - <要約>"
+git push origin "v$TODAY"
 
-# 2. tag を打って push (release.yml が走る)
-git tag -a v0.1.2 -m "v0.1.2 - <要約>"
-git push origin v0.1.2
-
-# 3. CI 完了を待つ (~30 秒、tarball + sha256 が GitHub Releases に上がる)
+# CI 完了を待つ (~30 秒、tarball + sha256 が GitHub Releases に上がる)
 gh run watch --repo RyuuNeko1107/ja-furigana-dict --workflow=release.yml
 
-# 4. 確認
-gh release view v0.1.2 --repo RyuuNeko1107/ja-furigana-dict
+# 確認
+gh release view "v$TODAY" --repo RyuuNeko1107/ja-furigana-dict
 ```
 
-利用者は次に `furigana dict pull` を回したタイミングで自動的に新版を取得する。
+同日に既に release があれば suffix を付ける (`v2026.05.08.1`, `.2` …)。
+daily-release workflow も自動で衝突回避するので、衝突は起きないはず。
 
 ## upstream (ryuuneko.com production DB) から seed を再投入
 

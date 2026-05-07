@@ -2,8 +2,10 @@ name: Daily auto-release
 
 # 1 日 1 回 (JST 03:00 / UTC 18:00) 起動。
 # 前回 tag 以降に core/ または rules/ への変更が 1 件以上あれば、
-# patch version を 1 つ bump して tag を打つ → 既存 release.yml が
+# その日の date で CalVer tag を打つ → 既存 release.yml が
 # tag push を catch して tar.gz + sha256 を GitHub Release に upload する。
+#
+# tag 形式: vYYYY.MM.DD (例: v2026.05.08)、同日 2 回目以降は v2026.05.08.1 / .2 …
 #
 # auto-commit (`chore: regen STATS.md [skip stats]`) は中身 (辞書 entry) の
 # 変更ではないので、差分判定からは除外する。
@@ -18,7 +20,7 @@ permissions:
 
 jobs:
   maybe-release:
-    name: 差分があれば patch bump で tag を打つ
+    name: 差分があれば日付 tag を打つ
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v6
@@ -29,7 +31,7 @@ jobs:
       - name: 前回 tag を解決
         id: last
         run: |
-          LAST_TAG=$(git describe --tags --abbrev=0 2>/dev/null || echo "v0.0.0")
+          LAST_TAG=$(git describe --tags --abbrev=0 2>/dev/null || echo "")
           echo "tag=$LAST_TAG" >> "$GITHUB_OUTPUT"
           echo "Last tag: $LAST_TAG"
 
@@ -37,8 +39,12 @@ jobs:
         id: diff
         run: |
           LAST_TAG="${{ steps.last.outputs.tag }}"
-          # core/ / rules/ への変更コミットを抽出、bot の auto-commit は除外
-          CHANGES=$(git log "$LAST_TAG..HEAD" --pretty='%H %s' -- core/ rules/ \
+          if [ -z "$LAST_TAG" ]; then
+            RANGE="HEAD"
+          else
+            RANGE="$LAST_TAG..HEAD"
+          fi
+          CHANGES=$(git log "$RANGE" --pretty='%H %s' -- core/ rules/ \
             | grep -v '\[skip stats\]' \
             | grep -v 'chore: regen STATS.md' \
             || true)
@@ -51,15 +57,23 @@ jobs:
             echo "skip=false" >> "$GITHUB_OUTPUT"
           fi
 
-      - name: 次の patch version を計算
+      - name: 次の CalVer tag を計算 (vYYYY.MM.DD、同日複数なら .N suffix)
         if: steps.diff.outputs.skip != 'true'
         id: next
         run: |
-          LAST_TAG="${{ steps.last.outputs.tag }}"
-          MAJOR=$(echo "$LAST_TAG" | sed 's/^v//' | cut -d. -f1)
-          MINOR=$(echo "$LAST_TAG" | sed 's/^v//' | cut -d. -f2)
-          PATCH=$(echo "$LAST_TAG" | sed 's/^v//' | cut -d. -f3)
-          NEXT="v${MAJOR}.${MINOR}.$((PATCH + 1))"
+          # JST date を使う (cron が JST 03:00 起動なので「今朝の date」になる)
+          TODAY=$(TZ=Asia/Tokyo date +%Y.%m.%d)
+          BASE="v${TODAY}"
+          # 同日に既に release が打たれていたら .N suffix で衝突回避
+          if ! git rev-parse "$BASE" >/dev/null 2>&1; then
+            NEXT="$BASE"
+          else
+            i=1
+            while git rev-parse "${BASE}.${i}" >/dev/null 2>&1; do
+              i=$((i + 1))
+            done
+            NEXT="${BASE}.${i}"
+          fi
           echo "tag=$NEXT" >> "$GITHUB_OUTPUT"
           echo "Next tag: $NEXT"
 

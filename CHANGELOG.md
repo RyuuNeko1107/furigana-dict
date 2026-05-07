@@ -3,8 +3,19 @@
 `ja-furigana-dict` (語彙辞書 + ルールデータ) の変更履歴。
 [Keep a Changelog](https://keepachangelog.com/ja/1.1.0/) 形式。
 
-利用側の `ja-furigana-cli` は `furigana dict pull --version vX.Y.Z` でピン留め可能。
+利用側の `ja-furigana-cli` は `furigana dict pull --version <tag>` でピン留め可能。
 未指定時は GitHub Releases の latest を自動取得。
+
+## バージョン体系
+
+`v0.1.0` 〜 `v0.1.3` までは semver、`v0.1.3` 以降は **CalVer (`vYYYY.MM.DD`)** に
+切り替え。理由:
+- 辞書はデータ累積が本質で breaking 概念が薄い
+- daily auto-release との直感的対応 (今日の release = 今日の date)
+- tag 名から「いつの辞書か」が即わかる
+
+同日に複数 release が打たれた場合は `vYYYY.MM.DD.1` / `.2` … の suffix を付ける。
+過去の semver tag (`v0.1.0` 〜 `v0.1.3`) はそのまま historical として残す。
 
 ## [Unreleased]
 
