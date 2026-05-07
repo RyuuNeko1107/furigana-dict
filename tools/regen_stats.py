@@ -255,11 +255,19 @@ def gen_summary(core_rows: list, rules_rows: list) -> str:
     return "\n".join(lines) + "\n"
 
 
+def link_rel(rel: str) -> str:
+    """relpath を markdown link 化。 glob (`*` 含む) は親ディレクトリに向ける。"""
+    if "*" in rel:
+        dir_part = rel.rsplit("/", 1)[0] + "/"
+        return f"[`{rel}`]({dir_part})"
+    return f"[`{rel}`]({rel})"
+
+
 def gen_core(core_rows: list) -> str:
     lines = ["| ファイル | エントリ数 | サイズ | 用途 |", "|---|---:|---:|---|"]
     for rel, count, size in core_rows:
         desc = lookup_description(rel)
-        lines.append(f"| `{rel}` | {count:,} | {fmt_size(size)} | {desc} |")
+        lines.append(f"| {link_rel(rel)} | {count:,} | {fmt_size(size)} | {desc} |")
     total_count = sum(r[1] for r in core_rows)
     total_size = sum(r[2] for r in core_rows)
     jukugo_rows = [r for r in core_rows if r[0].startswith("core/jukugo/")]
@@ -287,9 +295,9 @@ def gen_rules(rules_rows: list) -> str:
         rel, count, size = row[0], row[1], row[2]
         desc = lookup_description(rel)
         if len(row) > 3:
-            display = f"`{rel}` ({row[3]} ファイル)"
+            display = f"{link_rel(rel)} ({row[3]} ファイル)"
         else:
-            display = f"`{rel}`"
+            display = link_rel(rel)
         lines.append(f"| {display} | {count:,} | {fmt_size(size)} | {desc} |")
     total_count = sum(r[1] for r in rules_rows)
     total_size = sum(r[2] for r in rules_rows)
