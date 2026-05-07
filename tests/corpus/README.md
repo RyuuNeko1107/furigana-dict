@@ -54,6 +54,22 @@ expected = "はいざくらのちるみち"
 `should_not_read_yet.toml` / `out_of_scope.toml` では `expected` の代わりに
 `expected_failure_reason` を書きます (どう間違うか、なぜ正解にならないか)。
 
+### `hiragana` mode の expected 表記ルール
+
+ja-furigana lib 0.1.0-alpha.7 以降は **surface の文字種で reading 表記が切替わる**
+ので、 expected の書き方も以下のルールに従う必要があります:
+
+- **漢字を含む surface** → expected はひらがな (例: 「灰桜」 → `はいざくら`)
+- **漢字を含まない surface** (ASCII / 全角英字 / カタカナ / ひらがな / 数字 / 記号) →
+  expected はカタカナ
+  - 「Kubernetes」 → `クバネティス`
+  - 「3」 単独 chunk → `サン` / 「〜」 → `カラ`
+  - 「3GB」 (ASCII 単位 chunk) → `サンギガバイト`
+- 混在文の場合は token ごとに上記ルール適用 (例: 「Anthropic の Claude を使う」 →
+  `アンソロピックのクロードをつかう`)
+
+詳細仕様は [ja-furigana ARCHITECTURE.md#step-6](https://github.com/RyuuNeko1107/ja-furigana/blob/master/docs/ARCHITECTURE.md#step-6-の詳細-tokens_to_hiragana-の出力ルール-surface-文字種で分岐) を参照。
+
 ## 自動チェック (将来)
 
 ```sh

@@ -21,7 +21,75 @@
 
 ## [Unreleased]
 
-(次の release で入れる変更をここに追記)
+### Added (外来語 / 検証ループ R12-R19 / cross-file 重複自動化)
+
+- **`core/loanwords/` ディレクトリ新設** — IT 用語等の英字 surface 専用カテゴリ
+  - `core/loanwords/it.toml` (53 件 seed): Anthropic / Apache / Apple / AWS / Claude /
+    Cloudflare / Debian / Discord / Docker / Elasticsearch / Firefox / GCP / Git /
+    GitHub / GitLab / Google / Haskell / iOS / iPhone / Java / JavaScript / JSON /
+    Kotlin / Kubernetes / Linux / macOS / MariaDB / Microsoft / MongoDB / MySQL /
+    Nginx / Node / npm / OpenAI / Postgres / PostgreSQL / Python / React / Redis /
+    Ruby / Rust / Slack / SQLite / Swift / TypeScript / Ubuntu / Vim / VS / WebAssembly /
+    Windows / YAML / Zenn / Facebook
+  - ja-furigana lib 0.1.0-alpha.7 想定の loanwords 機能 (chunks 階層 4.7 で完全一致
+    lookup) と組み合わせて、 英単語 chunk を 1 unit として固定 + 完全一致 lookup
+- **検証ループ R12-R17 で jukugo 大幅拡充** (~+700 件、 4.5k 件超):
+  - R12-R14 の同形異音語 / 古典 / 医学 / 法律 / 食 / 植物 / 仏教 / 音楽 / 旧国名 /
+    IT / 歴史人物 / 文豪 / 経済 / 武道 / 二十四節気 / 生物 / 鉱物 / 当て字 を補強
+  - R15 着物 / 建築寺社 / 道具職人 / 天気詳細 / 儀式 / 日本史時代 / 武器 / 難読市町村
+  - R16 歌舞伎演目 / 神道神話 / 将棋 / 海産 / 道具 / 畔 phrase
+  - R17 戦国地名 / 城郭 / 金融 / 動物身体 phrase / 教育
+  - R18 純粋拡充 (4 領域 agent 並列): idioms +38 / weather +52 / clothes +34 / science +50
+- **検証ループ corpus に 47 件 promote** (61 → 108): R13-R17 の固定 case + R19 の
+  英単語 / 数字単位 / 出力ルール対応 expected
+- **`core/loanwords/it.toml` の seed 配置による初期検証**: ja-furigana lib 側
+  loanwords 機能の動作確認
+
+### Added (tooling)
+
+- **`tools/list_dups.py` 新規** — cross-file 重複検出レポート
+  - `core/jukugo/**/*.toml` + `core/works/**/*.toml` を走査
+  - 「⚠️ 異なる reading (X 件 - critical)」「同一 reading (X 件)」 の 2 セクションに
+    分けて markdown table で `STATS_DUPS.md` に書き出し
+  - PR レビューで「どのファイルのどの surface が重複してるか」 一目で分かる
+- **`STATS_DUPS.md` 新規** — auto-generate されるレポートファイル
+- **`tools/validate.py` 拡張**:
+  - `_normalize_kata()` ヘルパ + `check_jukugo_divergent_reading()` 追加 →
+    **異 reading の cross-file 重複を ERROR で CI fail 化** (一蓮托生 typo の
+    ような事故を構造的に防止)
+  - `validate_loanwords()` 追加 → `core/loanwords/**/*.toml` の ASCII / 全角英字
+    始まり surface + カタカナ reading を検証
+- **`tools/regen_stats.py` 拡張**: STATS.md サマリに「外来語 (`core/loanwords/*`)」
+  行追加 / `fmt_size` に MB 切替 (1024 KB 以上 → X.XX MB)
+- **`.github/workflows/regen-stats.yml` 拡張**: STATS.md と STATS_DUPS.md を両方
+  auto-regen (`tools/list_dups.py` のパスもトリガに含める)
+
+### Fixed
+
+- **「一蓮托生」 typo 修正** (`abstracts.toml` で イチレントクショウ →
+  イチレンタクショウ、 four_char.toml と divergent reading になっていた既存 bug)
+- **R18 idioms 拡充の 4 字熟語 12 件を `four_char.toml` に移動** (idioms agent が
+  「four_char に既存しないか」 ではなく「無ければ idioms に追加」 と解釈してしまった
+  誤配置の修正)
+
+### Changed (corpus 出力ルール変更追従)
+
+ja-furigana 0.1.0-alpha.7 で 「漢字含まない surface は reading をカタカナに統一」
+の新出力ルールが入ったため、 数字 / 記号 / ASCII を含む 4 件 expected を更新:
+
+- `5km` / `5KM` / `3GB` → ゴキロメートル / サンギガバイト
+- `3〜5本の傘が必要だ` → サンカラごほんのかさがひつようだ
+- `1日に2〜3回服用する` → いちにちにニカラさんかいふくようする
+- `50%以上の確率で...` → ゴジュッパーセントいじょうの...
+
+### Stats (master HEAD 時点)
+
+- 語彙辞書 (`core/`): 49,182 entries (~1.05 MB)
+  - 単漢字 (unihan) 43,749 / 熟語 (jukugo) 4,616 / 作品造語 (works) 72 /
+    外来語 (loanwords) 53 / 異体字 (compat) 436
+- エンジンルール (`rules/`): 256 entries (~30 KB)
+- corpus: 108 件 (全 pass)
+- cross-file 重複: divergent reading 0 件 / same reading 166 件
 
 ## [0.1.3] - 2026-05-07
 
