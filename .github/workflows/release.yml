@@ -95,12 +95,14 @@ jobs:
           git checkout -B master origin/master
           mkdir -p docs/release-diffs
           cp "$DIFF_FILE" "docs/release-diffs/${TAG}.md"
-          if git diff --quiet -- docs/release-diffs/; then
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          # untracked / new file も拾うため `git add` 先行 + `--cached` で staged
+          # diff を見る (`git diff` 単独だと untracked dir は検出されない)。
+          git add docs/release-diffs/
+          if git diff --cached --quiet; then
             echo "diff なし (既に commit 済み or 同 tag 再走)、 skip"
             exit 0
           fi
-          git config user.name "github-actions[bot]"
-          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
-          git add docs/release-diffs/
           git commit -m "docs(release-diffs): ${TAG} [skip stats]"
           git push origin HEAD:master
