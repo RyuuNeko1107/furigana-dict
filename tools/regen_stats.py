@@ -122,6 +122,30 @@ def fmt_size(n_bytes: int) -> str:
     return f"{mb:.2f} MB"
 
 
+def effective_bytes(path: Path) -> int:
+    """コメント行 (`#` 始まり) と空行を除いた UTF-8 bytes。
+
+    ja-furigana lib (`toml::from_str` + serde Deserialize) は parse 時に
+    コメント / 空行 / セクション区切り を破棄して、 entries の key→value
+    だけを `HashMap<String, String>` に乗せる。 STATS.md の disk file size
+    そのままだと利用者が memory 使用量を実態より大きく見積もる原因になる
+    ため、 ここでは parse 後 memory に届く部分に **近似** する形で
+    コメント / 空行を除外して bytes を数える。
+
+    inline comment は ja-furigana-dict 内で使われていないため考慮しない。
+    HashMap overhead や entries 以外 (`[meta]` 等) は本概算に含む — つまり
+    「parse 入力として実質的に意味を持つ bytes」 のオーダー測定。
+    """
+    total = 0
+    with open(path, "r", encoding="utf-8") as f:
+        for line in f:
+            stripped = line.strip()
+            if not stripped or stripped.startswith("#"):
+                continue
+            total += len(line.encode("utf-8"))
+    return total
+
+
 def gather_core() -> list[tuple[str, int, int]]:
     """core 配下の (relpath, count, size_bytes) を返す。
 
@@ -132,7 +156,7 @@ def gather_core() -> list[tuple[str, int, int]]:
     rows: list[tuple[str, int, int]] = []
     p = ROOT / "core/unihan.toml"
     if p.exists():
-        rows.append(("core/unihan.toml", count_entries(p), p.stat().st_size))
+        rows.append(("core/unihan.toml", count_entries(p), effective_bytes(p)))
 
     def collect(subdir: str) -> list[tuple[str, int, int]]:
         base = ROOT / "core" / subdir
@@ -141,7 +165,7 @@ def gather_core() -> list[tuple[str, int, int]]:
         out = []
         for p in sorted(base.glob("**/*.toml")):
             rel = p.relative_to(ROOT).as_posix()
-            out.append((rel, count_entries(p), p.stat().st_size))
+            out.append((rel, count_entries(p), effective_bytes(p)))
         out.sort(key=lambda r: -r[1])
         return out
 
@@ -150,10 +174,10 @@ def gather_core() -> list[tuple[str, int, int]]:
     rows.extend(collect("loanwords"))
     p = ROOT / "core/single_overrides.toml"
     if p.exists():
-        rows.append(("core/single_overrides.toml", count_entries(p), p.stat().st_size))
+        rows.append(("core/single_overrides.toml", count_entries(p), effective_bytes(p)))
     p = ROOT / "core/compat.toml"
     if p.exists():
-        rows.append(("core/compat.toml", count_entries(p), p.stat().st_size))
+        rows.append(("core/compat.toml", count_entries(p), effective_bytes(p)))
     return rows
 
 
@@ -167,14 +191,14 @@ def gather_rules() -> list[tuple]:
     for fname in flat_order:
         p = ROOT / "rules" / fname
         if p.exists():
-            rows.append((f"rules/{fname}", count_entries(p), p.stat().st_size))
+            rows.append((f"rules/{fname}", count_entries(p), effective_bytes(p)))
     for subdir, label in (("counters", "rules/counters/*.toml"),
                           ("context", "rules/context/*.toml")):
         files = sorted((ROOT / "rules" / subdir).glob("*.toml"))
         if not files:
             continue
         total_count = sum(count_entries(p) for p in files)
-        total_size = sum(p.stat().st_size for p in files)
+        total_size = sum(effective_bytes(p) for p in files)
         rows.append((label, total_count, total_size, len(files)))
     return rows
 
