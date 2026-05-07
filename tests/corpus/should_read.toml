@@ -796,3 +796,25 @@ input = "山々の風景"
 mode = "hiragana"
 expected = "やまやまのふうけい"
 note = "山々: 連濁対象外 (ヤ 行始まり) のため清音複製"
+
+# ---------------------------------------------------------------------------
+# 動詞 base form の jukugo 救済 (issue #13 / #14 / #17 を同時解決)
+# ---------------------------------------------------------------------------
+
+[[case]]
+input = "コーヒーを淹れる"
+mode = "hiragana"
+expected = "コーヒーをいれる"
+note = "淹れる (issue #13): unihan「淹=いれる」 修正 + jukugo「淹れる=イレル」 追加で送り仮名二重出力解消"
+
+[[case]]
+input = "ランプを点ける"
+mode = "hiragana"
+expected = "ランプをつける"
+note = "点ける (issue #14): jukugo「点ける=ツケル」 追加で「点+ける」 分解時の「テンケル」 誤読解消"
+
+[[case]]
+input = "蕨を摘む"
+mode = "hiragana"
+expected = "わらびをつむ"
+note = "摘む (issue #17): jukugo「摘む=ツム」 で IPADIC default「ツマム」 を override"
