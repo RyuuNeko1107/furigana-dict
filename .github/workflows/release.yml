@@ -72,7 +72,10 @@ jobs:
           fi
           echo "DIFF_FILE=$DIFF_FILE" >> "$GITHUB_ENV"
 
-      - name: GitHub Release に upload
+      - name: GitHub Release を draft で create + asset upload
+        # Immutable Releases policy 下では published release への asset 追加が
+        # 不可なので、 必ず draft で作って asset を全部入れてから後段で publish
+        # する。 published 後は immutable lock が発効する設計。
         uses: softprops/action-gh-release@v3
         with:
           files: |
@@ -81,6 +84,8 @@ jobs:
             ${{ env.DIFF_FILE }}
           tag_name: ${{ steps.tag.outputs.tag }}
           generate_release_notes: true
+          draft: true
+          make_latest: 'false'
 
       - name: docs/release-diffs/ に diff を archive commit
         # 各 release の diff を repo 内 docs/release-diffs/<tag>.md として
@@ -106,3 +111,15 @@ jobs:
           fi
           git commit -m "docs(release-diffs): ${TAG} [skip stats]"
           git push origin HEAD:master
+
+      - name: Release を publish (draft → false、 immutable lock 発効)
+        # docs/release-diffs/ commit まで成功したらここで draft を解除して publish。
+        # publish 後は asset 編集不可 (immutable) になる。 publish 順を最後に
+        # することで、 失敗時は draft が残って retry 可能 (asset 整合性確保)。
+        env:
+          GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+        run: |
+          TAG="${{ steps.tag.outputs.tag }}"
+          gh release edit "$TAG" --repo "${{ github.repository }}" \
+            --draft=false \
+            --latest
