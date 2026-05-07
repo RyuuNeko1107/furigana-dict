@@ -20,21 +20,25 @@ git に commit されている master HEAD の状態を基準にする。
 <!-- AUTO-GENERATED:SUMMARY:BEGIN -->
 | カテゴリ | エントリ数 | サイズ |
 |---|---:|---:|
-| **単漢字** (`core/unihan/*`、 水準別 5 ファイル) | **43,894** | **799 KB** |
-| **熟語** (`core/jukugo/*`、手動 PR メンテ) | **4,699** | **148 KB** |
-| **作品造語** (`core/works/*`、作品単位 1 ファイル) | **113** | **3.7 KB** |
-| **外来語** (`core/loanwords/*`、IT 用語等の英字 surface) | **160** | **5.0 KB** |
-| **単漢字 override** (`core/single_overrides.toml`、 issue #15 限定解) | **1** | **110 B** |
-| **異体字** (`core/compat.toml`) | **436** | **6.0 KB** |
-| **エンジンルール** (`rules/`) | **256** | **15 KB** |
+| [**単漢字**](#単漢字) (`core/unihan/*`、 水準別 5 ファイル) | **43,894** | **799 KB** |
+| [**熟語**](#熟語) (`core/jukugo/*`、手動 PR メンテ) | **4,699** | **148 KB** |
+| [**作品造語**](#作品造語) (`core/works/*`、作品単位 1 ファイル) | **113** | **3.7 KB** |
+| [**外来語**](#外来語) (`core/loanwords/*`、IT 用語等の英字 surface) | **160** | **5.0 KB** |
+| [**単漢字 override**](#単漢字-override) (`core/single_overrides.toml`、 issue #15 限定解) | **1** | **110 B** |
+| [**異体字**](#異体字) (`core/compat.toml`) | **436** | **6.0 KB** |
+| [**エンジンルール**](#エンジンルール) (`rules/`) | **256** | **15 KB** |
 | **合計** | **49,559** | **976 KB** |
 <!-- AUTO-GENERATED:SUMMARY:END -->
 
 ## 内訳
 
-### `core/` — 語彙辞書
+`core/` (語彙辞書) はカテゴリ別 sub-section に、 `rules/` (エンジンルール) は最後にまとめて。 summary 表のカテゴリ名クリックで該当 sub-section へジャンプ可。
 
 <!-- AUTO-GENERATED:CORE:BEGIN -->
+### 単漢字
+
+`core/unihan/*` — 水準別 5 ファイル。 lib の resolve_reading 6 段階で最終 fallback (Step 6) として参照される。 default reading review は使用頻度の高い `joyo.toml` を中心に。
+
 | ファイル | エントリ数 | サイズ | 用途 |
 |---|---:|---:|---|
 | [`core/unihan/joyo.toml`](core/unihan/joyo.toml) | 2,136 | 41 KB | 常用漢字 2,136 字 (文化庁 2010-11-30 改訂、 内閣告示) — 利用頻度高、 default reading review 対象 |
@@ -42,6 +46,14 @@ git に commit されている master HEAD の状態を基準にする。
 | [`core/unihan/jis_basic.toml`](core/unihan/jis_basic.toml) | 13,273 | 240 KB | JIS 基本 (CJK Basic Block U+4E00-U+9FFF のうち常用 / 人名用以外、 概ね JIS X 0208 第1+第2水準カバー) |
 | [`core/unihan/jis_supplement.toml`](core/unihan/jis_supplement.toml) | 4,826 | 83 KB | JIS 補助 (CJK Extension A + Compatibility Ideographs、 概ね JIS X 0213 第3+第4水準カバー) |
 | [`core/unihan/extension.toml`](core/unihan/extension.toml) | 22,804 | 418 KB | 拡張漢字 (CJK Extension B 以降、 表外字 / 中国専用字 / 異体字、 機械的扱い、 ほぼ lib lookup されない) |
+| **小計** (5 ファイル) | **43,894** | **799 KB** | |
+
+### 熟語
+
+`core/jukugo/*` — 手動 PR メンテのカテゴリ別 jukugo (≥ 2 字 surface)。 lib の Step 3 (jukugo lookup) で Lindera より優先採用。
+
+| ファイル | エントリ数 | サイズ | 用途 |
+|---|---:|---:|---|
 | [`core/jukugo/general.toml`](core/jukugo/general.toml) | 684 | 19 KB | 二字・三字の一般熟語 (季節 / 行事 / 慣用句 含む) |
 | [`core/jukugo/personal_names.toml`](core/jukugo/personal_names.toml) | 214 | 8.6 KB | 人名 (戦国 / 平安 / 江戸 / 明治大正 / 古典作家、現代私人除く) |
 | [`core/jukugo/colors.toml`](core/jukugo/colors.toml) | 201 | 6.0 KB | 色名 / 染色 / 模様 / 古典色 / 鉱物色 |
@@ -68,15 +80,46 @@ git に commit されている master HEAD の状態を基準にする。
 | [`core/jukugo/abstracts.toml`](core/jukugo/abstracts.toml) | 135 | 3.5 KB | 美意識 / 古典文学 / 仏教 / 儒教 / 思想 |
 | [`core/jukugo/finance.toml`](core/jukugo/finance.toml) | 97 | 3.5 KB | 経済金融 (商品 / 市場 / 会計 / 税務 / 保険) |
 | [`core/jukugo/railway.toml`](core/jukugo/railway.toml) | 73 | 2.4 KB | 鉄道専門用語 (線路 / 駅 / 運行 / 車両) |
+| **小計** (26 ファイル) | **4,699** | **148 KB** | |
+
+### 作品造語
+
+`core/works/*` — 作品単位 1 ファイル。 公式読みのみ採録、 出典コメント必須、 二次創作読み禁止のサブポリシー。
+
+| ファイル | エントリ数 | サイズ | 用途 |
+|---|---:|---:|---|
 | [`core/works/game/touhou.toml`](core/works/game/touhou.toml) | 71 | 2.4 KB | 東方Project (上海アリス幻樂団): キャラクター名 / 場所 / 用語 (公式読みベース) |
 | [`core/works/literature/genji_monogatari.toml`](core/works/literature/genji_monogatari.toml) | 42 | 1.3 KB | 源氏物語 (紫式部): 登場人物 / 巻名 / 場所 (平安中期、 古典定本ベース) |
+| **小計** (2 ファイル) | **113** | **3.7 KB** | |
+
+### 外来語
+
+`core/loanwords/*` — ASCII surface (英字始まり) を完全一致 lookup する別管理辞書。 case-fold + 全角→半角 正規化。
+
+| ファイル | エントリ数 | サイズ | 用途 |
+|---|---:|---:|---|
 | [`core/loanwords/it.toml`](core/loanwords/it.toml) | 160 | 5.0 KB | IT 用語 / プログラミング言語 / OSS / クラウドサービス / 技術企業 (ASCII surface) |
+
+### 単漢字 override
+
+`core/single_overrides.toml` — 1 字 surface に対する明示的 default 上書き ([issue #15](https://github.com/RyuuNeko1107/ja-furigana/issues/15) の限定解、 lib Step 4 で Lindera reading より優先)。
+
+| ファイル | エントリ数 | サイズ | 用途 |
+|---|---:|---:|---|
 | [`core/single_overrides.toml`](core/single_overrides.toml) | 1 | 110 B | 単漢字 default reading override (issue #15 の限定解) |
+
+### 異体字
+
+`core/compat.toml` — 異体字 → 標準字の正規化マッピング (例: 髙→高)。 reading lookup 前の前処理として lib が参照。
+
+| ファイル | エントリ数 | サイズ | 用途 |
+|---|---:|---:|---|
 | [`core/compat.toml`](core/compat.toml) | 436 | 6.0 KB | 異体字 → 標準字 (髙→高 等) |
-| **小計** | **49,303** | **962 KB** | (unihan: 5 ファイル / **43,894 件** / 799 KB ・ jukugo: 26 ファイル / **4,699 件** / 148 KB ・ works: 2 ファイル / **113 件** / 3.7 KB) |
 <!-- AUTO-GENERATED:CORE:END -->
 
-### `rules/` — エンジンルール
+### エンジンルール
+
+`rules/` — エンジン挙動 (助数詞 / 文脈 / 後処理 等) を制御するルール群。 lib コードに embed されるのではなく、 ここで宣言的に外部化されている。
 
 <!-- AUTO-GENERATED:RULES:BEGIN -->
 | ファイル | エントリ数 | サイズ | 内容 |

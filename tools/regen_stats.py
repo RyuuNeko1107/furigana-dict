@@ -238,27 +238,29 @@ def gen_summary(core_rows: list, rules_rows: list) -> str:
         + single_ov_size + compat_size + rules_size
     )
 
+    # 内訳の sub-section heading に anchor link でジャンプ可能にする。
+    # GitHub の auto-anchor は heading の slugify 結果。
     lines = [
         "| カテゴリ | エントリ数 | サイズ |",
         "|---|---:|---:|",
-        f"| **単漢字** (`core/unihan/*`、 水準別 5 ファイル) | **{unihan_count:,}** | **{fmt_size(unihan_size)}** |",
-        f"| **熟語** (`core/jukugo/*`、手動 PR メンテ) | **{jukugo_count:,}** | **{fmt_size(jukugo_size)}** |",
+        f"| [**単漢字**](#単漢字) (`core/unihan/*`、 水準別 5 ファイル) | **{unihan_count:,}** | **{fmt_size(unihan_size)}** |",
+        f"| [**熟語**](#熟語) (`core/jukugo/*`、手動 PR メンテ) | **{jukugo_count:,}** | **{fmt_size(jukugo_size)}** |",
     ]
     if works_count > 0:
         lines.append(
-            f"| **作品造語** (`core/works/*`、作品単位 1 ファイル) | **{works_count:,}** | **{fmt_size(works_size)}** |"
+            f"| [**作品造語**](#作品造語) (`core/works/*`、作品単位 1 ファイル) | **{works_count:,}** | **{fmt_size(works_size)}** |"
         )
     if loanwords_count > 0:
         lines.append(
-            f"| **外来語** (`core/loanwords/*`、IT 用語等の英字 surface) | **{loanwords_count:,}** | **{fmt_size(loanwords_size)}** |"
+            f"| [**外来語**](#外来語) (`core/loanwords/*`、IT 用語等の英字 surface) | **{loanwords_count:,}** | **{fmt_size(loanwords_size)}** |"
         )
     if single_ov_count > 0:
         lines.append(
-            f"| **単漢字 override** (`core/single_overrides.toml`、 issue #15 限定解) | **{single_ov_count:,}** | **{fmt_size(single_ov_size)}** |"
+            f"| [**単漢字 override**](#単漢字-override) (`core/single_overrides.toml`、 issue #15 限定解) | **{single_ov_count:,}** | **{fmt_size(single_ov_size)}** |"
         )
     lines.extend([
-        f"| **異体字** (`core/compat.toml`) | **{compat_count:,}** | **{fmt_size(compat_size)}** |",
-        f"| **エンジンルール** (`rules/`) | **{rules_count:,}** | **{fmt_size(rules_size)}** |",
+        f"| [**異体字**](#異体字) (`core/compat.toml`) | **{compat_count:,}** | **{fmt_size(compat_size)}** |",
+        f"| [**エンジンルール**](#エンジンルール) (`rules/`) | **{rules_count:,}** | **{fmt_size(rules_size)}** |",
         f"| **合計** | **{total_count:,}** | **{fmt_size(total_size)}** |",
     ])
     return "\n".join(lines) + "\n"
@@ -272,35 +274,77 @@ def link_rel(rel: str) -> str:
     return f"[`{rel}`]({rel})"
 
 
-def gen_core(core_rows: list) -> str:
-    lines = ["| ファイル | エントリ数 | サイズ | 用途 |", "|---|---:|---:|---|"]
-    for rel, count, size in core_rows:
+def _gen_subsection(
+    title: str,
+    note: str,
+    rows: list[tuple[str, int, int]],
+) -> str:
+    """1 カテゴリ分の sub-section (heading + 説明 + table) を返す。"""
+    lines = [f"### {title}", "", note, ""]
+    if not rows:
+        lines.append("(空)")
+        return "\n".join(lines) + "\n"
+    lines.append("| ファイル | エントリ数 | サイズ | 用途 |")
+    lines.append("|---|---:|---:|---|")
+    for rel, count, size in rows:
         desc = lookup_description(rel)
         lines.append(f"| {link_rel(rel)} | {count:,} | {fmt_size(size)} | {desc} |")
-    total_count = sum(r[1] for r in core_rows)
-    total_size = sum(r[2] for r in core_rows)
+    if len(rows) > 1:
+        n = sum(r[1] for r in rows)
+        s = fmt_size(sum(r[2] for r in rows))
+        lines.append(f"| **小計** ({len(rows)} ファイル) | **{n:,}** | **{s}** | |")
+    return "\n".join(lines) + "\n"
+
+
+def gen_core(core_rows: list) -> str:
+    """core 内訳をカテゴリ別 sub-section に分割して出力。
+
+    sub-section heading は GitHub auto-anchor に乗せやすいシンプルな日本語のみ
+    (`### 単漢字` 等)。 summary 表の link は `#単漢字` 等の同名 anchor を指す。
+    """
     unihan_rows = [r for r in core_rows if r[0].startswith("core/unihan/")]
     jukugo_rows = [r for r in core_rows if r[0].startswith("core/jukugo/")]
     works_rows = [r for r in core_rows if r[0].startswith("core/works/")]
-    breakdown_parts = []
-    if unihan_rows:
-        n = sum(r[1] for r in unihan_rows)
-        s = fmt_size(sum(r[2] for r in unihan_rows))
-        breakdown_parts.append(f"unihan: {len(unihan_rows)} ファイル / **{n:,} 件** / {s}")
-    if jukugo_rows:
-        n = sum(r[1] for r in jukugo_rows)
-        s = fmt_size(sum(r[2] for r in jukugo_rows))
-        breakdown_parts.append(f"jukugo: {len(jukugo_rows)} ファイル / **{n:,} 件** / {s}")
+    loanwords_rows = [r for r in core_rows if r[0].startswith("core/loanwords/")]
+    single_rows = [r for r in core_rows if r[0] == "core/single_overrides.toml"]
+    compat_rows = [r for r in core_rows if r[0] == "core/compat.toml"]
+
+    sections = []
+    sections.append(_gen_subsection(
+        "単漢字",
+        "`core/unihan/*` — 水準別 5 ファイル。 lib の resolve_reading 6 段階で最終 fallback (Step 6) として参照される。 default reading review は使用頻度の高い `joyo.toml` を中心に。",
+        unihan_rows,
+    ))
+    sections.append(_gen_subsection(
+        "熟語",
+        "`core/jukugo/*` — 手動 PR メンテのカテゴリ別 jukugo (≥ 2 字 surface)。 lib の Step 3 (jukugo lookup) で Lindera より優先採用。",
+        jukugo_rows,
+    ))
     if works_rows:
-        n = sum(r[1] for r in works_rows)
-        s = fmt_size(sum(r[2] for r in works_rows))
-        breakdown_parts.append(f"works: {len(works_rows)} ファイル / **{n:,} 件** / {s}")
-    breakdown = " ・ ".join(breakdown_parts)
-    lines.append(
-        f"| **小計** | **{total_count:,}** | **{fmt_size(total_size)}** | "
-        f"({breakdown}) |"
-    )
-    return "\n".join(lines) + "\n"
+        sections.append(_gen_subsection(
+            "作品造語",
+            "`core/works/*` — 作品単位 1 ファイル。 公式読みのみ採録、 出典コメント必須、 二次創作読み禁止のサブポリシー。",
+            works_rows,
+        ))
+    if loanwords_rows:
+        sections.append(_gen_subsection(
+            "外来語",
+            "`core/loanwords/*` — ASCII surface (英字始まり) を完全一致 lookup する別管理辞書。 case-fold + 全角→半角 正規化。",
+            loanwords_rows,
+        ))
+    if single_rows:
+        sections.append(_gen_subsection(
+            "単漢字 override",
+            "`core/single_overrides.toml` — 1 字 surface に対する明示的 default 上書き ([issue #15](https://github.com/RyuuNeko1107/ja-furigana/issues/15) の限定解、 lib Step 4 で Lindera reading より優先)。",
+            single_rows,
+        ))
+    sections.append(_gen_subsection(
+        "異体字",
+        "`core/compat.toml` — 異体字 → 標準字の正規化マッピング (例: 髙→高)。 reading lookup 前の前処理として lib が参照。",
+        compat_rows,
+    ))
+
+    return "\n".join(sections)
 
 
 def gen_rules(rules_rows: list) -> str:
