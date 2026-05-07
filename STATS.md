@@ -13,14 +13,14 @@ git に commit されている master HEAD の状態を基準にする。
 <!-- AUTO-GENERATED:SUMMARY:BEGIN -->
 | カテゴリ | エントリ数 | サイズ |
 |---|---:|---:|
-| **単漢字** (`core/unihan.toml`、seed) | **43,749** | **839 KB** |
-| **熟語** (`core/jukugo/*`、手動 PR メンテ) | **4,625** | **194 KB** |
-| **作品造語** (`core/works/*`、作品単位 1 ファイル) | **72** | **4.7 KB** |
+| **単漢字** (`core/unihan.toml`、seed) | **43,749** | **796 KB** |
+| **熟語** (`core/jukugo/*`、手動 PR メンテ) | **4,625** | **188 KB** |
+| **作品造語** (`core/works/*`、作品単位 1 ファイル) | **72** | **4.5 KB** |
 | **外来語** (`core/loanwords/*`、IT 用語等の英字 surface) | **53** | **3.2 KB** |
 | **単漢字 override** (`core/single_overrides.toml`、 issue #15 限定解) | **1** | **1.1 KB** |
 | **異体字** (`core/compat.toml`) | **436** | **6.3 KB** |
 | **エンジンルール** (`rules/`) | **256** | **30 KB** |
-| **合計** | **49,192** | **1.05 MB** |
+| **合計** | **49,192** | **1.01 MB** |
 <!-- AUTO-GENERATED:SUMMARY:END -->
 
 ## 内訳
@@ -30,36 +30,36 @@ git に commit されている master HEAD の状態を基準にする。
 <!-- AUTO-GENERATED:CORE:BEGIN -->
 | ファイル | エントリ数 | サイズ | 用途 |
 |---|---:|---:|---|
-| `core/unihan.toml` | 43,749 | 839 KB | 単漢字フォールバック (初期 seed + override 14 件) |
-| `core/jukugo/general.toml` | 792 | 26 KB | 二字・三字の一般熟語 (季節 / 行事 / 慣用句 含む) |
-| `core/jukugo/personal_names.toml` | 214 | 9.7 KB | 人名 (戦国 / 平安 / 江戸 / 明治大正 / 古典作家、現代私人除く) |
-| `core/jukugo/colors.toml` | 201 | 7.2 KB | 色名 / 染色 / 模様 / 古典色 / 鉱物色 |
-| `core/jukugo/proper_nouns.toml` | 195 | 10 KB | 固有名詞 (大学 / 中央官庁 / 元号 / 歴史的事象、PR 募集中) |
+| `core/unihan.toml` | 43,749 | 796 KB | 単漢字フォールバック (初期 seed + override 14 件) |
+| `core/jukugo/general.toml` | 792 | 25 KB | 二字・三字の一般熟語 (季節 / 行事 / 慣用句 含む) |
+| `core/jukugo/personal_names.toml` | 214 | 9.5 KB | 人名 (戦国 / 平安 / 江戸 / 明治大正 / 古典作家、現代私人除く) |
+| `core/jukugo/colors.toml` | 201 | 6.9 KB | 色名 / 染色 / 模様 / 古典色 / 鉱物色 |
+| `core/jukugo/proper_nouns.toml` | 195 | 9.8 KB | 固有名詞 (大学 / 中央官庁 / 元号 / 歴史的事象、PR 募集中) |
 | `core/jukugo/arts.toml` | 193 | 11 KB | 古典芸能 / 武道 / 茶華香 / 工芸 |
-| `core/jukugo/weather.toml` | 189 | 6.8 KB | 気象 / 天候 / 季語的気象 / 二十四節気 / 海洋気象 |
-| `core/jukugo/science.toml` | 186 | 7.3 KB | 自然科学 (天文 / 物理 / 化学 / 生物 / 地学) |
-| `core/jukugo/animals.toml` | 185 | 6.1 KB | 動植物 / 魚介 / 鳥 / 昆虫 / 茸 / 海藻の難読 |
+| `core/jukugo/weather.toml` | 189 | 6.5 KB | 気象 / 天候 / 季語的気象 / 二十四節気 / 海洋気象 |
+| `core/jukugo/science.toml` | 186 | 7.0 KB | 自然科学 (天文 / 物理 / 化学 / 生物 / 地学) |
+| `core/jukugo/animals.toml` | 185 | 5.9 KB | 動植物 / 魚介 / 鳥 / 昆虫 / 茸 / 海藻の難読 |
 | `core/jukugo/music.toml` | 180 | 10 KB | 音楽ジャンル / 楽典 / 楽器 / 演奏 / 音楽用語 |
-| `core/jukugo/clothes.toml` | 169 | 5.4 KB | 衣服 / 装束 / アクセサリー / 履物 |
-| `core/jukugo/religions.toml` | 165 | 6.7 KB | 神道 / 仏教 / キリスト教 / イスラム / 儀礼 |
-| `core/jukugo/place_names.toml` | 164 | 5.7 KB | 地名 (47 都道府県 / 主要都市 / 駅 / 寺社仏閣 / 観光地) |
-| `core/jukugo/body_parts.toml` | 163 | 5.7 KB | 体の部位 / 内臓 / 骨格 / 筋肉 / 神経 |
-| `core/jukugo/abstracts.toml` | 153 | 5.4 KB | 美意識 / 古典文学 / 仏教 / 儒教 / 思想 |
-| `core/jukugo/four_char.toml` | 153 | 7.1 KB | 四字熟語 (4 字 + 全 CJK 漢字) |
-| `core/jukugo/architecture.toml` | 151 | 9.1 KB | 建築 / 建造物 / 寺社建築 / 城郭 / 庭園 |
-| `core/jukugo/emotions.toml` | 150 | 5.2 KB | 感情 / 心理状態 / 性格 / 心情 |
-| `core/jukugo/specialized.toml` | 150 | 6.0 KB | 専門用語 (医学 / 軍事 / 法学 / 経済 / IT / 工学) |
-| `core/jukugo/politics.toml` | 149 | 5.3 KB | 政治 / 行政 / 立法 / 司法 / 国際関係 |
-| `core/jukugo/idioms.toml` | 148 | 8.6 KB | 慣用句 / ことわざ / 故事成語 (フレーズ単位) |
+| `core/jukugo/clothes.toml` | 169 | 5.1 KB | 衣服 / 装束 / アクセサリー / 履物 |
+| `core/jukugo/religions.toml` | 165 | 6.4 KB | 神道 / 仏教 / キリスト教 / イスラム / 儀礼 |
+| `core/jukugo/place_names.toml` | 164 | 5.6 KB | 地名 (47 都道府県 / 主要都市 / 駅 / 寺社仏閣 / 観光地) |
+| `core/jukugo/body_parts.toml` | 163 | 5.5 KB | 体の部位 / 内臓 / 骨格 / 筋肉 / 神経 |
+| `core/jukugo/abstracts.toml` | 153 | 5.2 KB | 美意識 / 古典文学 / 仏教 / 儒教 / 思想 |
+| `core/jukugo/four_char.toml` | 153 | 6.9 KB | 四字熟語 (4 字 + 全 CJK 漢字) |
+| `core/jukugo/architecture.toml` | 151 | 8.9 KB | 建築 / 建造物 / 寺社建築 / 城郭 / 庭園 |
+| `core/jukugo/emotions.toml` | 150 | 5.0 KB | 感情 / 心理状態 / 性格 / 心情 |
+| `core/jukugo/specialized.toml` | 150 | 5.8 KB | 専門用語 (医学 / 軍事 / 法学 / 経済 / IT / 工学) |
+| `core/jukugo/politics.toml` | 149 | 5.1 KB | 政治 / 行政 / 立法 / 司法 / 国際関係 |
+| `core/jukugo/idioms.toml` | 148 | 8.4 KB | 慣用句 / ことわざ / 故事成語 (フレーズ単位) |
 | `core/jukugo/literature.toml` | 148 | 10 KB | 古典文学 / 作品名 / 文学用語 / 詩歌 / 評論 |
-| `core/jukugo/foods.toml` | 145 | 4.9 KB | 食べ物 / 料理 / 和菓子 / 郷土料理 / 食材 / 調味料 |
-| `core/jukugo/sports.toml` | 145 | 9.6 KB | 近代スポーツ / 球技 / 陸上 / 水泳 / 体操 / 大会 |
-| `core/jukugo/vehicles.toml` | 137 | 5.1 KB | 乗り物 / 交通手段 / 船舶 / 航空 / 鉄道 |
-| `core/works/game/touhou.toml` | 72 | 4.7 KB | 東方Project (上海アリス幻樂団): キャラクター名 / 場所 / 用語 (公式読みベース) |
+| `core/jukugo/foods.toml` | 145 | 4.8 KB | 食べ物 / 料理 / 和菓子 / 郷土料理 / 食材 / 調味料 |
+| `core/jukugo/sports.toml` | 145 | 9.4 KB | 近代スポーツ / 球技 / 陸上 / 水泳 / 体操 / 大会 |
+| `core/jukugo/vehicles.toml` | 137 | 4.9 KB | 乗り物 / 交通手段 / 船舶 / 航空 / 鉄道 |
+| `core/works/game/touhou.toml` | 72 | 4.5 KB | 東方Project (上海アリス幻樂団): キャラクター名 / 場所 / 用語 (公式読みベース) |
 | `core/loanwords/it.toml` | 53 | 3.2 KB | IT 用語 / プログラミング言語 / OSS / クラウドサービス / 技術企業 (ASCII surface) |
 | `core/single_overrides.toml` | 1 | 1.1 KB | 単漢字 default reading override (issue #15 の限定解) |
 | `core/compat.toml` | 436 | 6.3 KB | 異体字 → 標準字 (髙→高 等) |
-| **小計** | **48,936** | **1.02 MB** | (jukugo: 24 ファイル / **4,625 件** / 194 KB ・ works: 1 ファイル / **72 件** / 4.7 KB) |
+| **小計** | **48,936** | **999 KB** | (jukugo: 24 ファイル / **4,625 件** / 188 KB ・ works: 1 ファイル / **72 件** / 4.5 KB) |
 <!-- AUTO-GENERATED:CORE:END -->
 
 ### `rules/` — エンジンルール
@@ -75,7 +75,7 @@ git に commit されている master HEAD の状態を基準にする。
 | `rules/numeric_phrases.toml` | 23 | 892 B | 数字を含む例外語句 (二十歳→ハタチ 等) |
 | `rules/postprocess.toml` | 2 | 1.4 KB | 後処理 regex 置換 (Step 7、mode 別) |
 | `rules/counters/*.toml` (7 ファイル) | 76 | 9.0 KB | 助数詞ルール (本 / 匹 / 個 / 年 / 月 / 日 …、連濁 / 促音化 / kana 末尾置換) |
-| `rules/context/*.toml` (3 ファイル) | 52 | 16 KB | 文脈依存読み (一日→ツイタチ/イチニチ 等) |
+| `rules/context/*.toml` (3 ファイル) | 52 | 15 KB | 文脈依存読み (一日→ツイタチ/イチニチ 等) |
 | **小計** | **256** | **30 KB** | |
 <!-- AUTO-GENERATED:RULES:END -->
 
