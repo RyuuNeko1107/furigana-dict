@@ -818,3 +818,19 @@ input = "蕨を摘む"
 mode = "hiragana"
 expected = "わらびをつむ"
 note = "摘む (issue #17): jukugo「摘む=ツム」 で IPADIC default「ツマム」 を override"
+
+# ---------------------------------------------------------------------------
+# 単漢字 unihan override 問題の phrase 救済 (issue #15)
+# ---------------------------------------------------------------------------
+
+[[case]]
+input = "鋸の歯"
+mode = "hiragana"
+expected = "のこぎりのは"
+note = "鋸 (issue #15): unihan「鋸=のこぎり」 が Lindera「ノコ」 に override される問題、 phrase 化で固定 (Phase 6+ で構造的解決を再検討)"
+
+[[case]]
+input = "土を耕す"
+mode = "hiragana"
+expected = "つちをたがやす"
+note = "土 (issue #15): unihan「土=つち」 が Lindera「ド」 に override される問題、 phrase 化で固定"
