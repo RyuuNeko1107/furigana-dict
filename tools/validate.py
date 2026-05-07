@@ -281,8 +281,11 @@ def check_cross_file_duplicates(
 
 
 # ─── 単一ファイル / 細分化サブディレクトリ どちらにも対応 ─────────────────
-def discover(base_dir: Path, name: str) -> list[Path]:
+def discover(base_dir: Path, name: str, *, recursive: bool = False) -> list[Path]:
     """`base_dir/name.toml` 単一ファイル → 無ければ `base_dir/name/*.toml` を返す。
+
+    `recursive=True` の場合は `base_dir/name/**/*.toml` で全階層スキャン
+    (ja-furigana 0.1.0-alpha.6 以降の loader と挙動を揃える)。
 
     どちらも存在しない場合は空リスト。両方ある場合は単一ファイルを優先
     (エンジン側 load_rules_dir / Dict::from_toml_dir と同じ挙動)。
@@ -291,9 +294,23 @@ def discover(base_dir: Path, name: str) -> list[Path]:
     if single.is_file():
         return [single]
     subdir = base_dir / name
-    if subdir.is_dir():
-        return sorted(p for p in subdir.iterdir() if p.is_file() and p.suffix == '.toml')
-    return []
+    if not subdir.is_dir():
+        return []
+    pattern = '**/*.toml' if recursive else '*.toml'
+    return sorted(p for p in subdir.glob(pattern) if p.is_file())
+
+
+def discover_works(core_dir: Path) -> list[Path]:
+    """`core/works/**/*.toml` を全階層再帰でスキャン。
+
+    works/ は作品単位 1 ファイル (例: `works/game/touhou.toml`) の
+    細分化構造を許容する。jukugo と同様に ≥2 字 surface の固定読み辞書として
+    扱う (load_jukugo に流す)。
+    """
+    works = core_dir / 'works'
+    if not works.is_dir():
+        return []
+    return sorted(p for p in works.glob('**/*.toml') if p.is_file())
 
 
 # ─── main ──────────────────────────────────────────────────────────────────
@@ -313,9 +330,12 @@ def main() -> int:
         unihan.update(validate_lookup(p, errors))
 
     # 各 (paths, validator) ペア。paths は単一ファイル or 細分化サブディレクトリ配下。
+    # jukugo / works はどちらも ≥2 字 surface の固定読み辞書として load_jukugo に流す
+    # (works は作品単位 1 ファイル、ja-furigana 0.1.0-alpha.6 以降の loader 全階層対応)。
     targets: list[tuple[list[Path], callable]] = [
-        (discover(core, 'jukugo'),           load_jukugo),
-        (discover(core, 'unihan'),           load_unihan),
+        (discover(core, 'jukugo', recursive=True), load_jukugo),
+        (discover_works(core),                     load_jukugo),
+        (discover(core, 'unihan'),                 load_unihan),
         ([core / 'compat.toml'],             lambda p: validate_compat(p, errors)),
         ([rules / 'numeric_phrases.toml'],   lambda p: validate_simple_entries(p, errors)),
         ([rules / 'symbols.toml'],           lambda p: validate_simple_entries(p, errors)),

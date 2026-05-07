@@ -14,9 +14,10 @@ git に commit されている master HEAD の状態を基準にする。
 |---|---:|---:|
 | **単漢字** (`core/unihan.toml`、本番 dump) | **43,749** | **796 KB** |
 | **熟語** (`core/jukugo/*`、手動 PR メンテ) | **4,351** | **175 KB** |
+| **作品造語** (`core/works/*`、作品単位 1 ファイル) | **72** | **4.4 KB** |
 | **異体字** (`core/compat.toml`) | **436** | **6.3 KB** |
 | **エンジンルール** (`rules/`) | **249** | **25 KB** |
-| **合計** | **48,785** | **1002 KB** |
+| **合計** | **48,857** | **1007 KB** |
 <!-- AUTO-GENERATED:SUMMARY:END -->
 
 配布物 (`furigana-dict-vX.Y.Z.tar.gz`) は gzip 圧縮後 ~226 KB (`v0.1.2` 時点)。
@@ -54,8 +55,9 @@ git に commit されている master HEAD の状態を基準にする。
 | `core/jukugo/science.toml` | 136 | 5.2 KB | 自然科学 (天文 / 物理 / 化学 / 生物 / 地学) |
 | `core/jukugo/clothes.toml` | 135 | 4.4 KB | 衣服 / 装束 / アクセサリー / 履物 |
 | `core/jukugo/idioms.toml` | 122 | 6.8 KB | 慣用句 / ことわざ / 故事成語 (フレーズ単位) |
+| `core/works/game/touhou.toml` | 72 | 4.4 KB | 東方Project (上海アリス幻樂団): キャラクター名 / 場所 / 用語 (公式読みベース) |
 | `core/compat.toml` | 436 | 6.3 KB | 異体字 → 標準字 (髙→高 等) |
-| **小計** | **48,536** | **978 KB** | (jukugo 内訳: 24 ファイル / **4,351 件** / 175 KB) |
+| **小計** | **48,608** | **982 KB** | (jukugo: 24 ファイル / **4,351 件** / 175 KB ・ works: 1 ファイル / **72 件** / 4.4 KB) |
 <!-- AUTO-GENERATED:CORE:END -->
 
 ### `rules/` — エンジンルール

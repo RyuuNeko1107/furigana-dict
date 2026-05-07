@@ -52,6 +52,7 @@ DESCRIPTIONS: dict[str, str] = {
     "core/jukugo/religions.toml": "神道 / 仏教 / キリスト教 / イスラム / 儀礼",
     "core/jukugo/music.toml": "音楽ジャンル / 楽典 / 楽器 / 演奏 / 音楽用語",
     "core/jukugo/sports.toml": "近代スポーツ / 球技 / 陸上 / 水泳 / 体操 / 大会",
+    "core/works/game/touhou.toml": "東方Project (上海アリス幻樂団): キャラクター名 / 場所 / 用語 (公式読みベース)",
     "rules/days.toml": "1〜31 日の特殊読み (1→ツイタチ 等)",
     "rules/scales.toml": "万 / 億 / 兆 / 京 等の大数スケール",
     "rules/units.toml": "SI 単位 (km / kg / mL …、case-insensitive)",
@@ -98,16 +99,30 @@ def fmt_size(n_bytes: int) -> str:
 
 
 def gather_core() -> list[tuple[str, int, int]]:
-    """core 配下の (relpath, count, size_bytes) を返す。 unihan → jukugo (件数 desc) → compat の順。"""
+    """core 配下の (relpath, count, size_bytes) を返す。
+
+    順序: unihan → jukugo (件数 desc) → works (件数 desc) → compat。
+    jukugo / works はどちらも全階層を再帰スキャン (ja-furigana 0.1.0-alpha.6
+    以降の loader と挙動を揃える)。
+    """
     rows: list[tuple[str, int, int]] = []
     p = ROOT / "core/unihan.toml"
     if p.exists():
         rows.append(("core/unihan.toml", count_entries(p), p.stat().st_size))
-    jukugo_data: list[tuple[str, int, int]] = []
-    for p in sorted((ROOT / "core/jukugo").glob("*.toml")):
-        jukugo_data.append((f"core/jukugo/{p.name}", count_entries(p), p.stat().st_size))
-    jukugo_data.sort(key=lambda r: -r[1])
-    rows.extend(jukugo_data)
+
+    def collect(subdir: str) -> list[tuple[str, int, int]]:
+        base = ROOT / "core" / subdir
+        if not base.is_dir():
+            return []
+        out = []
+        for p in sorted(base.glob("**/*.toml")):
+            rel = p.relative_to(ROOT).as_posix()
+            out.append((rel, count_entries(p), p.stat().st_size))
+        out.sort(key=lambda r: -r[1])
+        return out
+
+    rows.extend(collect("jukugo"))
+    rows.extend(collect("works"))
     p = ROOT / "core/compat.toml"
     if p.exists():
         rows.append(("core/compat.toml", count_entries(p), p.stat().st_size))
@@ -137,30 +152,39 @@ def gather_rules() -> list[tuple]:
 
 
 def gen_summary(core_rows: list, rules_rows: list) -> str:
-    """unihan / jukugo / compat / rules の 4 区分で表示 (性質が違うため分離)。"""
-    def slice_(prefix: str | tuple) -> tuple[int, int]:
-        if isinstance(prefix, str):
-            sub = [r for r in core_rows if r[0] == prefix or r[0].startswith(prefix)]
-        else:
-            sub = [r for r in core_rows if any(r[0] == p or r[0].startswith(p) for p in prefix)]
+    """unihan / jukugo / works / compat / rules の 5 区分で表示 (性質が違うため分離)。
+
+    works が空の場合は行を出さない (大半のケースで visual noise になるため)。
+    """
+    def slice_(prefix: str) -> tuple[int, int]:
+        sub = [r for r in core_rows if r[0] == prefix or r[0].startswith(prefix)]
         return sum(r[1] for r in sub), sum(r[2] for r in sub)
 
     unihan_count, unihan_size = slice_("core/unihan.toml")
     jukugo_count, jukugo_size = slice_("core/jukugo/")
+    works_count, works_size = slice_("core/works/")
     compat_count, compat_size = slice_("core/compat.toml")
     rules_count = sum(r[1] for r in rules_rows)
     rules_size = sum(r[2] for r in rules_rows)
-    total_count = unihan_count + jukugo_count + compat_count + rules_count
-    total_size = unihan_size + jukugo_size + compat_size + rules_size
-    return (
-        "| カテゴリ | エントリ数 | サイズ |\n"
-        "|---|---:|---:|\n"
-        f"| **単漢字** (`core/unihan.toml`、本番 dump) | **{unihan_count:,}** | **{fmt_size(unihan_size)}** |\n"
-        f"| **熟語** (`core/jukugo/*`、手動 PR メンテ) | **{jukugo_count:,}** | **{fmt_size(jukugo_size)}** |\n"
-        f"| **異体字** (`core/compat.toml`) | **{compat_count:,}** | **{fmt_size(compat_size)}** |\n"
-        f"| **エンジンルール** (`rules/`) | **{rules_count:,}** | **{fmt_size(rules_size)}** |\n"
-        f"| **合計** | **{total_count:,}** | **{fmt_size(total_size)}** |\n"
-    )
+    total_count = unihan_count + jukugo_count + works_count + compat_count + rules_count
+    total_size = unihan_size + jukugo_size + works_size + compat_size + rules_size
+
+    lines = [
+        "| カテゴリ | エントリ数 | サイズ |",
+        "|---|---:|---:|",
+        f"| **単漢字** (`core/unihan.toml`、本番 dump) | **{unihan_count:,}** | **{fmt_size(unihan_size)}** |",
+        f"| **熟語** (`core/jukugo/*`、手動 PR メンテ) | **{jukugo_count:,}** | **{fmt_size(jukugo_size)}** |",
+    ]
+    if works_count > 0:
+        lines.append(
+            f"| **作品造語** (`core/works/*`、作品単位 1 ファイル) | **{works_count:,}** | **{fmt_size(works_size)}** |"
+        )
+    lines.extend([
+        f"| **異体字** (`core/compat.toml`) | **{compat_count:,}** | **{fmt_size(compat_size)}** |",
+        f"| **エンジンルール** (`rules/`) | **{rules_count:,}** | **{fmt_size(rules_size)}** |",
+        f"| **合計** | **{total_count:,}** | **{fmt_size(total_size)}** |",
+    ])
+    return "\n".join(lines) + "\n"
 
 
 def gen_core(core_rows: list) -> str:
@@ -171,11 +195,20 @@ def gen_core(core_rows: list) -> str:
     total_count = sum(r[1] for r in core_rows)
     total_size = sum(r[2] for r in core_rows)
     jukugo_rows = [r for r in core_rows if r[0].startswith("core/jukugo/")]
-    jukugo_count = sum(r[1] for r in jukugo_rows)
-    jukugo_size = sum(r[2] for r in jukugo_rows)
+    works_rows = [r for r in core_rows if r[0].startswith("core/works/")]
+    breakdown_parts = []
+    if jukugo_rows:
+        n = sum(r[1] for r in jukugo_rows)
+        s = fmt_size(sum(r[2] for r in jukugo_rows))
+        breakdown_parts.append(f"jukugo: {len(jukugo_rows)} ファイル / **{n:,} 件** / {s}")
+    if works_rows:
+        n = sum(r[1] for r in works_rows)
+        s = fmt_size(sum(r[2] for r in works_rows))
+        breakdown_parts.append(f"works: {len(works_rows)} ファイル / **{n:,} 件** / {s}")
+    breakdown = " ・ ".join(breakdown_parts)
     lines.append(
         f"| **小計** | **{total_count:,}** | **{fmt_size(total_size)}** | "
-        f"(jukugo 内訳: {len(jukugo_rows)} ファイル / **{jukugo_count:,} 件** / {fmt_size(jukugo_size)}) |"
+        f"({breakdown}) |"
     )
     return "\n".join(lines) + "\n"
 
