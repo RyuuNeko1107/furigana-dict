@@ -556,6 +556,17 @@ expected = "いっぴき"
   - **CI で強制**: `validate.yml` の `test-append-only` job が PR trigger で
     `tools/check_test_append_only.py` を走らせ、 PR base との `*.test.toml`
     比較で case 削除 / reading 変更があれば fail する
+  - **どうしても無効化したい場合のみ**: 削除ではなく **コメント化 + DISABLED tag**
+    で抜け道を残せる (file に痕跡 + 理由が残るので後で復元可)。 PR review で reason
+    の妥当性を確認する運用:
+    ```toml
+    # DISABLED: 1個 -- kana_replace logic 変更で「いっこ」 → 「イチコ」、 一旦無効化
+    # [[test]]
+    # input = "1個"
+    # expected = "いっこ"
+    ```
+    `# DISABLED: <input> -- <reason>` 形式 (区切りは `--` `—` `―` のいずれか) を
+    file 内のどこかに 1 行入れれば、 その input を持つ case の削除は CI で許容される
 - 順序は問わない (TOML array なので並べ替えは不要、 PR で挿入位置を調整しなくて OK)
 
 ### なぜ別 file (`*.test.toml`)?

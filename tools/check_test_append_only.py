@@ -26,10 +26,16 @@ from __future__ import annotations
 
 import argparse
 import io
+import re
 import subprocess  # nosec B404 — fixed argv list, shell=False で安全
 import sys
 import tomllib
 from pathlib import Path
+
+# `# DISABLED: <input> -- <reason>` 形式で test case を明示的に無効化する
+# 抜け道。 削除と違って file 内に痕跡 + 理由が残るので、 後で復元可能。
+# CI 強制を破る回り道として利用可、 ただし PR review で reason 妥当性を確認。
+DISABLED_RE = re.compile(r"^\s*#\s*DISABLED:\s*(.+?)\s*(?:--|—|―).*$")
 
 ROOT = Path(__file__).resolve().parent.parent
 
@@ -65,6 +71,20 @@ def file_at(ref: str, path: str) -> str | None:
     if result.returncode != 0:
         return None
     return result.stdout
+
+
+def disabled_inputs(content: str) -> set[str]:
+    """raw text 内に `# DISABLED: <input> -- <reason>` コメントがある input set。
+
+    削除と違ってコメントとして file に残るため、 後で復元可能。 PR review で
+    reason の妥当性を確認する運用前提。
+    """
+    out: set[str] = set()
+    for line in content.splitlines():
+        m = DISABLED_RE.match(line)
+        if m:
+            out.add(m.group(1).strip())
+    return out
 
 
 def parse_cases(content: str) -> set[tuple[str, str]]:
@@ -124,7 +144,9 @@ def main() -> None:
     # 共通 file の case 比較
     for path in sorted(base_files & head_files_set):
         base_cases = parse_cases(file_at(args.base_ref, path) or "")
-        head_cases = parse_cases((ROOT / path).read_text(encoding="utf-8"))
+        head_content = (ROOT / path).read_text(encoding="utf-8")
+        head_cases = parse_cases(head_content)
+        head_disabled = disabled_inputs(head_content)
         # base に居て HEAD に居ない (= 削除 or reading 変更) を検出
         missing = base_cases - head_cases
         if not missing:
@@ -132,6 +154,9 @@ def main() -> None:
         # reading 変更 (input は同じだが expected 違い) も別途 detect
         head_inputs = {inp for inp, _ in head_cases}
         for inp, exp in sorted(missing):
+            # `# DISABLED: <input> -- <reason>` でコメント化されていれば許容
+            if inp in head_disabled:
+                continue
             if inp in head_inputs:
                 head_exp = next(e for i, e in head_cases if i == inp)
                 violations.append(
