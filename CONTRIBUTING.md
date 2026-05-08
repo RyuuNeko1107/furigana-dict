@@ -553,6 +553,9 @@ expected = "いっぴき"
 - **append-only**: 既存 case の **削除は禁止** (= regression 検出のロックなので
   削除すると過去の不具合が再発しうる)。 reading が変わった場合は新 case を追加して、
   古い case は残す方針 (= corpus と同じく「過去通せたものは通し続ける」)
+  - **CI で強制**: `validate.yml` の `test-append-only` job が PR trigger で
+    `tools/check_test_append_only.py` を走らせ、 PR base との `*.test.toml`
+    比較で case 削除 / reading 変更があれば fail する
 - 順序は問わない (TOML array なので並べ替えは不要、 PR で挿入位置を調整しなくて OK)
 
 ### なぜ別 file (`*.test.toml`)?

@@ -68,3 +68,26 @@ jobs:
         # 既存 script は subprocess.run(argv list, shell=False) のみで clean。
         # -ii = MEDIUM 以上を fail 対象に、 -ll = LOW 以上 confidence を表示。
         run: bandit -r tools/ -ii -ll
+
+  test-append-only:
+    name: Inline test append-only 検査
+    if: github.event_name == 'pull_request'
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v6
+        with:
+          # PR base ref を取得するため fetch-depth=0
+          fetch-depth: 0
+
+      - uses: actions/setup-python@v6
+        with:
+          python-version: '3.11'
+
+      - name: append-only check (PR base との *.test.toml 比較)
+        # CONTRIBUTING.md の append-only ポリシー (= 既存 inline test case を
+        # 削除しない、 reading 変更も削除と同等) を構造的に強制。
+        # PR base の master 状態と HEAD を tools/check_test_append_only.py で比較し、
+        # case が削除 / 変更されていたら CI fail。
+        run: |
+          python3 tools/check_test_append_only.py \
+            --base-ref "${{ github.event.pull_request.base.sha }}"
