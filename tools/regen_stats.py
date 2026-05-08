@@ -176,9 +176,9 @@ def gather_core() -> list[tuple[str, int, int]]:
     jukugo / works はどちらも全階層を再帰スキャン (ja-furigana 0.1.0-alpha.6
     以降の loader と挙動を揃える)。
     """
-    rows: list[tuple[str, int, int]] = []
+    rows: list[tuple[str, int, int, int]] = []
 
-    def collect(subdir: str, sort_by_count: bool = True) -> list[tuple[str, int, int]]:
+    def collect(subdir: str, sort_by_count: bool = True) -> list[tuple[str, int, int, int]]:
         base = ROOT / "core" / subdir
         if not base.is_dir():
             return []
@@ -189,7 +189,7 @@ def gather_core() -> list[tuple[str, int, int]]:
             if p.name == "_genre.toml" or p.name.endswith(".test.toml"):
                 continue
             rel = p.relative_to(ROOT).as_posix()
-            out.append((rel, count_entries(p), count_inline_tests(p)))
+            out.append((rel, count_entries(p), count_inline_tests(p), effective_bytes(p)))
         if sort_by_count:
             out.sort(key=lambda r: -r[1])
         return out
@@ -211,15 +211,19 @@ def gather_core() -> list[tuple[str, int, int]]:
     rows.extend(collect("loanwords"))
     p = ROOT / "core/single_overrides.toml"
     if p.exists():
-        rows.append(("core/single_overrides.toml", count_entries(p), count_inline_tests(p)))
+        rows.append(
+            ("core/single_overrides.toml", count_entries(p), count_inline_tests(p), effective_bytes(p))
+        )
     p = ROOT / "core/compat.toml"
     if p.exists():
-        rows.append(("core/compat.toml", count_entries(p), count_inline_tests(p)))
+        rows.append(
+            ("core/compat.toml", count_entries(p), count_inline_tests(p), effective_bytes(p))
+        )
     return rows
 
 
 def gather_rules() -> list[tuple]:
-    """rules 配下を返す。3-tuple (single file) または 4-tuple (集約された subdir) が混在。"""
+    """rules 配下の (rel, count, test_count, size) または (label, count, test, size, file_count)。"""
     rows: list[tuple] = []
     flat_order = (
         "days.toml", "scales.toml", "units.toml", "symbols.toml",
@@ -228,15 +232,21 @@ def gather_rules() -> list[tuple]:
     for fname in flat_order:
         p = ROOT / "rules" / fname
         if p.exists():
-            rows.append((f"rules/{fname}", count_entries(p), count_inline_tests(p)))
+            rows.append(
+                (f"rules/{fname}", count_entries(p), count_inline_tests(p), effective_bytes(p))
+            )
     for subdir, label in (("counters", "rules/counters/*.toml"),
                           ("context", "rules/context/*.toml")):
-        files = sorted((ROOT / "rules" / subdir).glob("*.toml"))
+        files = sorted(
+            p for p in (ROOT / "rules" / subdir).glob("*.toml")
+            if not p.name.endswith(".test.toml") and p.name != "_genre.toml"
+        )
         if not files:
             continue
         total_count = sum(count_entries(p) for p in files)
         total_test = sum(count_inline_tests(p) for p in files)
-        rows.append((label, total_count, total_test, len(files)))
+        total_size = sum(effective_bytes(p) for p in files)
+        rows.append((label, total_count, total_test, total_size, len(files)))
     return rows
 
 
@@ -245,51 +255,51 @@ def gen_summary(core_rows: list, rules_rows: list) -> str:
 
     works が空の場合は行を出さない (大半のケースで visual noise になるため)。
     """
-    def slice_(prefix: str) -> tuple[int, int]:
+    def slice_(prefix: str) -> tuple[int, int, int]:
         sub = [r for r in core_rows if r[0] == prefix or r[0].startswith(prefix)]
-        return sum(r[1] for r in sub), sum(r[2] for r in sub)
+        return (
+            sum(r[1] for r in sub),
+            sum(r[2] for r in sub),
+            sum(r[3] for r in sub),
+        )
 
-    unihan_count, unihan_test = slice_("core/unihan/")
-    jukugo_count, jukugo_test = slice_("core/jukugo/")
-    works_count, works_test = slice_("core/works/")
-    loanwords_count, loanwords_test = slice_("core/loanwords/")
-    single_ov_count, single_ov_test = slice_("core/single_overrides.toml")
-    compat_count, compat_test = slice_("core/compat.toml")
-    rules_count = sum(r[1] for r in rules_rows)
-    rules_test = sum(r[2] for r in rules_rows)
-    total_count = (
-        unihan_count + jukugo_count + works_count + loanwords_count
-        + single_ov_count + compat_count + rules_count
-    )
-    total_test = (
-        unihan_test + jukugo_test + works_test + loanwords_test
-        + single_ov_test + compat_test + rules_test
-    )
+    unihan_c, unihan_t, unihan_s = slice_("core/unihan/")
+    jukugo_c, jukugo_t, jukugo_s = slice_("core/jukugo/")
+    works_c, works_t, works_s = slice_("core/works/")
+    loanwords_c, loanwords_t, loanwords_s = slice_("core/loanwords/")
+    single_ov_c, single_ov_t, single_ov_s = slice_("core/single_overrides.toml")
+    compat_c, compat_t, compat_s = slice_("core/compat.toml")
+    rules_c = sum(r[1] for r in rules_rows)
+    rules_t = sum(r[2] for r in rules_rows)
+    rules_s = sum(r[3] for r in rules_rows)
+    total_c = unihan_c + jukugo_c + works_c + loanwords_c + single_ov_c + compat_c + rules_c
+    total_t = unihan_t + jukugo_t + works_t + loanwords_t + single_ov_t + compat_t + rules_t
+    total_s = unihan_s + jukugo_s + works_s + loanwords_s + single_ov_s + compat_s + rules_s
 
     # 内訳の sub-section heading に anchor link でジャンプ可能にする。
     # GitHub の auto-anchor は heading の slugify 結果。
     lines = [
-        "| カテゴリ | エントリ数 | テスト |",
-        "|---|---:|---:|",
-        f"| [**単漢字**](#単漢字) (`core/unihan/*`、 水準別 5 ファイル) | **{unihan_count:,}** | **{fmt_test(unihan_test)}** |",
-        f"| [**熟語**](#熟語) (`core/jukugo/*`、手動 PR メンテ) | **{jukugo_count:,}** | **{fmt_test(jukugo_test)}** |",
+        "| カテゴリ | エントリ数 | テスト | サイズ |",
+        "|---|---:|---:|---:|",
+        f"| [**単漢字**](#単漢字) (`core/unihan/*`、 水準別 5 ファイル) | **{unihan_c:,}** | **{fmt_test(unihan_t)}** | **{fmt_size(unihan_s)}** |",
+        f"| [**熟語**](#熟語) (`core/jukugo/*`、手動 PR メンテ) | **{jukugo_c:,}** | **{fmt_test(jukugo_t)}** | **{fmt_size(jukugo_s)}** |",
     ]
-    if works_count > 0:
+    if works_c > 0:
         lines.append(
-            f"| [**作品造語**](#作品造語) (`core/works/*`、作品単位 1 ファイル) | **{works_count:,}** | **{fmt_test(works_test)}** |"
+            f"| [**作品造語**](#作品造語) (`core/works/*`、作品単位 1 ファイル) | **{works_c:,}** | **{fmt_test(works_t)}** | **{fmt_size(works_s)}** |"
         )
-    if loanwords_count > 0:
+    if loanwords_c > 0:
         lines.append(
-            f"| [**外来語**](#外来語) (`core/loanwords/*`、IT 用語等の英字 surface) | **{loanwords_count:,}** | **{fmt_test(loanwords_test)}** |"
+            f"| [**外来語**](#外来語) (`core/loanwords/*`、IT 用語等の英字 surface) | **{loanwords_c:,}** | **{fmt_test(loanwords_t)}** | **{fmt_size(loanwords_s)}** |"
         )
-    if single_ov_count > 0:
+    if single_ov_c > 0:
         lines.append(
-            f"| [**単漢字 override**](#単漢字-override) (`core/single_overrides.toml`、 issue #15 限定解) | **{single_ov_count:,}** | **{fmt_test(single_ov_test)}** |"
+            f"| [**単漢字 override**](#単漢字-override) (`core/single_overrides.toml`、 issue #15 限定解) | **{single_ov_c:,}** | **{fmt_test(single_ov_t)}** | **{fmt_size(single_ov_s)}** |"
         )
     lines.extend([
-        f"| [**異体字**](#異体字) (`core/compat.toml`) | **{compat_count:,}** | **{fmt_test(compat_test)}** |",
-        f"| [**エンジンルール**](#エンジンルール) (`rules/`) | **{rules_count:,}** | **{fmt_test(rules_test)}** |",
-        f"| **合計** | **{total_count:,}** | **{fmt_test(total_test)}** |",
+        f"| [**異体字**](#異体字) (`core/compat.toml`) | **{compat_c:,}** | **{fmt_test(compat_t)}** | **{fmt_size(compat_s)}** |",
+        f"| [**エンジンルール**](#エンジンルール) (`rules/`) | **{rules_c:,}** | **{fmt_test(rules_t)}** | **{fmt_size(rules_s)}** |",
+        f"| **合計** | **{total_c:,}** | **{fmt_test(total_t)}** | **{fmt_size(total_s)}** |",
     ])
     return "\n".join(lines) + "\n"
 
@@ -312,15 +322,20 @@ def _gen_subsection(
     if not rows:
         lines.append("(空)")
         return "\n".join(lines) + "\n"
-    lines.append("| ファイル | エントリ数 | テスト | 用途 |")
-    lines.append("|---|---:|---:|---|")
-    for rel, count, tcount in rows:
+    lines.append("| ファイル | エントリ数 | テスト | サイズ | 用途 |")
+    lines.append("|---|---:|---:|---:|---|")
+    for rel, count, tcount, size in rows:
         desc = lookup_description(rel)
-        lines.append(f"| {link_rel(rel)} | {count:,} | {fmt_test(tcount)} | {desc} |")
+        lines.append(
+            f"| {link_rel(rel)} | {count:,} | {fmt_test(tcount)} | {fmt_size(size)} | {desc} |"
+        )
     if len(rows) > 1:
         n = sum(r[1] for r in rows)
         t = sum(r[2] for r in rows)
-        lines.append(f"| **小計** ({len(rows)} ファイル) | **{n:,}** | **{fmt_test(t)}** | |")
+        s = sum(r[3] for r in rows)
+        lines.append(
+            f"| **小計** ({len(rows)} ファイル) | **{n:,}** | **{fmt_test(t)}** | **{fmt_size(s)}** | |"
+        )
     return "\n".join(lines) + "\n"
 
 
@@ -358,15 +373,15 @@ def _gen_grouped_section(
         return "\n".join(lines) + "\n"
 
     # group by genre dir 名
-    groups: dict[str, list[tuple[str, int, int]]] = {}
-    for rel, count, tcount in rows:
+    groups: dict[str, list[tuple[str, int, int, int]]] = {}
+    for rel, count, tcount, size in rows:
         # rel = "core/<subdir>/<genre>/<file>.toml" or "core/<subdir>/<file>.toml"
         parts = rel.split("/")
         if len(parts) >= 4:
             genre_key = parts[2]
         else:
             genre_key = ""  # flat 直下
-        groups.setdefault(genre_key, []).append((rel, count, tcount))
+        groups.setdefault(genre_key, []).append((rel, count, tcount, size))
 
     # genre meta を読んで order でソート
     ordered: list[tuple[int, str, dict | None, list]] = []
@@ -382,8 +397,9 @@ def _gen_grouped_section(
 
     overall_n = sum(r[1] for r in rows)
     overall_t = sum(r[2] for r in rows)
+    overall_s = sum(r[3] for r in rows)
     lines.append(
-        f"**合計**: {overall_n:,} 件 / テスト {fmt_test(overall_t)} (genre {len(ordered)} 区分)"
+        f"**合計**: {overall_n:,} 件 / テスト {fmt_test(overall_t)} / {fmt_size(overall_s)} (genre {len(ordered)} 区分)"
     )
     lines.append("")
 
@@ -408,16 +424,19 @@ def _gen_grouped_section(
         else:
             lines.append(f"`core/{base_subdir}/` 直下 — {len(files)} ファイル")
         lines.append("")
-        lines.append("| ファイル | エントリ数 | テスト | 用途 |")
-        lines.append("|---|---:|---:|---|")
-        for rel, count, tcount in files:
+        lines.append("| ファイル | エントリ数 | テスト | サイズ | 用途 |")
+        lines.append("|---|---:|---:|---:|---|")
+        for rel, count, tcount, size in files:
             d = lookup_description(rel)
-            lines.append(f"| {link_rel(rel)} | {count:,} | {fmt_test(tcount)} | {d} |")
+            lines.append(
+                f"| {link_rel(rel)} | {count:,} | {fmt_test(tcount)} | {fmt_size(size)} | {d} |"
+            )
         if len(files) > 1:
             n = sum(r[1] for r in files)
             t = sum(r[2] for r in files)
+            s = sum(r[3] for r in files)
             lines.append(
-                f"| **小計** ({len(files)} ファイル) | **{n:,}** | **{fmt_test(t)}** | |"
+                f"| **小計** ({len(files)} ファイル) | **{n:,}** | **{fmt_test(t)}** | **{fmt_size(s)}** | |"
             )
         lines.append("")
 
@@ -480,19 +499,26 @@ def gen_core(core_rows: list) -> str:
 
 
 def gen_rules(rules_rows: list) -> str:
-    lines = ["| ファイル | エントリ数 | テスト | 内容 |", "|---|---:|---:|---|"]
+    lines = [
+        "| ファイル | エントリ数 | テスト | サイズ | 内容 |",
+        "|---|---:|---:|---:|---|",
+    ]
     for row in rules_rows:
-        rel, count, tcount = row[0], row[1], row[2]
+        rel, count, tcount, size = row[0], row[1], row[2], row[3]
         desc = lookup_description(rel)
-        if len(row) > 3:
-            display = f"{link_rel(rel)} ({row[3]} ファイル)"
+        # row[4] が file_count (集約 subdir のみ)
+        if len(row) > 4:
+            display = f"{link_rel(rel)} ({row[4]} ファイル)"
         else:
             display = link_rel(rel)
-        lines.append(f"| {display} | {count:,} | {fmt_test(tcount)} | {desc} |")
+        lines.append(
+            f"| {display} | {count:,} | {fmt_test(tcount)} | {fmt_size(size)} | {desc} |"
+        )
     total_count = sum(r[1] for r in rules_rows)
     total_test = sum(r[2] for r in rules_rows)
+    total_size = sum(r[3] for r in rules_rows)
     lines.append(
-        f"| **小計** | **{total_count:,}** | **{fmt_test(total_test)}** | |"
+        f"| **小計** | **{total_count:,}** | **{fmt_test(total_test)}** | **{fmt_size(total_size)}** | |"
     )
     return "\n".join(lines) + "\n"
 

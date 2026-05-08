@@ -45,10 +45,26 @@ jobs:
           ls -lh "$ARCHIVE"
           echo "ARCHIVE=$ARCHIVE" >> "$GITHUB_ENV"
 
+      - name: tests.tar.gz パッケージング (inline test 専用、 別配布)
+        run: |
+          TAG="${{ steps.tag.outputs.tag }}"
+          TESTS_ARCHIVE="furigana-dict-${TAG}-tests.tar.gz"
+          # *.test.toml だけを集めて別 tar に。 利用者の lib runtime には不要、
+          # 他言語実装や regression test 共有のために別 asset として release page
+          # で download 可能にする。 file が無い場合は空 tar を作って整合維持。
+          if find core rules -name '*.test.toml' -print -quit | grep -q .; then
+            find core rules -name '*.test.toml' -print0 | tar -czf "$TESTS_ARCHIVE" --null -T -
+          else
+            tar -czf "$TESTS_ARCHIVE" --files-from=/dev/null
+          fi
+          ls -lh "$TESTS_ARCHIVE"
+          echo "TESTS_ARCHIVE=$TESTS_ARCHIVE" >> "$GITHUB_ENV"
+
       - name: sha256 計算
         run: |
           sha256sum "$ARCHIVE" > "${ARCHIVE}.sha256"
-          cat "${ARCHIVE}.sha256"
+          sha256sum "$TESTS_ARCHIVE" > "${TESTS_ARCHIVE}.sha256"
+          cat "${ARCHIVE}.sha256" "${TESTS_ARCHIVE}.sha256"
 
       - uses: actions/setup-python@v6
         with:
@@ -83,6 +99,8 @@ jobs:
           files: |
             ${{ env.ARCHIVE }}
             ${{ env.ARCHIVE }}.sha256
+            ${{ env.TESTS_ARCHIVE }}
+            ${{ env.TESTS_ARCHIVE }}.sha256
             ${{ env.DIFF_FILE }}
           tag_name: ${{ steps.tag.outputs.tag }}
           generate_release_notes: true

@@ -1,32 +1,19 @@
 # inline test for rules/counters/objects.toml
 #
-# この file は CI 専用 (tools/test_inline_rules.py が binary で input → expected
-# を検証する)。 lib loader は file 名 match で skip + release tar からも
-# `--exclude='*.test.toml'` で除外、 runtime memory には載らない。
+# CI 専用 (tools/test_inline_rules.py が binary で input → expected を検証)。
+# lib loader は file 名 match で skip + release tar からも exclude、
+# runtime memory には載らない。
 #
-# 1 PR で複数 case を末尾追記する慣行で merge 競合を最小化 (TOML array なので
-# 順序は意味なし、 衝突しても両方残せば OK)。
+# **書き方ルール (merge 競合対策)**:
+# - 1 case 1 行 (TOML inline-table、 末尾追記で衝突最小化)
+# - 削除しない、 追加のみ (append-only) — 既存 case を消す PR は CI で fail
+# - 順序は問わない (TOML array なので並べ替えは不要)
 
-[[test]]
-input = "1本"
-expected = "いっぽん"
-
-[[test]]
-input = "3本"
-expected = "さんぼん"
-
-[[test]]
-input = "5本"
-expected = "ごほん"
-
-[[test]]
-input = "1匹"
-expected = "いっぴき"
-
-[[test]]
-input = "3匹"
-expected = "さんびき"
-
-[[test]]
-input = "1冊"
-expected = "いっさつ"
+test = [
+  { input = "1本", expected = "いっぽん" },
+  { input = "3本", expected = "さんぼん" },
+  { input = "5本", expected = "ごほん" },
+  { input = "1匹", expected = "いっぴき" },
+  { input = "3匹", expected = "さんびき" },
+  { input = "1冊", expected = "いっさつ" },
+]

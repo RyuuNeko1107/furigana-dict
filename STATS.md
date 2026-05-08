@@ -3,10 +3,13 @@
 辞書ボリュームのスナップショット。配布時の中身を一覧で把握する用。
 git に commit されている master HEAD の状態を基準にする。
 
-> **「テスト」 列は隣接 `<name>.test.toml` 内 `[[test]]` 件数** (`tools/regen_stats.py`
-> の `count_inline_tests`)。 0 件 (test file 無し) は `-` で表示。 inline test は
-> CI 専用 (release tar から exclude、 lib runtime memory にも乗らない)、 contributor が
-> 「この file が担当する変換」 を file 単位で lock するためのもの。
+> 列の意味:
+> - **エントリ数**: `[entries]` / `[map]` / `[[rule]]` 等の有効レコード数
+> - **テスト**: 隣接 `<name>.test.toml` 内 `[[test]]` 件数 (0 は `-`)。 inline test は CI 専用
+>   (release tar から exclude、 lib runtime memory にも乗らない)、 contributor が file 単位で
+>   「この file が担当する変換」 を lock する用途
+> - **サイズ**: コメント / 空行を除いた実効サイズ (lib `toml::from_str` は parse 時にコメントを
+>   drop するので、 disk file size より memory load の概算に近い)
 
 > サマリ・件数表は `.github/workflows/regen-stats.yml` で **GitHub 側で自動再生成 + auto-commit**。
 > contributor は TOML を編集して push (or PR merge) するだけで OK。
@@ -16,16 +19,16 @@ git に commit されている master HEAD の状態を基準にする。
 ## サマリ
 
 <!-- AUTO-GENERATED:SUMMARY:BEGIN -->
-| カテゴリ | エントリ数 | テスト |
-|---|---:|---:|
-| [**単漢字**](#単漢字) (`core/unihan/*`、 水準別 5 ファイル) | **43,484** | **-** |
-| [**熟語**](#熟語) (`core/jukugo/*`、手動 PR メンテ) | **4,692** | **-** |
-| [**作品造語**](#作品造語) (`core/works/*`、作品単位 1 ファイル) | **113** | **-** |
-| [**外来語**](#外来語) (`core/loanwords/*`、IT 用語等の英字 surface) | **160** | **-** |
-| [**単漢字 override**](#単漢字-override) (`core/single_overrides.toml`、 issue #15 限定解) | **1** | **-** |
-| [**異体字**](#異体字) (`core/compat.toml`) | **435** | **-** |
-| [**エンジンルール**](#エンジンルール) (`rules/`) | **256** | **6** |
-| **合計** | **49,141** | **6** |
+| カテゴリ | エントリ数 | テスト | サイズ |
+|---|---:|---:|---:|
+| [**単漢字**](#単漢字) (`core/unihan/*`、 水準別 5 ファイル) | **43,484** | **-** | **791 KB** |
+| [**熟語**](#熟語) (`core/jukugo/*`、手動 PR メンテ) | **4,692** | **-** | **148 KB** |
+| [**作品造語**](#作品造語) (`core/works/*`、作品単位 1 ファイル) | **113** | **-** | **3.7 KB** |
+| [**外来語**](#外来語) (`core/loanwords/*`、IT 用語等の英字 surface) | **160** | **-** | **5.0 KB** |
+| [**単漢字 override**](#単漢字-override) (`core/single_overrides.toml`、 issue #15 限定解) | **1** | **-** | **110 B** |
+| [**異体字**](#異体字) (`core/compat.toml`) | **435** | **-** | **6.0 KB** |
+| [**エンジンルール**](#エンジンルール) (`rules/`) | **256** | **6** | **14 KB** |
+| **合計** | **49,141** | **6** | **968 KB** |
 <!-- AUTO-GENERATED:SUMMARY:END -->
 
 ## 内訳
@@ -37,20 +40,20 @@ git に commit されている master HEAD の状態を基準にする。
 
 `core/unihan/*` — 水準別 5 ファイル。 lib の resolve_reading 6 段階で最終 fallback (Step 6) として参照される。 default reading review は使用頻度の高い `joyo.toml` を中心に。
 
-| ファイル | エントリ数 | テスト | 用途 |
-|---|---:|---:|---|
-| [`core/unihan/joyo.toml`](core/unihan/joyo.toml) | 2,136 | - | 常用漢字 2,136 字 (文化庁 2010-11-30 改訂、 内閣告示) — 利用頻度高、 default reading review 対象 |
-| [`core/unihan/jinmeiyou.toml`](core/unihan/jinmeiyou.toml) | 639 | - | 人名用漢字 (法務省、 子の名に使用可、 常用と重複する 128 字を除外した残り 855 字) |
-| [`core/unihan/jis_basic.toml`](core/unihan/jis_basic.toml) | 13,081 | - | JIS 基本 (CJK Basic Block U+4E00-U+9FFF のうち常用 / 人名用以外、 概ね JIS X 0208 第1+第2水準カバー) |
-| [`core/unihan/jis_supplement.toml`](core/unihan/jis_supplement.toml) | 4,825 | - | JIS 補助 (CJK Extension A + Compatibility Ideographs、 概ね JIS X 0213 第3+第4水準カバー) |
-| [`core/unihan/extension.toml`](core/unihan/extension.toml) | 22,803 | - | 拡張漢字 (CJK Extension B 以降、 表外字 / 中国専用字 / 異体字、 機械的扱い、 ほぼ lib lookup されない) |
-| **小計** (5 ファイル) | **43,484** | **-** | |
+| ファイル | エントリ数 | テスト | サイズ | 用途 |
+|---|---:|---:|---:|---|
+| [`core/unihan/joyo.toml`](core/unihan/joyo.toml) | 2,136 | - | 41 KB | 常用漢字 2,136 字 (文化庁 2010-11-30 改訂、 内閣告示) — 利用頻度高、 default reading review 対象 |
+| [`core/unihan/jinmeiyou.toml`](core/unihan/jinmeiyou.toml) | 639 | - | 12 KB | 人名用漢字 (法務省、 子の名に使用可、 常用と重複する 128 字を除外した残り 855 字) |
+| [`core/unihan/jis_basic.toml`](core/unihan/jis_basic.toml) | 13,081 | - | 236 KB | JIS 基本 (CJK Basic Block U+4E00-U+9FFF のうち常用 / 人名用以外、 概ね JIS X 0208 第1+第2水準カバー) |
+| [`core/unihan/jis_supplement.toml`](core/unihan/jis_supplement.toml) | 4,825 | - | 83 KB | JIS 補助 (CJK Extension A + Compatibility Ideographs、 概ね JIS X 0213 第3+第4水準カバー) |
+| [`core/unihan/extension.toml`](core/unihan/extension.toml) | 22,803 | - | 418 KB | 拡張漢字 (CJK Extension B 以降、 表外字 / 中国専用字 / 異体字、 機械的扱い、 ほぼ lib lookup されない) |
+| **小計** (5 ファイル) | **43,484** | **-** | **791 KB** | |
 
 ### 熟語
 
 `core/jukugo/<genre>/*` — 手動 PR メンテのジャンル別 jukugo (≥ 2 字 surface)。 lib の Step 3 (jukugo lookup) で Lindera より優先採用。 各 genre dir の `_genre.toml` がカテゴリ description を持つ。
 
-**合計**: 4,692 件 / テスト - (genre 6 区分)
+**合計**: 4,692 件 / テスト - / 148 KB (genre 6 区分)
 
 #### 自然・生命
 
@@ -58,15 +61,15 @@ git に commit されている master HEAD の状態を基準にする。
 
 `core/jukugo/nature/` — 6 ファイル
 
-| ファイル | エントリ数 | テスト | 用途 |
-|---|---:|---:|---|
-| [`core/jukugo/nature/weather.toml`](core/jukugo/nature/weather.toml) | 189 | - | 気象 / 天候 / 季語的気象 / 二十四節気 / 海洋気象 |
-| [`core/jukugo/nature/science.toml`](core/jukugo/nature/science.toml) | 184 | - | 自然科学 (天文 / 物理 / 化学 / 生物 / 地学) |
-| [`core/jukugo/nature/animals.toml`](core/jukugo/nature/animals.toml) | 183 | - | 動植物 / 魚介 / 鳥 / 昆虫 / 茸 / 海藻の難読 |
-| [`core/jukugo/nature/place_names.toml`](core/jukugo/nature/place_names.toml) | 164 | - | 地名 (47 都道府県 / 主要都市 / 駅 / 寺社仏閣 / 観光地) |
-| [`core/jukugo/nature/body_parts.toml`](core/jukugo/nature/body_parts.toml) | 163 | - | 体の部位 / 内臓 / 骨格 / 筋肉 / 神経 |
-| [`core/jukugo/nature/foods.toml`](core/jukugo/nature/foods.toml) | 145 | - | 食べ物 / 料理 / 和菓子 / 郷土料理 / 食材 / 調味料 |
-| **小計** (6 ファイル) | **1,028** | **-** | |
+| ファイル | エントリ数 | テスト | サイズ | 用途 |
+|---|---:|---:|---:|---|
+| [`core/jukugo/nature/weather.toml`](core/jukugo/nature/weather.toml) | 189 | - | 5.3 KB | 気象 / 天候 / 季語的気象 / 二十四節気 / 海洋気象 |
+| [`core/jukugo/nature/science.toml`](core/jukugo/nature/science.toml) | 184 | - | 5.3 KB | 自然科学 (天文 / 物理 / 化学 / 生物 / 地学) |
+| [`core/jukugo/nature/animals.toml`](core/jukugo/nature/animals.toml) | 183 | - | 4.8 KB | 動植物 / 魚介 / 鳥 / 昆虫 / 茸 / 海藻の難読 |
+| [`core/jukugo/nature/place_names.toml`](core/jukugo/nature/place_names.toml) | 164 | - | 5.2 KB | 地名 (47 都道府県 / 主要都市 / 駅 / 寺社仏閣 / 観光地) |
+| [`core/jukugo/nature/body_parts.toml`](core/jukugo/nature/body_parts.toml) | 163 | - | 5.0 KB | 体の部位 / 内臓 / 骨格 / 筋肉 / 神経 |
+| [`core/jukugo/nature/foods.toml`](core/jukugo/nature/foods.toml) | 145 | - | 4.2 KB | 食べ物 / 料理 / 和菓子 / 郷土料理 / 食材 / 調味料 |
+| **小計** (6 ファイル) | **1,028** | **-** | **30 KB** | |
 
 #### 人文・芸術
 
@@ -74,16 +77,16 @@ git に commit されている master HEAD の状態を基準にする。
 
 `core/jukugo/humanities/` — 7 ファイル
 
-| ファイル | エントリ数 | テスト | 用途 |
-|---|---:|---:|---|
-| [`core/jukugo/humanities/arts.toml`](core/jukugo/humanities/arts.toml) | 184 | - | 古典芸能 / 武道 / 茶華香 / 工芸 |
-| [`core/jukugo/humanities/music.toml`](core/jukugo/humanities/music.toml) | 177 | - | 音楽ジャンル / 楽典 / 楽器 / 演奏 / 音楽用語 |
-| [`core/jukugo/humanities/literature.toml`](core/jukugo/humanities/literature.toml) | 176 | - | 古典文学 / 作品名 / 文学用語 / 詩歌 / 評論 |
-| [`core/jukugo/humanities/religions.toml`](core/jukugo/humanities/religions.toml) | 165 | - | 神道 / 仏教 / キリスト教 / イスラム / 儀礼 |
-| [`core/jukugo/humanities/emotions.toml`](core/jukugo/humanities/emotions.toml) | 149 | - | 感情 / 心理状態 / 性格 / 心情 |
-| [`core/jukugo/humanities/idioms.toml`](core/jukugo/humanities/idioms.toml) | 148 | - | 慣用句 / ことわざ / 故事成語 (フレーズ単位) |
-| [`core/jukugo/humanities/abstracts.toml`](core/jukugo/humanities/abstracts.toml) | 135 | - | 美意識 / 古典文学 / 仏教 / 儒教 / 思想 |
-| **小計** (7 ファイル) | **1,134** | **-** | |
+| ファイル | エントリ数 | テスト | サイズ | 用途 |
+|---|---:|---:|---:|---|
+| [`core/jukugo/humanities/arts.toml`](core/jukugo/humanities/arts.toml) | 184 | - | 5.4 KB | 古典芸能 / 武道 / 茶華香 / 工芸 |
+| [`core/jukugo/humanities/music.toml`](core/jukugo/humanities/music.toml) | 177 | - | 5.4 KB | 音楽ジャンル / 楽典 / 楽器 / 演奏 / 音楽用語 |
+| [`core/jukugo/humanities/literature.toml`](core/jukugo/humanities/literature.toml) | 176 | - | 5.9 KB | 古典文学 / 作品名 / 文学用語 / 詩歌 / 評論 |
+| [`core/jukugo/humanities/religions.toml`](core/jukugo/humanities/religions.toml) | 165 | - | 4.9 KB | 神道 / 仏教 / キリスト教 / イスラム / 儀礼 |
+| [`core/jukugo/humanities/emotions.toml`](core/jukugo/humanities/emotions.toml) | 149 | - | 3.9 KB | 感情 / 心理状態 / 性格 / 心情 |
+| [`core/jukugo/humanities/idioms.toml`](core/jukugo/humanities/idioms.toml) | 148 | - | 7.6 KB | 慣用句 / ことわざ / 故事成語 (フレーズ単位) |
+| [`core/jukugo/humanities/abstracts.toml`](core/jukugo/humanities/abstracts.toml) | 135 | - | 3.5 KB | 美意識 / 古典文学 / 仏教 / 儒教 / 思想 |
+| **小計** (7 ファイル) | **1,134** | **-** | **37 KB** | |
 
 #### 社会・制度
 
@@ -91,13 +94,13 @@ git に commit されている master HEAD の状態を基準にする。
 
 `core/jukugo/society/` — 4 ファイル
 
-| ファイル | エントリ数 | テスト | 用途 |
-|---|---:|---:|---|
-| [`core/jukugo/society/politics.toml`](core/jukugo/society/politics.toml) | 149 | - | 政治 / 行政 / 立法 / 司法 / 国際関係 |
-| [`core/jukugo/society/specialized.toml`](core/jukugo/society/specialized.toml) | 144 | - | 専門用語 (医学 / 軍事 / 法学 / 経済 / IT / 工学) |
-| [`core/jukugo/society/sports.toml`](core/jukugo/society/sports.toml) | 144 | - | 近代スポーツ / 球技 / 陸上 / 水泳 / 体操 / 大会 |
-| [`core/jukugo/society/finance.toml`](core/jukugo/society/finance.toml) | 97 | - | 経済金融 (商品 / 市場 / 会計 / 税務 / 保険) |
-| **小計** (4 ファイル) | **534** | **-** | |
+| ファイル | エントリ数 | テスト | サイズ | 用途 |
+|---|---:|---:|---:|---|
+| [`core/jukugo/society/politics.toml`](core/jukugo/society/politics.toml) | 149 | - | 4.1 KB | 政治 / 行政 / 立法 / 司法 / 国際関係 |
+| [`core/jukugo/society/specialized.toml`](core/jukugo/society/specialized.toml) | 144 | - | 4.5 KB | 専門用語 (医学 / 軍事 / 法学 / 経済 / IT / 工学) |
+| [`core/jukugo/society/sports.toml`](core/jukugo/society/sports.toml) | 144 | - | 4.6 KB | 近代スポーツ / 球技 / 陸上 / 水泳 / 体操 / 大会 |
+| [`core/jukugo/society/finance.toml`](core/jukugo/society/finance.toml) | 97 | - | 3.5 KB | 経済金融 (商品 / 市場 / 会計 / 税務 / 保険) |
+| **小計** (4 ファイル) | **534** | **-** | **17 KB** | |
 
 #### 固有名詞
 
@@ -105,11 +108,11 @@ git に commit されている master HEAD の状態を基準にする。
 
 `core/jukugo/proper/` — 2 ファイル
 
-| ファイル | エントリ数 | テスト | 用途 |
-|---|---:|---:|---|
-| [`core/jukugo/proper/personal_names.toml`](core/jukugo/proper/personal_names.toml) | 209 | - | 人名 (戦国 / 平安 / 江戸 / 明治大正 / 古典作家、現代私人除く) |
-| [`core/jukugo/proper/proper_nouns.toml`](core/jukugo/proper/proper_nouns.toml) | 188 | - | 固有名詞 (大学 / 中央官庁 / 元号 / 歴史的事象、PR 募集中) |
-| **小計** (2 ファイル) | **397** | **-** | |
+| ファイル | エントリ数 | テスト | サイズ | 用途 |
+|---|---:|---:|---:|---|
+| [`core/jukugo/proper/personal_names.toml`](core/jukugo/proper/personal_names.toml) | 209 | - | 8.4 KB | 人名 (戦国 / 平安 / 江戸 / 明治大正 / 古典作家、現代私人除く) |
+| [`core/jukugo/proper/proper_nouns.toml`](core/jukugo/proper/proper_nouns.toml) | 188 | - | 8.2 KB | 固有名詞 (大学 / 中央官庁 / 元号 / 歴史的事象、PR 募集中) |
+| **小計** (2 ファイル) | **397** | **-** | **17 KB** | |
 
 #### 物体・工芸
 
@@ -117,14 +120,14 @@ git に commit されている master HEAD の状態を基準にする。
 
 `core/jukugo/objects/` — 5 ファイル
 
-| ファイル | エントリ数 | テスト | 用途 |
-|---|---:|---:|---|
-| [`core/jukugo/objects/colors.toml`](core/jukugo/objects/colors.toml) | 201 | - | 色名 / 染色 / 模様 / 古典色 / 鉱物色 |
-| [`core/jukugo/objects/vehicles.toml`](core/jukugo/objects/vehicles.toml) | 174 | - | 乗り物 / 交通手段 / 船舶 / 航空 / 鉄道 |
-| [`core/jukugo/objects/clothes.toml`](core/jukugo/objects/clothes.toml) | 167 | - | 衣服 / 装束 / アクセサリー / 履物 |
-| [`core/jukugo/objects/architecture.toml`](core/jukugo/objects/architecture.toml) | 147 | - | 建築 / 建造物 / 寺社建築 / 城郭 / 庭園 |
-| [`core/jukugo/objects/railway.toml`](core/jukugo/objects/railway.toml) | 73 | - | 鉄道専門用語 (線路 / 駅 / 運行 / 車両) |
-| **小計** (5 ファイル) | **762** | **-** | |
+| ファイル | エントリ数 | テスト | サイズ | 用途 |
+|---|---:|---:|---:|---|
+| [`core/jukugo/objects/colors.toml`](core/jukugo/objects/colors.toml) | 201 | - | 6.0 KB | 色名 / 染色 / 模様 / 古典色 / 鉱物色 |
+| [`core/jukugo/objects/vehicles.toml`](core/jukugo/objects/vehicles.toml) | 174 | - | 5.7 KB | 乗り物 / 交通手段 / 船舶 / 航空 / 鉄道 |
+| [`core/jukugo/objects/clothes.toml`](core/jukugo/objects/clothes.toml) | 167 | - | 4.5 KB | 衣服 / 装束 / アクセサリー / 履物 |
+| [`core/jukugo/objects/architecture.toml`](core/jukugo/objects/architecture.toml) | 147 | - | 4.1 KB | 建築 / 建造物 / 寺社建築 / 城郭 / 庭園 |
+| [`core/jukugo/objects/railway.toml`](core/jukugo/objects/railway.toml) | 73 | - | 2.4 KB | 鉄道専門用語 (線路 / 駅 / 運行 / 車両) |
+| **小計** (5 ファイル) | **762** | **-** | **23 KB** | |
 
 #### 基本・構造
 
@@ -132,18 +135,18 @@ git に commit されている master HEAD の状態を基準にする。
 
 `core/jukugo/basic/` — 2 ファイル
 
-| ファイル | エントリ数 | テスト | 用途 |
-|---|---:|---:|---|
-| [`core/jukugo/basic/general.toml`](core/jukugo/basic/general.toml) | 684 | - | 二字・三字の一般熟語 (季節 / 行事 / 慣用句 含む) |
-| [`core/jukugo/basic/four_char.toml`](core/jukugo/basic/four_char.toml) | 153 | - | 四字熟語 (4 字 + 全 CJK 漢字) |
-| **小計** (2 ファイル) | **837** | **-** | |
+| ファイル | エントリ数 | テスト | サイズ | 用途 |
+|---|---:|---:|---:|---|
+| [`core/jukugo/basic/general.toml`](core/jukugo/basic/general.toml) | 684 | - | 19 KB | 二字・三字の一般熟語 (季節 / 行事 / 慣用句 含む) |
+| [`core/jukugo/basic/four_char.toml`](core/jukugo/basic/four_char.toml) | 153 | - | 6.4 KB | 四字熟語 (4 字 + 全 CJK 漢字) |
+| **小計** (2 ファイル) | **837** | **-** | **25 KB** | |
 
 
 ### 作品造語
 
 `core/works/<medium>/*` — 媒体 (game / literature 等) ごとに 1 作品 1 ファイル。 公式読みのみ採録、 出典コメント必須、 二次創作読み禁止のサブポリシー。
 
-**合計**: 113 件 / テスト - (genre 2 区分)
+**合計**: 113 件 / テスト - / 3.7 KB (genre 2 区分)
 
 #### ゲーム
 
@@ -151,9 +154,9 @@ git に commit されている master HEAD の状態を基準にする。
 
 `core/works/game/` — 1 ファイル
 
-| ファイル | エントリ数 | テスト | 用途 |
-|---|---:|---:|---|
-| [`core/works/game/touhou.toml`](core/works/game/touhou.toml) | 71 | - | 東方Project (上海アリス幻樂団): キャラクター名 / 場所 / 用語 (公式読みベース) |
+| ファイル | エントリ数 | テスト | サイズ | 用途 |
+|---|---:|---:|---:|---|
+| [`core/works/game/touhou.toml`](core/works/game/touhou.toml) | 71 | - | 2.4 KB | 東方Project (上海アリス幻樂団): キャラクター名 / 場所 / 用語 (公式読みベース) |
 
 #### 文学
 
@@ -161,34 +164,34 @@ git に commit されている master HEAD の状態を基準にする。
 
 `core/works/literature/` — 1 ファイル
 
-| ファイル | エントリ数 | テスト | 用途 |
-|---|---:|---:|---|
-| [`core/works/literature/genji_monogatari.toml`](core/works/literature/genji_monogatari.toml) | 42 | - | 源氏物語 (紫式部): 登場人物 / 巻名 / 場所 (平安中期、 古典定本ベース) |
+| ファイル | エントリ数 | テスト | サイズ | 用途 |
+|---|---:|---:|---:|---|
+| [`core/works/literature/genji_monogatari.toml`](core/works/literature/genji_monogatari.toml) | 42 | - | 1.3 KB | 源氏物語 (紫式部): 登場人物 / 巻名 / 場所 (平安中期、 古典定本ベース) |
 
 
 ### 外来語
 
 `core/loanwords/*` — ASCII surface (英字始まり) を完全一致 lookup する別管理辞書。 case-fold + 全角→半角 正規化。
 
-| ファイル | エントリ数 | テスト | 用途 |
-|---|---:|---:|---|
-| [`core/loanwords/it.toml`](core/loanwords/it.toml) | 160 | - | IT 用語 / プログラミング言語 / OSS / クラウドサービス / 技術企業 (ASCII surface) |
+| ファイル | エントリ数 | テスト | サイズ | 用途 |
+|---|---:|---:|---:|---|
+| [`core/loanwords/it.toml`](core/loanwords/it.toml) | 160 | - | 5.0 KB | IT 用語 / プログラミング言語 / OSS / クラウドサービス / 技術企業 (ASCII surface) |
 
 ### 単漢字 override
 
 `core/single_overrides.toml` — 1 字 surface に対する明示的 default 上書き ([issue #15](https://github.com/RyuuNeko1107/ja-furigana/issues/15) の限定解、 lib Step 4 で Lindera reading より優先)。
 
-| ファイル | エントリ数 | テスト | 用途 |
-|---|---:|---:|---|
-| [`core/single_overrides.toml`](core/single_overrides.toml) | 1 | - | 単漢字 default reading override (issue #15 の限定解) |
+| ファイル | エントリ数 | テスト | サイズ | 用途 |
+|---|---:|---:|---:|---|
+| [`core/single_overrides.toml`](core/single_overrides.toml) | 1 | - | 110 B | 単漢字 default reading override (issue #15 の限定解) |
 
 ### 異体字
 
 `core/compat.toml` — 異体字 → 標準字の正規化マッピング (例: 髙→高)。 reading lookup 前の前処理として lib が参照。
 
-| ファイル | エントリ数 | テスト | 用途 |
-|---|---:|---:|---|
-| [`core/compat.toml`](core/compat.toml) | 435 | - | 異体字 → 標準字 (髙→高 等) |
+| ファイル | エントリ数 | テスト | サイズ | 用途 |
+|---|---:|---:|---:|---|
+| [`core/compat.toml`](core/compat.toml) | 435 | - | 6.0 KB | 異体字 → 標準字 (髙→高 等) |
 <!-- AUTO-GENERATED:CORE:END -->
 
 ### エンジンルール
@@ -196,18 +199,18 @@ git に commit されている master HEAD の状態を基準にする。
 `rules/` — エンジン挙動 (助数詞 / 文脈 / 後処理 等) を制御するルール群。 lib コードに embed されるのではなく、 ここで宣言的に外部化されている。
 
 <!-- AUTO-GENERATED:RULES:BEGIN -->
-| ファイル | エントリ数 | テスト | 内容 |
-|---|---:|---:|---|
-| [`rules/days.toml`](rules/days.toml) | 31 | - | 1〜31 日の特殊読み (1→ツイタチ 等) |
-| [`rules/scales.toml`](rules/scales.toml) | 19 | - | 万 / 億 / 兆 / 京 等の大数スケール |
-| [`rules/units.toml`](rules/units.toml) | 17 | - | SI 単位 (km / kg / mL …、case-insensitive) |
-| [`rules/symbols.toml`](rules/symbols.toml) | 10 | - | 記号読み (+ / − / % / ‰ …) |
-| [`rules/latin.toml`](rules/latin.toml) | 26 | - | ラテン文字読み (A→エー …) |
-| [`rules/numeric_phrases.toml`](rules/numeric_phrases.toml) | 23 | - | 数字を含む例外語句 (二十歳→ハタチ 等) |
-| [`rules/postprocess.toml`](rules/postprocess.toml) | 2 | - | 後処理 regex 置換 (Step 7、mode 別) |
-| [`rules/counters/*.toml`](rules/counters/) (8 ファイル) | 76 | 6 | 助数詞ルール (本 / 匹 / 個 / 年 / 月 / 日 …、連濁 / 促音化 / kana 末尾置換) |
-| [`rules/context/*.toml`](rules/context/) (3 ファイル) | 52 | - | 文脈依存読み (一日→ツイタチ/イチニチ 等) |
-| **小計** | **256** | **6** | |
+| ファイル | エントリ数 | テスト | サイズ | 内容 |
+|---|---:|---:|---:|---|
+| [`rules/days.toml`](rules/days.toml) | 31 | - | 844 B | 1〜31 日の特殊読み (1→ツイタチ 等) |
+| [`rules/scales.toml`](rules/scales.toml) | 19 | - | 848 B | 万 / 億 / 兆 / 京 等の大数スケール |
+| [`rules/units.toml`](rules/units.toml) | 17 | - | 631 B | SI 単位 (km / kg / mL …、case-insensitive) |
+| [`rules/symbols.toml`](rules/symbols.toml) | 10 | - | 223 B | 記号読み (+ / − / % / ‰ …) |
+| [`rules/latin.toml`](rules/latin.toml) | 26 | - | 436 B | ラテン文字読み (A→エー …) |
+| [`rules/numeric_phrases.toml`](rules/numeric_phrases.toml) | 23 | - | 701 B | 数字を含む例外語句 (二十歳→ハタチ 等) |
+| [`rules/postprocess.toml`](rules/postprocess.toml) | 2 | - | 160 B | 後処理 regex 置換 (Step 7、mode 別) |
+| [`rules/counters/*.toml`](rules/counters/) (7 ファイル) | 76 | 6 | 3.9 KB | 助数詞ルール (本 / 匹 / 個 / 年 / 月 / 日 …、連濁 / 促音化 / kana 末尾置換) |
+| [`rules/context/*.toml`](rules/context/) (3 ファイル) | 52 | - | 6.6 KB | 文脈依存読み (一日→ツイタチ/イチニチ 等) |
+| **小計** | **256** | **6** | **14 KB** | |
 <!-- AUTO-GENERATED:RULES:END -->
 
 (rules はエントリ数より「ルールパターン数」の方が意味的に正しいが、ここでは
