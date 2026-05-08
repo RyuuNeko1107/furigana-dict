@@ -148,7 +148,7 @@ def gather_qa_at_tag(tag: str) -> dict:
 
 
 def parse_entries(content: str) -> dict[str, str]:
-    """TOML 文字列から entries (key→string value) を取り出す。
+    """TOML 文字列から entries (key→string value) を取り出す (diff 比較用)。
 
     対応 layout:
     - `[entries]` / `[map]` dict (jukugo / unihan / compat / numeric_phrases / etc.)
@@ -157,8 +157,9 @@ def parse_entries(content: str) -> dict[str, str]:
     - top-level flat (旧 days.toml: `'1' = 'ツイタチ'` …)
 
     `[[rule]]` (postprocess / context) や `[counter."X"]` (counters) のような
-    rule-shape の構造は word-level diff では扱わない (rule 数や個別 pattern は STATS.md
-    の「ルール数」 column を見る方が自然)。
+    rule-shape の構造は **word-level diff の対象外** (空 dict 返却)。
+    これらの top-level エントリ数は `count_top_level_items()` で別取得すること
+    (snapshot / 新規 / 削除 file の「entries」 列はそちら経由)。
     """
     try:
         data = tomllib.loads(content)
@@ -197,6 +198,42 @@ def parse_entries(content: str) -> dict[str, str]:
     # flat top-level (旧 days.toml の compat 経路)
     flat = {k: v for k, v in data.items() if isinstance(v, str)}
     return flat
+
+
+def count_top_level_items(content: str) -> int:
+    """TOML の **top-level エントリ数** を返す (snapshot / 新規 / 削除 file 表示用)。
+
+    parse_entries は (key→reading) を返すので rule-shape file (counters / context /
+    postprocess) では空になり、 表示上 「0 entries」 となってしまう問題を回避。 STATS.md
+    の「エントリ数」 column と同じ count を返す:
+
+    - `[entries]` / `[map]` dict → key 数
+    - `[[entry]]` / `[[rule]]` array → 要素数
+    - flat top-level (旧 days.toml) → string value 数
+    - 上記いずれも該当しない (counters の `[counter."X"]` 等) → top-level dict
+      子要素数 (= counter 名の数、 [meta] は除外)
+    """
+    try:
+        data = tomllib.loads(content)
+    except tomllib.TOMLDecodeError:
+        return 0
+
+    for key in ("entries", "map"):
+        v = data.get(key)
+        if isinstance(v, dict):
+            return len(v)
+    for key in ("entry", "rule"):
+        v = data.get(key)
+        if isinstance(v, list):
+            return len(v)
+    flat = sum(1 for v in data.values() if isinstance(v, str))
+    if flat > 0:
+        return flat
+    # [counter."本"] / [counter."匹"] のような rule-shape file の fallback
+    return sum(
+        len(v) for k, v in data.items()
+        if isinstance(v, dict) and k != "meta"
+    )
 
 
 def parse_meta_description(content: str) -> str | None:
@@ -385,19 +422,15 @@ def main() -> None:
         total_removed += len(removed)
         total_changed += len(changed)
 
-    # 新規 file は全 entries が added 扱い
+    # 新規 file は全 entries が added 扱い (rule-shape file も top-level item 数で count)
     for path in new_files:
         now_c = git_show(now_tag, path) or ""
-        now_e = parse_entries(now_c)
-        if now_e:
-            total_added += len(now_e)
+        total_added += count_top_level_items(now_c)
 
     # 削除 file は全 entries が removed 扱い
     for path in removed_files:
         prev_c = git_show(prev_tag, path) or ""
-        prev_e = parse_entries(prev_c)
-        if prev_e:
-            total_removed += len(prev_e)
+        total_removed += count_top_level_items(prev_c)
 
     # ── markdown 出力 ──
     out: list[str] = []
@@ -435,7 +468,7 @@ def main() -> None:
         out.append("|---|---:|---|")
         for p in new_files:
             now_c = git_show(now_tag, p) or ""
-            n = len(parse_entries(now_c))
+            n = count_top_level_items(now_c)
             desc = description_with_fallback(now_c, p)
             out.append(f"| `{p}` | {n:,} | {desc} |")
         out.append("")
@@ -448,7 +481,7 @@ def main() -> None:
         out.append("|---|---:|---|")
         for p in removed_files:
             prev_c = git_show(prev_tag, p) or ""
-            n = len(parse_entries(prev_c))
+            n = count_top_level_items(prev_c)
             # 削除済 file は同 path の working tree には存在しないが、 同 basename の
             # 移転先がある可能性があるので fallback で探す (rename 移行対応)
             desc = description_with_fallback(prev_c, p)
@@ -505,7 +538,7 @@ def main() -> None:
     snapshot_total = 0
     for p in sorted(now_files):
         now_c = git_show(now_tag, p) or ""
-        n = len(parse_entries(now_c))
+        n = count_top_level_items(now_c)
         desc = description_with_fallback(now_c, p)
         out.append(f"| `{p}` | {n:,} | {desc} |")
         snapshot_total += n
