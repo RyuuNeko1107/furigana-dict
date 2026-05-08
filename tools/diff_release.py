@@ -282,6 +282,19 @@ def gen_snapshot_section(now_label: str, now_files: list[str], now_tag: str) -> 
             f"**{len(now_files)} ファイル / {grand_total:,} entries (重複含む) "
             f"/ {len(unique_pairs):,} unique / cross-file 重複 {duplicates:,} 件**"
         )
+        out.append("")
+        out.append(
+            f"> **数値の補足**: \n"
+            f"> - **重複含む** ({grand_total:,}) = 全 file の top-level item 数を合算 "
+            f"(同じ surface が複数 file にあれば多重 count)。 STATS.md の「エントリ数」 と同値\n"
+            f"> - **unique** ({len(unique_pairs):,}) = (key1, key2) tuple で de-dup した数\n"
+            f"> - **cross-file 重複 {duplicates} 件** = repo 全体 scope での 純粋な重複 "
+            f"((surface, reading) が複数 file にまたがって登録されてる数)。 大半は rules/ と "
+            f"core/ の **意図的な overlap** (例: 「大人」 が jukugo/general + "
+            f"rules/context/special 両方に同 reading) で、 bug ではない\n"
+            f"> - actionable な cleanup 対象 (jukugo / works / loanwords scope のみ) は "
+            f"下の [cross-file 重複検出](#cross-file-重複検出) section で別途集計"
+        )
     else:
         out.append(f"**{len(now_files)} ファイル / {grand_total:,} entries (重複なし)**")
     out.append("")
@@ -942,9 +955,16 @@ def main() -> None:
     out.append("")
     out.append(
         "tag 時点で **同じ surface が複数 file にまたがって登録** されているもの。 "
-        "対象: jukugo / works / loanwords / inbox (`core/unihan/` / `core/compat.toml` / "
-        "`core/single_overrides.toml` / `rules/` は意図的構造のため除外)。 "
-        "STATS_DUPS.md と同じ source の release tag 時点 snapshot。"
+        "対象 scope: jukugo / works / loanwords / inbox (= **actionable な cleanup 対象**)。 "
+        "`core/unihan/` / `core/compat.toml` / `core/single_overrides.toml` / `rules/` は "
+        "意図的構造のため除外。 STATS_DUPS.md と同じ source の release tag 時点 snapshot。"
+    )
+    out.append("")
+    out.append(
+        "> **scope の違い**: snapshot の「全体合計」 で出る cross-file 重複数は repo 全体 "
+        "(rules / unihan 含む) の **生 fact** で、 大半は intentional overlap (例: rules で "
+        "default 提供しつつ core にも entry)。 ここで出すのは **bug 候補 (jukugo/works "
+        "スコープでの重複)** に絞った数。 repo の cleanliness を測る指標としてはこちらを見る。"
     )
     out.append("")
     out.append(f"### 同じ読みの重複 ({len(same_dups):,} 件)")
