@@ -12,6 +12,25 @@ name: Dedup compat + Regen STATS.md / STATS_DUPS.md
 #
 # bot 自身の commit は `[skip stats]` を含むので再 trigger されない。
 # 既存 commit に手で `[skip stats]` を入れたい場合 (release commit 等) もスキップされる。
+#
+# ## branch protection bypass (PAT 必要)
+#
+# master に required status checks が設定されているため、 default の `GITHUB_TOKEN`
+# (= github-actions[bot]) では auto-commit push が reject される
+# (`Protected branch update failed: 4 of 4 required status checks are expected`)。
+# admin user の PAT で push する形に変更:
+#
+# 1. user (admin) が PAT を生成 — Settings → Developer settings → Personal access
+#    tokens → Tokens (classic) → Generate new token、 scope は `repo` (full control
+#    of private repositories)、 expiration は適宜 (90 日 / 1 年 / no expiration)
+# 2. repo secret に登録 — Settings → Secrets and variables → Actions → New repository
+#    secret、 Name: `STATS_PUSH_TOKEN`、 Value: 上記 PAT
+# 3. PAT は admin 権限を継承するので、 `enforce_admins: false` の bypass で push が
+#    通る (status checks が走る前でも accept される)
+#
+# secret 未設定時は GITHUB_TOKEN で push を試みて失敗する。 その場合 contributor が
+# 手元で `python tools/regen_stats.py && python tools/dedup_compat.py` を実行して
+# 結果を `[skip stats]` 付き commit で push する形で代替可能。
 
 on:
   push:
@@ -35,9 +54,11 @@ jobs:
     steps:
       - uses: actions/checkout@v6
         with:
-          # 後で `git push` するため fetch-depth=0 + token 必須
+          # 後で `git push` するため fetch-depth=0 + token 必須。
+          # PAT (`STATS_PUSH_TOKEN`) があれば優先、 無ければ `GITHUB_TOKEN` fallback
+          # (後者は branch protection で reject されるが、 contributor 手動 push で代替可能)
           fetch-depth: 0
-          token: ${{ secrets.GITHUB_TOKEN }}
+          token: ${{ secrets.STATS_PUSH_TOKEN || secrets.GITHUB_TOKEN }}
 
       - uses: actions/setup-python@v6
         with:
