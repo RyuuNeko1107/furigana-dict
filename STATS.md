@@ -210,7 +210,7 @@ git に commit されている master HEAD の状態を基準にする。
 | ファイル | エントリ数 | テスト | サイズ | 用途 |
 |---|---:|---:|---:|---|
 | [`rules/numbers/counters/simple.toml`](rules/numbers/counters/simple.toml) | 51 | - | 1.1 KB | 単純サフィックス助数詞 (円 / 点 / 度 / 名 / 話 等、 数値カナ + value 連結のみ) |
-| [`rules/numbers/days.toml`](rules/numbers/days.toml) | 31 | - | 844 B | 1〜31 日の特殊読み (1→ツイタチ 等) |
+| [`rules/numbers/days.toml`](rules/numbers/days.toml) | 31 | - | 957 B | 1〜31 日の特殊読み (1→ツイタチ / 20→ハツカ 等) |
 | [`rules/numbers/numeric_phrases.toml`](rules/numbers/numeric_phrases.toml) | 23 | - | 733 B | 数字を含む例外語句 (二十歳→ハタチ 等) |
 | [`rules/numbers/scales.toml`](rules/numbers/scales.toml) | 19 | - | 871 B | 万 / 億 / 兆 / 京 等の大数スケール |
 | [`rules/numbers/counters/time.toml`](rules/numbers/counters/time.toml) | 11 | - | 1.3 KB | 時間系助数詞 (月 / 日 / 時 / 分 / 週間 / 回、 4/7/9 の特殊読み + カナ末尾置換) |
@@ -219,7 +219,7 @@ git に commit されている master HEAD の状態を基準にする。
 | [`rules/numbers/counters/percent.toml`](rules/numbers/counters/percent.toml) | 2 | - | 387 B | パーセンテージ (% / ％、 1/6/8/0 で促音化 + パーセント) |
 | [`rules/numbers/counters/people.toml`](rules/numbers/counters/people.toml) | 1 | - | 204 B | 人を数える助数詞 (人、 1=ヒトリ / 2=フタリ の特殊読み) |
 | [`rules/numbers/counters/recursive.toml`](rules/numbers/counters/recursive.toml) | 1 | - | 181 B | 再帰モード助数詞 (個目 / 階目 等、 既存助数詞解決後に末尾連結) |
-| **小計** (10 ファイル) | **149** | **6** | **7.2 KB** | |
+| **小計** (10 ファイル) | **149** | **6** | **7.3 KB** | |
 
 #### テキスト系
 
