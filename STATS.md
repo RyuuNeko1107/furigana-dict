@@ -207,8 +207,8 @@ git に commit されている master HEAD の状態を基準にする。
 | [`rules/latin.toml`](rules/latin.toml) | 26 | 436 B | ラテン文字読み (A→エー …) |
 | [`rules/numeric_phrases.toml`](rules/numeric_phrases.toml) | 23 | 701 B | 数字を含む例外語句 (二十歳→ハタチ 等) |
 | [`rules/postprocess.toml`](rules/postprocess.toml) | 2 | 160 B | 後処理 regex 置換 (Step 7、mode 別) |
-| [`rules/counters/*.toml`](rules/counters/) (7 ファイル) | 76 | 4.2 KB | 助数詞ルール (本 / 匹 / 個 / 年 / 月 / 日 …、連濁 / 促音化 / kana 末尾置換) |
-| [`rules/context/*.toml`](rules/context/) (3 ファイル) | 52 | 6.9 KB | 文脈依存読み (一日→ツイタチ/イチニチ 等) |
+| [`rules/counters/*.toml`](rules/counters/) (8 ファイル) | 76 | 4.2 KB | 助数詞ルール (本 / 匹 / 個 / 年 / 月 / 日 …、連濁 / 促音化 / kana 末尾置換) |
+| [`rules/context/*.toml`](rules/context/) (3 ファイル) | 52 | 6.6 KB | 文脈依存読み (一日→ツイタチ/イチニチ 等) |
 | **小計** | **256** | **15 KB** | |
 <!-- AUTO-GENERATED:RULES:END -->
 
