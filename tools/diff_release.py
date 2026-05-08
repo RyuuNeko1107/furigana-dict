@@ -85,6 +85,199 @@ def git_ls_files(tag: str) -> list[str]:
     ]
 
 
+def load_genre_meta_at_tag(tag: str, dir_rel: str) -> dict | None:
+    """tag 時点の `<dir_rel>/_genre.toml` の `[genre]` table を返す。 無ければ None。"""
+    content = git_show(tag, f"{dir_rel}/_genre.toml")
+    if not content:
+        return None
+    try:
+        data = tomllib.loads(content)
+    except tomllib.TOMLDecodeError:
+        return None
+    g = data.get("genre")
+    return g if isinstance(g, dict) else None
+
+
+# rules / の下のサブカテゴリ heading 表示用 (rules/<bucket>/)
+RULES_BUCKET_HEADINGS = {
+    "numbers": "数値系",
+    "text": "テキスト系",
+    "context": "文脈ルール",
+}
+
+
+def gen_snapshot_section(now_label: str, now_files: list[str], now_tag: str) -> list[str]:
+    """STATS.md と同じカテゴリ階層で release tag 時点 snapshot を生成。"""
+    # ── (1) ファイルを path prefix でカテゴリ分け ──
+    cats: dict[str, list[tuple[str, int, str]]] = {
+        "unihan": [], "jukugo": [], "works": [], "loanwords": [],
+        "inbox": [], "single_overrides": [], "compat": [], "rules": [],
+    }
+    for p in sorted(now_files):
+        content = git_show(now_tag, p) or ""
+        n = count_top_level_items(content)
+        desc = description_with_fallback(content, p)
+        item = (p, n, desc)
+        if p.startswith("core/unihan/"):
+            cats["unihan"].append(item)
+        elif p.startswith("core/jukugo/"):
+            cats["jukugo"].append(item)
+        elif p.startswith("core/works/"):
+            cats["works"].append(item)
+        elif p.startswith("core/loanwords/"):
+            cats["loanwords"].append(item)
+        elif p == "core/_inbox.toml":
+            cats["inbox"].append(item)
+        elif p == "core/single_overrides.toml":
+            cats["single_overrides"].append(item)
+        elif p == "core/compat.toml":
+            cats["compat"].append(item)
+        elif p.startswith("rules/"):
+            cats["rules"].append(item)
+
+    out: list[str] = [
+        f"## リリース時点スナップショット (`{now_label}`)",
+        "",
+        (
+            "release tag 時点での dict / rule file 一覧 + entries 数。 古い release との"
+            "比較は GitHub Releases や `git diff <prev> <now> -- core/ rules/` で。 "
+            "STATS.md と同じカテゴリ階層で並べる。"
+        ),
+        "",
+    ]
+
+    # ── (2) flat sub-section helper ──
+    def render_flat(title: str, note: str, items: list[tuple[str, int, str]]):
+        if not items:
+            return
+        out.append(f"### {title}")
+        out.append("")
+        if note:
+            out.append(note)
+            out.append("")
+        out.append("| ファイル | entries | 用途 |")
+        out.append("|---|---:|---|")
+        subtotal = 0
+        for p, n, d in items:
+            out.append(f"| `{p}` | {n:,} | {d} |")
+            subtotal += n
+        if len(items) > 1:
+            out.append(f"| **小計** ({len(items)} ファイル) | **{subtotal:,}** | |")
+        out.append("")
+
+    # ── (3) genre 階層付き sub-section helper (jukugo / works / rules) ──
+    def render_grouped(
+        title: str, note: str, items: list[tuple[str, int, str]],
+        base_subdir: str, headings_override: dict[str, str] | None = None,
+    ):
+        if not items:
+            return
+        # group by parts[N] (depending on base depth)
+        groups: dict[str, list[tuple[str, int, str]]] = {}
+        base_depth = base_subdir.count("/") + 1  # core/jukugo → 2 (parts[0]=core, parts[1]=jukugo)
+        for item in items:
+            p = item[0]
+            parts = p.split("/")
+            if len(parts) > base_depth + 1:
+                groups.setdefault(parts[base_depth], []).append(item)
+            else:
+                groups.setdefault("(直下)", []).append(item)
+        # sort by genre meta order if available
+        ordered: list[tuple[int, str, list[tuple[str, int, str]]]] = []
+        for genre_name, files in groups.items():
+            order = 999
+            heading = genre_name
+            if headings_override and genre_name in headings_override:
+                heading = headings_override[genre_name]
+            elif genre_name != "(直下)":
+                meta = load_genre_meta_at_tag(now_tag, f"{base_subdir}/{genre_name}")
+                if meta:
+                    order = meta.get("order", 999) if isinstance(meta.get("order"), int) else 999
+                    if meta.get("name"):
+                        heading = meta["name"]
+            ordered.append((order, heading, files))
+        ordered.sort(key=lambda t: (t[0], t[1]))
+
+        overall_n = sum(it[1] for it in items)
+        out.append(f"### {title}")
+        out.append("")
+        if note:
+            out.append(note)
+            out.append("")
+        out.append(
+            f"**合計**: {overall_n:,} entries / {len(items)} ファイル / "
+            f"{len(ordered)} 区分"
+        )
+        out.append("")
+        for _, heading, files in ordered:
+            files_sorted = sorted(files, key=lambda r: -r[1])
+            out.append(f"#### {heading}")
+            out.append("")
+            out.append("| ファイル | entries | 用途 |")
+            out.append("|---|---:|---|")
+            sub = 0
+            for p, n, d in files_sorted:
+                out.append(f"| `{p}` | {n:,} | {d} |")
+                sub += n
+            if len(files_sorted) > 1:
+                out.append(
+                    f"| **小計** ({len(files_sorted)} ファイル) | **{sub:,}** | |"
+                )
+            out.append("")
+
+    # ── (4) 各 section を順番に出力 (STATS.md と同じ並び) ──
+    render_flat(
+        "単漢字",
+        "`core/unihan/*` — 水準別。 lib の resolve_reading 6 段階で最終 fallback (Step 6) として参照。",
+        cats["unihan"],
+    )
+    render_grouped(
+        "熟語",
+        "`core/jukugo/<genre>/*` — ジャンル別 jukugo (≥ 2 字 surface)、 lib Step 3。",
+        cats["jukugo"], base_subdir="core/jukugo",
+    )
+    render_grouped(
+        "作品造語",
+        "`core/works/<medium>/*` — 作品単位 1 ファイル、 公式読みベース。",
+        cats["works"], base_subdir="core/works",
+    )
+    render_flat(
+        "外来語",
+        "`core/loanwords/*` — ASCII surface (英字始まり)、 完全一致 lookup。",
+        cats["loanwords"],
+    )
+    render_flat(
+        "分類前 inbox",
+        "`core/_inbox.toml` — genre 判断付かない jukugo の一時置き場。",
+        cats["inbox"],
+    )
+    render_flat(
+        "単漢字 override",
+        "`core/single_overrides.toml` — 1 字 surface に対する明示的 default 上書き。",
+        cats["single_overrides"],
+    )
+    render_flat(
+        "異体字",
+        "`core/compat.toml` — 異体字 → 標準字の正規化マップ。",
+        cats["compat"],
+    )
+    render_grouped(
+        "エンジンルール",
+        "`rules/<bucket>/*` — 助数詞 / 文脈 / 後処理 / 大数 / SI 単位 等。",
+        cats["rules"], base_subdir="rules",
+        headings_override=RULES_BUCKET_HEADINGS,
+    )
+
+    # ── (5) 全体合計 ──
+    grand_total = sum(it[1] for items in cats.values() for it in items)
+    out.append("### 全体合計")
+    out.append("")
+    out.append(f"**{len(now_files)} ファイル / {grand_total:,} entries**")
+    out.append("")
+
+    return out
+
+
 def gather_qa_at_tag(tag: str) -> dict:
     """tag 時点の corpus / inline test 件数を集計して返す。
 
@@ -525,25 +718,8 @@ def main() -> None:
                 out.extend(fmt_changed_entries(changed))
                 out.append("")
 
-    # ── リリース時点スナップショット (now tag 時点の全 file + entries 数) ──
-    out.append(f"## リリース時点スナップショット (`{now_label}`)")
-    out.append("")
-    out.append(
-        "release tag 時点での dict / rule file 一覧 + entries 数。 古い release との"
-        "比較は GitHub Releases や `git diff <prev> <now> -- core/ rules/` で。"
-    )
-    out.append("")
-    out.append("| ファイル | entries | 用途 |")
-    out.append("|---|---:|---|")
-    snapshot_total = 0
-    for p in sorted(now_files):
-        now_c = git_show(now_tag, p) or ""
-        n = count_top_level_items(now_c)
-        desc = description_with_fallback(now_c, p)
-        out.append(f"| `{p}` | {n:,} | {desc} |")
-        snapshot_total += n
-    out.append(f"| **合計** ({len(now_files)} ファイル) | **{snapshot_total:,}** | |")
-    out.append("")
+    # ── リリース時点スナップショット (STATS.md と同じカテゴリ階層で) ──
+    out.extend(gen_snapshot_section(now_label, sorted(now_files), now_tag))
 
     # ── QA カバレッジ (release tag 時点の corpus + inline test 件数) ──
     qa = gather_qa_at_tag(now_tag)
