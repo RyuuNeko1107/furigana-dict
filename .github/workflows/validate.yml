@@ -75,7 +75,8 @@ jobs:
 
   test-append-only:
     name: Inline test append-only 検査
-    if: github.event_name == 'pull_request'
+    # pull_request だけでなく workflow_dispatch / push でも走らせて、 regen-stats.yml
+    # が auto-stats PR で明示 dispatch した場合も check status を残す
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v6
@@ -90,8 +91,13 @@ jobs:
       - name: append-only check (PR base との *.test.toml 比較)
         # docs/INLINE_TESTS.md の append-only ポリシー (= 既存 inline test case を
         # 削除しない、 reading 変更も削除と同等) を構造的に強制。
-        # PR base の master 状態と HEAD を tools/check_test_append_only.py で比較し、
-        # case が削除 / 変更されていたら CI fail。
+        # base ref を tools/check_test_append_only.py で比較し、 case が削除 /
+        # 変更されていたら CI fail。
+        # pull_request event なら base.sha を使う、 そうでなければ origin/master fallback
+        # (auto-stats branch は master 由来なので master との比較で OK)
         run: |
-          python3 tools/check_test_append_only.py \
-            --base-ref "${{ github.event.pull_request.base.sha }}"
+          BASE_REF="${{ github.event.pull_request.base.sha }}"
+          if [ -z "$BASE_REF" ]; then
+            BASE_REF="origin/master"
+          fi
+          python3 tools/check_test_append_only.py --base-ref "$BASE_REF"
