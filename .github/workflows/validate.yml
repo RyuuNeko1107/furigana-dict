@@ -5,6 +5,10 @@ on:
     branches: [master]
   pull_request:
     branches: [master]
+  # regen-stats.yml が auto-stats PR 作成後に明示 dispatch するための trigger
+  # (GITHUB_TOKEN 起因の PR では pull_request event は走らない GitHub の仕様回避、
+  #  workflow_dispatch / repository_dispatch だけは GITHUB_TOKEN でも trigger 可)
+  workflow_dispatch:
 
 jobs:
   toml-syntax:

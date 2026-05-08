@@ -6,31 +6,30 @@ name: Dedup compat + Regen STATS.md / STATS_DUPS.md
 #   1. compat 異体字 entries の dedup (unihan + jukugo + works)
 #   2. STATS.md / STATS_DUPS.md の再生成
 #
-# を走らせて diff があれば一括 auto-commit する。 dedup は冪等で、 dead 経路の
-# entries が無ければ no-op。 contributor が PR で誤って異体字 surface を追加
-# しても、 CI が自動で標準形に置換 / 削除する。
+# を走らせて diff があれば **PR を作成 + GitHub 標準 auto-merge を enable** する。
+# 4 個の required status checks が PR で pass すれば GitHub が自動 squash merge +
+# branch 削除する。 contributor の手動操作は不要。
 #
-# bot 自身の commit は `[skip stats]` を含むので再 trigger されない。
-# 既存 commit に手で `[skip stats]` を入れたい場合 (release commit 等) もスキップされる。
+# bot 自身の commit / PR は `[skip stats]` を含むので再 trigger されない
+# (regen-stats.yml も validate.yml も skip)。
 #
-# ## branch protection bypass (PAT 必要)
+# ## なぜ PR-based か (旧 direct push との違い)
 #
-# master に required status checks が設定されているため、 default の `GITHUB_TOKEN`
-# (= github-actions[bot]) では auto-commit push が reject される
-# (`Protected branch update failed: 4 of 4 required status checks are expected`)。
-# admin user の PAT で push する形に変更:
+# 旧実装では `git push` で master に直接 auto-commit していたが、 master の branch
+# protection (4 個の required status checks) が github-actions[bot] の push を
+# `4 of 4 required status checks are expected` で reject していた。 admin user の
+# PAT を使う代替もあるが、 user 側に PAT 生成 + secret 登録の手作業が必要 →
+# **PAT 不要** で完結する PR-based + auto-merge に切り替え。
 #
-# 1. user (admin) が PAT を生成 — Settings → Developer settings → Personal access
-#    tokens → Tokens (classic) → Generate new token、 scope は `repo` (full control
-#    of private repositories)、 expiration は適宜 (90 日 / 1 年 / no expiration)
-# 2. repo secret に登録 — Settings → Secrets and variables → Actions → New repository
-#    secret、 Name: `STATS_PUSH_TOKEN`、 Value: 上記 PAT
-# 3. PAT は admin 権限を継承するので、 `enforce_admins: false` の bypass で push が
-#    通る (status checks が走る前でも accept される)
-#
-# secret 未設定時は GITHUB_TOKEN で push を試みて失敗する。 その場合 contributor が
-# 手元で `python tools/regen_stats.py && python tools/dedup_compat.py` を実行して
-# 結果を `[skip stats]` 付き commit で push する形で代替可能。
+# auto-merge の流れ:
+# - bot が `auto-stats/<timestamp>` branch を作って regen 結果を commit
+# - PR を master 向けに作成
+# - **validate.yml を workflow_dispatch で明示 trigger** (GITHUB_TOKEN 起因の PR は
+#   pull_request event を trigger しない GitHub の仕様回避、 workflow_dispatch /
+#   repository_dispatch だけは GITHUB_TOKEN でも trigger 可能という公式 exception)
+# - validate.yml の 4 checks が PR の head SHA で走る
+# - 全 pass + merge 可能になった瞬間に GitHub auto-merge が squash + delete-branch
+# - 50秒〜 数分の遅延あり (checks 完了待ち)、 自動 merge で contributor は何もしない
 
 on:
   push:
@@ -44,7 +43,9 @@ on:
       - 'tools/dedup_compat.py'
 
 permissions:
-  contents: write
+  contents: write       # branch 作成 / commit / push に必要
+  pull-requests: write  # PR 作成 + auto-merge 有効化に必要
+  actions: write        # workflow_dispatch で validate.yml を明示 trigger するため
 
 jobs:
   regen:
@@ -54,11 +55,7 @@ jobs:
     steps:
       - uses: actions/checkout@v6
         with:
-          # 後で `git push` するため fetch-depth=0 + token 必須。
-          # PAT (`STATS_PUSH_TOKEN`) があれば優先、 無ければ `GITHUB_TOKEN` fallback
-          # (後者は branch protection で reject されるが、 contributor 手動 push で代替可能)
           fetch-depth: 0
-          token: ${{ secrets.STATS_PUSH_TOKEN || secrets.GITHUB_TOKEN }}
 
       - uses: actions/setup-python@v6
         with:
@@ -73,15 +70,43 @@ jobs:
       - name: STATS_DUPS.md 再生成 (cross-file 重複レポート)
         run: python3 tools/list_dups.py
 
-      - name: diff があれば commit + push
+      - name: diff 検知 → PR 作成 + auto-merge enable
+        env:
+          GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
         run: |
           if git diff --quiet; then
-            echo "辞書 + STATS.md / STATS_DUPS.md ともに drift なし、 commit 不要"
+            echo "辞書 + STATS.md / STATS_DUPS.md ともに drift なし、 PR 作成不要"
             exit 0
           fi
-          echo "drift detected, committing..."
+          echo "drift detected, creating auto-stats PR..."
+
+          BRANCH="auto-stats/$(date +%Y%m%d-%H%M%S)"
           git config user.name "github-actions[bot]"
           git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git checkout -b "$BRANCH"
           git add -A
           git commit -m "chore: dedup compat + regen STATS [skip stats]"
-          git push
+          git push -u origin "$BRANCH"
+
+          # PR 作成 + auto-merge 有効化
+          # `gh pr merge --auto --squash --delete-branch` は 「全 required checks
+          # pass + merge 可能」 になった時点で GitHub が自動 squash merge し、
+          # head branch も削除する組み込み機能。 設定 `allow_auto_merge: true` 必須
+          # (repo settings、 確認済み)。
+          PR_URL=$(gh pr create \
+            --base master \
+            --head "$BRANCH" \
+            --title "chore: dedup compat + regen STATS [skip stats]" \
+            --body "Auto-generated regen by \`.github/workflows/regen-stats.yml\`. Triggered by ${GITHUB_SHA:0:7} on master.")
+          echo "Created PR: $PR_URL"
+
+          # GITHUB_TOKEN 起因の PR は pull_request event を発火しないので validate.yml が
+          # 走らない → branch protection の required checks が満たされず auto-merge も
+          # 永久に発火しない問題への対応。 workflow_dispatch を明示 dispatch すれば
+          # GITHUB_TOKEN でも trigger 可 (公式 exception)、 validate.yml が PR branch
+          # の SHA に対して走り、 4 checks の status が記録される。
+          gh workflow run validate.yml --ref "$BRANCH"
+          echo "Dispatched validate.yml on $BRANCH (4 required checks will run on PR)"
+
+          gh pr merge --auto --squash --delete-branch "$PR_URL"
+          echo "Auto-merge enabled. PR will merge once all required status checks pass."
