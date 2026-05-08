@@ -45,10 +45,14 @@ ROOT = Path(__file__).resolve().parent.parent
 
 
 def collect_inline_tests() -> list[tuple[Path, str, str]]:
-    """全 dict / rule TOML から inline `[[test]]` を集める。
+    """`*.test.toml` ファイルから `[[test]]` を集める。
 
     戻り値: (file_path, input, expected) のリスト。
-    `[[test]]` array が無い file は skip。
+
+    test は **隣接した `<name>.test.toml`** に書く方針 (lib runtime memory にも
+    release tar にも乗らないため、 release.yml が `--exclude='*.test.toml'`
+    で除外、 lib loader も name match で skip)。 ペアで rule + test が並ぶので
+    contributor 体験は「1 dir 内で隣接」 を維持する。
     """
     tests: list[tuple[Path, str, str]] = []
     targets: list[Path] = []
@@ -56,9 +60,7 @@ def collect_inline_tests() -> list[tuple[Path, str, str]]:
         base = ROOT / sub
         if not base.is_dir():
             continue
-        for p in sorted(base.rglob("*.toml")):
-            if p.name == "_genre.toml":
-                continue
+        for p in sorted(base.rglob("*.test.toml")):
             targets.append(p)
 
     for path in targets:

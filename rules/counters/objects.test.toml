@@ -1,0 +1,32 @@
+# inline test for rules/counters/objects.toml
+#
+# この file は CI 専用 (tools/test_inline_rules.py が binary で input → expected
+# を検証する)。 lib loader は file 名 match で skip + release tar からも
+# `--exclude='*.test.toml'` で除外、 runtime memory には載らない。
+#
+# 1 PR で複数 case を末尾追記する慣行で merge 競合を最小化 (TOML array なので
+# 順序は意味なし、 衝突しても両方残せば OK)。
+
+[[test]]
+input = "1本"
+expected = "いっぽん"
+
+[[test]]
+input = "3本"
+expected = "さんぼん"
+
+[[test]]
+input = "5本"
+expected = "ごほん"
+
+[[test]]
+input = "1匹"
+expected = "いっぴき"
+
+[[test]]
+input = "3匹"
+expected = "さんびき"
+
+[[test]]
+input = "1冊"
+expected = "いっさつ"

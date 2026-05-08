@@ -382,9 +382,12 @@ def discover(base_dir: Path, name: str, *, recursive: bool = False) -> list[Path
     if not subdir.is_dir():
         return []
     pattern = '**/*.toml' if recursive else '*.toml'
-    # _genre.toml は STATS.md の sub-section description 用メタファイル、
-    # 辞書 entries を持たないので validate 対象外。
-    return sorted(p for p in subdir.glob(pattern) if p.is_file() and p.name != '_genre.toml')
+    # _genre.toml (STATS sub-section description) と *.test.toml (CI 専用 inline test)
+    # は dict entries を持たないので validate 対象外。
+    return sorted(
+        p for p in subdir.glob(pattern)
+        if p.is_file() and p.name != '_genre.toml' and not p.name.endswith('.test.toml')
+    )
 
 
 def discover_works(core_dir: Path) -> list[Path]:
@@ -397,7 +400,10 @@ def discover_works(core_dir: Path) -> list[Path]:
     works = core_dir / 'works'
     if not works.is_dir():
         return []
-    return sorted(p for p in works.glob('**/*.toml') if p.is_file() and p.name != '_genre.toml')
+    return sorted(
+        p for p in works.glob('**/*.toml')
+        if p.is_file() and p.name != '_genre.toml' and not p.name.endswith('.test.toml')
+    )
 
 
 # ─── main ──────────────────────────────────────────────────────────────────

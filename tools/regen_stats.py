@@ -160,9 +160,9 @@ def gather_core() -> list[tuple[str, int, int]]:
             return []
         out = []
         for p in sorted(base.glob("**/*.toml")):
-            # _genre.toml は STATS.md の sub-section description 用メタ、
-            # 辞書 entries を持たないので集計対象外。
-            if p.name == "_genre.toml":
+            # _genre.toml (STATS sub-section description) と *.test.toml (CI 専用 inline test)
+            # は dict entries を持たないので集計対象外。
+            if p.name == "_genre.toml" or p.name.endswith(".test.toml"):
                 continue
             rel = p.relative_to(ROOT).as_posix()
             out.append((rel, count_entries(p), effective_bytes(p)))

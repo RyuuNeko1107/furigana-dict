@@ -117,7 +117,7 @@ def dedup_jukugo_works(compat: dict[str, str]) -> tuple[int, int, int]:
             glob.glob(str(ROOT / "core/jukugo/**/*.toml"), recursive=True) +
             glob.glob(str(ROOT / "core/works/**/*.toml"), recursive=True)
         )
-        if Path(f).name != "_genre.toml"
+        if Path(f).name != "_genre.toml" and not Path(f).name.endswith(".test.toml")
     )
 
     # global lookup (rename 時の collision 検出用)

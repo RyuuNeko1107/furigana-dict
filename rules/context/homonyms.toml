@@ -16,22 +16,22 @@ next_eq = "から"
 reading = "カミテ"
 
 [[rule.match]]
-pos_eq = "名詞"
+pos = "名詞"
 reading = "ジョウズ"
 
 [[rule.match]]
-pos_eq = "形容詞"
+pos = "形容詞"
 reading = "ジョウズ"
 
 [[rule]]
 surface = "下手"
 
 [[rule.match]]
-pos_eq = "名詞"
+pos = "名詞"
 reading = "ヘタ"
 
 [[rule.match]]
-pos_eq = "形容詞"
+pos = "形容詞"
 reading = "ヘタ"
 
 # ─── 人気: 「人気が無い」「人気の無い」→ ヒトケ、それ以外は ニンキ ──
@@ -41,12 +41,12 @@ default = "ニンキ"
 
 [[rule.match]]
 next_eq = "が"
-next_next_starts_with_any = ["な", "無"]
+next2_starts = ["な", "無"]
 reading = "ヒトケ"
 
 [[rule.match]]
 next_eq = "の"
-next_next_starts_with_any = ["な", "無"]
+next2_starts = ["な", "無"]
 reading = "ヒトケ"
 
 # ─── 十分: 形容動詞用法は ジュウブン、時間は ジュップン ───────────────
@@ -75,7 +75,7 @@ next_eq = "です"
 reading = "ジュウブン"
 
 [[rule.match]]
-next_starts_with_any = ["前", "後", "間", "以内", "おき", "ごろ", "頃", "間の", "間で", "間に"]
+next_starts_any = ["前", "後", "間", "以内", "おき", "ごろ", "頃", "間の", "間で", "間に"]
 reading = "ジュップン"
 
 # 「十分間」全体マッチ (連続 surface)
@@ -84,7 +84,7 @@ next_eq = "間"
 reading = "ジュップン"
 
 [[rule.match]]
-pos_eq = "名詞"
+pos = "名詞"
 reading = "ジュップン"
 
 # ─── 一行: イチギョウ (テキスト・行番号、default) / イッコウ (集団) ─────
@@ -93,18 +93,18 @@ reading = "ジュップン"
 #
 # Lindera は「一行 の 旅団」と分割するので、next = の (1 文字) かつ
 # next_next の surface が「旅団 / 集団 / 一同 / 様」等で始まるかで判定する
-# (next_starts_with_any では next の surface 1 文字「の」しか見えないので不可)。
+# (next_starts_any では next の surface 1 文字「の」しか見えないので不可)。
 [[rule]]
 surface = "一行"
 default = "イチギョウ"
 
 [[rule.match]]
 next_eq = "の"
-next_next_starts_with_any = ["旅", "集団", "一同", "御一行", "中"]
+next2_starts = ["旅", "集団", "一同", "御一行", "中"]
 reading = "イッコウ"
 
 [[rule.match]]
-prev_ends_with_any = ["私たち", "我々", "彼ら", "御", "総勢", "観光"]
+prev_ends = ["私たち", "我々", "彼ら", "御", "総勢", "観光"]
 reading = "イッコウ"
 
 # ─── 大人気: 「大人気ない」→ オトナゲ、それ以外は ダイニンキ ─────────
@@ -113,12 +113,12 @@ surface = "大人気"
 default = "ダイニンキ"
 
 [[rule.match]]
-next_starts_with = "な"
+next_starts = "な"
 reading = "オトナゲ"
 
 [[rule.match]]
 next_eq = "の"
-next_next_starts_with_any = ["な", "無"]
+next2_starts = ["な", "無"]
 reading = "オトナゲ"
 
 # ─── 寒気: 体感 (寒気がする) は サムケ、気象 (寒気団 / 寒気が南下) は カンキ ─
@@ -129,16 +129,16 @@ default = "カンキ"
 
 [[rule.match]]
 next_eq = "が"
-next_next_starts_with_any = ["する", "し"]
+next2_starts = ["する", "し"]
 reading = "サムケ"
 
 [[rule.match]]
 next_eq = "を"
-next_next_starts_with_any = ["覚", "感", "催"]
+next2_starts = ["覚", "感", "催"]
 reading = "サムケ"
 
 [[rule.match]]
-prev_ends_with_any = ["背筋", "悪寒"]
+prev_ends = ["背筋", "悪寒"]
 reading = "サムケ"
 
 # ─── 方々: 場所 (ホウボウ) と人々の敬称 (カタガタ) で読み分け ─────────
@@ -149,13 +149,13 @@ default = "ホウボウ"
 
 # 敬称: prev に 御/皆様/関係者 等
 [[rule.match]]
-prev_ends_with_any = ["御", "皆様", "関係者", "出席者", "ご来場の", "参加者"]
+prev_ends = ["御", "皆様", "関係者", "出席者", "ご来場の", "参加者"]
 reading = "カタガタ"
 
 # 敬称: next が「におかれ」「が」「は」+ 敬語動詞
 [[rule.match]]
 next_eq = "に"
-next_next_starts_with_any = ["おかれ"]
+next2_starts = ["おかれ"]
 reading = "カタガタ"
 
 # ─── 表: 「表に出る/立つ/向く」 はオモテ、「表を作成」 などはヒョウ (default) ─
@@ -168,7 +168,7 @@ default = "ヒョウ"
 # 「表に出る」「表に立つ」「表に向かう」 — 方向を示す用法
 [[rule.match]]
 next_eq = "に"
-next_next_starts_with_any = ["出", "立", "向"]
+next2_starts = ["出", "立", "向"]
 reading = "オモテ"
 
 # 「表から」(出入口・方向) → オモテ
@@ -178,7 +178,7 @@ reading = "オモテ"
 
 # 「表向き」「表通り」「表沙汰」「表舞台」「表口」「表面」(物理的表側)
 [[rule.match]]
-next_starts_with_any = ["向き", "通り", "沙汰", "舞台", "口", "玄関", "参道", "門"]
+next_starts_any = ["向き", "通り", "沙汰", "舞台", "口", "玄関", "参道", "門"]
 reading = "オモテ"
 
 # ─── 翡翠: 鉱物 (ヒスイ default) と 鳥 (カワセミ) で読み分け ─────────────
@@ -193,13 +193,13 @@ default = "ヒスイ"
 # 「翡翠 + が + 水辺/池/木/枝/羽」 — 鳥の動作・生息描写
 [[rule.match]]
 next_eq = "が"
-next_next_starts_with_any = ["水辺", "池", "木", "枝", "羽", "飛", "舞", "鳴", "止ま"]
+next2_starts = ["水辺", "池", "木", "枝", "羽", "飛", "舞", "鳴", "止ま"]
 reading = "カワセミ"
 
 # 「翡翠 + の + 羽/姿/巣/鳴き声」
 [[rule.match]]
 next_eq = "の"
-next_next_starts_with_any = ["羽", "姿", "巣", "鳴", "雛"]
+next2_starts = ["羽", "姿", "巣", "鳴", "雛"]
 reading = "カワセミ"
 
 # ─── 間: 「期間/時間/年間」 など 状語 (カン) と 「奥の間/書院造の間」 など 部屋 (マ) ──
@@ -213,15 +213,15 @@ default = "カン"
 # 「<部屋型修飾> + の + 間」 — 前置 「の」 + 部屋系 prev が来た場合
 [[rule.match]]
 next_eq = "の"
-prev_ends_with_any = ["奥", "書院造", "書院造り", "数寄屋", "茶", "板", "客", "応接", "座敷", "板の", "板敷きの"]
+prev_ends = ["奥", "書院造", "書院造り", "数寄屋", "茶", "板", "客", "応接", "座敷", "板の", "板敷きの"]
 reading = "マ"
 
 # 末尾用法: 「奥の+間」「広い+間」「板敷きの+間」 — prev が「の」「い」+ 部屋系 surface
 [[rule.match]]
-prev_ends_with_any = ["奥の", "板の", "茶の", "次の", "二の", "客の"]
+prev_ends = ["奥の", "板の", "茶の", "次の", "二の", "客の"]
 reading = "マ"
 
 # 形容詞的 prev: 「広い間」「狭い間」「明るい間」 (空間 マ)
 [[rule.match]]
-prev_ends_with_any = ["広い", "狭い", "明るい", "暗い"]
+prev_ends = ["広い", "狭い", "明るい", "暗い"]
 reading = "マ"

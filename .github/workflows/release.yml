@@ -37,9 +37,11 @@ jobs:
           ARCHIVE="furigana-dict-${TAG}.tar.gz"
           # core/ (語彙辞書) と rules/ (助数詞・文脈・スケール等のエンジンルール) の両方を含める。
           # rules/ がないと本体 furigana は助数詞・文脈ルールが空のまま起動する。
-          # _genre.toml はメンテナンス用メタデータ (STATS.md sub-section description) で
-          # ja-furigana lib は読まないため release tar からは除外して配布サイズを削る。
-          tar -czf "$ARCHIVE" --exclude='_genre.toml' core/ rules/
+          # _genre.toml (STATS sub-section description メタ) と *.test.toml (CI 専用
+          # inline test) は ja-furigana lib が読まないため release tar から除外して
+          # 配布サイズを削る。 lib loader 側でも file 名 match で skip するので双方
+          # 防御 (release tar に紛れ込んでも runtime memory には載らない)。
+          tar -czf "$ARCHIVE" --exclude='_genre.toml' --exclude='*.test.toml' core/ rules/
           ls -lh "$ARCHIVE"
           echo "ARCHIVE=$ARCHIVE" >> "$GITHUB_ENV"
 

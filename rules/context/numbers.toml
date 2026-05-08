@@ -9,15 +9,15 @@ surface = "一日"
 default = "イチニチ"
 
 [[rule.match]]
-prev_ends_with_month = true
+prev_month = true
 reading = "ツイタチ"
 
 [[rule.match]]
-next_starts_with_any = ["中", "間", "分", "以上", "以下", "程", "ほど", "かけて"]
+next_starts_any = ["中", "間", "分", "以上", "以下", "程", "ほど", "かけて"]
 reading = "イチニチ"
 
 [[rule.match]]
-prev_ends_with_any = ["毎", "約", "丸", "まる"]
+prev_ends = ["毎", "約", "丸", "まる"]
 reading = "イチニチ"
 
 # ─── 一人 / 二人 ───────────────────────────────────────────────────────
@@ -34,30 +34,30 @@ default = "フタリ"
 surface = "一月"
 
 [[rule.match]]
-next_starts_with_any = ["日", "から", "まで", "に", "の", "は", "も", "、", "。"]
+next_starts_any = ["日", "から", "まで", "に", "の", "は", "も", "、", "。"]
 reading = "イチガツ"
 
 [[rule.match]]
-next_starts_with_digit = true
+next_digit = true
 reading = "イチガツ"
 
 [[rule.match]]
-next_starts_with_any = ["中", "間", "分", "以上", "以下", "程", "ほど", "かけて", "かかる", "かかった", "かかれば"]
+next_starts_any = ["中", "間", "分", "以上", "以下", "程", "ほど", "かけて", "かかる", "かかった", "かかれば"]
 reading = "ヒトツキ"
 
 [[rule]]
 surface = "二月"
 
 [[rule.match]]
-next_starts_with_any = ["日", "から", "まで", "に", "の", "は", "も", "、", "。"]
+next_starts_any = ["日", "から", "まで", "に", "の", "は", "も", "、", "。"]
 reading = "ニガツ"
 
 [[rule.match]]
-next_starts_with_digit = true
+next_digit = true
 reading = "ニガツ"
 
 [[rule.match]]
-next_starts_with_any = ["中", "間", "分", "以上", "以下", "程", "ほど", "かけて", "かかる", "かかった", "かかれば"]
+next_starts_any = ["中", "間", "分", "以上", "以下", "程", "ほど", "かけて", "かかる", "かかった", "かかれば"]
 reading = "フタツキ"
 
 # ─── 一時 ──────────────────────────────────────────────────────────────

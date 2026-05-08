@@ -33,15 +33,12 @@ def gather() -> dict[str, list[tuple[str, str]]]:
     seen: dict[str, list[tuple[str, str]]] = defaultdict(list)
     targets: list[Path] = []
     # jukugo / works とも genre dir 階層 (core/jukugo/<genre>/*.toml) があるので再帰。
-    # _genre.toml は STATS.md sub-section description メタなので skip。
-    targets.extend(
-        p for p in sorted((ROOT / 'core' / 'jukugo').glob('**/*.toml'))
-        if p.name != '_genre.toml'
-    )
-    targets.extend(
-        p for p in sorted((ROOT / 'core' / 'works').glob('**/*.toml'))
-        if p.name != '_genre.toml'
-    )
+    # _genre.toml (STATS sub-section description) と *.test.toml (CI 専用 inline test)
+    # は dict entries を持たないので skip。
+    def keep(p: Path) -> bool:
+        return p.name != '_genre.toml' and not p.name.endswith('.test.toml')
+    targets.extend(p for p in sorted((ROOT / 'core' / 'jukugo').glob('**/*.toml')) if keep(p))
+    targets.extend(p for p in sorted((ROOT / 'core' / 'works').glob('**/*.toml')) if keep(p))
     for f in targets:
         with open(f, 'rb') as fp:
             data = tomllib.load(fp)
