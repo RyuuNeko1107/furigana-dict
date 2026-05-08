@@ -527,7 +527,7 @@ def gen_core(core_rows: list) -> str:
     if works_rows:
         sections.append(_gen_grouped_section(
             "作品造語",
-            "`core/works/<medium>/*` — 媒体 (game / literature 等) ごとに 1 作品 1 ファイル。 公式読みのみ採録、 出典コメント必須、 二次創作読み禁止のサブポリシー。",
+            "`core/works/<medium>/*` — 媒体 (game / literature 等) ごとに 1 作品 1 ファイル。 原則は公式読み (一般通称として定着していれば採録可)、 出典コメント必須、 古典読みは現代読み無い場合のみ。",
             "works",
             works_rows,
         ))
