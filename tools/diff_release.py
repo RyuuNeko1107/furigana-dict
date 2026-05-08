@@ -534,6 +534,28 @@ def fmt_two_col_entries(entries: list[str], full: dict[str, str]) -> list[str]:
     return rows
 
 
+def fmt_removed_with_moves(
+    entries: list[str],
+    full: dict[str, str],
+    move_finder,
+    except_path: str,
+) -> list[str]:
+    """削除 entries の table。 同 release で他 file に移動が見つかれば「移動先」 列に表示。"""
+    # 移動先 column を出すかどうかは「いずれかに移動先がある」 ときのみ
+    moves = {k: move_finder(k, full.get(k, ""), except_path) for k in entries}
+    has_any_move = any(v for v in moves.values())
+    if not has_any_move:
+        return fmt_two_col_entries(entries, full)
+    rows = ["| 表記 | 読み | 移動先 |", "|---|---|---|"]
+    for k in entries:
+        target = moves.get(k)
+        target_str = f"→ `{target}`" if target else ""
+        rows.append(
+            f"| `{md_escape(k)}` | `{md_escape(full.get(k, ''))}` | {target_str} |"
+        )
+    return rows
+
+
 def fmt_changed_entries(changed: list[tuple[str, str, str]]) -> list[str]:
     """`| 表記 | 旧 | 新 |` の table rows を返す (header 含む)。 全件出力 (truncate なし)。"""
     rows = ["| 表記 | 旧 | 新 |", "|---|---|---|"]
@@ -601,7 +623,16 @@ def main() -> None:
         except tomllib.TOMLDecodeError:
             return None
         # [meta] は metadata (role / description) なので semantic data から除外
-        return {k: v for k, v in data.items() if k != "meta"}
+        body = {k: v for k, v in data.items() if k != "meta"}
+        # `[entries]` block と top-level flat (`'1' = 'ツイタチ'` 等) を等価扱いに
+        # 正規化 — `[entries]` block migration (例: days.toml の alpha.9 改修) を
+        # rename pair として検出するため。
+        if set(body.keys()) == {"entries"} and isinstance(body["entries"], dict):
+            return body["entries"]
+        # body 全部が string value (flat top-level) なら、 そのまま entries dict として扱う
+        if body and all(isinstance(v, str) for v in body.values()):
+            return body
+        return body
 
     if removed_files_raw and new_files_raw:
         prev_sigs = {p: _semantic_data(git_show(prev_tag, p) or "") for p in removed_files_raw}
@@ -651,6 +682,32 @@ def main() -> None:
     for path in removed_files:
         prev_c = git_show(prev_tag, path) or ""
         total_removed += count_top_level_items(prev_c)
+
+    # ── cross-file 移動検出 (削除エントリの引き先候補を作る) ──
+    # 同 release で「file A から (surface, reading) が削除」 + 「file B に同じ
+    # (surface, reading) が追加」 されている場合、 移動として annotate する。
+    # 実体としては「カテゴリ振り分け直し」 (例: jukugo → unihan、 general → specialized)
+    # が大半。 reason 欄は手書きできないが、 引き先 file 名は機械的に判定できる。
+    added_index: dict[tuple[str, str], list[str]] = {}
+    for path, added, _r, _c, _prev_e, now_e in file_diffs:
+        for surf in added:
+            rdg = now_e.get(surf, "")
+            added_index.setdefault((surf, rdg), []).append(path)
+    # 新規 file 内の entries も引き先候補
+    for path in new_files:
+        now_c = git_show(now_tag, path) or ""
+        ne = parse_entries(now_c)
+        for surf, rdg in ne.items():
+            added_index.setdefault((surf, rdg), []).append(path)
+
+    def find_move_target(surface: str, reading: str, except_path: str) -> str | None:
+        """同 release で追加された同じ (surface, reading) の引き先 path を返す。
+        複数候補あれば最初の 1 つ。 except_path (= 削除元 file) は除外。"""
+        candidates = added_index.get((surface, reading), [])
+        for c in candidates:
+            if c != except_path:
+                return c
+        return None
 
     # ── markdown 出力 ──
     out: list[str] = []
@@ -756,7 +813,9 @@ def main() -> None:
             if removed:
                 out.append(f"**削除 ({len(removed):,} 件)**:")
                 out.append("")
-                out.extend(fmt_two_col_entries(removed, prev_e))
+                out.extend(
+                    fmt_removed_with_moves(removed, prev_e, find_move_target, path)
+                )
                 out.append("")
             if changed:
                 out.append(f"**読み変更 ({len(changed):,} 件)**:")
