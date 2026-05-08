@@ -19,7 +19,7 @@
 ## 書き方
 
 ```toml
-# rules/counters/objects.test.toml (rules/counters/objects.toml の隣接 test)
+# rules/numbers/counters/objects.test.toml (rules/numbers/counters/objects.toml の隣接 test)
 
 # ─── 本 ────────────────────────────────────────────
 [[test]]

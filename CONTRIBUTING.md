@@ -92,7 +92,7 @@ description = "二字・三字の一般熟語"             # 1 行説明 (STATS.
 
 ## ファイルが大きくなりすぎたら
 
-`core/jukugo/` `rules/counters/` `rules/context/` の 3 つは **同名サブディレクトリ
+`core/jukugo/` `rules/numbers/counters/` `rules/context/` の 3 つは **同名サブディレクトリ
 配下の `*.toml` を全て自動 merge** する仕組みになっている (lib loader 側で対応済み)。
 1 ファイルが PR レビューしづらいサイズになったら、**自由に分割して構わない**:
 
