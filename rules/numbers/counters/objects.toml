@@ -4,6 +4,7 @@
 
 [meta]
 role = "counters"
+description = "物を数える助数詞 (本 / 匹 / 杯 / 個 / 歳 / 冊、 連濁 / 促音化)"
 
 [counter."本"]
 default = "ホン"

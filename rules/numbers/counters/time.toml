@@ -6,6 +6,7 @@
 
 [meta]
 role = "counters"
+description = "時間系助数詞 (月 / 日 / 時 / 分 / 週間 / 回、 4/7/9 の特殊読み + カナ末尾置換)"
 
 [counter."月"]
 default = "ガツ"

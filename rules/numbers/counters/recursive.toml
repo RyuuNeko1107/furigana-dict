@@ -5,6 +5,7 @@
 
 [meta]
 role = "counters"
+description = "再帰モード助数詞 (個目 / 階目 等、 既存助数詞解決後に末尾連結)"
 
 [counter."目"]
 mode = "recursive"

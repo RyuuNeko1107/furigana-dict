@@ -27,8 +27,8 @@ git に commit されている master HEAD の状態を基準にする。
 | [**外来語**](#外来語) (`core/loanwords/*`、IT 用語等の英字 surface) | **160** | **-** | **5.0 KB** |
 | [**単漢字 override**](#単漢字-override) (`core/single_overrides.toml`、 issue #15 限定解) | **1** | **-** | **136 B** |
 | [**異体字**](#異体字) (`core/compat.toml`) | **435** | **-** | **6.0 KB** |
-| [**エンジンルール**](#エンジンルール) (`rules/`) | **263** | **6** | **15 KB** |
-| **合計** | **49,148** | **6** | **969 KB** |
+| [**エンジンルール**](#エンジンルール) (`rules/`) | **256** | **6** | **16 KB** |
+| **合計** | **49,141** | **6** | **970 KB** |
 <!-- AUTO-GENERATED:SUMMARY:END -->
 
 ## 内訳
@@ -199,7 +199,7 @@ git に commit されている master HEAD の状態を基準にする。
 `rules/` — エンジン挙動 (助数詞 / 文脈 / 後処理 等) を制御するルール群。 lib コードに embed されるのではなく、 ここで宣言的に外部化されている。
 
 <!-- AUTO-GENERATED:RULES:BEGIN -->
-**合計**: 263 件 / テスト 6 / 15 KB (genre 3 区分)
+**合計**: 256 件 / テスト 6 / 16 KB (genre 3 区分)
 
 #### 数値系
 
@@ -209,17 +209,17 @@ git に commit されている master HEAD の状態を基準にする。
 
 | ファイル | エントリ数 | テスト | サイズ | 用途 |
 |---|---:|---:|---:|---|
-| [`rules/numbers/counters/simple.toml`](rules/numbers/counters/simple.toml) | 52 | - | 1.0 KB | 助数詞ルール (本 / 匹 / 個 / 年 / 月 / 日 …、 連濁 / 促音化 / kana 末尾置換) |
+| [`rules/numbers/counters/simple.toml`](rules/numbers/counters/simple.toml) | 51 | - | 1.1 KB | 単純サフィックス助数詞 (円 / 点 / 度 / 名 / 話 等、 数値カナ + value 連結のみ) |
 | [`rules/numbers/days.toml`](rules/numbers/days.toml) | 31 | - | 844 B | 1〜31 日の特殊読み (1→ツイタチ 等) |
 | [`rules/numbers/numeric_phrases.toml`](rules/numbers/numeric_phrases.toml) | 23 | - | 733 B | 数字を含む例外語句 (二十歳→ハタチ 等) |
 | [`rules/numbers/scales.toml`](rules/numbers/scales.toml) | 19 | - | 871 B | 万 / 億 / 兆 / 京 等の大数スケール |
-| [`rules/numbers/counters/time.toml`](rules/numbers/counters/time.toml) | 12 | - | 1.1 KB | 助数詞ルール (本 / 匹 / 個 / 年 / 月 / 日 …、 連濁 / 促音化 / kana 末尾置換) |
-| [`rules/numbers/counters/objects.toml`](rules/numbers/counters/objects.toml) | 7 | 6 | 910 B | 助数詞ルール (本 / 匹 / 個 / 年 / 月 / 日 …、 連濁 / 促音化 / kana 末尾置換) |
-| [`rules/numbers/counters/places.toml`](rules/numbers/counters/places.toml) | 5 | - | 600 B | 助数詞ルール (本 / 匹 / 個 / 年 / 月 / 日 …、 連濁 / 促音化 / kana 末尾置換) |
-| [`rules/numbers/counters/percent.toml`](rules/numbers/counters/percent.toml) | 3 | - | 297 B | 助数詞ルール (本 / 匹 / 個 / 年 / 月 / 日 …、 連濁 / 促音化 / kana 末尾置換) |
-| [`rules/numbers/counters/people.toml`](rules/numbers/counters/people.toml) | 2 | - | 112 B | 助数詞ルール (本 / 匹 / 個 / 年 / 月 / 日 …、 連濁 / 促音化 / kana 末尾置換) |
-| [`rules/numbers/counters/recursive.toml`](rules/numbers/counters/recursive.toml) | 2 | - | 75 B | 助数詞ルール (本 / 匹 / 個 / 年 / 月 / 日 …、 連濁 / 促音化 / kana 末尾置換) |
-| **小計** (10 ファイル) | **156** | **6** | **6.5 KB** | |
+| [`rules/numbers/counters/time.toml`](rules/numbers/counters/time.toml) | 11 | - | 1.3 KB | 時間系助数詞 (月 / 日 / 時 / 分 / 週間 / 回、 4/7/9 の特殊読み + カナ末尾置換) |
+| [`rules/numbers/counters/objects.toml`](rules/numbers/counters/objects.toml) | 6 | 6 | 1009 B | 物を数える助数詞 (本 / 匹 / 杯 / 個 / 歳 / 冊、 連濁 / 促音化) |
+| [`rules/numbers/counters/places.toml`](rules/numbers/counters/places.toml) | 4 | - | 699 B | 場所を数える助数詞 (階 / ヶ所 / 箇所 / か所、 連濁 / 促音化) |
+| [`rules/numbers/counters/percent.toml`](rules/numbers/counters/percent.toml) | 2 | - | 387 B | パーセンテージ (% / ％、 1/6/8/0 で促音化 + パーセント) |
+| [`rules/numbers/counters/people.toml`](rules/numbers/counters/people.toml) | 1 | - | 204 B | 人を数える助数詞 (人、 1=ヒトリ / 2=フタリ の特殊読み) |
+| [`rules/numbers/counters/recursive.toml`](rules/numbers/counters/recursive.toml) | 1 | - | 181 B | 再帰モード助数詞 (個目 / 階目 等、 既存助数詞解決後に末尾連結) |
+| **小計** (10 ファイル) | **149** | **6** | **7.2 KB** | |
 
 #### テキスト系
 
@@ -243,10 +243,10 @@ git に commit されている master HEAD の状態を基準にする。
 
 | ファイル | エントリ数 | テスト | サイズ | 用途 |
 |---|---:|---:|---:|---|
-| [`rules/context/special.toml`](rules/context/special.toml) | 29 | - | 1.9 KB | 文脈依存読み (一日→ツイタチ/イチニチ 等の同形異音語) |
-| [`rules/context/numbers.toml`](rules/context/numbers.toml) | 12 | - | 1.6 KB | 文脈依存読み (一日→ツイタチ/イチニチ 等の同形異音語) |
-| [`rules/context/homonyms.toml`](rules/context/homonyms.toml) | 11 | - | 3.2 KB | 文脈依存読み (一日→ツイタチ/イチニチ 等の同形異音語) |
-| **小計** (3 ファイル) | **52** | **-** | **6.7 KB** | |
+| [`rules/context/special.toml`](rules/context/special.toml) | 29 | - | 2.0 KB | 単純な読み固定化 (大人 / 何日 / 何人 等、 形態素解析が外しがちな語を default 固定) |
+| [`rules/context/numbers.toml`](rules/context/numbers.toml) | 12 | - | 1.7 KB | 数字を含む慣用語句の文脈ルール (一日→ツイタチ / 一月→イチガツ 等) |
+| [`rules/context/homonyms.toml`](rules/context/homonyms.toml) | 11 | - | 3.3 KB | 同形異音語 (上手 / 下手 / 人気 / 十分 等、 品詞 + 後続トークンで読み分け) |
+| **小計** (3 ファイル) | **52** | **-** | **7.0 KB** | |
 
 <!-- AUTO-GENERATED:RULES:END -->
 

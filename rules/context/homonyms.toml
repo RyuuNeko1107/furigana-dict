@@ -11,6 +11,7 @@
 
 [meta]
 role = "context"
+description = "同形異音語 (上手 / 下手 / 人気 / 十分 等、 品詞 + 後続トークンで読み分け)"
 
 [[rule]]
 surface = "上手"

@@ -5,6 +5,7 @@
 
 [meta]
 role = "counters"
+description = "人を数える助数詞 (人、 1=ヒトリ / 2=フタリ の特殊読み)"
 
 [counter."人"]
 default = "ニン"

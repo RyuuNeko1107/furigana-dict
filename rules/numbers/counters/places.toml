@@ -4,6 +4,7 @@
 
 [meta]
 role = "counters"
+description = "場所を数える助数詞 (階 / ヶ所 / 箇所 / か所、 連濁 / 促音化)"
 
 [counter."階"]
 default = "カイ"

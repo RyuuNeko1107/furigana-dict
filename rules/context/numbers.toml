@@ -7,6 +7,7 @@
 
 [meta]
 role = "context"
+description = "数字を含む慣用語句の文脈ルール (一日→ツイタチ / 一月→イチガツ 等)"
 
 [[rule]]
 surface = "一日"

@@ -110,8 +110,8 @@ def count_entries(path: Path) -> int:
     flat = sum(1 for v in data.values() if isinstance(v, str))
     if flat > 0:
         return flat
-    # 子テーブル合計フォールバック
-    return sum(len(v) for v in data.values() if isinstance(v, dict))
+    # 子テーブル合計フォールバック ([meta] は管理用 table なので除外)
+    return sum(len(v) for k, v in data.items() if isinstance(v, dict) and k != "meta")
 
 
 def count_inline_tests(path: Path) -> int:
