@@ -1,11 +1,10 @@
 # 場所を数える助数詞 (階 / ヶ所 / 箇所 / か所)
 
-# ─── 階 ────────────────────────────────────────────────────────────────────
-
 [meta]
 role = "counters"
 description = "場所を数える助数詞 (階 / ヶ所 / 箇所 / か所、 連濁 / 促音化)"
 
+# === begin: 階 ===
 [counter."階"]
 default = "カイ"
 
@@ -17,8 +16,9 @@ sokuonize = true
 [[counter."階".rules]]
 last_digit = [3]
 suffix = "ガイ"
+# === end: 階 ===
 
-# ─── ヶ所 / 箇所 / か所 ────────────────────────────────────────────────────
+# === begin: ヶ所 ===
 [counter."ヶ所"]
 default = "カショ"
 
@@ -26,7 +26,9 @@ default = "カショ"
 last_digit = [1, 6, 8, 0]
 suffix = "カショ"
 sokuonize = true
+# === end: ヶ所 ===
 
+# === begin: 箇所 ===
 [counter."箇所"]
 default = "カショ"
 
@@ -34,7 +36,9 @@ default = "カショ"
 last_digit = [1, 6, 8, 0]
 suffix = "カショ"
 sokuonize = true
+# === end: 箇所 ===
 
+# === begin: か所 ===
 [counter."か所"]
 default = "カショ"
 
@@ -42,3 +46,4 @@ default = "カショ"
 last_digit = [1, 6, 8, 0]
 suffix = "カショ"
 sokuonize = true
+# === end: か所 ===

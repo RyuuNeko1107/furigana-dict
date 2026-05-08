@@ -1,10 +1,10 @@
 # パーセンテージ (% / ％)
 
-
 [meta]
 role = "counters"
 description = "パーセンテージ (% / ％、 1/6/8/0 で促音化 + パーセント)"
 
+# === begin: % ===
 [counter."%"]
 default = "パーセント"
 
@@ -12,7 +12,9 @@ default = "パーセント"
 last_digit = [1, 6, 8, 0]
 suffix = "パーセント"
 sokuonize = true
+# === end: % ===
 
+# === begin: ％ ===
 [counter."％"]
 default = "パーセント"
 
@@ -20,3 +22,4 @@ default = "パーセント"
 last_digit = [1, 6, 8, 0]
 suffix = "パーセント"
 sokuonize = true
+# === end: ％ ===

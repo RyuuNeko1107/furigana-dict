@@ -1,11 +1,10 @@
 # 物を数える助数詞 (本 / 匹 / 杯 / 個 / 歳 / 冊)
 
-# ─── 本 ────────────────────────────────────────────────────────────────────
-
 [meta]
 role = "counters"
 description = "物を数える助数詞 (本 / 匹 / 杯 / 個 / 歳 / 冊、 連濁 / 促音化)"
 
+# === begin: 本 ===
 [counter."本"]
 default = "ホン"
 
@@ -17,8 +16,9 @@ sokuonize = true
 [[counter."本".rules]]
 last_digit = [3]
 suffix = "ボン"
+# === end: 本 ===
 
-# ─── 匹 ────────────────────────────────────────────────────────────────────
+# === begin: 匹 ===
 [counter."匹"]
 default = "ヒキ"
 
@@ -30,8 +30,9 @@ sokuonize = true
 [[counter."匹".rules]]
 last_digit = [3]
 suffix = "ビキ"
+# === end: 匹 ===
 
-# ─── 杯 ────────────────────────────────────────────────────────────────────
+# === begin: 杯 ===
 [counter."杯"]
 default = "ハイ"
 
@@ -43,8 +44,9 @@ sokuonize = true
 [[counter."杯".rules]]
 last_digit = [3]
 suffix = "バイ"
+# === end: 杯 ===
 
-# ─── 個 ────────────────────────────────────────────────────────────────────
+# === begin: 個 ===
 [counter."個"]
 default = "コ"
 
@@ -52,8 +54,9 @@ default = "コ"
 last_digit = [1, 6, 8, 0]
 suffix = "コ"
 sokuonize = true
+# === end: 個 ===
 
-# ─── 歳 ────────────────────────────────────────────────────────────────────
+# === begin: 歳 ===
 [counter."歳"]
 default = "サイ"
 
@@ -61,8 +64,9 @@ default = "サイ"
 last_digit = [1, 8, 0]
 suffix = "サイ"
 sokuonize = true
+# === end: 歳 ===
 
-# ─── 冊 ────────────────────────────────────────────────────────────────────
+# === begin: 冊 ===
 [counter."冊"]
 default = "サツ"
 
@@ -70,6 +74,7 @@ default = "サツ"
 last_digit = [1, 8, 0]
 suffix = "サツ"
 sokuonize = true
+# === end: 冊 ===
 
 # inline test は隣接の `objects.test.toml` に分離 (CI 専用、 release tar 除外、
 # runtime memory には載らない)。 contributor は `<name>.test.toml` ペアで追記する。
