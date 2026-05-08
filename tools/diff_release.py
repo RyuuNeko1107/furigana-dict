@@ -58,12 +58,8 @@ def git_show(tag: str, path: str) -> str | None:
     return result.stdout
 
 
-def git_ls_files(tag: str) -> list[str]:
-    """tag 時点で tracked な core/ + rules/ 配下の *.toml file 一覧を返す。
-
-    `_genre.toml` (STATS sub-section description) と `*.test.toml` (CI 専用 inline test)
-    は集計対象外なので除外。
-    """
+def git_ls_all(tag: str) -> list[str]:
+    """tag 時点で tracked な全 file path を返す (raw)。"""
     result = subprocess.run(  # nosec B603 — fixed argv, no shell
         ["git", "ls-tree", "-r", "--name-only", tag],
         capture_output=True,
@@ -71,13 +67,84 @@ def git_ls_files(tag: str) -> list[str]:
         encoding="utf-8",
         check=True,
     )
+    return result.stdout.splitlines()
+
+
+def git_ls_files(tag: str) -> list[str]:
+    """tag 時点で tracked な core/ + rules/ 配下の *.toml file 一覧を返す。
+
+    `_genre.toml` (STATS sub-section description) と `*.test.toml` (CI 専用 inline test)
+    は集計対象外なので除外。
+    """
     return [
-        p for p in result.stdout.splitlines()
+        p for p in git_ls_all(tag)
         if (p.startswith("core/") or p.startswith("rules/"))
         and p.endswith(".toml")
         and not p.endswith("_genre.toml")
         and not p.endswith(".test.toml")
     ]
+
+
+def gather_qa_at_tag(tag: str) -> dict:
+    """tag 時点の corpus / inline test 件数を集計して返す。
+
+    Returns:
+      {
+        "corpus": {"should_read": N, "should_not_read_yet": M, "out_of_scope": K},
+        "inline_files": F,
+        "inline_cases": L,
+      }
+    """
+    paths = git_ls_all(tag)
+    qa = {
+        "corpus": {"should_read": 0, "should_not_read_yet": 0, "out_of_scope": 0},
+        "inline_files": 0,
+        "inline_cases": 0,
+    }
+
+    # corpus (tests/corpus/*.toml、 bucket 名で振り分け)
+    for p in paths:
+        if not p.startswith("tests/corpus/") or not p.endswith(".toml"):
+            continue
+        bucket = None
+        for name in qa["corpus"]:
+            # `should_read.toml` 単独 or `should_read/<topic>.toml` dir のどちらも
+            if f"/{name}.toml" in f"/{p}" or f"/{name}/" in f"/{p}":
+                bucket = name
+                break
+        if bucket is None:
+            continue
+        content = git_show(tag, p) or ""
+        try:
+            data = tomllib.loads(content)
+        except tomllib.TOMLDecodeError:
+            continue
+        cases = data.get("case")
+        if isinstance(cases, list):
+            # expected を持つ case のみ実行対象 (should_not_read_yet / out_of_scope は
+            # expected_failure_reason のみで expected が無いものが多い)
+            actionable = sum(
+                1 for c in cases if isinstance(c, dict) and "expected" in c
+            )
+            qa["corpus"][bucket] += actionable
+
+    # inline test (`*.test.toml`、 core/ + rules/ 配下)
+    for p in paths:
+        if not p.endswith(".test.toml"):
+            continue
+        if not (p.startswith("core/") or p.startswith("rules/")):
+            continue
+        content = git_show(tag, p) or ""
+        try:
+            data = tomllib.loads(content)
+        except tomllib.TOMLDecodeError:
+            continue
+        cases = data.get("test")
+        if isinstance(cases, list):
+            qa["inline_files"] += 1
+            qa["inline_cases"] += len(cases)
+
+    return qa
 
 
 def parse_entries(content: str) -> dict[str, str]:
@@ -164,7 +231,9 @@ def description_with_fallback(content: str, rel_path: str) -> str:
     2. working tree (= 現状の HEAD) の **同 path** の `[meta] description`
     3. working tree の **同 basename** の `[meta] description` (rename 移行対応、
        例: `rules/counters/objects.toml` → `rules/numbers/counters/objects.toml`)
-    4. `_(用途未設定)_`
+    4. **同名 dir への split 検知** (例: `core/unihan.toml` → `core/unihan/*.toml` が
+       存在 → split 移行と推定して generic 説明を返す)
+    5. `_(用途未設定)_`
     """
     desc = parse_meta_description(content)
     if desc:
@@ -195,6 +264,19 @@ def description_with_fallback(content: str, rel_path: str) -> str:
                 desc = parse_meta_description(current)
                 if desc:
                     return f"{desc} _(rename: 現在は `{cand.relative_to(REPO_ROOT).as_posix()}`)_"
+    # 同名 dir への split 検知 (`<name>.toml` → `<name>/*.toml`)
+    stem = rel_path.removesuffix(".toml")
+    split_dir = REPO_ROOT / stem
+    if split_dir.is_dir():
+        children = sorted(
+            c.relative_to(REPO_ROOT).as_posix()
+            for c in split_dir.glob("*.toml")
+            if c.is_file() and not c.name.endswith(".test.toml")
+        )
+        if children:
+            sample = ", ".join(f"`{c}`" for c in children[:3])
+            more = f" 他 {len(children) - 3} file" if len(children) > 3 else ""
+            return f"_(旧 single-file 形式、 現在は `{stem}/` 配下に split: {sample}{more})_"
     return "_(用途未設定)_"
 
 
@@ -244,11 +326,36 @@ def fmt_changed_entries(changed: list[tuple[str, str, str]]) -> list[str]:
 
 
 def main() -> None:
-    if len(sys.argv) < 2:
-        print("usage: diff_release.py <prev-tag> [<now-tag-or-HEAD>]", file=sys.stderr)
+    # 簡易 arg parse (argparse 入れるほどでもない、 positional 2 + 任意 --label-* 2)
+    args = sys.argv[1:]
+    label_prev = None
+    label_now = None
+    positional = []
+    i = 0
+    while i < len(args):
+        if args[i] == "--label-prev" and i + 1 < len(args):
+            label_prev = args[i + 1]
+            i += 2
+        elif args[i] == "--label-now" and i + 1 < len(args):
+            label_now = args[i + 1]
+            i += 2
+        else:
+            positional.append(args[i])
+            i += 1
+    if len(positional) < 1:
+        print(
+            "usage: diff_release.py <prev-tag-or-commit> [<now-tag-or-HEAD>] "
+            "[--label-prev <name>] [--label-now <name>]\n"
+            "       --label-* は title / heading 表示用の別名 (commit hash で参照する時の "
+            "「本来の tag 名」 を指定する用途)",
+            file=sys.stderr,
+        )
         sys.exit(2)
-    prev_tag = sys.argv[1]
-    now_tag = sys.argv[2] if len(sys.argv) > 2 else "HEAD"
+    prev_tag = positional[0]
+    now_tag = positional[1] if len(positional) > 1 else "HEAD"
+    # display 用の label。 未指定なら tag/commit そのまま
+    prev_label = label_prev or prev_tag
+    now_label = label_now or now_tag
 
     prev_files = set(git_ls_files(prev_tag))
     now_files = set(git_ls_files(now_tag))
@@ -294,7 +401,18 @@ def main() -> None:
 
     # ── markdown 出力 ──
     out: list[str] = []
-    out.append(f"# ja-furigana-dict release diff: `{prev_tag}` → `{now_tag}`")
+    out.append(f"# ja-furigana-dict release diff: `{prev_label}` → `{now_label}`")
+    if prev_label != prev_tag or now_label != now_tag:
+        # commit hash 参照の場合は実 ref を注記 (削除済み tag の歴史 archive 用途)
+        notes = []
+        if prev_label != prev_tag:
+            notes.append(f"`{prev_label}` (commit `{prev_tag}`)")
+        if now_label != now_tag:
+            notes.append(f"`{now_label}` (commit `{now_tag}`)")
+        out.append("")
+        out.append(
+            f"> 削除済み tag を commit hash で参照: {' / '.join(notes)}"
+        )
     out.append("")
 
     # ── 集計 (table) ──
@@ -375,7 +493,7 @@ def main() -> None:
                 out.append("")
 
     # ── リリース時点スナップショット (now tag 時点の全 file + entries 数) ──
-    out.append(f"## リリース時点スナップショット (`{now_tag}`)")
+    out.append(f"## リリース時点スナップショット (`{now_label}`)")
     out.append("")
     out.append(
         "release tag 時点での dict / rule file 一覧 + entries 数。 古い release との"
@@ -392,6 +510,36 @@ def main() -> None:
         out.append(f"| `{p}` | {n:,} | {desc} |")
         snapshot_total += n
     out.append(f"| **合計** ({len(now_files)} ファイル) | **{snapshot_total:,}** | |")
+    out.append("")
+
+    # ── QA カバレッジ (release tag 時点の corpus + inline test 件数) ──
+    qa = gather_qa_at_tag(now_tag)
+    out.append("### QA カバレッジ")
+    out.append("")
+    out.append(
+        "release tag 時点での test カバレッジ snapshot。 release tar から "
+        "`*.test.toml` は exclude されるため lib runtime には影響しないが、 CI 時点の "
+        "回帰防御の厚みを記録として残す。"
+    )
+    out.append("")
+    out.append("| 種別 | ケース数 |")
+    out.append("|---|---:|")
+    out.append(f"| corpus / `should_read` (回帰) | {qa['corpus']['should_read']} |")
+    out.append(
+        f"| corpus / `should_not_read_yet` (将来 fix 期待) | "
+        f"{qa['corpus']['should_not_read_yet']} |"
+    )
+    out.append(
+        f"| corpus / `out_of_scope` (仕様上諦め) | {qa['corpus']['out_of_scope']} |"
+    )
+    out.append(
+        f"| inline test (`*.test.toml`、 {qa['inline_files']} ファイル) | "
+        f"{qa['inline_cases']} |"
+    )
+    qa_total = (
+        sum(qa["corpus"].values()) + qa["inline_cases"]
+    )
+    out.append(f"| **合計** | **{qa_total}** |")
     out.append("")
 
     if not file_diffs and not new_files and not removed_files:
