@@ -65,3 +65,31 @@ default = "サツ"
 last_digit = [1, 8, 0]
 suffix = "サツ"
 sokuonize = true
+
+# ─── inline test (この file が担当する読みのロック) ───────────────────────────
+# tools/test_inline_rules.py が CI で各 case を binary に流して expected と比較。
+# input は実テキスト、 expected は hiragana mode の出力。
+
+[[test]]
+input = "1本"
+expected = "いっぽん"
+
+[[test]]
+input = "3本"
+expected = "さんぼん"
+
+[[test]]
+input = "5本"
+expected = "ごほん"
+
+[[test]]
+input = "1匹"
+expected = "いっぴき"
+
+[[test]]
+input = "3匹"
+expected = "さんびき"
+
+[[test]]
+input = "1冊"
+expected = "いっさつ"
