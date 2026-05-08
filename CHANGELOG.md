@@ -254,11 +254,16 @@ ja-furigana 0.1.0-alpha.3 で resolve_reading が
 - `tools/validate.py` を kana 全般 (ひらがな + 全角カタカナ) 許容に緩和
   (本番データの慣習: 訓読み = ひらがな / 音読み = カタカナ に追従)。
 
-## [一覧]
+<!-- ───────────────────────────────────────────────────────────────────
+     リンク参照 (Markdown reference-style links、 GitHub では invisible)
+     上記 body の [Unreleased] / [2026.05.09] 等の bracket 表記をクリック可能に
+     する metadata。 release tag が削除された旧 [0.1.x] (semver) には対応する
+     URL は無く、 plain text として render される (warning にはならない)。
+
+     旧 v0.1.0 〜 v0.1.3 の semver tag / Release は CalVer 移行時 (2026-05-07) に
+     削除済み。 body の [0.1.x] section は historical として残置。
+     ─────────────────────────────────────────────────────────────────── -->
 
 [Unreleased]: https://github.com/RyuuNeko1107/ja-furigana-dict/compare/v2026.05.09...HEAD
 [2026.05.09]: https://github.com/RyuuNeko1107/ja-furigana-dict/releases/tag/v2026.05.09
 [2026.05.07]: https://github.com/RyuuNeko1107/ja-furigana-dict/releases/tag/v2026.05.07
-
-<!-- 旧 v0.1.0 〜 v0.1.3 の semver tag / Release は CalVer 移行時 (2026-05-07) に削除。
-     CHANGELOG body の [0.1.x] section は historical として残置 (URL link は失効)。 -->
