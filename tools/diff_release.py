@@ -265,11 +265,20 @@ def gen_snapshot_section(now_label: str, now_files: list[str], now_tag: str) -> 
         headings_override=RULES_BUCKET_HEADINGS,
     )
 
-    # ── (5) 全体合計 ──
+    # ── (5) 全体合計 (重複含む / ユニーク) ──
     grand_total = sum(it[1] for items in cats.values() for it in items)
+    # ユニーク count: 全 file の (surface, reading) tuple を de-dup
+    unique_pairs: set[tuple[str, str]] = set()
+    for p in now_files:
+        c = git_show(now_tag, p) or ""
+        for s, r in parse_entries(c).items():
+            unique_pairs.add((s, r))
     out.append("### 全体合計")
     out.append("")
-    out.append(f"**{len(now_files)} ファイル / {grand_total:,} entries**")
+    out.append(
+        f"**{len(now_files)} ファイル / {grand_total:,} entries (重複含む) "
+        f"/ {len(unique_pairs):,} unique (surface, reading)**"
+    )
     out.append("")
 
     return out
@@ -683,6 +692,23 @@ def main() -> None:
         prev_c = git_show(prev_tag, path) or ""
         total_removed += count_top_level_items(prev_c)
 
+    # ── unique 集計 (重複 surface/reading は de-dup) ──
+    # 同 release 内で同じ (surface, reading) が複数 file にまたがって追加 / 削除
+    # された場合、 raw count では複数回数えるが、 unique count は 1 件として扱う。
+    # 「合計」 は de-dup した値、 per-file 表示は raw count のまま (重複は視覚的に見える)。
+    def _collect_pairs(paths: list[str], tag: str) -> set[tuple[str, str]]:
+        pairs: set[tuple[str, str]] = set()
+        for path in paths:
+            c = git_show(tag, path) or ""
+            for s, r in parse_entries(c).items():
+                pairs.add((s, r))
+        return pairs
+
+    prev_all = _collect_pairs(common + removed_files_raw, prev_tag)
+    now_all = _collect_pairs(common + new_files_raw, now_tag)
+    unique_added = len(now_all - prev_all)
+    unique_removed = len(prev_all - now_all)
+
     # ── cross-file 移動検出 (削除エントリの引き先候補を作る) ──
     # 同 release で「file A から (surface, reading) が削除」 + 「file B に同じ
     # (surface, reading) が追加」 されている場合、 移動として annotate する。
@@ -726,12 +752,14 @@ def main() -> None:
     out.append("")
 
     # ── 集計 (table) ──
+    # 「重複含む」 = file 単位の合算 (同じ (surface, reading) が複数 file にあれば多重 count)
+    # 「ユニーク」 = (surface, reading) tuple で de-dup (cross-file 重複を 1 件扱い)
     out.append("## 集計")
     out.append("")
     out.append("| 項目 | 値 |")
     out.append("|---|---:|")
-    out.append(f"| 追加 entries | **+{total_added:,}** |")
-    out.append(f"| 削除 entries | **-{total_removed:,}** |")
+    out.append(f"| 追加 entries (重複含む / ユニーク) | **+{total_added:,}** / **+{unique_added:,}** |")
+    out.append(f"| 削除 entries (重複含む / ユニーク) | **-{total_removed:,}** / **-{unique_removed:,}** |")
     out.append(f"| 読み変更 | **~{total_changed:,}** |")
     out.append(f"| 新規 file | **{len(new_files)}** |")
     out.append(f"| 削除 file | **{len(removed_files)}** |")
