@@ -850,3 +850,235 @@ input = "土が固い"
 mode = "hiragana"
 expected = "つちがかたい"
 note = "土 single_overrides: 単独 surface でも override が hit"
+
+# ---------------------------------------------------------------------------
+# 日付の特殊読み (days.toml) — 1〜31 日の単漢字熟字訓
+# ---------------------------------------------------------------------------
+
+[[case]]
+input = "8月二日"
+mode = "hiragana"
+expected = "はちがつふつか"
+note = "二日 = フツカ (days.toml/2)、月名 + 日 の date 文脈で特殊読み採用"
+
+[[case]]
+input = "5月20日"
+mode = "hiragana"
+expected = "ごがつはつか"
+note = "20日 = ハツカ (days.toml/20)、 アラビア数字でも date 文脈で hit"
+
+[[case]]
+input = "8月14日"
+mode = "hiragana"
+expected = "はちがつじゅうよっか"
+note = "14日 = ジュウヨッカ (days.toml/14)、 アラビア数字 date 文脈"
+
+[[case]]
+input = "1月8日"
+mode = "hiragana"
+expected = "いちがつようか"
+note = "8日 = ヨウカ (days.toml/8)、 月名 + 日 の date 文脈"
+
+[[case]]
+input = "12月二十日"
+mode = "hiragana"
+expected = "じゅうにがつはつか"
+note = "二十日 = ハツカ、 漢数字 date 文脈でも hit"
+
+# ---------------------------------------------------------------------------
+# 助数詞バリエーション拡充 (counters/*.toml)
+# ---------------------------------------------------------------------------
+
+[[case]]
+input = "5階建てのビル"
+mode = "hiragana"
+expected = "ごかいだてのビル"
+note = "5階 = ゴカイ (counters/places.toml)、 連濁ルール (1/6/8/0 で促音化対象外)"
+
+[[case]]
+input = "3ヶ所"
+mode = "hiragana"
+expected = "さんかしょ"
+note = "3ヶ所 = サンカショ (counters/places.toml)、 ヶ所 字面の助数詞解決"
+
+[[case]]
+input = "5倍"
+mode = "hiragana"
+expected = "ごばい"
+note = "5倍 = ゴバイ (counters/simple.toml)、 単純サフィックス助数詞"
+
+[[case]]
+input = "16号"
+mode = "hiragana"
+expected = "じゅうろくごう"
+note = "16号 = ジュウロクゴウ (counters/simple.toml)"
+
+# ---------------------------------------------------------------------------
+# 建築 jukugo (objects/architecture.toml)
+# ---------------------------------------------------------------------------
+
+[[case]]
+input = "灯籠"
+mode = "hiragana"
+expected = "とうろう"
+note = "灯籠: architecture.toml jukugo、 「ともしびかご」 等の誤読を回避"
+
+[[case]]
+input = "障子"
+mode = "hiragana"
+expected = "しょうじ"
+note = "障子: architecture.toml jukugo、 「ショウコ」 「ショウシ」 誤読回避"
+
+[[case]]
+input = "屏風"
+mode = "hiragana"
+expected = "びょうぶ"
+note = "屏風: architecture.toml jukugo、 連濁 (フウ → ブ) を含む"
+
+# ---------------------------------------------------------------------------
+# 衣服 jukugo (objects/clothes.toml)
+# ---------------------------------------------------------------------------
+
+[[case]]
+input = "十二単を纏う"
+mode = "hiragana"
+expected = "じゅうにひとえをまとう"
+note = "十二単: clothes.toml jukugo、 「ジュウニタン」 (Lindera default) を ジュウニヒトエ に固定"
+
+[[case]]
+input = "雪駄を履く"
+mode = "hiragana"
+expected = "せったをはく"
+note = "雪駄: clothes.toml jukugo、 「ユキ + ダ」 分解を セッタ に固定"
+
+[[case]]
+input = "羽織を着る"
+mode = "hiragana"
+expected = "はおりをきる"
+note = "羽織: clothes.toml jukugo、 「ハネオリ」 等の誤読を ハオリ に固定"
+
+# ---------------------------------------------------------------------------
+# 色名 jukugo (objects/colors.toml)
+# ---------------------------------------------------------------------------
+
+[[case]]
+input = "藍色"
+mode = "hiragana"
+expected = "あいいろ"
+note = "藍色: colors.toml jukugo、 「ランショク」 (Lindera default 音読み) を アイイロ (訓読み) に固定"
+
+[[case]]
+input = "茜染"
+mode = "hiragana"
+expected = "あかねぞめ"
+note = "茜染: colors.toml jukugo、 「センゾメ」 を アカネゾメ (連濁含む) に固定"
+
+# ---------------------------------------------------------------------------
+# 気象 jukugo (nature/weather.toml)
+# ---------------------------------------------------------------------------
+
+[[case]]
+input = "稲妻が走る"
+mode = "hiragana"
+expected = "いなずまがはしる"
+note = "稲妻: weather.toml jukugo、 「いなづま」 (旧かな) を イナズマ (現代仮名遣い) に固定"
+
+[[case]]
+input = "粉雪"
+mode = "hiragana"
+expected = "こなゆき"
+note = "粉雪: weather.toml jukugo、 連濁なし (コナユキ)"
+
+[[case]]
+input = "霧雨"
+mode = "hiragana"
+expected = "きりさめ"
+note = "霧雨: weather.toml jukugo、 連濁 (アメ → サメ) を キリサメ に固定"
+
+# ---------------------------------------------------------------------------
+# 古典文学作品名 (humanities/literature.toml)
+# ---------------------------------------------------------------------------
+
+[[case]]
+input = "源氏物語"
+mode = "hiragana"
+expected = "げんじものがたり"
+note = "源氏物語: literature.toml jukugo、 平安古典の代表作"
+
+[[case]]
+input = "万葉集"
+mode = "hiragana"
+expected = "まんようしゅう"
+note = "万葉集: literature.toml jukugo、 奈良時代の歌集"
+
+[[case]]
+input = "更級日記"
+mode = "hiragana"
+expected = "さらしなにっき"
+note = "更級日記: literature.toml jukugo、 「コウキュウ」 等の誤読を サラシナ に固定"
+
+[[case]]
+input = "徒然草"
+mode = "hiragana"
+expected = "つれづれぐさ"
+note = "徒然草: literature.toml jukugo、 「トゼン」 等の誤読回避、 連濁 (クサ → グサ) 含む"
+
+# ---------------------------------------------------------------------------
+# 乗り物 jukugo (objects/vehicles.toml)
+# ---------------------------------------------------------------------------
+
+[[case]]
+input = "潜水艦が浮上"
+mode = "hiragana"
+expected = "せんすいかんがふじょう"
+note = "潜水艦: vehicles.toml jukugo、 軍艦・船舶用語"
+
+[[case]]
+input = "蒸気機関車"
+mode = "hiragana"
+expected = "じょうききかんしゃ"
+note = "蒸気機関車: vehicles.toml jukugo、 SL の正式名"
+
+# ---------------------------------------------------------------------------
+# 経済金融 jukugo (society/finance.toml)
+# ---------------------------------------------------------------------------
+
+[[case]]
+input = "為替差益が出る"
+mode = "hiragana"
+expected = "かわせさえきがでる"
+note = "為替差益: finance.toml jukugo、 「カワセサエキ」 を 4-char 1 chunk で固定"
+
+[[case]]
+input = "確定申告の時期"
+mode = "hiragana"
+expected = "かくていしんこくのじき"
+note = "確定申告: finance.toml jukugo"
+
+[[case]]
+input = "株主総会"
+mode = "hiragana"
+expected = "かぶぬしそうかい"
+note = "株主総会: finance.toml jukugo、 「カブヌシ」 + 「ソウカイ」 を連結"
+
+[[case]]
+input = "貸借対照表"
+mode = "hiragana"
+expected = "たいしゃくたいしょうひょう"
+note = "貸借対照表: finance.toml jukugo、 会計帳簿の正式名"
+
+# ---------------------------------------------------------------------------
+# 政治・行政 jukugo (society/politics.toml)
+# ---------------------------------------------------------------------------
+
+[[case]]
+input = "内閣官房長官"
+mode = "hiragana"
+expected = "ないかくかんぼうちょうかん"
+note = "内閣官房長官: politics.toml + proper_nouns.toml、 6-char 役職名を全 chunk で読み切る"
+
+[[case]]
+input = "解散総選挙"
+mode = "hiragana"
+expected = "かいさんそうせんきょ"
+note = "解散総選挙: politics.toml jukugo、 「カイサン」 + 「ソウセンキョ」"
