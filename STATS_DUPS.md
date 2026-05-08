@@ -8,9 +8,11 @@
 
 (なし — divergent reading 0 件、 健全)
 
-## 同一 reading (0 件)
+## 同一 reading (1 件)
 
 実害なし (jukugo merge で同値が上書きされても reading 不変)。 整理目安として list 化。
 長期的にどちらか 1 ファイルに寄せたいケースを発見する用。
 
-(なし)
+| surface | reading | files |
+|---|---|---|
+| 白蓮 | ビャクレン | `core/jukugo/basic/general.toml`, `core/works/game/touhou.toml` |
