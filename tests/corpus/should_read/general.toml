@@ -1,0 +1,406 @@
+# 一般単語の回帰 case (既存 should_read.toml で未カバーの部分を補強)
+#
+# 既存 should_read.toml には基本的な 一般熟語 / 場所 / 助数詞 等の単語単独 case が
+# 大量にあるが、 **多 target の sentence-level case** + **新規 jukugo 拡充分** を
+# こちらで補う。 新 schema [[case.targets]] を活用して 1 例文で多 lock。
+#
+# 対象 source: core/jukugo/<genre>/*.toml (basic / humanities / nature / objects /
+# proper / society 全 6 区分)、 + 派生作品系 (genji_monogatari 等)。
+
+# ─── 四字熟語 (sentence + multi target) ────────────────────────────────
+
+[[case]]
+input = "彼の演奏は一意専心の境地に達していた"
+mode = "hiragana"
+expected = "かれのえんそうはいちいせんしんのきょうちにたっしていた"
+note = "一意専心 = イチイセンシン (専心 = センシン)、 境地 = キョウチ"
+
+[[case.targets]]
+surface = "一意専心"
+reading = "いちいせんしん"
+
+[[case.targets]]
+surface = "境地"
+reading = "きょうち"
+
+
+[[case]]
+input = "前途洋々たる若者の門出を祝う"
+mode = "hiragana"
+expected = "ぜんとようようたるわかもののかどでをいわう"
+note = "前途洋々 = ゼントヨウヨウ、 門出 = カドデ"
+
+[[case.targets]]
+surface = "前途洋々"
+reading = "ぜんとようよう"
+
+
+[[case]]
+input = "切磋琢磨して優勝を目指す"
+mode = "hiragana"
+expected = "せっさたくましてゆうしょうをめざす"
+note = "切磋琢磨 = セッサタクマ"
+
+[[case.targets]]
+surface = "切磋琢磨"
+reading = "せっさたくま"
+
+
+[[case]]
+input = "四面楚歌の状況に陥った"
+mode = "hiragana"
+expected = "しめんそかのじょうきょうにおちいった"
+note = "四面楚歌 = シメンソカ + Lindera 動詞活用 (陥った = オチイッタ)"
+
+[[case.targets]]
+surface = "四面楚歌"
+reading = "しめんそか"
+
+
+# ─── 慣用句 / idioms ───────────────────────────────────────────────────
+
+[[case]]
+input = "蛇足ながら一言申し上げます"
+mode = "hiragana"
+expected = "だそくながらひとこともうしあげます"
+note = "蛇足 = ダソク (慣用句)"
+
+[[case.targets]]
+surface = "蛇足"
+reading = "だそく"
+
+
+[[case]]
+input = "杞憂に終わって何よりだ"
+mode = "hiragana"
+expected = "きゆうにおわってなによりだ"
+note = "杞憂 = キユウ (中国故事由来)"
+
+[[case.targets]]
+surface = "杞憂"
+reading = "きゆう"
+
+
+# ─── 古典文学 / 文人 ───────────────────────────────────────────────────
+
+[[case]]
+input = "枕草子の作者は清少納言"
+mode = "hiragana"
+expected = "まくらのそうしのさくしゃはせいしょうなごん"
+note = "枕草子 = マクラノソウシ、 清少納言 = セイショウナゴン"
+
+[[case.targets]]
+surface = "枕草子"
+reading = "まくらのそうし"
+
+[[case.targets]]
+surface = "清少納言"
+reading = "せいしょうなごん"
+
+
+[[case]]
+input = "紫式部が源氏物語を書いた"
+mode = "hiragana"
+expected = "むらさきしきぶがげんじものがたりをかいた"
+note = "紫式部 = ムラサキシキブ、 源氏物語 = ゲンジモノガタリ"
+
+[[case.targets]]
+surface = "紫式部"
+reading = "むらさきしきぶ"
+
+[[case.targets]]
+surface = "源氏物語"
+reading = "げんじものがたり"
+
+
+[[case]]
+input = "夏目漱石の吾輩は猫であるを読んだ"
+mode = "hiragana"
+expected = "なつめそうせきのわがはいはねこであるをよんだ"
+note = "夏目漱石 = ナツメソウセキ"
+
+[[case.targets]]
+surface = "夏目漱石"
+reading = "なつめそうせき"
+
+
+# ─── 動植物 (難読) ──────────────────────────────────────────────────────
+
+[[case]]
+input = "啄木鳥の音が森に響く"
+mode = "hiragana"
+expected = "きつつきのおとがもりにひびく"
+note = "啄木鳥 = キツツキ (難読)"
+
+[[case.targets]]
+surface = "啄木鳥"
+reading = "きつつき"
+
+
+[[case]]
+input = "向日葵畑で蜻蛉を見つけた"
+mode = "hiragana"
+expected = "ひまわりばたけでとんぼをみつけた"
+note = "向日葵 = ヒマワリ、 蜻蛉 = トンボ (難読)"
+
+
+[[case]]
+input = "公魚と若鷺の違いを説明する"
+mode = "hiragana"
+expected = "わかさぎとわかさぎのちがいをせつめいする"
+note = "公魚 = ワカサギ (当て字、 若鷺と同じ魚)"
+
+[[case.targets]]
+surface = "公魚"
+reading = "わかさぎ"
+
+
+# ─── 食物 / 料理 (難読 / 当て字) ───────────────────────────────────────
+
+[[case]]
+input = "卯の花と冷奴を頼む"
+mode = "hiragana"
+expected = "うのはなとひややっこをたのむ"
+note = "卯の花 = ウノハナ (おからの別称)、 冷奴 = ヒヤヤッコ"
+
+[[case.targets]]
+surface = "冷奴"
+reading = "ひややっこ"
+
+
+[[case]]
+input = "今川焼きと鯛焼きの違い"
+mode = "hiragana"
+expected = "いまがわやきとたいやきのちがい"
+note = "今川焼き = イマガワヤキ"
+
+[[case.targets]]
+surface = "今川焼き"
+reading = "いまがわやき"
+
+
+# ─── 武器 / 武道 ────────────────────────────────────────────────────────
+
+[[case]]
+input = "薙刀と長巻の違いを学ぶ"
+mode = "hiragana"
+expected = "なぎなたとながまきのちがいをまなぶ"
+note = "薙刀 = ナギナタ、 長巻 = ナガマキ"
+
+
+[[case]]
+input = "合気道の道場で稽古する"
+mode = "hiragana"
+expected = "あいきどうのどうじょうでけいこする"
+note = "合気道 = アイキドウ、 稽古 = ケイコ"
+
+[[case.targets]]
+surface = "合気道"
+reading = "あいきどう"
+
+[[case.targets]]
+surface = "稽古"
+reading = "けいこ"
+
+
+# ─── 音楽 / 楽器 ────────────────────────────────────────────────────────
+
+[[case]]
+input = "三味線と尺八の合奏を聴く"
+mode = "hiragana"
+expected = "しゃみせんとしゃくはちのがっそうをきく"
+note = "三味線 = シャミセン、 尺八 = シャクハチ"
+
+[[case.targets]]
+surface = "三味線"
+reading = "しゃみせん"
+
+[[case.targets]]
+surface = "尺八"
+reading = "しゃくはち"
+
+
+[[case]]
+input = "撥弦楽器の代表が琵琶"
+mode = "hiragana"
+expected = "はつげんがっきのだいひょうがびわ"
+note = "撥弦楽器 = ハツゲンガッキ、 琵琶 = ビワ"
+
+
+# ─── 自然科学 ───────────────────────────────────────────────────────────
+
+[[case]]
+input = "突然変異を観察する"
+mode = "hiragana"
+expected = "とつぜんへんいをかんさつする"
+note = "突然変異 = トツゼンヘンイ"
+
+[[case.targets]]
+surface = "突然変異"
+reading = "とつぜんへんい"
+
+
+[[case]]
+input = "鍾乳洞の壁面に水滴が落ちる"
+mode = "hiragana"
+expected = "しょうにゅうどうのへきめんにすいてきがおちる"
+note = "鍾乳洞 = ショウニュウドウ"
+
+[[case.targets]]
+surface = "鍾乳洞"
+reading = "しょうにゅうどう"
+
+
+# ─── 体の部位 (難読) ────────────────────────────────────────────────────
+
+[[case]]
+input = "鳩尾を強打する"
+mode = "hiragana"
+expected = "みぞおちをきょうだする"
+note = "鳩尾 = ミゾオチ (難読)"
+
+[[case.targets]]
+surface = "鳩尾"
+reading = "みぞおち"
+
+
+[[case]]
+input = "副腎から分泌されるホルモン"
+mode = "hiragana"
+expected = "ふくじんからぶんぴつされるホルモン"
+note = "副腎 = フクジン、 分泌 = ブンピツ、 ホルモン (katakana 維持)"
+
+
+# ─── 衣服 / 古典 ────────────────────────────────────────────────────────
+
+[[case]]
+input = "狩衣と直垂を比較する"
+mode = "hiragana"
+expected = "かりぎぬとひたたれをひかくする"
+note = "狩衣 = カリギヌ、 直垂 = ヒタタレ"
+
+[[case.targets]]
+surface = "狩衣"
+reading = "かりぎぬ"
+
+[[case.targets]]
+surface = "直垂"
+reading = "ひたたれ"
+
+
+# ─── 政治 / 法学 ────────────────────────────────────────────────────────
+
+[[case]]
+input = "公示価格の発表で関心が高まる"
+mode = "hiragana"
+expected = "こうじかかくのはっぴょうでかんしんがたかまる"
+note = "公示 = コウジ"
+
+
+[[case]]
+input = "上告審で判決が覆る"
+mode = "hiragana"
+expected = "じょうこくしんではんけつがくつがえる"
+note = "上告 = ジョウコク、 覆る = クツガエル"
+
+
+# ─── 経済 ───────────────────────────────────────────────────────────────
+
+[[case]]
+input = "円高で輸出産業が打撃を受ける"
+mode = "hiragana"
+expected = "えんだかでゆしゅつさんぎょうがだげきをうける"
+note = "円高 = エンダカ、 輸出 = ユシュツ"
+
+
+[[case]]
+input = "債券市場の動向を注視する"
+mode = "hiragana"
+expected = "さいけんしじょうのどうこうをちゅうしする"
+note = "債券 = サイケン (一般語、 dict 確認)"
+
+
+# ─── 歴史人物 + 場所 ──────────────────────────────────────────────────
+
+[[case]]
+input = "織田信長が桶狭間で今川義元を討った"
+mode = "hiragana"
+expected = "おだのぶなががおけはざまでいまがわよしもとをうった"
+note = "戦国 大名 + 古戦場、 多 target"
+
+[[case.targets]]
+surface = "織田信長"
+reading = "おだのぶなが"
+
+[[case.targets]]
+surface = "今川義元"
+reading = "いまがわよしもと"
+
+
+[[case]]
+input = "豊臣秀吉と徳川家康が後継争いをする"
+mode = "hiragana"
+expected = "とよとみひでよしととくがわいえやすがこうけいあらそいをする"
+note = "豊臣秀吉 / 徳川家康"
+
+[[case.targets]]
+surface = "豊臣秀吉"
+reading = "とよとみひでよし"
+
+[[case.targets]]
+surface = "徳川家康"
+reading = "とくがわいえやす"
+
+
+# ─── 神道 / 神話 ────────────────────────────────────────────────────────
+
+[[case]]
+input = "八咫烏が神武天皇を導いた"
+mode = "hiragana"
+expected = "やたがらすがじんむてんのうをみちびいた"
+note = "八咫烏 = ヤタガラス、 神武天皇 = ジンムテンノウ"
+
+[[case.targets]]
+surface = "八咫烏"
+reading = "やたがらす"
+
+[[case.targets]]
+surface = "神武天皇"
+reading = "じんむてんのう"
+
+
+# ─── 寺社仏閣 (場所) ────────────────────────────────────────────────────
+
+[[case]]
+input = "東大寺の大仏は奈良の象徴"
+mode = "hiragana"
+expected = "とうだいじのだいぶつはならのしょうちょう"
+note = "東大寺 / 大仏 / 奈良"
+
+[[case.targets]]
+surface = "東大寺"
+reading = "とうだいじ"
+
+
+[[case]]
+input = "厳島神社の鳥居が海に立つ"
+mode = "hiragana"
+expected = "いつくしまじんじゃのとりいがうみにたつ"
+note = "厳島神社 = イツクシマジンジャ"
+
+[[case.targets]]
+surface = "厳島神社"
+reading = "いつくしまじんじゃ"
+
+
+# ─── 駅 (現代地名) ──────────────────────────────────────────────────────
+
+[[case]]
+input = "新大阪から博多まで新幹線で4時間"
+mode = "hiragana"
+expected = "しんおおさかからはかたまでしんかんせんでヨジカン"
+note = "新大阪 / 博多 + 助数詞 4時間 (ヨジカン)"
+
+[[case.targets]]
+surface = "新大阪"
+reading = "しんおおさか"
