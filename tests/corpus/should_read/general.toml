@@ -398,8 +398,8 @@ reading = "いつくしまじんじゃ"
 [[case]]
 input = "新大阪から博多まで新幹線で4時間"
 mode = "hiragana"
-expected = "しんおおさかからはかたまでしんかんせんでヨジカン"
-note = "新大阪 / 博多 + 助数詞 4時間 (ヨジカン)"
+expected = "しんおおさかからはかたまでしんかんせんでよじかん"
+note = "新大阪 / 博多 + 助数詞 4時間。 「4時間」 は kanji 含む surface なので hiragana 化"
 
 [[case.targets]]
 surface = "新大阪"
