@@ -53,6 +53,7 @@ gh pr create
 
 ```toml
 [meta]
+schema_version = "2"                              # alpha.10+ で必須 (★A1b)
 role = "jukugo"                                   # alpha.9+ で role tag を併置
 description = "二字・三字の一般熟語"             # 1 行説明 (STATS.md に自動取り込み)
 
@@ -61,6 +62,8 @@ description = "二字・三字の一般熟語"             # 1 行説明 (STATS.
 "黎明" = "レイメイ"
 ```
 
+- **`[meta] schema_version = "2"`** が必須 (alpha.10〜、 ★A1b)。 既存 file に
+  既設、 新規 file 追加時は冒頭に必ず置く。 不在は CI の `validate.py` が fail。
 - **key (表層) と value (読み) は両方ダブルクォートで囲む**
 - **value は ひらがな または 全角カタカナ** のみ (半角カナ・ローマ字は不可)
   - 慣習: 訓読み = ひらがな / 音読み = カタカナ
@@ -71,6 +74,44 @@ description = "二字・三字の一般熟語"             # 1 行説明 (STATS.
 - **異体字 (compat の key 側) を jukugo / works / unihan に追加しない** —
   lib の Step 1 で標準字に正規化されるため dead 経路、 master push 時に CI の
   `dedup_compat.py` が自動削除する
+
+### 文脈分岐 reading が要る場合 (★A2、 alpha.11〜)
+
+「上手」 = ジョウズ / カミテ のように surface 周辺で読みが変わる場合は **detailed
+entry** で書く (= entry inline match block):
+
+```toml
+[entries]
+"灰桜" = "ハイザクラ"           # simple form (大半はこれ)
+
+[entries."上手"]                # detailed form (= 文脈分岐 reading 持ち)
+reading = "ジョウズ"             # default reading (必須)
+
+[[entries."上手".match]]
+next_eq = "から"                 # 直後 token が "から" なら...
+reading = "カミテ"               # ...読みを "カミテ" に切替
+```
+
+詳細 vocabulary (`prev_eq` / `next_eq` / `prev_ends_any` / `next_starts_any` /
+`prev_char_type` / `prev_month` / `next_digit` / `next2_starts_any` 等) は
+[`docs/SCHEMA.md` の detailed entry 節](docs/SCHEMA.md#detailed-entry--inline-match-block-持ち-a2-alpha11)
+参照。 **品詞 (`pos`) ベースの matcher は採用しない** (Lindera 撤廃路線、 literal
+列挙 で代用)。
+
+### intonation bracket notation (forward compat、 0.2.0 で activate)
+
+reading 内に accent marker (`[` 開始 / `]` accent peak / `/` phrase 区切り) を
+**0.1.0 から書ける** (= lib alpha.10 〜 0.1.0 stable では strip して無視、 0.2.0
+から activate):
+
+```toml
+"上手" = "ジョ]ウズ"   # 1型 (頭高)
+"霧雨" = "キ[リサメ"   # 0型 (平板)
+```
+
+詳細書き方は [`docs/SCHEMA.md` の bracket notation 節](docs/SCHEMA.md#intonation-bracket-notation-forward-compat-020-で-activate)
+参照。 0.2.0 で intonation 機能投入、 それまでに dict が bracket 付き reading を
+蓄積できる構造 (= forward compat)。
 
 各 file の詳細スキーマ (counters / context / postprocess / loanwords 等の specific 構文) は
 [`docs/SCHEMA.md`](docs/SCHEMA.md) を参照。
