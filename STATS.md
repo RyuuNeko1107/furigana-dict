@@ -30,8 +30,8 @@ git に commit されている master HEAD の状態を基準にする。
 | [**分類前 inbox**](#分類前-inbox) (`core/_inbox.toml`、 後で振り分ける一時置き場) | **0** | **180 B** |
 | [**単漢字 [[kanji]] format**](#単漢字-kanji-format) (`core/kanji/*`、 ★A2 alpha.11 single_overrides の後継) | **1** | **202 B** |
 | [**異体字**](#異体字) (`core/compat.toml`) | **435** | **6.1 KB** |
-| [**エンジンルール**](#エンジンルール) (`rules/`) | **204** | **9.9 KB** |
-| **合計** | **49,309** | **978 KB** |
+| [**エンジンルール**](#エンジンルール) (`rules/`) | **178** | **9.3 KB** |
+| **合計** | **49,283** | **977 KB** |
 <!-- AUTO-GENERATED:SUMMARY:END -->
 
 ## 内訳
@@ -210,7 +210,7 @@ git に commit されている master HEAD の状態を基準にする。
 `rules/` — エンジン挙動 (助数詞 / 文脈 / 後処理 等) を制御するルール群。 lib コードに embed されるのではなく、 ここで宣言的に外部化されている。
 
 <!-- AUTO-GENERATED:RULES:BEGIN -->
-**合計**: 204 エントリ / 224 ルール / 9.9 KB (genre 2 区分)
+**合計**: 178 エントリ / 198 ルール / 9.3 KB (genre 2 区分)
 
 #### 数値系
 
@@ -236,15 +236,14 @@ git に commit されている master HEAD の状態を基準にする。
 
 単位 / 記号 / ラテン文字 / 後処理 regex — 文字単位の読み解決と最終整形
 
-`rules/text/` — 4 ファイル
+`rules/text/` — 3 ファイル
 
 | ファイル | エントリ数 | ルール数 | サイズ | 用途 |
 |---|---:|---:|---:|---|
-| [`rules/text/latin.toml`](rules/text/latin.toml) | 26 | 26 | 614 B | ラテン文字 1 文字読み (A→エー / B→ビー …、 大文字 key で保存、 lookup は case-insensitive) |
 | [`rules/text/units.toml`](rules/text/units.toml) | 17 | 17 | 813 B | SI 単位 + 通貨 + % (km / kg / mL / 円 / % 等、 数値 + 単位を 1 chunk で読む。 lookup は case-insensitive) |
 | [`rules/text/symbols.toml`](rules/text/symbols.toml) | 10 | 10 | 398 B | 記号 1 文字読み (+ / − / % / ‰ / 〜 / ・ / ※ 等、 chunks/split() の symbols 階層で個別 hit) |
 | [`rules/text/postprocess.toml`](rules/text/postprocess.toml) | 2 | 2 | 325 B | 出力後処理 regex (Step 7、 mode 別: hiragana / ruby / tts / romaji の出力直前に適用) |
-| **小計** (4 ファイル) | **55** | **55** | **2.1 KB** | |
+| **小計** (3 ファイル) | **29** | **29** | **1.5 KB** | |
 
 <!-- AUTO-GENERATED:RULES:END -->
 

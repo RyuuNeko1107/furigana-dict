@@ -643,7 +643,6 @@ def main() -> int:
         ([core / 'compat.toml'],             lambda p: validate_compat(p, errors)),
         ([rules / 'numeric_phrases.toml'],   lambda p: validate_simple_entries(p, errors)),
         ([rules / 'symbols.toml'],           lambda p: validate_simple_entries(p, errors)),
-        ([rules / 'latin.toml'],             lambda p: validate_simple_entries(p, errors)),
         ([rules / 'units.toml'],             lambda p: validate_units(p, errors)),
         ([rules / 'scales.toml'],            lambda p: validate_scales(p, errors)),
         ([rules / 'days.toml'],              lambda p: validate_days(p, errors)),
