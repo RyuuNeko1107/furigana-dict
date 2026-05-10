@@ -2166,8 +2166,6 @@ next_starts_any = [
   "門",
 ]
 
-# TODO: 既存 entry: core/jukugo/basic/general.toml に merge 要
-
 [entries."間"]
 reading = "カン"
 
@@ -2211,47 +2209,29 @@ prev_ends_any = [
 [entries."能"]
 reading = "ノウ"
 
-# TODO: 既存 entry: core/unihan/joyo.toml に merge 要
-
 [entries."約"]
 reading = "ヤク"
-
-# TODO: 既存 entry: core/unihan/joyo.toml に merge 要
 
 [entries."差"]
 reading = "サ"
 
-# TODO: 既存 entry: core/unihan/joyo.toml に merge 要
-
 [entries."本"]
 reading = "ホン"
-
-# TODO: 既存 entry: core/unihan/joyo.toml に merge 要
 
 [entries."率"]
 reading = "リツ"
 
-# TODO: 既存 entry: core/unihan/joyo.toml に merge 要
-
 [entries."半"]
 reading = "ハン"
-
-# TODO: 既存 entry: core/unihan/joyo.toml に merge 要
 
 [entries."円"]
 reading = "エン"
 
-# TODO: 既存 entry: core/unihan/joyo.toml に merge 要
-
 [entries."屋"]
 reading = "ヤ"
 
-# TODO: 既存 entry: core/unihan/joyo.toml に merge 要
-
 [entries."者"]
 reading = "シャ"
-
-# TODO: 既存 entry: core/jukugo/basic/general.toml に merge 要
 
 [entries."角"]
 reading = "カド"
@@ -2275,6 +2255,4 @@ next_starts_any = [
   "度",
   "材",
 ]
-
-# TODO: core/ に entry 不在、 適切な core/jukugo/<sub-dir>/<file>.toml に配置要
 
