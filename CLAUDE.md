@@ -48,34 +48,44 @@ loader が role 駆動 dispatch する tag。 各 TOML 冒頭に `[meta] role = 
 `counters` / `context` / `days` / `scales` / `units` / `symbols` /
 `latin` / `numeric_phrases` / `postprocess`
 
-## alpha.10 期 dict 側 完了 (★A1b)
+## alpha.10〜alpha.11 期 dict 側 mechanical 完了 (★A1b / ★A2)
 
-- ✅ 全 file の `[meta]` block に `schema_version = "2"` 追加 (54 file、 `tools/migrate_v2.py --apply` で機械変換)
-- ✅ `tools/validate.py` に `[meta] schema_version` 必須 check 追加 (= v2 以外で CI fail)
+- ✅ **schema_version 必須化** (★A1b、 alpha.10 coordinated): 全 dict / rule TOML
+  54 file に `[meta] schema_version = "2"` を bulk 適用
+  (`tools/migrate_v2.py --apply`)、 `validate.py` で gate 化
+- ✅ **rules/context → entry inline match 機械変換** (★A2、 alpha.11):
+  `tools/migrate_v2_context.py` (= staging 生成) + `tools/merge_migrated_context.py`
+  (= 実 core/ に surgical merge) で 31 既存 entry を Detailed 化 + 21 missing
+  surface を catch-all 配置 (general.toml)、 5 件 POS-only match は drop (= default
+  reading で fallback、 redundant)
+- ✅ **single_overrides → [[kanji]] block 機械変換** (★A2、 alpha.11):
+  `tools/migrate_kanji_format.py` で `core/kanji/overrides.toml` 生成、 旧
+  `single_overrides.toml` は Strict engine 後方互換のため保持
+- ✅ **validate.py 拡張**: detailed entry / `[[kanji]]` block / bracket syntax
+  check 対応
+- ✅ **docs/SCHEMA.md / CONTRIBUTING.md update**: 新 format / matcher / bracket
+  notation を contributor 向けに整備
 
-## alpha.11 期 dict 側 残作業 (= lib 側 alpha.11+ と coordinated)
+## alpha.11+ 期 dict 側 残作業 (= 人手 PR series、 multi-week 規模)
 
-### format 移行 (= migration script で機械変換、 別 phase)
+mechanical 機械変換 phase 完了後の継続作業 (= LLM 1 session で完結しない、
+maintainer / community PR で漸進):
 
-- `rules/context/*.toml` の `[[rule]]` array → 各 entry の inline `[[entries."x".match]]` に migration
-- `core/single/*.toml` (= 単漢字 default reading) → `core/kanji/*.toml` の `[[kanji]]` block に format 変換
-- `single_overrides.toml` (Issue #15) → `[[kanji.match]]` block に統合
+- 5 件 POS-only rule の literal 列挙化 (= 上手 / 下手 / 十分 / 一月 / 二月、
+  ただし default reading で実用上動くため非緊急)
+- 21 件 missing surface の sub-dir 再 triage (= 現在 general.toml catch-all)
+- 重複 / 古い / 出典なし entry の purge (= source attribution data 不在で慎重要)
+- `core/jukugo/` 24 カテゴリ再分類 (= 5024 entries の review、 multi-week)
+- `core/works/` / `core/loanwords/` 整理確認
 
-### 完全再編成 (= 人手 PR series)
+## lib coordinated で残る作業
 
-- 重複 / 古い / 出典なし entry の purge
-- `core/jukugo/` 24 カテゴリ 再分類
-- `core/works/` 作品単位 sub-dir 整理
-- `core/loanwords/` 整理確認
-
-### validate.py 拡張 (残)
-
-- bracket 構文 check (`[`, `]`, `/`、 各 phrase 内 `]` 最大 1 / 空 phrase 禁止 / mora 範囲整合) ※ 0.2.0 intonation 機能用 forward compat
-
-### doc 更新 (alpha.11 と coordinated)
-
-- **`docs/SCHEMA.md` 全面 update**: 新 entry inline match / `[[kanji]]` block / matcher vocabulary / `[meta] schema_version` を反映
-- **`CONTRIBUTING.md` 新規作成** (or 既存追記): (e) 規律 (= 短い曖昧 entry を登録しない) + 出典明示 + bracket notation 書き方
+- lib `DictBridgeProvider` integration: Smart engine が `lookup_rich` で取った
+  `[[match]]` block を Viterbi DP に統合 (= alpha.12+ で実装)
+- lib `[[kanji]]` block loader: `core/kanji/*.toml` を読み込んで KanjiProvider
+  で provide (= 上記と coordinated)
+- 0.1.0-rc1 で Smart default 切替後、 dict から `rules/context/` /
+  `single_overrides.toml` を削除 (= source of truth 一本化)
 
 ## 新 format 例 (alpha.10 投入後)
 

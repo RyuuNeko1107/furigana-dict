@@ -26,23 +26,70 @@ CalVer 採用理由:
 
 ## [Unreleased]
 
-### Changed (BREAKING、 schema_version 必須化、 ★A1b)
+### Changed (BREAKING、 alpha.11 dict 完全再編成 第 1〜4 段、 ★A1b / ★A2)
 
-ja-furigana lib alpha.10 (★A1b) で `[meta] schema_version = "2"` field が必須化
-されたのに合わせて、 全 dict / rule TOML 54 file に bulk 機械適用 (`tools/migrate_v2.py`)。
+ja-furigana lib alpha.10〜alpha.11 と coordinated に dict format を新 schema に
+全面移行:
 
-- **`tools/migrate_v2.py` 新規**: `core/**/*.toml` + `rules/**/*.toml` の `[meta]`
-  block 先頭に `schema_version = "2"` を追加する 1 回限り migration script。
-  冪等性: 既設は no-op、 異なる値は error。 `_genre.toml` / `*.test.toml` /
-  `tests/corpus/` 配下は対象外。
-- **`tools/validate.py` 拡張**: `validate_schema_version` 関数追加、 全 dict / rule
-  TOML が `schema_version = "2"` を持つことを CI で gate (= 不在 / 別値で fail)。
-- **54 file に schema_version stamp** (= migrate_v2.py --apply 結果): 各 file の
-  `[meta]` block 先頭に 1 行追加、 entry / role / description 等は不変。
+#### 1. schema_version 必須化 (★A1b、 alpha.10 coordinated)
 
-互換性: 旧 lib (alpha.9 以下) は schema_version field を silent ignore するので
-**前方互換維持** (= 旧 lib + 本 release dict OK)。 新 lib (alpha.10〜) は本 release
-以降の dict が必須 (= 新 lib + 旧 release dict 起動不能)。
+- **`tools/migrate_v2.py` 新規**: 全 dict / rule TOML 54 file の `[meta]` block 先頭
+  に `schema_version = "2"` を追加する 1 回限り machine 変換 script
+- **`tools/validate.py` 拡張**: `validate_schema_version` 関数追加で CI gate
+
+#### 2. rules/context → entry inline match 機械変換 (★A2、 alpha.11)
+
+- **`tools/migrate_v2_context.py` 新規**: rules/context/*.toml の `[[rule]]` /
+  `[[rule.match]]` を新 format `[entries."x"]` / `[[entries."x".match]]` 形式に
+  機械変換、 staging 出力 + TODO report 生成
+- **`tools/merge_migrated_context.py` 新規**: staging を実 core/ file に surgical
+  merge (= 簡単 entry 行を削除 + detailed sub-table を末尾 append)
+- **field rename**: `prev_ends` → `prev_ends_any` / `next2_starts` →
+  `next2_starts_any` / `prev_ends_with_month` → `prev_month` / `next_starts_with*`
+  → `next_starts*` / `pos_eq` → **drop** (= Lindera 撤廃路線、 literal 列挙で代用)
+- **31 既存 entry を Detailed 化** (general.toml 16 / arts.toml 1 / weather.toml 1
+  / joyo.toml 12) + **21 missing surface を新規追加** (= general.toml に catch-all
+  配置)、 5 件 POS-only match block は drop (= entry default reading で fallback、
+  実用上 redundant)
+
+#### 3. 旧 single_overrides → 新 [[kanji]] block 機械変換 (★A2、 alpha.11)
+
+- **`tools/migrate_kanji_format.py` 新規**: `core/single_overrides.toml` の `[entries]`
+  を `core/kanji/overrides.toml` の `[[kanji]]` block format に変換
+  (= 「土」=「ツチ」 1 件)
+- 旧 `single_overrides.toml` は **保持** (= alpha.11 期間中は Strict engine 後方互換、
+  0.1.0-rc1 で Smart default 切替後に削除可)
+
+#### 4. validate.py + doc 拡張
+
+- **`validate.py`**: detailed entry / `[[kanji]]` block / bracket syntax check
+  対応 (= forward compat for 0.2.0 intonation)
+- **`docs/SCHEMA.md` 全面 update**: schema_version / detailed entry / matcher
+  vocabulary (12 軸) / bracket notation / migration name mapping を反映
+- **`CONTRIBUTING.md` 更新**: detailed entry の書き方 + bracket notation 入門
+
+### scope 外 (= 別 phase、 人手 PR series)
+
+以下は alpha.11 期 dict-side mechanical 機械変換完了後の継続作業:
+
+- 5 件 POS-only rule の literal 列挙化 (= 上手 / 下手 / 十分 / 一月 / 二月、 ただし
+  default reading で実用的に動くため必須ではない)
+- 21 件 missing surface の sub-dir 再 triage (= 現在 general.toml catch-all 配置、
+  適切 sub-dir への移動は judgment)
+- 重複 / 古い / 出典なし entry の purge (= source attribution data 不在、 慎重要)
+- `core/jukugo/` 24 カテゴリ再分類 (= 5024 entries の review、 multi-week)
+- `core/works/` / `core/loanwords/` 整理確認
+- `rules/context/` 削除 (= lib Smart engine の `DictBridgeProvider` で
+  `[[entries."x".match]]` 評価 logic 完成後)
+
+### 互換性
+
+- 旧 lib (alpha.9 以下) + 本 release dict: schema_version field は silent ignore
+  されるため **前方互換維持**。 detailed entry の inline table value も string でない
+  ので silent skip され、 default reading だけが旧 simple form として load される
+  ことはなく、 旧 lib では context 分岐 reading が利かないが起動はする。
+- 新 lib (alpha.10〜) + 本 release dict: 必須 pair。 旧 release (v2026.05.09 以前)
+  との組み合わせは Validation error で起動不能。
 
 ### Added (外来語 / 検証ループ R12-R19 / cross-file 重複自動化)
 
