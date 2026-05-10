@@ -1,5 +1,40 @@
 # SI / 一般単位
-# `ci = true` で case-insensitive lookup (大文字小文字を区別しない)
+#
+# ## 用途
+#
+# 「km / kg / mL / 円 / %」 のような **数値 + 単位** を 1 chunk で読む table。
+# 数値読み + 単位読みで合成 (例: 「100km → ヒャクキロメートル」)。
+#
+# 例:
+#   「100km」  → ヒャクキロメートル
+#   「3L」     → サンリットル
+#   「2.5kg」  → ニテンゴキログラム
+#   「1万円」  → イチマンエン (= scales.toml の 「万」 と末尾 unit 「円」 が合成)
+#
+# ## どのとき発火するか
+#
+# lib の chunks/split() で `NUM_PAT + (unit symbol)` regex が match した時、
+# 1 chunk として si_unit_reading() に流される。 scales.toml の scale 末尾の
+# 漢字 unit (= 「円」 「個」 等) もここの table を参照して unit kana を解決。
+#
+# ## 追加するなら
+#
+# - inline-table 形式: `"記号" = { kana = "読み" }` または `{ kana = "...", ci = false }`
+# - **case-insensitive lookup が default**: `"km"` と書けば `"KM"` `"Km"` `"kM"`
+#   全部 hit (= TTS 用途では実用的)
+# - **case-sensitive にしたい場合のみ** `ci = false`: 例えば 「mg」 (ミリグラム)
+#   と 「Mg」 (メガグラム) を区別したい SI 厳密モードでは:
+#     "mg" = { kana = "ミリグラム", ci = false }
+#     "Mg" = { kana = "メガグラム", ci = false }
+# - 通貨 (= 「円」 「\$」 「€」) もここに置く (= 数値 + 通貨記号の合成)
+#
+# ## 注意点
+#
+# - **記号 1 文字** (= 「%」 「‰」 「°」) は symbols.toml に置く (= 数値抜きで単独でも
+#   読みが要るため)、 ただし数値 + 記号で 1 chunk 化したい場合は本 file にも登録
+# - 「リットル」 と 「mL」 のような 「prefix + 基底単位」 の組み合わせは
+#   各 prefix 込みで個別に登録 (= "kL" / "mL" / "μL" / "L" 全部 entry)、 prefix
+#   table の動的合成は無し
 
 
 [meta]

@@ -1,6 +1,45 @@
 # 時間系助数詞 (月 / 日 / 時 / 分 / 分半 / 週間 / 回)
 #
-# 「日」の 1〜31 の特殊読みは days.toml で別管理 (ここでは default のみ)。
+# ## 用途
+#
+# 時間文脈で **数値依存の特殊読み + カナ末尾置換** が起こる助数詞。 simple.toml
+# (= 単純連結のみ) と異なり、 数値末尾 (1/4/7/9 等) で reading が動的に変わる。
+#
+# 例:
+#   「4 月」  → シガツ      (= specials: 4 → シガツ で full-override)
+#   「7 月」  → シチガツ    (= 7 → シチガツ)
+#   「4 時」  → ヨジ        (= replacements: 4 → ヨン → ヨ で末尾置換)
+#   「9 時」  → クジ        (= 9 → キュウ → ク で末尾置換)
+#   「1 日」  → ツイタチ    (= days.toml で特殊読み、 ただし日付文脈のみ)
+#   「3 分」  → サンプン    (= rules: 3 で suffix プン)
+#   「1 回」  → イッカイ    (= rules: 1 で sokuonize イチ → イッ + suffix カイ)
+#
+# ## counter rule の構成要素
+#
+# 各 `[counter."X"]` は以下を組み合わせて書ける:
+#
+# - `default = "..."`: 規定 reading (= 末尾置換 / 連濁が無いときの suffix)
+# - `specials = { "N" = "..." }`: 数値 N に対する **full-override** reading
+#   (例: 「月」 で specials = { "4" = "シガツ" } → 「4 月」 は default を bypass)
+# - `[[counter."X".rules]]`: 末尾数字 last_digit + 連濁 / 促音化 (例: 「本」 で
+#   1/6/8/10 → suffix ポン + sokuonize = true で「1 本 = イッポン」)
+# - `[[counter."X".replacements]]`: 数値カナ末尾の文字列置換 (例: 「時」 で 4 →
+#   ヨン → ヨ で 「4 時 = ヨジ」)
+#
+# ## 追加するなら
+#
+# - **時間 / 期間** 関連の助数詞のみ (= 月 / 日 / 時 / 分 / 時間 / 週間 等)
+# - 4/7/9 の特殊読みは specials か replacements で表現
+# - 数値依存の連濁 / 促音化は rules で
+# - 単純連結のみ (= 「時間」 「時頃」 等) は simple.toml で書く
+#
+# ## 注意点
+#
+# - 「日」 default は 「ニチ」、 1〜31 の **暦の特殊読み** (ツイタチ / フツカ等) は
+#   `days.toml` で **暦の日付文脈** にのみ適用される (= 「1 日に 2 回」 は default
+#   「イチニチ」、 「6 月 1 日」 の 「1 日」 は 「ツイタチ」)
+# - specials は数値が **完全一致** で発火 (= 「4」 specials は 「4 月」 のみ、 「14 月」 で
+#   末尾 4 が hit しない、 末尾 N 文脈は rules / replacements で書く)
 
 [meta]
 schema_version = "2"

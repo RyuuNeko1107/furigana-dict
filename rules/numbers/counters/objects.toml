@@ -1,4 +1,50 @@
 # 物を数える助数詞 (本 / 匹 / 杯 / 個 / 歳 / 冊)
+#
+# ## 用途
+#
+# 数値末尾 (1/3/6/8/10) で **連濁 / 促音化** が起こる助数詞。 物体 / 動物 / 容器 /
+# 個数を数えるときの reading 動的合成。
+#
+# 例:
+#   「1 本」 → イッポン    (= rules: 1/6/8/10 で sokuonize + suffix ポン)
+#   「3 本」 → サンボン    (= rules: 3 で suffix ボン)
+#   「7 本」 → ナナホン    (= default: ホン、 = rules に該当無し)
+#   「1 匹」 → イッピキ    (= 同 pattern: ピキ + 促音化)
+#   「3 匹」 → サンビキ    (= ビキ 連濁)
+#   「1 個」 → イッコ      (= sokuonize: イチ → イッ + suffix コ)
+#
+# ## 書き方 (= 各 counter の典型 pattern)
+#
+#   [counter."X"]
+#   default = "<デフォルト読み>"   # 連濁・促音化が起こらない数値の場合
+#
+#   [[counter."X".rules]]
+#   last_digit = [1, 6, 8, 0]      # 末尾数字 (= 「1 X」 「16 X」 「100 X」 等)
+#   suffix = "<促音化版>"           # 例: 「ポン」 (ホン の半濁音)
+#   sokuonize = true               # 数値カナ末尾を促音化 (= イチ → イッ、 ロク → ロッ)
+#
+#   [[counter."X".rules]]
+#   last_digit = [3]
+#   suffix = "<連濁版>"             # 例: 「ボン」 (ホン の濁音)
+#   # sokuonize = false (= default、 「3」 は変化しない)
+#
+# ## どのとき発火するか
+#
+# lib の chunks/ で `NUM_PAT + counter` regex が hit、 lib の
+# `euphonic_counter_read()` が:
+# 1. simple.toml にあれば simple ルートで確定 (= 該当しない場合のみ counter table へ)
+# 2. specials (= 完全一致 number override) を確認
+# 3. replacements (= カナ末尾置換) を適用
+# 4. rules (= last_digit + 連濁 / 促音化) を適用
+# 5. default で fallback
+#
+# ## 追加するなら
+#
+# - 連濁 / 促音化が起こる物体系 助数詞のみ
+# - 単純連結のみ (= 「点」 「度」 等) は simple.toml に置く
+# - 時間系 (= 「月」 「日」 「時」 「分」) は time.toml に置く
+# - 人 (= 「人」 「名」) は people.toml に置く
+# - 場所 (= 「階」 「軒」) は places.toml に置く
 
 [meta]
 schema_version = "2"
