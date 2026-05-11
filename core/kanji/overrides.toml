@@ -19,3 +19,132 @@ description = "単漢字 default override + 文脈分岐 reading"
 [[kanji]]
 char = "土"
 default = "ツチ"
+
+# ─── default = on-yomi + 送り仮名 / 助詞 で kun-yomi (★alpha.14) ───────────────
+#
+# 設計: 単独 standalone なら kun-yomi、 熟語文脈 (= 直後が漢字) なら on-yomi。
+# Smart engine matcher で 直後 / 直前 が ひらがな なら kun-yomi に切替える。
+#
+# - default = 熟語で最頻出の on-yomi (= 漢字連続 chunk 内 fallback で安全)
+# - next_char_type = "ひらがな" → kun-yomi (= 直後が助詞 / 送り仮名)
+# - prev_char_type = "ひらがな" → kun-yomi (= 入力末尾 / 助詞 直後)
+
+[[kanji]]
+char = "上"
+default = "ジョウ"
+
+[[kanji.match]]
+next_char_type = "ひらがな"
+reading = "うえ"
+
+[[kanji.match]]
+prev_char_type = "ひらがな"
+reading = "うえ"
+
+[[kanji]]
+char = "下"
+default = "カ"
+
+[[kanji.match]]
+next_char_type = "ひらがな"
+reading = "した"
+
+[[kanji.match]]
+prev_char_type = "ひらがな"
+reading = "した"
+
+[[kanji]]
+char = "前"
+default = "ゼン"
+
+[[kanji.match]]
+next_char_type = "ひらがな"
+reading = "まえ"
+
+[[kanji.match]]
+prev_char_type = "ひらがな"
+reading = "まえ"
+
+[[kanji]]
+char = "後"
+default = "ゴ"
+
+[[kanji.match]]
+next_char_type = "ひらがな"
+reading = "あと"
+
+[[kanji.match]]
+prev_char_type = "ひらがな"
+reading = "あと"
+
+[[kanji]]
+char = "米"
+default = "ベイ"
+
+[[kanji.match]]
+next_char_type = "ひらがな"
+reading = "こめ"
+
+[[kanji.match]]
+prev_char_type = "ひらがな"
+reading = "こめ"
+
+[[kanji]]
+char = "国"
+default = "コク"
+
+[[kanji.match]]
+next_char_type = "ひらがな"
+reading = "くに"
+
+[[kanji.match]]
+prev_char_type = "ひらがな"
+reading = "くに"
+
+[[kanji]]
+char = "風"
+default = "フウ"
+
+[[kanji.match]]
+next_char_type = "ひらがな"
+reading = "かぜ"
+
+[[kanji.match]]
+prev_char_type = "ひらがな"
+reading = "かぜ"
+
+[[kanji]]
+char = "人"
+default = "ジン"
+
+[[kanji.match]]
+next_char_type = "ひらがな"
+reading = "ひと"
+
+[[kanji.match]]
+prev_char_type = "ひらがな"
+reading = "ひと"
+
+[[kanji]]
+char = "心"
+default = "シン"
+
+[[kanji.match]]
+next_char_type = "ひらがな"
+reading = "こころ"
+
+[[kanji.match]]
+prev_char_type = "ひらがな"
+reading = "こころ"
+
+[[kanji]]
+char = "物"
+default = "ブツ"
+
+[[kanji.match]]
+next_char_type = "ひらがな"
+reading = "もの"
+
+[[kanji.match]]
+prev_char_type = "ひらがな"
+reading = "もの"
