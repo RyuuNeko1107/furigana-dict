@@ -76,28 +76,33 @@ def call_local(binary: str, args: list[str], corpus_file: Path) -> dict[int, str
     except subprocess.TimeoutExpired:
         sys.exit("[FAIL] ローカル binary が timeout (120s)")
     actuals: dict[int, str] = {}
+    pending_fail_idx: int | None = None
     for line in result.stdout.splitlines():
-        # 例: "OK   #5: \"灰桜\" -> \"はいざくら\""
-        # 例: "FAIL #20: input=\"新橋\" mode=\"romaji\""
-        #     "  actual:   \"shimbashi\""
+        # 例 OK: "OK   #5: input="灰桜" mode="hiragana" -> "はいざくら""
+        # 例 FAIL: "FAIL #20: input="新橋" mode="romaji""
+        #         "  expected: "shimbashi""
+        #         "  actual:   "shinhashi""
         if line.startswith("OK   #"):
             idx_str, _, rest = line[6:].partition(":")
             try:
                 idx = int(idx_str)
             except ValueError:
                 continue
-            # `... -> "actual"` の actual を抜き出す
             if " -> " in rest:
-                _, _, val = rest.partition(" -> ")
+                _, _, val = rest.rpartition(" -> ")
                 actuals[idx] = val.strip().strip('"')
+            pending_fail_idx = None
         elif line.startswith("FAIL #"):
-            idx_str, _, _ = line[5:].partition(":")
+            idx_str, _, _ = line[6:].partition(":")
             try:
-                idx = int(idx_str)
+                pending_fail_idx = int(idx_str)
             except ValueError:
-                continue
-            # 次行以降の "  actual:" を探す (= state machine)
-            actuals[idx] = "<see FAIL output>"
+                pending_fail_idx = None
+        elif pending_fail_idx is not None and line.lstrip().startswith("actual:"):
+            # 「  actual:   "..."」 を parse、 quote 内の文字列を抜き出す
+            _, _, val = line.partition("actual:")
+            actuals[pending_fail_idx] = val.strip().strip('"')
+            pending_fail_idx = None
     return actuals
 
 
@@ -137,6 +142,13 @@ def main() -> int:
     matches = 0
     diffs = 0
     errors = 0
+    expected_total = 0
+    local_correct = 0
+    ref_correct = 0
+    both_correct = 0
+    only_local = 0
+    only_ref = 0
+    both_wrong = 0
     for i, case in enumerate(sample):
         text = case["input"]
         mode = case.get("mode", "ruby")
@@ -148,7 +160,10 @@ def main() -> int:
         if ref_actual.startswith("<"):
             errors += 1
             print(f"[ERR ] #{i:3d} input={text!r} ref={ref_actual}")
-        elif local_actual == ref_actual:
+            time.sleep(interval)
+            continue
+
+        if local_actual == ref_actual:
             matches += 1
         else:
             diffs += 1
@@ -156,14 +171,44 @@ def main() -> int:
             print(f"        expected: {expected!r}")
             print(f"        local:    {local_actual!r}")
             print(f"        ryuuneko: {ref_actual!r}")
+
+        if expected:
+            expected_total += 1
+            local_ok = local_actual == expected
+            ref_ok = ref_actual == expected
+            if local_ok:
+                local_correct += 1
+            if ref_ok:
+                ref_correct += 1
+            if local_ok and ref_ok:
+                both_correct += 1
+            elif local_ok and not ref_ok:
+                only_local += 1
+            elif not local_ok and ref_ok:
+                only_ref += 1
+            else:
+                both_wrong += 1
+
         time.sleep(interval)
 
     print()
     print("=== Summary ===")
     print(f"Total compared: {len(sample)}")
-    print(f"Matches:        {matches} ({matches * 100 / max(len(sample), 1):.1f}%)")
-    print(f"Diffs:          {diffs}")
+    print(f"Agreement:      {matches} ({matches * 100 / max(len(sample), 1):.1f}%)  ← local == ryuuneko 出力一致")
+    print(f"Disagreement:   {diffs}")
     print(f"Errors:         {errors}")
+    if expected_total:
+        print()
+        print("=== Accuracy vs corpus expected ===")
+        pct = lambda n: f"{n * 100 / expected_total:.1f}%"
+        print(f"  local-correct:  {local_correct}/{expected_total} ({pct(local_correct)})")
+        print(f"  ryuuneko-correct: {ref_correct}/{expected_total} ({pct(ref_correct)})")
+        print()
+        print("=== Breakdown of 一致 / 不一致 ===")
+        print(f"  both correct:  {both_correct} ({pct(both_correct)})")
+        print(f"  only local:    {only_local} ({pct(only_local)})  ← local 勝ち")
+        print(f"  only ryuuneko: {only_ref} ({pct(only_ref)})  ← ryuuneko 勝ち")
+        print(f"  both wrong:    {both_wrong} ({pct(both_wrong)})  ← 両方失敗 (= dict gap 共通)")
     return 0 if errors == 0 else 1
 
 
