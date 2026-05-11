@@ -1,0 +1,600 @@
+# 自然文 corpus 拡張版 (★0.1.0 stable cut 前の large-scale 投入)
+#
+# 既存 sentences.toml (49 case) を超える幅広い domain で、 ja-furigana の
+# production readiness を実証する。 期待 reading は **表記読み** 維持 (= 助詞
+# は / へ / を そのまま、 発音処理は TTS engine 任せ)。
+#
+# カテゴリ:
+# - 一般会話 (~25 case)
+# - 専門分野: IT / 医療 / 法律 / 経済 (~25 case)
+# - 文芸 / 古典 (~15 case)
+# - 数字 / 単位 / 日付 (~20 case)
+# - 慣用句 / ことわざ (~15 case)
+
+[meta]
+schema_version = "2"
+role = "corpus"
+
+# =========================================================================
+# === 一般会話 (= SNS / web text / 日常 narration 想定) ====================
+# =========================================================================
+
+[[case]]
+input = "今日も一日お疲れ様でした"
+mode = "hiragana"
+expected = "きょうもいちにちおつかれさまでした"
+note = "労いの定型句"
+
+[[case]]
+input = "何かありましたら遠慮なくお声がけください"
+mode = "hiragana"
+expected = "なにかありましたらえんりょなくおこえがけください"
+note = "丁寧表現"
+
+[[case]]
+input = "週末は家でゆっくり過ごす予定です"
+mode = "hiragana"
+expected = "しゅうまつはいえでゆっくりすごすよていです"
+note = "週末 + 動詞活用"
+
+[[case]]
+input = "明後日の打ち合わせは午後3時からです"
+mode = "hiragana"
+expected = "あさってのうちあわせはごごさんじからです"
+note = "明後日 + 時刻 counter"
+
+[[case]]
+input = "最近、新しい趣味を始めました"
+mode = "hiragana"
+expected = "さいきん、あたらしいしゅみをはじめました"
+note = "最近 + 新しい (形容詞活用) + サ変動詞"
+
+[[case]]
+input = "電車が遅延していて、約束に遅れそうです"
+mode = "hiragana"
+expected = "でんしゃがちえんしていて、やくそくにおくれそうです"
+note = "遅延 jukugo + 約束 jukugo"
+
+[[case]]
+input = "美味しい料理を作るのが大好きです"
+mode = "hiragana"
+expected = "おいしいりょうりをつくるのがだいすきです"
+note = "美味しい + 料理 jukugo + 大好き jukugo"
+
+[[case]]
+input = "風邪を引いたみたいで頭が痛い"
+mode = "hiragana"
+expected = "かぜをひいたみたいであたまがいたい"
+note = "風邪 jukugo + 動詞 + 形容詞"
+
+[[case]]
+input = "犬と一緒に公園を散歩しました"
+mode = "hiragana"
+expected = "いぬといっしょにこうえんをさんぽしました"
+note = "公園 jukugo + 散歩 jukugo (サ変動詞)"
+
+[[case]]
+input = "今度の連休にどこかへ旅行に行きたい"
+mode = "hiragana"
+expected = "こんどのれんきゅうにどこかへりょこうにいきたい"
+note = "連休 jukugo + 旅行 jukugo"
+
+[[case]]
+input = "妹の誕生日プレゼントを買いに行きました"
+mode = "hiragana"
+expected = "いもうとのたんじょうびプレゼントをかいにいきました"
+note = "誕生日 jukugo + カタカナ surface"
+
+[[case]]
+input = "雪が降り続いて街が真っ白になった"
+mode = "hiragana"
+expected = "ゆきがふりつづいてまちがまっしろになった"
+note = "降り続く 複合動詞 + 真っ白 jukugo"
+
+[[case]]
+input = "宿題が終わってからゲームをしようと思う"
+mode = "hiragana"
+expected = "しゅくだいがおわってからゲームをしようとおもう"
+note = "宿題 jukugo + カタカナ surface"
+
+[[case]]
+input = "海外から友達が遊びに来てくれた"
+mode = "hiragana"
+expected = "かいがいからともだちがあそびにきてくれた"
+note = "海外 jukugo + 友達 jukugo + 来 ka 変動詞 (来て)"
+
+[[case]]
+input = "明日は早く起きて朝ご飯を食べる"
+mode = "hiragana"
+expected = "あしたははやくおきてあさごはんをたべる"
+note = "早く (形容詞活用) + 朝ご飯 jukugo + 食べる"
+
+[[case]]
+input = "夏休みの自由研究を頑張って完成させた"
+mode = "hiragana"
+expected = "なつやすみのじゆうけんきゅうをがんばってかんせいさせた"
+note = "夏休み + 自由研究 + 頑張る + 完成"
+
+[[case]]
+input = "好きなアニメを見ながら晩ご飯を食べる"
+mode = "hiragana"
+expected = "すきなアニメをみながらばんごはんをたべる"
+note = "好き + アニメ (カタカナ) + 晩ご飯"
+
+[[case]]
+input = "緊張して手が震えてしまった"
+mode = "hiragana"
+expected = "きんちょうしててがふるえてしまった"
+note = "緊張 jukugo + 震える"
+
+[[case]]
+input = "新幹線で東京から大阪まで行く"
+mode = "hiragana"
+expected = "しんかんせんでとうきょうからおおさかまでいく"
+note = "新幹線 + 東京 / 大阪 固有名詞"
+
+[[case]]
+input = "桜が満開で花見の人で混雑している"
+mode = "hiragana"
+expected = "さくらがまんかいではなみのひとでこんざつしている"
+note = "桜 + 満開 + 花見 + 混雑"
+
+[[case]]
+input = "図書館で勉強しているとつい眠くなる"
+mode = "hiragana"
+expected = "としょかんでべんきょうしているとついねむくなる"
+note = "図書館 + 勉強 + 眠くなる (形容詞活用)"
+
+[[case]]
+input = "祖母の家で家族みんなで食事をした"
+mode = "hiragana"
+expected = "そぼのいえでかぞくみんなでしょくじをした"
+note = "祖母 + 家族 + 食事"
+
+[[case]]
+input = "趣味で写真を撮るのが楽しい"
+mode = "hiragana"
+expected = "しゅみでしゃしんをとるのがたのしい"
+note = "趣味 + 写真 + 撮る + 楽しい (形容詞)"
+
+[[case]]
+input = "雨が止んだので散歩に出かけた"
+mode = "hiragana"
+expected = "あめがやんだのでさんぽにでかけた"
+note = "雨 + 動詞活用 + 散歩 + 出かける 複合動詞"
+
+[[case]]
+input = "今年こそは健康に気をつけたい"
+mode = "hiragana"
+expected = "ことしこそはけんこうにきをつけたい"
+note = "今年 + 健康 jukugo + 気をつける (慣用)"
+
+# =========================================================================
+# === 専門分野: IT / 医療 / 法律 / 経済 =====================================
+# =========================================================================
+
+[[case]]
+input = "プログラムのバグを修正してデプロイした"
+mode = "hiragana"
+expected = "プログラムのバグをしゅうせいしてデプロイした"
+note = "IT 用語 (カタカナ) + 修正 jukugo"
+
+[[case]]
+input = "サーバーの負荷が高いので増強する必要がある"
+mode = "hiragana"
+expected = "サーバーのふかがたかいのでぞうきょうするひつようがある"
+note = "サーバー + 負荷 + 増強 + 必要"
+
+[[case]]
+input = "暗号化された通信を解読する"
+mode = "hiragana"
+expected = "あんごうかされたつうしんをかいどくする"
+note = "暗号化 + 通信 + 解読"
+
+[[case]]
+input = "認証システムを実装してテストする"
+mode = "hiragana"
+expected = "にんしょうシステムをじっそうしてテストする"
+note = "認証 + システム (カタカナ) + 実装 + テスト"
+
+[[case]]
+input = "データベースに接続して検索を実行"
+mode = "hiragana"
+expected = "データベースにせつぞくしてけんさくをじっこう"
+note = "データベース (カタカナ) + 接続 + 検索 + 実行"
+
+[[case]]
+input = "高血圧の薬を毎日服用しています"
+mode = "hiragana"
+expected = "こうけつあつのくすりをまいにちふくようしています"
+note = "高血圧 jukugo + 薬 + 毎日 + 服用"
+
+[[case]]
+input = "病院で診察を受けて処方箋をもらった"
+mode = "hiragana"
+expected = "びょういんでしんさつをうけてしょほうせんをもらった"
+note = "病院 + 診察 + 処方箋 (医療用語)"
+
+[[case]]
+input = "手術後の経過は順調です"
+mode = "hiragana"
+expected = "しゅじゅつごのけいかはじゅんちょうです"
+note = "手術 + 経過 + 順調"
+
+[[case]]
+input = "予防接種を受けに病院へ行く"
+mode = "hiragana"
+expected = "よぼうせっしゅをうけにびょういんへいく"
+note = "予防接種 jukugo + 病院"
+
+[[case]]
+input = "免疫力を高めるために運動する"
+mode = "hiragana"
+expected = "めんえきりょくをたかめるためにうんどうする"
+note = "免疫力 + 高める + 運動"
+
+[[case]]
+input = "契約書に署名して捺印した"
+mode = "hiragana"
+expected = "けいやくしょにしょめいしてなついんした"
+note = "契約書 + 署名 + 捺印 (法律用語)"
+
+[[case]]
+input = "民法と刑法の違いを説明する"
+mode = "hiragana"
+expected = "みんぽうとけいほうのちがいをせつめいする"
+note = "民法 / 刑法 (法律) + 説明"
+
+[[case]]
+input = "弁護士に相談して訴訟を準備する"
+mode = "hiragana"
+expected = "べんごしにそうだんしてそしょうをじゅんびする"
+note = "弁護士 + 相談 + 訴訟 + 準備"
+
+[[case]]
+input = "判決が下された後、控訴する権利がある"
+mode = "hiragana"
+expected = "はんけつがくだされたあと、こうそするけんりがある"
+note = "判決 + 控訴 + 権利 (法律用語)"
+
+[[case]]
+input = "株式市場が暴落して経済が混乱"
+mode = "hiragana"
+expected = "かぶしきしじょうがぼうらくしてけいざいがこんらん"
+note = "株式市場 + 暴落 + 経済 + 混乱"
+
+[[case]]
+input = "金利が上昇すると消費が減退する"
+mode = "hiragana"
+expected = "きんりがじょうしょうするとしょうひがげんたいする"
+note = "金利 + 上昇 + 消費 + 減退"
+
+[[case]]
+input = "為替レートが円安に動いている"
+mode = "hiragana"
+expected = "かわせレートがえんやすにうごいている"
+note = "為替 + レート (カタカナ) + 円安"
+
+[[case]]
+input = "決算報告書を株主総会で発表"
+mode = "hiragana"
+expected = "けっさんほうこくしょをかぶぬしそうかいではっぴょう"
+note = "決算 + 報告書 + 株主総会 + 発表"
+
+[[case]]
+input = "投資信託の運用成績が好調"
+mode = "hiragana"
+expected = "とうししんたくのうんようせいせきがこうちょう"
+note = "投資信託 + 運用成績 + 好調"
+
+# =========================================================================
+# === 文芸 / 古典寄り =========================================================
+# =========================================================================
+
+[[case]]
+input = "花鳥風月を愛でる心"
+mode = "hiragana"
+expected = "かちょうふうげつをめでるこころ"
+note = "四字熟語 + 古典的表現"
+
+[[case]]
+input = "千差万別の意見が出された"
+mode = "hiragana"
+expected = "せんさばんべつのいけんがだされた"
+note = "四字熟語"
+
+[[case]]
+input = "一期一会の出会いを大切にしたい"
+mode = "hiragana"
+expected = "いちごいちえのであいをたいせつにしたい"
+note = "四字熟語 + 出会い + 大切"
+
+[[case]]
+input = "古都の風情を楽しむ旅"
+mode = "hiragana"
+expected = "ことのふぜいをたのしむたび"
+note = "古都 + 風情 + 楽しむ + 旅"
+
+[[case]]
+input = "幽玄の世界に足を踏み入れる"
+mode = "hiragana"
+expected = "ゆうげんのせかいにあしをふみいれる"
+note = "幽玄 + 世界 + 踏み入れる 複合動詞"
+
+[[case]]
+input = "侘び寂びの美しさを感じる"
+mode = "hiragana"
+expected = "わびさびのうつくしさをかんじる"
+note = "侘び寂び (古典美学) + 美しさ + 感じる"
+
+[[case]]
+input = "万葉集に収められた歌"
+mode = "hiragana"
+expected = "まんようしゅうにおさめられたうた"
+note = "万葉集 (古典名) + 収める + 歌"
+
+[[case]]
+input = "源氏物語は世界最古の長編小説"
+mode = "hiragana"
+expected = "げんじものがたりはせかいさいこのちょうへんしょうせつ"
+note = "源氏物語 + 世界最古 + 長編小説"
+
+[[case]]
+input = "百人一首を暗記する"
+mode = "hiragana"
+expected = "ひゃくにんいっしゅをあんきする"
+note = "百人一首 + 暗記"
+
+[[case]]
+input = "茶道と華道は日本の伝統文化"
+mode = "hiragana"
+expected = "さどうとかどうはにほんのでんとうぶんか"
+note = "茶道 + 華道 + 伝統文化"
+
+[[case]]
+input = "枯山水の庭園を眺める"
+mode = "hiragana"
+expected = "かれさんすいのていえんをながめる"
+note = "枯山水 + 庭園 + 眺める"
+
+[[case]]
+input = "歌舞伎の舞台で見得を切る"
+mode = "hiragana"
+expected = "かぶきのぶたいでみえをきる"
+note = "歌舞伎 + 舞台 + 見得を切る (慣用)"
+
+[[case]]
+input = "和歌に込められた感情を読み取る"
+mode = "hiragana"
+expected = "わかにこめられたかんじょうをよみとる"
+note = "和歌 + 感情 + 読み取る 複合動詞"
+
+[[case]]
+input = "風流な趣がある古民家"
+mode = "hiragana"
+expected = "ふうりゅうなおもむきがあるこみんか"
+note = "風流 + 趣 + 古民家"
+
+[[case]]
+input = "雅な装いで茶会に参加する"
+mode = "hiragana"
+expected = "みやびなよそおいでちゃかいにさんかする"
+note = "雅 + 装い + 茶会 + 参加"
+
+# =========================================================================
+# === 数字 / 単位 / 日付 =====================================================
+# =========================================================================
+
+[[case]]
+input = "気温が25度を超える夏日"
+mode = "hiragana"
+expected = "きおんが25どをこえるなつび"
+note = "気温 + 数字+度 + 夏日"
+
+[[case]]
+input = "標高3000メートルの山に登る"
+mode = "hiragana"
+expected = "ひょうこう3000メートルのやまにのぼる"
+note = "標高 + 数字+単位 + 山 + 登る"
+
+[[case]]
+input = "1時間で10キロを歩く"
+mode = "hiragana"
+expected = "1じかんで10キロをあるく"
+note = "時間 counter + キロ + 歩く"
+
+[[case]]
+input = "5月5日は子供の日"
+mode = "hiragana"
+expected = "5がつ5にちはこどものひ"
+note = "日付 (= 月/日 counter)"
+
+[[case]]
+input = "12時30分にお昼ご飯を食べる"
+mode = "hiragana"
+expected = "12じ30ふんにおひるごはんをたべる"
+note = "時刻 + お昼ご飯"
+
+[[case]]
+input = "今年で30歳になる"
+mode = "hiragana"
+expected = "ことしで30さいになる"
+note = "今年 + 数字+歳"
+
+[[case]]
+input = "100円ショップで便利な物を買う"
+mode = "hiragana"
+expected = "100えんショップでべんりなものをかう"
+note = "100円 + ショップ + 便利"
+
+[[case]]
+input = "売上が前年比15%増加した"
+mode = "hiragana"
+expected = "うりあげがぜんねんひ15%ぞうかした"
+note = "売上 + 前年比 + %"
+
+[[case]]
+input = "10年前から続けている習慣"
+mode = "hiragana"
+expected = "10ねんまえからつづけているしゅうかん"
+note = "10年前 + 続ける + 習慣"
+
+[[case]]
+input = "西暦2024年は閏年だった"
+mode = "hiragana"
+expected = "せいれき2024ねんはうるうどしだった"
+note = "西暦 + 年 + 閏年"
+
+[[case]]
+input = "1日3回食後に薬を飲む"
+mode = "hiragana"
+expected = "1にち3かいしょくごにくすりをのむ"
+note = "日 + 回 counter + 食後 + 薬 + 飲む"
+
+[[case]]
+input = "学校までは徒歩で20分かかる"
+mode = "hiragana"
+expected = "がっこうまではとほで20ふんかかる"
+note = "学校 + 徒歩 + 数字+分"
+
+[[case]]
+input = "3つの選択肢から1つ選ぶ"
+mode = "hiragana"
+expected = "3つのせんたくしから1つえらぶ"
+note = "数字+つ + 選択肢 + 選ぶ"
+
+[[case]]
+input = "毎月10日が給料日です"
+mode = "hiragana"
+expected = "まいつき10にちがきゅうりょうびです"
+note = "毎月 + 日 + 給料日"
+
+[[case]]
+input = "気圧が1013ヘクトパスカルに下がった"
+mode = "hiragana"
+expected = "きあつが1013ヘクトパスカルにさがった"
+note = "気圧 + 数字+単位 + 下がる"
+
+[[case]]
+input = "電池残量が10%を切った"
+mode = "hiragana"
+expected = "でんちざんりょうが10%をきった"
+note = "電池 + 残量 + % + 切る"
+
+[[case]]
+input = "8月15日は終戦記念日"
+mode = "hiragana"
+expected = "8がつ15にちはしゅうせんきねんび"
+note = "日付 + 終戦記念日 jukugo"
+
+[[case]]
+input = "年末年始は実家に帰省する"
+mode = "hiragana"
+expected = "ねんまつねんしはじっかにきせいする"
+note = "年末年始 + 実家 + 帰省"
+
+[[case]]
+input = "3時のおやつを食べる"
+mode = "hiragana"
+expected = "3じのおやつをたべる"
+note = "時刻 + おやつ + 食べる"
+
+[[case]]
+input = "1日1万歩を目標に歩く"
+mode = "hiragana"
+expected = "1にち1まんぽをもくひょうにあるく"
+note = "1日 + 1万歩 + 目標 + 歩く"
+
+# =========================================================================
+# === 慣用句 / ことわざ ======================================================
+# =========================================================================
+
+[[case]]
+input = "猫の手も借りたいほど忙しい"
+mode = "hiragana"
+expected = "ねこのてもかりたいほどいそがしい"
+note = "猫の手も借りたい (慣用句) + 忙しい"
+
+[[case]]
+input = "石の上にも三年というから頑張ろう"
+mode = "hiragana"
+expected = "いしのうえにもさんねんというからがんばろう"
+note = "石の上にも三年 (ことわざ)"
+
+[[case]]
+input = "雨降って地固まると言うように"
+mode = "hiragana"
+expected = "あめふってじかたまるというように"
+note = "雨降って地固まる (ことわざ)"
+
+[[case]]
+input = "百聞は一見にしかず"
+mode = "hiragana"
+expected = "ひゃくぶんはいっけんにしかず"
+note = "百聞は一見にしかず (ことわざ)"
+
+[[case]]
+input = "急がば回れの精神で慎重に進める"
+mode = "hiragana"
+expected = "いそがばまわれのせいしんでしんちょうにすすめる"
+note = "急がば回れ + 精神 + 慎重"
+
+[[case]]
+input = "覆水盆に返らずの後悔"
+mode = "hiragana"
+expected = "ふくすいぼんにかえらずのこうかい"
+note = "覆水盆に返らず (ことわざ) + 後悔"
+
+[[case]]
+input = "失敗は成功のもとと言うけれど"
+mode = "hiragana"
+expected = "しっぱいはせいこうのもとというけれど"
+note = "失敗は成功のもと (ことわざ)"
+
+[[case]]
+input = "口は災いの元だから気をつけて"
+mode = "hiragana"
+expected = "くちはわざわいのもとだからきをつけて"
+note = "口は災いの元 + 気をつける"
+
+[[case]]
+input = "勝てば官軍負ければ賊軍"
+mode = "hiragana"
+expected = "かてばかんぐんまければぞくぐん"
+note = "ことわざ"
+
+[[case]]
+input = "知らぬが仏とはこのこと"
+mode = "hiragana"
+expected = "しらぬがほとけとはこのこと"
+note = "知らぬが仏 (ことわざ)"
+
+[[case]]
+input = "灯台下暗しで近くのものを見落とす"
+mode = "hiragana"
+expected = "とうだいもとくらしでちかくのものをみおとす"
+note = "灯台下暗し (ことわざ) + 見落とす"
+
+[[case]]
+input = "馬の耳に念仏で全然聞かない"
+mode = "hiragana"
+expected = "うまのみみにねんぶつでぜんぜんきかない"
+note = "馬の耳に念仏 (ことわざ)"
+
+[[case]]
+input = "豚に真珠の喩えがぴったり"
+mode = "hiragana"
+expected = "ぶたにしんじゅのたとえがぴったり"
+note = "豚に真珠 + 喩え"
+
+[[case]]
+input = "弘法も筆の誤りというから人間誰でも"
+mode = "hiragana"
+expected = "こうぼうもふでのあやまりというからにんげんだれでも"
+note = "弘法も筆の誤り (ことわざ)"
+
+[[case]]
+input = "情けは人の為ならずを座右の銘にする"
+mode = "hiragana"
+expected = "なさけはひとのためならずをざゆうのめいにする"
+note = "情けは人の為ならず + 座右の銘"
