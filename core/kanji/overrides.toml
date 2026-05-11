@@ -365,3 +365,29 @@ reading = "いま"
 [[kanji.match]]
 next_eq = "々"
 reading = "いま"
+
+# 来 — ka 変動詞、 活用ごとに母音変化 (キ / ク / コ)。 Lindera は 「来た」 を
+# 「来 + た」 2 tokens で返すので、 来 1 字 surface に対する文脈分岐が必要。
+# next 1 文字目で読みを決定:
+#   た / て / ま (=ます) → キ
+#   る → ク (Lindera 「来る」 1 token 「クル」 で覆われる場合多い)
+#   な / よ / い → コ (来ない / 来よう / 来い)
+[[kanji]]
+char = "来"
+default = "ライ"  # 来年/来週/来月/未来/将来 等の compound 用
+
+[[kanji.match]]
+next_starts_any = ["た", "て"]
+reading = "キ"
+
+[[kanji.match]]
+next_starts = "ま"
+reading = "キ"
+
+[[kanji.match]]
+next_starts = "る"
+reading = "ク"
+
+[[kanji.match]]
+next_starts_any = ["な", "よ", "い"]
+reading = "コ"
