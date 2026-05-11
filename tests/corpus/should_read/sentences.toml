@@ -157,7 +157,7 @@ note = "今日=キョウ jukugo、 助詞 は"
 [[case]]
 input = "明日は雨が降る"
 mode = "hiragana"
-expected = "あすはあめがふる"
+expected = "あしたはあめがふる"
 note = "明日=アス、 動詞 降る"
 
 [[case]]
@@ -181,7 +181,7 @@ note = "固有名詞 + 助詞 で + 複合動詞"
 [[case]]
 input = "明日会議があります"
 mode = "hiragana"
-expected = "あすかいぎがあります"
+expected = "あしたかいぎがあります"
 note = "明日 + 会議 jukugo + 助詞 + 動詞"
 
 [[case]]
