@@ -91,6 +91,11 @@ reading = "あと"
 next_char_type = "英数"
 reading = "あと"
 
+# 「後、〜 / 後。〜」 文頭副詞用法 = 句読点後続で 「あと」
+[[kanji.match]]
+next_starts_any = ["、", "。", ",", "."]
+reading = "あと"
+
 [[kanji.match]]
 prev_char_type = "ひらがな"
 reading = "あと"

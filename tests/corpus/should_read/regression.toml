@@ -854,3 +854,25 @@ expected = "えんじょ"
 input = "助ける"
 mode = "hiragana"
 expected = "たすける"
+
+# ─── round 21: 後+句読点 / 何だ・何で jukugo ────────────────────────────────
+
+[[case]]
+input = "後、もう少し"
+mode = "hiragana"
+expected = "あと、もうすこし"
+
+[[case]]
+input = "何だ"
+mode = "hiragana"
+expected = "なんだ"
+
+[[case]]
+input = "何で"
+mode = "hiragana"
+expected = "なんで"
+
+[[case]]
+input = "何だこの話は"
+mode = "hiragana"
+expected = "なんだこのはなしは"
