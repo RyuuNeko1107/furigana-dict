@@ -827,3 +827,30 @@ expected = "まげる"
 input = "3体"
 mode = "hiragana"
 expected = "さんたい"
+
+# ─── round 20: 園/助 default + 動物園 jukugo ────────────────────────────────
+
+[[case]]
+input = "動物園"
+mode = "hiragana"
+expected = "どうぶつえん"
+
+[[case]]
+input = "公園"
+mode = "hiragana"
+expected = "こうえん"
+
+[[case]]
+input = "助手"
+mode = "hiragana"
+expected = "じょしゅ"
+
+[[case]]
+input = "援助"
+mode = "hiragana"
+expected = "えんじょ"
+
+[[case]]
+input = "助ける"
+mode = "hiragana"
+expected = "たすける"
