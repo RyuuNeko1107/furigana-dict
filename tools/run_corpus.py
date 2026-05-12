@@ -60,7 +60,7 @@ def run_lookup(binary: str, text: str, mode: str, data_dir: str | None) -> str:
         cmd += ["--data-dir", data_dir]
     cmd += ["lookup", "--mode", mode, text]
     try:
-        result = subprocess.run(  # noqa: S603 — fixed argv, no shell
+        result = subprocess.run(  # nosec B603 — fixed argv, no shell
             cmd,
             capture_output=True,
             text=True,

@@ -54,7 +54,7 @@ def call_reference(text: str, mode: str, api_key: str | None = None) -> str:
         headers["X-API-Key"] = api_key
     req = urllib.request.Request(REFERENCE_API, data=body, headers=headers, method="POST")
     try:
-        with urllib.request.urlopen(req, timeout=10) as resp:  # noqa: S310
+        with urllib.request.urlopen(req, timeout=10) as resp:  # nosec B310 (= URL は固定 ryuuneko.com、 user 入力なし)
             data = json.loads(resp.read().decode("utf-8"))
         return data.get("result", "")
     except urllib.error.HTTPError as e:
@@ -70,7 +70,7 @@ def call_local(binary: str, args: list[str], corpus_file: Path) -> dict[int, str
     """
     cmd = [binary, *args, "-v", str(corpus_file)]
     try:
-        result = subprocess.run(  # noqa: S603
+        result = subprocess.run(  # nosec B603 (= argv は固定 binary path + corpus path、 shell なし)
             cmd, capture_output=True, text=True, encoding="utf-8", timeout=120
         )
     except subprocess.TimeoutExpired:
