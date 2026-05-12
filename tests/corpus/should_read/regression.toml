@@ -960,3 +960,25 @@ expected = "しらぬま"
 input = "居間"
 mode = "hiragana"
 expected = "いま"
+
+# ─── round 24: 鉄/派 default + 来「や」 ───────────────────────────────────────
+
+[[case]]
+input = "地下鉄"
+mode = "hiragana"
+expected = "ちかてつ"
+
+[[case]]
+input = "ねこ派"
+mode = "hiragana"
+expected = "ねこは"
+
+[[case]]
+input = "派閥"
+mode = "hiragana"
+expected = "はばつ"
+
+[[case]]
+input = "来やすい"
+mode = "hiragana"
+expected = "きやすい"
