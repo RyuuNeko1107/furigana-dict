@@ -1100,3 +1100,55 @@ expected = "おもすぎる"
 input = "重要"
 mode = "hiragana"
 expected = "じゅうよう"
+
+# ─── round 29: 広/隣/闇/愛/数 default ────────────────────────────────────────
+
+[[case]]
+input = "広すぎる"
+mode = "hiragana"
+expected = "ひろすぎる"
+
+[[case]]
+input = "広告"
+mode = "hiragana"
+expected = "こうこく"
+
+[[case]]
+input = "隣で"
+mode = "hiragana"
+expected = "となりで"
+
+[[case]]
+input = "隣家"
+mode = "hiragana"
+expected = "りんか"
+
+[[case]]
+input = "闇に"
+mode = "hiragana"
+expected = "やみに"
+
+[[case]]
+input = "愛は"
+mode = "hiragana"
+expected = "あいは"
+
+[[case]]
+input = "愛犬"
+mode = "hiragana"
+expected = "あいけん"
+
+[[case]]
+input = "数が"
+mode = "hiragana"
+expected = "かずが"
+
+[[case]]
+input = "キル数"
+mode = "hiragana"
+expected = "キルすう"
+
+[[case]]
+input = "多数"
+mode = "hiragana"
+expected = "たすう"
