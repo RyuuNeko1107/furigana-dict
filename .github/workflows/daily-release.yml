@@ -1,19 +1,11 @@
 name: Daily auto-release
 
-# **PAUSED until ja-furigana lib 0.1.0 stable** (2026-05-09〜)
+# **RESUMED: 2026-05-12 (= ja-furigana lib v0.1.0 stable cut 後)**
 #
-# alpha era は dict / lib の schema 不整合が起こりやすく、 daily auto-cut された
-# dict release が古い alpha lib で読めない / 新 alpha lib が古い dict tar 読め
-# ない 等の coordination cost が大きい。 lib 0.1.0 stable まで auto-cut は停止
-# し、 lib release と coordinated に手動で打つ運用に切替。
+# alpha era は dict / lib の schema 不整合が起こりやすく停止していたが、
+# lib v0.1.0 stable + dict v0.1.0 coordinated 後は schema 互換 SemVer 維持、
+# daily auto-cut の coordination cost が下がったので再開。
 #
-# 停止中の動作:
-# - schedule trigger は無効化 (cron コメントアウト)
-# - `workflow_dispatch` は残置: stable release 時 + 緊急時の手動 release 用
-#
-# stable 後に schedule を復活する判断は user 側で。
-#
-# ─── 旧コメント (再開時の参考に残置) ─────────────────────────────────
 # 1 日 1 回 (JST 03:00 / UTC 18:00) 起動。
 # 前回 tag 以降に core/ または rules/ への変更が 1 件以上あれば、
 # その日の date で CalVer tag を打つ → 既存 release.yml が
@@ -26,9 +18,9 @@ name: Daily auto-release
 # fallback 上は十分だが、 念のため commit message prefix もマッチさせる。
 
 on:
-  # schedule:
-  #   - cron: '0 18 * * *'    # UTC 18:00 = JST 03:00 — PAUSED
-  workflow_dispatch:        # 手動トリガー (lib stable release 時 / 緊急時のみ)
+  schedule:
+    - cron: '0 18 * * *'    # UTC 18:00 = JST 03:00 (★resumed 2026-05-12)
+  workflow_dispatch:        # 手動トリガー (緊急 release / 即時 cut 用)
 
 permissions:
   contents: write
