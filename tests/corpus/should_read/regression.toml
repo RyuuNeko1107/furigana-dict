@@ -716,3 +716,55 @@ expected = "ひひょうじ"
 input = "非常"
 mode = "hiragana"
 expected = "ひじょう"
+
+# ─── round 17: 敵/久/銀/和 default + 出 next_starts 補完 + 久々/和傘 jukugo ─
+
+[[case]]
+input = "強敵"
+mode = "hiragana"
+expected = "きょうてき"
+
+[[case]]
+input = "味方敵"
+mode = "hiragana"
+expected = "みかたてき"
+
+[[case]]
+input = "久々"
+mode = "hiragana"
+expected = "ひさびさ"
+
+[[case]]
+input = "永久"
+mode = "hiragana"
+expected = "えいきゅう"
+
+[[case]]
+input = "銀河"
+mode = "hiragana"
+expected = "ぎんが"
+
+[[case]]
+input = "和傘"
+mode = "hiragana"
+expected = "わがさ"
+
+[[case]]
+input = "平和"
+mode = "hiragana"
+expected = "へいわ"
+
+[[case]]
+input = "和らぐ"
+mode = "hiragana"
+expected = "やわらぐ"
+
+[[case]]
+input = "出た"
+mode = "hiragana"
+expected = "でた"
+
+[[case]]
+input = "出ます"
+mode = "hiragana"
+expected = "でます"
