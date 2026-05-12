@@ -523,3 +523,55 @@ expected = "はなす"
 input = "話して"
 mode = "hiragana"
 expected = "はなして"
+
+# ─── round 13: 例/似/戦 default + 何歳/人狼/行って 系 ──────────────────────
+
+[[case]]
+input = "例の人"
+mode = "hiragana"
+expected = "れいのひと"
+
+[[case]]
+input = "例えば"
+mode = "hiragana"
+expected = "たとえば"
+
+[[case]]
+input = "似てる"
+mode = "hiragana"
+expected = "にてる"
+
+[[case]]
+input = "争奪戦"
+mode = "hiragana"
+expected = "そうだつせん"
+
+[[case]]
+input = "戦う"
+mode = "hiragana"
+expected = "たたかう"
+
+[[case]]
+input = "戦争"
+mode = "hiragana"
+expected = "せんそう"
+
+[[case]]
+input = "何歳"
+mode = "hiragana"
+expected = "なんさい"
+
+[[case]]
+input = "人狼"
+mode = "hiragana"
+expected = "じんろう"
+
+[[case]]
+input = "行ってた"
+mode = "hiragana"
+expected = "いってた"
+
+[[case]]
+input = "星見に行ってた"
+mode = "hiragana"
+expected = "ほしみにいってた"
