@@ -123,5 +123,21 @@ suffix = "サツ"
 sokuonize = true
 # === end: 冊 ===
 
+# === begin: 歩 === (★alpha.21 round 7、 「1 万歩 → イチマンポ」 等の助数詞 promotion)
+[counter."歩"]
+default = "ホ"
+
+# 1/6/8/10 で促音化 + ポ (= 「いっぽ / ろっぽ / はっぽ / じゅっぽ / いちまんぽ」)
+[[counter."歩".rules]]
+last_digit = [1, 6, 8, 0]
+suffix = "ポ"
+sokuonize = true
+
+# 3 は連濁で ボ (= 「さんぼ」 三歩)
+[[counter."歩".rules]]
+last_digit = [3]
+suffix = "ボ"
+# === end: 歩 ===
+
 # inline test は隣接の `objects.test.toml` に分離 (CI 専用、 release tar 除外、
 # runtime memory には載らない)。 contributor は `<name>.test.toml` ペアで追記する。
