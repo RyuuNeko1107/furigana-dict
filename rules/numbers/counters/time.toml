@@ -140,7 +140,26 @@ default = "ネン"
 # === end: 年 ===
 
 # === begin: 時間 ===
-# 「N時間」を Nジカン に
+# 「N時間」を Nジカン に。 4/7/9 はカナ末尾置換 (ヨン→ヨ / ナナ→シチ / キュウ→ク、
+# 「時」 と同じ pattern、 ★alpha.21 round 10 で対応):
+#   4時間 → ヨジカン (ヨンジカンではなく)
+#   7時間 → シチジカン
+#   9時間 → クジカン
 [counter."時間"]
 default = "ジカン"
+
+[[counter."時間".replacements]]
+last_digit = [4]
+from = "ヨン"
+to = "ヨ"
+
+[[counter."時間".replacements]]
+last_digit = [7]
+from = "ナナ"
+to = "シチ"
+
+[[counter."時間".replacements]]
+last_digit = [9]
+from = "キュウ"
+to = "ク"
 # === end: 時間 ===
