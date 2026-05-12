@@ -1036,3 +1036,35 @@ expected = "どんぶりけい"
 input = "太陽系"
 mode = "hiragana"
 expected = "たいようけい"
+
+# ─── round 27: 番/某 default + 下 カタカナ後続 + 古龍 jukugo ─────────────────
+
+[[case]]
+input = "1番多く"
+mode = "hiragana"
+expected = "いちばんおおく"
+
+[[case]]
+input = "順番"
+mode = "hiragana"
+expected = "じゅんばん"
+
+[[case]]
+input = "某有名"
+mode = "hiragana"
+expected = "ぼうゆうめい"
+
+[[case]]
+input = "下ネタ"
+mode = "hiragana"
+expected = "しもネタ"
+
+[[case]]
+input = "下半身"
+mode = "hiragana"
+expected = "かはんしん"
+
+[[case]]
+input = "古龍"
+mode = "hiragana"
+expected = "こりゅう"
