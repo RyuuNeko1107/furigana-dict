@@ -1,0 +1,478 @@
+# alpha.21 round 1-11 dict 改善 regression test
+#
+# 各 round で fix した entry を 「次回 regression を起こさない」 ように網羅。
+# 100% pass を保つ前提、 dict / lib 変更で 1 件でも落ちたら CI red になる safety net。
+#
+# fix の出典:
+# - round 1: 使/言/見/思/終/強/持/勝/変/寝 [[kanji]] block (default + ひらがな後続)
+# - round 2: 行/入/落/出 多義動詞 next_starts_any 分岐
+# - round 3: 主に / 何系 / 中系 / 分系 (= 既存 unihan + Lindera band-up で覆われる)
+# - round 4: 的/次 default + 挨拶句 jukugo
+# - round 5: 手/力/雅/為 default + 免疫力/前年比/給料日/手術後/記念日 jukugo
+# - round 6: alphabet brand (loanwords 統合)
+# - round 7: 歩 助数詞 + scale+counter
+# - round 8: 居 [[kanji]] + 居る/居ない jukugo + 夜中
+# - round 9: 悪 / 嫌 [[kanji]]
+# - round 10: 檜風呂 + 時間 specials
+# - round 11: 対/全/目 default + 全く
+
+[meta]
+schema_version = "2"
+role = "corpus"
+description = "alpha.21 round 1-11 dict 改善 regression test"
+
+# ─── round 1: 動詞 / 形容詞 [[kanji]] block (10 字) ─────────────────────────
+
+[[case]]
+input = "使ったらよかったのに"
+mode = "hiragana"
+expected = "つかったらよかったのに"
+
+[[case]]
+input = "使い方"
+mode = "hiragana"
+expected = "つかいかた"
+
+[[case]]
+input = "使用"
+mode = "hiragana"
+expected = "しよう"
+
+[[case]]
+input = "言ってた"
+mode = "hiragana"
+expected = "いってた"
+
+[[case]]
+input = "言わない"
+mode = "hiragana"
+expected = "いわない"
+
+[[case]]
+input = "発言"
+mode = "hiragana"
+expected = "はつげん"
+
+[[case]]
+input = "見てみる"
+mode = "hiragana"
+expected = "みてみる"
+
+[[case]]
+input = "意見"
+mode = "hiragana"
+expected = "いけん"
+
+[[case]]
+input = "思う"
+mode = "hiragana"
+expected = "おもう"
+
+[[case]]
+input = "終わります"
+mode = "hiragana"
+expected = "おわります"
+
+[[case]]
+input = "終了"
+mode = "hiragana"
+expected = "しゅうりょう"
+
+[[case]]
+input = "強かった"
+mode = "hiragana"
+expected = "つよかった"
+
+[[case]]
+input = "持ってたら"
+mode = "hiragana"
+expected = "もってたら"
+
+[[case]]
+input = "勝ち"
+mode = "hiragana"
+expected = "かち"
+
+[[case]]
+input = "変えてくる"
+mode = "hiragana"
+expected = "かえてくる"
+
+[[case]]
+input = "寝てた"
+mode = "hiragana"
+expected = "ねてた"
+
+# ─── round 2: 多義動詞 行/入/落/出 ───────────────────────────────────────────
+
+[[case]]
+input = "行く"
+mode = "hiragana"
+expected = "いく"
+
+[[case]]
+input = "行こう"
+mode = "hiragana"
+expected = "いこう"
+
+[[case]]
+input = "行わない"
+mode = "hiragana"
+expected = "おこなわない"
+
+[[case]]
+input = "銀行"
+mode = "hiragana"
+expected = "ぎんこう"
+
+[[case]]
+input = "入る"
+mode = "hiragana"
+expected = "はいる"
+
+[[case]]
+input = "入って"
+mode = "hiragana"
+expected = "はいって"
+
+[[case]]
+input = "入れる"
+mode = "hiragana"
+expected = "いれる"
+
+[[case]]
+input = "入り口"
+mode = "hiragana"
+expected = "いりぐち"
+
+[[case]]
+input = "入学"
+mode = "hiragana"
+expected = "にゅうがく"
+
+[[case]]
+input = "落ちる"
+mode = "hiragana"
+expected = "おちる"
+
+[[case]]
+input = "落とす"
+mode = "hiragana"
+expected = "おとす"
+
+[[case]]
+input = "出る"
+mode = "hiragana"
+expected = "でる"
+
+[[case]]
+input = "出す"
+mode = "hiragana"
+expected = "だす"
+
+[[case]]
+input = "出して"
+mode = "hiragana"
+expected = "だして"
+
+[[case]]
+input = "出発"
+mode = "hiragana"
+expected = "しゅっぱつ"
+
+# ─── round 3: 主に ────────────────────────────────────────────────────────
+
+[[case]]
+input = "主に"
+mode = "hiragana"
+expected = "おもに"
+
+[[case]]
+input = "主役"
+mode = "hiragana"
+expected = "しゅやく"
+
+# ─── round 4: 的 / 次 default + 挨拶句 ──────────────────────────────────────
+
+[[case]]
+input = "全体的に"
+mode = "hiragana"
+expected = "ぜんたいてきに"
+
+[[case]]
+input = "基本的"
+mode = "hiragana"
+expected = "きほんてき"
+
+[[case]]
+input = "次の試合"
+mode = "hiragana"
+expected = "つぎのしあい"
+
+[[case]]
+input = "お疲れ様でした"
+mode = "hiragana"
+expected = "おつかれさまでした"
+
+[[case]]
+input = "お疲れ様です"
+mode = "hiragana"
+expected = "おつかれさまです"
+
+[[case]]
+input = "お願いします"
+mode = "hiragana"
+expected = "おねがいします"
+
+# ─── round 5: 単漢字 default 修正 + 専門熟語 jukugo ───────────────────────
+
+[[case]]
+input = "手が震える"
+mode = "hiragana"
+expected = "てがふるえる"
+
+[[case]]
+input = "免疫力"
+mode = "hiragana"
+expected = "めんえきりょく"
+
+[[case]]
+input = "雅な"
+mode = "hiragana"
+expected = "みやびな"
+
+[[case]]
+input = "為に"
+mode = "hiragana"
+expected = "ために"
+
+[[case]]
+input = "前年比"
+mode = "hiragana"
+expected = "ぜんねんひ"
+
+[[case]]
+input = "記念日"
+mode = "hiragana"
+expected = "きねんび"
+
+[[case]]
+input = "給料日"
+mode = "hiragana"
+expected = "きゅうりょうび"
+
+[[case]]
+input = "手術後"
+mode = "hiragana"
+expected = "しゅじゅつご"
+
+# ─── round 6: alphabet brand loanwords ─────────────────────────────────────
+
+[[case]]
+input = "YouTubeで見る"
+mode = "hiragana"
+expected = "ユーチューブでみる"
+
+[[case]]
+input = "Switchで遊ぶ"
+mode = "hiragana"
+expected = "スイッチであそぶ"
+
+[[case]]
+input = "WiFiつけて"
+mode = "hiragana"
+expected = "ワイファイつけて"
+
+[[case]]
+input = "LINEで連絡"
+mode = "hiragana"
+expected = "ラインでれんらく"
+
+[[case]]
+input = "PCゲーム"
+mode = "hiragana"
+expected = "ピーシーゲーム"
+
+[[case]]
+input = "MOD導入"
+mode = "hiragana"
+expected = "モッドどうにゅう"
+
+[[case]]
+input = "Java入門"
+mode = "hiragana"
+expected = "ジャバにゅうもん"
+
+[[case]]
+input = "Discord呼びかけ"
+mode = "hiragana"
+expected = "ディスコードよびかけ"
+
+# ─── round 7: 歩 助数詞 + scale+counter ────────────────────────────────────
+
+[[case]]
+input = "1歩"
+mode = "hiragana"
+expected = "いっぽ"
+
+[[case]]
+input = "3歩"
+mode = "hiragana"
+expected = "さんぼ"
+
+[[case]]
+input = "10歩"
+mode = "hiragana"
+expected = "じゅっぽ"
+
+[[case]]
+input = "1万歩"
+mode = "hiragana"
+expected = "いちまんぽ"
+
+# ─── round 8: 居 + 夜中 ────────────────────────────────────────────────────
+
+[[case]]
+input = "居る"
+mode = "hiragana"
+expected = "いる"
+
+[[case]]
+input = "居ない"
+mode = "hiragana"
+expected = "いない"
+
+[[case]]
+input = "居住"
+mode = "hiragana"
+expected = "きょじゅう"
+
+[[case]]
+input = "夜中"
+mode = "hiragana"
+expected = "よなか"
+
+# ─── round 9: 悪 / 嫌 ──────────────────────────────────────────────────────
+
+[[case]]
+input = "悪い"
+mode = "hiragana"
+expected = "わるい"
+
+[[case]]
+input = "悪すぎる"
+mode = "hiragana"
+expected = "わるすぎる"
+
+[[case]]
+input = "悪魔"
+mode = "hiragana"
+expected = "あくま"
+
+[[case]]
+input = "嫌でやんす"
+mode = "hiragana"
+expected = "いやでやんす"
+
+[[case]]
+input = "嫌い"
+mode = "hiragana"
+expected = "きらい"
+
+[[case]]
+input = "嫌う"
+mode = "hiragana"
+expected = "きらう"
+
+# ─── round 10: 連濁 + 時間 specials ────────────────────────────────────────
+
+[[case]]
+input = "檜風呂"
+mode = "hiragana"
+expected = "ひのきぶろ"
+
+[[case]]
+input = "4時間"
+mode = "hiragana"
+expected = "よじかん"
+
+[[case]]
+input = "7時間"
+mode = "hiragana"
+expected = "しちじかん"
+
+[[case]]
+input = "9時間"
+mode = "hiragana"
+expected = "くじかん"
+
+# ─── round 11: 対 / 全 / 目 ────────────────────────────────────────────────
+
+[[case]]
+input = "対戦"
+mode = "hiragana"
+expected = "たいせん"
+
+[[case]]
+input = "対ありでした"
+mode = "hiragana"
+expected = "たいありでした"
+
+[[case]]
+input = "全自動"
+mode = "hiragana"
+expected = "ぜんじどう"
+
+[[case]]
+input = "全体"
+mode = "hiragana"
+expected = "ぜんたい"
+
+[[case]]
+input = "全く"
+mode = "hiragana"
+expected = "まったく"
+
+[[case]]
+input = "目が"
+mode = "hiragana"
+expected = "めが"
+
+[[case]]
+input = "目的"
+mode = "hiragana"
+expected = "もくてき"
+
+[[case]]
+input = "注目"
+mode = "hiragana"
+expected = "ちゅうもく"
+
+# ─── 〜 padding (= round 5 / scoring fix) ──────────────────────────────────
+
+[[case]]
+input = "へ〜うま"
+mode = "hiragana"
+expected = "へ から うま"
+
+[[case]]
+input = "2〜3回"
+mode = "hiragana"
+expected = "にからさんかい"
+
+# ─── 笑 (= round 5 dict fix) ───────────────────────────────────────────────
+
+[[case]]
+input = "笑"
+mode = "hiragana"
+expected = "わらい"
+
+[[case]]
+input = "笑う"
+mode = "hiragana"
+expected = "わらう"
+
+[[case]]
+input = "笑顔"
+mode = "hiragana"
+expected = "えがお"
