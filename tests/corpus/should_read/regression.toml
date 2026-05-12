@@ -1152,3 +1152,30 @@ expected = "キルすう"
 input = "多数"
 mode = "hiragana"
 expected = "たすう"
+
+# ─── round 30: 際/射/線 default ─────────────────────────────────────────────
+
+[[case]]
+input = "参加の際"
+mode = "hiragana"
+expected = "さんかのさい"
+
+[[case]]
+input = "国際"
+mode = "hiragana"
+expected = "こくさい"
+
+[[case]]
+input = "射線"
+mode = "hiragana"
+expected = "しゃせん"
+
+[[case]]
+input = "射る"
+mode = "hiragana"
+expected = "いる"
+
+[[case]]
+input = "直線"
+mode = "hiragana"
+expected = "ちょくせん"
