@@ -1068,3 +1068,35 @@ expected = "かはんしん"
 input = "古龍"
 mode = "hiragana"
 expected = "こりゅう"
+
+# ─── round 28: 今+漢字 / 勢 / 重 default + 大勢 jukugo ──────────────────────
+
+[[case]]
+input = "今思った"
+mode = "hiragana"
+expected = "いまおもった"
+
+[[case]]
+input = "今度"
+mode = "hiragana"
+expected = "こんど"
+
+[[case]]
+input = "マニュ勢"
+mode = "hiragana"
+expected = "マニュせい"
+
+[[case]]
+input = "大勢"
+mode = "hiragana"
+expected = "おおぜい"
+
+[[case]]
+input = "重すぎる"
+mode = "hiragana"
+expected = "おもすぎる"
+
+[[case]]
+input = "重要"
+mode = "hiragana"
+expected = "じゅうよう"

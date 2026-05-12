@@ -379,6 +379,13 @@ reading = "いま"
 prev_char_type = "ひらがな"
 reading = "いま"
 
+# 「今思った / 今食べる / 今行く」 = 漢字後続でも副詞 「いま」、 熟語 (= 「今度 /
+# 今晩 / 今月 / 今年」) は dict 1000 jukugo で覆われる前提。 [[kanji]] block 「今」
+# は band 100 fallback。
+[[kanji.match]]
+next_char_type = "漢字"
+reading = "いま"
+
 [[kanji.match]]
 next_eq = "々"
 reading = "いま"
@@ -1054,6 +1061,24 @@ default = "バン"
 [[kanji]]
 char = "某"
 default = "ボウ"
+
+# 「勢」: 音読み 「セイ」 (= 「勢力 / 大勢 / 多勢 / 軍勢 / マニュ勢」) が圧倒的。
+# 「いきおい」 (= 「勢いがある」 単独名詞) は希少 / 動詞活用は ひらがな後続。
+[[kanji]]
+char = "勢"
+default = "セイ"
+[[kanji.match]]
+next_char_type = "ひらがな"
+reading = "いきお"
+
+# 「重」: 音読み 「ジュウ」 (= 「重要 / 体重 / 二重 / 厳重」) が圧倒的、 形容詞
+# 「重い (おもい)」 は ひらがな後続で 「おも」 語幹。
+[[kanji]]
+char = "重"
+default = "ジュウ"
+[[kanji.match]]
+next_char_type = "ひらがな"
+reading = "おも"
 
 # ─── 笑 (★alpha.21、 単独 「笑」 が「わらう」 動詞形で出る違和感を修正) ──────
 #
