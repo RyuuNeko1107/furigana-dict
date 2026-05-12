@@ -159,6 +159,34 @@ def count_rule_patterns(path: Path) -> int:
     return count_entries(path)
 
 
+def count_kanji_patterns(path: Path) -> int:
+    """[[kanji]] format file の **block 数 + 全 [[kanji.match]] 合計** を返す。
+
+    各 [[kanji]] block は char + default + 文脈分岐 [[kanji.match]] 配列を持つ。
+    block 数は char 数 (= entries 数と同じ) だが、 ルール総数としては match の
+    数も加算したい (= 文脈分岐の richness を可視化、 default reading + 各 match
+    で 1 つの「ルール」 を消費するカウント)。
+
+    [entries."X".match] 形式 (jukugo の Detailed entry 文脈分岐) も将来同じ思想で
+    集計可能だが、 現状は kanji block のみ。
+    """
+    try:
+        with open(path, "rb") as f:
+            data = tomllib.load(f)
+    except (OSError, tomllib.TOMLDecodeError):
+        return 0
+    kanji = data.get("kanji")
+    if not isinstance(kanji, list):
+        return count_entries(path)
+    total = len(kanji)  # 各 block の default 自体を 1 ルールとして数える
+    for k in kanji:
+        if isinstance(k, dict):
+            m = k.get("match")
+            if isinstance(m, list):
+                total += len(m)
+    return total
+
+
 def count_inline_tests(path: Path) -> int:
     """`<base>.toml` に対する隣接 `<base>.test.toml` の `[[test]]` 件数を返す。
 
@@ -508,6 +536,39 @@ def _gen_grouped_section(
     return "\n".join(lines) + "\n"
 
 
+def _gen_kanji_subsection(rows: list[tuple[str, int, int, int]]) -> str:
+    """単漢字 [[kanji]] format 専用 subsection ([[kanji.match]] 数も別列で表示)。
+
+    block 数 (= char 数) と pattern 数 (= block + match 配列合計) を別列で出すことで、
+    「default だけ書いた block」 と 「文脈分岐多めの block」 の比率が見える。
+    """
+    title = "単漢字 [[kanji]] format"
+    note = "`core/kanji/*` — 1 字 surface に対する `[[kanji]]` block 形式 entry。 各 block は `char` (1 字必須) + `default` reading + optional `[[kanji.match]]` 配列 (= 文脈分岐 reading、 matcher vocabulary は entry inline match と同一)。 「ルール数」 列は **block 数 + 各 [[kanji.match]] 合計** (= default + 文脈分岐の総ルール数)。"
+    lines = [f"### {title}", "", note, ""]
+    if not rows:
+        lines.append("(空)")
+        return "\n".join(lines) + "\n"
+    lines.append("| ファイル | 文字数 | ルール数 | サイズ | 用途 |")
+    lines.append("|---|---:|---:|---:|---|")
+    total_count = 0
+    total_patterns = 0
+    total_size = 0
+    for rel, count, _tcount, size in rows:
+        patterns = count_kanji_patterns(ROOT / rel)
+        desc = lookup_description(rel)
+        lines.append(
+            f"| {link_rel(rel)} | {count:,} | {patterns:,} | {fmt_size(size)} | {desc} |"
+        )
+        total_count += count
+        total_patterns += patterns
+        total_size += size
+    if len(rows) > 1:
+        lines.append(
+            f"| **小計** ({len(rows)} ファイル) | **{total_count:,}** | **{total_patterns:,}** | **{fmt_size(total_size)}** | |"
+        )
+    return "\n".join(lines) + "\n"
+
+
 def gen_core(core_rows: list) -> str:
     """core 内訳をカテゴリ別 sub-section に分割して出力。
 
@@ -562,11 +623,7 @@ def gen_core(core_rows: list) -> str:
             single_rows,
         ))
     if kanji_rows:
-        sections.append(_gen_subsection(
-            "単漢字 [[kanji]] format",
-            "`core/kanji/*` — 1 字 surface に対する `[[kanji]]` block 形式 entry。 各 block は `char` (1 字必須) + `default` reading + optional `[[kanji.match]]` 配列 (= 文脈分岐 reading、 matcher vocabulary は entry inline match と同一)。 alpha.7 era の `core/single_overrides.toml` の後継、 alpha.11 で format 確定。",
-            kanji_rows,
-        ))
+        sections.append(_gen_kanji_subsection(kanji_rows))
     sections.append(_gen_subsection(
         "異体字",
         "`core/compat.toml` — 異体字 → 標準字の正規化マッピング (例: 髙→高)。 reading lookup 前の前処理として lib が参照。",

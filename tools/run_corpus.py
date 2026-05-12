@@ -53,12 +53,26 @@ def find_furigana_binary(override: str | None) -> str:
     return found
 
 
-def run_lookup(binary: str, text: str, mode: str, data_dir: str | None) -> str:
-    """`furigana lookup <text> --mode <mode>` を呼び出して stdout を返す."""
+def run_lookup(binary: str, text: str, mode: str, data_dir: str | None, dict_root: Path | None) -> str:
+    """`furigana lookup <text> --mode <mode>` を呼び出して stdout を返す.
+
+    `dict_root` 指定時は repo raw 構造 (= rules/ + core/<sub>/) から直接 mount する
+    `--rules-dir` / `--core-dict-dir` を組み立てる (= dev workflow、 `furigana dict pull`
+    された flat 構造 `<data_dir>/data/` をスキップ)。
+    """
     cmd = [binary]
     if data_dir:
         cmd += ["--data-dir", data_dir]
-    cmd += ["lookup", "--mode", mode, text]
+    cmd += ["lookup", "--mode", mode]
+    if dict_root is not None:
+        rules = dict_root / "rules"
+        if rules.is_dir():
+            cmd += ["--rules-dir", str(rules)]
+        for sub in ("jukugo", "unihan", "kanji", "loanwords", "works"):
+            core_sub = dict_root / "core" / sub
+            if core_sub.is_dir():
+                cmd += ["--core-dict-dir", str(core_sub)]
+    cmd += [text]
     try:
         result = subprocess.run(  # nosec B603 — fixed argv, no shell
             cmd,
@@ -107,10 +121,12 @@ def run_corpus(
     data_dir: str | None,
     *,
     verbose: bool,
+    dict_root: Path | None = None,
 ) -> tuple[int, int, list[str]]:
     """corpus toml を読み出して全 case を実行、(passed, total, failures) を返す。
 
     `corpus_path` は file または dir。 dir の場合は配下 `*.toml` を再帰的に全部実行する。
+    `dict_root` 指定時は repo raw 構造 (= rules/ + core/<sub>/) を直接 mount する。
     """
     files = collect_corpus_files(corpus_path)
     if not files:
@@ -151,7 +167,7 @@ def run_corpus(
                 # ことになっているので、 そちらは ここでは検証対象外として skip。
                 continue
 
-            actual = run_lookup(binary, text, mode, data_dir)
+            actual = run_lookup(binary, text, mode, data_dir, dict_root)
 
             # ── (1) full match (expected) ──
             full_match_ok = expected is None or actual == expected
@@ -216,6 +232,16 @@ def main() -> int:
         help="furigana に渡す --data-dir (辞書 / ルールの mount 先)",
     )
     parser.add_argument(
+        "--dict-root",
+        type=Path,
+        help=(
+            "dev 用: repo raw 構造 (rules/ + core/<sub>/) の root を指定すると "
+            "furigana CLI に --rules-dir/--core-dict-dir を組み立てて渡す。 "
+            "未指定なら repo root を自動検出 (= run_corpus.py の 2 階層上、 = furigana-dict/)。 "
+            "明示 `--data-dir` 指定時は dict-root 自動検出を skip"
+        ),
+    )
+    parser.add_argument(
         "-v",
         "--verbose",
         action="store_true",
@@ -224,14 +250,25 @@ def main() -> int:
     args = parser.parse_args()
 
     binary = find_furigana_binary(args.binary)
+
+    # dict-root: 明示指定 > 自動検出 (= REPO_ROOT が furigana-dict なら raw 構造として使う)。
+    # `--data-dir` 明示時は user 意図 (dict pull 済 flat 構造) を尊重して dict-root スキップ
+    dict_root: Path | None = None
+    if args.dict_root is not None:
+        dict_root = args.dict_root
+    elif args.data_dir is None and (REPO_ROOT / "rules").is_dir() and (REPO_ROOT / "core").is_dir():
+        dict_root = REPO_ROOT
+
     print(f"[info] binary  : {binary}")
     print(f"[info] corpus  : {args.corpus}")
     if args.data_dir:
         print(f"[info] data-dir: {args.data_dir}")
+    if dict_root is not None:
+        print(f"[info] dict-root: {dict_root}")
     print()
 
     passed, total, failures = run_corpus(
-        args.corpus, binary, args.data_dir, verbose=args.verbose
+        args.corpus, binary, args.data_dir, verbose=args.verbose, dict_root=dict_root
     )
 
     print()

@@ -414,6 +414,8 @@ def parse_entries(content: str) -> dict[str, str]:
     - `[entries]` / `[map]` dict (jukugo / unihan / compat / numeric_phrases / etc.)
     - `[entries]` 内の inline-table value (units.toml: `"km" = { kana = "..." }`)
     - `[[entry]]` array (scales.toml: `[[entry]] kanji=X kana=Y`)
+    - `[[kanji]]` array (core/kanji/overrides.toml: `[[kanji]] char=X default=Y`)
+      — default reading のみを diff 対象とし、 文脈分岐 [[kanji.match]] は別軸
     - top-level flat (旧 days.toml: `'1' = 'ツイタチ'` …)
 
     `[[rule]]` (postprocess / context) や `[counter."X"]` (counters) のような
@@ -450,6 +452,19 @@ def parse_entries(content: str) -> dict[str, str]:
             if isinstance(item, dict):
                 k = item.get("kanji") or item.get("surface")
                 v = item.get("kana") or item.get("reading")
+                if isinstance(k, str) and isinstance(v, str):
+                    result[k] = v
+        if result:
+            return result
+
+    # [[kanji]] array (core/kanji/overrides.toml の `char = X / default = Y` 形式)
+    arr = data.get("kanji")
+    if isinstance(arr, list):
+        result = {}
+        for item in arr:
+            if isinstance(item, dict):
+                k = item.get("char")
+                v = item.get("default")
                 if isinstance(k, str) and isinstance(v, str):
                     result[k] = v
         if result:
@@ -507,6 +522,18 @@ def iter_top_level_keys(content: str):
             if isinstance(item, dict):
                 k = item.get("surface") or item.get("pattern") or ""
                 vv = item.get("default") or item.get("replacement") or ""
+                yield (
+                    k if isinstance(k, str) else "",
+                    vv if isinstance(vv, str) else "",
+                )
+        return
+    # [[kanji]] (core/kanji/overrides.toml): (char, default)
+    arr = data.get("kanji")
+    if isinstance(arr, list):
+        for item in arr:
+            if isinstance(item, dict):
+                k = item.get("char") or ""
+                vv = item.get("default") or ""
                 yield (
                     k if isinstance(k, str) else "",
                     vv if isinstance(vv, str) else "",
