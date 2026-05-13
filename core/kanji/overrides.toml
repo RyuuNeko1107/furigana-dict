@@ -5878,3 +5878,31 @@ default = "バ"
 [[kanji.match]]
 prev_char_type = "漢字"
 reading = "ジョウ"
+
+# 「軍」 default 「グン」 (= 軍隊/軍人/陸軍/海軍/空軍/将軍/援軍)。
+# joyo unihan の 「いくさ」 は 「戦」 と混同した古語、 現代日本語は グン
+[[kanji]]
+char = "軍"
+default = "グン"
+
+# 「府」 default 「フ」 (= 京都府/大阪府/政府/府知事/府県)
+[[kanji]]
+char = "府"
+default = "フ"
+
+# 「区」 default 「ク」 (= 渋谷区/区別/区分/区切/管区)
+[[kanji]]
+char = "区"
+default = "ク"
+
+# 「町」 default 「マチ」 (= 町並み/町中/○○町=○○マチ)。
+# 「町長=チョウチョウ」 「町内=チョウナイ」 等の チョウ case は jukugo 個別管理
+[[kanji]]
+char = "町"
+default = "マチ"
+
+# 「村」 default 「ムラ」 (= 村人/○○村=○○ムラ)。
+# 「村長=ソンチョウ」 「漁村=ギョソン」 「農村=ノウソン」 等の ソン case は jukugo 個別管理
+[[kanji]]
+char = "村"
+default = "ムラ"

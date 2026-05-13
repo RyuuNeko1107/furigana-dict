@@ -237,7 +237,7 @@ description = "常用漢字 2,136 字 (文化庁 2010-11-30 改訂、 内閣告�
 "北" = "きた"
 # 匠 は core/kanji/overrides.toml の [[kanji]] block に移行
 "匹" = "ひき"
-"区" = "ク"
+# 区 は core/kanji/overrides.toml の [[kanji]] block に移行 (★round 49)
 # 医 は core/kanji/overrides.toml の [[kanji]] block に移行
 # 匿 は core/kanji/overrides.toml の [[kanji]] block に移行
 # "十" は core/kanji/overrides.toml の [[kanji]] block に移行 (★round 48)
@@ -585,7 +585,7 @@ description = "常用漢字 2,136 字 (文化庁 2010-11-30 改訂、 内閣告�
 "序" = "ついず"
 "底" = "そこ"
 # 店 は core/kanji/overrides.toml の [[kanji]] block に移行 (★round 49)
-"府" = "フ"
+# 府 は core/kanji/overrides.toml の [[kanji]] block に移行 (★round 49)
 "度" = "ド"
 # 座 は core/kanji/overrides.toml の [[kanji]] block に移行
 "庫" = "くら"
@@ -904,7 +904,7 @@ description = "常用漢字 2,136 字 (文化庁 2010-11-30 改訂、 内閣告�
 # 朽 は core/kanji/overrides.toml の [[kanji]] block に移行
 "杉" = "すぎ"
 "材" = "ザイ"
-"村" = "むら"
+# 村 は core/kanji/overrides.toml の [[kanji]] block に移行 (★round 49)
 "束" = "たば"
 "条" = "えだ"
 # 杯 は core/kanji/overrides.toml の [[kanji]] block に移行
@@ -1199,7 +1199,7 @@ description = "常用漢字 2,136 字 (文化庁 2010-11-30 改訂、 内閣告�
 "甲" = "きのえ"
 # 申 は core/kanji/overrides.toml の [[kanji]] block に移行
 "男" = "おとこ"
-"町" = "まち"
+# 町 は core/kanji/overrides.toml の [[kanji]] block に移行 (★round 49)
 # 画 は core/kanji/overrides.toml の [[kanji]] block に移行
 # 界 は core/kanji/overrides.toml の [[kanji]] block に移行
 # 畏 は core/kanji/overrides.toml の [[kanji]] block に移行
@@ -1746,7 +1746,7 @@ description = "常用漢字 2,136 字 (文化庁 2010-11-30 改訂、 内閣告�
 # 躍 は core/kanji/overrides.toml の [[kanji]] block に移行
 "身" = "シン"
 "軌" = "わだち"
-"軍" = "いくさ"
+# 軍 は core/kanji/overrides.toml の [[kanji]] block に移行 (★round 49)
 "軒" = "のき"
 # 軟 は core/kanji/overrides.toml の [[kanji]] block に移行
 # 転 は core/kanji/overrides.toml の [[kanji]] block に移行
