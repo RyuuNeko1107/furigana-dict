@@ -3012,3 +3012,337 @@ default = "イ"
 char = "荘"
 default = "ソウ"
 
+
+# ─── 第 9 弾 sweep: joyo length 4 動詞・形容詞・副詞 残り 80 字 ──
+#
+# 「誕 = いつわる」 「陽 = いつわる」 は完全な誤入力 (= 「誕 = タン / 陽 = ヨウ」)、
+# 残は動詞活用完全形 / 形容詞活用完全形 default を音読みに統一。
+
+[[kanji]]
+char = "秀"
+default = "シュウ"
+
+[[kanji]]
+char = "策"
+default = "サク"
+
+[[kanji]]
+char = "糾"
+default = "キュウ"
+
+[[kanji]]
+char = "補"
+default = "ホ"
+
+[[kanji]]
+char = "複"
+default = "フク"
+
+[[kanji]]
+char = "覚"
+default = "カク"
+
+[[kanji]]
+char = "設"
+default = "セツ"
+
+[[kanji]]
+char = "詐"
+default = "サ"
+
+[[kanji]]
+char = "詣"
+default = "ケイ"
+
+[[kanji]]
+char = "認"
+default = "ニン"
+
+[[kanji]]
+char = "誕"
+default = "タン"
+
+[[kanji]]
+char = "誤"
+default = "ゴ"
+
+[[kanji]]
+char = "調"
+default = "チョウ"
+
+[[kanji]]
+char = "諾"
+default = "ダク"
+
+[[kanji]]
+char = "謝"
+default = "シャ"
+
+[[kanji]]
+char = "謹"
+default = "キン"
+
+[[kanji]]
+char = "警"
+default = "ケイ"
+
+[[kanji]]
+char = "貧"
+default = "ヒン"
+
+[[kanji]]
+char = "販"
+default = "ハン"
+
+[[kanji]]
+char = "貪"
+default = "ドン"
+
+[[kanji]]
+char = "貫"
+default = "カン"
+
+[[kanji]]
+char = "貴"
+default = "キ"
+
+[[kanji]]
+char = "費"
+default = "ヒ"
+
+[[kanji]]
+char = "貿"
+default = "ボウ"
+
+[[kanji]]
+char = "賂"
+default = "ロ"
+
+[[kanji]]
+char = "賄"
+default = "ワイ"
+
+[[kanji]]
+char = "資"
+default = "シ"
+
+[[kanji]]
+char = "賊"
+default = "ゾク"
+
+[[kanji]]
+char = "賓"
+default = "ヒン"
+
+[[kanji]]
+char = "賛"
+default = "サン"
+
+[[kanji]]
+char = "賜"
+default = "シ"
+
+[[kanji]]
+char = "賠"
+default = "バイ"
+
+[[kanji]]
+char = "賢"
+default = "ケン"
+
+[[kanji]]
+char = "購"
+default = "コウ"
+
+[[kanji]]
+char = "赴"
+default = "フ"
+
+[[kanji]]
+char = "軟"
+default = "ナン"
+
+[[kanji]]
+char = "転"
+default = "テン"
+
+[[kanji]]
+char = "較"
+default = "カク"
+
+[[kanji]]
+char = "輝"
+default = "キ"
+
+[[kanji]]
+char = "輩"
+default = "ハイ"
+
+[[kanji]]
+char = "迎"
+default = "ゲイ"
+
+[[kanji]]
+char = "迭"
+default = "テツ"
+
+[[kanji]]
+char = "退"
+default = "タイ"
+
+[[kanji]]
+char = "逓"
+default = "テイ"
+
+[[kanji]]
+char = "連"
+default = "レン"
+
+[[kanji]]
+char = "逸"
+default = "イツ"
+
+[[kanji]]
+char = "遍"
+default = "ヘン"
+
+[[kanji]]
+char = "遮"
+default = "シャ"
+
+[[kanji]]
+char = "遵"
+default = "ジュン"
+
+[[kanji]]
+char = "那"
+default = "ナ"
+
+[[kanji]]
+char = "酪"
+default = "ラク"
+
+[[kanji]]
+char = "醜"
+default = "シュウ"
+
+[[kanji]]
+char = "鉱"
+default = "コウ"
+
+[[kanji]]
+char = "銅"
+default = "ドウ"
+
+[[kanji]]
+char = "鋭"
+default = "エイ"
+
+[[kanji]]
+char = "鍛"
+default = "タン"
+
+[[kanji]]
+char = "鎮"
+default = "チン"
+
+[[kanji]]
+char = "閣"
+default = "カク"
+
+[[kanji]]
+char = "閲"
+default = "エツ"
+
+[[kanji]]
+char = "闘"
+default = "トウ"
+
+[[kanji]]
+char = "陛"
+default = "ヘイ"
+
+[[kanji]]
+char = "陥"
+default = "カン"
+
+[[kanji]]
+char = "陪"
+default = "バイ"
+
+[[kanji]]
+char = "陳"
+default = "チン"
+
+[[kanji]]
+char = "陵"
+default = "リョウ"
+
+[[kanji]]
+char = "険"
+default = "ケン"
+
+[[kanji]]
+char = "陽"
+default = "ヨウ"
+
+[[kanji]]
+char = "随"
+default = "ズイ"
+
+[[kanji]]
+char = "隔"
+default = "カク"
+
+[[kanji]]
+char = "隷"
+default = "レイ"
+
+[[kanji]]
+char = "集"
+default = "シュウ"
+
+[[kanji]]
+char = "離"
+default = "リ"
+
+[[kanji]]
+char = "頂"
+default = "チョウ"
+
+[[kanji]]
+char = "順"
+default = "ジュン"
+
+[[kanji]]
+char = "預"
+default = "ヨ"
+
+[[kanji]]
+char = "頑"
+default = "ガン"
+
+[[kanji]]
+char = "頻"
+default = "ヒン"
+
+[[kanji]]
+char = "顕"
+default = "ケン"
+
+[[kanji]]
+char = "養"
+default = "ヨウ"
+
+[[kanji]]
+char = "駐"
+default = "チュウ"
+
+[[kanji]]
+char = "驚"
+default = "キョウ"
+
+[[kanji]]
+char = "鮮"
+default = "セン"
+
