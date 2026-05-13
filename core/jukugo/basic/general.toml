@@ -3893,3 +3893,143 @@ reading = "ミョウチョウ"
 
 [entries."明晩"]
 reading = "ミョウバン"
+
+# ─── 季節 (batch 36) ────────────────────────────
+[entries."盛夏"]
+reading = "セイカ"
+
+# ─── 時間 / 瞬間 ────────────────────────────
+[entries."一瞬"]
+reading = "イッシュン"
+
+[entries."瞬時"]
+reading = "シュンジ"
+
+[entries."敏感"]
+reading = "ビンカン"
+
+# ─── 方角 ────────────────────────────
+[entries."北方"]
+reading = "ホッポウ"
+
+[entries."南方"]
+reading = "ナンポウ"
+
+[entries."東方"]
+reading = "トウホウ"
+
+[entries."西方"]
+reading = "セイホウ"
+
+# ─── 色彩 ────────────────────────────
+[entries."白黒"]
+reading = "シロクロ"
+
+[entries."赤色"]
+reading = "アカイロ"
+
+[entries."青色"]
+reading = "アオイロ"
+
+# ─── 動詞名詞化 / 反対 ────────────────────────────
+[entries."開閉"]
+reading = "カイヘイ"
+
+[entries."出入"]
+reading = "デイリ"
+
+[entries."内外"]
+reading = "ナイガイ"
+
+[entries."善悪"]
+reading = "ゼンアク"
+
+[entries."真偽"]
+reading = "シンギ"
+
+[entries."正誤"]
+reading = "セイゴ"
+
+[entries."是非"]
+reading = "ゼヒ"
+
+# ─── 範囲 / 規模 ────────────────────────────
+[entries."大小"]
+reading = "ダイショウ"
+
+[entries."長短"]
+reading = "チョウタン"
+
+[entries."広狭"]
+reading = "コウキョウ"
+
+[entries."深浅"]
+reading = "シンセン"
+
+[entries."多寡"]
+reading = "タカ"
+
+[entries."硬軟"]
+reading = "コウナン"
+
+# ─── 状態 (不調 系) ────────────────────────────
+[entries."不調"]
+reading = "フチョウ"
+
+[entries."不振"]
+reading = "フシン"
+
+# ─── 関係 / 部分 ────────────────────────────
+[entries."関与"]
+reading = "カンヨ"
+
+[entries."一部"]
+reading = "イチブ"
+
+[entries."部分"]
+reading = "ブブン"
+
+# ─── 場所 / 所有 ────────────────────────────
+[entries."場所"]
+reading = "バショ"
+
+[entries."所在"]
+reading = "ショザイ"
+
+[entries."所有"]
+reading = "ショユウ"
+
+# ─── 持続 / 行為 ────────────────────────────
+[entries."持続"]
+reading = "ジゾク"
+
+[entries."掌握"]
+reading = "ショウアク"
+
+[entries."活用"]
+reading = "カツヨウ"
+
+[entries."採用"]
+reading = "サイヨウ"
+
+[entries."雇用"]
+reading = "コヨウ"
+
+[entries."起用"]
+reading = "キヨウ"
+
+# ─── 時系列 / 移動 ────────────────────────────
+[entries."過去"]
+reading = "カコ"
+
+[entries."上京"]
+reading = "ジョウキョウ"
+
+[entries."帰京"]
+reading = "キキョウ"
+
+[entries."上陸"]
+reading = "ジョウリク"
+
+[entries."視察"]
+reading = "シサツ"
