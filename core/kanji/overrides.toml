@@ -2585,3 +2585,257 @@ default = "チュウ"
 char = "堂"
 default = "ドウ"
 
+
+# ─── 第 7 弾 sweep: length 4 残り 動詞 / 形容詞 / 副詞 default 音読み化 ──
+#
+# 動詞 32 + 形容詞 10 + 副詞 3 + 接尾辞名詞 17 = 62 字。 名詞 default 維持
+# case (= 丼 / 侍 / 妹 / 弟 / 源 / 湖 / 暁 / 桟 等) は skip。
+
+[[kanji]]
+char = "堕"
+default = "ダ"
+
+[[kanji]]
+char = "宣"
+default = "セン"
+
+[[kanji]]
+char = "意"
+default = "イ"
+
+[[kanji]]
+char = "扱"
+default = "ソウ"
+
+[[kanji]]
+char = "扶"
+default = "フ"
+
+[[kanji]]
+char = "抑"
+default = "ヨク"
+
+[[kanji]]
+char = "拘"
+default = "コウ"
+
+[[kanji]]
+char = "拡"
+default = "カク"
+
+[[kanji]]
+char = "捉"
+default = "ソク"
+
+[[kanji]]
+char = "捕"
+default = "ホ"
+
+[[kanji]]
+char = "捗"
+default = "チョク"
+
+[[kanji]]
+char = "授"
+default = "ジュ"
+
+[[kanji]]
+char = "控"
+default = "コウ"
+
+[[kanji]]
+char = "掲"
+default = "ケイ"
+
+[[kanji]]
+char = "損"
+default = "ソン"
+
+[[kanji]]
+char = "摂"
+default = "セツ"
+
+[[kanji]]
+char = "支"
+default = "シ"
+
+[[kanji]]
+char = "敗"
+default = "ハイ"
+
+[[kanji]]
+char = "教"
+default = "キョウ"
+
+[[kanji]]
+char = "敬"
+default = "ケイ"
+
+[[kanji]]
+char = "施"
+default = "シ"
+
+[[kanji]]
+char = "族"
+default = "ゾク"
+
+[[kanji]]
+char = "比"
+default = "ヒ"
+
+[[kanji]]
+char = "求"
+default = "キュウ"
+
+[[kanji]]
+char = "治"
+default = "ジ"
+
+[[kanji]]
+char = "法"
+default = "ホウ"
+
+[[kanji]]
+char = "流"
+default = "リュウ"
+
+[[kanji]]
+char = "渉"
+default = "ショウ"
+
+[[kanji]]
+char = "温"
+default = "オン"
+
+[[kanji]]
+char = "滅"
+default = "メツ"
+
+[[kanji]]
+char = "潤"
+default = "ジュン"
+
+[[kanji]]
+char = "災"
+default = "サイ"
+
+[[kanji]]
+char = "拙"
+default = "セツ"
+
+[[kanji]]
+char = "普"
+default = "フ"
+
+[[kanji]]
+char = "晶"
+default = "ショウ"
+
+[[kanji]]
+char = "暖"
+default = "ダン"
+
+[[kanji]]
+char = "朗"
+default = "ロウ"
+
+[[kanji]]
+char = "柔"
+default = "ジュウ"
+
+[[kanji]]
+char = "構"
+default = "コウ"
+
+[[kanji]]
+char = "暫"
+default = "ザン"
+
+[[kanji]]
+char = "概"
+default = "ガイ"
+
+[[kanji]]
+char = "漫"
+default = "マン"
+
+[[kanji]]
+char = "最"
+default = "サイ"
+
+[[kanji]]
+char = "況"
+default = "キョウ"
+
+[[kanji]]
+char = "殉"
+default = "ジュン"
+
+[[kanji]]
+char = "昭"
+default = "ショウ"
+
+[[kanji]]
+char = "栄"
+default = "エイ"
+
+[[kanji]]
+char = "極"
+default = "キョク"
+
+[[kanji]]
+char = "楼"
+default = "ロウ"
+
+[[kanji]]
+char = "欄"
+default = "ラン"
+
+[[kanji]]
+char = "杯"
+default = "ハイ"
+
+[[kanji]]
+char = "曜"
+default = "ヨウ"
+
+[[kanji]]
+char = "曹"
+default = "ソウ"
+
+[[kanji]]
+char = "氾"
+default = "ハン"
+
+[[kanji]]
+char = "汎"
+default = "ハン"
+
+[[kanji]]
+char = "濫"
+default = "ラン"
+
+[[kanji]]
+char = "欲"
+default = "ヨク"
+
+[[kanji]]
+char = "欺"
+default = "ギ"
+
+[[kanji]]
+char = "歓"
+default = "カン"
+
+[[kanji]]
+char = "煩"
+default = "ハン"
+
+[[kanji]]
+char = "溺"
+default = "デキ"
+
+[[kanji]]
+char = "漂"
+default = "ヒョウ"
+
