@@ -2839,3 +2839,176 @@ default = "デキ"
 char = "漂"
 default = "ヒョウ"
 
+
+# ─── 第 8 弾 sweep: length 4 残り 動詞・形容詞・副詞・接尾辞主流 default 音読み化 ──
+# 動詞 33 + 形容動詞 2 + 形容詞 2 + 副詞 3 + 名詞接尾辞 2 = 42 字。
+# 名詞 default 維持 case (= 丼/侍/妹/弟/源/湖/暁/桟/牲/犠/碑/礎/福/紫/腸 等) は skip。
+
+[[kanji]]
+char = "尚"
+default = "ショウ"
+
+[[kanji]]
+char = "理"
+default = "リ"
+
+[[kanji]]
+char = "略"
+default = "リャク"
+
+[[kanji]]
+char = "疑"
+default = "ギ"
+
+[[kanji]]
+char = "疲"
+default = "ヒ"
+
+[[kanji]]
+char = "眺"
+default = "チョウ"
+
+[[kanji]]
+char = "督"
+default = "トク"
+
+[[kanji]]
+char = "瞬"
+default = "シュン"
+
+[[kanji]]
+char = "答"
+default = "トウ"
+
+[[kanji]]
+char = "粛"
+default = "シュク"
+
+[[kanji]]
+char = "紀"
+default = "キ"
+
+[[kanji]]
+char = "納"
+default = "ノウ"
+
+[[kanji]]
+char = "紛"
+default = "フン"
+
+[[kanji]]
+char = "累"
+default = "ルイ"
+
+[[kanji]]
+char = "繕"
+default = "ゼン"
+
+[[kanji]]
+char = "罵"
+default = "バ"
+
+[[kanji]]
+char = "罷"
+default = "ヒ"
+
+[[kanji]]
+char = "羞"
+default = "シュウ"
+
+[[kanji]]
+char = "耕"
+default = "コウ"
+
+[[kanji]]
+char = "肖"
+default = "ショウ"
+
+[[kanji]]
+char = "膨"
+default = "ボウ"
+
+[[kanji]]
+char = "装"
+default = "ソウ"
+
+[[kanji]]
+char = "葬"
+default = "ソウ"
+
+[[kanji]]
+char = "蔑"
+default = "ベツ"
+
+[[kanji]]
+char = "薦"
+default = "セン"
+
+[[kanji]]
+char = "被"
+default = "ヒ"
+
+[[kanji]]
+char = "著"
+default = "チョ"
+
+[[kanji]]
+char = "禁"
+default = "キン"
+
+[[kanji]]
+char = "究"
+default = "キュウ"
+
+[[kanji]]
+char = "窒"
+default = "チツ"
+
+[[kanji]]
+char = "窮"
+default = "キュウ"
+
+[[kanji]]
+char = "砲"
+default = "ホウ"
+
+[[kanji]]
+char = "苛"
+default = "カ"
+
+[[kanji]]
+char = "爽"
+default = "ソウ"
+
+[[kanji]]
+char = "穏"
+default = "オン"
+
+[[kanji]]
+char = "瞭"
+default = "リョウ"
+
+[[kanji]]
+char = "章"
+default = "ショウ"
+
+[[kanji]]
+char = "甚"
+default = "ジン"
+
+[[kanji]]
+char = "直"
+default = "チョク"
+
+[[kanji]]
+char = "自"
+default = "ジ"
+
+[[kanji]]
+char = "畏"
+default = "イ"
+
+[[kanji]]
+char = "荘"
+default = "ソウ"
+
