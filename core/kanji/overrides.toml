@@ -5640,3 +5640,37 @@ default = "マン"
 [[kanji]]
 char = "龍"
 default = "リュウ"
+
+# 「増」: 接尾辞 「ゾウ」 (= 「スペ増 / 急増 / 倍増 / 増量」) 圧倒的、 「ます」 動詞は
+# Lindera 1 token で reading 維持。
+[[kanji]]
+char = "増"
+default = "ゾウ"
+
+# 「術」: 接尾辞 「ジュツ」 (= 「技術 / 美術 / 護身術 / 芸術」) 圧倒的、 「すべ」 名詞 は
+# 古語 / 慣用句 ("術 (すべ) もない") のみ。
+[[kanji]]
+char = "術"
+default = "ジュツ"
+
+# 「四」: 現代 spoken で 「ヨン」 接頭辞主流 (= 「四駆 / 四角 / 四季」)、 「ヨ」 古読み。
+# 「四日 = ヨッカ / 四月 = シガツ / 四人 = ヨニン」 等の特殊読みは jukugo / counter 経由。
+[[kanji]]
+char = "四"
+default = "ヨン"
+
+# 「間」: 名詞 「あいだ」 単独 + 助詞前 (= 「間に / 間の / 間が」)、 接尾辞 「カン」 は
+# prev 漢字 / カタカナ (= 「時間 / 期間 / 中間」 等) で切替。
+# default 「カン」 だと Lindera 1 token 「間に」 が band 50 で 「カンニ」 になるため、
+# default を 「あいだ」 にして 接尾辞 case のみ match 切替。
+[[kanji]]
+char = "間"
+default = "あいだ"
+
+[[kanji.match]]
+prev_char_type = "漢字"
+reading = "カン"
+
+[[kanji.match]]
+prev_char_type = "カタカナ"
+reading = "カン"
