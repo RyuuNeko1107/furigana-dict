@@ -2008,3 +2008,322 @@ default = "ショウ"
 char = "排"
 default = "ハイ"
 
+
+# ─── 第 5 弾 sweep: length 4 動詞 / 形容詞訓読み default を音読みに統一 ──
+#
+# unihan default が動詞活用 / 形容詞活用完全形になっていた 78 字を音読みに統一。
+# 動詞活用 (= 「与える / 乱れる / 修める」 等) は Lindera 1 token で band 50 解析、
+# 熟語 (= 「与党 / 乱暴 / 修了」 等) は jukugo dict 1000 で覆う前提。
+
+[[kanji]]
+char = "与"
+default = "ヨ"
+
+[[kanji]]
+char = "乱"
+default = "ラン"
+
+[[kanji]]
+char = "争"
+default = "ソウ"
+
+[[kanji]]
+char = "交"
+default = "コウ"
+
+[[kanji]]
+char = "仕"
+default = "シ"
+
+[[kanji]]
+char = "任"
+default = "ニン"
+
+[[kanji]]
+char = "伝"
+default = "デン"
+
+[[kanji]]
+char = "伴"
+default = "ハン"
+
+[[kanji]]
+char = "伺"
+default = "シ"
+
+[[kanji]]
+char = "佐"
+default = "サ"
+
+[[kanji]]
+char = "併"
+default = "ヘイ"
+
+[[kanji]]
+char = "供"
+default = "キョウ"
+
+[[kanji]]
+char = "侮"
+default = "ブ"
+
+[[kanji]]
+char = "促"
+default = "ソク"
+
+[[kanji]]
+char = "俊"
+default = "シュン"
+
+[[kanji]]
+char = "修"
+default = "シュウ"
+
+[[kanji]]
+char = "倒"
+default = "トウ"
+
+[[kanji]]
+char = "候"
+default = "コウ"
+
+[[kanji]]
+char = "偏"
+default = "ヘン"
+
+[[kanji]]
+char = "停"
+default = "テイ"
+
+[[kanji]]
+char = "偵"
+default = "テイ"
+
+[[kanji]]
+char = "傑"
+default = "ケツ"
+
+[[kanji]]
+char = "備"
+default = "ビ"
+
+[[kanji]]
+char = "催"
+default = "サイ"
+
+[[kanji]]
+char = "傾"
+default = "ケイ"
+
+[[kanji]]
+char = "働"
+default = "ドウ"
+
+[[kanji]]
+char = "償"
+default = "ショウ"
+
+[[kanji]]
+char = "具"
+default = "グ"
+
+[[kanji]]
+char = "列"
+default = "レツ"
+
+[[kanji]]
+char = "制"
+default = "セイ"
+
+[[kanji]]
+char = "剥"
+default = "ハク"
+
+[[kanji]]
+char = "加"
+default = "カ"
+
+[[kanji]]
+char = "努"
+default = "ド"
+
+[[kanji]]
+char = "労"
+default = "ロウ"
+
+[[kanji]]
+char = "勉"
+default = "ベン"
+
+[[kanji]]
+char = "務"
+default = "ム"
+
+[[kanji]]
+char = "勤"
+default = "キン"
+
+[[kanji]]
+char = "勧"
+default = "カン"
+
+[[kanji]]
+char = "卓"
+default = "タク"
+
+[[kanji]]
+char = "厄"
+default = "ヤク"
+
+[[kanji]]
+char = "収"
+default = "シュウ"
+
+[[kanji]]
+char = "唱"
+default = "ショウ"
+
+[[kanji]]
+char = "商"
+default = "ショウ"
+
+[[kanji]]
+char = "喜"
+default = "キ"
+
+[[kanji]]
+char = "営"
+default = "エイ"
+
+[[kanji]]
+char = "嘲"
+default = "チョウ"
+
+[[kanji]]
+char = "囚"
+default = "シュウ"
+
+[[kanji]]
+char = "固"
+default = "コ"
+
+[[kanji]]
+char = "培"
+default = "バイ"
+
+[[kanji]]
+char = "唇"
+default = "シン"
+
+[[kanji]]
+char = "乏"
+default = "ボウ"
+
+[[kanji]]
+char = "優"
+default = "ユウ"
+
+[[kanji]]
+char = "冷"
+default = "レイ"
+
+[[kanji]]
+char = "卑"
+default = "ヒ"
+
+[[kanji]]
+char = "奇"
+default = "キ"
+
+[[kanji]]
+char = "妖"
+default = "ヨウ"
+
+[[kanji]]
+char = "委"
+default = "イ"
+
+[[kanji]]
+char = "完"
+default = "カン"
+
+[[kanji]]
+char = "尊"
+default = "ソン"
+
+[[kanji]]
+char = "巨"
+default = "キョ"
+
+[[kanji]]
+char = "怪"
+default = "カイ"
+
+[[kanji]]
+char = "悲"
+default = "ヒ"
+
+[[kanji]]
+char = "愉"
+default = "ユ"
+
+[[kanji]]
+char = "易"
+default = "エキ"
+
+[[kanji]]
+char = "権"
+default = "ケン"
+
+[[kanji]]
+char = "正"
+default = "セイ"
+
+[[kanji]]
+char = "泰"
+default = "タイ"
+
+[[kanji]]
+char = "涼"
+default = "リョウ"
+
+[[kanji]]
+char = "激"
+default = "ゲキ"
+
+[[kanji]]
+char = "烈"
+default = "レツ"
+
+[[kanji]]
+char = "等"
+default = "トウ"
+
+[[kanji]]
+char = "粧"
+default = "ショウ"
+
+[[kanji]]
+char = "精"
+default = "セイ"
+
+[[kanji]]
+char = "緊"
+default = "キン"
+
+[[kanji]]
+char = "緻"
+default = "チ"
+
+[[kanji]]
+char = "虚"
+default = "キョ"
+
+[[kanji]]
+char = "詳"
+default = "ショウ"
+
+[[kanji]]
+char = "貞"
+default = "テイ"
+
