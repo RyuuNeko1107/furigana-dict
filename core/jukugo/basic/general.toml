@@ -4190,3 +4190,162 @@ reading = "シュフ"
 
 [entries."主流"]
 reading = "シュリュウ"
+
+# ─── 直 系 (batch 39) ────────────────────────────
+[entries."直前"]
+reading = "チョクゼン"
+
+[entries."直後"]
+reading = "チョクゴ"
+
+[entries."直進"]
+reading = "チョクシン"
+
+[entries."直立"]
+reading = "チョクリツ"
+
+[entries."直営"]
+reading = "チョクエイ"
+
+[entries."直販"]
+reading = "チョクハン"
+
+[entries."直送"]
+reading = "チョクソウ"
+
+# ─── 接 系 ────────────────────────────
+[entries."接近"]
+reading = "セッキン"
+
+[entries."接戦"]
+reading = "セッセン"
+
+# ─── 価 / 出 / 入 ────────────────────────────
+[entries."特価"]
+reading = "トッカ"
+
+[entries."出力"]
+reading = "シュツリョク"
+
+[entries."入力"]
+reading = "ニュウリョク"
+
+[entries."入手"]
+reading = "ニュウシュ"
+
+# ─── 真 系 ────────────────────────────
+[entries."真相"]
+reading = "シンソウ"
+
+[entries."真剣"]
+reading = "シンケン"
+
+[entries."真摯"]
+reading = "シンシ"
+
+# ─── 業 系 ────────────────────────────
+[entries."業界"]
+reading = "ギョウカイ"
+
+[entries."業者"]
+reading = "ギョウシャ"
+
+[entries."業態"]
+reading = "ギョウタイ"
+
+# ─── 想 / 念 系 ────────────────────────────
+[entries."想起"]
+reading = "ソウキ"
+
+[entries."連想"]
+reading = "レンソウ"
+
+[entries."疑念"]
+reading = "ギネン"
+
+# ─── 説 / 望 系 ────────────────────────────
+[entries."説得"]
+reading = "セットク"
+
+[entries."伝説"]
+reading = "デンセツ"
+
+[entries."論説"]
+reading = "ロンセツ"
+
+[entries."学説"]
+reading = "ガクセツ"
+
+[entries."望遠"]
+reading = "ボウエン"
+
+[entries."展望"]
+reading = "テンボウ"
+
+[entries."願望"]
+reading = "ガンボウ"
+
+# ─── 任 系 ────────────────────────────
+[entries."任命"]
+reading = "ニンメイ"
+
+[entries."任意"]
+reading = "ニンイ"
+
+[entries."任期"]
+reading = "ニンキ"
+
+[entries."任用"]
+reading = "ニンヨウ"
+
+# ─── 役 系 ────────────────────────────
+[entries."役割"]
+reading = "ヤクワリ"
+
+[entries."役員"]
+reading = "ヤクイン"
+
+[entries."役所"]
+reading = "ヤクショ"
+
+# ─── 員 接尾辞 ────────────────────────────
+[entries."隊員"]
+reading = "タイイン"
+
+[entries."会員"]
+reading = "カイイン"
+
+[entries."船員"]
+reading = "センイン"
+
+# ─── 名 系 ────────────────────────────
+[entries."名前"]
+reading = "ナマエ"
+
+[entries."名称"]
+reading = "メイショウ"
+
+[entries."名作"]
+reading = "メイサク"
+
+[entries."名門"]
+reading = "メイモン"
+
+[entries."名画"]
+reading = "メイガ"
+
+[entries."名簿"]
+reading = "メイボ"
+
+[entries."名物"]
+reading = "メイブツ"
+
+# ─── 義 / 理 系 ────────────────────────────
+[entries."義理"]
+reading = "ギリ"
+
+[entries."道理"]
+reading = "ドウリ"
+
+[entries."理性"]
+reading = "リセイ"
