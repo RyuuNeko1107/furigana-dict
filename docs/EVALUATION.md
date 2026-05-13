@@ -120,23 +120,27 @@ VOICEVOX 単体は dict 改善側で動かせない外部 baseline (= 同 corpus
 
 sample N=1000、 fresh seed 12345 (= 過去未使用)。 ASCII 英字を含む文 (= ja 0.1.0 が
 loanword 統合未対応のため不利な評価項目) は分母から除外、 SKIP も分母除外。
+全 1000 件に truth を設定し、 ja / vv 各々を truth と機械比較 (= 「両者一致 = 両者正解」
+shortcut なし、 VV を完全 invariant に保つ)。
 
 | 計測日 | dict version | sample | ja 正答率 | VOICEVOX 正答率 | ja − VOICEVOX | 両者一致 |
 |---|---|---|---|---|---|---|
-| 2026-05-14 | v2026.05.13.7 + round 25 batch 29 (= Gen2 ターゲット 17 件追加) | 898 | **93.4%** | **93.0%** | **+0.5pt** | 89.7% |
-| 2026-05-13 | v2026.05.13.7 + round 25 batch 27-28 (= +1704 件 一般語彙) | 898 | 92.3% | 92.9% | −0.6pt | 88.6% |
+| 2026-05-14 | v2026.05.13.7 + round 25 batch 29 (= Gen2 ターゲット 17 件追加) | 897 | **93.3%** | **92.9%** | **+0.45pt** | 89.6% |
+| 2026-05-13 | v2026.05.13.7 + round 25 batch 27-28 (= +1704 件 一般語彙) | 897 | 92.3% | 92.9% | −0.56pt | 88.6% |
 
-内訳 (= 2026-05-14 最新値):
-- 入力 1,000 件 → ASCII 英字含む 101 件 除外 → 899 件 → SKIP 1 件 除外 → **evaluated 898 件**
-- 両者一致 (= match)、 両者正解として加算: 806 件 (= +10 from previous round)
-- diff 92 件のうち truth で機械判定:
-  - ja のみ正解: 33 件
-  - VOICEVOX のみ正解: 29 件 (= -9 from previous round、 batch 29 で dict 改善が効いた)
-  - 両者誤り: 30 件
+内訳 (= 2026-05-14 最新値、 厳密版 全 1000 truth 比較):
+- 入力 1,000 件 → ASCII 英字含む 101 件 除外 → 899 件 → SKIP 2 件 除外 → **evaluated 897 件**
+- 両者正解 (= ja_norm == truth == vv_norm): 804 件
+- ja のみ正解: 33 件
+- VOICEVOX のみ正解: 29 件
+- 両者誤り: 31 件
 
-**ja が VOICEVOX を逆転** (= 0.6pt 負け → 0.5pt 勝ち)。 batch 29 で 「vv のみ正解」
+**ja が VOICEVOX を逆転** (= 0.56pt 負け → 0.45pt 勝ち)。 batch 29 で 「vv のみ正解」
 cluster (= 二進数/今作/同業/配信者/宝箱/道連れ/販売機/遊園地/一応/仕訳機/N戦 等の 17 件 jukugo) を
-ターゲット投入した結果、 これらの case が match (= 両者正解) 側に移動。
+ターゲット投入した結果、 9 件が ja の正解側に移動 (= vv only 38 → 29)。
+
+VOICEVOX 正答率は両 batch で **92.87% で完全 invariant** (= 外部 baseline、 dict 改善で
+動かない)、 ja 側のみ +1.00pt 改善で逆転。
 
 残課題:
 - **「w」 「ww」 末尾**: ja は literal 保持、 vv は「ダブリユウ」 と読み上げ、
