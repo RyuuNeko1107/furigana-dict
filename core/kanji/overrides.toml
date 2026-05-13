@@ -3346,3 +3346,336 @@ default = "キョウ"
 char = "鮮"
 default = "セン"
 
+
+# ─── 第 10 弾 sweep: jinmeiyou length 4 動詞 / 名詞訓読み default 音読み化 ──
+# 人名用漢字 82 字。 「亮 / 佑 / 凱 / 晃」 等の人名で音読み主流のものを中心に。
+# 副詞・形容詞 default 維持 (= 些 / 嬉 / 尤 / 忽 / 殆 / 恰 / 憐 / 賑) は skip。
+
+[[kanji]]
+char = "乃"
+default = "ノ"
+
+[[kanji]]
+char = "亮"
+default = "リョウ"
+
+[[kanji]]
+char = "佑"
+default = "ユウ"
+
+[[kanji]]
+char = "侑"
+default = "ユウ"
+
+[[kanji]]
+char = "俐"
+default = "リ"
+
+[[kanji]]
+char = "倖"
+default = "コウ"
+
+[[kanji]]
+char = "儲"
+default = "チョ"
+
+[[kanji]]
+char = "凉"
+default = "リョウ"
+
+[[kanji]]
+char = "凰"
+default = "オウ"
+
+[[kanji]]
+char = "凱"
+default = "ガイ"
+
+[[kanji]]
+char = "卜"
+default = "ボク"
+
+[[kanji]]
+char = "叢"
+default = "ソウ"
+
+[[kanji]]
+char = "吻"
+default = "フン"
+
+[[kanji]]
+char = "啄"
+default = "タク"
+
+[[kanji]]
+char = "喋"
+default = "チョウ"
+
+[[kanji]]
+char = "壬"
+default = "ジン"
+
+[[kanji]]
+char = "孜"
+default = "シ"
+
+[[kanji]]
+char = "宥"
+default = "ユウ"
+
+[[kanji]]
+char = "峨"
+default = "ガ"
+
+[[kanji]]
+char = "峻"
+default = "シュン"
+
+[[kanji]]
+char = "怜"
+default = "レイ"
+
+[[kanji]]
+char = "戊"
+default = "ボ"
+
+[[kanji]]
+char = "按"
+default = "アン"
+
+[[kanji]]
+char = "捧"
+default = "ホウ"
+
+[[kanji]]
+char = "掠"
+default = "リャク"
+
+[[kanji]]
+char = "晃"
+default = "コウ"
+
+[[kanji]]
+char = "晄"
+default = "コウ"
+
+[[kanji]]
+char = "暉"
+default = "キ"
+
+[[kanji]]
+char = "曙"
+default = "ショ"
+
+[[kanji]]
+char = "朔"
+default = "サク"
+
+[[kanji]]
+char = "柊"
+default = "シュウ"
+
+[[kanji]]
+char = "梁"
+default = "リョウ"
+
+[[kanji]]
+char = "梧"
+default = "ゴ"
+
+[[kanji]]
+char = "楠"
+default = "ナン"
+
+[[kanji]]
+char = "榛"
+default = "シン"
+
+[[kanji]]
+char = "橘"
+default = "キツ"
+
+[[kanji]]
+char = "橙"
+default = "トウ"
+
+[[kanji]]
+char = "欣"
+default = "キン"
+
+[[kanji]]
+char = "欽"
+default = "キン"
+
+[[kanji]]
+char = "毘"
+default = "ビ"
+
+[[kanji]]
+char = "洵"
+default = "ジュン"
+
+[[kanji]]
+char = "淋"
+default = "リン"
+
+[[kanji]]
+char = "溢"
+default = "イツ"
+
+[[kanji]]
+char = "漣"
+default = "レン"
+
+[[kanji]]
+char = "煌"
+default = "コウ"
+
+[[kanji]]
+char = "燎"
+default = "リョウ"
+
+[[kanji]]
+char = "燦"
+default = "サン"
+
+[[kanji]]
+char = "燭"
+default = "ショク"
+
+[[kanji]]
+char = "燿"
+default = "ヨウ"
+
+[[kanji]]
+char = "狼"
+default = "ロウ"
+
+[[kanji]]
+char = "盃"
+default = "ハイ"
+
+[[kanji]]
+char = "矩"
+default = "ク"
+
+[[kanji]]
+char = "碩"
+default = "セキ"
+
+[[kanji]]
+char = "禄"
+default = "ロク"
+
+[[kanji]]
+char = "窺"
+default = "キ"
+
+[[kanji]]
+char = "紗"
+default = "シャ"
+
+[[kanji]]
+char = "繡"
+default = "シュウ"
+
+[[kanji]]
+char = "纂"
+default = "サン"
+
+[[kanji]]
+char = "羚"
+default = "レイ"
+
+[[kanji]]
+char = "翠"
+default = "スイ"
+
+[[kanji]]
+char = "耀"
+default = "ヨウ"
+
+[[kanji]]
+char = "而"
+default = "ジ"
+
+[[kanji]]
+char = "脩"
+default = "シュウ"
+
+[[kanji]]
+char = "諄"
+default = "ジュン"
+
+[[kanji]]
+char = "諺"
+default = "ゲン"
+
+[[kanji]]
+char = "跨"
+default = "コ"
+
+[[kanji]]
+char = "輯"
+default = "シュウ"
+
+[[kanji]]
+char = "轟"
+default = "ゴウ"
+
+[[kanji]]
+char = "逗"
+default = "トウ"
+
+[[kanji]]
+char = "遁"
+default = "トン"
+
+[[kanji]]
+char = "鋸"
+default = "キョ"
+
+[[kanji]]
+char = "閃"
+default = "セン"
+
+[[kanji]]
+char = "閤"
+default = "コウ"
+
+[[kanji]]
+char = "阿"
+default = "ア"
+
+[[kanji]]
+char = "陀"
+default = "ダ"
+
+[[kanji]]
+char = "隼"
+default = "シュン"
+
+[[kanji]]
+char = "頗"
+default = "ハ"
+
+[[kanji]]
+char = "顛"
+default = "テン"
+
+[[kanji]]
+char = "鳳"
+default = "ホウ"
+
+[[kanji]]
+char = "鴻"
+default = "コウ"
+
+[[kanji]]
+char = "鵬"
+default = "ホウ"
+
+[[kanji]]
+char = "黛"
+default = "タイ"
+
