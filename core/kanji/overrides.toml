@@ -4398,3 +4398,246 @@ default = "アク"
 char = "揮"
 default = "キ"
 
+
+# ─── 第 14 弾 sweep: joyo length 3 動詞訓読み 60 字 ──
+
+[[kanji]]
+char = "斗"
+default = "ト"
+
+[[kanji]]
+char = "料"
+default = "リョウ"
+
+[[kanji]]
+char = "旋"
+default = "セン"
+
+[[kanji]]
+char = "昇"
+default = "ショウ"
+
+[[kanji]]
+char = "映"
+default = "エイ"
+
+[[kanji]]
+char = "昨"
+default = "サク"
+
+[[kanji]]
+char = "晴"
+default = "セイ"
+
+[[kanji]]
+char = "暮"
+default = "ボ"
+
+[[kanji]]
+char = "暴"
+default = "ボウ"
+
+[[kanji]]
+char = "曇"
+default = "ドン"
+
+[[kanji]]
+char = "替"
+default = "タイ"
+
+[[kanji]]
+char = "望"
+default = "ボウ"
+
+[[kanji]]
+char = "朽"
+default = "キュウ"
+
+[[kanji]]
+char = "果"
+default = "カ"
+
+[[kanji]]
+char = "枯"
+default = "コ"
+
+[[kanji]]
+char = "架"
+default = "カ"
+
+[[kanji]]
+char = "染"
+default = "セン"
+
+[[kanji]]
+char = "栽"
+default = "サイ"
+
+[[kanji]]
+char = "棄"
+default = "キ"
+
+[[kanji]]
+char = "植"
+default = "ショク"
+
+[[kanji]]
+char = "樹"
+default = "ジュ"
+
+[[kanji]]
+char = "欠"
+default = "ケツ"
+
+[[kanji]]
+char = "欧"
+default = "オウ"
+
+[[kanji]]
+char = "止"
+default = "シ"
+
+[[kanji]]
+char = "歩"
+default = "ホ"
+
+[[kanji]]
+char = "残"
+default = "ザン"
+
+[[kanji]]
+char = "殖"
+default = "ショク"
+
+[[kanji]]
+char = "殴"
+default = "オウ"
+
+[[kanji]]
+char = "殺"
+default = "サツ"
+
+[[kanji]]
+char = "毀"
+default = "キ"
+
+[[kanji]]
+char = "汚"
+default = "オ"
+
+[[kanji]]
+char = "汰"
+default = "タ"
+
+[[kanji]]
+char = "決"
+default = "ケツ"
+
+[[kanji]]
+char = "沃"
+default = "ヨク"
+
+[[kanji]]
+char = "沈"
+default = "チン"
+
+[[kanji]]
+char = "没"
+default = "ボツ"
+
+[[kanji]]
+char = "泊"
+default = "ハク"
+
+[[kanji]]
+char = "注"
+default = "チュウ"
+
+[[kanji]]
+char = "泳"
+default = "エイ"
+
+[[kanji]]
+char = "洗"
+default = "セン"
+
+[[kanji]]
+char = "活"
+default = "カツ"
+
+[[kanji]]
+char = "浴"
+default = "ヨク"
+
+[[kanji]]
+char = "浸"
+default = "シン"
+
+[[kanji]]
+char = "消"
+default = "ショウ"
+
+[[kanji]]
+char = "混"
+default = "コン"
+
+[[kanji]]
+char = "添"
+default = "テン"
+
+[[kanji]]
+char = "渇"
+default = "カツ"
+
+[[kanji]]
+char = "渡"
+default = "ト"
+
+[[kanji]]
+char = "測"
+default = "ソク"
+
+[[kanji]]
+char = "湿"
+default = "シツ"
+
+[[kanji]]
+char = "満"
+default = "マン"
+
+[[kanji]]
+char = "溶"
+default = "ヨウ"
+
+[[kanji]]
+char = "滋"
+default = "ジ"
+
+[[kanji]]
+char = "滑"
+default = "カツ"
+
+[[kanji]]
+char = "滴"
+default = "テキ"
+
+[[kanji]]
+char = "漁"
+default = "ギョ"
+
+[[kanji]]
+char = "演"
+default = "エン"
+
+[[kanji]]
+char = "漬"
+default = "シ"
+
+[[kanji]]
+char = "漸"
+default = "ゼン"
+
+[[kanji]]
+char = "潜"
+default = "セン"
+
