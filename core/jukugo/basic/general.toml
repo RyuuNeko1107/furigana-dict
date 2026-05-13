@@ -4349,3 +4349,108 @@ reading = "ドウリ"
 
 [entries."理性"]
 reading = "リセイ"
+
+# ─── 内 系 (batch 40) ────────────────────────────
+[entries."内訳"]
+reading = "ウチワケ"
+
+[entries."内臓"]
+reading = "ナイゾウ"
+
+[entries."内陸"]
+reading = "ナイリク"
+
+[entries."内乱"]
+reading = "ナイラン"
+
+# ─── 外 系 ────────────────────────────
+[entries."外見"]
+reading = "ガイケン"
+
+[entries."外観"]
+reading = "ガイカン"
+
+[entries."外界"]
+reading = "ガイカイ"
+
+[entries."外科"]
+reading = "ゲカ"
+
+# ─── 裏 系 ────────────────────────────
+[entries."裏面"]
+reading = "リメン"
+
+[entries."裏側"]
+reading = "ウラガワ"
+
+[entries."裏付"]
+reading = "ウラヅケ"
+
+# ─── 上 / 下 ────────────────────────────
+[entries."上達"]
+reading = "ジョウタツ"
+
+[entries."上回"]
+reading = "ウワマワリ"
+
+[entries."下層"]
+reading = "カソウ"
+
+[entries."下流"]
+reading = "カリュウ"
+
+# ─── 気 系 ────────────────────────────
+[entries."気持"]
+reading = "キモチ"
+
+[entries."気圧"]
+reading = "キアツ"
+
+[entries."気配"]
+reading = "ケハイ"
+
+[entries."気苦労"]
+reading = "キグロウ"
+
+# ─── 一 系 ────────────────────────────
+[entries."一族"]
+reading = "イチゾク"
+
+[entries."一帯"]
+reading = "イッタイ"
+
+[entries."一報"]
+reading = "イッポウ"
+
+[entries."一覧"]
+reading = "イチラン"
+
+# ─── 数 / 度数 ────────────────────────────
+[entries."二度"]
+reading = "ニド"
+
+[entries."三度"]
+reading = "サンド"
+
+# ─── 議 系 ────────────────────────────
+[entries."議論"]
+reading = "ギロン"
+
+# ─── 公 / 民 ────────────────────────────
+[entries."公益"]
+reading = "コウエキ"
+
+[entries."民間"]
+reading = "ミンカン"
+
+[entries."民営"]
+reading = "ミンエイ"
+
+[entries."民衆"]
+reading = "ミンシュウ"
+
+[entries."民族"]
+reading = "ミンゾク"
+
+[entries."民間人"]
+reading = "ミンカンジン"
