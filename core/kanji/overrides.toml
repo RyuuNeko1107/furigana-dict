@@ -3679,3 +3679,236 @@ default = "ホウ"
 char = "黛"
 default = "タイ"
 
+
+# ─── 第 11 弾 sweep: joyo length 3 動詞訓読み default 音読み化 ──
+# 動詞活用 / 接頭辞 / 接尾辞 で音読み主流の 57 字。 名詞 default 維持
+# (= 刀 / 南 等) は skip。
+
+[[kanji]]
+char = "不"
+default = "フ"
+
+[[kanji]]
+char = "京"
+default = "キョウ"
+
+[[kanji]]
+char = "介"
+default = "カイ"
+
+[[kanji]]
+char = "仏"
+default = "ブツ"
+
+[[kanji]]
+char = "付"
+default = "フ"
+
+[[kanji]]
+char = "代"
+default = "ダイ"
+
+[[kanji]]
+char = "仰"
+default = "ギョウ"
+
+[[kanji]]
+char = "伏"
+default = "フク"
+
+[[kanji]]
+char = "休"
+default = "キュウ"
+
+[[kanji]]
+char = "伸"
+default = "シン"
+
+[[kanji]]
+char = "位"
+default = "イ"
+
+[[kanji]]
+char = "余"
+default = "ヨ"
+
+[[kanji]]
+char = "作"
+default = "サク"
+
+[[kanji]]
+char = "侵"
+default = "シン"
+
+[[kanji]]
+char = "便"
+default = "ベン"
+
+[[kanji]]
+char = "係"
+default = "ケイ"
+
+[[kanji]]
+char = "保"
+default = "ホ"
+
+[[kanji]]
+char = "信"
+default = "シン"
+
+[[kanji]]
+char = "借"
+default = "シャク"
+
+[[kanji]]
+char = "倣"
+default = "ホウ"
+
+[[kanji]]
+char = "倫"
+default = "リン"
+
+[[kanji]]
+char = "充"
+default = "ジュウ"
+
+[[kanji]]
+char = "兆"
+default = "チョウ"
+
+[[kanji]]
+char = "光"
+default = "コウ"
+
+[[kanji]]
+char = "党"
+default = "トウ"
+
+[[kanji]]
+char = "兵"
+default = "ヘイ"
+
+[[kanji]]
+char = "兼"
+default = "ケン"
+
+[[kanji]]
+char = "冒"
+default = "ボウ"
+
+[[kanji]]
+char = "写"
+default = "シャ"
+
+[[kanji]]
+char = "凍"
+default = "トウ"
+
+[[kanji]]
+char = "凡"
+default = "ボン"
+
+[[kanji]]
+char = "凹"
+default = "オウ"
+
+[[kanji]]
+char = "分"
+default = "ブン"
+
+[[kanji]]
+char = "刊"
+default = "カン"
+
+[[kanji]]
+char = "刑"
+default = "ケイ"
+
+[[kanji]]
+char = "初"
+default = "ショ"
+
+[[kanji]]
+char = "到"
+default = "トウ"
+
+[[kanji]]
+char = "刻"
+default = "コク"
+
+[[kanji]]
+char = "削"
+default = "サク"
+
+[[kanji]]
+char = "剤"
+default = "ザイ"
+
+[[kanji]]
+char = "功"
+default = "コウ"
+
+[[kanji]]
+char = "劣"
+default = "レツ"
+
+[[kanji]]
+char = "励"
+default = "レイ"
+
+[[kanji]]
+char = "勇"
+default = "ユウ"
+
+[[kanji]]
+char = "動"
+default = "ドウ"
+
+[[kanji]]
+char = "募"
+default = "ボ"
+
+[[kanji]]
+char = "勲"
+default = "クン"
+
+[[kanji]]
+char = "勾"
+default = "コウ"
+
+[[kanji]]
+char = "包"
+default = "ホウ"
+
+[[kanji]]
+char = "匠"
+default = "ショウ"
+
+[[kanji]]
+char = "医"
+default = "イ"
+
+[[kanji]]
+char = "匿"
+default = "トク"
+
+[[kanji]]
+char = "卒"
+default = "ソツ"
+
+[[kanji]]
+char = "協"
+default = "キョウ"
+
+[[kanji]]
+char = "像"
+default = "ゾウ"
+
+[[kanji]]
+char = "互"
+default = "ゴ"
+
+[[kanji]]
+char = "享"
+default = "キョウ"
+
