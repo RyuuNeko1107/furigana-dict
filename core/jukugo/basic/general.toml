@@ -3774,3 +3774,122 @@ reading = "ニュウサツ"
 
 [entries."競売"]
 reading = "キョウバイ"
+
+# ─── 芸術 / 文化 (batch 35) ────────────────────────────
+[entries."芸術"]
+reading = "ゲイジュツ"
+
+[entries."詩歌"]
+reading = "シイカ"
+
+[entries."絵画"]
+reading = "カイガ"
+
+[entries."彫刻"]
+reading = "チョウコク"
+
+# ─── 儀式 / 婚姻 ────────────────────────────
+[entries."儀式"]
+reading = "ギシキ"
+
+[entries."祭事"]
+reading = "サイジ"
+
+[entries."離婚"]
+reading = "リコン"
+
+[entries."婚約"]
+reading = "コンヤク"
+
+[entries."披露"]
+reading = "ヒロウ"
+
+# ─── 戦争 / 災害 ────────────────────────────
+[entries."戦争"]
+reading = "センソウ"
+
+[entries."侵攻"]
+reading = "シンコウ"
+
+[entries."侵略"]
+reading = "シンリャク"
+
+[entries."震災"]
+reading = "シンサイ"
+
+[entries."水害"]
+reading = "スイガイ"
+
+# ─── 食料 ────────────────────────────
+[entries."砂糖"]
+reading = "サトウ"
+
+[entries."食用"]
+reading = "ショクヨウ"
+
+[entries."穀物"]
+reading = "コクモツ"
+
+# ─── 化学 ────────────────────────────
+[entries."酸素"]
+reading = "サンソ"
+
+[entries."窒素"]
+reading = "チッソ"
+
+# ─── 機械 / 構造 ────────────────────────────
+[entries."組立"]
+reading = "クミタテ"
+
+# ─── 観光 ────────────────────────────
+[entries."景勝"]
+reading = "ケイショウ"
+
+[entries."名所"]
+reading = "メイショ"
+
+[entries."腕時計"]
+reading = "ウデドケイ"
+
+# ─── 通信 / 電気 ────────────────────────────
+[entries."回線"]
+reading = "カイセン"
+
+[entries."無線"]
+reading = "ムセン"
+
+[entries."有線"]
+reading = "ユウセン"
+
+[entries."電波"]
+reading = "デンパ"
+
+# ─── スポーツ ────────────────────────────
+[entries."水泳"]
+reading = "スイエイ"
+
+[entries."陸上"]
+reading = "リクジョウ"
+
+[entries."格闘"]
+reading = "カクトウ"
+
+# ─── 教科 ────────────────────────────
+[entries."国語"]
+reading = "コクゴ"
+
+[entries."英語"]
+reading = "エイゴ"
+
+[entries."理科"]
+reading = "リカ"
+
+[entries."算数"]
+reading = "サンスウ"
+
+# ─── 時間 (追加) ────────────────────────────
+[entries."明朝"]
+reading = "ミョウチョウ"
+
+[entries."明晩"]
+reading = "ミョウバン"
