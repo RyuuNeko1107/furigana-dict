@@ -4580,3 +4580,144 @@ reading = "チジ"
 
 [entries."都会"]
 reading = "トカイ"
+
+# ─── 会 系 (batch 42) ────────────────────────────
+[entries."会合"]
+reading = "カイゴウ"
+
+[entries."会計"]
+reading = "カイケイ"
+
+[entries."会長"]
+reading = "カイチョウ"
+
+[entries."会期"]
+reading = "カイキ"
+
+[entries."司会"]
+reading = "シカイ"
+
+# ─── 社 系 ────────────────────────────
+[entries."社内"]
+reading = "シャナイ"
+
+[entries."社外"]
+reading = "シャガイ"
+
+[entries."社訓"]
+reading = "シャクン"
+
+[entries."社宅"]
+reading = "シャタク"
+
+[entries."社用"]
+reading = "シャヨウ"
+
+# ─── 組 / 構 系 ────────────────────────────
+[entries."組合"]
+reading = "クミアイ"
+
+[entries."構図"]
+reading = "コウズ"
+
+# ─── 標 / 規 / 制 系 ────────────────────────────
+[entries."標的"]
+reading = "ヒョウテキ"
+
+[entries."標識"]
+reading = "ヒョウシキ"
+
+[entries."規範"]
+reading = "キハン"
+
+[entries."規格"]
+reading = "キカク"
+
+[entries."規律"]
+reading = "キリツ"
+
+[entries."制定"]
+reading = "セイテイ"
+
+[entries."抑制"]
+reading = "ヨクセイ"
+
+# ─── 個 / 各 系 ────────────────────────────
+[entries."個室"]
+reading = "コシツ"
+
+[entries."各人"]
+reading = "カクジン"
+
+[entries."各国"]
+reading = "カッコク"
+
+# ─── 利 / 便 ────────────────────────────
+[entries."利点"]
+reading = "リテン"
+
+[entries."利害"]
+reading = "リガイ"
+
+[entries."不利"]
+reading = "フリ"
+
+[entries."便所"]
+reading = "ベンジョ"
+
+[entries."便宜"]
+reading = "ベンギ"
+
+[entries."便箋"]
+reading = "ビンセン"
+
+# ─── 苦 系 ────────────────────────────
+[entries."苦戦"]
+reading = "クセン"
+
+[entries."苦笑"]
+reading = "クショウ"
+
+# ─── 自 系 ────────────────────────────
+[entries."自治"]
+reading = "ジチ"
+
+[entries."自宅"]
+reading = "ジタク"
+
+[entries."自国"]
+reading = "ジコク"
+
+[entries."自殺"]
+reading = "ジサツ"
+
+[entries."自衛"]
+reading = "ジエイ"
+
+[entries."自慢"]
+reading = "ジマン"
+
+[entries."自己"]
+reading = "ジコ"
+
+[entries."自我"]
+reading = "ジガ"
+
+# ─── 面 / 場 系 ────────────────────────────
+[entries."場合"]
+reading = "バアイ"
+
+[entries."側面"]
+reading = "ソクメン"
+
+[entries."一面"]
+reading = "イチメン"
+
+[entries."真面目"]
+reading = "マジメ"
+
+[entries."顔面"]
+reading = "ガンメン"
+
+[entries."表向"]
+reading = "オモテムキ"
