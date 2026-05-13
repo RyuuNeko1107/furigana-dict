@@ -3444,3 +3444,210 @@ reading = "ライネン"
 
 [entries."今月"]
 reading = "コンゲツ"
+
+# ─── 感情 / 心理 (batch 33) ────────────────────────────
+[entries."落胆"]
+reading = "ラクタン"
+
+[entries."当惑"]
+reading = "トウワク"
+
+[entries."恐縮"]
+reading = "キョウシュク"
+
+# ─── 行動 / 移動 ────────────────────────────
+[entries."外出"]
+reading = "ガイシュツ"
+
+[entries."散歩"]
+reading = "サンポ"
+
+[entries."到達"]
+reading = "トウタツ"
+
+[entries."走行"]
+reading = "ソウコウ"
+
+# ─── 学業 ────────────────────────────
+[entries."学習"]
+reading = "ガクシュウ"
+
+[entries."学業"]
+reading = "ガクギョウ"
+
+[entries."留学"]
+reading = "リュウガク"
+
+# ─── 自然 / 地形 ────────────────────────────
+[entries."山脈"]
+reading = "サンミャク"
+
+[entries."海洋"]
+reading = "カイヨウ"
+
+[entries."湿原"]
+reading = "シツゲン"
+
+# ─── 健康 / 身体 ────────────────────────────
+[entries."握力"]
+reading = "アクリョク"
+
+[entries."腕力"]
+reading = "ワンリョク"
+
+[entries."身長"]
+reading = "シンチョウ"
+
+# ─── 社会 / 政治 ────────────────────────────
+[entries."規制"]
+reading = "キセイ"
+
+[entries."廃止"]
+reading = "ハイシ"
+
+# ─── 時間 / 暦 ────────────────────────────
+[entries."前夜"]
+reading = "ゼンヤ"
+
+[entries."翌月"]
+reading = "ヨクゲツ"
+
+[entries."終日"]
+reading = "シュウジツ"
+
+# ─── 情報 / 通信 ────────────────────────────
+[entries."告知"]
+reading = "コクチ"
+
+[entries."連合"]
+reading = "レンゴウ"
+
+# ─── 家事 / 生活 ────────────────────────────
+[entries."洗濯"]
+reading = "センタク"
+
+[entries."洗面"]
+reading = "センメン"
+
+# ─── 交通 / 運行 ────────────────────────────
+[entries."運行"]
+reading = "ウンコウ"
+
+[entries."運営"]
+reading = "ウンエイ"
+
+[entries."駐車"]
+reading = "チュウシャ"
+
+[entries."停車"]
+reading = "テイシャ"
+
+[entries."降車"]
+reading = "コウシャ"
+
+# ─── 天候 ────────────────────────────
+[entries."晴天"]
+reading = "セイテン"
+
+[entries."曇天"]
+reading = "ドンテン"
+
+[entries."雨天"]
+reading = "ウテン"
+
+# ─── 装備 / 建築 ────────────────────────────
+[entries."改装"]
+reading = "カイソウ"
+
+[entries."装着"]
+reading = "ソウチャク"
+
+[entries."装飾"]
+reading = "ソウショク"
+
+# ─── 感覚 / 飲食 ────────────────────────────
+[entries."風味"]
+reading = "フウミ"
+
+[entries."香水"]
+reading = "コウスイ"
+
+[entries."香料"]
+reading = "コウリョウ"
+
+[entries."食感"]
+reading = "ショッカン"
+
+[entries."食欲"]
+reading = "ショクヨク"
+
+[entries."食塩"]
+reading = "ショクエン"
+
+# ─── 医療 ────────────────────────────
+[entries."看病"]
+reading = "カンビョウ"
+
+[entries."服薬"]
+reading = "フクヤク"
+
+[entries."服用"]
+reading = "フクヨウ"
+
+# ─── 労働 / 職業 ────────────────────────────
+[entries."入社"]
+reading = "ニュウシャ"
+
+[entries."転職"]
+reading = "テンショク"
+
+[entries."就職"]
+reading = "シュウショク"
+
+[entries."失業"]
+reading = "シツギョウ"
+
+[entries."副業"]
+reading = "フクギョウ"
+
+[entries."専業"]
+reading = "センギョウ"
+
+# ─── 数量 / 程度 ────────────────────────────
+[entries."目的"]
+reading = "モクテキ"
+
+[entries."寸法"]
+reading = "スンポウ"
+
+[entries."増減"]
+reading = "ゾウゲン"
+
+[entries."増加"]
+reading = "ゾウカ"
+
+[entries."急増"]
+reading = "キュウゾウ"
+
+[entries."急減"]
+reading = "キュウゲン"
+
+[entries."拡張"]
+reading = "カクチョウ"
+
+[entries."縮減"]
+reading = "シュクゲン"
+
+# ─── 継続 / 再起 ────────────────────────────
+[entries."継続"]
+reading = "ケイゾク"
+
+[entries."再生"]
+reading = "サイセイ"
+
+[entries."再起"]
+reading = "サイキ"
+
+# ─── 販売 ────────────────────────────
+[entries."発売"]
+reading = "ハツバイ"
