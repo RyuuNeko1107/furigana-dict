@@ -5793,3 +5793,88 @@ reading = "シュ"
 [[kanji.match]]
 prev_char_type = "英数"
 reading = "シュ"
+
+
+# ─── 接尾辞 系 (= 漢字 + 接尾辞 = 熟語 構造の覆い) ────────────────────────────
+#
+# 設計: 接尾辞として使われる漢字は 「漢字 + 接尾辞」 で無限の組み合わせを生む
+# (= 「事務局/放送局/結局/対局」 等)、 jukugo 個別登録は現実的でないため
+# [[kanji]] block の prev_char_type = "漢字" で覆う。
+# default は standalone 用 reading (= kun または共通 on-yomi)。
+
+# 「局」 default 「キョク」 (= 事務局/放送局/結局/対局/薬局/郵便局)。
+# joyo unihan の 「つぼね」 は古語、 現代日本語ではほぼ使われない
+[[kanji]]
+char = "局"
+default = "キョク"
+
+# 「館」 default 「カン」 (= 図書館/旅館/会館/水族館/領事館/美術館)。
+# joyo unihan の 「たち」 は古語、 現代日本語では人名のみ
+[[kanji]]
+char = "館"
+default = "カン"
+
+# 「業」 default 「ギョウ」 (= 業務/事業/工業/製造業/作業/営業)。
+# 「ゴウ」 (= 業火/罪業) は jukugo 個別、 「わざ」 は古語/慣用
+[[kanji]]
+char = "業"
+default = "ギョウ"
+
+# 「論」 default 「ロン」 (= 議論/理論/論文/結論/反論/世論)。
+# joyo unihan の 「あげつらう」 は動詞古語
+[[kanji]]
+char = "論"
+default = "ロン"
+
+# 「室」 default 「シツ」 (= 教室/病室/寝室/会議室/浴室/居室)。
+# joyo unihan の 「むろ」 は jukugo 個別 (= 「室咲き / 氷室」)
+[[kanji]]
+char = "室"
+default = "シツ"
+
+# 「課」 default 「カ」 (= 人事課/総務課/経理課/課題/課程)
+[[kanji]]
+char = "課"
+default = "カ"
+
+# 「院」 default 「イン」 (= 病院/学院/退院/上院/下院/医院/寺院)
+[[kanji]]
+char = "院"
+default = "イン"
+
+# 「期」 default 「キ」 (= 短期/長期/期間/学期/今期/任期)
+[[kanji]]
+char = "期"
+default = "キ"
+
+# 「学」 default 「ガク」 (= 数学/科学/物理学/学問/医学/文学)
+[[kanji]]
+char = "学"
+default = "ガク"
+
+# 「道」 default 「ミチ」、 漢字直前なら 「ドウ」 (= 柔道/書道/北海道/剣道/茶道)
+[[kanji]]
+char = "道"
+default = "ミチ"
+
+[[kanji.match]]
+prev_char_type = "漢字"
+reading = "ドウ"
+
+# 「店」 default 「ミセ」、 漢字直前なら 「テン」 (= 書店/喫茶店/支店/開店/商店)
+[[kanji]]
+char = "店"
+default = "ミセ"
+
+[[kanji.match]]
+prev_char_type = "漢字"
+reading = "テン"
+
+# 「場」 default 「バ」、 漢字直前なら 「ジョウ」 (= 競技場/野球場/工場/会場/球場)
+[[kanji]]
+char = "場"
+default = "バ"
+
+[[kanji.match]]
+prev_char_type = "漢字"
+reading = "ジョウ"

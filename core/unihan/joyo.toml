@@ -377,7 +377,7 @@ description = "常用漢字 2,136 字 (文化庁 2010-11-30 改訂、 内閣告�
 "堤" = "つつみ"
 # 堪 は core/kanji/overrides.toml の [[kanji]] block に移行
 "報" = "ホウ"
-"場" = "ジョウ"
+# 場 は core/kanji/overrides.toml の [[kanji]] block に移行 (★round 49)
 "塀" = "ヘイ"
 "塁" = "とりで"
 "塊" = "かたまり"
@@ -467,7 +467,7 @@ description = "常用漢字 2,136 字 (文化庁 2010-11-30 改訂、 内閣告�
 "孝" = "コウ"
 "季" = "すえ"
 "孤" = "ひとり"
-"学" = "ガク"
+# 学 は core/kanji/overrides.toml の [[kanji]] block に移行 (★round 49)
 "孫" = "まご"
 "宅" = "いえ"
 "宇" = "いえ"
@@ -483,7 +483,7 @@ description = "常用漢字 2,136 字 (文化庁 2010-11-30 改訂、 内閣告�
 "宝" = "たから"
 "実" = "ジツ"
 # 宣 は core/kanji/overrides.toml の [[kanji]] block に移行
-"室" = "むろ"
+# 室 は core/kanji/overrides.toml の [[kanji]] block に移行 (★round 49)
 "宮" = "みや"
 "宰" = "つかさ"
 # 害 は core/kanji/overrides.toml の [[kanji]] block に移行
@@ -523,7 +523,7 @@ description = "常用漢字 2,136 字 (文化庁 2010-11-30 改訂、 内閣告�
 # 尽 は core/kanji/overrides.toml の [[kanji]] block に移行
 "尾" = "お"
 "尿" = "ゆばり"
-"局" = "つぼね"
+# 局 は core/kanji/overrides.toml の [[kanji]] block に移行 (★round 49)
 # 屈 は core/kanji/overrides.toml の [[kanji]] block に移行
 "届" = "とどける"
 # 展 は core/kanji/overrides.toml の [[kanji]] block に移行
@@ -584,7 +584,7 @@ description = "常用漢字 2,136 字 (文化庁 2010-11-30 改訂、 内閣告�
 # "床" は core/kanji/overrides.toml の [[kanji]] block に移行
 "序" = "ついず"
 "底" = "そこ"
-"店" = "みせ"
+# 店 は core/kanji/overrides.toml の [[kanji]] block に移行 (★round 49)
 "府" = "フ"
 "度" = "ド"
 # 座 は core/kanji/overrides.toml の [[kanji]] block に移行
@@ -893,7 +893,7 @@ description = "常用漢字 2,136 字 (文化庁 2010-11-30 改訂、 内閣告�
 # 朗 は core/kanji/overrides.toml の [[kanji]] block に移行
 # 望 は core/kanji/overrides.toml の [[kanji]] block に移行
 "朝" = "あさ"
-"期" = "キ"
+# 期 は core/kanji/overrides.toml の [[kanji]] block に移行 (★round 49)
 "木" = "キ"
 "未" = "いまだ"
 "末" = "すえ"
@@ -959,7 +959,7 @@ description = "常用漢字 2,136 字 (文化庁 2010-11-30 改訂、 内閣告�
 # 植 は core/kanji/overrides.toml の [[kanji]] block に移行
 "椎" = "しい"
 "検" = "ケン"
-"業" = "わざ"
+# 業 は core/kanji/overrides.toml の [[kanji]] block に移行 (★round 49)
 # 極 は core/kanji/overrides.toml の [[kanji]] block に移行
 "楷" = "カイ"
 # 楼 は core/kanji/overrides.toml の [[kanji]] block に移行
@@ -1659,11 +1659,11 @@ description = "常用漢字 2,136 字 (文化庁 2010-11-30 改訂、 内閣告�
 # 誤 は core/kanji/overrides.toml の [[kanji]] block に移行
 # 「説」 は overrides.toml の [[kanji]] block に移行 (★round 37)
 "誰" = "だれ"
-"課" = "カ"
+# 課 は core/kanji/overrides.toml の [[kanji]] block に移行 (★round 49)
 # 調 は core/kanji/overrides.toml の [[kanji]] block に移行
 # 談 は core/kanji/overrides.toml の [[kanji]] block に移行
 "請" = "こう"
-"論" = "あげつらう"
+# 論 は core/kanji/overrides.toml の [[kanji]] block に移行 (★round 49)
 "諦" = "あきらめる"
 # 諧 は core/kanji/overrides.toml の [[kanji]] block に移行
 # 諭 は core/kanji/overrides.toml の [[kanji]] block に移行
@@ -1796,7 +1796,7 @@ description = "常用漢字 2,136 字 (文化庁 2010-11-30 改訂、 内閣告�
 # 遊 は core/kanji/overrides.toml の [[kanji]] block に移行
 # 遍 は core/kanji/overrides.toml の [[kanji]] block に移行
 # 過 は core/kanji/overrides.toml の [[kanji]] block に移行
-"道" = "みち"
+# 道 は core/kanji/overrides.toml の [[kanji]] block に移行 (★round 49)
 # 「達」 は overrides.toml の [[kanji]] block に移行 (★round 39)
 # 違 は core/kanji/overrides.toml の [[kanji]] block に移行
 "遜" = "へりくだる"
@@ -1891,7 +1891,7 @@ description = "常用漢字 2,136 字 (文化庁 2010-11-30 改訂、 内閣告�
 # 降 は core/kanji/overrides.toml の [[kanji]] block に移行
 # 限 は core/kanji/overrides.toml の [[kanji]] block に移行
 # 陛 は core/kanji/overrides.toml の [[kanji]] block に移行
-"院" = "イン"
+# 院 は core/kanji/overrides.toml の [[kanji]] block に移行 (★round 49)
 "陣" = "ジン"
 # 除 は core/kanji/overrides.toml の [[kanji]] block に移行
 # 陥 は core/kanji/overrides.toml の [[kanji]] block に移行
@@ -1974,7 +1974,7 @@ description = "常用漢字 2,136 字 (文化庁 2010-11-30 改訂、 内閣告�
 # 養 は core/kanji/overrides.toml の [[kanji]] block に移行
 "餌" = "え"
 # 餓 は core/kanji/overrides.toml の [[kanji]] block に移行
-"館" = "たち"
+# 館 は core/kanji/overrides.toml の [[kanji]] block に移行 (★round 49)
 "首" = "くび"
 "香" = "コウ"
 "馬" = "うま"
