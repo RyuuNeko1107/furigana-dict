@@ -8,11 +8,12 @@
 
 (なし — divergent reading 0 件、 健全)
 
-## 同一 reading (1 件)
+## 同一 reading (2 件)
 
 実害なし (jukugo merge で同値が上書きされても reading 不変)。 整理目安として list 化。
 長期的にどちらか 1 ファイルに寄せたいケースを発見する用。
 
 | surface | reading | files |
 |---|---|---|
+| 寒気 | カンキ | `core/jukugo/basic/general.toml`, `core/jukugo/nature/weather.toml` |
 | 石川 | イシカワ | `core/jukugo/nature/place_names.toml`, `core/jukugo/proper/personal_names.toml` |
