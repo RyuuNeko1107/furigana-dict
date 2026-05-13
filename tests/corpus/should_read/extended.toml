@@ -460,8 +460,8 @@ note = "学校 + 徒歩 + 数字+分"
 [[case]]
 input = "3つの選択肢から1つ選ぶ"
 mode = "hiragana"
-expected = "さんつのせんたくしからいちつえらぶ"
-note = "数字+つ + 選択肢 + 選ぶ"
+expected = "みっつのせんたくしからひとつえらぶ"
+note = "数字+つ + 選択肢 + 選ぶ (= 「つ」 counter rule で和語数詞)"
 
 [[case]]
 input = "毎月10日が給料日です"
