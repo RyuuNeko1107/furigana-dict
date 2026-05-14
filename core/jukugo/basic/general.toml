@@ -5381,12 +5381,6 @@ reading = "ダイイチワ"
 
 # ─── mega batch (= 一般熟語 bulk add) ─────────────────────────
 
-[entries."紙袋"]
-reading = "カミブクロ"
-
-[entries."氷袋"]
-reading = "コオリブクロ"
-
 [entries."お買物袋"]
 reading = "オカイモノブクロ"
 
@@ -5399,29 +5393,8 @@ reading = "テサゲブクロ"
 [entries."小箱"]
 reading = "コバコ"
 
-[entries."大箱"]
-reading = "オオバコ"
-
-[entries."重箱"]
-reading = "ジュウバコ"
-
-[entries."玉手箱"]
-reading = "タマテバコ"
-
-[entries."ゴミ箱"]
-reading = "ゴミバコ"
-
-[entries."本箱"]
-reading = "ホンバコ"
-
 [entries."書箱"]
 reading = "ショバコ"
-
-[entries."筆箱"]
-reading = "フデバコ"
-
-[entries."針箱"]
-reading = "ハリバコ"
 
 [entries."裁縫箱"]
 reading = "サイホウバコ"
@@ -5468,23 +5441,8 @@ reading = "ステバ"
 [entries."置場"]
 reading = "オキバ"
 
-[entries."仕事場"]
-reading = "シゴトバ"
-
-[entries."広場"]
-reading = "ヒロバ"
-
-[entries."酒場"]
-reading = "サカバ"
-
-[entries."墓場"]
-reading = "ハカバ"
-
 [entries."工事場"]
 reading = "コウジバ"
-
-[entries."作業場"]
-reading = "サギョウバ"
 
 [entries."集積場"]
 reading = "シュウセキバ"
@@ -5492,329 +5450,32 @@ reading = "シュウセキバ"
 [entries."競馬場"]
 reading = "ケイバジョウ"
 
-[entries."競輪場"]
-reading = "ケイリンジョウ"
-
-[entries."競艇場"]
-reading = "キョウテイジョウ"
-
-[entries."霊場"]
-reading = "レイジョウ"
-
-[entries."納骨場"]
-reading = "ノウコツジョウ"
-
-[entries."祭場"]
-reading = "サイジョウ"
-
-[entries."式場"]
-reading = "シキジョウ"
-
-[entries."学食"]
-reading = "ガクショク"
-
-[entries."食欲"]
-reading = "ショクヨク"
-
 [entries."食堂街"]
 reading = "ショクドウガイ"
 
 [entries."食堂街地"]
 reading = "ショクドウガイチ"
 
-[entries."飲食店"]
-reading = "インショクテン"
-
 [entries."飲食街"]
 reading = "インショクガイ"
-
-[entries."歓楽街"]
-reading = "カンラクガイ"
 
 [entries."学園街"]
 reading = "ガクエンガイ"
 
-[entries."学園都市"]
-reading = "ガクエントシ"
-
-[entries."学園祭"]
-reading = "ガクエンサイ"
-
-[entries."文化祭"]
-reading = "ブンカサイ"
-
-[entries."体育祭"]
-reading = "タイイクサイ"
-
-[entries."運動会"]
-reading = "ウンドウカイ"
-
-[entries."展示会"]
-reading = "テンジカイ"
-
-[entries."講演会"]
-reading = "コウエンカイ"
-
-[entries."研究会"]
-reading = "ケンキュウカイ"
-
-[entries."討論会"]
-reading = "トウロンカイ"
-
-[entries."読書会"]
-reading = "ドクショカイ"
-
-[entries."食事会"]
-reading = "ショクジカイ"
-
-[entries."飲み会"]
-reading = "ノミカイ"
-
-[entries."歓送会"]
-reading = "カンソウカイ"
-
-[entries."歓迎会"]
-reading = "カンゲイカイ"
-
-[entries."歓送迎会"]
-reading = "カンソウゲイカイ"
-
-[entries."送別会"]
-reading = "ソウベツカイ"
-
-[entries."新年会"]
-reading = "シンネンカイ"
-
-[entries."忘年会"]
-reading = "ボウネンカイ"
-
-[entries."同窓会"]
-reading = "ドウソウカイ"
-
 [entries."クラス会"]
 reading = "クラスカイ"
-
-[entries."親睦会"]
-reading = "シンボクカイ"
-
-[entries."親睦"]
-reading = "シンボク"
 
 [entries."親善試合"]
 reading = "シンゼンジアイ"
 
-[entries."試合会場"]
-reading = "シアイカイジョウ"
-
-[entries."試合相手"]
-reading = "シアイアイテ"
-
-[entries."試合形式"]
-reading = "シアイケイシキ"
-
-[entries."試合結果"]
-reading = "シアイケッカ"
-
-[entries."試合中"]
-reading = "シアイチュウ"
-
-[entries."試合後"]
-reading = "シアイゴ"
-
 [entries."試合前"]
 reading = "シアイマエ"
-
-[entries."試合直前"]
-reading = "シアイチョクゼン"
-
-[entries."試合直後"]
-reading = "シアイチョクゴ"
-
-[entries."直前直後"]
-reading = "チョクゼンチョクゴ"
-
-[entries."連戦連勝"]
-reading = "レンセンレンショウ"
-
-[entries."連戦"]
-reading = "レンセン"
-
-[entries."連勝"]
-reading = "レンショウ"
-
-[entries."連敗"]
-reading = "レンパイ"
-
-[entries."連投"]
-reading = "レントウ"
-
-[entries."連打"]
-reading = "レンダ"
-
-[entries."連発"]
-reading = "レンパツ"
-
-[entries."連覇達成"]
-reading = "レンパタッセイ"
-
-[entries."達成"]
-reading = "タッセイ"
-
-[entries."達成度"]
-reading = "タッセイド"
-
-[entries."達成率"]
-reading = "タッセイリツ"
-
-[entries."達成率向上"]
-reading = "タッセイリツコウジョウ"
-
-[entries."向上"]
-reading = "コウジョウ"
-
-[entries."向上心"]
-reading = "コウジョウシン"
-
-[entries."向上策"]
-reading = "コウジョウサク"
-
-[entries."改善計画"]
-reading = "カイゼンケイカク"
-
-[entries."計画立案"]
-reading = "ケイカクリツアン"
 
 [entries."立法案"]
 reading = "リッポウアン"
 
-[entries."法案提出"]
-reading = "ホウアンテイシュツ"
-
-[entries."提出書類"]
-reading = "テイシュツショルイ"
-
-[entries."提出方法"]
-reading = "テイシュツホウホウ"
-
-[entries."提出先"]
-reading = "テイシュツサキ"
-
-[entries."提出先住所"]
-reading = "テイシュツサキジュウショ"
-
-[entries."住所録"]
-reading = "ジュウショロク"
-
-[entries."住所録管理"]
-reading = "ジュウショロクカンリ"
-
-[entries."名簿"]
-reading = "メイボ"
-
-[entries."名簿管理"]
-reading = "メイボカンリ"
-
-[entries."名簿登録"]
-reading = "メイボトウロク"
-
-[entries."名簿掲載"]
-reading = "メイボケイサイ"
-
-[entries."掲載許可"]
-reading = "ケイサイキョカ"
-
-[entries."掲載期間"]
-reading = "ケイサイキカン"
-
 [entries."掲載日"]
 reading = "ケイサイビ"
-
-[entries."掲載料"]
-reading = "ケイサイリョウ"
-
-[entries."広告掲載"]
-reading = "コウコクケイサイ"
-
-[entries."広告料"]
-reading = "コウコクリョウ"
-
-[entries."広告主"]
-reading = "コウコクヌシ"
-
-[entries."広告代理店"]
-reading = "コウコクダイリテン"
-
-[entries."代理人"]
-reading = "ダイリニン"
-
-[entries."代理店契約"]
-reading = "ダイリテンケイヤク"
-
-[entries."契約者"]
-reading = "ケイヤクシャ"
-
-[entries."契約料"]
-reading = "ケイヤクリョウ"
-
-[entries."契約解消"]
-reading = "ケイヤクカイショウ"
-
-[entries."解消"]
-reading = "カイショウ"
-
-[entries."契約破棄"]
-reading = "ケイヤクハキ"
-
-[entries."破棄"]
-reading = "ハキ"
-
-[entries."廃棄物"]
-reading = "ハイキブツ"
-
-[entries."廃棄物処理"]
-reading = "ハイキブツショリ"
-
-[entries."処理場"]
-reading = "ショリジョウ"
-
-[entries."処理工程"]
-reading = "ショリコウテイ"
-
-[entries."工程表"]
-reading = "コウテイヒョウ"
-
-[entries."工程図"]
-reading = "コウテイズ"
-
-[entries."作業工程"]
-reading = "サギョウコウテイ"
-
-[entries."作業計画"]
-reading = "サギョウケイカク"
-
-[entries."作業日程"]
-reading = "サギョウニッテイ"
-
-[entries."日程表"]
-reading = "ニッテイヒョウ"
-
-[entries."予定表"]
-reading = "ヨテイヒョウ"
-
-[entries."予定通り"]
-reading = "ヨテイドオリ"
-
-[entries."予定到着"]
-reading = "ヨテイトウチャク"
-
-[entries."到着予定"]
-reading = "トウチャクヨテイ"
-
-[entries."到着時刻"]
-reading = "トウチャクジコク"
-
-[entries."到着駅"]
-reading = "トウチャクエキ"
 
 [entries."到着便"]
 reading = "トウチャクビン"
@@ -5822,128 +5483,14 @@ reading = "トウチャクビン"
 [entries."出発便"]
 reading = "シュッパツビン"
 
-[entries."出発時刻"]
-reading = "シュッパツジコク"
-
-[entries."出発駅"]
-reading = "シュッパツエキ"
-
 [entries."出発地"]
 reading = "シュッパツチ"
 
 [entries."出発前"]
 reading = "シュッパツマエ"
 
-[entries."発車時刻"]
-reading = "ハッシャジコク"
-
-[entries."発車駅"]
-reading = "ハッシャエキ"
-
-[entries."発車予定"]
-reading = "ハッシャヨテイ"
-
-[entries."予定到着時刻"]
-reading = "ヨテイトウチャクジコク"
-
-[entries."時刻通り"]
-reading = "ジコクドオリ"
-
-[entries."通勤時間"]
-reading = "ツウキンジカン"
-
-[entries."通勤時間帯"]
-reading = "ツウキンジカンタイ"
-
-[entries."通勤時刻"]
-reading = "ツウキンジコク"
-
 [entries."通勤路"]
 reading = "ツウキンロ"
-
-[entries."通勤手段"]
-reading = "ツウキンシュダン"
-
-[entries."通勤費"]
-reading = "ツウキンヒ"
-
-[entries."通勤定期"]
-reading = "ツウキンテイキ"
-
-[entries."定期的"]
-reading = "テイキテキ"
-
-[entries."定期検査"]
-reading = "テイキケンサ"
-
-[entries."定期点検"]
-reading = "テイキテンケン"
-
-[entries."点検"]
-reading = "テンケン"
-
-[entries."点検中"]
-reading = "テンケンチュウ"
-
-[entries."点検作業"]
-reading = "テンケンサギョウ"
-
-[entries."点検記録"]
-reading = "テンケンキロク"
-
-[entries."記録更新"]
-reading = "キロクコウシン"
-
-[entries."更新作業"]
-reading = "コウシンサギョウ"
-
-[entries."作業中止"]
-reading = "サギョウチュウシ"
-
-[entries."作業中断"]
-reading = "サギョウチュウダン"
-
-[entries."中止命令"]
-reading = "チュウシメイレイ"
-
-[entries."命令書"]
-reading = "メイレイショ"
-
-[entries."命令系統"]
-reading = "メイレイケイトウ"
-
-[entries."系統別"]
-reading = "ケイトウベツ"
-
-[entries."系統図"]
-reading = "ケイトウズ"
-
-[entries."系図"]
-reading = "ケイズ"
-
-[entries."家系"]
-reading = "カケイ"
-
-[entries."家系図"]
-reading = "カケイズ"
-
-[entries."血統書"]
-reading = "ケットウショ"
-
-[entries."血統"]
-reading = "ケットウ"
-
-[entries."血族"]
-reading = "ケツゾク"
-
-[entries."親族会議"]
-reading = "シンゾクカイギ"
-
-[entries."親族関係"]
-reading = "シンゾクカンケイ"
-
-[entries."親子関係"]
-reading = "オヤコカンケイ"
 
 [entries."豚丼"]
 reading = "ブタドン"
@@ -5951,23 +5498,8 @@ reading = "ブタドン"
 [entries."かつ丼"]
 reading = "カツドン"
 
-[entries."うな丼"]
-reading = "ウナドン"
-
 [entries."鉄火丼"]
 reading = "テッカドン"
-
-[entries."湯飲み"]
-reading = "ユノミ"
-
-[entries."湯呑"]
-reading = "ユノミ"
-
-[entries."湯呑み"]
-reading = "ユノミ"
-
-[entries."急須"]
-reading = "キュウス"
 
 [entries."ティーポット"]
 reading = "ティーポット"
@@ -5978,41 +5510,11 @@ reading = "グラス"
 [entries."コップ"]
 reading = "コップ"
 
-[entries."小皿"]
-reading = "コザラ"
-
-[entries."大皿"]
-reading = "オオザラ"
-
 [entries."取皿"]
 reading = "トリザラ"
 
 [entries."醤油皿"]
 reading = "ショウユザラ"
-
-[entries."割り箸"]
-reading = "ワリバシ"
-
-[entries."菜箸"]
-reading = "サイバシ"
-
-[entries."食事用具"]
-reading = "ショクジヨウグ"
-
-[entries."食器類"]
-reading = "ショッキルイ"
-
-[entries."本棚"]
-reading = "ホンダナ"
-
-[entries."書棚"]
-reading = "ショダナ"
-
-[entries."飾り棚"]
-reading = "カザリダナ"
-
-[entries."吊棚"]
-reading = "ツリダナ"
 
 [entries."押入れ"]
 reading = "オシイレ"
@@ -6020,218 +5522,29 @@ reading = "オシイレ"
 [entries."畳敷"]
 reading = "タタミジキ"
 
-[entries."板敷"]
-reading = "イタジキ"
-
-[entries."床下"]
-reading = "ユカシタ"
-
-[entries."床上"]
-reading = "ユカウエ"
-
 [entries."床板"]
 reading = "ユカイタ"
-
-[entries."床屋"]
-reading = "トコヤ"
-
-[entries."理髪店"]
-reading = "リハツテン"
-
-[entries."理髪"]
-reading = "リハツ"
-
-[entries."散髪"]
-reading = "サンパツ"
-
-[entries."洗髪"]
-reading = "センパツ"
-
-[entries."育毛"]
-reading = "イクモウ"
-
-[entries."脱毛"]
-reading = "ダツモウ"
-
-[entries."発毛"]
-reading = "ハツモウ"
-
-[entries."養毛"]
-reading = "ヨウモウ"
-
-[entries."毛髪"]
-reading = "モウハツ"
-
-[entries."頭髪"]
-reading = "トウハツ"
-
-[entries."若白髪"]
-reading = "ワカシラガ"
-
-[entries."銀髪"]
-reading = "ギンパツ"
-
-[entries."金髪"]
-reading = "キンパツ"
-
-[entries."黒髪"]
-reading = "クロカミ"
-
-[entries."茶髪"]
-reading = "チャパツ"
-
-[entries."赤毛"]
-reading = "アカゲ"
 
 [entries."赤髪"]
 reading = "アカガミ"
 
-[entries."くせ毛"]
-reading = "クセゲ"
-
-[entries."直毛"]
-reading = "チョクモウ"
-
-[entries."縮毛"]
-reading = "シュクモウ"
-
 [entries."天然パーマ"]
 reading = "テンネンパーマ"
-
-[entries."天然"]
-reading = "テンネン"
-
-[entries."天然水"]
-reading = "テンネンスイ"
 
 [entries."天然色"]
 reading = "テンネンショク"
 
-[entries."天然繊維"]
-reading = "テンネンセンイ"
-
-[entries."繊維"]
-reading = "センイ"
-
-[entries."化学繊維"]
-reading = "カガクセンイ"
-
-[entries."合成繊維"]
-reading = "ゴウセイセンイ"
-
-[entries."天然素材"]
-reading = "テンネンソザイ"
-
-[entries."原材料"]
-reading = "ゲンザイリョウ"
-
-[entries."原材料費"]
-reading = "ゲンザイリョウヒ"
-
-[entries."材料費"]
-reading = "ザイリョウヒ"
-
-[entries."建材"]
-reading = "ケンザイ"
-
-[entries."木材"]
-reading = "モクザイ"
-
 [entries."鉄材"]
 reading = "テッザイ"
-
-[entries."石材"]
-reading = "セキザイ"
-
-[entries."資材"]
-reading = "シザイ"
-
-[entries."仕事道具"]
-reading = "シゴトドウグ"
-
-[entries."家庭用品"]
-reading = "カテイヨウヒン"
-
-[entries."家庭用"]
-reading = "カテイヨウ"
-
-[entries."業務用"]
-reading = "ギョウムヨウ"
-
-[entries."家庭料理"]
-reading = "カテイリョウリ"
-
-[entries."料理長"]
-reading = "リョウリチョウ"
-
-[entries."板前"]
-reading = "イタマエ"
-
-[entries."板長"]
-reading = "イタチョウ"
 
 [entries."副店長"]
 reading = "フクテンチョウ"
 
-[entries."店員教育"]
-reading = "テンインキョウイク"
-
-[entries."店員研修"]
-reading = "テンインケンシュウ"
-
-[entries."店内"]
-reading = "テンナイ"
-
-[entries."店内放送"]
-reading = "テンナイホウソウ"
-
 [entries."店外"]
 reading = "テンガイ"
 
-[entries."店頭"]
-reading = "テントウ"
-
-[entries."店頭販売"]
-reading = "テントウハンバイ"
-
-[entries."店頭表示"]
-reading = "テントウヒョウジ"
-
 [entries."表示板"]
 reading = "ヒョウジバン"
-
-[entries."表示方法"]
-reading = "ヒョウジホウホウ"
-
-[entries."表示器"]
-reading = "ヒョウジキ"
-
-[entries."表示装置"]
-reading = "ヒョウジソウチ"
-
-[entries."装置類"]
-reading = "ソウチルイ"
-
-[entries."製造装置"]
-reading = "セイゾウソウチ"
-
-[entries."製造業者"]
-reading = "セイゾウギョウシャ"
-
-[entries."製鉄"]
-reading = "セイテツ"
-
-[entries."製鉄所"]
-reading = "セイテツショ"
-
-[entries."製紙工場"]
-reading = "セイシコウジョウ"
-
-[entries."製糖"]
-reading = "セイトウ"
-
-[entries."製糖所"]
-reading = "セイトウショ"
 
 [entries."製麺"]
 reading = "セイメン"
@@ -6239,224 +5552,35 @@ reading = "セイメン"
 [entries."製麺所"]
 reading = "セイメンショ"
 
-[entries."製粉"]
-reading = "セイフン"
-
-[entries."製粉所"]
-reading = "セイフンショ"
-
-[entries."製革"]
-reading = "セイカク"
-
-[entries."製靴"]
-reading = "セイカ"
-
-[entries."製品開発"]
-reading = "セイヒンカイハツ"
-
-[entries."製品名"]
-reading = "セイヒンメイ"
-
-[entries."新製品"]
-reading = "シンセイヒン"
-
-[entries."旧製品"]
-reading = "キュウセイヒン"
-
-[entries."試作機"]
-reading = "シサクキ"
-
-[entries."模造"]
-reading = "モゾウ"
-
 [entries."模造紙"]
 reading = "モゾウシ"
 
 [entries."模造品"]
 reading = "モゾウヒン"
 
-[entries."偽造"]
-reading = "ギゾウ"
-
 [entries."偽造品"]
 reading = "ギゾウヒン"
-
-[entries."偽札"]
-reading = "ニセサツ"
-
-[entries."偽物"]
-reading = "ニセモノ"
-
-[entries."真物"]
-reading = "シンブツ"
-
-[entries."原本"]
-reading = "ゲンポン"
-
-[entries."複製"]
-reading = "フクセイ"
-
-[entries."複製品"]
-reading = "フクセイヒン"
-
-[entries."複写"]
-reading = "フクシャ"
-
-[entries."複写機"]
-reading = "フクシャキ"
-
-[entries."複合機"]
-reading = "フクゴウキ"
-
-[entries."複合"]
-reading = "フクゴウ"
-
-[entries."複合的"]
-reading = "フクゴウテキ"
-
-[entries."複雑系"]
-reading = "フクザツケイ"
-
-[entries."複合施設"]
-reading = "フクゴウシセツ"
-
-[entries."複合商業施設"]
-reading = "フクゴウショウギョウシセツ"
-
-[entries."商業施設"]
-reading = "ショウギョウシセツ"
 
 [entries."商業地"]
 reading = "ショウギョウチ"
 
-[entries."商業地区"]
-reading = "ショウギョウチク"
-
-[entries."商業区域"]
-reading = "ショウギョウクイキ"
-
-[entries."区域指定"]
-reading = "クイキシテイ"
-
-[entries."指定"]
-reading = "シテイ"
-
-[entries."指定区域"]
-reading = "シテイクイキ"
-
 [entries."指定地"]
 reading = "シテイチ"
-
-[entries."指定先"]
-reading = "シテイサキ"
-
-[entries."指定者"]
-reading = "シテイシャ"
-
-[entries."指定方法"]
-reading = "シテイホウホウ"
-
-[entries."指定書"]
-reading = "シテイショ"
-
-[entries."指定通り"]
-reading = "シテイドオリ"
-
-[entries."通り"]
-reading = "トオリ"
-
-[entries."大通り"]
-reading = "オオドオリ"
-
-[entries."中通り"]
-reading = "ナカドオリ"
 
 [entries."小通り"]
 reading = "コドオリ"
 
-[entries."裏通り"]
-reading = "ウラドオリ"
-
-[entries."表通り"]
-reading = "オモテドオリ"
-
-[entries."横通り"]
-reading = "ヨコドオリ"
-
 [entries."表道"]
 reading = "オモテミチ"
-
-[entries."裏道"]
-reading = "ウラミチ"
-
-[entries."脇道"]
-reading = "ワキミチ"
-
-[entries."近道"]
-reading = "チカミチ"
-
-[entries."遠回り"]
-reading = "トオマワリ"
-
-[entries."回り道"]
-reading = "マワリミチ"
-
-[entries."分かれ道"]
-reading = "ワカレミチ"
-
-[entries."道筋"]
-reading = "ミチスジ"
-
-[entries."筋肉痛"]
-reading = "キンニクツウ"
-
-[entries."筋肉量"]
-reading = "キンニクリョウ"
-
-[entries."筋肉質"]
-reading = "キンニクシツ"
-
-[entries."筋金"]
-reading = "スジガネ"
-
-[entries."筋書"]
-reading = "スジガキ"
 
 [entries."筋書通"]
 reading = "スジガキドオリ"
 
-[entries."筋立"]
-reading = "スジダテ"
-
-[entries."筋道"]
-reading = "スジミチ"
-
-[entries."血筋"]
-reading = "チスジ"
-
-[entries."家筋"]
-reading = "イエスジ"
-
 [entries."人筋"]
 reading = "ヒトスジ"
 
-[entries."一筋"]
-reading = "ヒトスジ"
-
-[entries."二筋"]
-reading = "フタスジ"
-
 [entries."三筋"]
 reading = "ミスジ"
-
-[entries."鼻筋"]
-reading = "ハナスジ"
-
-[entries."背筋"]
-reading = "セスジ"
-
-[entries."腹筋"]
-reading = "フッキン"
 
 [entries."腕筋"]
 reading = "ワンキン"
@@ -6485,44 +5609,8 @@ reading = "ショウデンキン"
 [entries."ハムストリングス"]
 reading = "ハムストリングス"
 
-[entries."大腿"]
-reading = "ダイタイ"
-
-[entries."関節"]
-reading = "カンセツ"
-
-[entries."関節炎"]
-reading = "カンセツエン"
-
-[entries."関節痛"]
-reading = "カンセツツウ"
-
-[entries."膝痛"]
-reading = "ヒザツウ"
-
-[entries."肩こり"]
-reading = "カタコリ"
-
-[entries."肩凝り"]
-reading = "カタコリ"
-
-[entries."肩こり解消"]
-reading = "カタコリカイショウ"
-
-[entries."肩凝り解消"]
-reading = "カタコリカイショウ"
-
-[entries."腰痛"]
-reading = "ヨウツウ"
-
 [entries."腰痛持"]
 reading = "ヨウツウモチ"
-
-[entries."腰痛体操"]
-reading = "ヨウツウタイソウ"
-
-[entries."体操服"]
-reading = "タイソウフク"
 
 [entries."体操着"]
 reading = "タイソウギ"
@@ -6554,24 +5642,6 @@ reading = "フィットネス"
 [entries."フィットネスクラブ"]
 reading = "フィットネスクラブ"
 
-[entries."水泳教室"]
-reading = "スイエイキョウシツ"
-
-[entries."水泳"]
-reading = "スイエイ"
-
-[entries."水泳大会"]
-reading = "スイエイタイカイ"
-
-[entries."水泳選手"]
-reading = "スイエイセンシュ"
-
-[entries."競泳大会"]
-reading = "キョウエイタイカイ"
-
-[entries."競泳選手"]
-reading = "キョウエイセンシュ"
-
 [entries."バタフライ"]
 reading = "バタフライ"
 
@@ -6587,32 +5657,14 @@ reading = "セオヨ"
 [entries."クロール"]
 reading = "クロール"
 
-[entries."水着"]
-reading = "ミズギ"
-
 [entries."脱衣所"]
 reading = "ダツイジョ"
-
-[entries."脱衣"]
-reading = "ダツイ"
 
 [entries."脱衣場"]
 reading = "ダツイバ"
 
-[entries."更衣室"]
-reading = "コウイシツ"
-
-[entries."更衣"]
-reading = "コウイ"
-
 [entries."着替"]
 reading = "キガエ"
-
-[entries."着替え用"]
-reading = "キガエヨウ"
-
-[entries."寝間着"]
-reading = "ネマキ"
 
 [entries."パジャマ"]
 reading = "パジャマ"
@@ -6635,44 +5687,11 @@ reading = "ビジネススーツ"
 [entries."リクルートスーツ"]
 reading = "リクルートスーツ"
 
-[entries."礼装用"]
-reading = "レイソウヨウ"
-
-[entries."正装"]
-reading = "セイソウ"
-
-[entries."平服"]
-reading = "ヘイフク"
-
-[entries."洋装"]
-reading = "ヨウソウ"
-
-[entries."甚平"]
-reading = "ジンベイ"
-
 [entries."裾上"]
-reading = "スソアゲ"
-
-[entries."裾上げ"]
 reading = "スソアゲ"
 
 [entries."丈詰"]
 reading = "タケヅメ"
-
-[entries."身丈"]
-reading = "ミタケ"
-
-[entries."着丈"]
-reading = "キタケ"
-
-[entries."肩幅"]
-reading = "カタハバ"
-
-[entries."胸囲"]
-reading = "キョウイ"
-
-[entries."胴囲"]
-reading = "ドウイ"
 
 [entries."腰囲"]
 reading = "ヨウイ"
@@ -6695,41 +5714,8 @@ reading = "オーダーメイド"
 [entries."既製品"]
 reading = "キセイヒン"
 
-[entries."既製"]
-reading = "キセイ"
-
-[entries."吊し"]
-reading = "ツルシ"
-
-[entries."仕立て"]
-reading = "シタテ"
-
-[entries."仕立屋"]
-reading = "シタテヤ"
-
-[entries."仕立屋さん"]
-reading = "シタテヤサン"
-
-[entries."お仕立"]
-reading = "オシタテ"
-
-[entries."特注"]
-reading = "トクチュウ"
-
-[entries."別注"]
-reading = "ベッチュウ"
-
-[entries."注文住宅"]
-reading = "チュウモンジュウタク"
-
 [entries."住宅地"]
 reading = "ジュウタクチ"
-
-[entries."住宅展示場"]
-reading = "ジュウタクテンジジョウ"
-
-[entries."展示場"]
-reading = "テンジジョウ"
 
 [entries."展示ホール"]
 reading = "テンジホール"
@@ -6737,161 +5723,11 @@ reading = "テンジホール"
 [entries."ホール"]
 reading = "ホール"
 
-[entries."集会場"]
-reading = "シュウカイジョウ"
-
-[entries."集会所"]
-reading = "シュウカイショ"
-
-[entries."公民館"]
-reading = "コウミンカン"
-
-[entries."公民"]
-reading = "コウミン"
-
-[entries."市民館"]
-reading = "シミンカン"
-
-[entries."市民"]
-reading = "シミン"
-
-[entries."市民権"]
-reading = "シミンケン"
-
-[entries."市民税"]
-reading = "シミンゼイ"
-
-[entries."固定資産税"]
-reading = "コテイシサンゼイ"
-
-[entries."資産税"]
-reading = "シサンゼイ"
-
-[entries."住民税"]
-reading = "ジュウミンゼイ"
-
-[entries."消費税率"]
-reading = "ショウヒゼイリツ"
-
-[entries."税率"]
-reading = "ゼイリツ"
-
-[entries."税額"]
-reading = "ゼイガク"
-
-[entries."税金"]
-reading = "ゼイキン"
-
-[entries."税務"]
-reading = "ゼイム"
-
-[entries."税金対策"]
-reading = "ゼイキンタイサク"
-
-[entries."節税対策"]
-reading = "セツゼイタイサク"
-
-[entries."節税効果"]
-reading = "セツゼイコウカ"
-
-[entries."脱税"]
-reading = "ダツゼイ"
-
-[entries."脱税容疑"]
-reading = "ダツゼイヨウギ"
-
-[entries."被疑者"]
-reading = "ヒギシャ"
-
 [entries."原告人"]
 reading = "ゲンコクニン"
 
-[entries."原告側"]
-reading = "ゲンコクガワ"
-
-[entries."被告側"]
-reading = "ヒコクガワ"
-
-[entries."弁護側"]
-reading = "ベンゴガワ"
-
-[entries."検察側"]
-reading = "ケンサツガワ"
-
-[entries."裁判官"]
-reading = "サイバンカン"
-
-[entries."裁判官席"]
-reading = "サイバンカンセキ"
-
-[entries."被告人席"]
-reading = "ヒコクニンセキ"
-
-[entries."証人席"]
-reading = "ショウニンセキ"
-
-[entries."傍聴席"]
-reading = "ボウチョウセキ"
-
 [entries."傍聴人"]
 reading = "ボウチョウニン"
-
-[entries."傍聴"]
-reading = "ボウチョウ"
-
-[entries."傍聴券"]
-reading = "ボウチョウケン"
-
-[entries."法廷内"]
-reading = "ホウテイナイ"
-
-[entries."法廷外"]
-reading = "ホウテイガイ"
-
-[entries."法廷劇"]
-reading = "ホウテイゲキ"
-
-[entries."弁護士"]
-reading = "ベンゴシ"
-
-[entries."弁護士費用"]
-reading = "ベンゴシヒヨウ"
-
-[entries."顧問弁護士"]
-reading = "コモンベンゴシ"
-
-[entries."顧問"]
-reading = "コモン"
-
-[entries."顧問契約"]
-reading = "コモンケイヤク"
-
-[entries."顧問料"]
-reading = "コモンリョウ"
-
-[entries."顧問弁護士事務所"]
-reading = "コモンベンゴシジムショ"
-
-[entries."法律事務所"]
-reading = "ホウリツジムショ"
-
-[entries."法律相談"]
-reading = "ホウリツソウダン"
-
-[entries."法律相談料"]
-reading = "ホウリツソウダンリョウ"
-
-[entries."無料相談"]
-reading = "ムリョウソウダン"
-
-[entries."有料相談"]
-reading = "ユウリョウソウダン"
-
-[entries."電話相談"]
-reading = "デンワソウダン"
-
-[entries."対面相談"]
-reading = "タイメンソウダン"
 
 [entries."オンライン相談"]
 reading = "オンラインソウダン"
@@ -6911,32 +5747,8 @@ reading = "オンラインカ"
 [entries."デジタル化"]
 reading = "デジタルカ"
 
-[entries."電子書類"]
-reading = "デンシショルイ"
-
-[entries."電子契約"]
-reading = "デンシケイヤク"
-
 [entries."電子マネー"]
 reading = "デンシマネー"
-
-[entries."電子決済"]
-reading = "デンシケッサイ"
-
-[entries."決済"]
-reading = "ケッサイ"
-
-[entries."決済方法"]
-reading = "ケッサイホウホウ"
-
-[entries."決済代行"]
-reading = "ケッサイダイコウ"
-
-[entries."代行業"]
-reading = "ダイコウギョウ"
-
-[entries."代行料金"]
-reading = "ダイコウリョウキン"
 
 [entries."代行サービス"]
 reading = "ダイコウサービス"
@@ -6956,128 +5768,11 @@ reading = "サービスコウジョウ"
 [entries."サービス低下"]
 reading = "サービステイカ"
 
-[entries."低下"]
-reading = "テイカ"
-
-[entries."低下傾向"]
-reading = "テイカケイコウ"
-
-[entries."低下率"]
-reading = "テイカリツ"
-
-[entries."上昇率"]
-reading = "ジョウショウリツ"
-
-[entries."上昇傾向"]
-reading = "ジョウショウケイコウ"
-
-[entries."上昇気流"]
-reading = "ジョウショウキリュウ"
-
-[entries."気流"]
-reading = "キリュウ"
-
-[entries."寒流"]
-reading = "カンリュウ"
-
-[entries."暖流"]
-reading = "ダンリュウ"
-
-[entries."潮流"]
-reading = "チョウリュウ"
-
-[entries."渦潮"]
-reading = "ウズシオ"
-
 [entries."小波"]
 reading = "コナミ"
 
-[entries."潮干狩"]
-reading = "シオヒガリ"
-
-[entries."潮干狩り"]
-reading = "シオヒガリ"
-
-[entries."潮位"]
-reading = "チョウイ"
-
-[entries."振動数"]
-reading = "シンドウスウ"
-
-[entries."振動周期"]
-reading = "シンドウシュウキ"
-
-[entries."元素記号"]
-reading = "ゲンソキゴウ"
-
-[entries."元素番号"]
-reading = "ゲンソバンゴウ"
-
-[entries."原子記号"]
-reading = "ゲンシキゴウ"
-
-[entries."原子番号"]
-reading = "ゲンシバンゴウ"
-
-[entries."原子核"]
-reading = "ゲンシカク"
-
-[entries."核分裂"]
-reading = "カクブンレツ"
-
 [entries."核融合"]
 reading = "カクユウゴウ"
-
-[entries."分裂"]
-reading = "ブンレツ"
-
-[entries."分裂症"]
-reading = "ブンレツショウ"
-
-[entries."統合失調症"]
-reading = "トウゴウシッチョウショウ"
-
-[entries."統合失調"]
-reading = "トウゴウシッチョウ"
-
-[entries."失調"]
-reading = "シッチョウ"
-
-[entries."体調管理"]
-reading = "タイチョウカンリ"
-
-[entries."体調不良"]
-reading = "タイチョウフリョウ"
-
-[entries."不調"]
-reading = "フチョウ"
-
-[entries."好調"]
-reading = "コウチョウ"
-
-[entries."快調"]
-reading = "カイチョウ"
-
-[entries."順調"]
-reading = "ジュンチョウ"
-
-[entries."強調"]
-reading = "キョウチョウ"
-
-[entries."強調表現"]
-reading = "キョウチョウヒョウゲン"
-
-[entries."強調文"]
-reading = "キョウチョウブン"
-
-[entries."表現自由"]
-reading = "ヒョウゲンジユウ"
-
-[entries."表現規制"]
-reading = "ヒョウゲンキセイ"
-
-[entries."表現方法"]
-reading = "ヒョウゲンホウホウ"
 
 [entries."表現スタイル"]
 reading = "ヒョウゲンスタイル"
@@ -7091,56 +5786,8 @@ reading = "スタイリッシュ"
 [entries."スタイル抜群"]
 reading = "スタイルバツグン"
 
-[entries."抜群"]
-reading = "バツグン"
-
-[entries."抜群性"]
-reading = "バツグンセイ"
-
-[entries."群衆"]
-reading = "グンシュウ"
-
-[entries."群集"]
-reading = "グンシュウ"
-
-[entries."群集心理"]
-reading = "グンシュウシンリ"
-
-[entries."群集劇"]
-reading = "グンシュウゲキ"
-
-[entries."舞踏会"]
-reading = "ブトウカイ"
-
-[entries."舞踏"]
-reading = "ブトウ"
-
-[entries."舞踏家"]
-reading = "ブトウカ"
-
-[entries."踊子"]
-reading = "オドリコ"
-
-[entries."日本舞踊"]
-reading = "ニホンブヨウ"
-
-[entries."日舞"]
-reading = "ニチブ"
-
 [entries."コント"]
 reading = "コント"
-
-[entries."お笑い"]
-reading = "オワライ"
-
-[entries."お笑い芸人"]
-reading = "オワライゲイニン"
-
-[entries."芸能界"]
-reading = "ゲイノウカイ"
-
-[entries."芸能事務所"]
-reading = "ゲイノウジムショ"
 
 [entries."芸能プロダクション"]
 reading = "ゲイノウプロダクション"
@@ -7148,53 +5795,11 @@ reading = "ゲイノウプロダクション"
 [entries."プロダクション"]
 reading = "プロダクション"
 
-[entries."事務所所属"]
-reading = "ジムショショゾク"
-
-[entries."所属事務所"]
-reading = "ショゾクジムショ"
-
-[entries."契約事務所"]
-reading = "ケイヤクジムショ"
-
-[entries."専属契約"]
-reading = "センゾクケイヤク"
-
-[entries."業務委託契約"]
-reading = "ギョウムイタクケイヤク"
-
-[entries."業務委託"]
-reading = "ギョウムイタク"
-
-[entries."請負契約"]
-reading = "ウケオイケイヤク"
-
-[entries."請負"]
-reading = "ウケオイ"
-
-[entries."請負業"]
-reading = "ウケオイギョウ"
-
-[entries."請負業者"]
-reading = "ウケオイギョウシャ"
-
-[entries."下請"]
-reading = "シタウケ"
-
-[entries."下請業者"]
-reading = "シタウケギョウシャ"
-
 [entries."元請"]
 reading = "モトウケ"
 
 [entries."元請業者"]
 reading = "モトウケギョウシャ"
-
-[entries."親会社"]
-reading = "オヤガイシャ"
-
-[entries."子会社"]
-reading = "コガイシャ"
 
 [entries."関連会社"]
 reading = "カンレンガイシャ"
@@ -7208,23 +5813,8 @@ reading = "グループ"
 [entries."グループ企業"]
 reading = "グループキギョウ"
 
-[entries."親企業"]
-reading = "オヤキギョウ"
-
-[entries."子企業"]
-reading = "コキギョウ"
-
 [entries."持株会社"]
 reading = "モチカブガイシャ"
-
-[entries."持株"]
-reading = "モチカブ"
-
-[entries."株主代表"]
-reading = "カブヌシダイヒョウ"
-
-[entries."代表取締役社長"]
-reading = "ダイヒョウトリシマリヤクシャチョウ"
 
 [entries."代表執行役"]
 reading = "ダイヒョウシッコウヤク"
@@ -7232,137 +5822,14 @@ reading = "ダイヒョウシッコウヤク"
 [entries."執行役"]
 reading = "シッコウヤク"
 
-[entries."執行役員"]
-reading = "シッコウヤクイン"
-
-[entries."役員報酬"]
-reading = "ヤクインホウシュウ"
-
-[entries."報酬"]
-reading = "ホウシュウ"
-
-[entries."報酬体系"]
-reading = "ホウシュウタイケイ"
-
-[entries."給与体系"]
-reading = "キュウヨタイケイ"
-
 [entries."給与額"]
 reading = "キュウヨガク"
-
-[entries."基本給"]
-reading = "キホンキュウ"
-
-[entries."能力給"]
-reading = "ノウリョクキュウ"
-
-[entries."成果報酬"]
-reading = "セイカホウシュウ"
 
 [entries."成果物"]
 reading = "セイカブツ"
 
-[entries."成績表"]
-reading = "セイセキヒョウ"
-
-[entries."通知表"]
-reading = "ツウチヒョウ"
-
-[entries."通信簿"]
-reading = "ツウシンボ"
-
-[entries."成績優秀"]
-reading = "セイセキユウシュウ"
-
-[entries."成績不振"]
-reading = "セイセキフシン"
-
-[entries."不振"]
-reading = "フシン"
-
 [entries."スランプ"]
 reading = "スランプ"
-
-[entries."絶好調"]
-reading = "ゼッコウチョウ"
-
-[entries."絶不調"]
-reading = "ゼツフチョウ"
-
-[entries."絶対"]
-reading = "ゼッタイ"
-
-[entries."絶対値"]
-reading = "ゼッタイチ"
-
-[entries."相対"]
-reading = "ソウタイ"
-
-[entries."相対値"]
-reading = "ソウタイチ"
-
-[entries."相対的"]
-reading = "ソウタイテキ"
-
-[entries."絶対的"]
-reading = "ゼッタイテキ"
-
-[entries."絶対量"]
-reading = "ゼッタイリョウ"
-
-[entries."相対量"]
-reading = "ソウタイリョウ"
-
-[entries."相対速度"]
-reading = "ソウタイソクド"
-
-[entries."相対湿度"]
-reading = "ソウタイシツド"
-
-[entries."湿度計"]
-reading = "シツドケイ"
-
-[entries."温度計"]
-reading = "オンドケイ"
-
-[entries."気温計"]
-reading = "キオンケイ"
-
-[entries."脈拍計"]
-reading = "ミャクハクケイ"
-
-[entries."歩数計"]
-reading = "ホスウケイ"
-
-[entries."歩数"]
-reading = "ホスウ"
-
-[entries."歩数記録"]
-reading = "ホスウキロク"
-
-[entries."新記録"]
-reading = "シンキロク"
-
-[entries."記録樹立"]
-reading = "キロクジュリツ"
-
-[entries."樹齢"]
-reading = "ジュレイ"
-
-[entries."樹木"]
-reading = "ジュモク"
-
-[entries."樹皮"]
-reading = "ジュヒ"
-
-[entries."樹液"]
-reading = "ジュエキ"
-
-[entries."樹脂"]
-reading = "ジュシ"
-
-[entries."樹海"]
-reading = "ジュカイ"
 
 [entries."針葉樹林"]
 reading = "シンヨウジュリン"
@@ -7370,41 +5837,11 @@ reading = "シンヨウジュリン"
 [entries."広葉樹林"]
 reading = "コウヨウジュリン"
 
-[entries."落葉樹林"]
-reading = "ラクヨウジュリン"
-
 [entries."常緑樹林"]
 reading = "ジョウリョクジュリン"
 
 [entries."照葉樹林"]
 reading = "ショウヨウジュリン"
-
-[entries."熱帯雨林"]
-reading = "ネッタイウリン"
-
-[entries."温帯雨林"]
-reading = "オンタイウリン"
-
-[entries."雨林"]
-reading = "ウリン"
-
-[entries."密林"]
-reading = "ミツリン"
-
-[entries."原生"]
-reading = "ゲンセイ"
-
-[entries."原生動物"]
-reading = "ゲンセイドウブツ"
-
-[entries."原生生物"]
-reading = "ゲンセイセイブツ"
-
-[entries."微生物"]
-reading = "ビセイブツ"
-
-[entries."細菌"]
-reading = "サイキン"
 
 [entries."ウイルス"]
 reading = "ウイルス"
@@ -7418,59 +5855,11 @@ reading = "サイボウカク"
 [entries."核膜"]
 reading = "カクマク"
 
-[entries."細胞質"]
-reading = "サイボウシツ"
-
 [entries."原形質"]
 reading = "ゲンケイシツ"
 
-[entries."細胞内"]
-reading = "サイボウナイ"
-
-[entries."細胞外"]
-reading = "サイボウガイ"
-
-[entries."細胞間"]
-reading = "サイボウカン"
-
-[entries."細胞間質"]
-reading = "サイボウカンシツ"
-
-[entries."組織液"]
-reading = "ソシキエキ"
-
 [entries."組織片"]
 reading = "ソシキヘン"
-
-[entries."器官"]
-reading = "キカン"
-
-[entries."器官系"]
-reading = "キカンケイ"
-
-[entries."循環器系"]
-reading = "ジュンカンキケイ"
-
-[entries."呼吸器"]
-reading = "コキュウキ"
-
-[entries."呼吸器系"]
-reading = "コキュウキケイ"
-
-[entries."消化器"]
-reading = "ショウカキ"
-
-[entries."消化器系"]
-reading = "ショウカキケイ"
-
-[entries."消化器官"]
-reading = "ショウカキカン"
-
-[entries."神経系"]
-reading = "シンケイケイ"
-
-[entries."神経細胞"]
-reading = "シンケイサイボウ"
 
 [entries."ニューロン"]
 reading = "ニューロン"
@@ -7478,320 +5867,17 @@ reading = "ニューロン"
 [entries."シナプス"]
 reading = "シナプス"
 
-[entries."脳神経"]
-reading = "ノウシンケイ"
-
-[entries."脳細胞"]
-reading = "ノウサイボウ"
-
-[entries."脳波"]
-reading = "ノウハ"
-
-[entries."脳波計"]
-reading = "ノウハケイ"
-
-[entries."脳出血"]
-reading = "ノウシュッケツ"
-
-[entries."出血"]
-reading = "シュッケツ"
-
-[entries."内出血"]
-reading = "ナイシュッケツ"
-
-[entries."止血"]
-reading = "シケツ"
-
-[entries."鼻血"]
-reading = "ハナヂ"
-
 [entries."血止"]
 reading = "チドメ"
-
-[entries."血止め"]
-reading = "チドメ"
-
-[entries."止血法"]
-reading = "シケツホウ"
-
-[entries."応急処置"]
-reading = "オウキュウショチ"
-
-[entries."応急"]
-reading = "オウキュウ"
-
-[entries."救急処置"]
-reading = "キュウキュウショチ"
-
-[entries."救急車要請"]
-reading = "キュウキュウシャヨウセイ"
-
-[entries."要請"]
-reading = "ヨウセイ"
-
-[entries."要請書"]
-reading = "ヨウセイショ"
-
-[entries."要請文"]
-reading = "ヨウセイブン"
-
-[entries."要望"]
-reading = "ヨウボウ"
-
-[entries."要望書"]
-reading = "ヨウボウショ"
-
-[entries."要望事項"]
-reading = "ヨウボウジコウ"
-
-[entries."意見書"]
-reading = "イケンショ"
-
-[entries."意見表明"]
-reading = "イケンヒョウメイ"
-
-[entries."表明"]
-reading = "ヒョウメイ"
-
-[entries."声明"]
-reading = "セイメイ"
-
-[entries."声明文"]
-reading = "セイメイブン"
-
-[entries."共同声明"]
-reading = "キョウドウセイメイ"
-
-[entries."共同記者会見"]
-reading = "キョウドウキシャカイケン"
-
-[entries."記者会見"]
-reading = "キシャカイケン"
-
-[entries."記者発表"]
-reading = "キシャハッピョウ"
 
 [entries."プレスリリース"]
 reading = "プレスリリース"
 
-[entries."広報誌"]
-reading = "コウホウシ"
-
-[entries."広報"]
-reading = "コウホウ"
-
-[entries."広報部"]
-reading = "コウホウブ"
-
-[entries."広報担当"]
-reading = "コウホウタントウ"
-
-[entries."人事部"]
-reading = "ジンジブ"
-
-[entries."人事"]
-reading = "ジンジ"
-
-[entries."人事課"]
-reading = "ジンジカ"
-
-[entries."総務部"]
-reading = "ソウムブ"
-
-[entries."総務"]
-reading = "ソウム"
-
-[entries."総務課"]
-reading = "ソウムカ"
-
-[entries."経理部"]
-reading = "ケイリブ"
-
-[entries."経理課"]
-reading = "ケイリカ"
-
-[entries."営業部"]
-reading = "エイギョウブ"
-
-[entries."営業課"]
-reading = "エイギョウカ"
-
-[entries."営業活動"]
-reading = "エイギョウカツドウ"
-
-[entries."営業時間"]
-reading = "エイギョウジカン"
-
-[entries."法務部"]
-reading = "ホウムブ"
-
-[entries."法務"]
-reading = "ホウム"
-
-[entries."法務課"]
-reading = "ホウムカ"
-
-[entries."財務部"]
-reading = "ザイムブ"
-
-[entries."財務"]
-reading = "ザイム"
-
-[entries."財務課"]
-reading = "ザイムカ"
-
-[entries."財務諸表"]
-reading = "ザイムショヒョウ"
-
-[entries."財務状況"]
-reading = "ザイムジョウキョウ"
-
-[entries."財政"]
-reading = "ザイセイ"
-
-[entries."財政赤字"]
-reading = "ザイセイアカジ"
-
-[entries."赤字"]
-reading = "アカジ"
-
-[entries."黒字"]
-reading = "クロジ"
-
-[entries."赤字決算"]
-reading = "アカジケッサン"
-
-[entries."黒字決算"]
-reading = "クロジケッサン"
-
-[entries."決算書"]
-reading = "ケッサンショ"
-
-[entries."決算報告"]
-reading = "ケッサンホウコク"
-
-[entries."中間決算"]
-reading = "チュウカンケッサン"
-
-[entries."本決算"]
-reading = "ホンケッサン"
-
-[entries."仮決算"]
-reading = "カリケッサン"
-
-[entries."四半期"]
-reading = "シハンキ"
-
-[entries."四半期決算"]
-reading = "シハンキケッサン"
-
-[entries."半期"]
-reading = "ハンキ"
-
-[entries."通期"]
-reading = "ツウキ"
-
-[entries."通期決算"]
-reading = "ツウキケッサン"
-
 [entries."業績見通"]
 reading = "ギョウセキミトオシ"
 
-[entries."業績予想"]
-reading = "ギョウセキヨソウ"
-
-[entries."業績悪化"]
-reading = "ギョウセキアッカ"
-
-[entries."悪化"]
-reading = "アッカ"
-
-[entries."好転"]
-reading = "コウテン"
-
-[entries."回復"]
-reading = "カイフク"
-
-[entries."回復傾向"]
-reading = "カイフクケイコウ"
-
-[entries."低迷"]
-reading = "テイメイ"
-
-[entries."低迷状態"]
-reading = "テイメイジョウタイ"
-
-[entries."状態異常"]
-reading = "ジョウタイイジョウ"
-
-[entries."異常気象"]
-reading = "イジョウキショウ"
-
-[entries."異常事態"]
-reading = "イジョウジタイ"
-
-[entries."異常停止"]
-reading = "イジョウテイシ"
-
-[entries."停止信号"]
-reading = "テイシシンゴウ"
-
-[entries."信号無視"]
-reading = "シンゴウムシ"
-
-[entries."速度違反"]
-reading = "ソクドイハン"
-
-[entries."速度超過"]
-reading = "ソクドチョウカ"
-
-[entries."超過料金"]
-reading = "チョウカリョウキン"
-
-[entries."追加料金"]
-reading = "ツイカリョウキン"
-
-[entries."基本料金"]
-reading = "キホンリョウキン"
-
-[entries."基本料"]
-reading = "キホンリョウ"
-
-[entries."従量制"]
-reading = "ジュウリョウセイ"
-
-[entries."従量"]
-reading = "ジュウリョウ"
-
-[entries."従量課金"]
-reading = "ジュウリョウカキン"
-
-[entries."課金"]
-reading = "カキン"
-
-[entries."課金制"]
-reading = "カキンセイ"
-
-[entries."基本課金"]
-reading = "キホンカキン"
-
-[entries."追加課金"]
-reading = "ツイカカキン"
-
-[entries."月額課金"]
-reading = "ゲツガクカキン"
-
-[entries."年額"]
-reading = "ネンガク"
-
-[entries."月額"]
-reading = "ゲツガク"
-
 [entries."週額"]
 reading = "シュウガク"
-
-[entries."日額"]
-reading = "ニチガク"
 
 [entries."時間額"]
 reading = "ジカンガク"
@@ -7808,26 +5894,8 @@ reading = "ゲッキュウガク"
 [entries."年俸額"]
 reading = "ネンポウガク"
 
-[entries."年俸"]
-reading = "ネンポウ"
-
-[entries."俸給"]
-reading = "ホウキュウ"
-
-[entries."給金"]
-reading = "キュウキン"
-
-[entries."給銀"]
-reading = "キュウギン"
-
-[entries."給仕"]
-reading = "キュウジ"
-
 [entries."給仕係"]
 reading = "キュウジガカリ"
-
-[entries."給仕長"]
-reading = "キュウジチョウ"
 
 [entries."給士"]
 reading = "キュウジ"
@@ -7850,47 +5918,8 @@ reading = "スタッフ"
 [entries."スタッフ募集"]
 reading = "スタッフボシュウ"
 
-[entries."募集要項"]
-reading = "ボシュウヨウコウ"
-
-[entries."募集人数"]
-reading = "ボシュウニンズウ"
-
-[entries."募集人員"]
-reading = "ボシュウジンイン"
-
-[entries."人員"]
-reading = "ジンイン"
-
-[entries."人員配置"]
-reading = "ジンインハイチ"
-
-[entries."人員削減"]
-reading = "ジンインサクゲン"
-
-[entries."削減"]
-reading = "サクゲン"
-
-[entries."削減策"]
-reading = "サクゲンサク"
-
-[entries."削減目標"]
-reading = "サクゲンモクヒョウ"
-
-[entries."目標"]
-reading = "モクヒョウ"
-
-[entries."目標値"]
-reading = "モクヒョウチ"
-
 [entries."目標額"]
 reading = "モクヒョウガク"
-
-[entries."目標達成"]
-reading = "モクヒョウタッセイ"
-
-[entries."達成目標"]
-reading = "タッセイモクヒョウ"
 
 [entries."未達"]
 reading = "ミタツ"
@@ -7904,36 +5933,6 @@ reading = "ミタッセイリツ"
 [entries."未到達"]
 reading = "ミトウタツ"
 
-[entries."到達点"]
-reading = "トウタツテン"
-
-[entries."到達目標"]
-reading = "トウタツモクヒョウ"
-
-[entries."到達地点"]
-reading = "トウタツチテン"
-
-[entries."地点"]
-reading = "チテン"
-
-[entries."地点間"]
-reading = "チテンカン"
-
-[entries."地点別"]
-reading = "チテンベツ"
-
-[entries."出発地点"]
-reading = "シュッパツチテン"
-
-[entries."到着地点"]
-reading = "トウチャクチテン"
-
-[entries."中継地点"]
-reading = "チュウケイチテン"
-
-[entries."経由地点"]
-reading = "ケイユチテン"
-
 [entries."経由地"]
 reading = "ケイユチ"
 
@@ -7943,173 +5942,26 @@ reading = "ケイユビン"
 [entries."直行便"]
 reading = "チョッコウビン"
 
-[entries."直行"]
-reading = "チョッコウ"
-
 [entries."直行便利用"]
 reading = "チョッコウビンリヨウ"
-
-[entries."利用回数"]
-reading = "リヨウカイスウ"
-
-[entries."利用頻度"]
-reading = "リヨウヒンド"
-
-[entries."頻度"]
-reading = "ヒンド"
-
-[entries."頻度分布"]
-reading = "ヒンドブンプ"
-
-[entries."分布図"]
-reading = "ブンプズ"
-
-[entries."分布範囲"]
-reading = "ブンプハンイ"
-
-[entries."分布域"]
-reading = "ブンプイキ"
-
-[entries."生息域"]
-reading = "セイソクイキ"
-
-[entries."生息"]
-reading = "セイソク"
 
 [entries."生息地"]
 reading = "セイソクチ"
 
-[entries."生息環境"]
-reading = "セイソクカンキョウ"
-
-[entries."生息数"]
-reading = "セイソクスウ"
-
-[entries."個体数"]
-reading = "コタイスウ"
-
-[entries."個体"]
-reading = "コタイ"
-
-[entries."個体識別"]
-reading = "コタイシキベツ"
-
-[entries."識別番号"]
-reading = "シキベツバンゴウ"
-
-[entries."個体差"]
-reading = "コタイサ"
-
-[entries."個体群"]
-reading = "コタイグン"
-
-[entries."群落"]
-reading = "グンラク"
-
-[entries."群生"]
-reading = "グンセイ"
-
-[entries."群れ"]
-reading = "ムレ"
-
-[entries."家畜"]
-reading = "カチク"
-
-[entries."家禽"]
-reading = "カキン"
-
-[entries."畜産"]
-reading = "チクサン"
-
 [entries."畜産業"]
 reading = "チクサンギョウ"
-
-[entries."酪農"]
-reading = "ラクノウ"
-
-[entries."酪農家"]
-reading = "ラクノウカ"
-
-[entries."養鶏"]
-reading = "ヨウケイ"
-
-[entries."養鶏場"]
-reading = "ヨウケイジョウ"
-
-[entries."養豚"]
-reading = "ヨウトン"
-
-[entries."養豚場"]
-reading = "ヨウトンジョウ"
 
 [entries."養牛"]
 reading = "ヨウギュウ"
 
-[entries."養蜂"]
-reading = "ヨウホウ"
-
-[entries."蜂蜜"]
-reading = "ハチミツ"
-
-[entries."蜜蜂"]
-reading = "ミツバチ"
-
-[entries."熊蜂"]
-reading = "クマバチ"
-
 [entries."蜘蛛の巣"]
 reading = "クモノス"
-
-[entries."甲虫"]
-reading = "コウチュウ"
-
-[entries."昆虫採集"]
-reading = "コンチュウサイシュウ"
-
-[entries."採集"]
-reading = "サイシュウ"
 
 [entries."標本箱"]
 reading = "ヒョウホンバコ"
 
-[entries."博物誌"]
-reading = "ハクブツシ"
-
-[entries."博物学"]
-reading = "ハクブツガク"
-
-[entries."古生物"]
-reading = "コセイブツ"
-
-[entries."古生物学"]
-reading = "コセイブツガク"
-
-[entries."化石"]
-reading = "カセキ"
-
-[entries."化石燃料"]
-reading = "カセキネンリョウ"
-
-[entries."燃料"]
-reading = "ネンリョウ"
-
-[entries."燃料費"]
-reading = "ネンリョウヒ"
-
-[entries."燃費"]
-reading = "ネンピ"
-
-[entries."燃費効率"]
-reading = "ネンピコウリツ"
-
 [entries."省燃費"]
 reading = "ショウネンピ"
-
-[entries."低燃費"]
-reading = "テイネンピ"
-
-[entries."高燃費"]
-reading = "コウネンピ"
 
 [entries."ハイブリッド"]
 reading = "ハイブリッド"
@@ -8117,20 +5969,11 @@ reading = "ハイブリッド"
 [entries."ハイブリッド車"]
 reading = "ハイブリッドシャ"
 
-[entries."電気自動車"]
-reading = "デンキジドウシャ"
-
 [entries."ガソリン車"]
 reading = "ガソリンシャ"
 
 [entries."ディーゼル車"]
 reading = "ディーゼルシャ"
-
-[entries."水素自動車"]
-reading = "スイソジドウシャ"
-
-[entries."燃料電池車"]
-reading = "ネンリョウデンチシャ"
 
 [entries."電気バス"]
 reading = "デンキバス"
@@ -8138,101 +5981,14 @@ reading = "デンキバス"
 [entries."ガソリンスタンド"]
 reading = "ガソリンスタンド"
 
-[entries."給油"]
-reading = "キュウユ"
-
-[entries."給油所"]
-reading = "キュウユショ"
-
-[entries."給油口"]
-reading = "キュウユコウ"
-
-[entries."洗車"]
-reading = "センシャ"
-
-[entries."洗車場"]
-reading = "センシャジョウ"
-
-[entries."洗車機"]
-reading = "センシャキ"
-
-[entries."車検"]
-reading = "シャケン"
-
 [entries."車検場"]
 reading = "シャケンバ"
-
-[entries."車検証"]
-reading = "シャケンショウ"
-
-[entries."車庫証明"]
-reading = "シャコショウメイ"
-
-[entries."車種"]
-reading = "シャシュ"
-
-[entries."車体"]
-reading = "シャタイ"
-
-[entries."車輪"]
-reading = "シャリン"
-
-[entries."車軸"]
-reading = "シャジク"
-
-[entries."車軸間"]
-reading = "シャジクカン"
-
-[entries."車幅"]
-reading = "シャハバ"
-
-[entries."車高"]
-reading = "シャコウ"
-
-[entries."車長"]
-reading = "シャチョウ"
-
-[entries."車重"]
-reading = "シャジュウ"
-
-[entries."車両重量"]
-reading = "シャリョウジュウリョウ"
-
-[entries."車両通行"]
-reading = "シャリョウツウコウ"
-
-[entries."通行料金"]
-reading = "ツウコウリョウキン"
-
-[entries."高速料金"]
-reading = "コウソクリョウキン"
-
-[entries."有料道路"]
-reading = "ユウリョウドウロ"
-
-[entries."無料道路"]
-reading = "ムリョウドウロ"
-
-[entries."一般道路"]
-reading = "イッパンドウロ"
 
 [entries."町道"]
 reading = "チョウドウ"
 
 [entries."村道"]
 reading = "ソンドウ"
-
-[entries."区道"]
-reading = "クドウ"
-
-[entries."都道"]
-reading = "トドウ"
-
-[entries."府道"]
-reading = "フドウ"
-
-[entries."高速道"]
-reading = "コウソクドウ"
 
 [entries."高速道路網"]
 reading = "コウソクドウロモウ"
@@ -8249,32 +6005,8 @@ reading = "デンリョクモウ"
 [entries."ガス網"]
 reading = "ガスモウ"
 
-[entries."網羅"]
-reading = "モウラ"
-
-[entries."網羅的"]
-reading = "モウラテキ"
-
-[entries."網状"]
-reading = "モウジョウ"
-
-[entries."網目"]
-reading = "アミメ"
-
 [entries."網目状"]
 reading = "アミメジョウ"
-
-[entries."網目模様"]
-reading = "アミメモヨウ"
-
-[entries."模様"]
-reading = "モヨウ"
-
-[entries."模様替"]
-reading = "モヨウガエ"
-
-[entries."模様替え"]
-reading = "モヨウガエ"
 
 [entries."配置換"]
 reading = "ハイチガエ"
@@ -8282,20 +6014,8 @@ reading = "ハイチガエ"
 [entries."配置換え"]
 reading = "ハイチガエ"
 
-[entries."配置転換"]
-reading = "ハイチテンカン"
-
-[entries."人事異動"]
-reading = "ジンジイドウ"
-
-[entries."異動"]
-reading = "イドウ"
-
 [entries."異動願"]
 reading = "イドウネガイ"
-
-[entries."願書"]
-reading = "ガンショ"
 
 [entries."お願"]
 reading = "オネガイ"
@@ -8306,59 +6026,11 @@ reading = "オネガイ"
 [entries."御願い"]
 reading = "オネガイ"
 
-[entries."お願い"]
-reading = "オネガイ"
-
 [entries."御挨拶"]
-reading = "ゴアイサツ"
-
-[entries."ご挨拶"]
 reading = "ゴアイサツ"
 
 [entries."挨拶状"]
 reading = "アイサツジョウ"
-
-[entries."挨拶文"]
-reading = "アイサツブン"
-
-[entries."朝の挨拶"]
-reading = "アサノアイサツ"
-
-[entries."夜の挨拶"]
-reading = "ヨルノアイサツ"
-
-[entries."朝挨拶"]
-reading = "アサアイサツ"
-
-[entries."夜挨拶"]
-reading = "ヨルアイサツ"
-
-[entries."昼挨拶"]
-reading = "ヒルアイサツ"
-
-[entries."別れ際"]
-reading = "ワカレギワ"
-
-[entries."別れ"]
-reading = "ワカレ"
-
-[entries."別れ話"]
-reading = "ワカレバナシ"
-
-[entries."別れの挨拶"]
-reading = "ワカレノアイサツ"
-
-[entries."さよなら"]
-reading = "サヨナラ"
-
-[entries."さようなら"]
-reading = "サヨウナラ"
-
-[entries."ごきげんよう"]
-reading = "ゴキゲンヨウ"
-
-[entries."ご機嫌"]
-reading = "ゴキゲン"
 
 [entries."機嫌伺"]
 reading = "キゲンウカガイ"
@@ -8366,131 +6038,20 @@ reading = "キゲンウカガイ"
 [entries."機嫌取"]
 reading = "キゲントリ"
 
-[entries."ご機嫌取り"]
-reading = "ゴキゲントリ"
-
-[entries."お世辞"]
-reading = "オセジ"
-
-[entries."世辞"]
-reading = "セジ"
-
-[entries."お礼"]
-reading = "オレイ"
-
-[entries."返礼"]
-reading = "ヘンレイ"
-
-[entries."答礼"]
-reading = "トウレイ"
-
-[entries."お返事"]
-reading = "オヘンジ"
-
 [entries."御返事"]
 reading = "ゴヘンジ"
-
-[entries."ご返事"]
-reading = "ゴヘンジ"
-
-[entries."返書"]
-reading = "ヘンショ"
-
-[entries."書状"]
-reading = "ショジョウ"
-
-[entries."書簡"]
-reading = "ショカン"
-
-[entries."往復書簡"]
-reading = "オウフクショカン"
-
-[entries."往復はがき"]
-reading = "オウフクハガキ"
-
-[entries."往復切符"]
-reading = "オウフクキップ"
-
-[entries."往復券"]
-reading = "オウフクケン"
-
-[entries."片道切符"]
-reading = "カタミチキップ"
-
-[entries."片道券"]
-reading = "カタミチケン"
-
-[entries."往復"]
-reading = "オウフク"
-
-[entries."復路"]
-reading = "フクロ"
-
-[entries."往路"]
-reading = "オウロ"
-
-[entries."道中"]
-reading = "ドウチュウ"
-
-[entries."道中記"]
-reading = "ドウチュウキ"
-
-[entries."旅日記"]
-reading = "タビニッキ"
-
-[entries."紀行"]
-reading = "キコウ"
-
-[entries."旅情"]
-reading = "リョジョウ"
-
-[entries."旅愁"]
-reading = "リョシュウ"
-
-[entries."故郷"]
-reading = "コキョウ"
-
-[entries."古里"]
-reading = "フルサト"
-
-[entries."本籍"]
-reading = "ホンセキ"
 
 [entries."本籍地"]
 reading = "ホンセキチ"
 
-[entries."現住所"]
-reading = "ゲンジュウショ"
-
-[entries."旧住所"]
-reading = "キュウジュウショ"
-
-[entries."住所変更"]
-reading = "ジュウショヘンコウ"
-
-[entries."転居"]
-reading = "テンキョ"
-
 [entries."転居届"]
 reading = "テンキョトドケ"
-
-[entries."転入"]
-reading = "テンニュウ"
 
 [entries."転入届"]
 reading = "テンニュウトドケ"
 
-[entries."転出"]
-reading = "テンシュツ"
-
 [entries."転出届"]
 reading = "テンシュツトドケ"
-
-[entries."入居"]
-reading = "ニュウキョ"
-
-[entries."退去"]
-reading = "タイキョ"
 
 [entries."退去届"]
 reading = "タイキョトドケ"
@@ -8507,119 +6068,8 @@ reading = "ケイヤクビ"
 [entries."解約日"]
 reading = "カイヤクビ"
 
-[entries."契約期間内"]
-reading = "ケイヤクキカンナイ"
-
-[entries."契約期間外"]
-reading = "ケイヤクキカンガイ"
-
-[entries."有効期間"]
-reading = "ユウコウキカン"
-
-[entries."有効期限"]
-reading = "ユウコウキゲン"
-
-[entries."有効性"]
-reading = "ユウコウセイ"
-
-[entries."無効性"]
-reading = "ムコウセイ"
-
-[entries."適用条件"]
-reading = "テキヨウジョウケン"
-
-[entries."発効"]
-reading = "ハッコウ"
-
-[entries."失効"]
-reading = "シッコウ"
-
-[entries."時効"]
-reading = "ジコウ"
-
-[entries."時効消滅"]
-reading = "ジコウショウメツ"
-
-[entries."消滅"]
-reading = "ショウメツ"
-
-[entries."消失"]
-reading = "ショウシツ"
-
-[entries."喪失"]
-reading = "ソウシツ"
-
-[entries."喪失感"]
-reading = "ソウシツカン"
-
-[entries."失う"]
-reading = "ウシナウ"
-
-[entries."失う恐怖"]
-reading = "ウシナウキョウフ"
-
-[entries."恐怖心"]
-reading = "キョウフシン"
-
-[entries."恐怖症"]
-reading = "キョウフショウ"
-
-[entries."高所恐怖症"]
-reading = "コウショキョウフショウ"
-
-[entries."閉所恐怖症"]
-reading = "ヘイショキョウフショウ"
-
-[entries."広場恐怖症"]
-reading = "ヒロバキョウフショウ"
-
-[entries."社会恐怖症"]
-reading = "シャカイキョウフショウ"
-
-[entries."対人恐怖症"]
-reading = "タイジンキョウフショウ"
-
-[entries."不安症"]
-reading = "フアンショウ"
-
-[entries."不安要素"]
-reading = "フアンヨウソ"
-
-[entries."要素技術"]
-reading = "ヨウソギジュツ"
-
-[entries."要素分解"]
-reading = "ヨウソブンカイ"
-
-[entries."分解能"]
-reading = "ブンカイノウ"
-
-[entries."解像度"]
-reading = "カイゾウド"
-
 [entries."解像"]
 reading = "カイゾウ"
-
-[entries."画素"]
-reading = "ガソ"
-
-[entries."画素数"]
-reading = "ガソスウ"
-
-[entries."画質"]
-reading = "ガシツ"
-
-[entries."高画質"]
-reading = "コウガシツ"
-
-[entries."低画質"]
-reading = "テイガシツ"
-
-[entries."画面表示"]
-reading = "ガメンヒョウジ"
-
-[entries."画面解像度"]
-reading = "ガメンカイゾウド"
 
 [entries."モニター"]
 reading = "モニター"
@@ -8629,12 +6079,6 @@ reading = "ディスプレイ"
 
 [entries."ディスプレイ表示"]
 reading = "ディスプレイヒョウジ"
-
-[entries."液晶"]
-reading = "エキショウ"
-
-[entries."液晶画面"]
-reading = "エキショウガメン"
 
 [entries."液晶ディスプレイ"]
 reading = "エキショウディスプレイ"
@@ -8648,68 +6092,14 @@ reading = "プラズマ"
 [entries."プラズマディスプレイ"]
 reading = "プラズマディスプレイ"
 
-[entries."ブラウン管"]
-reading = "ブラウンカン"
-
 [entries."真空管"]
 reading = "シンクウカン"
-
-[entries."真空"]
-reading = "シンクウ"
-
-[entries."真空状態"]
-reading = "シンクウジョウタイ"
-
-[entries."真空保存"]
-reading = "シンクウホゾン"
-
-[entries."保存"]
-reading = "ホゾン"
 
 [entries."保存版"]
 reading = "ホゾンバン"
 
-[entries."保存期間"]
-reading = "ホゾンキカン"
-
-[entries."保存方法"]
-reading = "ホゾンホウホウ"
-
-[entries."保存料"]
-reading = "ホゾンリョウ"
-
 [entries."無添加"]
 reading = "ムテンカ"
-
-[entries."添加"]
-reading = "テンカ"
-
-[entries."添加物"]
-reading = "テンカブツ"
-
-[entries."食品添加物"]
-reading = "ショクヒンテンカブツ"
-
-[entries."食品衛生"]
-reading = "ショクヒンエイセイ"
-
-[entries."衛生"]
-reading = "エイセイ"
-
-[entries."衛生面"]
-reading = "エイセイメン"
-
-[entries."衛生管理"]
-reading = "エイセイカンリ"
-
-[entries."衛生士"]
-reading = "エイセイシ"
-
-[entries."歯科衛生士"]
-reading = "シカエイセイシ"
-
-[entries."准看護師"]
-reading = "ジュンカンゴシ"
 
 [entries."保健師"]
 reading = "ホケンシ"
@@ -8717,284 +6107,23 @@ reading = "ホケンシ"
 [entries."助産師"]
 reading = "ジョサンシ"
 
-[entries."栄養士"]
-reading = "エイヨウシ"
-
-[entries."管理栄養士"]
-reading = "カンリエイヨウシ"
-
-[entries."栄養"]
-reading = "エイヨウ"
-
-[entries."栄養価"]
-reading = "エイヨウカ"
-
-[entries."栄養素"]
-reading = "エイヨウソ"
-
-[entries."栄養失調"]
-reading = "エイヨウシッチョウ"
-
-[entries."栄養補給"]
-reading = "エイヨウホキュウ"
-
-[entries."補給"]
-reading = "ホキュウ"
-
 [entries."補給品"]
 reading = "ホキュウヒン"
-
-[entries."補給線"]
-reading = "ホキュウセン"
 
 [entries."補給路"]
 reading = "ホキュウロ"
 
-[entries."補給基地"]
-reading = "ホキュウキチ"
-
-[entries."基地"]
-reading = "キチ"
-
-[entries."拠点基地"]
-reading = "キョテンキチ"
-
-[entries."本基地"]
-reading = "ホンキチ"
-
-[entries."前線基地"]
-reading = "ゼンセンキチ"
-
-[entries."作戦基地"]
-reading = "サクセンキチ"
-
-[entries."軍事基地"]
-reading = "グンジキチ"
-
-[entries."軍事力"]
-reading = "グンジリョク"
-
-[entries."軍備拡張"]
-reading = "グンビカクチョウ"
-
-[entries."軍縮交渉"]
-reading = "グンシュクコウショウ"
-
-[entries."核軍縮"]
-reading = "カクグンシュク"
-
-[entries."軍部"]
-reading = "グンブ"
-
-[entries."陸軍"]
-reading = "リクグン"
-
-[entries."海軍"]
-reading = "カイグン"
-
-[entries."空軍"]
-reading = "クウグン"
-
-[entries."自衛隊"]
-reading = "ジエイタイ"
-
-[entries."自衛官"]
-reading = "ジエイカン"
-
-[entries."陸自"]
-reading = "リクジ"
-
 [entries."海自"]
 reading = "カイジ"
-
-[entries."空自"]
-reading = "クウジ"
-
-[entries."都道府県警察"]
-reading = "トドウフケンケイサツ"
-
-[entries."警視庁"]
-reading = "ケイシチョウ"
-
-[entries."消防庁"]
-reading = "ショウボウチョウ"
-
-[entries."産業界"]
-reading = "サンギョウカイ"
-
-[entries."産業構造"]
-reading = "サンギョウコウゾウ"
-
-[entries."産業革命"]
-reading = "サンギョウカクメイ"
-
-[entries."革命"]
-reading = "カクメイ"
-
-[entries."革命家"]
-reading = "カクメイカ"
-
-[entries."革命派"]
-reading = "カクメイハ"
 
 [entries."反革命"]
 reading = "ハンカクメイ"
 
-[entries."産業政策"]
-reading = "サンギョウセイサク"
-
-[entries."政策決定"]
-reading = "セイサクケッテイ"
-
-[entries."政策提言"]
-reading = "セイサクテイゲン"
-
-[entries."提言書"]
-reading = "テイゲンショ"
-
-[entries."提案書"]
-reading = "テイアンショ"
-
-[entries."提案書類"]
-reading = "テイアンショルイ"
-
-[entries."書類審査"]
-reading = "ショルイシンサ"
-
-[entries."審査基準"]
-reading = "シンサキジュン"
-
-[entries."審査結果"]
-reading = "シンサケッカ"
-
-[entries."審査員"]
-reading = "シンサイン"
-
-[entries."審査委員"]
-reading = "シンサイイン"
-
-[entries."審査委員会"]
-reading = "シンサイインカイ"
-
-[entries."評価委員"]
-reading = "ヒョウカイイン"
-
-[entries."評価委員会"]
-reading = "ヒョウカイインカイ"
-
-[entries."監査委員"]
-reading = "カンサイイン"
-
-[entries."監査委員会"]
-reading = "カンサイインカイ"
-
-[entries."監査法人"]
-reading = "カンサホウジン"
-
 [entries."監査人"]
 reading = "カンサニン"
 
-[entries."監査"]
-reading = "カンサ"
-
-[entries."監査報告"]
-reading = "カンサホウコク"
-
-[entries."監査結果"]
-reading = "カンサケッカ"
-
-[entries."内部監査"]
-reading = "ナイブカンサ"
-
-[entries."外部監査"]
-reading = "ガイブカンサ"
-
-[entries."会計監査"]
-reading = "カイケイカンサ"
-
-[entries."業務監査"]
-reading = "ギョウムカンサ"
-
-[entries."財務監査"]
-reading = "ザイムカンサ"
-
-[entries."税務監査"]
-reading = "ゼイムカンサ"
-
-[entries."税務調査"]
-reading = "ゼイムチョウサ"
-
-[entries."税務署"]
-reading = "ゼイムショ"
-
-[entries."税務官"]
-reading = "ゼイムカン"
-
-[entries."税理士"]
-reading = "ゼイリシ"
-
-[entries."公認会計士"]
-reading = "コウニンカイケイシ"
-
-[entries."公認資格"]
-reading = "コウニンシカク"
-
-[entries."国家資格"]
-reading = "コッカシカク"
-
-[entries."国家試験"]
-reading = "コッカシケン"
-
-[entries."地方公務員"]
-reading = "チホウコウムイン"
-
-[entries."公務員試験"]
-reading = "コウムインシケン"
-
-[entries."公務員給与"]
-reading = "コウムインキュウヨ"
-
-[entries."公務員制度"]
-reading = "コウムインセイド"
-
-[entries."公務員法"]
-reading = "コウムインホウ"
-
-[entries."法律名"]
-reading = "ホウリツメイ"
-
 [entries."法律案"]
 reading = "ホウリツアン"
-
-[entries."法案審議"]
-reading = "ホウアンシンギ"
-
-[entries."審議会"]
-reading = "シンギカイ"
-
-[entries."審議委員"]
-reading = "シンギイイン"
-
-[entries."審議委員会"]
-reading = "シンギイインカイ"
-
-[entries."審議結果"]
-reading = "シンギケッカ"
-
-[entries."審議報告"]
-reading = "シンギホウコク"
-
-[entries."報告内容"]
-reading = "ホウコクナイヨウ"
-
-[entries."報告書類"]
-reading = "ホウコクショルイ"
-
-[entries."報告会場"]
-reading = "ホウコクカイジョウ"
-
-[entries."会場予約"]
-reading = "カイジョウヨヤク"
 
 [entries."予約システム"]
 reading = "ヨヤクシステム"
@@ -9011,51 +6140,6 @@ reading = "システムコウチク"
 [entries."システム障害"]
 reading = "システムショウガイ"
 
-[entries."障害物"]
-reading = "ショウガイブツ"
-
-[entries."障害者"]
-reading = "ショウガイシャ"
-
-[entries."障害発生"]
-reading = "ショウガイハッセイ"
-
-[entries."発生件数"]
-reading = "ハッセイケンスウ"
-
-[entries."発生率"]
-reading = "ハッセイリツ"
-
-[entries."事故発生"]
-reading = "ジコハッセイ"
-
-[entries."事故率"]
-reading = "ジコリツ"
-
-[entries."事故件数"]
-reading = "ジコケンスウ"
-
-[entries."事故報告"]
-reading = "ジコホウコク"
-
-[entries."事故報告書"]
-reading = "ジコホウコクショ"
-
-[entries."事故処理"]
-reading = "ジコショリ"
-
-[entries."処理担当"]
-reading = "ショリタントウ"
-
-[entries."担当部門"]
-reading = "タントウブモン"
-
-[entries."担当課"]
-reading = "タントウカ"
-
-[entries."担当地域"]
-reading = "タントウチイキ"
-
 [entries."エリア"]
 reading = "エリア"
 
@@ -9065,269 +6149,11 @@ reading = "エリアガイ"
 [entries."エリア内"]
 reading = "エリアナイ"
 
-[entries."担当範囲"]
-reading = "タントウハンイ"
-
-[entries."範囲指定"]
-reading = "ハンイシテイ"
-
-[entries."範囲外"]
-reading = "ハンイガイ"
-
-[entries."範囲内"]
-reading = "ハンイナイ"
-
-[entries."適用範囲"]
-reading = "テキヨウハンイ"
-
-[entries."適用対象外"]
-reading = "テキヨウタイショウガイ"
-
-[entries."対象外"]
-reading = "タイショウガイ"
-
-[entries."対象内"]
-reading = "タイショウナイ"
-
-[entries."対象範囲"]
-reading = "タイショウハンイ"
-
-[entries."対象者数"]
-reading = "タイショウシャスウ"
-
-[entries."人数"]
-reading = "ニンズウ"
-
-[entries."利用人数"]
-reading = "リヨウニンズウ"
-
-[entries."参加人数"]
-reading = "サンカニンズウ"
-
-[entries."出席人数"]
-reading = "シュッセキニンズウ"
-
-[entries."欠席人数"]
-reading = "ケッセキニンズウ"
-
-[entries."参加者数"]
-reading = "サンカシャスウ"
-
-[entries."参加費"]
-reading = "サンカヒ"
-
-[entries."参加料"]
-reading = "サンカリョウ"
-
-[entries."参加費用"]
-reading = "サンカヒヨウ"
-
-[entries."費用負担"]
-reading = "ヒヨウフタン"
-
-[entries."全額負担"]
-reading = "ゼンガクフタン"
-
-[entries."一部負担"]
-reading = "イチブフタン"
-
-[entries."無料"]
-reading = "ムリョウ"
-
-[entries."有料"]
-reading = "ユウリョウ"
-
-[entries."有料化"]
-reading = "ユウリョウカ"
-
-[entries."無料化"]
-reading = "ムリョウカ"
-
-[entries."有償"]
-reading = "ユウショウ"
-
-[entries."無償"]
-reading = "ムショウ"
-
-[entries."有償提供"]
-reading = "ユウショウテイキョウ"
-
-[entries."無償提供"]
-reading = "ムショウテイキョウ"
-
-[entries."提供料金"]
-reading = "テイキョウリョウキン"
-
-[entries."提供範囲"]
-reading = "テイキョウハンイ"
-
-[entries."提供方法"]
-reading = "テイキョウホウホウ"
-
-[entries."提供時間"]
-reading = "テイキョウジカン"
-
-[entries."提供時間帯"]
-reading = "テイキョウジカンタイ"
-
-[entries."時間帯別"]
-reading = "ジカンタイベツ"
-
-[entries."時間帯別料金"]
-reading = "ジカンタイベツリョウキン"
-
-[entries."深夜料金"]
-reading = "シンヤリョウキン"
-
-[entries."早朝料金"]
-reading = "ソウチョウリョウキン"
-
-[entries."時間別"]
-reading = "ジカンベツ"
-
-[entries."曜日別"]
-reading = "ヨウビベツ"
-
-[entries."曜日"]
-reading = "ヨウビ"
-
-[entries."平日"]
-reading = "ヘイジツ"
-
-[entries."土日"]
-reading = "ドニチ"
-
-[entries."土曜"]
-reading = "ドヨウ"
-
-[entries."日曜"]
-reading = "ニチヨウ"
-
-[entries."月曜"]
-reading = "ゲツヨウ"
-
-[entries."火曜"]
-reading = "カヨウ"
-
-[entries."水曜"]
-reading = "スイヨウ"
-
-[entries."木曜"]
-reading = "モクヨウ"
-
-[entries."金曜"]
-reading = "キンヨウ"
-
-[entries."祝祭日"]
-reading = "シュクサイジツ"
-
-[entries."休祝日"]
-reading = "キュウシュクジツ"
-
-[entries."振替休日"]
-reading = "フリカエキュウジツ"
-
 [entries."振替日"]
 reading = "フリカエビ"
 
-[entries."代休"]
-reading = "ダイキュウ"
-
-[entries."有給"]
-reading = "ユウキュウ"
-
-[entries."有給休暇"]
-reading = "ユウキュウキュウカ"
-
-[entries."無給休暇"]
-reading = "ムキュウキュウカ"
-
-[entries."特別休暇"]
-reading = "トクベツキュウカ"
-
-[entries."忌引休暇"]
-reading = "キビキキュウカ"
-
-[entries."忌引"]
-reading = "キビキ"
-
-[entries."慶弔休暇"]
-reading = "ケイチョウキュウカ"
-
-[entries."慶事"]
-reading = "ケイジ"
-
 [entries."弔事"]
 reading = "チョウジ"
-
-[entries."冠婚葬祭"]
-reading = "カンコンソウサイ"
-
-[entries."結婚式"]
-reading = "ケッコンシキ"
-
-[entries."披露宴"]
-reading = "ヒロウエン"
-
-[entries."披露"]
-reading = "ヒロウ"
-
-[entries."新郎"]
-reading = "シンロウ"
-
-[entries."新婦"]
-reading = "シンプ"
-
-[entries."媒酌人"]
-reading = "バイシャクニン"
-
-[entries."媒酌"]
-reading = "バイシャク"
-
-[entries."媒介"]
-reading = "バイカイ"
-
-[entries."仲介"]
-reading = "チュウカイ"
-
-[entries."仲介業"]
-reading = "チュウカイギョウ"
-
-[entries."仲介業者"]
-reading = "チュウカイギョウシャ"
-
-[entries."仲介手数料"]
-reading = "チュウカイテスウリョウ"
-
-[entries."不動産仲介"]
-reading = "フドウサンチュウカイ"
-
-[entries."不動産業"]
-reading = "フドウサンギョウ"
-
-[entries."不動産屋"]
-reading = "フドウサンヤ"
-
-[entries."不動産売買"]
-reading = "フドウサンバイバイ"
-
-[entries."売買契約"]
-reading = "バイバイケイヤク"
-
-[entries."売買契約書"]
-reading = "バイバイケイヤクショ"
-
-[entries."契約書類"]
-reading = "ケイヤクショルイ"
-
-[entries."契約条件"]
-reading = "ケイヤクジョウケン"
-
-[entries."契約金額"]
-reading = "ケイヤクキンガク"
-
-[entries."契約期日"]
-reading = "ケイヤクキジツ"
 
 [entries."納期日"]
 reading = "ノウキビ"
@@ -9335,119 +6161,14 @@ reading = "ノウキビ"
 [entries."納品日"]
 reading = "ノウヒンビ"
 
-[entries."納品先"]
-reading = "ノウヒンサキ"
-
-[entries."納品物"]
-reading = "ノウヒンブツ"
-
-[entries."納入"]
-reading = "ノウニュウ"
-
-[entries."納入先"]
-reading = "ノウニュウサキ"
-
-[entries."納入業者"]
-reading = "ノウニュウギョウシャ"
-
-[entries."出荷量"]
-reading = "シュッカリョウ"
-
-[entries."出荷準備"]
-reading = "シュッカジュンビ"
-
-[entries."出荷検査"]
-reading = "シュッカケンサ"
-
-[entries."受入検査"]
-reading = "ウケイレケンサ"
-
-[entries."受入"]
-reading = "ウケイレ"
-
-[entries."受入先"]
-reading = "ウケイレサキ"
-
-[entries."受入態勢"]
-reading = "ウケイレタイセイ"
-
-[entries."態勢"]
-reading = "タイセイ"
-
-[entries."姿勢"]
-reading = "シセイ"
-
-[entries."姿見"]
-reading = "スガタミ"
-
 [entries."全身鏡"]
 reading = "ゼンシンキョウ"
-
-[entries."姿勢制御"]
-reading = "シセイセイギョ"
-
-[entries."体勢"]
-reading = "タイセイ"
 
 [entries."体勢崩"]
 reading = "タイセイクズ"
 
-[entries."崩れ"]
-reading = "クズレ"
-
-[entries."土砂崩れ"]
-reading = "ドシャクズレ"
-
-[entries."山崩"]
-reading = "ヤマクズレ"
-
-[entries."山崩れ"]
-reading = "ヤマクズレ"
-
 [entries."地滑"]
 reading = "ジスベリ"
-
-[entries."地滑り"]
-reading = "ジスベリ"
-
-[entries."土石流"]
-reading = "ドセキリュウ"
-
-[entries."水害"]
-reading = "スイガイ"
-
-[entries."冠水"]
-reading = "カンスイ"
-
-[entries."浸水"]
-reading = "シンスイ"
-
-[entries."浸水被害"]
-reading = "シンスイヒガイ"
-
-[entries."建物倒壊"]
-reading = "タテモノトウカイ"
-
-[entries."倒壊"]
-reading = "トウカイ"
-
-[entries."全壊"]
-reading = "ゼンカイ"
-
-[entries."半壊"]
-reading = "ハンカイ"
-
-[entries."一部損壊"]
-reading = "イチブソンカイ"
-
-[entries."損壊"]
-reading = "ソンカイ"
-
-[entries."損傷"]
-reading = "ソンショウ"
-
-[entries."損害"]
-reading = "ソンガイ"
 
 [entries."損害額"]
 reading = "ソンガイガク"
@@ -9455,89 +6176,17 @@ reading = "ソンガイガク"
 [entries."損失額"]
 reading = "ソンシツガク"
 
-[entries."利潤"]
-reading = "リジュン"
-
-[entries."純利益"]
-reading = "ジュンリエキ"
-
-[entries."純利"]
-reading = "ジュンリ"
-
 [entries."粗利"]
 reading = "アラリ"
 
 [entries."粗利益"]
 reading = "アラリエキ"
 
-[entries."売上総利益"]
-reading = "ウリアゲソウリエキ"
-
-[entries."売上原価"]
-reading = "ウリアゲゲンカ"
-
-[entries."販売数量"]
-reading = "ハンバイスウリョウ"
-
-[entries."出荷数量"]
-reading = "シュッカスウリョウ"
-
-[entries."在庫数量"]
-reading = "ザイコスウリョウ"
-
 [entries."在庫切"]
 reading = "ザイコギレ"
 
-[entries."在庫切れ"]
-reading = "ザイコギレ"
-
-[entries."在庫管理"]
-reading = "ザイコカンリ"
-
-[entries."在庫管理表"]
-reading = "ザイコカンリヒョウ"
-
 [entries."在庫管理システム"]
 reading = "ザイコカンリシステム"
-
-[entries."管理表"]
-reading = "カンリヒョウ"
-
-[entries."管理簿"]
-reading = "カンリボ"
-
-[entries."管理台帳"]
-reading = "カンリダイチョウ"
-
-[entries."台帳管理"]
-reading = "ダイチョウカンリ"
-
-[entries."帳簿管理"]
-reading = "チョウボカンリ"
-
-[entries."帳簿記入"]
-reading = "チョウボキニュウ"
-
-[entries."記入方法"]
-reading = "キニュウホウホウ"
-
-[entries."記入欄"]
-reading = "キニュウラン"
-
-[entries."記入例"]
-reading = "キニュウレイ"
-
-[entries."入力例"]
-reading = "ニュウリョクレイ"
-
-[entries."入力方法"]
-reading = "ニュウリョクホウホウ"
-
-[entries."入力欄"]
-reading = "ニュウリョクラン"
-
-[entries."入力規則"]
-reading = "ニュウリョクキソク"
 
 [entries."入力チェック"]
 reading = "ニュウリョクチェック"
@@ -9551,128 +6200,20 @@ reading = "データニュウリョク"
 [entries."データ入力作業"]
 reading = "データニュウリョクサギョウ"
 
-[entries."作業効率"]
-reading = "サギョウコウリツ"
-
-[entries."作業時間"]
-reading = "サギョウジカン"
-
-[entries."作業日数"]
-reading = "サギョウニッスウ"
-
-[entries."作業手順"]
-reading = "サギョウテジュン"
-
-[entries."作業完了"]
-reading = "サギョウカンリョウ"
-
-[entries."作業内容"]
-reading = "サギョウナイヨウ"
-
-[entries."作業内容変更"]
-reading = "サギョウナイヨウヘンコウ"
-
-[entries."内容変更"]
-reading = "ナイヨウヘンコウ"
-
-[entries."内容修正"]
-reading = "ナイヨウシュウセイ"
-
-[entries."修正"]
-reading = "シュウセイ"
-
 [entries."修正版"]
 reading = "シュウセイバン"
-
-[entries."修正点"]
-reading = "シュウセイテン"
 
 [entries."修正案"]
 reading = "シュウセイアン"
 
-[entries."修正後"]
-reading = "シュウセイゴ"
-
 [entries."修正前"]
 reading = "シュウセイマエ"
-
-[entries."修正履歴"]
-reading = "シュウセイリレキ"
-
-[entries."変更履歴"]
-reading = "ヘンコウリレキ"
-
-[entries."履歴管理"]
-reading = "リレキカンリ"
-
-[entries."更新履歴"]
-reading = "コウシンリレキ"
-
-[entries."更新日時"]
-reading = "コウシンニチジ"
-
-[entries."作成日時"]
-reading = "サクセイニチジ"
-
-[entries."作成者"]
-reading = "サクセイシャ"
-
-[entries."作成方法"]
-reading = "サクセイホウホウ"
-
-[entries."作成手順"]
-reading = "サクセイテジュン"
-
-[entries."手順書"]
-reading = "テジュンショ"
-
-[entries."手順書作成"]
-reading = "テジュンショサクセイ"
-
-[entries."書類作成"]
-reading = "ショルイサクセイ"
-
-[entries."書類作成代行"]
-reading = "ショルイサクセイダイコウ"
-
-[entries."代行業者"]
-reading = "ダイコウギョウシャ"
-
-[entries."業務代行"]
-reading = "ギョウムダイコウ"
-
-[entries."業務委託先"]
-reading = "ギョウムイタクサキ"
-
-[entries."委託先"]
-reading = "イタクサキ"
-
-[entries."委託契約書"]
-reading = "イタクケイヤクショ"
-
-[entries."契約解除通知"]
-reading = "ケイヤクカイジョツウチ"
-
-[entries."通知書"]
-reading = "ツウチショ"
-
-[entries."通知文"]
-reading = "ツウチブン"
 
 [entries."メール送信"]
 reading = "メールソウシン"
 
 [entries."送信日"]
 reading = "ソウシンビ"
-
-[entries."送信時刻"]
-reading = "ソウシンジコク"
-
-[entries."送信元"]
-reading = "ソウシンモト"
-
-[entries."送信先"]
-reading = "ソウシンサキ"
 
 [entries."送信者"]
 reading = "ソウシンシャ"
@@ -9683,9 +6224,6 @@ reading = "ジュシンシャ"
 [entries."受信日"]
 reading = "ジュシンビ"
 
-[entries."受信時刻"]
-reading = "ジュシンジコク"
-
 [entries."受信箱"]
 reading = "ジュシンバコ"
 
@@ -9694,15 +6232,6 @@ reading = "ソウシンバコ"
 
 [entries."迷惑メール"]
 reading = "メイワクメール"
-
-[entries."迷惑"]
-reading = "メイワク"
-
-[entries."迷惑行為"]
-reading = "メイワクコウイ"
-
-[entries."迷惑電話"]
-reading = "メイワクデンワ"
 
 [entries."迷惑メール対策"]
 reading = "メイワクメールタイサク"
@@ -9719,71 +6248,8 @@ reading = "ウイルスメール"
 [entries."ウイルス感染"]
 reading = "ウイルスカンセン"
 
-[entries."感染対策"]
-reading = "カンセンタイサク"
-
-[entries."感染防止"]
-reading = "カンセンボウシ"
-
-[entries."予防対策"]
-reading = "ヨボウタイサク"
-
-[entries."予防策"]
-reading = "ヨボウサク"
-
-[entries."対策本部"]
-reading = "タイサクホンブ"
-
-[entries."本部設置"]
-reading = "ホンブセッチ"
-
-[entries."設置場所"]
-reading = "セッチバショ"
-
-[entries."設置方法"]
-reading = "セッチホウホウ"
-
-[entries."設置作業"]
-reading = "セッチサギョウ"
-
-[entries."設置料金"]
-reading = "セッチリョウキン"
-
-[entries."工事費"]
-reading = "コウジヒ"
-
-[entries."工事料金"]
-reading = "コウジリョウキン"
-
-[entries."工事内容"]
-reading = "コウジナイヨウ"
-
-[entries."工事期間"]
-reading = "コウジキカン"
-
-[entries."工事日程"]
-reading = "コウジニッテイ"
-
-[entries."工事中"]
-reading = "コウジチュウ"
-
-[entries."工事完了"]
-reading = "コウジカンリョウ"
-
-[entries."完了報告"]
-reading = "カンリョウホウコク"
-
-[entries."完成度"]
-reading = "カンセイド"
-
-[entries."完成図"]
-reading = "カンセイズ"
-
 [entries."完成版"]
 reading = "カンセイバン"
-
-[entries."完成形"]
-reading = "カンセイケイ"
 
 [entries."完成品"]
 reading = "カンセイヒン"
@@ -9794,206 +6260,11 @@ reading = "ミカンセイ"
 [entries."半完成品"]
 reading = "ハンカンセイヒン"
 
-[entries."半製品"]
-reading = "ハンセイヒン"
-
-[entries."中間製品"]
-reading = "チュウカンセイヒン"
-
-[entries."最終製品"]
-reading = "サイシュウセイヒン"
-
-[entries."最終的"]
-reading = "サイシュウテキ"
-
-[entries."最終確認"]
-reading = "サイシュウカクニン"
-
-[entries."確認事項"]
-reading = "カクニンジコウ"
-
-[entries."事項別"]
-reading = "ジコウベツ"
-
-[entries."重要事項"]
-reading = "ジュウヨウジコウ"
-
-[entries."重要書類"]
-reading = "ジュウヨウショルイ"
-
-[entries."書類管理"]
-reading = "ショルイカンリ"
-
-[entries."書類整理"]
-reading = "ショルイセイリ"
-
-[entries."書類保管"]
-reading = "ショルイホカン"
-
-[entries."書類廃棄"]
-reading = "ショルイハイキ"
-
-[entries."廃棄処理"]
-reading = "ハイキショリ"
-
-[entries."廃棄処分"]
-reading = "ハイキショブン"
-
-[entries."処分方法"]
-reading = "ショブンホウホウ"
-
-[entries."処分対象"]
-reading = "ショブンタイショウ"
-
-[entries."廃棄対象"]
-reading = "ハイキタイショウ"
-
 [entries."廃棄日"]
 reading = "ハイキビ"
 
-[entries."廃棄場所"]
-reading = "ハイキバショ"
-
-[entries."廃棄方法"]
-reading = "ハイキホウホウ"
-
-[entries."廃棄業者"]
-reading = "ハイキギョウシャ"
-
-[entries."処理業者"]
-reading = "ショリギョウシャ"
-
-[entries."業者選定"]
-reading = "ギョウシャセンテイ"
-
-[entries."選定基準"]
-reading = "センテイキジュン"
-
-[entries."選定方法"]
-reading = "センテイホウホウ"
-
-[entries."選定結果"]
-reading = "センテイケッカ"
-
-[entries."入札"]
-reading = "ニュウサツ"
-
-[entries."入札結果"]
-reading = "ニュウサツケッカ"
-
-[entries."入札者"]
-reading = "ニュウサツシャ"
-
-[entries."入札条件"]
-reading = "ニュウサツジョウケン"
-
-[entries."入札書類"]
-reading = "ニュウサツショルイ"
-
-[entries."落札"]
-reading = "ラクサツ"
-
-[entries."落札者"]
-reading = "ラクサツシャ"
-
-[entries."落札金額"]
-reading = "ラクサツキンガク"
-
-[entries."落札価格"]
-reading = "ラクサツカカク"
-
-[entries."契約価格"]
-reading = "ケイヤクカカク"
-
-[entries."予定価格"]
-reading = "ヨテイカカク"
-
-[entries."最低価格"]
-reading = "サイテイカカク"
-
-[entries."最高価格"]
-reading = "サイコウカカク"
-
-[entries."希望価格"]
-reading = "キボウカカク"
-
-[entries."希望小売価格"]
-reading = "キボウコウリカカク"
-
-[entries."小売価格"]
-reading = "コウリカカク"
-
-[entries."小売店舗"]
-reading = "コウリテンポ"
-
 [entries."店舗網"]
 reading = "テンポモウ"
-
-[entries."店舗数"]
-reading = "テンポスウ"
-
-[entries."店舗運営"]
-reading = "テンポウンエイ"
-
-[entries."運営者"]
-reading = "ウンエイシャ"
-
-[entries."運営方針"]
-reading = "ウンエイホウシン"
-
-[entries."運営費"]
-reading = "ウンエイヒ"
-
-[entries."運営費用"]
-reading = "ウンエイヒヨウ"
-
-[entries."維持費"]
-reading = "イジヒ"
-
-[entries."維持費用"]
-reading = "イジヒヨウ"
-
-[entries."維持管理"]
-reading = "イジカンリ"
-
-[entries."維持管理費"]
-reading = "イジカンリヒ"
-
-[entries."管理費"]
-reading = "カンリヒ"
-
-[entries."管理費用"]
-reading = "カンリヒヨウ"
-
-[entries."共益費"]
-reading = "キョウエキヒ"
-
-[entries."共益"]
-reading = "キョウエキ"
-
-[entries."公益"]
-reading = "コウエキ"
-
-[entries."公益法人"]
-reading = "コウエキホウジン"
-
-[entries."公益財団"]
-reading = "コウエキザイダン"
-
-[entries."公益財団法人"]
-reading = "コウエキザイダンホウジン"
-
-[entries."財団"]
-reading = "ザイダン"
-
-[entries."財団法人"]
-reading = "ザイダンホウジン"
-
-[entries."社団"]
-reading = "シャダン"
-
-[entries."社団法人"]
-reading = "シャダンホウジン"
 
 [entries."NPO"]
 reading = "エヌピーオー"
@@ -10001,155 +6272,17 @@ reading = "エヌピーオー"
 [entries."NPO法人"]
 reading = "エヌピーオーホウジン"
 
-[entries."法人"]
-reading = "ホウジン"
-
-[entries."法人格"]
-reading = "ホウジンカク"
-
-[entries."個人事業"]
-reading = "コジンジギョウ"
-
-[entries."個人事業主"]
-reading = "コジンジギョウヌシ"
-
-[entries."個人情報"]
-reading = "コジンジョウホウ"
-
-[entries."個人情報保護"]
-reading = "コジンジョウホウホゴ"
-
-[entries."情報保護"]
-reading = "ジョウホウホゴ"
-
-[entries."個人情報保護法"]
-reading = "コジンジョウホウホゴホウ"
-
-[entries."保護法"]
-reading = "ホゴホウ"
-
-[entries."個人情報漏洩"]
-reading = "コジンジョウホウロウエイ"
-
-[entries."情報漏洩"]
-reading = "ジョウホウロウエイ"
-
-[entries."機密情報"]
-reading = "キミツジョウホウ"
-
-[entries."機密"]
-reading = "キミツ"
-
-[entries."機密事項"]
-reading = "キミツジコウ"
-
-[entries."機密文書"]
-reading = "キミツブンショ"
-
-[entries."機密書類"]
-reading = "キミツショルイ"
-
-[entries."極秘"]
-reading = "ゴクヒ"
-
-[entries."極秘文書"]
-reading = "ゴクヒブンショ"
-
-[entries."極秘事項"]
-reading = "ゴクヒジコウ"
-
-[entries."極秘情報"]
-reading = "ゴクヒジョウホウ"
-
-[entries."秘密"]
-reading = "ヒミツ"
-
-[entries."秘密厳守"]
-reading = "ヒミツゲンシュ"
-
-[entries."厳守"]
-reading = "ゲンシュ"
-
 [entries."厳密"]
 reading = "ゲンミツ"
-
-[entries."厳密性"]
-reading = "ゲンミツセイ"
-
-[entries."厳密化"]
-reading = "ゲンミツカ"
-
-[entries."正確"]
-reading = "セイカク"
-
-[entries."正確性"]
-reading = "セイカクセイ"
-
-[entries."正確度"]
-reading = "セイカクド"
-
-[entries."精確"]
-reading = "セイカク"
-
-[entries."精度"]
-reading = "セイド"
-
-[entries."精度向上"]
-reading = "セイドコウジョウ"
-
-[entries."高精度"]
-reading = "コウセイド"
-
-[entries."低精度"]
-reading = "テイセイド"
 
 [entries."中精度"]
 reading = "チュウセイド"
 
-[entries."高解像度"]
-reading = "コウカイゾウド"
-
 [entries."中解像度"]
 reading = "チュウカイゾウド"
 
-[entries."低解像度"]
-reading = "テイカイゾウド"
-
-[entries."解像度向上"]
-reading = "カイゾウドコウジョウ"
-
-[entries."画質向上"]
-reading = "ガシツコウジョウ"
-
-[entries."画質改善"]
-reading = "ガシツカイゼン"
-
-[entries."画像処理"]
-reading = "ガゾウショリ"
-
-[entries."画像認識"]
-reading = "ガゾウニンシキ"
-
-[entries."認識率"]
-reading = "ニンシキリツ"
-
-[entries."音声認識"]
-reading = "オンセイニンシキ"
-
-[entries."顔認識"]
-reading = "カオニンシキ"
-
-[entries."顔認証"]
-reading = "カオニンショウ"
-
 [entries."顔写真"]
 reading = "カオジャシン"
-
-[entries."顔つき"]
-reading = "カオツキ"
-
-[entries."顔負け"]
-reading = "カオマケ"
 
 [entries."怒顔"]
 reading = "イカリガオ"
@@ -10160,41 +6293,11 @@ reading = "オドロキガオ"
 [entries."変顔"]
 reading = "ヘンガオ"
 
-[entries."お顔"]
-reading = "オカオ"
-
 [entries."御顔"]
 reading = "オカオ"
 
-[entries."横顔"]
-reading = "ヨコガオ"
-
-[entries."正面"]
-reading = "ショウメン"
-
-[entries."正面玄関"]
-reading = "ショウメンゲンカン"
-
 [entries."正面切"]
 reading = "ショウメンギリ"
-
-[entries."玄関先"]
-reading = "ゲンカンサキ"
-
-[entries."出入口"]
-reading = "デイリグチ"
-
-[entries."非常出口"]
-reading = "ヒジョウデグチ"
-
-[entries."非常入口"]
-reading = "ヒジョウイリグチ"
-
-[entries."緊急出口"]
-reading = "キンキュウデグチ"
-
-[entries."緊急入口"]
-reading = "キンキュウイリグチ"
 
 [entries."緊急避難口"]
 reading = "キンキュウヒナングチ"
@@ -10202,215 +6305,17 @@ reading = "キンキュウヒナングチ"
 [entries."避難口"]
 reading = "ヒナングチ"
 
-[entries."避難経路"]
-reading = "ヒナンケイロ"
-
-[entries."避難場所"]
-reading = "ヒナンバショ"
-
-[entries."緊急避難"]
-reading = "キンキュウヒナン"
-
-[entries."緊急用"]
-reading = "キンキュウヨウ"
-
-[entries."緊急事態"]
-reading = "キンキュウジタイ"
-
-[entries."非常事態"]
-reading = "ヒジョウジタイ"
-
-[entries."緊急事態宣言"]
-reading = "キンキュウジタイセンゲン"
-
-[entries."宣言"]
-reading = "センゲン"
-
-[entries."宣言文"]
-reading = "センゲンブン"
-
-[entries."宣言書"]
-reading = "センゲンショ"
-
-[entries."独立宣言"]
-reading = "ドクリツセンゲン"
-
-[entries."独立国"]
-reading = "ドクリツコク"
-
-[entries."独立心"]
-reading = "ドクリツシン"
-
-[entries."独立性"]
-reading = "ドクリツセイ"
-
-[entries."独立採算"]
-reading = "ドクリツサイサン"
-
-[entries."採算"]
-reading = "サイサン"
-
-[entries."採算性"]
-reading = "サイサンセイ"
-
-[entries."不採算"]
-reading = "フサイサン"
-
-[entries."赤字部門"]
-reading = "アカジブモン"
-
-[entries."黒字部門"]
-reading = "クロジブモン"
-
-[entries."主要部門"]
-reading = "シュヨウブモン"
-
-[entries."重要部門"]
-reading = "ジュウヨウブモン"
-
-[entries."重要拠点"]
-reading = "ジュウヨウキョテン"
-
-[entries."重要施設"]
-reading = "ジュウヨウシセツ"
-
-[entries."文化財"]
-reading = "ブンカザイ"
-
-[entries."有形文化財"]
-reading = "ユウケイブンカザイ"
-
-[entries."無形文化財"]
-reading = "ムケイブンカザイ"
-
 [entries."国宝級"]
 reading = "コクホウキュウ"
-
-[entries."特別史跡"]
-reading = "トクベツシセキ"
-
-[entries."記念物"]
-reading = "キネンブツ"
-
-[entries."記念塔"]
-reading = "キネントウ"
 
 [entries."慰霊碑"]
 reading = "イレイヒ"
 
-[entries."慰霊"]
-reading = "イレイ"
-
-[entries."慰霊祭"]
-reading = "イレイサイ"
-
-[entries."慰霊塔"]
-reading = "イレイトウ"
-
-[entries."追悼"]
-reading = "ツイトウ"
-
-[entries."追悼式"]
-reading = "ツイトウシキ"
-
-[entries."追悼会"]
-reading = "ツイトウカイ"
-
-[entries."追悼文"]
-reading = "ツイトウブン"
-
-[entries."弔辞"]
-reading = "チョウジ"
-
-[entries."弔意"]
-reading = "チョウイ"
-
-[entries."弔慰"]
-reading = "チョウイ"
-
-[entries."弔慰金"]
-reading = "チョウイキン"
-
-[entries."香典"]
-reading = "コウデン"
-
 [entries."御香典"]
 reading = "ゴコウデン"
 
-[entries."ご香典"]
-reading = "ゴコウデン"
-
-[entries."お悔やみ"]
-reading = "オクヤミ"
-
-[entries."お悔み"]
-reading = "オクヤミ"
-
-[entries."悔やみ"]
-reading = "クヤミ"
-
-[entries."悔し涙"]
-reading = "クヤシナミダ"
-
-[entries."悔しさ"]
-reading = "クヤシサ"
-
-[entries."悔しい"]
-reading = "クヤシイ"
-
-[entries."悲しい"]
-reading = "カナシイ"
-
-[entries."悲しさ"]
-reading = "カナシサ"
-
-[entries."悲しみ"]
-reading = "カナシミ"
-
-[entries."喜び"]
-reading = "ヨロコビ"
-
-[entries."楽しみ"]
-reading = "タノシミ"
-
-[entries."楽しさ"]
-reading = "タノシサ"
-
-[entries."苦しみ"]
-reading = "クルシミ"
-
-[entries."苦しさ"]
-reading = "クルシサ"
-
 [entries."辛さ"]
 reading = "ツラサ"
-
-[entries."辛い"]
-reading = "ツライ"
-
-[entries."辛味"]
-reading = "カラミ"
-
-[entries."塩味"]
-reading = "シオアジ"
-
-[entries."甘味"]
-reading = "アマミ"
-
-[entries."苦味"]
-reading = "ニガミ"
-
-[entries."酸味"]
-reading = "サンミ"
-
-[entries."旨味"]
-reading = "ウマミ"
-
-[entries."うまみ"]
-reading = "ウマミ"
-
-[entries."旨み"]
-reading = "ウマミ"
 
 [entries."コク"]
 reading = "コク"
@@ -10418,92 +6323,14 @@ reading = "コク"
 [entries."コクのある"]
 reading = "コクノアル"
 
-[entries."塩辛い"]
-reading = "シオカライ"
-
-[entries."甘辛い"]
-reading = "アマカライ"
-
-[entries."酸っぱい"]
-reading = "スッパイ"
-
-[entries."甘酸っぱい"]
-reading = "アマズッパイ"
-
-[entries."ほろ苦い"]
-reading = "ホロニガイ"
-
-[entries."香ばしい"]
-reading = "コウバシイ"
-
-[entries."香り"]
-reading = "カオリ"
-
-[entries."香水"]
-reading = "コウスイ"
-
-[entries."香料"]
-reading = "コウリョウ"
-
-[entries."線香"]
-reading = "センコウ"
-
-[entries."仏前"]
-reading = "ブツゼン"
-
 [entries."仏様"]
 reading = "ホトケサマ"
 
 [entries."御仏"]
 reading = "オホトケ"
 
-[entries."ご先祖様"]
-reading = "ゴセンゾサマ"
-
-[entries."先祖"]
-reading = "センゾ"
-
-[entries."先祖供養"]
-reading = "センゾクヨウ"
-
-[entries."供養"]
-reading = "クヨウ"
-
-[entries."供養塔"]
-reading = "クヨウトウ"
-
-[entries."納骨堂"]
-reading = "ノウコツドウ"
-
-[entries."霊園"]
-reading = "レイエン"
-
-[entries."霊園管理"]
-reading = "レイエンカンリ"
-
-[entries."墓地管理"]
-reading = "ボチカンリ"
-
-[entries."お墓参り"]
-reading = "オハカマイリ"
-
 [entries."御墓"]
 reading = "オハカ"
-
-[entries."お墓"]
-reading = "オハカ"
-
-[entries."墓碑"]
-reading = "ボヒ"
-
-[entries."墓碑銘"]
-reading = "ボヒメイ"
-
-[entries."墓誌"]
-reading = "ボシ"
-
-[entries."神棚"]
-reading = "カミダナ"
 
 [entries."御神棚"]
 reading = "オカミダナ"
@@ -10514,17 +6341,8 @@ reading = "ブツダンオキバ"
 [entries."神棚置場"]
 reading = "カミダナオキバ"
 
-[entries."お供え"]
-reading = "オソナエ"
-
 [entries."御供え"]
 reading = "オソナエ"
-
-[entries."供える"]
-reading = "ソナエル"
-
-[entries."お供物"]
-reading = "オクモツ"
 
 [entries."御供物"]
 reading = "オクモツ"
@@ -10532,128 +6350,20 @@ reading = "オクモツ"
 [entries."御酒"]
 reading = "オミキ"
 
-[entries."お神酒"]
-reading = "オミキ"
-
-[entries."御神酒"]
-reading = "オミキ"
-
-[entries."神酒"]
-reading = "ミキ"
-
-[entries."御札"]
-reading = "オフダ"
-
 [entries."お札"]
 reading = "オフダ"
-
-[entries."お守り"]
-reading = "オマモリ"
-
-[entries."御朱印料"]
-reading = "ゴシュインリョウ"
 
 [entries."御祈祷"]
 reading = "ゴキトウ"
 
-[entries."祈祷料"]
-reading = "キトウリョウ"
-
-[entries."祈り"]
-reading = "イノリ"
-
-[entries."お祈り"]
-reading = "オイノリ"
-
-[entries."祈願料"]
-reading = "キガンリョウ"
-
-[entries."合格祈願"]
-reading = "ゴウカクキガン"
-
-[entries."家内安全"]
-reading = "カナイアンゼン"
-
-[entries."息災"]
-reading = "ソクサイ"
-
-[entries."家内"]
-reading = "カナイ"
-
-[entries."家内安全祈願"]
-reading = "カナイアンゼンキガン"
-
-[entries."交通安全"]
-reading = "コウツウアンゼン"
-
-[entries."学業成就"]
-reading = "ガクギョウジョウジュ"
-
-[entries."成就"]
-reading = "ジョウジュ"
-
 [entries."願掛"]
 reading = "ガンカケ"
-
-[entries."願掛け"]
-reading = "ガンカケ"
-
-[entries."願い事"]
-reading = "ネガイゴト"
-
-[entries."願事"]
-reading = "ネガイゴト"
-
-[entries."願文"]
-reading = "ガンモン"
-
-[entries."絵馬"]
-reading = "エマ"
-
-[entries."神社仏閣"]
-reading = "ジンジャブッカク"
-
-[entries."寺社仏閣"]
-reading = "ジシャブッカク"
-
-[entries."寺社"]
-reading = "ジシャ"
-
-[entries."お寺"]
-reading = "オテラ"
 
 [entries."御寺"]
 reading = "オテラ"
 
-[entries."神社境内"]
-reading = "ジンジャケイダイ"
-
-[entries."境内外"]
-reading = "ケイダイガイ"
-
-[entries."御神楽"]
-reading = "ミカグラ"
-
-[entries."舞楽"]
-reading = "ブガク"
-
 [entries."神社祭"]
 reading = "ジンジャマツリ"
-
-[entries."お祭り"]
-reading = "オマツリ"
-
-[entries."祭り"]
-reading = "マツリ"
-
-[entries."神事"]
-reading = "シンジ"
-
-[entries."お神輿"]
-reading = "オミコシ"
-
-[entries."御神輿"]
-reading = "オミコシ"
 
 [entries."御山車"]
 reading = "オダシ"
@@ -10661,26 +6371,11 @@ reading = "オダシ"
 [entries."御祭礼"]
 reading = "ゴサイレイ"
 
-[entries."ご祭礼"]
-reading = "ゴサイレイ"
-
-[entries."祭壇"]
-reading = "サイダン"
-
 [entries."祭壇前"]
 reading = "サイダンマエ"
 
 [entries."祭壇花"]
 reading = "サイダンバナ"
-
-[entries."献花"]
-reading = "ケンカ"
-
-[entries."献花台"]
-reading = "ケンカダイ"
-
-[entries."献納"]
-reading = "ケンノウ"
 
 [entries."奉納試合"]
 reading = "ホウノウジアイ"
@@ -10688,131 +6383,11 @@ reading = "ホウノウジアイ"
 [entries."奉納相撲"]
 reading = "ホウノウズモウ"
 
-[entries."大相撲"]
-reading = "オオズモウ"
-
-[entries."角力"]
-reading = "スモウ"
-
 [entries."両国国技館"]
 reading = "リョウゴクコクギカン"
 
-[entries."国技館"]
-reading = "コクギカン"
-
-[entries."国技"]
-reading = "コクギ"
-
-[entries."横綱"]
-reading = "ヨコヅナ"
-
-[entries."大関"]
-reading = "オオゼキ"
-
-[entries."関脇"]
-reading = "セキワケ"
-
-[entries."小結"]
-reading = "コムスビ"
-
-[entries."前頭"]
-reading = "マエガシラ"
-
-[entries."十両"]
-reading = "ジュウリョウ"
-
-[entries."幕内"]
-reading = "マクウチ"
-
-[entries."幕下"]
-reading = "マクシタ"
-
-[entries."三段目"]
-reading = "サンダンメ"
-
 [entries."序二段"]
 reading = "ジョニダン"
-
-[entries."序ノ口"]
-reading = "ジョノクチ"
-
-[entries."番付"]
-reading = "バンヅケ"
-
-[entries."番付表"]
-reading = "バンヅケヒョウ"
-
-[entries."場所"]
-reading = "バショ"
-
-[entries."本場所"]
-reading = "ホンバショ"
-
-[entries."場所中"]
-reading = "バショチュウ"
-
-[entries."名古屋場所"]
-reading = "ナゴヤバショ"
-
-[entries."大阪場所"]
-reading = "オオサカバショ"
-
-[entries."九州場所"]
-reading = "キュウシュウバショ"
-
-[entries."東京場所"]
-reading = "トウキョウバショ"
-
-[entries."初場所"]
-reading = "ハツバショ"
-
-[entries."春場所"]
-reading = "ハルバショ"
-
-[entries."夏場所"]
-reading = "ナツバショ"
-
-[entries."秋場所"]
-reading = "アキバショ"
-
-[entries."冬場所"]
-reading = "フユバショ"
-
-[entries."取組"]
-reading = "トリクミ"
-
-[entries."取組表"]
-reading = "トリクミヒョウ"
-
-[entries."取り組み"]
-reading = "トリクミ"
-
-[entries."取組み"]
-reading = "トリクミ"
-
-[entries."組織取組"]
-reading = "ソシキトリクミ"
-
-[entries."社会的取組"]
-reading = "シャカイテキトリクミ"
-
-[entries."社会貢献"]
-reading = "シャカイコウケン"
-
-[entries."貢献"]
-reading = "コウケン"
-
-[entries."貢献度"]
-reading = "コウケンド"
-
-[entries."社会奉仕"]
-reading = "シャカイホウシ"
-
-[entries."奉仕"]
-reading = "ホウシ"
-
-[entries."奉仕活動"]
-reading = "ホウシカツドウ"
 
 [entries."ボランティア"]
 reading = "ボランティア"
@@ -10820,200 +6395,11 @@ reading = "ボランティア"
 [entries."ボランティア活動"]
 reading = "ボランティアカツドウ"
 
-[entries."活動報告"]
-reading = "カツドウホウコク"
-
-[entries."活動内容"]
-reading = "カツドウナイヨウ"
-
-[entries."活動範囲"]
-reading = "カツドウハンイ"
-
-[entries."活動地域"]
-reading = "カツドウチイキ"
-
-[entries."活動拠点"]
-reading = "カツドウキョテン"
-
-[entries."拠点活動"]
-reading = "キョテンカツドウ"
-
-[entries."本拠地活動"]
-reading = "ホンキョチカツドウ"
-
-[entries."本拠"]
-reading = "ホンキョ"
-
-[entries."本拠地"]
-reading = "ホンキョチ"
-
-[entries."拠点"]
-reading = "キョテン"
-
-[entries."拠点数"]
-reading = "キョテンスウ"
-
-[entries."拠点配置"]
-reading = "キョテンハイチ"
-
-[entries."配置図"]
-reading = "ハイチズ"
-
-[entries."配備計画"]
-reading = "ハイビケイカク"
-
-[entries."計画書"]
-reading = "ケイカクショ"
-
-[entries."計画変更"]
-reading = "ケイカクヘンコウ"
-
 [entries."変更案"]
 reading = "ヘンコウアン"
 
-[entries."原案"]
-reading = "ゲンアン"
-
-[entries."原案者"]
-reading = "ゲンアンシャ"
-
-[entries."発案者"]
-reading = "ハツアンシャ"
-
-[entries."発案"]
-reading = "ハツアン"
-
-[entries."創案"]
-reading = "ソウアン"
-
-[entries."創案者"]
-reading = "ソウアンシャ"
-
-[entries."創作者"]
-reading = "ソウサクシャ"
-
-[entries."創作活動"]
-reading = "ソウサクカツドウ"
-
-[entries."創作意欲"]
-reading = "ソウサクイヨク"
-
-[entries."創作物"]
-reading = "ソウサクブツ"
-
-[entries."創作物全般"]
-reading = "ソウサクブツゼンパン"
-
-[entries."創造性"]
-reading = "ソウゾウセイ"
-
-[entries."創造力"]
-reading = "ソウゾウリョク"
-
-[entries."独創"]
-reading = "ドクソウ"
-
-[entries."独創的"]
-reading = "ドクソウテキ"
-
-[entries."独創性"]
-reading = "ドクソウセイ"
-
-[entries."創意"]
-reading = "ソウイ"
-
-[entries."工夫次第"]
-reading = "クフウシダイ"
-
-[entries."順次"]
-reading = "ジュンジ"
-
-[entries."順次対応"]
-reading = "ジュンジタイオウ"
-
-[entries."段階別"]
-reading = "ダンカイベツ"
-
-[entries."段階分"]
-reading = "ダンカイブン"
-
-[entries."段階分け"]
-reading = "ダンカイワケ"
-
-[entries."分け"]
-reading = "ワケ"
-
-[entries."分け前"]
-reading = "ワケマエ"
-
-[entries."取り分"]
-reading = "トリブン"
-
-[entries."持ち分"]
-reading = "モチブン"
-
-[entries."配分"]
-reading = "ハイブン"
-
-[entries."配分率"]
-reading = "ハイブンリツ"
-
-[entries."配分量"]
-reading = "ハイブンリョウ"
-
-[entries."配分先"]
-reading = "ハイブンサキ"
-
-[entries."分配金"]
-reading = "ブンパイキン"
-
-[entries."分配率"]
-reading = "ブンパイリツ"
-
-[entries."均等"]
-reading = "キントウ"
-
-[entries."均等分"]
-reading = "キントウブン"
-
-[entries."均等分配"]
-reading = "キントウブンパイ"
-
-[entries."不均等"]
-reading = "フキントウ"
-
-[entries."偏り"]
-reading = "カタヨリ"
-
-[entries."偏り方"]
-reading = "カタヨリカタ"
-
-[entries."偏向"]
-reading = "ヘンコウ"
-
-[entries."偏見"]
-reading = "ヘンケン"
-
-[entries."先入観"]
-reading = "センニュウカン"
-
 [entries."先入主"]
 reading = "センニュウシュ"
-
-[entries."固定観念"]
-reading = "コテイカンネン"
-
-[entries."固定観念打破"]
-reading = "コテイカンネンダハ"
-
-[entries."突破"]
-reading = "トッパ"
-
-[entries."突破口"]
-reading = "トッパコウ"
-
-[entries."突破力"]
-reading = "トッパリョク"
 
 [entries."突破力勝"]
 reading = "トッパリョクガチ"
@@ -11030,104 +6416,20 @@ reading = "ショウブドコロ"
 [entries."勝負時"]
 reading = "ショウブドキ"
 
-[entries."正念場"]
-reading = "ショウネンバ"
-
-[entries."正念"]
-reading = "ショウネン"
-
-[entries."場違い"]
-reading = "バチガイ"
-
 [entries."場違"]
 reading = "バチガイ"
 
 [entries."場所違"]
 reading = "バショチガイ"
 
-[entries."場所柄"]
-reading = "バショガラ"
-
-[entries."場所代"]
-reading = "バショダイ"
-
-[entries."場所代金"]
-reading = "バショダイキン"
-
-[entries."代金"]
-reading = "ダイキン"
-
-[entries."代金引換"]
-reading = "ダイキンヒキカエ"
-
-[entries."引換"]
-reading = "ヒキカエ"
-
-[entries."引換券"]
-reading = "ヒキカエケン"
-
-[entries."引換場所"]
-reading = "ヒキカエバショ"
-
-[entries."引換時間"]
-reading = "ヒキカエジカン"
-
-[entries."引換期限"]
-reading = "ヒキカエキゲン"
-
-[entries."引換方法"]
-reading = "ヒキカエホウホウ"
-
-[entries."引換不可"]
-reading = "ヒキカエフカ"
-
-[entries."払い戻し"]
-reading = "ハライモドシ"
-
 [entries."払戻"]
 reading = "ハライモドシ"
-
-[entries."払戻金"]
-reading = "ハライモドシキン"
-
-[entries."返金処理"]
-reading = "ヘンキンショリ"
-
-[entries."処理完了"]
-reading = "ショリカンリョウ"
-
-[entries."完了通知"]
-reading = "カンリョウツウチ"
 
 [entries."通知メール送信"]
 reading = "ツウチメールソウシン"
 
-[entries."送信完了"]
-reading = "ソウシンカンリョウ"
-
-[entries."受信確認"]
-reading = "ジュシンカクニン"
-
-[entries."受信完了"]
-reading = "ジュシンカンリョウ"
-
 [entries."確認メール"]
 reading = "カクニンメール"
-
-[entries."確認画面"]
-reading = "カクニンガメン"
-
-[entries."画面遷移"]
-reading = "ガメンセンイ"
-
-[entries."遷移"]
-reading = "センイ"
-
-[entries."遷移先"]
-reading = "センイサキ"
-
-[entries."遷移元"]
-reading = "センイモト"
 
 [entries."リンク"]
 reading = "リンク"
@@ -11144,359 +6446,26 @@ reading = "リンクギレ"
 [entries."リンク切れ"]
 reading = "リンクギレ"
 
-[entries."切れ目"]
-reading = "キレメ"
-
-[entries."継ぎ目"]
-reading = "ツギメ"
-
-[entries."継目"]
-reading = "ツギメ"
-
-[entries."継承"]
-reading = "ケイショウ"
-
-[entries."継承者"]
-reading = "ケイショウシャ"
-
-[entries."継承順位"]
-reading = "ケイショウジュンイ"
-
-[entries."順位表"]
-reading = "ジュンイヒョウ"
-
-[entries."順位戦"]
-reading = "ジュンイセン"
-
-[entries."順位決定戦"]
-reading = "ジュンイケッテイセン"
-
-[entries."決定戦"]
-reading = "ケッテイセン"
-
 [entries."決定打"]
 reading = "ケッテイダ"
-
-[entries."決定的"]
-reading = "ケッテイテキ"
-
-[entries."決定権"]
-reading = "ケッテイケン"
-
-[entries."決定者"]
-reading = "ケッテイシャ"
-
-[entries."決定機関"]
-reading = "ケッテイキカン"
-
-[entries."決定機"]
-reading = "ケッテイキ"
-
-[entries."意思決定"]
-reading = "イシケッテイ"
-
-[entries."意志決定"]
-reading = "イシケッテイ"
-
-[entries."意思疎通"]
-reading = "イシソツウ"
-
-[entries."疎通"]
-reading = "ソツウ"
-
-[entries."疎遠"]
-reading = "ソエン"
-
-[entries."疎遠化"]
-reading = "ソエンカ"
-
-[entries."親密化"]
-reading = "シンミツカ"
 
 [entries."親密度"]
 reading = "シンミツド"
 
-[entries."親近感"]
-reading = "シンキンカン"
-
-[entries."親しみ"]
-reading = "シタシミ"
-
-[entries."親しい"]
-reading = "シタシイ"
-
-[entries."親しさ"]
-reading = "シタシサ"
-
-[entries."親友"]
-reading = "シンユウ"
-
-[entries."親友関係"]
-reading = "シンユウカンケイ"
-
-[entries."友人関係"]
-reading = "ユウジンカンケイ"
-
-[entries."博愛"]
-reading = "ハクアイ"
-
-[entries."人類愛"]
-reading = "ジンルイアイ"
-
-[entries."家族愛"]
-reading = "カゾクアイ"
-
-[entries."夫婦愛"]
-reading = "フウフアイ"
-
-[entries."親子愛"]
-reading = "オヤコアイ"
-
-[entries."恋愛"]
-reading = "レンアイ"
-
-[entries."恋愛感情"]
-reading = "レンアイカンジョウ"
-
-[entries."恋愛対象"]
-reading = "レンアイタイショウ"
-
-[entries."恋愛関係"]
-reading = "レンアイカンケイ"
-
-[entries."恋人"]
-reading = "コイビト"
-
-[entries."恋愛中"]
-reading = "レンアイチュウ"
-
-[entries."恋愛経験"]
-reading = "レンアイケイケン"
-
-[entries."経験者"]
-reading = "ケイケンシャ"
-
-[entries."経験談"]
-reading = "ケイケンダン"
-
-[entries."体験談"]
-reading = "タイケンダン"
-
-[entries."体験学習"]
-reading = "タイケンガクシュウ"
-
-[entries."学習"]
-reading = "ガクシュウ"
-
-[entries."学習効果"]
-reading = "ガクシュウコウカ"
-
-[entries."学習能力"]
-reading = "ガクシュウノウリョク"
-
-[entries."学習意欲"]
-reading = "ガクシュウイヨク"
-
-[entries."学習方法"]
-reading = "ガクシュウホウホウ"
-
-[entries."学習計画"]
-reading = "ガクシュウケイカク"
-
-[entries."学習時間"]
-reading = "ガクシュウジカン"
-
-[entries."独学"]
-reading = "ドクガク"
-
-[entries."通信教育"]
-reading = "ツウシンキョウイク"
-
-[entries."通信講座"]
-reading = "ツウシンコウザ"
-
-[entries."公開講座"]
-reading = "コウカイコウザ"
-
-[entries."特別講座"]
-reading = "トクベツコウザ"
-
-[entries."入門講座"]
-reading = "ニュウモンコウザ"
-
-[entries."基礎講座"]
-reading = "キソコウザ"
-
-[entries."応用講座"]
-reading = "オウヨウコウザ"
-
-[entries."専門講座"]
-reading = "センモンコウザ"
-
-[entries."資格取得講座"]
-reading = "シカクシュトクコウザ"
-
-[entries."資格対策講座"]
-reading = "シカクタイサクコウザ"
-
-[entries."試験対策"]
-reading = "シケンタイサク"
-
-[entries."試験対策講座"]
-reading = "シケンタイサクコウザ"
-
-[entries."予備校"]
-reading = "ヨビコウ"
-
-[entries."予備校生徒"]
-reading = "ヨビコウセイト"
-
-[entries."塾生"]
-reading = "ジュクセイ"
-
-[entries."塾長"]
-reading = "ジュクチョウ"
-
-[entries."塾講師"]
-reading = "ジュクコウシ"
-
-[entries."家庭教師"]
-reading = "カテイキョウシ"
-
-[entries."家庭学習"]
-reading = "カテイガクシュウ"
-
-[entries."家庭教育"]
-reading = "カテイキョウイク"
-
-[entries."学校教育"]
-reading = "ガッコウキョウイク"
-
-[entries."社会教育"]
-reading = "シャカイキョウイク"
-
-[entries."生涯学習"]
-reading = "ショウガイガクシュウ"
-
-[entries."生涯教育"]
-reading = "ショウガイキョウイク"
-
-[entries."生涯"]
-reading = "ショウガイ"
-
-[entries."生涯年収"]
-reading = "ショウガイネンシュウ"
-
-[entries."年収比較"]
-reading = "ネンシュウヒカク"
-
-[entries."所得格差"]
-reading = "ショトクカクサ"
-
-[entries."格差"]
-reading = "カクサ"
-
-[entries."所得格差是正"]
-reading = "ショトクカクサゼセイ"
-
-[entries."是正"]
-reading = "ゼセイ"
-
-[entries."是正策"]
-reading = "ゼセイサク"
-
 [entries."是正案"]
 reading = "ゼセイアン"
-
-[entries."格差是正"]
-reading = "カクサゼセイ"
-
-[entries."格差解消"]
-reading = "カクサカイショウ"
-
-[entries."解消策"]
-reading = "カイショウサク"
 
 [entries."解消案"]
 reading = "カイショウアン"
 
-[entries."平等主義"]
-reading = "ビョウドウシュギ"
-
-[entries."不公平"]
-reading = "フコウヘイ"
-
-[entries."不公正"]
-reading = "フコウセイ"
-
-[entries."公正取引"]
-reading = "コウセイトリヒキ"
-
-[entries."独占禁止法"]
-reading = "ドクセンキンシホウ"
-
-[entries."独占"]
-reading = "ドクセン"
-
-[entries."独占禁止"]
-reading = "ドクセンキンシ"
-
-[entries."寡占"]
-reading = "カセン"
-
 [entries."寡占市場"]
 reading = "カセンシジョウ"
-
-[entries."独占企業"]
-reading = "ドクセンキギョウ"
-
-[entries."寡占企業"]
-reading = "カセンキギョウ"
-
-[entries."中小企業"]
-reading = "チュウショウキギョウ"
-
-[entries."大企業"]
-reading = "ダイキギョウ"
-
-[entries."中堅企業"]
-reading = "チュウケンキギョウ"
 
 [entries."スタートアップ企業"]
 reading = "スタートアップキギョウ"
 
-[entries."新興企業"]
-reading = "シンコウキギョウ"
-
-[entries."既存企業"]
-reading = "キソンキギョウ"
-
-[entries."既存"]
-reading = "キソン"
-
-[entries."既存顧客"]
-reading = "キソンコキャク"
-
-[entries."新規顧客"]
-reading = "シンキコキャク"
-
-[entries."顧客満足度"]
-reading = "コキャクマンゾクド"
-
-[entries."顧客対応"]
-reading = "コキャクタイオウ"
-
 [entries."顧客サービス"]
 reading = "コキャクサービス"
-
-[entries."顧客名簿"]
-reading = "コキャクメイボ"
-
-[entries."顧客情報"]
-reading = "コキャクジョウホウ"
-
-[entries."顧客管理"]
-reading = "コキャクカンリ"
 
 [entries."顧客管理システム"]
 reading = "コキャクカンリシステム"
@@ -11516,394 +6485,28 @@ reading = "リストサクセイ"
 [entries."リスト管理"]
 reading = "リストカンリ"
 
-[entries."名簿作成"]
-reading = "メイボサクセイ"
-
-[entries."登録"]
-reading = "トウロク"
-
-[entries."登録番号"]
-reading = "トウロクバンゴウ"
-
-[entries."登録料"]
-reading = "トウロクリョウ"
-
-[entries."登録費"]
-reading = "トウロクヒ"
-
-[entries."登録方法"]
-reading = "トウロクホウホウ"
-
-[entries."登録手続"]
-reading = "トウロクテツヅキ"
-
-[entries."手続"]
-reading = "テツヅキ"
-
-[entries."手続き"]
-reading = "テツヅキ"
-
-[entries."申請手続"]
-reading = "シンセイテツヅキ"
-
-[entries."申請手続き"]
-reading = "シンセイテツヅキ"
-
-[entries."申込手続"]
-reading = "モウシコミテツヅキ"
-
-[entries."申込手続き"]
-reading = "モウシコミテツヅキ"
-
-[entries."事務手続"]
-reading = "ジムテツヅキ"
-
-[entries."事務手続き"]
-reading = "ジムテツヅキ"
-
-[entries."役所手続"]
-reading = "ヤクショテツヅキ"
-
-[entries."役所手続き"]
-reading = "ヤクショテツヅキ"
-
-[entries."役所窓口"]
-reading = "ヤクショマドグチ"
-
-[entries."窓口対応"]
-reading = "マドグチタイオウ"
-
-[entries."窓口受付"]
-reading = "マドグチウケツケ"
-
-[entries."窓口時間"]
-reading = "マドグチジカン"
-
-[entries."窓口業務"]
-reading = "マドグチギョウム"
-
-[entries."業務時間"]
-reading = "ギョウムジカン"
-
-[entries."業務時間外"]
-reading = "ギョウムジカンガイ"
-
-[entries."業務時間内"]
-reading = "ギョウムジカンナイ"
-
-[entries."業務終了"]
-reading = "ギョウムシュウリョウ"
-
-[entries."業務開始"]
-reading = "ギョウムカイシ"
-
-[entries."業務再開"]
-reading = "ギョウムサイカイ"
-
-[entries."業務停止"]
-reading = "ギョウムテイシ"
-
-[entries."営業停止"]
-reading = "エイギョウテイシ"
-
-[entries."営業再開"]
-reading = "エイギョウサイカイ"
-
-[entries."営業休止"]
-reading = "エイギョウキュウシ"
-
-[entries."営業休業"]
-reading = "エイギョウキュウギョウ"
-
 [entries."廃業届"]
 reading = "ハイギョウトドケ"
-
-[entries."事業廃止"]
-reading = "ジギョウハイシ"
-
-[entries."事業休止"]
-reading = "ジギョウキュウシ"
-
-[entries."事業再開"]
-reading = "ジギョウサイカイ"
-
-[entries."事業開始"]
-reading = "ジギョウカイシ"
-
-[entries."事業終了"]
-reading = "ジギョウシュウリョウ"
-
-[entries."事業計画"]
-reading = "ジギョウケイカク"
-
-[entries."事業計画書"]
-reading = "ジギョウケイカクショ"
-
-[entries."計画書類"]
-reading = "ケイカクショルイ"
-
-[entries."計画作成"]
-reading = "ケイカクサクセイ"
-
-[entries."作成期間"]
-reading = "サクセイキカン"
 
 [entries."完成日"]
 reading = "カンセイビ"
 
-[entries."完成期間"]
-reading = "カンセイキカン"
-
-[entries."完成図書"]
-reading = "カンセイトショ"
-
-[entries."図書"]
-reading = "トショ"
-
-[entries."図書室"]
-reading = "トショシツ"
-
-[entries."図書券"]
-reading = "トショケン"
-
 [entries."図書カード"]
 reading = "トショカード"
-
-[entries."書物"]
-reading = "ショモツ"
-
-[entries."件名"]
-reading = "ケンメイ"
-
-[entries."案件名"]
-reading = "アンケンメイ"
-
-[entries."事件名"]
-reading = "ジケンメイ"
-
-[entries."裁判名"]
-reading = "サイバンメイ"
-
-[entries."法廷名"]
-reading = "ホウテイメイ"
-
-[entries."裁判所"]
-reading = "サイバンショ"
-
-[entries."高裁"]
-reading = "コウサイ"
-
-[entries."地裁"]
-reading = "チサイ"
-
-[entries."家裁"]
-reading = "カサイ"
-
-[entries."最高裁"]
-reading = "サイコウサイ"
-
-[entries."最終審"]
-reading = "サイシュウシン"
-
-[entries."最終決定"]
-reading = "サイシュウケッテイ"
-
-[entries."最終判断"]
-reading = "サイシュウハンダン"
-
-[entries."最終的判断"]
-reading = "サイシュウテキハンダン"
-
-[entries."判断基準"]
-reading = "ハンダンキジュン"
-
-[entries."基準"]
-reading = "キジュン"
-
-[entries."判断材料"]
-reading = "ハンダンザイリョウ"
-
-[entries."判断要素"]
-reading = "ハンダンヨウソ"
-
-[entries."要素検討"]
-reading = "ヨウソケントウ"
-
-[entries."検討事項"]
-reading = "ケントウジコウ"
-
-[entries."検討中"]
-reading = "ケントウチュウ"
-
-[entries."検討材料"]
-reading = "ケントウザイリョウ"
-
-[entries."検討内容"]
-reading = "ケントウナイヨウ"
-
-[entries."検討結果"]
-reading = "ケントウケッカ"
-
-[entries."検討対象"]
-reading = "ケントウタイショウ"
-
-[entries."検討時間"]
-reading = "ケントウジカン"
-
-[entries."比較検討"]
-reading = "ヒカクケントウ"
-
-[entries."総合検討"]
-reading = "ソウゴウケントウ"
-
-[entries."詳細検討"]
-reading = "ショウサイケントウ"
-
-[entries."個別検討"]
-reading = "コベツケントウ"
-
-[entries."全体検討"]
-reading = "ゼンタイケントウ"
-
-[entries."部分検討"]
-reading = "ブブンケントウ"
-
-[entries."担当検討"]
-reading = "タントウケントウ"
-
-[entries."担当変更"]
-reading = "タントウヘンコウ"
-
-[entries."担当者変更"]
-reading = "タントウシャヘンコウ"
-
-[entries."担当者名"]
-reading = "タントウシャメイ"
-
-[entries."担当者紹介"]
-reading = "タントウシャショウカイ"
-
-[entries."紹介者"]
-reading = "ショウカイシャ"
-
-[entries."紹介文"]
-reading = "ショウカイブン"
-
-[entries."紹介記事"]
-reading = "ショウカイキジ"
-
-[entries."記事内容"]
-reading = "キジナイヨウ"
-
-[entries."記事数"]
-reading = "キジスウ"
-
-[entries."記事一覧"]
-reading = "キジイチラン"
-
-[entries."一覧表"]
-reading = "イチランヒョウ"
-
-[entries."一覧"]
-reading = "イチラン"
-
-[entries."新着"]
-reading = "シンチャク"
-
-[entries."新着情報"]
-reading = "シンチャクジョウホウ"
-
-[entries."新着順"]
-reading = "シンチャクジュン"
-
-[entries."更新順"]
-reading = "コウシンジュン"
-
-[entries."日付順"]
-reading = "ヒヅケジュン"
 
 [entries."時系列順"]
 reading = "ジケイレツジュン"
 
-[entries."重要順"]
-reading = "ジュウヨウジュン"
-
-[entries."人気順"]
-reading = "ニンキジュン"
-
-[entries."価格順"]
-reading = "カカクジュン"
-
-[entries."硬貨"]
-reading = "コウカ"
-
-[entries."銀貨"]
-reading = "ギンカ"
-
-[entries."銅貨"]
-reading = "ドウカ"
-
-[entries."金貨"]
-reading = "キンカ"
-
-[entries."小銭"]
-reading = "コゼニ"
-
-[entries."お金"]
-reading = "オカネ"
-
-[entries."お小遣い"]
-reading = "オコヅカイ"
-
-[entries."小遣"]
-reading = "コヅカイ"
-
-[entries."お駄賃"]
-reading = "オダチン"
-
-[entries."駄賃"]
-reading = "ダチン"
-
 [entries."御使い"]
 reading = "オツカイ"
 
-[entries."お使い"]
-reading = "オツカイ"
-
-[entries."使い"]
-reading = "ツカイ"
-
-[entries."使い道"]
-reading = "ツカイミチ"
-
-[entries."道のり"]
-reading = "ミチノリ"
-
-[entries."道順"]
-reading = "ミチジュン"
-
-[entries."道幅"]
-reading = "ミチハバ"
-
-[entries."歩幅"]
-reading = "ホハバ"
-
 [entries."胴回"]
-reading = "ドウマワリ"
-
-[entries."胴回り"]
 reading = "ドウマワリ"
 
 [entries."腰回"]
 reading = "コシマワリ"
 
-[entries."腰回り"]
-reading = "コシマワリ"
-
 [entries."首回"]
-reading = "クビマワリ"
-
-[entries."首回り"]
 reading = "クビマワリ"
 
 [entries."頭囲"]
@@ -11912,59 +6515,14 @@ reading = "トウイ"
 [entries."頭蓋"]
 reading = "ズガイ"
 
-[entries."頭部"]
-reading = "トウブ"
-
-[entries."胸部"]
-reading = "キョウブ"
-
-[entries."腹部"]
-reading = "フクブ"
-
-[entries."背部"]
-reading = "ハイブ"
-
-[entries."おなか"]
-reading = "オナカ"
-
-[entries."お腹"]
-reading = "オナカ"
-
-[entries."手のひら"]
-reading = "テノヒラ"
-
-[entries."手の平"]
-reading = "テノヒラ"
-
-[entries."足指"]
-reading = "アシユビ"
-
-[entries."足の指"]
-reading = "アシノユビ"
-
-[entries."足の裏"]
-reading = "アシノウラ"
-
-[entries."かかと"]
-reading = "カカト"
-
 [entries."膝下"]
 reading = "ヒザシタ"
 
 [entries."膝上"]
 reading = "ヒザウエ"
 
-[entries."太もも"]
-reading = "フトモモ"
-
-[entries."ふくらはぎ"]
-reading = "フクラハギ"
-
 [entries."向こう脛"]
 reading = "ムコウズネ"
-
-[entries."すね"]
-reading = "スネ"
 
 [entries."首骨"]
 reading = "クビボネ"
@@ -11972,50 +6530,8 @@ reading = "クビボネ"
 [entries."顎骨"]
 reading = "アゴボネ"
 
-[entries."まつ毛"]
-reading = "マツゲ"
-
-[entries."髪の毛"]
-reading = "カミノケ"
-
-[entries."髪型"]
-reading = "カミガタ"
-
-[entries."髪色"]
-reading = "カミイロ"
-
-[entries."髪質"]
-reading = "カミシツ"
-
-[entries."体つき"]
-reading = "カラダツキ"
-
-[entries."人間ドック"]
-reading = "ニンゲンドック"
-
 [entries."ドック"]
 reading = "ドック"
-
-[entries."人間関係"]
-reading = "ニンゲンカンケイ"
-
-[entries."人間性"]
-reading = "ニンゲンセイ"
-
-[entries."人間味"]
-reading = "ニンゲンミ"
-
-[entries."人柄"]
-reading = "ヒトガラ"
-
-[entries."性格診断"]
-reading = "セイカクシンダン"
-
-[entries."性格判断"]
-reading = "セイカクハンダン"
-
-[entries."血液型診断"]
-reading = "ケツエキガタシンダン"
 
 [entries."A型"]
 reading = "エーガタ"
@@ -12035,122 +6551,8 @@ reading = "アールエッチプラスアールエッチインセイ"
 [entries."Rh"]
 reading = "アールエッチ"
 
-[entries."陽性"]
-reading = "ヨウセイ"
-
-[entries."陰性"]
-reading = "インセイ"
-
-[entries."判定結果"]
-reading = "ハンテイケッカ"
-
-[entries."診断書"]
-reading = "シンダンショ"
-
-[entries."診断結果"]
-reading = "シンダンケッカ"
-
-[entries."診療明細"]
-reading = "シンリョウメイサイ"
-
-[entries."明細書"]
-reading = "メイサイショ"
-
-[entries."明細書送付"]
-reading = "メイサイショソウフ"
-
-[entries."送付"]
-reading = "ソウフ"
-
 [entries."送付状"]
 reading = "ソウフジョウ"
-
-[entries."送付先"]
-reading = "ソウフサキ"
-
-[entries."配送先"]
-reading = "ハイソウサキ"
-
-[entries."配送料"]
-reading = "ハイソウリョウ"
-
-[entries."配送業者"]
-reading = "ハイソウギョウシャ"
-
-[entries."配送状況"]
-reading = "ハイソウジョウキョウ"
-
-[entries."配送状況確認"]
-reading = "ハイソウジョウキョウカクニン"
-
-[entries."状況確認"]
-reading = "ジョウキョウカクニン"
-
-[entries."進捗確認"]
-reading = "シンチョクカクニン"
-
-[entries."進捗状況"]
-reading = "シンチョクジョウキョウ"
-
-[entries."進捗報告"]
-reading = "シンチョクホウコク"
-
-[entries."報告体制"]
-reading = "ホウコクタイセイ"
-
-[entries."報告期間"]
-reading = "ホウコクキカン"
-
-[entries."報告対象"]
-reading = "ホウコクタイショウ"
-
-[entries."報告対象期間"]
-reading = "ホウコクタイショウキカン"
-
-[entries."対象期間"]
-reading = "タイショウキカン"
-
-[entries."報告対象者"]
-reading = "ホウコクタイショウシャ"
-
-[entries."報告先"]
-reading = "ホウコクサキ"
-
-[entries."報告書類整理"]
-reading = "ホウコクショルイセイリ"
-
-[entries."書類整理整頓"]
-reading = "ショルイセイリセイトン"
-
-[entries."整理整頓"]
-reading = "セイリセイトン"
-
-[entries."整頓作業"]
-reading = "セイトンサギョウ"
-
-[entries."整理作業"]
-reading = "セイリサギョウ"
-
-[entries."作業手順書類"]
-reading = "サギョウテジュンショルイ"
-
-[entries."手順書類整理"]
-reading = "テジュンショルイセイリ"
-
-[entries."保管庫"]
-reading = "ホカンコ"
-
-[entries."書類保管庫"]
-reading = "ショルイホカンコ"
-
-[entries."書庫"]
-reading = "ショコ"
-
-[entries."書斎"]
-reading = "ショサイ"
-
-[entries."個人書斎"]
-reading = "コジンショサイ"
 
 [entries."書斎机"]
 reading = "ショサイヅクエ"
@@ -12182,218 +6584,17 @@ reading = "オフィス"
 [entries."オフィス家具"]
 reading = "オフィスカグ"
 
-[entries."家具"]
-reading = "カグ"
-
-[entries."家具屋"]
-reading = "カグヤ"
-
-[entries."家具店"]
-reading = "カグテン"
-
-[entries."家具売場"]
-reading = "カグウリバ"
-
-[entries."家具配達"]
-reading = "カグハイタツ"
-
-[entries."配達時間"]
-reading = "ハイタツジカン"
-
-[entries."配達時刻"]
-reading = "ハイタツジコク"
-
-[entries."配達料"]
-reading = "ハイタツリョウ"
-
-[entries."配達料金"]
-reading = "ハイタツリョウキン"
-
-[entries."送料無料"]
-reading = "ソウリョウムリョウ"
-
 [entries."送料込"]
 reading = "ソウリョウコミ"
-
-[entries."税込"]
-reading = "ゼイコミ"
 
 [entries."税抜"]
 reading = "ゼイヌキ"
 
-[entries."本体価格"]
-reading = "ホンタイカカク"
-
-[entries."本体"]
-reading = "ホンタイ"
-
-[entries."本体重量"]
-reading = "ホンタイジュウリョウ"
-
-[entries."重量制限"]
-reading = "ジュウリョウセイゲン"
-
-[entries."体重制限"]
-reading = "タイジュウセイゲン"
-
-[entries."身長制限"]
-reading = "シンチョウセイゲン"
-
-[entries."身長"]
-reading = "シンチョウ"
-
-[entries."体形"]
-reading = "タイケイ"
-
-[entries."体格指数"]
-reading = "タイカクシスウ"
-
-[entries."体脂肪率"]
-reading = "タイシボウリツ"
-
-[entries."体脂肪"]
-reading = "タイシボウ"
-
-[entries."筋肉率"]
-reading = "キンニクリツ"
-
-[entries."筋肉強化"]
-reading = "キンニクキョウカ"
-
-[entries."強化合宿"]
-reading = "キョウカガッシュク"
-
-[entries."合宿"]
-reading = "ガッシュク"
-
 [entries."合宿所"]
 reading = "ガッシュクジョ"
 
-[entries."合宿訓練"]
-reading = "ガッシュククンレン"
-
-[entries."集中訓練"]
-reading = "シュウチュウクンレン"
-
-[entries."集中力"]
-reading = "シュウチュウリョク"
-
-[entries."集中講座"]
-reading = "シュウチュウコウザ"
-
-[entries."集中講義"]
-reading = "シュウチュウコウギ"
-
-[entries."集中講習"]
-reading = "シュウチュウコウシュウ"
-
-[entries."集中講習会"]
-reading = "シュウチュウコウシュウカイ"
-
-[entries."集中力低下"]
-reading = "シュウチュウリョクテイカ"
-
-[entries."集中力向上"]
-reading = "シュウチュウリョクコウジョウ"
-
-[entries."野心"]
-reading = "ヤシン"
-
-[entries."野望"]
-reading = "ヤボウ"
-
-[entries."夢物語"]
-reading = "ユメモノガタリ"
-
-[entries."夢中"]
-reading = "ムチュウ"
-
-[entries."夢見"]
-reading = "ユメミ"
-
-[entries."夢心地"]
-reading = "ユメゴコチ"
-
-[entries."心地"]
-reading = "ココチ"
-
-[entries."居心地"]
-reading = "イゴコチ"
-
 [entries."居心地良"]
 reading = "イゴコチヨ"
-
-[entries."住み心地"]
-reading = "スミゴコチ"
-
-[entries."寝心地"]
-reading = "ネゴコチ"
-
-[entries."着心地"]
-reading = "キゴコチ"
-
-[entries."履き心地"]
-reading = "ハキゴコチ"
-
-[entries."乗り心地"]
-reading = "ノリゴコチ"
-
-[entries."快適性"]
-reading = "カイテキセイ"
-
-[entries."快適度"]
-reading = "カイテキド"
-
-[entries."快適空間"]
-reading = "カイテキクウカン"
-
-[entries."空間"]
-reading = "クウカン"
-
-[entries."空間設計"]
-reading = "クウカンセッケイ"
-
-[entries."室内空間"]
-reading = "シツナイクウカン"
-
-[entries."屋外空間"]
-reading = "オクガイクウカン"
-
-[entries."野外空間"]
-reading = "ヤガイクウカン"
-
-[entries."公共空間"]
-reading = "コウキョウクウカン"
-
-[entries."個人空間"]
-reading = "コジンクウカン"
-
-[entries."共有空間"]
-reading = "キョウユウクウカン"
-
-[entries."専用空間"]
-reading = "センヨウクウカン"
-
-[entries."専用設備"]
-reading = "センヨウセツビ"
-
-[entries."設備投資"]
-reading = "セツビトウシ"
-
-[entries."設備費"]
-reading = "セツビヒ"
-
-[entries."設備工事"]
-reading = "セツビコウジ"
-
-[entries."設備工事費"]
-reading = "セツビコウジヒ"
-
-[entries."工事計画"]
-reading = "コウジケイカク"
-
-[entries."工事業者"]
-reading = "コウジギョウシャ"
 
 [entries."工事会社"]
 reading = "コウジガイシャ"
@@ -12401,215 +6602,14 @@ reading = "コウジガイシャ"
 [entries."建設会社"]
 reading = "ケンセツガイシャ"
 
-[entries."建設業"]
-reading = "ケンセツギョウ"
-
-[entries."建設業者"]
-reading = "ケンセツギョウシャ"
-
-[entries."建設工事"]
-reading = "ケンセツコウジ"
-
-[entries."建築工事"]
-reading = "ケンチクコウジ"
-
-[entries."建築物"]
-reading = "ケンチクブツ"
-
-[entries."建築物価"]
-reading = "ケンチクブッカ"
-
-[entries."建築費"]
-reading = "ケンチクヒ"
-
-[entries."建築費用"]
-reading = "ケンチクヒヨウ"
-
-[entries."建築材料"]
-reading = "ケンチクザイリョウ"
-
-[entries."建築資材"]
-reading = "ケンチクシザイ"
-
-[entries."建材店"]
-reading = "ケンザイテン"
-
-[entries."建築物全体"]
-reading = "ケンチクブツゼンタイ"
-
-[entries."全体構造"]
-reading = "ゼンタイコウゾウ"
-
-[entries."全体的構造"]
-reading = "ゼンタイテキコウゾウ"
-
-[entries."構造的特徴"]
-reading = "コウゾウテキトクチョウ"
-
-[entries."特徴的"]
-reading = "トクチョウテキ"
-
-[entries."特徴点"]
-reading = "トクチョウテン"
-
-[entries."特徴量"]
-reading = "トクチョウリョウ"
-
-[entries."特徴抽出"]
-reading = "トクチョウチュウシュツ"
-
-[entries."抽出"]
-reading = "チュウシュツ"
-
-[entries."抽出方法"]
-reading = "チュウシュツホウホウ"
-
-[entries."抽出条件"]
-reading = "チュウシュツジョウケン"
-
-[entries."抽選"]
-reading = "チュウセン"
-
-[entries."抽選方式"]
-reading = "チュウセンホウシキ"
-
-[entries."抽選結果"]
-reading = "チュウセンケッカ"
-
-[entries."当選者発表"]
-reading = "トウセンシャハッピョウ"
-
-[entries."当選通知"]
-reading = "トウセンツウチ"
-
-[entries."落選通知"]
-reading = "ラクセンツウチ"
-
-[entries."不採用通知"]
-reading = "フサイヨウツウチ"
-
-[entries."採用通知"]
-reading = "サイヨウツウチ"
-
-[entries."内定通知"]
-reading = "ナイテイツウチ"
-
-[entries."内定者"]
-reading = "ナイテイシャ"
-
-[entries."内定式"]
-reading = "ナイテイシキ"
-
-[entries."入社式"]
-reading = "ニュウシャシキ"
-
-[entries."退社式"]
-reading = "タイシャシキ"
-
-[entries."退職式"]
-reading = "タイショクシキ"
-
-[entries."退職金"]
-reading = "タイショクキン"
-
-[entries."退職金制度"]
-reading = "タイショクキンセイド"
-
-[entries."退職"]
-reading = "タイショク"
-
 [entries."退職届"]
 reading = "タイショクトドケ"
 
 [entries."退職願"]
 reading = "タイショクネガイ"
 
-[entries."退職金規程"]
-reading = "タイショクキンキテイ"
-
-[entries."規程"]
-reading = "キテイ"
-
-[entries."規程集"]
-reading = "キテイシュウ"
-
-[entries."就業規則"]
-reading = "シュウギョウキソク"
-
-[entries."就業"]
-reading = "シュウギョウ"
-
-[entries."就業時間"]
-reading = "シュウギョウジカン"
-
 [entries."就業日"]
 reading = "シュウギョウビ"
-
-[entries."就業規程"]
-reading = "シュウギョウキテイ"
-
-[entries."社内規程"]
-reading = "シャナイキテイ"
-
-[entries."社内規則"]
-reading = "シャナイキソク"
-
-[entries."社内文書"]
-reading = "シャナイブンショ"
-
-[entries."社外文書"]
-reading = "シャガイブンショ"
-
-[entries."公文書"]
-reading = "コウブンショ"
-
-[entries."公文"]
-reading = "コウブン"
-
-[entries."公文書館"]
-reading = "コウブンショカン"
-
-[entries."歴史資料館"]
-reading = "レキシシリョウカン"
-
-[entries."資料館"]
-reading = "シリョウカン"
-
-[entries."郷土資料館"]
-reading = "キョウドシリョウカン"
-
-[entries."郷土博物館"]
-reading = "キョウドハクブツカン"
-
-[entries."博物館展示"]
-reading = "ハクブツカンテンジ"
-
-[entries."展示室"]
-reading = "テンジシツ"
-
-[entries."展示会場"]
-reading = "テンジカイジョウ"
-
-[entries."展示物"]
-reading = "テンジブツ"
-
-[entries."出品作品"]
-reading = "シュッピンサクヒン"
-
-[entries."作品展"]
-reading = "サクヒンテン"
-
-[entries."作品展示"]
-reading = "サクヒンテンジ"
-
-[entries."作品集"]
-reading = "サクヒンシュウ"
-
-[entries."作品紹介"]
-reading = "サクヒンショウカイ"
-
-[entries."作家紹介"]
-reading = "サッカショウカイ"
 
 [entries."紹介ページ"]
 reading = "ショウカイページ"
@@ -12617,32 +6617,11 @@ reading = "ショウカイページ"
 [entries."ページ数"]
 reading = "ページスウ"
 
-[entries."頁数"]
-reading = "ページスウ"
-
-[entries."枚数"]
-reading = "マイスウ"
-
-[entries."文字数"]
-reading = "モジスウ"
-
-[entries."文字種"]
-reading = "モジシュ"
-
 [entries."文字色"]
 reading = "モジショク"
 
 [entries."文字サイズ"]
 reading = "モジサイズ"
-
-[entries."書体"]
-reading = "ショタイ"
-
-[entries."字体"]
-reading = "ジタイ"
-
-[entries."明朝体"]
-reading = "ミンチョウタイ"
 
 [entries."ゴシック体"]
 reading = "ゴシックタイ"
@@ -12653,47 +6632,8 @@ reading = "ゴシック"
 [entries."明朝"]
 reading = "ミンチョウ"
 
-[entries."楷書"]
-reading = "カイショ"
-
-[entries."行書"]
-reading = "ギョウショ"
-
-[entries."草書"]
-reading = "ソウショ"
-
-[entries."篆書"]
-reading = "テンショ"
-
-[entries."隷書"]
-reading = "レイショ"
-
-[entries."書道教室"]
-reading = "ショドウキョウシツ"
-
-[entries."書道展"]
-reading = "ショドウテン"
-
-[entries."書道家"]
-reading = "ショドウカ"
-
-[entries."書家"]
-reading = "ショカ"
-
-[entries."書道用具"]
-reading = "ショドウヨウグ"
-
-[entries."書道道具"]
-reading = "ショドウドウグ"
-
-[entries."墨汁"]
-reading = "ボクジュウ"
-
 [entries."筆入"]
 reading = "フデイレ"
-
-[entries."筆記用具"]
-reading = "ヒッキヨウグ"
 
 [entries."シャープペン"]
 reading = "シャープペン"
@@ -12704,35 +6644,17 @@ reading = "シャープペンシル"
 [entries."ボールペン"]
 reading = "ボールペン"
 
-[entries."万年筆"]
-reading = "マンネンヒツ"
-
-[entries."万年"]
-reading = "マンネン"
-
 [entries."筆ペン"]
 reading = "フデペン"
 
 [entries."鉛筆削"]
 reading = "エンピツケズリ"
 
-[entries."消しゴム"]
-reading = "ケシゴム"
-
 [entries."ゴム"]
 reading = "ゴム"
 
-[entries."輪ゴム"]
-reading = "ワゴム"
-
 [entries."ノート"]
 reading = "ノート"
-
-[entries."帳面"]
-reading = "チョウメン"
-
-[entries."手帳"]
-reading = "テチョウ"
 
 [entries."スケジュール帳"]
 reading = "スケジュールチョウ"
@@ -12749,65 +6671,14 @@ reading = "タクジョウカレンダー"
 [entries."壁掛けカレンダー"]
 reading = "カベカケカレンダー"
 
-[entries."日めくり"]
-reading = "ヒメクリ"
-
 [entries."月めくり"]
 reading = "ツキメクリ"
-
-[entries."週めくり"]
-reading = "シュウメクリ"
-
-[entries."めくり"]
-reading = "メクリ"
-
-[entries."年めくり"]
-reading = "ネンメクリ"
-
-[entries."年表"]
-reading = "ネンピョウ"
-
-[entries."歴史年表"]
-reading = "レキシネンピョウ"
-
-[entries."組織図"]
-reading = "ソシキズ"
-
-[entries."地図"]
-reading = "チズ"
-
-[entries."住宅地図"]
-reading = "ジュウタクチズ"
-
-[entries."道路地図"]
-reading = "ドウロチズ"
-
-[entries."登山地図"]
-reading = "トザンチズ"
-
-[entries."登山"]
-reading = "トザン"
-
-[entries."登山家"]
-reading = "トザンカ"
-
-[entries."登山者"]
-reading = "トザンシャ"
 
 [entries."登山道"]
 reading = "トザンドウ"
 
 [entries."登山口"]
 reading = "トザングチ"
-
-[entries."頂上"]
-reading = "チョウジョウ"
-
-[entries."山頂駅"]
-reading = "サンチョウエキ"
-
-[entries."登山電車"]
-reading = "トザンデンシャ"
 
 [entries."ロープウェイ"]
 reading = "ロープウェイ"
@@ -12818,122 +6689,20 @@ reading = "ケーブルカー"
 [entries."山岳地"]
 reading = "サンガクチ"
 
-[entries."山岳地帯"]
-reading = "サンガクチタイ"
-
-[entries."山岳信仰"]
-reading = "サンガクシンコウ"
-
-[entries."宗教信仰"]
-reading = "シュウキョウシンコウ"
-
-[entries."信仰心"]
-reading = "シンコウシン"
-
 [entries."信仰深"]
 reading = "シンコウブカ"
-
-[entries."信心"]
-reading = "シンジン"
 
 [entries."信心深"]
 reading = "シンジンブカ"
 
-[entries."信仰告白"]
-reading = "シンコウコクハク"
-
-[entries."告白"]
-reading = "コクハク"
-
-[entries."告白文"]
-reading = "コクハクブン"
-
-[entries."告白の言葉"]
-reading = "コクハクノコトバ"
-
 [entries."言葉遣"]
-reading = "コトバヅカイ"
-
-[entries."言葉遣い"]
 reading = "コトバヅカイ"
 
 [entries."言葉数"]
 reading = "コトバカズ"
 
-[entries."言葉巧"]
-reading = "コトバタクミ"
-
-[entries."口数"]
-reading = "クチカズ"
-
-[entries."口下手"]
-reading = "クチベタ"
-
-[entries."口上手"]
-reading = "クチジョウズ"
-
-[entries."弁舌"]
-reading = "ベンゼツ"
-
 [entries."弁舌爽"]
 reading = "ベンゼツサワ"
-
-[entries."雄弁"]
-reading = "ユウベン"
-
-[entries."熱弁"]
-reading = "ネツベン"
-
-[entries."質疑"]
-reading = "シツギ"
-
-[entries."質疑応答"]
-reading = "シツギオウトウ"
-
-[entries."応答時間"]
-reading = "オウトウジカン"
-
-[entries."応答速度"]
-reading = "オウトウソクド"
-
-[entries."応答率"]
-reading = "オウトウリツ"
-
-[entries."回答率"]
-reading = "カイトウリツ"
-
-[entries."回答数"]
-reading = "カイトウスウ"
-
-[entries."回答時間"]
-reading = "カイトウジカン"
-
-[entries."回答者"]
-reading = "カイトウシャ"
-
-[entries."解答者"]
-reading = "カイトウシャ"
-
-[entries."解答用紙"]
-reading = "カイトウヨウシ"
-
-[entries."答案用紙"]
-reading = "トウアンヨウシ"
-
-[entries."答案返却"]
-reading = "トウアンヘンキャク"
-
-[entries."返却期限"]
-reading = "ヘンキャクキゲン"
-
-[entries."書庫返却"]
-reading = "ショコヘンキャク"
-
-[entries."図書返却"]
-reading = "トショヘンキャク"
-
-[entries."図書館返却"]
-reading = "トショカンヘンキャク"
 
 [entries."ポスト"]
 reading = "ポスト"
@@ -12950,45 +6719,6 @@ reading = "トウカンビ"
 [entries."郵便受"]
 reading = "ユウビンウケ"
 
-[entries."郵便箱"]
-reading = "ユウビンバコ"
-
-[entries."郵便受け"]
-reading = "ユウビンウケ"
-
-[entries."郵便配達"]
-reading = "ユウビンハイタツ"
-
-[entries."郵便配達員"]
-reading = "ユウビンハイタツイン"
-
-[entries."郵便局"]
-reading = "ユウビンキョク"
-
-[entries."郵便局員"]
-reading = "ユウビンキョクイン"
-
-[entries."郵便受付"]
-reading = "ユウビンウケツケ"
-
-[entries."郵便番号"]
-reading = "ユウビンバンゴウ"
-
-[entries."郵便事業"]
-reading = "ユウビンジギョウ"
-
-[entries."郵便配達料"]
-reading = "ユウビンハイタツリョウ"
-
-[entries."切手代"]
-reading = "キッテダイ"
-
-[entries."切手収集"]
-reading = "キッテシュウシュウ"
-
-[entries."収集家"]
-reading = "シュウシュウカ"
-
 [entries."収集品"]
 reading = "シュウシュウヒン"
 
@@ -12997,18 +6727,6 @@ reading = "コレクション"
 
 [entries."コレクター"]
 reading = "コレクター"
-
-[entries."収集対象"]
-reading = "シュウシュウタイショウ"
-
-[entries."記念切手"]
-reading = "キネンキッテ"
-
-[entries."普通切手"]
-reading = "フツウキッテ"
-
-[entries."特殊切手"]
-reading = "トクシュキッテ"
 
 [entries."切手シート"]
 reading = "キッテシート"
@@ -13022,29 +6740,8 @@ reading = "シートジョウ"
 [entries."板状"]
 reading = "イタジョウ"
 
-[entries."棒状"]
-reading = "ボウジョウ"
-
-[entries."楕円形"]
-reading = "ダエンケイ"
-
 [entries."四角形"]
 reading = "シカクケイ"
-
-[entries."正方形"]
-reading = "セイホウケイ"
-
-[entries."長方形"]
-reading = "チョウホウケイ"
-
-[entries."菱形"]
-reading = "ヒシガタ"
-
-[entries."台形"]
-reading = "ダイケイ"
-
-[entries."平行四辺形"]
-reading = "ヘイコウシヘンケイ"
 
 [entries."五角形"]
 reading = "ゴカクケイ"
@@ -13064,21 +6761,6 @@ reading = "キュウカクケイ"
 [entries."十角形"]
 reading = "ジッカクケイ"
 
-[entries."円柱"]
-reading = "エンチュウ"
-
-[entries."円錐"]
-reading = "エンスイ"
-
-[entries."角柱"]
-reading = "カクチュウ"
-
-[entries."角錐"]
-reading = "カクスイ"
-
-[entries."球体"]
-reading = "キュウタイ"
-
 [entries."立体図形"]
 reading = "リッタイズケイ"
 
@@ -13088,74 +6770,8 @@ reading = "ヘイメンズケイ"
 [entries."図形問題"]
 reading = "ズケイモンダイ"
 
-[entries."問題集"]
-reading = "モンダイシュウ"
-
-[entries."問題用紙"]
-reading = "モンダイヨウシ"
-
-[entries."問題作"]
-reading = "モンダイサク"
-
 [entries."解決済"]
 reading = "カイケツズミ"
-
-[entries."事件解決"]
-reading = "ジケンカイケツ"
-
-[entries."事件発生"]
-reading = "ジケンハッセイ"
-
-[entries."発生時刻"]
-reading = "ハッセイジコク"
-
-[entries."事件現場"]
-reading = "ジケンゲンバ"
-
-[entries."現場検証"]
-reading = "ゲンバケンショウ"
-
-[entries."現場保存"]
-reading = "ゲンバホゾン"
-
-[entries."現場確認"]
-reading = "ゲンバカクニン"
-
-[entries."証拠"]
-reading = "ショウコ"
-
-[entries."証拠物件"]
-reading = "ショウコブッケン"
-
-[entries."物的証拠"]
-reading = "ブッテキショウコ"
-
-[entries."状況証拠"]
-reading = "ジョウキョウショウコ"
-
-[entries."情況証拠"]
-reading = "ジョウキョウショウコ"
-
-[entries."直接証拠"]
-reading = "チョクセツショウコ"
-
-[entries."間接証拠"]
-reading = "カンセツショウコ"
-
-[entries."物証"]
-reading = "ブッショウ"
-
-[entries."人証"]
-reading = "ジンショウ"
-
-[entries."書証"]
-reading = "ショショウ"
-
-[entries."証言録"]
-reading = "ショウゲンロク"
-
-[entries."証言記録"]
-reading = "ショウゲンキロク"
 
 [entries."記録係"]
 reading = "キロクガカリ"
@@ -13163,122 +6779,11 @@ reading = "キロクガカリ"
 [entries."書記係"]
 reading = "ショキガカリ"
 
-[entries."書記"]
-reading = "ショキ"
-
-[entries."書記長"]
-reading = "ショキチョウ"
-
-[entries."書記官"]
-reading = "ショキカン"
-
-[entries."裁判書記官"]
-reading = "サイバンショキカン"
-
-[entries."裁判長"]
-reading = "サイバンチョウ"
-
-[entries."裁判員制度"]
-reading = "サイバンインセイド"
-
-[entries."裁判員"]
-reading = "サイバンイン"
-
-[entries."裁判員裁判"]
-reading = "サイバンインサイバン"
-
-[entries."裁判員選任"]
-reading = "サイバンインセンニン"
-
-[entries."選任"]
-reading = "センニン"
-
-[entries."選任手続"]
-reading = "センニンテツヅキ"
-
-[entries."解任"]
-reading = "カイニン"
-
-[entries."解任手続"]
-reading = "カイニンテツヅキ"
-
-[entries."解任権"]
-reading = "カイニンケン"
-
-[entries."任命権"]
-reading = "ニンメイケン"
-
-[entries."任命書"]
-reading = "ニンメイショ"
-
-[entries."任命式"]
-reading = "ニンメイシキ"
-
-[entries."任期"]
-reading = "ニンキ"
-
-[entries."任期満了"]
-reading = "ニンキマンリョウ"
-
-[entries."再任"]
-reading = "サイニン"
-
-[entries."再任期"]
-reading = "サイニンキ"
-
-[entries."留任"]
-reading = "リュウニン"
-
-[entries."留任要請"]
-reading = "リュウニンヨウセイ"
-
-[entries."辞任"]
-reading = "ジニン"
-
-[entries."辞任表明"]
-reading = "ジニンヒョウメイ"
-
-[entries."辞職"]
-reading = "ジショク"
-
 [entries."辞職届"]
 reading = "ジショクトドケ"
 
-[entries."辞退"]
-reading = "ジタイ"
-
 [entries."辞退届"]
 reading = "ジタイトドケ"
-
-[entries."辞退理由"]
-reading = "ジタイリユウ"
-
-[entries."辞退表明"]
-reading = "ジタイヒョウメイ"
-
-[entries."表明書"]
-reading = "ヒョウメイショ"
-
-[entries."辞表"]
-reading = "ジヒョウ"
-
-[entries."辞表提出"]
-reading = "ジヒョウテイシュツ"
-
-[entries."退職金額"]
-reading = "タイショクキンガク"
-
-[entries."退職金規定"]
-reading = "タイショクキンキテイ"
-
-[entries."退職規程"]
-reading = "タイショクキテイ"
-
-[entries."給与規程"]
-reading = "キュウヨキテイ"
-
-[entries."規程改定"]
-reading = "キテイカイテイ"
 
 [entries."改定日"]
 reading = "カイテイビ"
@@ -13289,125 +6794,14 @@ reading = "カイテイバン"
 [entries."改正版"]
 reading = "カイセイバン"
 
-[entries."旧版"]
-reading = "キュウバン"
-
 [entries."最新版"]
 reading = "サイシンバン"
-
-[entries."初版"]
-reading = "ショハン"
-
-[entries."重版"]
-reading = "ジュウハン"
-
-[entries."増刷"]
-reading = "ゾウサツ"
-
-[entries."増刷分"]
-reading = "ゾウサツブン"
 
 [entries."増刷版"]
 reading = "ゾウサツバン"
 
-[entries."版元"]
-reading = "ハンモト"
-
-[entries."版権者"]
-reading = "ハンケンシャ"
-
-[entries."著作権者"]
-reading = "チョサクケンシャ"
-
-[entries."著者"]
-reading = "チョシャ"
-
-[entries."著作集"]
-reading = "チョサクシュウ"
-
-[entries."全集"]
-reading = "ゼンシュウ"
-
-[entries."選集"]
-reading = "センシュウ"
-
-[entries."傑作集"]
-reading = "ケッサクシュウ"
-
-[entries."名作集"]
-reading = "メイサクシュウ"
-
-[entries."画集"]
-reading = "ガシュウ"
-
-[entries."写真集"]
-reading = "シャシンシュウ"
-
-[entries."詩集"]
-reading = "シシュウ"
-
-[entries."俳句集"]
-reading = "ハイクシュウ"
-
-[entries."俳優"]
-reading = "ハイユウ"
-
-[entries."詩人"]
-reading = "シジン"
-
-[entries."随筆家"]
-reading = "ズイヒツカ"
-
-[entries."随筆"]
-reading = "ズイヒツ"
-
-[entries."評論家"]
-reading = "ヒョウロンカ"
-
-[entries."書評欄"]
-reading = "ショヒョウラン"
-
-[entries."新聞"]
-reading = "シンブン"
-
-[entries."新聞紙"]
-reading = "シンブンシ"
-
-[entries."新聞紙面"]
-reading = "シンブンシメン"
-
-[entries."記事面"]
-reading = "キジメン"
-
-[entries."社会面"]
-reading = "シャカイメン"
-
-[entries."経済面"]
-reading = "ケイザイメン"
-
-[entries."政治面"]
-reading = "セイジメン"
-
 [entries."スポーツ面"]
 reading = "スポーツメン"
-
-[entries."文化面"]
-reading = "ブンカメン"
-
-[entries."科学面"]
-reading = "カガクメン"
-
-[entries."解説面"]
-reading = "カイセツメン"
-
-[entries."論説面"]
-reading = "ロンセツメン"
-
-[entries."論説"]
-reading = "ロンセツ"
-
-[entries."社説"]
-reading = "シャセツ"
 
 [entries."コラム"]
 reading = "コラム"
@@ -13418,104 +6812,8 @@ reading = "コラムラン"
 [entries."コラム記事"]
 reading = "コラムキジ"
 
-[entries."読者欄"]
-reading = "ドクシャラン"
-
-[entries."投書欄"]
-reading = "トウショラン"
-
-[entries."読者投稿"]
-reading = "ドクシャトウコウ"
-
-[entries."読者"]
-reading = "ドクシャ"
-
-[entries."読者数"]
-reading = "ドクシャスウ"
-
-[entries."購読者"]
-reading = "コウドクシャ"
-
-[entries."購読者数"]
-reading = "コウドクシャスウ"
-
-[entries."購読料"]
-reading = "コウドクリョウ"
-
-[entries."購読"]
-reading = "コウドク"
-
-[entries."定期購読"]
-reading = "テイキコウドク"
-
-[entries."定期購読料"]
-reading = "テイキコウドクリョウ"
-
-[entries."週刊誌"]
-reading = "シュウカンシ"
-
-[entries."月刊誌"]
-reading = "ゲッカンシ"
-
 [entries."日刊紙"]
 reading = "ニッカンシ"
 
-[entries."日刊"]
-reading = "ニッカン"
-
-[entries."週刊"]
-reading = "シュウカン"
-
-[entries."月刊"]
-reading = "ゲッカン"
-
-[entries."季刊"]
-reading = "キカン"
-
-[entries."創刊"]
-reading = "ソウカン"
-
-[entries."創刊号"]
-reading = "ソウカンゴウ"
-
-[entries."終刊"]
-reading = "シュウカン"
-
-[entries."廃刊"]
-reading = "ハイカン"
-
-[entries."復刊"]
-reading = "フッカン"
-
-[entries."再刊"]
-reading = "サイカン"
-
-[entries."増刊"]
-reading = "ゾウカン"
-
-[entries."別冊"]
-reading = "ベッサツ"
-
-[entries."別冊号"]
-reading = "ベッサツゴウ"
-
-[entries."特別号"]
-reading = "トクベツゴウ"
-
-[entries."記念号"]
-reading = "キネンゴウ"
-
-[entries."創刊記念"]
-reading = "ソウカンキネン"
-
-[entries."創刊記念号"]
-reading = "ソウカンキネンゴウ"
-
-[entries."創刊号特別号"]
-reading = "ソウカンゴウトクベツゴウ"
-
 # regression fix: 「使い方」 = ツカイカタ (mega3 で 「使い」 を入れたため
 # 「使い方」 が 「ツカイ+ホウ」 になる回帰、 jukugo 個別登録で fix)
-[entries."使い方"]
-reading = "ツカイカタ"
-
