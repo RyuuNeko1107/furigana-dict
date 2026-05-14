@@ -3572,9 +3572,6 @@ reading = "ニド"
 # ─── 行政 ────────────────────────────
 # ─── 会 系 (batch 42) ────────────────────────────
 # ─── 社 系 ────────────────────────────
-[entries."社訓"]
-reading = "シャクン"
-
 # ─── 組 / 構 系 ────────────────────────────
 # ─── 標 / 規 / 制 系 ────────────────────────────
 # ─── 個 / 各 系 ────────────────────────────
@@ -3601,9 +3598,6 @@ reading = "ガッテン"
 
 [entries."山手線"]
 reading = "ヤマノテセン"
-
-[entries."接面"]
-reading = "セツメン"
 
 [entries."時計算"]
 reading = "ジケイサン"
@@ -3680,17 +3674,11 @@ reading = "カゼグスリ"
 [entries."珠算"]
 reading = "シュザン"
 
-[entries."計算機"]
-reading = "ケイサンキ"
-
 [entries."札入"]
 reading = "サツイレ"
 
 [entries."編者"]
 reading = "ヘンジャ"
-
-[entries."完結編"]
-reading = "カンケツヘン"
 
 [entries."讃美歌"]
 reading = "サンビカ"
@@ -3746,17 +3734,11 @@ reading = "ベントウバコ"
 [entries."小作家"]
 reading = "ショウサッカ"
 
-[entries."乾燥機"]
-reading = "カンソウキ"
-
 [entries."乾燥地"]
 reading = "カンソウチ"
 
 [entries."排水溝"]
 reading = "ハイスイコウ"
-
-[entries."洗濯機"]
-reading = "センタクキ"
 
 [entries."塩漬"]
 reading = "シオヅケ"
@@ -3868,9 +3850,6 @@ reading = "ダソウ"
 
 [entries."管理人"]
 reading = "カンリニン"
-
-[entries."管理職"]
-reading = "カンリショク"
 
 [entries."監視カメラ"]
 reading = "カンシカメラ"
@@ -3989,9 +3968,6 @@ reading = "キバコ"
 [entries."鉄箱"]
 reading = "テツバコ"
 
-[entries."保管庫"]
-reading = "ホカンコ"
-
 [entries."蔵書印"]
 reading = "ゾウショイン"
 
@@ -4003,9 +3979,6 @@ reading = "ケイタイヒン"
 
 [entries."電話帳"]
 reading = "デンワチョウ"
-
-[entries."通信機"]
-reading = "ツウシンキ"
 
 [entries."網袋"]
 reading = "アミブクロ"
