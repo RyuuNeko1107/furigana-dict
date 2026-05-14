@@ -2048,53 +2048,6 @@ next_starts_any = [
   "門",
 ]
 
-[entries."間"]
-reading = "カン"
-
-[[entries."間".match]]
-reading = "マ"
-next_eq = "の"
-prev_ends_any = [
-  "奥",
-  "書院造",
-  "書院造り",
-  "数寄屋",
-  "茶",
-  "板",
-  "客",
-  "応接",
-  "座敷",
-  "板の",
-  "板敷きの",
-]
-
-[[entries."間".match]]
-reading = "マ"
-prev_ends_any = [
-  "奥の",
-  "板の",
-  "茶の",
-  "次の",
-  "二の",
-  "客の",
-]
-
-[[entries."間".match]]
-reading = "マ"
-prev_ends_any = [
-  "広い",
-  "狭い",
-  "明るい",
-  "暗い",
-]
-
-# ★round 36、 「ギャルの間では / 仲間の間 / 友達の間」 等 「人の間 = アイダ」
-# 「間 + 助詞」 (= 「間は / 間に / 間が / 間を / 間で」) で 「アイダ」 文脈
-[[entries."間".match]]
-reading = "アイダ"
-next_starts_any = ["は", "に", "が", "を", "で"]
-prev_eq = "の"
-
 [entries."能"]
 reading = "ノウ"
 
