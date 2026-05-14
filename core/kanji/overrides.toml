@@ -1699,6 +1699,16 @@ default = "ジュウ"
 # jukugo basic で band 100 登録済、 ここの default 変更で覆われる。
 
 [[kanji]]
+char = "一"
+default = "イチ"
+# 「一」 unihan default 「ひと」 (= 訓読み) → 音読み 82 件 vs 訓読み 8 件で
+# 圧倒的に音読み default が安全。 「一人 / 一つ / 二人 / 二つ」 等の和語数
+# 詞は rules/numbers/ counter system + numeric_phrases で band 1000 吸収、
+# 「一目 = ヒトメ」 等は jukugo basic/general に登録済み。
+# 「第一 / 一週間 / 一斉」 等 default ひと 連結で誤読していた jukugo 未登録
+# case を default イチ で救う。
+
+[[kanji]]
 char = "五"
 default = "ゴ"
 

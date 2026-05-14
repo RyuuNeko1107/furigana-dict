@@ -10,7 +10,7 @@ role = "unihan"
 description = "常用漢字 2,136 字 (文化庁 2010-11-30 改訂、 内閣告示) — 利用頻度高、 default reading review 対象"
 
 [entries]
-"一" = "ひと"
+# 一 は core/kanji/overrides.toml の [[kanji]] block に移行
 # 丁 は core/kanji/overrides.toml の [[kanji]] block に移行
 # "七" は core/kanji/overrides.toml の [[kanji]] block に移行 (★round 48)
 # "万" は core/kanji/overrides.toml の [[kanji]] block に移行
