@@ -245,8 +245,6 @@ mark { background: #fff8c5; color: inherit; padding: 0 1px; }
 
 <header>
   <div class="nav">
-    <a href="./">&larr; landing</a>
-    &nbsp;|&nbsp;
     <span class="repo-link">repo: <a href="https://github.com/RyuuNeko1107/ja-furigana-dict">github.com/RyuuNeko1107/ja-furigana-dict</a></span>
   </div>
   <h1>furigana-dict 検索 <span class="count">__COUNT__ entries / __FILES__ files / __KANJI_COUNT__ kanji</span></h1>

@@ -5,13 +5,12 @@ name: Build & deploy Pages (dict_browser)
 # 合わせて GitHub Pages にデプロイする。
 #
 # 公開 URL: https://ryuuneko1107.github.io/ja-furigana-dict/
-#   - / (= pages/index.html)        landing
-#   - /dict_browser.html            全 entry 検索 UI
+#   - /                  = dict_browser.html (root に直で出す)
+#   - /dict_browser.html = 同じ内容 (旧 URL 互換のため両方残す)
 #
 # trigger 設計:
 # - core/**/*.toml: 辞書本体の変更
 # - tools/build_dict_browser.py: script 自体の変更
-# - pages/**: landing 等の変更
 # - .github/workflows/build-pages.yml: workflow 自体の変更
 # regen-stats.yml の auto-commit `[skip stats]` でも path filter で trigger される
 # (= STATS.md 更新のみの commit は再 trigger されない、 core/ が変わったときだけ走る)
@@ -22,7 +21,6 @@ on:
     paths:
       - 'core/**/*.toml'
       - 'tools/build_dict_browser.py'
-      - 'pages/**'
       - '.github/workflows/build-pages.yml'
   workflow_dispatch:
 
@@ -48,14 +46,12 @@ jobs:
         with:
           python-version: '3.11'
 
-      - name: build dict_browser.html
-        # _site/ 直下に dict_browser.html を生成
+      - name: build dict_browser.html (= root index)
+        # _site/index.html を本体に、 /dict_browser.html も同内容で残す (URL 互換)
         run: |
           mkdir -p _site
-          python3 tools/build_dict_browser.py --out _site/dict_browser.html
-
-      - name: landing index.html を copy
-        run: cp pages/index.html _site/index.html
+          python3 tools/build_dict_browser.py --out _site/index.html
+          cp _site/index.html _site/dict_browser.html
 
       - name: 出力サイズ確認
         run: |
