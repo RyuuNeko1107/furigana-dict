@@ -351,7 +351,7 @@ description = "常用漢字 2,136 字 (文化庁 2010-11-30 改訂、 内閣告�
 # 図 は core/kanji/overrides.toml の [[kanji]] block に移行
 # 固 は core/kanji/overrides.toml の [[kanji]] block に移行
 "圏" = "ケン"
-"土" = "つち"
+# 土 は core/kanji/overrides.toml の [[kanji]] block に移行
 # 「圧」 は overrides.toml の [[kanji]] block に移行 (★round 39)
 "在" = "ある"
 "地" = "つち"
@@ -1873,7 +1873,7 @@ description = "常用漢字 2,136 字 (文化庁 2010-11-30 改訂、 内閣告�
 "鏡" = "かがみ"
 "鐘" = "かね"
 "鑑" = "かがみ"
-"長" = "チョウ"
+# 長 は core/kanji/overrides.toml の [[kanji]] block に移行
 "門" = "かど"
 # 閉 は core/kanji/overrides.toml の [[kanji]] block に移行
 # 開 は core/kanji/overrides.toml の [[kanji]] block に移行
