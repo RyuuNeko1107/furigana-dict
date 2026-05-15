@@ -1157,6 +1157,30 @@ function renderEntryView() {
     if (matches(e, filters, dir)) matched.push(e);
   }
 
+  // フォールバック: contains 検索 0 件かつ 文章 lookup mode (= 漢字含む)、 入力中に
+  // 部分 jukugo hit があれば 「文章中の jukugo hit list」 を entry list として表示
+  // (= 「該当エントリー無し」 を避け、 LR 適用 + 不採用候補を見せる)
+  const bare = ccBareInput(q);
+  if (matched.length === 0 && bare) {
+    const composed = ccComposeWithJukugo(bare);
+    const seen = new Set();
+    const dedup = [];
+    for (const j of [...composed.applied, ...composed.skipped]) {
+      const k = j.e.f + '::' + j.e.s;
+      if (seen.has(k)) continue;
+      seen.add(k); dedup.push(j.e);
+    }
+    if (dedup.length > 0) {
+      resultsEl.innerHTML =
+        '<div class="match-title" style="font-size:.88em; color:var(--muted); margin: .5em 0 .4em">📋 surface 完全一致 0 件 → 入力中に hit した jukugo entry (' + dedup.length + '): LR 適用 + 不採用候補</div>' +
+        dedup.map(e => renderCard(e, [bare], [])).join('');
+      statEl.textContent = '文章 lookup fallback (jukugo hit ' + dedup.length + ')';
+      document.getElementById('pagination').style.display = 'none';
+      updateProgressBar(dedup);
+      return;
+    }
+  }
+
   matched.sort((a, b) => (a.s.length - b.s.length) || a.s.localeCompare(b.s, 'ja'));
 
   const total = matched.length;
