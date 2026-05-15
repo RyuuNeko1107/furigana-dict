@@ -43,7 +43,7 @@ description = "常用漢字 2,136 字 (文化庁 2010-11-30 改訂、 内閣告�
 "予" = "ヨ"
 # 争 は core/kanji/overrides.toml の [[kanji]] block に移行
 "事" = "こと"
-"二" = "ふた"
+# 二 は core/kanji/overrides.toml の [[kanji]] block に移行
 # 互 は core/kanji/overrides.toml の [[kanji]] block に移行
 # "五" は core/kanji/overrides.toml の [[kanji]] block に移行 (★round 48)
 "井" = "セイ"
@@ -632,7 +632,7 @@ description = "常用漢字 2,136 字 (文化庁 2010-11-30 改訂、 内閣告�
 # 徒 は core/kanji/overrides.toml の [[kanji]] block に移行
 # 従 は core/kanji/overrides.toml の [[kanji]] block に移行
 "得" = "える"
-"御" = "おん"
+# 御 は core/kanji/overrides.toml の [[kanji]] block に移行
 # 復 は core/kanji/overrides.toml の [[kanji]] block に移行
 # 循 は core/kanji/overrides.toml の [[kanji]] block に移行
 "微" = "かすか"
@@ -1390,7 +1390,7 @@ description = "常用漢字 2,136 字 (文化庁 2010-11-30 改訂、 内閣告�
 "紹" = "つぐ"
 "紺" = "コン"
 "組" = "くむ"
-"経" = "へる"
+# 経 は core/kanji/overrides.toml の [[kanji]] block に移行
 # 結 は core/kanji/overrides.toml の [[kanji]] block に移行
 # 絞 は core/kanji/overrides.toml の [[kanji]] block に移行
 # 絡 は core/kanji/overrides.toml の [[kanji]] block に移行
