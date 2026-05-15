@@ -1870,6 +1870,26 @@ default = "ヘイ"
 char = "公"
 default = "コウ"
 
+# 「難」: unihan default 「かたい」 → ナン 系 jukugo 4 件 (= 困難 / 避難 /
+# 七難八苦 / 前途多難) + default = ナン で吸収できる pattern が圧倒的多数
+# (= 災難 / 難民 / 難関 / 難解 / 難題 / 難所 / 苦難 / 国難 等)。
+# 形容詞 「難しい = ムズカシイ」 (= 「難しい / 難しさ / 難しく / 難しかった」)
+# は next が 「し」 のとき reading = ムズカ で okurigana 連結。
+# 形容詞 「難い = カタイ」 (= 「難い / 難く」、 古語色) は next が 「い」 のとき
+# reading = カタ。 ※ 接尾辞 「ガタい / ガタく」 (= 「読み難い / 受け難い」 等
+# 連濁形) は jukugo 個別救済が必要だが、 既存 entries 0 件で TODO。
+[[kanji]]
+char = "難"
+default = "ナン"
+
+[[kanji.match]]
+next_starts_any = ["し"]
+reading = "ムズカ"
+
+[[kanji.match]]
+next_starts_any = ["い"]
+reading = "カタ"
+
 # 「者」: default 音読み 「シャ」 (= 「医者 / 学者 / 患者 / 編者」 等)。 動詞連体形 + 者
 # (= 「戦う者 / 行く者 / 知る者」 形式名詞用法) は prev token 末尾が動詞語尾のとき 「モノ」。
 # 「強者 / 若者」 等 漢字 + 者 = モノ は jukugo に band 100 で個別登録。
