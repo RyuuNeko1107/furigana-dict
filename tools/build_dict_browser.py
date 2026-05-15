@@ -1867,7 +1867,13 @@ document.querySelectorAll('.chip.kf').forEach(chip => {
 });
 
 ufileFilter.addEventListener('change', () => { kanjiPage = 1; render(); });
-qInput.addEventListener('input', () => { entryPage = 1; kanjiPage = 1; scheduleRender(); });
+qInput.addEventListener('input', () => {
+  entryPage = 1; kanjiPage = 1;
+  // 軽い compose summary + char audit は即時 render (= 入力途中の即時判定 feedback)
+  if (currentView === 'entry') { renderComposeSummary(); renderCharAudit(); }
+  // 重い entry/kanji list 検索は 80ms debounce
+  scheduleRender();
+});
 modeSel.addEventListener('change', () => { entryPage = 1; render(); });
 dirFilter.addEventListener('change', () => { entryPage = 1; render(); });
 
