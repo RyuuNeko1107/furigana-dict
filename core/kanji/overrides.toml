@@ -1758,6 +1758,16 @@ default = "ジュウ"
 char = "御"
 default = "ゴ"
 
+# 「本」: unihan default なし、 旧 joyo.toml detailed entry で default = ホン
+# だったものを [[kanji]] block に移行。 jukugo 先頭 22/22 全て ホン (= 本日
+# / 本望 / 本気 / 本人 / 本来 / 本音 等)、 後置も ホン 圧倒的多数。 連濁
+# (= 一本 / 三本 / 千本 / 六本木 / 元本 / 日本銀行) は jukugo に band 100
+# 個別登録済、 モト 訓読みは固有名詞 7 件 (熊本 / 松本 / 坂本 / 橋本 /
+# 本居宣長) すべて jukugo 個別登録済 → default = ホン で安全。
+[[kanji]]
+char = "本"
+default = "ホン"
+
 # 「者」: default 音読み 「シャ」 (= 「医者 / 学者 / 患者 / 編者」 等)。 動詞連体形 + 者
 # (= 「戦う者 / 行く者 / 知る者」 形式名詞用法) は prev token 末尾が動詞語尾のとき 「モノ」。
 # 「強者 / 若者」 等 漢字 + 者 = モノ は jukugo に band 100 で個別登録。

@@ -2057,8 +2057,8 @@ reading = "ヤク"
 [entries."差"]
 reading = "サ"
 
-[entries."本"]
-reading = "ホン"
+# 「本」 は core/kanji/overrides.toml の [[kanji]] block に移行
+# (default = ホン)
 
 [entries."率"]
 reading = "リツ"
