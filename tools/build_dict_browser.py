@@ -368,12 +368,12 @@ h1 .count { font-size: .75em; color: var(--muted); font-weight: 400; margin-left
 #q {
   width: 100%; padding: .55em .8em; font-size: 1em;
   border: 1px solid var(--line); border-radius: 6px;
-  font-family: inherit;
+  background: var(--bg); color: var(--fg); font-family: inherit;
 }
 #q:focus { outline: none; border-color: var(--accent); box-shadow: 0 0 0 3px var(--soft-blue); }
 select {
   padding: .55em .8em; border: 1px solid var(--line); border-radius: 6px;
-  background: var(--bg); font-family: inherit; font-size: .95em;
+  background: var(--bg); color: var(--fg); font-family: inherit; font-size: .95em;
 }
 
 .filters { margin-top: .6em; display: flex; flex-wrap: wrap; gap: .4em; align-items: center; }
@@ -572,6 +572,7 @@ mark { background: var(--soft-yellow); color: inherit; padding: 0 1px; }
 .pagination .page-input {
   width: 4em; padding: .35em .5em; text-align: center;
   border: 1px solid var(--line); border-radius: 4px; font-family: inherit;
+  background: var(--bg); color: var(--fg);
 }
 
 /* redundancy filter chip */
@@ -587,7 +588,7 @@ mark { background: var(--soft-yellow); color: inherit; padding: 0 1px; }
 .sw-btns { display: inline-flex; gap: .2em; margin-left: .6em; vertical-align: middle; }
 .sw-btn {
   padding: .15em .55em; font-size: .78em; border: 1px solid var(--line);
-  border-radius: 4px; background: var(--bg); cursor: pointer;
+  border-radius: 4px; background: var(--bg); color: var(--fg); cursor: pointer;
   font-family: inherit; line-height: 1.3;
 }
 .sw-btn:hover { background: var(--soft); }
@@ -623,7 +624,7 @@ mark { background: var(--soft-yellow); color: inherit; padding: 0 1px; }
 }
 .sw-toolbar button {
   padding: .25em .6em; font-size: .82em; border: 1px solid var(--line);
-  background: var(--bg); border-radius: 4px; cursor: pointer; font-family: inherit;
+  background: var(--bg); color: var(--fg); border-radius: 4px; cursor: pointer; font-family: inherit;
 }
 .sw-toolbar button:hover { background: var(--soft); }
 </style>
