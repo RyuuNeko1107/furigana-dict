@@ -297,6 +297,7 @@ HTML_TEMPLATE = """<!doctype html>
 <html lang="ja">
 <head>
 <meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
 <title>furigana-dict 検索 (__COUNT__ entries)</title>
 <style>
 :root {
@@ -655,6 +656,11 @@ mark { background: var(--soft-yellow); color: inherit; padding: 0 1px; }
 .compose-jukugo-hits .cjh-surface { font-weight: 600; }
 .compose-jukugo-hits .cjh-reading { color: var(--green); margin-left: .5em; font-family: "Yu Gothic UI", sans-serif; }
 .compose-jukugo-hits .cjh-path { font-family: Consolas, monospace; font-size: .78em; color: var(--gray-faint); margin-left: .5em; }
+.compose-jukugo-hits .cjh-mark { font-size: .78em; padding: .05em .4em; border-radius: 3px; background: var(--soft-green); color: var(--green); margin-right: .3em; }
+.compose-jukugo-hits .cjh-row.cjh-skip { opacity: .55; }
+.compose-jukugo-hits .cjh-row.cjh-skip .cjh-mark { background: var(--soft); color: var(--muted); }
+.compose-result-summary .cr-default-only { font-size: .82em; color: var(--muted); margin-top: .35em; font-weight: 400; }
+.compose-result-summary .cr-reading-alt { color: var(--muted); font-family: "Yu Gothic UI", sans-serif; text-decoration: line-through; text-decoration-color: var(--gray-faint); }
 .compose-char-list { display: flex; flex-direction: column; gap: .4em; }
 .compose-char {
   border: 1px solid var(--line); border-radius: 6px;
@@ -684,6 +690,48 @@ mark { background: var(--soft-yellow); color: inherit; padding: 0 1px; }
 }
 .compose-char .cc-matches .cc-mc.is-applied { background: var(--soft-yellow); color: var(--yellow); }
 .compose-char .cc-pos { font-size: .75em; color: var(--gray-faint); margin-left: .3em; }
+
+/* === スマホ / 狭幅対応 (= max-width 720px) === */
+@media (max-width: 720px) {
+  header { padding: .55em .7em; }
+  h1 { font-size: 1.05em; }
+  h1 .count { font-size: .68em; display: block; margin-left: 0; margin-top: .1em; }
+  .nav { font-size: .78em; flex-wrap: wrap; gap: .4em; }
+  .view-tabs { flex-wrap: wrap; gap: .25em; }
+  .vtab { padding: .35em .6em; font-size: .82em; }
+  #q { font-size: 16px; padding: .5em .65em; } /* 16px で iOS の auto-zoom 抑止 */
+  select { font-size: 16px; padding: .5em .65em; }
+  .controls { gap: .4em; }
+  .help-toggle, .theme-toggle { font-size: .82em; padding: .3em .55em; }
+  .filters { gap: .3em; }
+  .chip { padding: .3em .65em; font-size: .82em; } /* タップサイズ確保 */
+  #stat { width: 100%; margin-left: 0; margin-top: .25em; }
+  main { padding: .6em .7em 4em; }
+  .card { padding: .55em .7em; margin: .35em 0; }
+  .surface { font-size: 1.1em; }
+  .reading { font-size: .95em; }
+  .badge { font-size: .68em; padding: .08em .45em; }
+  .row1 { gap: .5em; }
+  .path { font-size: .72em; word-break: break-all; }
+  /* kanji card */
+  .kanji-card { grid-template-columns: 3em 1fr; gap: .5em; padding: .55em .7em; }
+  .kanji-card .big-char { font-size: 2em; }
+  /* compose lookup */
+  .compose-result-summary { font-size: 1.1em; padding: .55em .7em; }
+  .compose-result-summary .cr-arrow { margin: 0 .3em; }
+  .compose-jukugo-hits { padding: .5em .7em; font-size: .85em; }
+  .compose-jukugo-hits .cjh-row { word-break: break-all; }
+  .compose-char { grid-template-columns: 2.2em 1fr; gap: .5em; padding: .4em .6em; }
+  .compose-char .cc-ch { font-size: 1.5em; }
+  .compose-char .cc-pos { display: block; margin-left: 0; margin-top: .15em; }
+  /* dashboard */
+  .dashboard { grid-template-columns: repeat(auto-fit, minmax(100px, 1fr)); gap: .35em; }
+  .stat-card { padding: .35em .55em; }
+  .stat-card .stat-num { font-size: 1.1em; }
+  /* pagination */
+  .pagination { flex-wrap: wrap; gap: .35em; padding: .55em 0; }
+  .sw-toolbar { flex-wrap: wrap; }
+}
 </style>
 <script>
 // FOUC 回避: localStorage から saved theme を即座に html[data-theme] に反映、
@@ -1571,33 +1619,73 @@ function ccBareInput(q) {
   return q.trim();
 }
 
+// jukugo を greedy に重ならず適用 (= 長さ降順で選び、 残 char は default + match)
+function ccComposeWithJukugo(text) {
+  const chars = Array.from(text);
+  const charResults = chars.map((ch, i) => ccLookupChar(ch, i > 0 ? chars[i-1] : null, i < chars.length-1 ? chars[i+1] : null));
+  const allJukugo = ccLookupJukugo(text);
+  const taken = new Array(chars.length).fill(false);
+  const applied = [];
+  const skipped = [];
+  // 長い順 (長さ降順 → start 昇順) で greedy 選択
+  const sortedByLen = [...allJukugo].sort((a, b) => (b.end - b.start) - (a.end - a.start) || a.start - b.start);
+  for (const j of sortedByLen) {
+    let canTake = true;
+    for (let i = j.start; i < j.end; i++) if (taken[i]) { canTake = false; break; }
+    if (canTake) { for (let i = j.start; i < j.end; i++) taken[i] = true; applied.push(j); }
+    else skipped.push(j);
+  }
+  applied.sort((a, b) => a.start - b.start);
+  // build reading
+  let out = '', i = 0, ai = 0;
+  while (i < chars.length) {
+    if (ai < applied.length && applied[ai].start === i) {
+      out += applied[ai].e.r;
+      i = applied[ai].end;
+      ai++;
+    } else {
+      out += charResults[i].reading;
+      i++;
+    }
+  }
+  return { reading: out, applied, skipped, charResults };
+}
+
 function renderComposeSummary() {
   if (!composeSummaryEl) return;
   const text = ccBareInput(qInput.value);
   if (!text) { composeSummaryEl.innerHTML = ''; return; }
-  const chars = Array.from(text);
-  const results = chars.map((ch, i) => ccLookupChar(ch, i > 0 ? chars[i-1] : null, i < chars.length-1 ? chars[i+1] : null));
-  const composed = results.map(r => r.reading).join('');
-  const jukugo = ccLookupJukugo(text);
+  const composed = ccComposeWithJukugo(text);
+  const allJukugo = [...composed.applied, ...composed.skipped].sort((a, b) => a.start - b.start || (b.end - b.start) - (a.end - a.start));
+  const appliedSet = new Set(composed.applied);
   let jukugoHtml = '';
-  if (jukugo.length) {
+  if (allJukugo.length) {
     jukugoHtml = '<div class="compose-jukugo-hits">' +
-      '<div class="cjh-title">⚡ jukugo entry hit (' + jukugo.length + '): lib では band 100 で吸収、 default 連結より優先</div>' +
-      jukugo.map(h =>
-        '<div class="cjh-row">' +
-        '[' + h.start + '..' + h.end + '] <span class="cjh-surface">' + escapeHtml(h.sub) + '</span>' +
-        '<span class="cjh-reading">→ ' + escapeHtml(h.e.r) + '</span>' +
-        '<span class="cjh-path">' + escapeHtml(h.e.f) + '</span>' +
-        '</div>'
-      ).join('') +
+      '<div class="cjh-title">⚡ jukugo entry hit (' + allJukugo.length + ', 適用 ' + composed.applied.length + ' / skip ' + composed.skipped.length + '): lib では band 100 で吸収、 default 連結より優先</div>' +
+      allJukugo.map(h => {
+        const isApplied = appliedSet.has(h);
+        const mark = isApplied ? '✓ 適用' : '☓ 重複で skip';
+        const cls = isApplied ? 'cjh-row' : 'cjh-row cjh-skip';
+        return '<div class="' + cls + '">' +
+          '<span class="cjh-mark">' + mark + '</span>' +
+          ' [' + h.start + '..' + h.end + '] <span class="cjh-surface">' + escapeHtml(h.sub) + '</span>' +
+          '<span class="cjh-reading">→ ' + escapeHtml(h.e.r) + '</span>' +
+          '<span class="cjh-path">' + escapeHtml(h.e.f) + '</span>' +
+          '</div>';
+      }).join('') +
       '</div>';
   }
+  // 比較表示: default 連結のみ vs jukugo 適用後
+  const defaultOnly = composed.charResults.map(r => r.reading).join('');
+  const reading = composed.reading;
+  const isSame = defaultOnly === reading;
   composeSummaryEl.innerHTML =
     '<div class="compose-result-summary">' +
     '<span class="cr-surface">' + escapeHtml(text) + '</span>' +
     '<span class="cr-arrow">→</span>' +
-    '<span class="cr-reading">' + escapeHtml(composed) + '</span>' +
-    (jukugo.length ? '' : ' <span class="cr-empty">(default + match 連結のみ、 jukugo entry hit なし)</span>') +
+    '<span class="cr-reading">' + escapeHtml(reading) + '</span>' +
+    (isSame ? ' <span class="cr-empty">(jukugo 適用なし、 default + match 連結のみ)</span>' : ' <span class="cr-empty">(jukugo ' + composed.applied.length + ' 件適用後)</span>') +
+    (isSame ? '' : '<div class="cr-default-only">default + match 連結のみ: <span class="cr-reading-alt">' + escapeHtml(defaultOnly) + '</span></div>') +
     '</div>' + jukugoHtml;
 }
 

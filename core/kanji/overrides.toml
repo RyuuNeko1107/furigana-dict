@@ -1939,6 +1939,43 @@ reading = "キ"
 char = "工"
 default = "コウ"
 
+# 「品」: unihan default 「しな」 → ヒン 系 16 件 (= 納品 / 商品 / 製品 /
+# 品質 / 作品 / 食品 / 部品 等) で音読み圧倒的多数。 シナ 系 2 件 (= 品物
+# / 品揃え) は jukugo 個別登録 = band 100 で吸収。 default = ヒン に倒す
+# 純化。
+[[kanji]]
+char = "品"
+default = "ヒン"
+
+# 「象」: unihan default 「かた」 → ショウ/ゾウ 系 7 件 (= 印象 / 現象 /
+# 気象 / 対象 / 事象 / 森羅万象) + default = ショウ で吸収できる pattern
+# が多数 (= 抽象 / 具象 / 表象 / 形象 / 巨象 等)。 カタ 系 jukugo は 0 件、
+# 動物 「象=ゾウ」 単独は 「象」 1 字だが context dependent で default では
+# 救えない (= 別途 single_overrides 等で対応)。 default = ショウ に倒す
+# 純化。
+[[kanji]]
+char = "象"
+default = "ショウ"
+
+# 「神」: unihan default 「かみ」 → 純 migration (= reading 変更なし)。 シン/
+# ジン 系 48 件 (= 神社 / 神話 / 神道 / 精神 / 神経 / 失神 / 神秘 / 原神
+# / 破壊神 等) は jukugo 個別登録 = band 100 で吸収。 単独 「神」 (= 神を
+# / 神に / 文末 神 等) と カミ 系 jukugo は default で カミ。 default シン
+# 倒しは試したが文末 「神」 で fail (= matcher は next 必須)、 純 migration
+# が安全と判断。
+[[kanji]]
+char = "神"
+default = "かみ"
+
+# 「音」: unihan default 「おと」 → 純 migration (= reading 変更なし)。 オン/
+# イン 系 41 件 (= 音楽 / 録音 / 発音 / 音圧 / 異口同音 等)・ ネ 系 (=
+# 本音=ホンネ / 音色=ネイロ) は jukugo 個別登録 = band 100 で吸収。 単独
+# 「音」 (= 音を / 音が / 文末 音 等) は default で オト。 「神」 と同様
+# default オン 倒しは文末 case で fail、 純 migration が安全と判断。
+[[kanji]]
+char = "音"
+default = "おと"
+
 # 「者」: default 音読み 「シャ」 (= 「医者 / 学者 / 患者 / 編者」 等)。 動詞連体形 + 者
 # (= 「戦う者 / 行く者 / 知る者」 形式名詞用法) は prev token 末尾が動詞語尾のとき 「モノ」。
 # 「強者 / 若者」 等 漢字 + 者 = モノ は jukugo に band 100 で個別登録。
