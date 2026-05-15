@@ -1718,45 +1718,33 @@ function renderComposeSummary() {
   const allJukugo = [...composed.applied, ...composed.skipped].sort((a, b) => a.start - b.start || (b.end - b.start) - (a.end - a.start));
   const appliedSet = new Set(composed.applied);
 
-  // 適用 step list を 2 section に分割: ① 適用 jukugo (LR で採用) ② 足りない部分 (単漢字 + 仮名等)
-  const renderStep = (s, idx) => {
-    let kindLabel, kindCls;
-    if (s.kind === 'jukugo') { kindLabel = 'jukugo'; kindCls = 'cs-jukugo'; }
-    else if (s.kind === 'kblock') { kindLabel = '[[kanji]]'; kindCls = 'cs-kblock'; }
-    else if (s.kind === 'unihan') { kindLabel = 'unihan'; kindCls = 'cs-unihan'; }
-    else { kindLabel = ccCharType(s.text) || 'literal'; kindCls = 'cs-literal'; }
-    let extra = '';
-    if (s.kind === 'kblock' && s.applied) {
-      extra = ' <span class="cs-extra">(default=' + escapeHtml(s.defaultR) + ', match: <code>' + escapeHtml(s.cond) + '</code>)</span>';
-    } else if (s.kind === 'kblock') {
-      extra = ' <span class="cs-extra">(default のみ)</span>';
-    }
-    const fileTail = s.file ? ' <span class="cs-file">' + escapeHtml(s.file) + '</span>' : '';
-    return '<div class="cs-step">' +
-      '<span class="cs-num">' + (idx + 1) + '.</span>' +
-      ' [' + s.start + '..' + s.end + '] ' +
-      '<span class="cs-kind ' + kindCls + '">' + kindLabel + '</span>' +
-      ' <span class="cs-text">' + escapeHtml(s.text) + '</span>' +
-      '<span class="cs-arrow">→</span>' +
-      '<span class="cs-reading">' + escapeHtml(s.reading) + '</span>' +
-      extra + fileTail +
-      '</div>';
-  };
-  const jukugoSteps = composed.steps.filter(s => s.kind === 'jukugo');
-  const fillerSteps = composed.steps.filter(s => s.kind !== 'jukugo');
-  let stepsHtml = '';
-  if (jukugoSteps.length) {
-    stepsHtml += '<div class="compose-steps">' +
-      '<div class="cs-title">📦 適用された jukugo entry (' + jukugoSteps.length + ' 件、 LR: 左から最長で採用):</div>' +
-      jukugoSteps.map((s, idx) => renderStep(s, idx)).join('') +
-      '</div>';
-  }
-  if (fillerSteps.length) {
-    stepsHtml += '<div class="compose-steps cs-fill">' +
-      '<div class="cs-title">🔠 jukugo に cover されない部分 (' + fillerSteps.length + ' 件、 単漢字 [[kanji]] block / unihan / 仮名 / 記号):</div>' +
-      fillerSteps.map((s, idx) => renderStep(s, idx)).join('') +
-      '</div>';
-  }
+  // 適用 step list (= 端から LR 進行順、 jukugo / 単漢字 / 仮名 を入力順に 1 list)
+  const stepsHtml = '<div class="compose-steps">' +
+    '<div class="cs-title">🪜 LR 適用順序 (= 端から最長 jukugo → 残りは単漢字 [[kanji]] block / unihan / 仮名):</div>' +
+    composed.steps.map((s, idx) => {
+      let kindLabel, kindCls;
+      if (s.kind === 'jukugo') { kindLabel = 'jukugo'; kindCls = 'cs-jukugo'; }
+      else if (s.kind === 'kblock') { kindLabel = '[[kanji]]'; kindCls = 'cs-kblock'; }
+      else if (s.kind === 'unihan') { kindLabel = 'unihan'; kindCls = 'cs-unihan'; }
+      else { kindLabel = ccCharType(s.text) || 'literal'; kindCls = 'cs-literal'; }
+      let extra = '';
+      if (s.kind === 'kblock' && s.applied) {
+        extra = ' <span class="cs-extra">(default=' + escapeHtml(s.defaultR) + ', match: <code>' + escapeHtml(s.cond) + '</code>)</span>';
+      } else if (s.kind === 'kblock') {
+        extra = ' <span class="cs-extra">(default のみ)</span>';
+      }
+      const fileTail = s.file ? ' <span class="cs-file">' + escapeHtml(s.file) + '</span>' : '';
+      return '<div class="cs-step">' +
+        '<span class="cs-num">' + (idx + 1) + '.</span>' +
+        ' [' + s.start + '..' + s.end + '] ' +
+        '<span class="cs-kind ' + kindCls + '">' + kindLabel + '</span>' +
+        ' <span class="cs-text">' + escapeHtml(s.text) + '</span>' +
+        '<span class="cs-arrow">→</span>' +
+        '<span class="cs-reading">' + escapeHtml(s.reading) + '</span>' +
+        extra + fileTail +
+        '</div>';
+    }).join('') +
+    '</div>';
 
   // skipped jukugo (= LR で採用されなかった内側 / 重複 jukugo)
   let skippedHtml = '';
