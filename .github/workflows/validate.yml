@@ -10,9 +10,13 @@ on:
   #  workflow_dispatch / repository_dispatch だけは GITHUB_TOKEN でも trigger 可)
   workflow_dispatch:
 
+# regen-stats.yml が push する `[skip stats]` 付き auto-commit で Validate が
+# 再 trigger されるのを防ぐ (= 「2 回走る」 問題)。 PR event / workflow_dispatch
+# では head_commit が無く contains が false → 条件 true で通常通り走る。
 jobs:
   toml-syntax:
     name: TOML 構文チェック (taplo)
+    if: "!contains(github.event.head_commit.message, '[skip stats]')"
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v6
@@ -41,6 +45,7 @@ jobs:
 
   schema-validate:
     name: スキーマ + カタカナ検証 (validate.py)
+    if: "!contains(github.event.head_commit.message, '[skip stats]')"
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v6
@@ -54,6 +59,7 @@ jobs:
 
   python-security:
     name: Python セキュリティ静的解析 (bandit)
+    if: "!contains(github.event.head_commit.message, '[skip stats]')"
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v6
@@ -77,6 +83,7 @@ jobs:
     name: Inline test append-only 検査
     # pull_request だけでなく workflow_dispatch / push でも走らせて、 regen-stats.yml
     # が auto-stats PR で明示 dispatch した場合も check status を残す
+    if: "!contains(github.event.head_commit.message, '[skip stats]')"
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v6
