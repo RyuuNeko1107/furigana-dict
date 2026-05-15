@@ -672,7 +672,7 @@ description = "常用漢字 2,136 字 (文化庁 2010-11-30 改訂、 内閣告�
 # 悩 は core/kanji/overrides.toml の [[kanji]] block に移行
 # 悲 は core/kanji/overrides.toml の [[kanji]] block に移行
 # 悼 は core/kanji/overrides.toml の [[kanji]] block に移行
-"情" = "なさけ"
+# 情 は core/kanji/overrides.toml の [[kanji]] block に移行
 # 惑 は core/kanji/overrides.toml の [[kanji]] block に移行
 # 惜 は core/kanji/overrides.toml の [[kanji]] block に移行
 # 惧 は core/kanji/overrides.toml の [[kanji]] block に移行
@@ -940,7 +940,7 @@ description = "常用漢字 2,136 字 (文化庁 2010-11-30 改訂、 内閣告�
 # 栽 は core/kanji/overrides.toml の [[kanji]] block に移行
 "桁" = "けた"
 "桃" = "もも"
-"案" = "つくえ"
+# 案 は core/kanji/overrides.toml の [[kanji]] block に移行
 "桑" = "くわ"
 "桜" = "さくら"
 "桟" = "かけはし"
@@ -1160,7 +1160,7 @@ description = "常用漢字 2,136 字 (文化庁 2010-11-30 改訂、 内閣告�
 "犠" = "いけにえ"
 "犬" = "いぬ"
 # 犯 は core/kanji/overrides.toml の [[kanji]] block に移行
-"状" = "かたち"
+# 状 は core/kanji/overrides.toml の [[kanji]] block に移行
 # 狂 は core/kanji/overrides.toml の [[kanji]] block に移行
 # 狙 は core/kanji/overrides.toml の [[kanji]] block に移行
 "狩" = "かる"
@@ -1440,7 +1440,7 @@ description = "常用漢字 2,136 字 (文化庁 2010-11-30 改訂、 内閣告�
 # 羞 は core/kanji/overrides.toml の [[kanji]] block に移行
 # 群 は core/kanji/overrides.toml の [[kanji]] block に移行
 "羨" = "あまり"
-"義" = "よい"
+# 義 は core/kanji/overrides.toml の [[kanji]] block に移行
 "羽" = "は"
 "翁" = "おきな"
 "翌" = "ヨク"
@@ -1736,7 +1736,7 @@ description = "常用漢字 2,136 字 (文化庁 2010-11-30 改訂、 内閣告�
 "趣" = "おもむき"
 "距" = "けづめ"
 "跡" = "あと"
-"路" = "じ"
+# 路 は core/kanji/overrides.toml の [[kanji]] block に移行
 # 跳 は core/kanji/overrides.toml の [[kanji]] block に移行
 "践" = "ふむ"
 # 踊 は core/kanji/overrides.toml の [[kanji]] block に移行
@@ -1878,7 +1878,7 @@ description = "常用漢字 2,136 字 (文化庁 2010-11-30 改訂、 内閣告�
 # 閉 は core/kanji/overrides.toml の [[kanji]] block に移行
 # 開 は core/kanji/overrides.toml の [[kanji]] block に移行
 "閑" = "しきり"
-"関" = "せき"
+# 関 は core/kanji/overrides.toml の [[kanji]] block に移行
 # 閣 は core/kanji/overrides.toml の [[kanji]] block に移行
 "閥" = "バツ"
 # 閲 は core/kanji/overrides.toml の [[kanji]] block に移行
@@ -1927,7 +1927,7 @@ description = "常用漢字 2,136 字 (文化庁 2010-11-30 改訂、 内閣告�
 "雲" = "くも"
 "零" = "あまり"
 "雷" = "かみなり"
-"電" = "いなずま"
+# 電 は core/kanji/overrides.toml の [[kanji]] block に移行
 "需" = "まつ"
 # 震 は core/kanji/overrides.toml の [[kanji]] block に移行
 "霊" = "たま"
