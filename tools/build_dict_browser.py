@@ -706,12 +706,11 @@ mark { background: var(--soft-yellow); color: inherit; padding: 0 1px; }
   <h1>furigana-dict 検索 <span class="count">__COUNT__ entries / __FILES__ files / __KANJI_COUNT__ kanji</span></h1>
   <div class="dashboard" id="dashboard"></div>
   <div class="view-tabs">
-    <button class="vtab active" data-view="entry">📘 entries view</button>
-    <button class="vtab" data-view="kanji">🈳 単漢字 view (audit 用)</button>
-    <button class="vtab" data-view="compose">🧪 構成 lookup</button>
+    <button class="vtab active" data-view="entry">📘 検索 (entries + 構成 lookup)</button>
+    <button class="vtab" data-view="kanji">🈳 単漢字 audit (sweep 進捗管理)</button>
   </div>
   <div class="controls">
-    <input id="q" type="search" placeholder="検索 (例: 「魔理沙」「contains:魔」「reading:マリサ」「file:works」)" autofocus>
+    <input id="q" type="search" placeholder="検索 / 構成 lookup (例: 「平和」「難しい」「contains:魔」「reading:マリサ」)" autofocus>
     <select id="mode">
       <option value="auto">auto (← / 「:」 で切替)</option>
       <option value="contains">surface に含む</option>
@@ -783,12 +782,10 @@ mark { background: var(--soft-yellow); color: inherit; padding: 0 1px; }
 </header>
 
 <main>
+  <div id="compose-summary" style="display:none"></div>
   <div id="results"></div>
   <div id="kresults" style="display:none"></div>
-  <div id="cresults" style="display:none">
-    <input id="compose-input" type="text" placeholder="任意の単語 / 文を入力 (例: 「平和」「経過」「立てる」「明日花」 等) → 単漢字構成 + jukugo 検索">
-    <div id="compose-output"></div>
-  </div>
+  <div id="char-audit" style="display:none"></div>
   <div id="pagination" class="pagination" style="display:none"></div>
 </main>
 
@@ -1389,13 +1386,11 @@ function readUrl() {
     if (p.has('dir')) dirFilter.value = p.get('dir');
     if (p.has('ufile')) ufileFilter.value = p.get('ufile');
     if (p.has('view')) {
-      const vp = p.get('view');
-      currentView = (vp === 'kanji' || vp === 'compose') ? vp : 'entry';
+      currentView = p.get('view') === 'kanji' ? 'kanji' : 'entry';
       document.querySelectorAll('.vtab').forEach(t => t.classList.toggle('active', t.dataset.view === currentView));
       document.querySelectorAll('.filters[data-for]').forEach(f => f.style.display = (f.dataset.for === currentView) ? '' : 'none');
       resultsEl.style.display = (currentView === 'entry') ? '' : 'none';
       kresultsEl.style.display = (currentView === 'kanji') ? '' : 'none';
-      // cresultsEl は init 時点でまだ無いので setView が後で wire up
     }
     if (p.has('kfilter')) {
       const kf = p.get('kfilter');
@@ -1447,9 +1442,8 @@ function writeUrl() {
 
 // === view tab switching ===
 
-const cresultsEl = document.getElementById('cresults');
-const composeInput = document.getElementById('compose-input');
-const composeOutput = document.getElementById('compose-output');
+const composeSummaryEl = document.getElementById('compose-summary');
+const charAuditEl = document.getElementById('char-audit');
 
 function setView(view, opts) {
   opts = opts || {};
@@ -1460,10 +1454,9 @@ function setView(view, opts) {
   });
   resultsEl.style.display = (view === 'entry') ? '' : 'none';
   kresultsEl.style.display = (view === 'kanji') ? '' : 'none';
-  cresultsEl.style.display = (view === 'compose') ? '' : 'none';
-  // compose view では既存 search controls + dashboard を非表示
-  document.querySelector('.controls').style.display = (view === 'compose') ? 'none' : '';
-  document.getElementById('pagination').style.display = (view === 'compose') ? 'none' : '';
+  // 統合 entry view では compose summary + char audit を補助 section として表示
+  composeSummaryEl.style.display = (view === 'entry') ? '' : 'none';
+  charAuditEl.style.display = (view === 'entry') ? '' : 'none';
   if (!opts.keepPage) {
     if (view === 'entry') entryPage = 1; else if (view === 'kanji') kanjiPage = 1;
   }
@@ -1473,9 +1466,8 @@ function setView(view, opts) {
 // override render to write URL after each render
 const originalRender = render;
 render = function() {
-  if (currentView === 'compose') renderComposeView();
-  else if (currentView === 'kanji') renderKanjiView();
-  else renderEntryView();
+  if (currentView === 'kanji') renderKanjiView();
+  else { renderEntryView(); renderComposeSummary(); renderCharAudit(); }
   writeUrl();
 };
 
@@ -1568,25 +1560,25 @@ function ccCondStr(m, opts) {
   return out.join(opts.short ? ' ' : ' & ');
 }
 
-function renderComposeView() {
-  if (!composeOutput) return;
-  const text = composeInput.value;
-  if (!text) {
-    composeOutput.innerHTML = '<div class="empty">任意の単語 / 文を入力すると、 各漢字の [[kanji]] block / unihan / jukugo を組み合わせた reading 推定を表示します</div>';
-    return;
-  }
+// 統合 view: q 入力 (= prefix command なし、 漢字含む) のとき summary + char audit を auxiliary 表示
+function ccBareInput(q) {
+  if (!q) return null;
+  // prefix command (contains:/starts:/exact:/reading:/file:) を含む場合は compose 補助を出さない
+  if (/^(?:contains|exact|starts|reading|file):/.test(q.trim())) return null;
+  if (q.includes(':')) return null;
+  // 漢字を含まない場合も skip
+  if (!Array.from(q).some(c => isKanji(c))) return null;
+  return q.trim();
+}
+
+function renderComposeSummary() {
+  if (!composeSummaryEl) return;
+  const text = ccBareInput(qInput.value);
+  if (!text) { composeSummaryEl.innerHTML = ''; return; }
   const chars = Array.from(text);
   const results = chars.map((ch, i) => ccLookupChar(ch, i > 0 ? chars[i-1] : null, i < chars.length-1 ? chars[i+1] : null));
   const composed = results.map(r => r.reading).join('');
   const jukugo = ccLookupJukugo(text);
-
-  const summaryHtml = '<div class="compose-result-summary">' +
-    '<span class="cr-surface">' + escapeHtml(text) + '</span>' +
-    '<span class="cr-arrow">→</span>' +
-    '<span class="cr-reading">' + escapeHtml(composed) + '</span>' +
-    (jukugo.length ? '' : ' <span class="cr-empty">(default + match 連結のみ、 jukugo entry hit なし)</span>') +
-    '</div>';
-
   let jukugoHtml = '';
   if (jukugo.length) {
     jukugoHtml = '<div class="compose-jukugo-hits">' +
@@ -1600,8 +1592,23 @@ function renderComposeView() {
       ).join('') +
       '</div>';
   }
+  composeSummaryEl.innerHTML =
+    '<div class="compose-result-summary">' +
+    '<span class="cr-surface">' + escapeHtml(text) + '</span>' +
+    '<span class="cr-arrow">→</span>' +
+    '<span class="cr-reading">' + escapeHtml(composed) + '</span>' +
+    (jukugo.length ? '' : ' <span class="cr-empty">(default + match 連結のみ、 jukugo entry hit なし)</span>') +
+    '</div>' + jukugoHtml;
+}
 
-  const charsHtml = '<div class="compose-char-list">' +
+function renderCharAudit() {
+  if (!charAuditEl) return;
+  const text = ccBareInput(qInput.value);
+  if (!text) { charAuditEl.innerHTML = ''; return; }
+  const chars = Array.from(text);
+  const results = chars.map((ch, i) => ccLookupChar(ch, i > 0 ? chars[i-1] : null, i < chars.length-1 ? chars[i+1] : null));
+  const charsHtml = '<div class="compose-char-list" style="margin-top:1em">' +
+    '<div class="match-title" style="font-size:.85em; color:var(--muted); margin-bottom:.4em">📋 入力に含まれる char の構成 (= [[kanji]] block / unihan / match 適用):</div>' +
     results.map((r, i) => {
       const prevCh = i > 0 ? chars[i-1] : null;
       const nextCh = i < chars.length-1 ? chars[i+1] : null;
@@ -1637,11 +1644,8 @@ function renderComposeView() {
         '</div>';
     }).join('') +
     '</div>';
-
-  composeOutput.innerHTML = summaryHtml + jukugoHtml + charsHtml;
+  charAuditEl.innerHTML = charsHtml;
 }
-
-if (composeInput) composeInput.addEventListener('input', () => { if (currentView === 'compose') renderComposeView(); });
 
 // === handlers ===
 
