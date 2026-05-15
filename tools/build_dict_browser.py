@@ -303,7 +303,50 @@ HTML_TEMPLATE = """<!doctype html>
   --fg: #24292f; --bg: #fff; --muted: #57606a; --line: #d0d7de;
   --soft: #f6f8fa; --accent: #0969da; --soft-blue: #ddf4ff;
   --green: #1a7f37; --yellow: #bf8700; --red: #cf222e; --purple: #8250df;
+  --soft-purple: #fbefff; --soft-yellow: #fff8c5; --soft-yellow-2: #fff3b0;
+  --soft-green: #f0fdf4; --soft-gray: #eaeef2;
+  --gray-mid: #6e7781; --gray-text: #57606a; --gray-faint: #8b949e;
+  --warn-border: #f0d050;
 }
+/* dark theme: 1) OS preference (auto), 2) explicit override via html[data-theme="dark"] */
+@media (prefers-color-scheme: dark) {
+  :root {
+    --fg: #e6edf3; --bg: #0d1117; --muted: #8b949e; --line: #30363d;
+    --soft: #161b22; --accent: #2f81f7; --soft-blue: #0c2d4a;
+    --green: #3fb950; --yellow: #d29922; --red: #f85149; --purple: #a371f7;
+    --soft-purple: #2d1b3d; --soft-yellow: #3d3416; --soft-yellow-2: #4d4220;
+    --soft-green: #1c3d28; --soft-gray: #21262d;
+    --gray-mid: #6e7781; --gray-text: #c9d1d9; --gray-faint: #8b949e;
+    --warn-border: #6c5510;
+  }
+}
+html[data-theme="dark"] {
+  --fg: #e6edf3; --bg: #0d1117; --muted: #8b949e; --line: #30363d;
+  --soft: #161b22; --accent: #2f81f7; --soft-blue: #0c2d4a;
+  --green: #3fb950; --yellow: #d29922; --red: #f85149; --purple: #a371f7;
+  --soft-purple: #2d1b3d; --soft-yellow: #3d3416; --soft-yellow-2: #4d4220;
+  --soft-green: #1c3d28; --soft-gray: #21262d;
+  --gray-mid: #6e7781; --gray-text: #c9d1d9; --gray-faint: #8b949e;
+  --warn-border: #6c5510;
+}
+/* light force: OS が dark でも light variables に戻す */
+html[data-theme="light"] {
+  --fg: #24292f; --bg: #fff; --muted: #57606a; --line: #d0d7de;
+  --soft: #f6f8fa; --accent: #0969da; --soft-blue: #ddf4ff;
+  --green: #1a7f37; --yellow: #bf8700; --red: #cf222e; --purple: #8250df;
+  --soft-purple: #fbefff; --soft-yellow: #fff8c5; --soft-yellow-2: #fff3b0;
+  --soft-green: #f0fdf4; --soft-gray: #eaeef2;
+  --gray-mid: #6e7781; --gray-text: #57606a; --gray-faint: #8b949e;
+  --warn-border: #f0d050;
+}
+.theme-toggle {
+  background: var(--soft); color: var(--muted); border: 1px solid var(--line);
+  padding: .25em .65em; font-size: .85em; font-family: inherit;
+  border-radius: 4px; cursor: pointer; line-height: 1;
+}
+.theme-toggle:hover { background: var(--soft-blue); border-color: var(--accent); color: var(--accent); }
+.nav { display: flex; align-items: center; gap: .8em; }
+.nav .repo-link { flex: 1; }
 * { box-sizing: border-box; }
 body {
   font-family: -apple-system, "Segoe UI", "Yu Gothic UI", "Meiryo", sans-serif;
@@ -364,9 +407,9 @@ main { padding: 1em 1.2em 4em; max-width: 1100px; margin: 0 auto; }
   background: var(--soft); color: var(--muted); border: 1px solid var(--line);
 }
 .badge.t-e { background: var(--soft-blue); color: var(--accent); border-color: transparent; }
-.badge.t-k { background: #fbefff; color: var(--purple); border-color: transparent; }
-.badge.t-c { background: #fff8c5; color: var(--yellow); border-color: transparent; }
-.path { font-family: Consolas, "Cascadia Mono", monospace; font-size: .78em; color: #8b949e; margin-top: .25em; }
+.badge.t-k { background: var(--soft-purple); color: var(--purple); border-color: transparent; }
+.badge.t-c { background: var(--soft-yellow); color: var(--yellow); border-color: transparent; }
+.path { font-family: Consolas, "Cascadia Mono", monospace; font-size: .78em; color: var(--gray-faint); margin-top: .25em; }
 .match-section { margin-top: .55em; padding-top: .5em; border-top: 1px dashed var(--line); }
 .match-title { font-size: .8em; color: var(--muted); margin-bottom: .3em; }
 .match {
@@ -377,14 +420,14 @@ main { padding: 1em 1.2em 4em; max-width: 1100px; margin: 0 auto; }
 .match .arr { color: var(--muted); margin: 0 .4em; }
 .match .res { color: var(--green); font-weight: 600; }
 .empty { text-align: center; padding: 3em 1em; color: var(--muted); }
-mark { background: #fff8c5; color: inherit; padding: 0 1px; }
+mark { background: var(--soft-yellow); color: inherit; padding: 0 1px; }
 
 .surface .kc {
   cursor: pointer; padding: 0 2px; border-radius: 3px;
   border-bottom: 2px dotted transparent; transition: background .1s, border-color .1s;
 }
 .surface .kc.has-kanji { border-bottom-color: var(--purple); }
-.surface .kc.has-unihan { border-bottom-color: #8b949e; }
+.surface .kc.has-unihan { border-bottom-color: var(--gray-faint); }
 .surface .kc:hover { background: var(--soft-blue); }
 .breakdown {
   margin-top: .55em; padding-top: .5em; border-top: 1px dashed var(--line);
@@ -398,7 +441,7 @@ mark { background: #fff8c5; color: inherit; padding: 0 1px; }
 }
 .kchip:hover { background: var(--soft-blue); }
 .kchip.k-block { border-left-color: var(--purple); }
-.kchip.k-unihan { border-left-color: #8b949e; }
+.kchip.k-unihan { border-left-color: var(--gray-faint); }
 .kchip.k-none { border-left-color: var(--line); color: var(--muted); }
 .kchip .kc-char { font-weight: 600; font-size: 1.05em; }
 .kchip .kc-read { color: var(--green); font-family: "Yu Gothic UI", sans-serif; }
@@ -406,7 +449,7 @@ mark { background: #fff8c5; color: inherit; padding: 0 1px; }
 .kchip .kc-none { color: var(--muted); font-style: italic; }
 .redundant-flag {
   display: inline-block; padding: .1em .55em; font-size: .75em;
-  background: #fff8c5; color: var(--yellow); border-radius: 10px;
+  background: var(--soft-yellow); color: var(--yellow); border-radius: 10px;
   margin-left: .4em;
 }
 
@@ -458,7 +501,7 @@ mark { background: #fff8c5; color: inherit; padding: 0 1px; }
 .kanji-card .ksec.usec { color: var(--muted); }
 .kanji-card .src-tag {
   display: inline-block; padding: 0 .5em; font-size: .7em;
-  border-radius: 10px; background: #fbefff; color: var(--purple);
+  border-radius: 10px; background: var(--soft-purple); color: var(--purple);
   font-family: Consolas, monospace; margin-right: .4em;
 }
 .kanji-card .src-tag.unihan { background: var(--soft); color: var(--muted); }
@@ -468,20 +511,20 @@ mark { background: #fff8c5; color: inherit; padding: 0 1px; }
 }
 .kanji-card .kpath {
   font-family: Consolas, monospace; font-size: .75em;
-  color: #8b949e; margin-left: .5em;
+  color: var(--gray-faint); margin-left: .5em;
 }
 .kanji-card .kmatch { margin-top: .35em; }
 .kanji-card .kbare { font-size: .8em; color: var(--muted); margin-top: .2em; font-style: italic; }
 .kanji-card .warn {
   display: inline-block; padding: .2em .65em; font-size: .8em;
-  background: #fff8c5; color: var(--yellow); border-radius: 6px;
+  background: var(--soft-yellow); color: var(--yellow); border-radius: 6px;
   margin: .15em .25em .25em 0;
 }
 
 /* type 'r' (rule) */
-.card.t-r { border-left: 4px solid #6e7781; }
-.badge.t-r { background: #eaeef2; color: #57606a; border-color: transparent; }
-.chip.t-r.active { background: #6e7781; border-color: #6e7781; }
+.card.t-r { border-left: 4px solid var(--gray-mid); }
+.badge.t-r { background: var(--soft-gray); color: var(--gray-text); border-color: transparent; }
+.chip.t-r.active { background: var(--gray-mid); border-color: var(--gray-mid); }
 
 /* dashboard */
 .dashboard {
@@ -497,9 +540,9 @@ mark { background: #fff8c5; color: inherit; padding: 0 1px; }
 .stat-card:hover { background: var(--soft-blue); border-color: var(--accent); }
 .stat-card .stat-num { font-size: 1.3em; font-weight: 600; color: var(--accent); line-height: 1.2; }
 .stat-card .stat-label { font-size: .73em; color: var(--muted); }
-.stat-card.warn { background: #fff8c5; border-color: #f0d050; }
+.stat-card.warn { background: var(--soft-yellow); border-color: var(--warn-border); }
 .stat-card.warn .stat-num { color: var(--yellow); }
-.stat-card.warn:hover { background: #fff3b0; }
+.stat-card.warn:hover { background: var(--soft-yellow-2); }
 
 /* edit link */
 .edit-link {
@@ -533,13 +576,13 @@ mark { background: #fff8c5; color: inherit; padding: 0 1px; }
 
 /* redundancy filter chip */
 .chip.rf {
-  background: #fff8c5; color: var(--yellow); border-color: #f0d050;
+  background: var(--soft-yellow); color: var(--yellow); border-color: var(--warn-border);
 }
 .chip.rf.active { background: var(--yellow); color: white; border-color: var(--yellow); }
 
 /* sweep progress tracker */
-.card.sw-done { border-left-color: var(--green) !important; background: #f0fdf4; }
-.card.sw-hold { border-left-color: var(--yellow) !important; background: #fff8c5; }
+.card.sw-done { border-left-color: var(--green) !important; background: var(--soft-green); }
+.card.sw-hold { border-left-color: var(--yellow) !important; background: var(--soft-yellow); }
 .card.sw-skip { border-left-color: var(--muted) !important; background: var(--soft); opacity: .65; }
 .sw-btns { display: inline-flex; gap: .2em; margin-left: .6em; vertical-align: middle; }
 .sw-btn {
@@ -584,12 +627,23 @@ mark { background: #fff8c5; color: inherit; padding: 0 1px; }
 }
 .sw-toolbar button:hover { background: var(--soft); }
 </style>
+<script>
+// FOUC 回避: localStorage から saved theme を即座に html[data-theme] に反映、
+// CSS が解釈される前に attribute を立てておく (= 「auto」 は attribute 削除)
+(function() {
+  try {
+    var t = localStorage.getItem('theme');
+    if (t === 'light' || t === 'dark') document.documentElement.setAttribute('data-theme', t);
+  } catch (e) {}
+})();
+</script>
 </head>
 <body>
 
 <header>
   <div class="nav">
     <span class="repo-link">repo: <a href="https://github.com/RyuuNeko1107/ja-furigana-dict">github.com/RyuuNeko1107/ja-furigana-dict</a></span>
+    <button id="theme-toggle" class="theme-toggle" title="theme: auto (OS) → light → dark → auto">🖥 auto</button>
   </div>
   <h1>furigana-dict 検索 <span class="count">__COUNT__ entries / __FILES__ files / __KANJI_COUNT__ kanji</span></h1>
   <div class="dashboard" id="dashboard"></div>
@@ -1560,6 +1614,26 @@ kresultsEl.addEventListener('click', ev => {
   entryPage = 1;
   setView('entry');
   window.scrollTo({ top: 0, behavior: 'smooth' });
+});
+
+// === theme toggle (auto → light → dark → auto cycle、 localStorage で persist) ===
+const THEME_LABEL = { auto: '🖥 auto', light: '☀ light', dark: '🌙 dark' };
+const THEME_NEXT = { auto: 'light', light: 'dark', dark: 'auto' };
+function currentTheme() {
+  const t = localStorage.getItem('theme');
+  return (t === 'light' || t === 'dark') ? t : 'auto';
+}
+function applyTheme(t) {
+  if (t === 'auto') document.documentElement.removeAttribute('data-theme');
+  else document.documentElement.setAttribute('data-theme', t);
+  document.getElementById('theme-toggle').textContent = THEME_LABEL[t];
+}
+applyTheme(currentTheme());
+document.getElementById('theme-toggle').addEventListener('click', () => {
+  const next = THEME_NEXT[currentTheme()];
+  if (next === 'auto') localStorage.removeItem('theme');
+  else localStorage.setItem('theme', next);
+  applyTheme(next);
 });
 
 // === init ===

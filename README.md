@@ -11,6 +11,12 @@
 > (master push で GitHub Actions が auto-commit、 contributor は何もしなくて OK)。
 > 最新リリースは [GitHub Releases](https://github.com/RyuuNeko1107/ja-furigana-dict/releases) を参照。
 
+> 🔍 **全 entries を web 上で検索 / フィルタ / 閲覧**:
+> <https://ryuuneko1107.github.io/ja-furigana-dict/>
+> ([`tools/build_dict_browser.py`](tools/build_dict_browser.py) が master push のたび
+> [GitHub Actions で auto-deploy](.github/workflows/build-pages.yml)、 漢字別 sweep
+> 進捗管理機能 / 冗長 jukugo 検出 / `[[kanji]]` block detail view あり)
+
 ## なぜ別リポジトリ?
 
 辞書エントリ数が増えると本体コードのリポジトリと一緒に管理するのが煩雑なので分けた。
@@ -54,6 +60,7 @@ rules/
 | [`docs/EVALUATION.md`](docs/EVALUATION.md) | 客観性能評価 (VOICEVOX engine 一致率 / 定期更新) |
 | [`MAINTAINING.md`](MAINTAINING.md) | release / CI / upstream seed 再投入手順 |
 | [`STATS.md`](STATS.md) | 件数 / カテゴリ別内訳 / サイズ (auto-gen) |
+| [dict_browser (web)](https://ryuuneko1107.github.io/ja-furigana-dict/) | 全 entries 検索・フィルタ・漢字別 sweep 進捗 (auto-deploy、 dark mode 対応) |
 | [`SECURITY.md`](SECURITY.md) | 脆弱性報告窓口 (engine 側に集約) |
 | [`core/works/README.md`](core/works/README.md) | 作品単位辞書のサブポリシー |
 | [`tests/corpus/README.md`](tests/corpus/README.md) | 回帰テスト用 corpus の運用 |
