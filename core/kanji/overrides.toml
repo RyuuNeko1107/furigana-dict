@@ -6863,3 +6863,113 @@ reading = "とも"
 [[kanji.match]]
 prev_ends_any = ["の", "が", "は", "を", "に", "で", "と", "も"]
 reading = "とも"
+
+# 「凝」 default 「ギョウ」 (= 凝視/凝固/凝集/凝縮/凝結)。
+# 動詞 「凝る/凝らす」 は okurigana 列挙で 「こ」 へ切替
+[[kanji]]
+char = "凝"
+default = "ギョウ"
+
+# 「凝る/凝らない/凝った/凝って/凝れば/凝ろう/凝らす/凝り○○」 = 動詞 → こ
+[[kanji.match]]
+next_starts_any = ["る", "ら", "り", "っ", "れ", "ろ"]
+reading = "こ"
+
+# 「刺」 default 「シ」 (= 刺激/刺繍/風刺/名刺/突刺)。
+# 動詞 「刺す/刺さる」 は okurigana 列挙で 「さ」 へ切替
+[[kanji]]
+char = "刺"
+default = "シ"
+
+# 「刺す/刺さない/刺した/刺して/刺せば/刺そう/刺さる/刺し○○」 = 動詞 → さ
+[[kanji.match]]
+next_starts_any = ["す", "さ", "し", "せ", "そ", "っ"]
+reading = "さ"
+
+# 「効」 default 「コウ」 (= 効果/効率/有効/効能/無効/失効)。
+# 動詞 「効く/効かす」 は okurigana 列挙で 「き」 へ切替
+[[kanji]]
+char = "効"
+default = "コウ"
+
+# 「効く/効かない/効いた/効いて/効けば/効こう」 = 動詞 → き
+[[kanji.match]]
+next_starts_any = ["く", "か", "き", "っ", "け", "こ"]
+reading = "き"
+
+# 「去」 default 「キョ」 (= 去年/退去/撤去/除去/逝去)。
+# 動詞 「去る」 は okurigana 列挙で 「さ」 へ切替
+[[kanji]]
+char = "去"
+default = "キョ"
+
+# 「去る/去らない/去った/去って/去れば/去ろう/去り○○」 = 動詞 → さ
+[[kanji.match]]
+next_starts_any = ["る", "ら", "り", "っ", "れ", "ろ"]
+reading = "さ"
+
+# 「吐」 default 「ト」 (= 吐息/嘔吐/吐血/吐露/音吐)。
+# 動詞 「吐く」 は okurigana 列挙で 「は」 へ切替
+[[kanji]]
+char = "吐"
+default = "ト"
+
+# 「吐く/吐かない/吐いた/吐いて/吐けば/吐こう」 = 動詞 → は
+[[kanji.match]]
+next_starts_any = ["く", "か", "き", "っ", "け", "こ"]
+reading = "は"
+
+# 「向」 default 「コウ」 (= 方向/向上/趣向/傾向/動向/意向/志向/指向)。
+# 動詞 「向く/向かう/向ける」 は okurigana 列挙で 「む」 へ切替
+[[kanji]]
+char = "向"
+default = "コウ"
+
+# 「向く/向かう/向ける/向いた/向ければ/向こう (= 名詞)」 = 動詞 → む
+[[kanji.match]]
+next_starts_any = ["く", "か", "き", "っ", "け", "こ"]
+reading = "む"
+
+# 「吸」 default 「キュウ」 (= 吸収/呼吸/吸引/吸入/吸湿)。
+# 動詞 「吸う」 は okurigana 列挙で 「す」 へ切替
+[[kanji]]
+char = "吸"
+default = "キュウ"
+
+# 「吸う/吸わない/吸って/吸えば/吸おう/吸い○○」 = 動詞 → す
+[[kanji.match]]
+next_starts_any = ["う", "わ", "い", "っ", "え", "お"]
+reading = "す"
+
+# 「吹」 default 「スイ」 (= 吹奏/鼓吹/吹奏楽)。
+# 動詞 「吹く」 は okurigana 列挙で 「ふ」 へ切替 (= 吹雪/吹聴 等は jukugo 個別)
+[[kanji]]
+char = "吹"
+default = "スイ"
+
+# 「吹く/吹かない/吹いた/吹いて/吹けば/吹こう/吹き○○」 = 動詞 → ふ
+[[kanji.match]]
+next_starts_any = ["く", "か", "き", "っ", "け", "こ"]
+reading = "ふ"
+
+# 「呼」 default 「コ」 (= 呼吸/呼称/連呼/称呼/歓呼)。
+# 動詞 「呼ぶ」 は okurigana 列挙で 「よ」 へ切替
+[[kanji]]
+char = "呼"
+default = "コ"
+
+# 「呼ぶ/呼ばない/呼んだ/呼んで/呼べば/呼ぼう/呼び○○」 = 動詞 → よ
+[[kanji.match]]
+next_starts_any = ["ぶ", "ば", "び", "ん", "べ", "ぼ"]
+reading = "よ"
+
+# 「召」 default 「ショウ」 (= 召集/召喚/応召/思召)。
+# 動詞 「召す」 は okurigana 列挙で 「め」 へ切替 (= 召し上がる/お召し物)
+[[kanji]]
+char = "召"
+default = "ショウ"
+
+# 「召す/召さない/召した/召して/召せば/召そう/召し○○」 = 動詞 → め
+[[kanji.match]]
+next_starts_any = ["す", "さ", "し", "せ", "そ"]
+reading = "め"
