@@ -6795,3 +6795,71 @@ reading = "ヘイ"
 [[kanji]]
 char = "亜"
 default = "ア"
+
+# 「住」 default 「ジュウ」 (= 住所/住居/住宅/住民/住職/移住/定住/在住)。
+# 動詞 「住む/住まう/住み込む」 は okurigana 列挙で 「す」 へ切替
+[[kanji]]
+char = "住"
+default = "ジュウ"
+
+# 「住む/住まない/住みません/住んで/住めば/住もう/住み○○」 = 動詞 → す
+[[kanji.match]]
+next_starts_any = ["む", "ま", "み", "ん", "め", "も"]
+reading = "す"
+
+# 「依」 default 「イ」 (= 依存/依頼/依拠/依然/帰依)。
+# 動詞 「依る/依って」 は okurigana 列挙で 「よ」 へ切替
+[[kanji]]
+char = "依"
+default = "イ"
+
+# 「依る/依らない/依って/依れば/依ろう」 = 動詞 → よ
+[[kanji.match]]
+next_starts_any = ["る", "ら", "り", "っ", "れ", "ろ"]
+reading = "よ"
+
+# 「億」 default 「オク」 (= 1 億/数億/億万長者/億単位)。
+# unihan default 「ああ」 は感嘆詞用例で実用ではほぼ用いない
+[[kanji]]
+char = "億"
+default = "オク"
+
+# 「儀」 default 「ギ」 (= 儀式/礼儀/葬儀/流儀/行儀/律儀/儀礼/地球儀)。
+# unihan default 「のり」 は古語、 現代日本語では用例少
+[[kanji]]
+char = "儀"
+default = "ギ"
+
+# 「佳」 default 「カ」 (= 佳作/佳境/絶佳/佳人/佳節/佳麗)。
+# unihan default 「よい」 は古語、 現代では形容詞 「良い」 を使う
+[[kanji]]
+char = "佳"
+default = "カ"
+
+# 「克」 default 「コク」 (= 克服/克明/克己/超克/相克)。
+# unihan default 「かつ」 は古語動詞、 「打ち克つ」 等 jukugo 個別
+[[kanji]]
+char = "克"
+default = "コク"
+
+# 「児」 default 「ジ」 (= 児童/幼児/小児/孤児/育児/胎児/園児)。
+# unihan default 「こ」 は単漢字 「子」 と被る、 「児」 は熟語 dominant
+[[kanji]]
+char = "児"
+default = "ジ"
+
+# 「共」 default 「キョウ」 (= 共産/共有/共通/共同/共感/共生/反共/公共)。
+# 単独 + 助詞接続は 「とも」 へ切替 (= 共に/共と/共の)
+[[kanji]]
+char = "共"
+default = "キョウ"
+
+# 「共に/共と/共の/共は/共が/共を/共で」 = 単独 + 助詞接続 → とも
+[[kanji.match]]
+next_starts_any = ["に", "と", "の", "は", "が", "を", "で", "も", "や", "へ", "か", "ま", "よ"]
+reading = "とも"
+
+# 「○の共/○と共」 = 助詞 直後 → とも
+[[kanji.match]]
+prev_ends_any = ["の", "が", "は", "を", "に", "で", "と", "も"]
+reading = "とも"
