@@ -7943,3 +7943,68 @@ default = "リュウ"
 [[kanji]]
 char = "鋼"
 default = "コウ"
+
+# 「銭」 default 「セン」 (= 金銭/銭湯/古銭/銭差し/小銭)。
+# unihan default 「ぜに」 は古語/方言、 現代では熟語 dominant
+[[kanji]]
+char = "銭"
+default = "セン"
+
+# 「鋳」 default 「チュウ」 (= 鋳造/改鋳/鋳鉄/鋳物師/新鋳)。
+# unihan default 「いる」 は古語動詞、 現代用例少
+[[kanji]]
+char = "鋳"
+default = "チュウ"
+
+# 「錬」 default 「レン」 (= 鍛錬/修錬/精錬/百錬/錬金術)。
+# unihan default 「ねる」 は古語動詞、 「練」 が動詞 dominant
+[[kanji]]
+char = "錬"
+default = "レン"
+
+# 「門」 default 「モン」 (= 門前/正門/専門/部門/関門/同門/家門/門外漢)。
+# unihan default 「かど」 は単独名詞 case、 現代では熟語 dominant
+[[kanji]]
+char = "門"
+default = "モン"
+
+# 「閑」 default 「カン」 (= 閑静/閑古鳥/閑暇/閑談/有閑)。
+# unihan default 「しきり」 は古語、 現代では熟語 dominant
+[[kanji]]
+char = "閑"
+default = "カン"
+
+# 「陶」 default 「トウ」 (= 陶磁器/陶酔/陶器/薫陶/陶芸/陶冶)。
+# unihan default 「すえ」 は古語、 現代では熟語 dominant
+[[kanji]]
+char = "陶"
+default = "トウ"
+
+# 「零」 default 「レイ」 (= 零度/零点/零細/零下/零細企業)。
+# unihan default 「あまり」 は古語、 現代では熟語 dominant (= 数字 0 の 「ゼロ」 は記号扱い)
+[[kanji]]
+char = "零"
+default = "レイ"
+
+# 「需」 default 「ジュ」 (= 需要/必需品/内需/外需/特需)。
+# unihan default 「まつ」 は古語動詞、 現代では熟語 dominant
+[[kanji]]
+char = "需"
+default = "ジュ"
+
+# 「霊」 default 「レイ」 (= 霊魂/霊感/亡霊/心霊/精霊/霊柩車/慰霊)。
+# unihan default 「たま」 は古語、 現代では熟語 dominant
+[[kanji]]
+char = "霊"
+default = "レイ"
+
+# 「麗」 default 「レイ」 (= 麗人/華麗/美麗/秀麗/麗句/壮麗)。
+# 形容詞 「麗しい」 = うるわしい は okurigana 「し」 始まりで切替
+[[kanji]]
+char = "麗"
+default = "レイ"
+
+# 「麗しい/麗しく/麗しかった」 = 形容詞 → うるわ
+[[kanji.match]]
+next_starts_any = ["し"]
+reading = "うるわ"
