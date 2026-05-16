@@ -8088,3 +8088,83 @@ default = "ケン"
 [[kanji]]
 char = "齢"
 default = "レイ"
+
+# 「逝」 default 「セイ」 (= 逝去/急逝/夭逝)。
+# 動詞 「逝く」 は okurigana 列挙で 「ゆ」 へ切替
+[[kanji]]
+char = "逝"
+default = "セイ"
+
+# 「逝く/逝かない/逝った/逝って/逝けば/逝こう」 = 動詞 → ゆ
+[[kanji.match]]
+next_starts_any = ["く", "か", "き", "っ", "け", "こ"]
+reading = "ゆ"
+
+# 「酌」 default 「シャク」 (= 酌量/参酌/晩酌/媒酌/独酌)。
+# 動詞 「酌む」 は okurigana 列挙で 「く」 へ切替
+[[kanji]]
+char = "酌"
+default = "シャク"
+
+# 「酌む/酌まない/酌んだ/酌めば/酌もう/酌み交わす」 = 動詞 → く
+[[kanji.match]]
+next_starts_any = ["む", "ま", "み", "ん", "め", "も"]
+reading = "く"
+
+# 「鈍」 default 「ドン」 (= 鈍角/鈍器/鈍感/愚鈍/鈍重/魯鈍)。
+# 形容詞 「鈍い」 + 動詞 「鈍る」 は okurigana 列挙で 「にぶ」 へ切替
+[[kanji]]
+char = "鈍"
+default = "ドン"
+
+# 「鈍い/鈍く/鈍さ/鈍る/鈍らない/鈍った」 = 形容詞 + 動詞 → にぶ
+[[kanji.match]]
+next_starts_any = ["い", "く", "さ", "か", "け", "る", "ら", "り", "っ", "れ", "ろ"]
+reading = "にぶ"
+
+# 「賦」 default 「フ」 (= 賦課/天賦/月賦/賦与/賦税/賦活)。
+# unihan default 「みつぎ」 は古語、 現代では熟語 dominant
+[[kanji]]
+char = "賦"
+default = "フ"
+
+# 「距」 default 「キョ」 (= 距離/距骨)。
+# unihan default 「けづめ」 は古語、 現代では熟語 dominant
+[[kanji]]
+char = "距"
+default = "キョ"
+
+# 「践」 default 「セン」 (= 実践/践歴)。
+# unihan default 「ふむ」 は古語動詞、 「踏」 が動詞 dominant
+[[kanji]]
+char = "践"
+default = "セン"
+
+# 「轄」 default 「カツ」 (= 管轄/直轄/所轄/総轄/分轄)。
+# unihan default 「くさび」 は古語、 現代では熟語 dominant
+[[kanji]]
+char = "轄"
+default = "カツ"
+
+# 「辺」 default 「ヘン」 (= 周辺/海辺/水辺/辺境/辺鄙/底辺/身辺)。
+# 副詞 「辺り」 = あたり は next_eq で切替
+[[kanji]]
+char = "辺"
+default = "ヘン"
+
+# 「辺り」 = あたり (副詞 / 名詞用法)
+[[kanji.match]]
+next_eq = "り"
+reading = "あた"
+
+# 「逐」 default 「チク」 (= 駆逐/角逐/逐次/放逐/逐一/逐語訳)。
+# unihan default 「おう」 は古語動詞、 「追」 が動詞 dominant
+[[kanji]]
+char = "逐"
+default = "チク"
+
+# 「遇」 default 「グウ」 (= 遭遇/境遇/優遇/不遇/待遇/奇遇/厚遇)。
+# unihan default 「あう」 は古語動詞、 「遭」 が動詞 dominant
+[[kanji]]
+char = "遇"
+default = "グウ"

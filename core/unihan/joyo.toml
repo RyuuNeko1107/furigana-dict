@@ -1722,7 +1722,7 @@ description = "常用漢字 2,136 字 (文化庁 2010-11-30 改訂、 内閣告�
 # 賞 は core/kanji/overrides.toml の [[kanji]] block に移行
 # 賠 は core/kanji/overrides.toml の [[kanji]] block に移行
 # 賢 は core/kanji/overrides.toml の [[kanji]] block に移行
-"賦" = "みつぎ"
+# 賦 は core/kanji/overrides.toml の [[kanji]] block に移行
 # 質 は core/kanji/overrides.toml の [[kanji]] block に移行
 # 賭 は core/kanji/overrides.toml の [[kanji]] block に移行
 # 購 は core/kanji/overrides.toml の [[kanji]] block に移行
@@ -1734,11 +1734,11 @@ description = "常用漢字 2,136 字 (文化庁 2010-11-30 改訂、 内閣告�
 # "超" は core/kanji/overrides.toml の [[kanji]] block に移行
 # 越 は core/kanji/overrides.toml の [[kanji]] block に移行
 "趣" = "おもむき"
-"距" = "けづめ"
+# 距 は core/kanji/overrides.toml の [[kanji]] block に移行
 "跡" = "あと"
 # 路 は core/kanji/overrides.toml の [[kanji]] block に移行
 # 跳 は core/kanji/overrides.toml の [[kanji]] block に移行
-"践" = "ふむ"
+# 践 は core/kanji/overrides.toml の [[kanji]] block に移行
 # 踊 は core/kanji/overrides.toml の [[kanji]] block に移行
 # 踏 は core/kanji/overrides.toml の [[kanji]] block に移行
 "踪" = "ソウ"
@@ -1758,13 +1758,13 @@ description = "常用漢字 2,136 字 (文化庁 2010-11-30 改訂、 内閣告�
 # 輩 は core/kanji/overrides.toml の [[kanji]] block に移行
 "輪" = "リン"
 # 輸 は core/kanji/overrides.toml の [[kanji]] block に移行
-"轄" = "くさび"
+# 轄 は core/kanji/overrides.toml の [[kanji]] block に移行
 # 「辛」 は overrides.toml の [[kanji]] block に移行 (★round 39)
 # 辞 は core/kanji/overrides.toml の [[kanji]] block に移行
 # 辣 は core/kanji/overrides.toml の [[kanji]] block に移行
 # "辱" は core/kanji/overrides.toml の [[kanji]] block に移行
 "農" = "ノウ"
-"辺" = "あたり"
+# 辺 は core/kanji/overrides.toml の [[kanji]] block に移行
 # 込 は core/kanji/overrides.toml の [[kanji]] block に移行
 # 迅 は core/kanji/overrides.toml の [[kanji]] block に移行
 # 迎 は core/kanji/overrides.toml の [[kanji]] block に移行
@@ -1780,11 +1780,11 @@ description = "常用漢字 2,136 字 (文化庁 2010-11-30 改訂、 内閣告�
 # 逃 は core/kanji/overrides.toml の [[kanji]] block に移行
 # 「逆」 は overrides.toml の [[kanji]] block に移行 (★round 37)
 # 透 は core/kanji/overrides.toml の [[kanji]] block に移行
-"逐" = "おう"
+# 逐 は core/kanji/overrides.toml の [[kanji]] block に移行
 # 逓 は core/kanji/overrides.toml の [[kanji]] block に移行
 "途" = "ト"
 # 通 は core/kanji/overrides.toml の [[kanji]] block に移行
-"逝" = "ゆく"
+# 逝 は core/kanji/overrides.toml の [[kanji]] block に移行
 # 造 は core/kanji/overrides.toml の [[kanji]] block に移行
 # 連 は core/kanji/overrides.toml の [[kanji]] block に移行
 # 逮 は core/kanji/overrides.toml の [[kanji]] block に移行
@@ -1792,7 +1792,7 @@ description = "常用漢字 2,136 字 (文化庁 2010-11-30 改訂、 内閣告�
 # 進 は core/kanji/overrides.toml の [[kanji]] block に移行
 # 逸 は core/kanji/overrides.toml の [[kanji]] block に移行
 # 遂 は core/kanji/overrides.toml の [[kanji]] block に移行
-"遇" = "あう"
+# 遇 は core/kanji/overrides.toml の [[kanji]] block に移行
 # 遊 は core/kanji/overrides.toml の [[kanji]] block に移行
 # 遍 は core/kanji/overrides.toml の [[kanji]] block に移行
 # 過 は core/kanji/overrides.toml の [[kanji]] block に移行
@@ -1824,7 +1824,7 @@ description = "常用漢字 2,136 字 (文化庁 2010-11-30 改訂、 内閣告�
 "郵" = "ユウ"
 "郷" = "さきに"
 "都" = "みやこ"
-"酌" = "くむ"
+# 酌 は core/kanji/overrides.toml の [[kanji]] block に移行
 # 配 は core/kanji/overrides.toml の [[kanji]] block に移行
 "酎" = "チュウ"
 "酒" = "さけ"
@@ -1846,7 +1846,7 @@ description = "常用漢字 2,136 字 (文化庁 2010-11-30 改訂、 内閣告�
 "釜" = "かま"
 "針" = "はり"
 "釣" = "つる"
-"鈍" = "にぶい"
+# 鈍 は core/kanji/overrides.toml の [[kanji]] block に移行
 "鈴" = "すず"
 "鉛" = "なまり"
 "鉢" = "ハチ"
