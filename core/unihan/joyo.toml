@@ -1668,7 +1668,7 @@ description = "常用漢字 2,136 字 (文化庁 2010-11-30 改訂、 内閣告�
 # 諧 は core/kanji/overrides.toml の [[kanji]] block に移行
 # 諭 は core/kanji/overrides.toml の [[kanji]] block に移行
 # 諮 は core/kanji/overrides.toml の [[kanji]] block に移行
-"諸" = "これ"
+# 諸 は core/kanji/overrides.toml の [[kanji]] block に移行
 # 諾 は core/kanji/overrides.toml の [[kanji]] block に移行
 # 謀 は core/kanji/overrides.toml の [[kanji]] block に移行
 # 謁 は core/kanji/overrides.toml の [[kanji]] block に移行
@@ -1679,7 +1679,7 @@ description = "常用漢字 2,136 字 (文化庁 2010-11-30 改訂、 内閣告�
 # 謝 は core/kanji/overrides.toml の [[kanji]] block に移行
 # 謡 は core/kanji/overrides.toml の [[kanji]] block に移行
 # 謹 は core/kanji/overrides.toml の [[kanji]] block に移行
-"識" = "しる"
+# 識 は core/kanji/overrides.toml の [[kanji]] block に移行
 "譜" = "フ"
 # 警 は core/kanji/overrides.toml の [[kanji]] block に移行
 # 議 は core/kanji/overrides.toml の [[kanji]] block に移行
@@ -1687,15 +1687,15 @@ description = "常用漢字 2,136 字 (文化庁 2010-11-30 改訂、 内閣告�
 # 護 は core/kanji/overrides.toml の [[kanji]] block に移行
 "谷" = "たに"
 "豆" = "まめ"
-"豊" = "ゆたか"
+# 豊 は core/kanji/overrides.toml の [[kanji]] block に移行
 "豚" = "ぶた"
 # 象 は core/kanji/overrides.toml の [[kanji]] block に移行
-"豪" = "やまあらし"
+# 豪 は core/kanji/overrides.toml の [[kanji]] block に移行
 "貌" = "かたち"
 "貝" = "かい"
 # 貞 は core/kanji/overrides.toml の [[kanji]] block に移行
 # 負 は core/kanji/overrides.toml の [[kanji]] block に移行
-"財" = "たから"
+# 財 は core/kanji/overrides.toml の [[kanji]] block に移行
 # 貢 は core/kanji/overrides.toml の [[kanji]] block に移行
 # 貧 は core/kanji/overrides.toml の [[kanji]] block に移行
 "貨" = "たから"
@@ -1705,10 +1705,10 @@ description = "常用漢字 2,136 字 (文化庁 2010-11-30 改訂、 内閣告�
 # 責 は core/kanji/overrides.toml の [[kanji]] block に移行
 "貯" = "たくわえる"
 # 貴 は core/kanji/overrides.toml の [[kanji]] block に移行
-"買" = "かう"
-"貸" = "かす"
+# 買 は core/kanji/overrides.toml の [[kanji]] block に移行
+# 貸 は core/kanji/overrides.toml の [[kanji]] block に移行
 # 費 は core/kanji/overrides.toml の [[kanji]] block に移行
-"貼" = "はる"
+# 貼 は core/kanji/overrides.toml の [[kanji]] block に移行
 # 貿 は core/kanji/overrides.toml の [[kanji]] block に移行
 # 賀 は core/kanji/overrides.toml の [[kanji]] block に移行
 # 賂 は core/kanji/overrides.toml の [[kanji]] block に移行
@@ -1740,7 +1740,7 @@ description = "常用漢字 2,136 字 (文化庁 2010-11-30 改訂、 内閣告�
 # 跳 は core/kanji/overrides.toml の [[kanji]] block に移行
 "践" = "ふむ"
 # 踊 は core/kanji/overrides.toml の [[kanji]] block に移行
-"踏" = "ふむ"
+# 踏 は core/kanji/overrides.toml の [[kanji]] block に移行
 "踪" = "ソウ"
 "蹴" = "ける"
 # 躍 は core/kanji/overrides.toml の [[kanji]] block に移行
@@ -1774,7 +1774,7 @@ description = "常用漢字 2,136 字 (文化庁 2010-11-30 改訂、 内閣告�
 # 迭 は core/kanji/overrides.toml の [[kanji]] block に移行
 # 述 は core/kanji/overrides.toml の [[kanji]] block に移行
 # 迷 は core/kanji/overrides.toml の [[kanji]] block に移行
-"追" = "おう"
+# 追 は core/kanji/overrides.toml の [[kanji]] block に移行
 # 退 は core/kanji/overrides.toml の [[kanji]] block に移行
 # 送 は core/kanji/overrides.toml の [[kanji]] block に移行
 # 逃 は core/kanji/overrides.toml の [[kanji]] block に移行

@@ -7688,3 +7688,93 @@ default = "カ"
 [[kanji]]
 char = "英"
 default = "エイ"
+
+# 「追」 default 「ツイ」 (= 追加/追及/追究/追放/追求/追跡/追突/追記/追悼)。
+# 動詞 「追う」 は okurigana 列挙で 「お」 へ切替
+[[kanji]]
+char = "追"
+default = "ツイ"
+
+# 「追う/追わない/追った/追って/追えば/追おう/追い○○」 = 動詞 → お
+[[kanji.match]]
+next_starts_any = ["う", "わ", "い", "っ", "え", "お"]
+reading = "お"
+
+# 「買」 default 「バイ」 (= 購買/売買/買収/買春)。
+# 動詞 「買う」 は okurigana 列挙で 「か」 へ切替
+[[kanji]]
+char = "買"
+default = "バイ"
+
+# 「買う/買わない/買った/買って/買えば/買おう/買い○○」 = 動詞 → か
+[[kanji.match]]
+next_starts_any = ["う", "わ", "い", "っ", "え", "お"]
+reading = "か"
+
+# 「貸」 default 「タイ」 (= 貸借/貸与/賃貸/貸出/貸付/貸金)。
+# 動詞 「貸す」 は okurigana 列挙で 「か」 へ切替
+[[kanji]]
+char = "貸"
+default = "タイ"
+
+# 「貸す/貸さない/貸した/貸して/貸せば/貸そう/貸し○○」 = 動詞 → か
+[[kanji.match]]
+next_starts_any = ["す", "さ", "し", "せ", "そ"]
+reading = "か"
+
+# 「踏」 default 「トウ」 (= 踏襲/雑踏/踏破/踏査/未踏/踏切)。
+# 動詞 「踏む」 は okurigana 列挙で 「ふ」 へ切替
+[[kanji]]
+char = "踏"
+default = "トウ"
+
+# 「踏む/踏まない/踏んだ/踏めば/踏もう/踏み○○」 = 動詞 → ふ
+[[kanji.match]]
+next_starts_any = ["む", "ま", "み", "ん", "め", "も"]
+reading = "ふ"
+
+# 「貼」 default 「チョウ」 (= 貼付/貼布/貼用)。
+# 動詞 「貼る」 は okurigana 列挙で 「は」 へ切替
+[[kanji]]
+char = "貼"
+default = "チョウ"
+
+# 「貼る/貼らない/貼った/貼って/貼れば/貼ろう/貼り○○」 = 動詞 → は
+[[kanji.match]]
+next_starts_any = ["る", "ら", "り", "っ", "れ", "ろ"]
+reading = "は"
+
+# 「識」 default 「シキ」 (= 知識/常識/意識/標識/学識/良識/識別/有識者)。
+# unihan default 「しる」 は古語動詞、 現代では熟語 dominant
+[[kanji]]
+char = "識"
+default = "シキ"
+
+# 「諸」 default 「ショ」 (= 諸国/諸君/諸事/諸般/諸事情/諸島/諸侯)。
+# unihan default 「これ」 は古語指示詞、 現代では熟語 dominant
+[[kanji]]
+char = "諸"
+default = "ショ"
+
+# 「豊」 default 「ホウ」 (= 豊富/豊作/豊満/豊年/豊潤/豊穣/豊臣)。
+# 形容動詞 「豊か」 = ゆたか は next_eq で切替
+[[kanji]]
+char = "豊"
+default = "ホウ"
+
+# 「豊か」 = ゆたか (形容動詞)
+[[kanji.match]]
+next_eq = "か"
+reading = "ゆた"
+
+# 「豪」 default 「ゴウ」 (= 豪雨/豪邸/豪傑/富豪/豪華/豪快/文豪/英豪)。
+# unihan default 「やまあらし」 は古語、 現代では熟語 dominant
+[[kanji]]
+char = "豪"
+default = "ゴウ"
+
+# 「財」 default 「ザイ」 (= 財産/財布/財団/家財/文化財/財界/資財)。
+# unihan default 「たから」 は古語、 現代では熟語 dominant (「宝」 が訓 dominant)
+[[kanji]]
+char = "財"
+default = "ザイ"
