@@ -1698,12 +1698,12 @@ description = "常用漢字 2,136 字 (文化庁 2010-11-30 改訂、 内閣告�
 # 財 は core/kanji/overrides.toml の [[kanji]] block に移行
 # 貢 は core/kanji/overrides.toml の [[kanji]] block に移行
 # 貧 は core/kanji/overrides.toml の [[kanji]] block に移行
-"貨" = "たから"
+# 貨 は core/kanji/overrides.toml の [[kanji]] block に移行
 # 販 は core/kanji/overrides.toml の [[kanji]] block に移行
 # 貪 は core/kanji/overrides.toml の [[kanji]] block に移行
 # 貫 は core/kanji/overrides.toml の [[kanji]] block に移行
 # 責 は core/kanji/overrides.toml の [[kanji]] block に移行
-"貯" = "たくわえる"
+# 貯 は core/kanji/overrides.toml の [[kanji]] block に移行
 # 貴 は core/kanji/overrides.toml の [[kanji]] block に移行
 # 買 は core/kanji/overrides.toml の [[kanji]] block に移行
 # 貸 は core/kanji/overrides.toml の [[kanji]] block に移行
@@ -1724,7 +1724,7 @@ description = "常用漢字 2,136 字 (文化庁 2010-11-30 改訂、 内閣告�
 # 賢 は core/kanji/overrides.toml の [[kanji]] block に移行
 "賦" = "みつぎ"
 # 質 は core/kanji/overrides.toml の [[kanji]] block に移行
-"賭" = "かけ"
+# 賭 は core/kanji/overrides.toml の [[kanji]] block に移行
 # 購 は core/kanji/overrides.toml の [[kanji]] block に移行
 # 贈 は core/kanji/overrides.toml の [[kanji]] block に移行
 "赤" = "あか"
@@ -1765,10 +1765,10 @@ description = "常用漢字 2,136 字 (文化庁 2010-11-30 改訂、 内閣告�
 # "辱" は core/kanji/overrides.toml の [[kanji]] block に移行
 "農" = "ノウ"
 "辺" = "あたり"
-"込" = "こむ"
+# 込 は core/kanji/overrides.toml の [[kanji]] block に移行
 # 迅 は core/kanji/overrides.toml の [[kanji]] block に移行
 # 迎 は core/kanji/overrides.toml の [[kanji]] block に移行
-"近" = "ちかい"
+# 近 は core/kanji/overrides.toml の [[kanji]] block に移行
 # 返 は core/kanji/overrides.toml の [[kanji]] block に移行
 # 迫 は core/kanji/overrides.toml の [[kanji]] block に移行
 # 迭 は core/kanji/overrides.toml の [[kanji]] block に移行
@@ -1800,8 +1800,8 @@ description = "常用漢字 2,136 字 (文化庁 2010-11-30 改訂、 内閣告�
 # 「達」 は overrides.toml の [[kanji]] block に移行 (★round 39)
 # 違 は core/kanji/overrides.toml の [[kanji]] block に移行
 "遜" = "へりくだる"
-"遠" = "とおい"
-"遡" = "さかのぼる"
+# 遠 は core/kanji/overrides.toml の [[kanji]] block に移行
+# 遡 は core/kanji/overrides.toml の [[kanji]] block に移行
 # 遣 は core/kanji/overrides.toml の [[kanji]] block に移行
 # 適 は core/kanji/overrides.toml の [[kanji]] block に移行
 # 遭 は core/kanji/overrides.toml の [[kanji]] block に移行
@@ -1834,7 +1834,7 @@ description = "常用漢字 2,136 字 (文化庁 2010-11-30 改訂、 内閣告�
 "酬" = "むくい"
 "酵" = "コウ"
 # "酷" は core/kanji/overrides.toml の [[kanji]] block に移行
-"酸" = "すい"
+# 酸 は core/kanji/overrides.toml の [[kanji]] block に移行
 # 醒 は core/kanji/overrides.toml の [[kanji]] block に移行
 # 醜 は core/kanji/overrides.toml の [[kanji]] block に移行
 # 醸 は core/kanji/overrides.toml の [[kanji]] block に移行
@@ -1985,7 +1985,7 @@ description = "常用漢字 2,136 字 (文化庁 2010-11-30 改訂、 内閣告�
 "駒" = "こま"
 # 騎 は core/kanji/overrides.toml の [[kanji]] block に移行
 # 騒 は core/kanji/overrides.toml の [[kanji]] block に移行
-"験" = "あかし"
+# 験 は core/kanji/overrides.toml の [[kanji]] block に移行
 # 騰 は core/kanji/overrides.toml の [[kanji]] block に移行
 # 驚 は core/kanji/overrides.toml の [[kanji]] block に移行
 # 骨 は core/kanji/overrides.toml の [[kanji]] block に移行
@@ -2015,7 +2015,7 @@ description = "常用漢字 2,136 字 (文化庁 2010-11-30 改訂、 内閣告�
 # 黙 は core/kanji/overrides.toml の [[kanji]] block に移行
 "鼓" = "つづみ"
 "鼻" = "はな"
-"齢" = "よわい"
+# 齢 は core/kanji/overrides.toml の [[kanji]] block に移行
 
 # === Detailed entries (★A2 alpha.11 migration、 inline match block 持ち) ===
 

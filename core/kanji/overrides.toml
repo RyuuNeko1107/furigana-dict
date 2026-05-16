@@ -8008,3 +8008,83 @@ default = "レイ"
 [[kanji.match]]
 next_starts_any = ["し"]
 reading = "うるわ"
+
+# 「賭」 default 「ト」 (= 賭博/賭場)。
+# 動詞 「賭ける」 は okurigana 「け」 で 「か」 へ切替 (= 賭け = カケ 名詞用法もカバー)
+[[kanji]]
+char = "賭"
+default = "ト"
+
+# 「賭ける/賭けない/賭けた/賭けて/賭ければ/賭けよう/賭け○○」 = 動詞 → か
+[[kanji.match]]
+next_starts_any = ["け"]
+reading = "か"
+
+# 「込」 default 「こ」 (= 「込む/込める/取り込む/書き込む/見込み/込み入る」)。
+# 音読み熟語ほぼなし (= 「込」 はほぼ複合動詞語幹として使われる)
+[[kanji]]
+char = "込"
+default = "こ"
+
+# 「近」 default 「キン」 (= 近代/近年/最近/接近/付近/親近/側近/近隣/近所)。
+# 形容詞 「近い」 は okurigana 列挙で 「ちか」 へ切替 (= 「近づく」 含む)
+[[kanji]]
+char = "近"
+default = "キン"
+
+# 「近い/近く/近かった/近ければ/近さ/近づく/近づき」 = 形容詞 + 派生 → ちか
+[[kanji.match]]
+next_starts_any = ["い", "く", "か", "け", "さ", "づ"]
+reading = "ちか"
+
+# 「遠」 default 「エン」 (= 遠距離/遠方/望遠/遠隔/永遠/久遠/敬遠)。
+# 形容詞 「遠い」 は okurigana 列挙で 「とお」 へ切替 (= 「遠ざかる」 含む)
+[[kanji]]
+char = "遠"
+default = "エン"
+
+# 「遠い/遠く/遠かった/遠ければ/遠さ/遠ざかる」 = 形容詞 + 派生 → とお
+[[kanji.match]]
+next_starts_any = ["い", "く", "か", "け", "さ", "ざ"]
+reading = "とお"
+
+# 「遡」 default 「ソ」 (= 遡及/遡上)。
+# 動詞 「遡る」 は okurigana 列挙で 「さかのぼ」 へ切替 (= 5 mora 訓読み)
+[[kanji]]
+char = "遡"
+default = "ソ"
+
+# 「遡る/遡らない/遡った/遡って/遡れば/遡ろう」 = 動詞 → さかのぼ
+[[kanji.match]]
+next_starts_any = ["る", "ら", "り", "っ", "れ", "ろ"]
+reading = "さかのぼ"
+
+# 「貨」 default 「カ」 (= 貨物/通貨/貨幣/銀貨/百貨店/外貨/金貨/雑貨)。
+# unihan default 「たから」 は古語、 現代では熟語 dominant
+[[kanji]]
+char = "貨"
+default = "カ"
+
+# 「貯」 default 「チョ」 (= 貯金/貯蓄/貯水/貯蔵/貯炭)。
+# unihan default 「たくわえる」 は古語動詞、 現代では熟語 dominant
+[[kanji]]
+char = "貯"
+default = "チョ"
+
+# 「酸」 default 「サン」 (= 酸素/酸性/酸化/塩酸/硫酸/酸味/酸欠/胃酸)。
+# unihan default 「すい」 は形容詞 「酸い」 のみで稀、 現代では熟語 dominant
+[[kanji]]
+char = "酸"
+default = "サン"
+
+# 「験」 default 「ケン」 (= 試験/受験/経験/体験/実験/効験/霊験)。
+# unihan default 「あかし」 は古語、 現代では熟語 dominant
+[[kanji]]
+char = "験"
+default = "ケン"
+
+# 「齢」 default 「レイ」 (= 年齢/高齢/老齢/学齢/適齢期/弱齢)。
+# unihan default 「よわい」 は古語、 現代では熟語 dominant
+[[kanji]]
+char = "齢"
+default = "レイ"
