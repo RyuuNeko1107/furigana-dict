@@ -7508,3 +7508,93 @@ default = "フク"
 [[kanji]]
 char = "祖"
 default = "ソ"
+
+# 「積」 default 「セキ」 (= 蓄積/積極/累積/積算/容積/面積/堆積/集積)。
+# 動詞 「積む」 は okurigana 列挙で 「つ」 へ切替
+[[kanji]]
+char = "積"
+default = "セキ"
+
+# 「積む/積まない/積んだ/積めば/積もう/積み○○」 = 動詞 → つ
+[[kanji.match]]
+next_starts_any = ["む", "ま", "み", "ん", "め", "も"]
+reading = "つ"
+
+# 「突」 default 「トツ」 (= 突然/激突/衝突/煙突/突破/追突/突撃)。
+# 動詞 「突く」 は okurigana 列挙で 「つ」 へ切替
+[[kanji]]
+char = "突"
+default = "トツ"
+
+# 「突く/突かない/突いた/突いて/突けば/突こう/突き○○」 = 動詞 → つ
+[[kanji.match]]
+next_starts_any = ["く", "か", "き", "っ", "け", "こ"]
+reading = "つ"
+
+# 「継」 default 「ケイ」 (= 継続/継承/中継/後継/承継/継嗣)。
+# 動詞 「継ぐ」 は okurigana 列挙で 「つ」 へ切替
+[[kanji]]
+char = "継"
+default = "ケイ"
+
+# 「継ぐ/継がない/継いだ/継いで/継げば/継ごう/継ぎ○○」 = 動詞 → つ
+[[kanji.match]]
+next_starts_any = ["ぐ", "が", "ぎ", "い", "げ", "ご"]
+reading = "つ"
+
+# 「置」 default 「チ」 (= 位置/設置/装置/配置/処置/常置/併置/留置)。
+# 動詞 「置く」 は okurigana 列挙で 「お」 へ切替
+[[kanji]]
+char = "置"
+default = "チ"
+
+# 「置く/置かない/置いた/置いて/置けば/置こう/置き○○」 = 動詞 → お
+[[kanji.match]]
+next_starts_any = ["く", "か", "き", "っ", "け", "こ"]
+reading = "お"
+
+# 「練」 default 「レン」 (= 練習/熟練/未練/教練/訓練/精練/洗練/試練)。
+# 動詞 「練る」 は okurigana 列挙で 「ね」 へ切替
+[[kanji]]
+char = "練"
+default = "レン"
+
+# 「練る/練らない/練った/練って/練れば/練ろう/練り○○」 = 動詞 → ね
+[[kanji.match]]
+next_starts_any = ["る", "ら", "り", "っ", "れ", "ろ"]
+reading = "ね"
+
+# 「童」 default 「ドウ」 (= 童話/児童/学童/童心/童謡/神童)。
+# unihan default 「わらべ」 は古語、 現代では熟語 dominant
+[[kanji]]
+char = "童"
+default = "ドウ"
+
+# 「範」 default 「ハン」 (= 範囲/模範/規範/師範/広範/範例)。
+# unihan default 「のり」 は古語、 現代では熟語 dominant
+[[kanji]]
+char = "範"
+default = "ハン"
+
+# 「紹」 default 「ショウ」 (= 紹介/紹隆)。
+# unihan default 「つぐ」 は古語動詞、 現代では「紹介」 dominant
+[[kanji]]
+char = "紹"
+default = "ショウ"
+
+# 「籍」 default 「セキ」 (= 国籍/書籍/在籍/移籍/戸籍/学籍)。
+# unihan default 「ふみ」 は古語、 現代では熟語 dominant
+[[kanji]]
+char = "籍"
+default = "セキ"
+
+# 「翻」 default 「ホン」 (= 翻訳/翻意/翻案/翻弄)。
+# 動詞 「翻る/翻す」 は okurigana 列挙で 「ひるがえ」 へ切替 (= 4 mora 訓読み)
+[[kanji]]
+char = "翻"
+default = "ホン"
+
+# 「翻る/翻らない/翻った/翻って/翻れば/翻ろう/翻す」 = 動詞 → ひるがえ
+[[kanji.match]]
+next_starts_any = ["る", "ら", "り", "っ", "れ", "ろ", "す", "さ", "し", "せ", "そ"]
+reading = "ひるがえ"
