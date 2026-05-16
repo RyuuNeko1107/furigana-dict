@@ -28,7 +28,7 @@ git に commit されている master HEAD の状態を基準にする。
 | [**作品造語**](#作品造語) (`core/works/*`、作品単位 1 ファイル) | **311** | **10 KB** |
 | [**外来語**](#外来語) (`core/loanwords/*`、IT 用語等の英字 surface) | **168** | **5.2 KB** |
 | [**分類前 inbox**](#分類前-inbox) (`core/_inbox.toml`、 後で振り分ける一時置き場) | **0** | **180 B** |
-| [**単漢字 [[kanji]] format**](#単漢字-kanji-format) (`core/kanji/*`、 default + 文脈分岐 reading) | **1,205** | **71 KB** |
+| [**単漢字 [[kanji]] format**](#単漢字-kanji-format) (`core/kanji/*`、 default + 文脈分岐 reading) | **1,205** | **72 KB** |
 | [**異体字**](#異体字) (`core/compat.toml`) | **435** | **6.1 KB** |
 | [**エンジンルール**](#エンジンルール) (`rules/`) | **180** | **10.0 KB** |
 | **合計** | **52,513** | **1.11 MB** |
@@ -194,7 +194,7 @@ git に commit されている master HEAD の状態を基準にする。
 
 | ファイル | 文字数 | ルール数 | サイズ | 用途 |
 |---|---:|---:|---:|---|
-| [`core/kanji/overrides.toml`](core/kanji/overrides.toml) | 1,205 | 1,432 | 71 KB | 単漢字 default override + 文脈分岐 reading |
+| [`core/kanji/overrides.toml`](core/kanji/overrides.toml) | 1,205 | 1,432 | 72 KB | 単漢字 default override + 文脈分岐 reading |
 
 ### 異体字
 
