@@ -7143,3 +7143,98 @@ default = "テイ"
 [[kanji]]
 char = "帥"
 default = "スイ"
+
+# 「得」 default 「トク」 (= 得意/得点/取得/獲得/利得/納得/損得/獲得)。
+# 動詞 「得る」 は okurigana 列挙で 「え」 へ切替 (= 下一段活用)
+[[kanji]]
+char = "得"
+default = "トク"
+
+# 「得る/得ない/得た/得て/得れば/得よう/得ろ」 = 動詞 → え
+[[kanji.match]]
+next_starts_any = ["る", "た", "て", "ら", "り", "れ", "ろ", "な", "よ"]
+reading = "え"
+
+# 「待」 default 「タイ」 (= 待機/待望/期待/接待/招待/虐待/応対待)。
+# 動詞 「待つ」 は okurigana 列挙で 「ま」 へ切替
+[[kanji]]
+char = "待"
+default = "タイ"
+
+# 「待つ/待たない/待った/待って/待てば/待とう/待ち○○」 = 動詞 → ま
+[[kanji.match]]
+next_starts_any = ["つ", "た", "ち", "っ", "て", "と"]
+reading = "ま"
+
+# 「打」 default 「ダ」 (= 打撃/打開/打診/打席/打者/殴打/連打/打破/痛打)。
+# 動詞 「打つ」 は okurigana 列挙で 「う」 へ切替
+[[kanji]]
+char = "打"
+default = "ダ"
+
+# 「打つ/打たない/打った/打って/打てば/打とう/打ち○○」 = 動詞 → う
+[[kanji.match]]
+next_starts_any = ["つ", "た", "ち", "っ", "て", "と"]
+reading = "う"
+
+# 「折」 default 「セツ」 (= 折角/折半/挫折/曲折/夭折/骨折/折衝)。
+# 動詞 「折る」 は okurigana 列挙で 「お」 へ切替
+[[kanji]]
+char = "折"
+default = "セツ"
+
+# 「折る/折らない/折った/折って/折れば/折ろう/折り○○」 = 動詞 → お
+[[kanji.match]]
+next_starts_any = ["る", "ら", "り", "っ", "れ", "ろ"]
+reading = "お"
+
+# 「折々」 = 踊り字反復 → お (= 「折々 = おりおり」)
+[[kanji.match]]
+next_eq = "々"
+reading = "お"
+
+# 「抜」 default 「バツ」 (= 抜群/抜粋/選抜/海抜/奇抜/抜本/抜歯/不抜)。
+# 動詞 「抜く」 は okurigana 列挙で 「ぬ」 へ切替
+[[kanji]]
+char = "抜"
+default = "バツ"
+
+# 「抜く/抜かない/抜いた/抜いて/抜けば/抜こう/抜き○○」 = 動詞 → ぬ
+[[kanji.match]]
+next_starts_any = ["く", "か", "き", "っ", "け", "こ"]
+reading = "ぬ"
+
+# 「振」 default 「シン」 (= 振動/振興/不振/振幅/振動子/三振)。
+# 動詞 「振る」 は okurigana 列挙で 「ふ」 へ切替
+[[kanji]]
+char = "振"
+default = "シン"
+
+# 「振る/振らない/振った/振って/振れば/振ろう/振り○○」 = 動詞 → ふ
+[[kanji.match]]
+next_starts_any = ["る", "ら", "り", "っ", "れ", "ろ"]
+reading = "ふ"
+
+# 「律」 default 「リツ」 (= 法律/律動/規律/律儀/旋律/一律/自律/格律)。
+# unihan default 「のり」 は古語、 現代では熟語 dominant
+[[kanji]]
+char = "律"
+default = "リツ"
+
+# 「徴」 default 「チョウ」 (= 特徴/徴候/徴収/象徴/徴兵)。
+# unihan default 「しるし」 は古語、 現代では熟語 dominant
+[[kanji]]
+char = "徴"
+default = "チョウ"
+
+# 「微」 default 「ビ」 (= 微細/微妙/微弱/微生物/微塵/顕微鏡/軽微/微小)。
+# unihan default 「かすか」 は古語、 現代では熟語 dominant
+[[kanji]]
+char = "微"
+default = "ビ"
+
+# 「態」 default 「タイ」 (= 態度/状態/事態/動態/形態/姿態/常態/実態)。
+# unihan default 「さま」 は古語、 現代では熟語 dominant
+[[kanji]]
+char = "態"
+default = "タイ"

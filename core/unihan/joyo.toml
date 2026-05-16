@@ -626,18 +626,18 @@ description = "常用漢字 2,136 字 (文化庁 2010-11-30 改訂、 内閣告�
 "往" = "いく"
 "征" = "うつ"
 "径" = "こみち"
-"待" = "まつ"
-"律" = "のり"
+# 待 は core/kanji/overrides.toml の [[kanji]] block に移行
+# 律 は core/kanji/overrides.toml の [[kanji]] block に移行
 # 徐 は core/kanji/overrides.toml の [[kanji]] block に移行
 # 徒 は core/kanji/overrides.toml の [[kanji]] block に移行
 # 従 は core/kanji/overrides.toml の [[kanji]] block に移行
-"得" = "える"
+# 得 は core/kanji/overrides.toml の [[kanji]] block に移行
 # 御 は core/kanji/overrides.toml の [[kanji]] block に移行
 # 復 は core/kanji/overrides.toml の [[kanji]] block に移行
 # 循 は core/kanji/overrides.toml の [[kanji]] block に移行
-"微" = "かすか"
+# 微 は core/kanji/overrides.toml の [[kanji]] block に移行
 "徳" = "トク"
-"徴" = "しるし"
+# 徴 は core/kanji/overrides.toml の [[kanji]] block に移行
 # 徹 は core/kanji/overrides.toml の [[kanji]] block に移行
 # 必 は core/kanji/overrides.toml の [[kanji]] block に移行
 "忌" = "いむ"
@@ -686,7 +686,7 @@ description = "常用漢字 2,136 字 (文化庁 2010-11-30 改訂、 内閣告�
 "感" = "カン"
 # 慄 は core/kanji/overrides.toml の [[kanji]] block に移行
 # 慈 は core/kanji/overrides.toml の [[kanji]] block に移行
-"態" = "さま"
+# 態 は core/kanji/overrides.toml の [[kanji]] block に移行
 # 慌 は core/kanji/overrides.toml の [[kanji]] block に移行
 # 慎 は core/kanji/overrides.toml の [[kanji]] block に移行
 # 慕 は core/kanji/overrides.toml の [[kanji]] block に移行
@@ -722,7 +722,7 @@ description = "常用漢字 2,136 字 (文化庁 2010-11-30 改訂、 内閣告�
 "扇" = "おうぎ"
 "扉" = "とびら"
 # 才 は core/kanji/overrides.toml の [[kanji]] block に移行
-"打" = "うつ"
+# 打 は core/kanji/overrides.toml の [[kanji]] block に移行
 # 払 は core/kanji/overrides.toml の [[kanji]] block に移行
 # 扱 は core/kanji/overrides.toml の [[kanji]] block に移行
 # 扶 は core/kanji/overrides.toml の [[kanji]] block に移行
@@ -734,8 +734,8 @@ description = "常用漢字 2,136 字 (文化庁 2010-11-30 改訂、 内閣告�
 # 抑 は core/kanji/overrides.toml の [[kanji]] block に移行
 # 投 は core/kanji/overrides.toml の [[kanji]] block に移行
 # 抗 は core/kanji/overrides.toml の [[kanji]] block に移行
-"折" = "おる"
-"抜" = "ぬく"
+# 折 は core/kanji/overrides.toml の [[kanji]] block に移行
+# 抜 は core/kanji/overrides.toml の [[kanji]] block に移行
 # 択 は core/kanji/overrides.toml の [[kanji]] block に移行
 # 披 は core/kanji/overrides.toml の [[kanji]] block に移行
 "抱" = "だく"
@@ -767,7 +767,7 @@ description = "常用漢字 2,136 字 (文化庁 2010-11-30 改訂、 内閣告�
 # 挟 は core/kanji/overrides.toml の [[kanji]] block に移行
 "挨" = "アイ"
 # 挫 は core/kanji/overrides.toml の [[kanji]] block に移行
-"振" = "ふる"
+# 振 は core/kanji/overrides.toml の [[kanji]] block に移行
 "挿" = "さす"
 # 捉 は core/kanji/overrides.toml の [[kanji]] block に移行
 # 捕 は core/kanji/overrides.toml の [[kanji]] block に移行
