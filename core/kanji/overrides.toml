@@ -6772,3 +6772,26 @@ reading = "の"
 [[kanji.match]]
 next_starts_any = ["せ"]
 reading = "の"
+
+# 「並」 default 「なみ」 (= 街並/人並/月並/世間並/十人並/並み/並みの)。
+# 動詞 「並ぶ/並べる」 は okurigana 列挙で 「なら」、 漢字直前の熟語頭は 「ヘイ」
+[[kanji]]
+char = "並"
+default = "なみ"
+
+# 「並ぶ/並ばない/並んで/並べば/並ぼう/並び○○」 = 自動詞 → なら
+# (= 他動詞 「並べる/並べた/並べて」 も okurigana が被るので同じ match で吸収)
+[[kanji.match]]
+next_starts_any = ["ぶ", "ば", "び", "ん", "べ", "ぼ"]
+reading = "なら"
+
+# 漢字直前 = 熟語頭 → ヘイ (= 「並列/並行/並進/並立/並走/並用」)
+[[kanji.match]]
+next_char_type = "漢字"
+reading = "ヘイ"
+
+# 「亜」 default 「ア」 (= 亜流/亜種/亜熱帯/亜麻/亜鉛/亜細亜/東亜/亜美)。
+# 古語 「つぐ」 (= 動詞 「亜ぐ」) は現代日本語ではほぼ用例なし
+[[kanji]]
+char = "亜"
+default = "ア"
