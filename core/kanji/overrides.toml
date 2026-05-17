@@ -8703,3 +8703,93 @@ default = "チ"
 [[kanji.match]]
 next_starts_any = ["せ"]
 reading = "は"
+
+# 「訣」 default 「ケツ」 (= 永訣/秘訣/訣別)。
+# 動詞 「訣れる」 は okurigana 「れ」 で 「わか」 へ切替 (= 「別」 と同源)
+[[kanji]]
+char = "訣"
+default = "ケツ"
+
+# 「訣れる/訣れない/訣れた/訣れて」 = 動詞 → わか
+[[kanji.match]]
+next_starts_any = ["れ"]
+reading = "わか"
+
+# 「詫」 default 「タ」 (= 謝詫/詫言)。
+# 動詞 「詫びる」 + 名詞 「詫び」 は okurigana 「び」 で 「わ」 へ切替
+[[kanji]]
+char = "詫"
+default = "タ"
+
+# 「詫びる/詫びた/詫びて/詫び (= 名詞)」 = 動詞 + 名詞 → わ
+[[kanji.match]]
+next_starts_any = ["び", "ば", "ぶ", "ぼ"]
+reading = "わ"
+
+# 「諒」 default 「リョウ」 (= 諒解/諒承/諒闇)。
+# unihan default 「まこと」 は古語、 現代では熟語 + 人名 dominant
+[[kanji]]
+char = "諒"
+default = "リョウ"
+
+# 「蕃」 default 「バン」 (= 蕃殖/蕃地/蕃椒/吐蕃)。
+# 動詞 「蕃る」 は okurigana 列挙で 「しげ」 へ切替 (= 「茂」 と同源)
+[[kanji]]
+char = "蕃"
+default = "バン"
+
+# 「蕃る/蕃らない/蕃った/蕃って」 = 動詞 → しげ
+[[kanji.match]]
+next_starts_any = ["る", "ら", "り", "っ", "れ", "ろ"]
+reading = "しげ"
+
+# 「讃」 default 「サン」 (= 讃美/絶讃/讃岐/賛讃/称讃)。
+# 動詞 「讃える」 は okurigana 列挙で 「たた」 へ切替
+[[kanji]]
+char = "讃"
+default = "サン"
+
+# 「讃える/讃えた/讃えて/讃えれば」 = 動詞 → たた
+[[kanji.match]]
+next_starts_any = ["え", "わ", "い", "っ", "う"]
+reading = "たた"
+
+# 「馴」 default 「ジュン」 (= 馴致/馴鹿/温馴/不馴)。
+# 動詞 「馴れる」 は okurigana 「れ」 で 「な」 へ切替
+[[kanji]]
+char = "馴"
+default = "ジュン"
+
+# 「馴れる/馴れた/馴れて」 = 動詞 → な
+[[kanji.match]]
+next_starts_any = ["れ"]
+reading = "な"
+
+# 「駕」 default 「ガ」 (= 凌駕/車駕/鳳駕)。
+# unihan default 「しのぐ」 は古語、 「凌」 が動詞 dominant
+[[kanji]]
+char = "駕"
+default = "ガ"
+
+# 「魁」 default 「カイ」 (= 魁偉/首魁/巨魁/魁首)。
+# unihan default 「かしら」 は古語、 現代では熟語 dominant
+[[kanji]]
+char = "魁"
+default = "カイ"
+
+# 「魯」 default 「ロ」 (= 魯鈍/魯迅/魯西亜/魯魚)。
+# unihan default 「おろか」 は古語、 現代では人名 + 熟語 dominant
+[[kanji]]
+char = "魯"
+default = "ロ"
+
+# 「蒙」 default 「モウ」 (= 蒙昧/啓蒙/蒙古/愚蒙/暗蒙)。
+# 動詞 「蒙る」 は okurigana 列挙で 「こうむ」 へ切替 (= 3 mora 訓読み)
+[[kanji]]
+char = "蒙"
+default = "モウ"
+
+# 「蒙る/蒙らない/蒙った/蒙って」 = 動詞 → こうむ
+[[kanji.match]]
+next_starts_any = ["る", "ら", "り", "っ", "れ", "ろ"]
+reading = "こうむ"
