@@ -9008,3 +9008,78 @@ default = "イン"
 [[kanji]]
 char = "哨"
 default = "ショウ"
+
+# 「夷」 default 「イ」 (= 夷狄/征夷/蝦夷/攘夷)。
+# unihan default 「えびす」 は古語、 現代では熟語 dominant
+[[kanji]]
+char = "夷"
+default = "イ"
+
+# 「娩」 default 「ベン」 (= 分娩/娩出/順娩)。
+# unihan default 「うむ」 は古語動詞、 「産」 が動詞 dominant
+[[kanji]]
+char = "娩"
+default = "ベン"
+
+# 「孟」 default 「モウ」 (= 孟子/孟夏/孟母/論孟)。
+# unihan default 「はじめ」 は古語、 現代では熟語 dominant
+[[kanji]]
+char = "孟"
+default = "モウ"
+
+# 「宏」 default 「コウ」 (= 宏大/宏壮/宏図)。
+# 形容詞 「宏い」 = ひろい は okurigana で 「ひろ」 へ切替 (= 人名「宏」 dominant)
+[[kanji]]
+char = "宏"
+default = "コウ"
+
+# 「宏い/宏く/宏かった」 = 形容詞 → ひろ
+[[kanji.match]]
+next_starts_any = ["い", "く", "か", "け", "さ"]
+reading = "ひろ"
+
+# 「尖」 default 「セン」 (= 尖端/尖鋭/尖塔/尖兵)。
+# 動詞 「尖る/尖がる」 は okurigana 列挙で 「とが」 へ切替
+[[kanji]]
+char = "尖"
+default = "セン"
+
+# 「尖る/尖らない/尖った/尖って/尖れば/尖がる」 = 動詞 → とが
+[[kanji.match]]
+next_starts_any = ["る", "ら", "り", "っ", "れ", "ろ", "が"]
+reading = "とが"
+
+# 「彗」 default 「スイ」 (= 彗星)。
+# unihan default 「ほうき」 は古語、 現代では熟語 dominant
+[[kanji]]
+char = "彗"
+default = "スイ"
+
+# 「徽」 default 「キ」 (= 徽章/校徽/族徽)。
+# unihan default 「しるし」 は古語、 現代では熟語 dominant
+[[kanji]]
+char = "徽"
+default = "キ"
+
+# 「忽」 default 「コツ」 (= 忽然/忽諸/疎忽)。
+# 副詞 「忽ち」 = たちまち は next_eq で切替
+[[kanji]]
+char = "忽"
+default = "コツ"
+
+# 「忽ち」 = たちまち (副詞)
+[[kanji.match]]
+next_eq = "ち"
+reading = "たちま"
+
+# 「恕」 default 「ジョ」 (= 容恕/寛恕/忠恕)。
+# unihan default 「ゆるす」 は古語動詞、 「許」 が動詞 dominant
+[[kanji]]
+char = "恕"
+default = "ジョ"
+
+# 「恢」 default 「カイ」 (= 恢復/廣恢/恢宏)。
+# unihan default 「ひろい」 は古語形容詞、 「広」 が訓 dominant
+[[kanji]]
+char = "恢"
+default = "カイ"
