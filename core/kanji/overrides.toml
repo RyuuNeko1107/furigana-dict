@@ -8943,3 +8943,68 @@ default = "タン"
 [[kanji]]
 char = "尭"
 default = "ギョウ"
+
+# 「乎」 default 「コ」 (= 断乎/確乎/牢乎/呼乎)。
+# unihan default 「か」 は古語感嘆助詞、 現代用例なし
+[[kanji]]
+char = "乎"
+default = "コ"
+
+# 「云」 default 「ウン」 (= 云々/云為)。
+# 動詞 「云う」 = いう は okurigana 列挙で 「い」 へ切替 (= 「言」 と同源)
+[[kanji]]
+char = "云"
+default = "ウン"
+
+# 「云う/云わない/云った/云って/云えば/云おう」 = 動詞 → い
+[[kanji.match]]
+next_starts_any = ["う", "わ", "い", "っ", "え", "お"]
+reading = "い"
+
+# 「伊」 default 「イ」 (= 伊勢/伊豆/伊賀/伊呂波/伊太利亜/伊吹)。
+# unihan default 「かれ」 は古語指示詞、 現代では地名 / 人名で イ dominant
+[[kanji]]
+char = "伊"
+default = "イ"
+
+# 「伍」 default 「ゴ」 (= 伍長/落伍/隊伍/参伍)。
+# unihan default 「いつつ」 は古語数詞 (= 「五」 と同源)
+[[kanji]]
+char = "伍"
+default = "ゴ"
+
+# 「伽」 default 「ガ」 (= 伽藍/伽羅)。
+# unihan default 「とぎ」 は古語、 「お伽噺」 は jukugo 個別
+[[kanji]]
+char = "伽"
+default = "ガ"
+
+# 「俠」 default 「キョウ」 (= 俠客/任俠/俠気/義俠)。
+# unihan default 「きゃん」 は古語、 現代では熟語 dominant
+[[kanji]]
+char = "俠"
+default = "キョウ"
+
+# 「俱」 default 「ク」 (= 俱楽部/俱知安/不俱戴天)。
+# unihan default 「ともに」 は古語副詞、 現代では熟語 dominant
+[[kanji]]
+char = "俱"
+default = "ク"
+
+# 「傭」 default 「ヨウ」 (= 傭兵/傭員/雇傭/常傭)。
+# unihan default 「やとう」 は古語動詞、 「雇」 が動詞 dominant
+[[kanji]]
+char = "傭"
+default = "ヨウ"
+
+# 「允」 default 「イン」 (= 允許/上允/孚允)。
+# unihan default 「じょう」 は古語役職名、 現代では熟語 dominant
+[[kanji]]
+char = "允"
+default = "イン"
+
+# 「哨」 default 「ショウ」 (= 歩哨/監哨/前哨/哨戒)。
+# unihan default 「みはり」 は古語名詞、 現代では熟語 dominant
+[[kanji]]
+char = "哨"
+default = "ショウ"
