@@ -1664,7 +1664,7 @@ description = "常用漢字 2,136 字 (文化庁 2010-11-30 改訂、 内閣告�
 # 談 は core/kanji/overrides.toml の [[kanji]] block に移行
 # 請 は core/kanji/overrides.toml の [[kanji]] block に移行
 # 論 は core/kanji/overrides.toml の [[kanji]] block に移行 (★round 49)
-"諦" = "あきらめる"
+# 諦 は core/kanji/overrides.toml の [[kanji]] block に移行
 # 諧 は core/kanji/overrides.toml の [[kanji]] block に移行
 # 諭 は core/kanji/overrides.toml の [[kanji]] block に移行
 # 諮 は core/kanji/overrides.toml の [[kanji]] block に移行
@@ -1745,7 +1745,7 @@ description = "常用漢字 2,136 字 (文化庁 2010-11-30 改訂、 内閣告�
 # 蹴 は core/kanji/overrides.toml の [[kanji]] block に移行
 # 躍 は core/kanji/overrides.toml の [[kanji]] block に移行
 "身" = "シン"
-"軌" = "わだち"
+# 軌 は core/kanji/overrides.toml の [[kanji]] block に移行
 # 軍 は core/kanji/overrides.toml の [[kanji]] block に移行 (★round 49)
 # 軒 は core/kanji/overrides.toml の [[kanji]] block に移行
 # 軟 は core/kanji/overrides.toml の [[kanji]] block に移行

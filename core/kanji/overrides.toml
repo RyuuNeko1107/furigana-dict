@@ -12899,3 +12899,19 @@ default = "セイ"
 [[kanji.match]]
 next_starts_any = ["う", "わ", "っ", "お"]
 reading = "こ"
+
+# 「諦」 default 「タイ」 (= 諦観/真諦/諦念、 仏教用語の音読み)。
+# 動詞「諦める」 → okurigana 「め」 で「あきら」 へ切替 (= 一段動詞)。
+[[kanji]]
+char = "諦"
+default = "タイ"
+
+[[kanji.match]]
+next_starts_any = ["め"]
+reading = "あきら"
+
+# 「軌」 default 「キ」 (= 軌道/軌跡/常軌/同軌/狭軌/広軌/不軌)。
+# unihan 「わだち」 は古語訓、 現代日本語ではほぼ使わない → default 訂正。
+[[kanji]]
+char = "軌"
+default = "キ"
