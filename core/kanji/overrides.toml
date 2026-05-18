@@ -10953,3 +10953,91 @@ default = "ジャク"
 [[kanji.match]]
 next_starts_any = ["し", "れ", "び"]
 reading = "さび"
+
+# 「墓」 default 「ボ」 (= 墓地/墓石/墳墓/墓場/墓参り/墓誌)。
+# 単独 + 助詞接続 → 「はか」 (= 「墓が/墓の」 等)
+[[kanji]]
+char = "墓"
+default = "ボ"
+
+[[kanji.match]]
+next_starts_any = ["は", "が", "を", "に", "の", "で", "と", "も"]
+reading = "はか"
+
+# 「墨」 default 「ボク」 (= 墨絵/水墨画/筆墨/墨守/白墨)。
+# 単独 + 助詞接続 → 「すみ」 (= 「墨が/墨の」 等)
+[[kanji]]
+char = "墨"
+default = "ボク"
+
+[[kanji.match]]
+next_starts_any = ["は", "が", "を", "に", "の", "で", "と", "も"]
+reading = "すみ"
+
+# 「寮」 default 「リョウ」 (= 寮歌/学生寮/寮母/独身寮/寮内)。
+# unihan default 「つかさ」 は古語、 「司」 と被る
+[[kanji]]
+char = "寮"
+default = "リョウ"
+
+# 「寺」 default 「ジ」 (= 寺院/寺社/古寺/塔寺/末寺/禅寺)。
+# 単独 + 助詞接続 → 「てら」 (= 「寺が/寺の」 等)
+[[kanji]]
+char = "寺"
+default = "ジ"
+
+[[kanji.match]]
+next_starts_any = ["は", "が", "を", "に", "の", "で", "と", "も"]
+reading = "てら"
+
+# 「専」 default 「セン」 (= 専門/専攻/専有/専属/専制/専念)。
+# unihan default 「せん」 (ひらがな) → カタカナ統一
+[[kanji]]
+char = "専"
+default = "セン"
+
+# 「夢」 default 「ム」 (= 悪夢/夢遊/夢想/夢中/迷夢/正夢)。
+# 単独 + 助詞接続 → 「ゆめ」 (= 「夢が/夢の」 等)
+[[kanji]]
+char = "夢"
+default = "ム"
+
+[[kanji.match]]
+next_starts_any = ["は", "が", "を", "に", "の", "で", "と", "も"]
+reading = "ゆめ"
+
+# 「女」 default 「ジョ」 (= 女性/少女/天女/女史/魔女/才女/女子)。
+# 単独 + 助詞接続 → 「おんな」 (= 「女が/女の」 等)、 「女」 = ジョ 熟語 dominant
+[[kanji]]
+char = "女"
+default = "ジョ"
+
+[[kanji.match]]
+next_starts_any = ["は", "が", "を", "に", "の", "で", "と", "も"]
+reading = "おんな"
+
+# 「婆」 default 「バ」 (= 老婆/産婆/鬼婆)。
+# 単独 + 助詞接続 → 「ばば」 (= 「お婆さん」 等は jukugo)
+[[kanji]]
+char = "婆"
+default = "バ"
+
+[[kanji.match]]
+next_starts_any = ["は", "が", "を", "に", "の", "で", "と", "も"]
+reading = "ばば"
+
+# 「婿」 default 「セイ」 (= 女婿、 「花婿」 等は jukugo)。
+# 単独 + 助詞接続 → 「むこ」 (= 「婿が/婿の」 等)
+[[kanji]]
+char = "婿"
+default = "セイ"
+
+[[kanji.match]]
+next_starts_any = ["は", "が", "を", "に", "の", "で", "と", "も"]
+reading = "むこ"
+
+# 「媛」 default 「エン」 (= 才媛/淑媛/賢媛、 「愛媛」 = エヒメ は jukugo)。
+# unihan default 「ひめ」 は古語、 「姫」 が訓 dominant
+[[kanji]]
+char = "媛"
+default = "エン"
