@@ -12680,3 +12680,15 @@ default = "え"
 [[kanji]]
 char = "沙"
 default = "サ"
+
+# 「津」 default 「つ」 (= 津波/津軽/興津/会津、 訓読み圧倒的多数)。
+# 音読み 「シン」 (= 津液、 古典的) は jukugo file で対応 (= band 100 優先)。
+[[kanji]]
+char = "津"
+default = "つ"
+
+# 「爵」 default 「シャク」 (= 爵位/伯爵/侯爵/公爵/男爵/子爵)。
+# unihan 「さかずき」 は古代中国の儀礼用語、 現代日本語では「杯」 が一般的。
+[[kanji]]
+char = "爵"
+default = "シャク"
