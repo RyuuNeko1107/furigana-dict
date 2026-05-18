@@ -11041,3 +11041,95 @@ reading = "むこ"
 [[kanji]]
 char = "媛"
 default = "エン"
+
+# 「届」 default 「とど」 (= 動詞語幹、 「届く/届け/届ける/届かない」 が okurigana 接続で自然動作)。
+# 熟語ほぼなし (= 複合動詞語幹として使われる)
+[[kanji]]
+char = "届"
+default = "とど"
+
+# 「属」 default 「ゾク」 (= 属性/従属/付属/専属/帰属/金属/部属)。
+# unihan default 「つく」 は古語動詞、 「付/着」 が動詞 dominant
+[[kanji]]
+char = "属"
+default = "ゾク"
+
+# 「左」 default 「サ」 (= 左右/左折/座左/左記/左遷)。
+# 単独 + 助詞接続 → 「ひだり」 (= 「左が/左の」 等)
+[[kanji]]
+char = "左"
+default = "サ"
+
+[[kanji.match]]
+next_starts_any = ["は", "が", "を", "に", "の", "で", "と", "も"]
+reading = "ひだり"
+
+[[kanji.match]]
+prev_ends_any = ["の", "が", "は", "を", "に", "で", "と", "も"]
+reading = "ひだり"
+
+# 「布」 default 「フ」 (= 布教/分布/配布/公布/布石/散布/布陣)。
+# 単独 + 助詞接続 → 「ぬの」 (= 「布が/布の」 等)
+[[kanji]]
+char = "布"
+default = "フ"
+
+[[kanji.match]]
+next_starts_any = ["は", "が", "を", "に", "の", "で", "と", "も"]
+reading = "ぬの"
+
+# 「塩」 default 「エン」 (= 食塩/塩素/塩分/塩酸/塩害)。
+# 単独 + 助詞接続 → 「しお」 (= 「塩が/塩の」 等)
+[[kanji]]
+char = "塩"
+default = "エン"
+
+[[kanji.match]]
+next_starts_any = ["は", "が", "を", "に", "の", "で", "と", "も"]
+reading = "しお"
+
+# 「尾」 default 「ビ」 (= 尾骨/末尾/接尾辞/語尾/船尾/燕尾服)。
+# 単独 + 助詞接続 → 「お」 (= 「尾が/尾の」 等)
+[[kanji]]
+char = "尾"
+default = "ビ"
+
+[[kanji.match]]
+next_starts_any = ["は", "が", "を", "に", "の", "で", "と", "も"]
+reading = "お"
+
+# 「巣」 default 「ソウ」 (= 巣窟/卵巣/営巣/帰巣/古巣)。
+# 単独 + 助詞接続 → 「す」 (= 「巣が/巣の」 等)
+[[kanji]]
+char = "巣"
+default = "ソウ"
+
+[[kanji.match]]
+next_starts_any = ["は", "が", "を", "に", "の", "で", "と", "も"]
+reading = "す"
+
+# 「席」 default 「セキ」 (= 席次/出席/欠席/着席/座席/議席)。
+# unihan default 「せき」 (ひらがな) → カタカナ統一
+[[kanji]]
+char = "席"
+default = "セキ"
+
+# 「塊」 default 「カイ」 (= 血塊/塊根/金塊/土塊/気塊)。
+# 単独 + 助詞接続 → 「かたまり」 (= 「塊が/塊の」 等)
+[[kanji]]
+char = "塊"
+default = "カイ"
+
+[[kanji.match]]
+next_starts_any = ["は", "が", "を", "に", "の", "で", "と", "も"]
+reading = "かたまり"
+
+# 「大」 default 「ダイ」 (= 大学/大切/大根/大量/巨大/拡大/絶大)。
+# 形容詞 「大きい/大きな」 は okurigana 「き/く」 で 「おお」 へ切替
+[[kanji]]
+char = "大"
+default = "ダイ"
+
+[[kanji.match]]
+next_starts_any = ["き", "く"]
+reading = "おお"
