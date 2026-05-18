@@ -13179,3 +13179,51 @@ default = "ふ"
 [[kanji]]
 char = "蒲"
 default = "ホ"
+
+# 「貰」 default 「もら」 (= 動詞「貰う」 + 名詞「貰い物」 全活用)。
+# unihan 「もらい」 (連用形) は okurigana と二重連結する → default 訂正。
+[[kanji]]
+char = "貰"
+default = "もら"
+
+# 「蹟」 default 「セキ」 (= 「跡」 異体字、 旧蹟/事蹟/聖蹟/史蹟)。
+# unihan 「あと」 は「跡」 の訓で「蹟」 単独訓読み用法はほぼなし → default 訂正。
+[[kanji]]
+char = "蹟"
+default = "セキ"
+
+# 「輔」 default 「ホ」 (= 輔佐/輔導/輔翼、 名前用 「輔/慶輔」 等もホ)。
+# unihan 「すけ」 は名前読み一例、 一般「ホ」 主流 → default 訂正。
+[[kanji]]
+char = "輔"
+default = "ホ"
+
+# 「辿」 default 「たど」 (= 動詞「辿る」 全活用 + 「辿り着く」)。
+# unihan 「たどり」 (連用形) は okurigana と二重連結する → default 訂正。
+[[kanji]]
+char = "辿"
+default = "たど"
+
+# 「這」 default 「は」 (= 動詞「這う」 全活用 + 名詞「這い這い」)。
+# unihan 「はい」 (連用形) は okurigana と二重連結する → default 訂正。
+[[kanji]]
+char = "這"
+default = "は"
+
+# 「逢」 default 「あ」 (= 動詞「逢う」 全活用 + 「逢瀬/逢引」)。
+# unihan 「あい」 (連用形) は okurigana と二重連結する → default 訂正。
+[[kanji]]
+char = "逢"
+default = "あ"
+
+# 「頁」 default 「ページ」 (= 書籍の頁、 外来語慣用読み圧倒的)。
+# unihan 「ぺーじ」 は表記不適切 (ひらがな)、 慣例的にカタカナ表記 → default 訂正。
+[[kanji]]
+char = "頁"
+default = "ページ"
+
+# 「鵜」 default 「う」 (= 鵜飼/鵜呑み/鵜目鷹目、 訓読み圧倒的)。
+# unihan 「テイ」 は中国音読みで日本ではほぼ使わない → default 訂正。
+[[kanji]]
+char = "鵜"
+default = "う"
