@@ -10121,3 +10121,79 @@ reading = "かんが"
 [[kanji]]
 char = "聖"
 default = "セイ"
+
+# 「耗」 default 「モウ」 (= 消耗/磨耗/減耗/心耗弱)。
+# unihan default 「へる」 は古語動詞、 「減」 が動詞 dominant
+[[kanji]]
+char = "耗"
+default = "モウ"
+
+# 「肉」 default 「ニク」 (= 肉体/筋肉/果肉/牛肉/羊肉/精肉/鯨肉)。
+# unihan default 「しし」 は古語、 現代では熟語 dominant
+[[kanji]]
+char = "肉"
+default = "ニク"
+
+# 「肢」 default 「シ」 (= 四肢/肢体/前肢/下肢/上肢)。
+# unihan default 「てあし」 は古語、 現代では熟語 dominant
+[[kanji]]
+char = "肢"
+default = "シ"
+
+# 「肯」 default 「コウ」 (= 肯定/首肯/否肯)。
+# unihan default 「あえて」 は古語副詞、 現代では熟語 dominant
+[[kanji]]
+char = "肯"
+default = "コウ"
+
+# 「胆」 default 「タン」 (= 肝胆/大胆/落胆/胆力/胆嚢/魂胆)。
+# unihan default 「きも」 は古語、 「肝」 が訓 dominant
+[[kanji]]
+char = "胆"
+default = "タン"
+
+# 「胞」 default 「ホウ」 (= 細胞/同胞/胞子/胞衣)。
+# unihan default 「えな」 は古語、 現代では熟語 dominant
+[[kanji]]
+char = "胞"
+default = "ホウ"
+
+# 「胴」 default 「ドウ」 (= 胴体/胴乱/胴上げ/胴元/胴間)。
+# unihan default 「どう」 は ひらがな (= 同音だがカタカナ統一)、 整合性のため override
+[[kanji]]
+char = "胴"
+default = "ドウ"
+
+# 「脅」 default 「キョウ」 (= 脅威/脅迫/脅嚇)。
+# 動詞 「脅す」 = おどす は okurigana 列挙で 「おど」 へ切替 (= 「脅かす」 もカバー)
+[[kanji]]
+char = "脅"
+default = "キョウ"
+
+[[kanji.match]]
+next_starts_any = ["す", "さ", "し", "せ", "そ", "か"]
+reading = "おど"
+
+# 「罪」 default 「ザイ」 (= 犯罪/有罪/罪悪/原罪/死罪/罪人/謝罪)。
+# 単独 + 助詞接続 → 「つみ」 (= 名詞用法)
+[[kanji]]
+char = "罪"
+default = "ザイ"
+
+[[kanji.match]]
+next_starts_any = ["は", "が", "を", "に", "の", "で", "と", "も", "や", "へ"]
+reading = "つみ"
+
+[[kanji.match]]
+prev_ends_any = ["の", "が", "は", "を", "に", "で", "と", "も"]
+reading = "つみ"
+
+# 「羽」 default 「ウ」 (= 羽毛/羽化/翼羽/三羽烏)。
+# 単独 + 助詞接続 → 「は」 (= 「羽」 = は 名詞用法)
+[[kanji]]
+char = "羽"
+default = "ウ"
+
+[[kanji.match]]
+next_starts_any = ["は", "が", "を", "に", "の", "で", "と", "も"]
+reading = "は"
