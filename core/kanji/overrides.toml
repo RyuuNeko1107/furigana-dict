@@ -10561,3 +10561,83 @@ default = "イン"
 [[kanji]]
 char = "坑"
 default = "コウ"
+
+# 「印」 default 「イン」 (= 印鑑/印刷/捺印/復印/印章/印刷物/封印/烙印)。
+# 訓 「しるし」 (= 「目印 = メジルシ」 等) は jukugo 個別
+[[kanji]]
+char = "印"
+default = "イン"
+
+# 「卵」 default 「ラン」 (= 卵黄/受精卵/排卵/抱卵/卵巣/産卵)。
+# 単独 + 助詞接続 → 「たまご」 (= 「卵が/卵を/卵の」 等)
+[[kanji]]
+char = "卵"
+default = "ラン"
+
+[[kanji.match]]
+next_starts_any = ["は", "が", "を", "に", "の", "で", "と", "も", "や"]
+reading = "たまご"
+
+# 「反」 default 「ハン」 (= 反対/反応/反映/反撃/反抗/反復/反省/反射/反逆)。
+# 動詞 「反る」 は okurigana 列挙で 「そ」 へ切替
+[[kanji]]
+char = "反"
+default = "ハン"
+
+[[kanji.match]]
+next_starts_any = ["る", "ら", "り", "っ", "れ", "ろ"]
+reading = "そ"
+
+# 「司」 default 「シ」 (= 司会/司令/司法/上司/祭司/行司)。
+# unihan default 「つかさ」 は古語、 現代では熟語 dominant
+[[kanji]]
+char = "司"
+default = "シ"
+
+# 「命」 default 「メイ」 (= 命令/運命/革命/任命/使命/生命/絶命/宿命)。
+# 単独 + 助詞接続 → 「いのち」 (= 「命が/命を/命の」 等)
+[[kanji]]
+char = "命"
+default = "メイ"
+
+[[kanji.match]]
+next_starts_any = ["は", "が", "を", "に", "の", "で", "と", "も"]
+reading = "いのち"
+
+[[kanji.match]]
+prev_ends_any = ["の", "が", "は", "を", "に", "で", "と", "も"]
+reading = "いのち"
+
+# 「咽」 default 「イン」 (= 咽喉/嗚咽/鳴咽)。
+# unihan default 「のど」 は名詞単独、 熟語 dominant
+[[kanji]]
+char = "咽"
+default = "イン"
+
+# 「友」 default 「ユウ」 (= 友情/親友/友人/友好/友愛/旧友/級友)。
+# 単独 + 助詞接続 → 「とも」 (= 「友が/友と」 等)、 「友達」 は jukugo
+[[kanji]]
+char = "友"
+default = "ユウ"
+
+[[kanji.match]]
+next_starts_any = ["は", "が", "を", "に", "の", "で", "と", "も", "や"]
+reading = "とも"
+
+# 「双」 default 「ソウ」 (= 双方/双子/無双/双生児/双璧/二人三脚)。
+# unihan default 「ふた」 は古語、 「二」 が訓 dominant
+[[kanji]]
+char = "双"
+default = "ソウ"
+
+# 「塁」 default 「ルイ」 (= 孤塁/塁審/敵塁/出塁/満塁/盗塁)。
+# unihan default 「とりで」 は古語、 現代では熟語 dominant
+[[kanji]]
+char = "塁"
+default = "ルイ"
+
+# 「塑」 default 「ソ」 (= 彫塑/可塑性/塑像)。
+# unihan default 「でく」 は古語、 現代では熟語 dominant
+[[kanji]]
+char = "塑"
+default = "ソ"

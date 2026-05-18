@@ -252,11 +252,11 @@ description = "常用漢字 2,136 字 (文化庁 2010-11-30 改訂、 内閣告�
 # 単 は core/kanji/overrides.toml の [[kanji]] block に移行
 # 博 は core/kanji/overrides.toml の [[kanji]] block に移行
 # 占 は core/kanji/overrides.toml の [[kanji]] block に移行
-"印" = "しるし"
+# 印 は core/kanji/overrides.toml の [[kanji]] block に移行
 # 危 は core/kanji/overrides.toml の [[kanji]] block に移行
 # 「即」 は overrides.toml の [[kanji]] block に移行 (★round 40)
 # 却 は core/kanji/overrides.toml の [[kanji]] block に移行
-"卵" = "たまご"
+# 卵 は core/kanji/overrides.toml の [[kanji]] block に移行
 "卸" = "おろす"
 # 厄 は core/kanji/overrides.toml の [[kanji]] block に移行
 "厘" = "リン"
@@ -267,9 +267,9 @@ description = "常用漢字 2,136 字 (文化庁 2010-11-30 改訂、 内閣告�
 # 参 は core/kanji/overrides.toml の [[kanji]] block に移行
 "又" = "また"
 # 及 は core/kanji/overrides.toml の [[kanji]] block に移行
-"友" = "とも"
-"双" = "ふた"
-"反" = "そる"
+# 友 は core/kanji/overrides.toml の [[kanji]] block に移行
+# 双 は core/kanji/overrides.toml の [[kanji]] block に移行
+# 反 は core/kanji/overrides.toml の [[kanji]] block に移行
 # 収 は core/kanji/overrides.toml の [[kanji]] block に移行
 "叔" = "おじ"
 # 取 は core/kanji/overrides.toml の [[kanji]] block に移行
@@ -284,7 +284,7 @@ description = "常用漢字 2,136 字 (文化庁 2010-11-30 改訂、 内閣告�
 "史" = "シ"
 "右" = "みぎ"
 # 号 は core/kanji/overrides.toml の [[kanji]] block に移行
-"司" = "つかさ"
+# 司 は core/kanji/overrides.toml の [[kanji]] block に移行
 # 各 は core/kanji/overrides.toml の [[kanji]] block に移行
 # 合 は core/kanji/overrides.toml の [[kanji]] block に移行
 # 吉 は core/kanji/overrides.toml の [[kanji]] block に移行
@@ -307,9 +307,9 @@ description = "常用漢字 2,136 字 (文化庁 2010-11-30 改訂、 内閣告�
 # 呪 は core/kanji/overrides.toml の [[kanji]] block に移行
 "味" = "あじ"
 # 呼 は core/kanji/overrides.toml の [[kanji]] block に移行
-"命" = "いのち"
+# 命 は core/kanji/overrides.toml の [[kanji]] block に移行
 "咲" = "さく"
-"咽" = "のど"
+# 咽 は core/kanji/overrides.toml の [[kanji]] block に移行
 # 哀 は core/kanji/overrides.toml の [[kanji]] block に移行
 # 品 は core/kanji/overrides.toml の [[kanji]] block に移行
 # 「員」 は overrides.toml の [[kanji]] block に移行 (★round 39)
@@ -379,9 +379,9 @@ description = "常用漢字 2,136 字 (文化庁 2010-11-30 改訂、 内閣告�
 "報" = "ホウ"
 # 場 は core/kanji/overrides.toml の [[kanji]] block に移行 (★round 49)
 "塀" = "ヘイ"
-"塁" = "とりで"
+# 塁 は core/kanji/overrides.toml の [[kanji]] block に移行
 "塊" = "かたまり"
-"塑" = "でく"
+# 塑 は core/kanji/overrides.toml の [[kanji]] block に移行
 "塔" = "トウ"
 # 塗 は core/kanji/overrides.toml の [[kanji]] block に移行
 "塚" = "つか"
