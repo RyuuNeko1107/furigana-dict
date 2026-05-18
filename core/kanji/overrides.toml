@@ -12568,3 +12568,53 @@ default = "チョウ"
 [[kanji.match]]
 next_starts_any = ["は", "が", "を", "に", "の", "で", "と", "も"]
 reading = "しお"
+
+# 「丈」 default 「ジョウ」 (= 丈夫/気丈/方丈/丈尺)。
+# 「丈高い/丈比べ」 → 「たけ」 (= 訓読み + okurigana 文脈)
+[[kanji]]
+char = "丈"
+default = "ジョウ"
+
+[[kanji.match]]
+next_starts_any = ["高", "比"]
+reading = "たけ"
+
+# 「丘」 default 「キュウ」 (= 砂丘/丘陵/段丘/円丘)。
+# 助詞接続 → 「おか」 (= 「丘が/丘の上」 等の単独使用)
+[[kanji]]
+char = "丘"
+default = "キュウ"
+
+[[kanji.match]]
+next_starts_any = ["は", "が", "を", "に", "の", "で", "と", "も", "へ", "や"]
+reading = "おか"
+
+# 「丙」 default 「ヘイ」 (= 丙種/甲乙丙丁)。
+# 訓 「ひのえ」 は干支 jukugo (= 「丙午」 等) で対応
+[[kanji]]
+char = "丙"
+default = "ヘイ"
+
+# 「予」 default 「ヨ」 (= 予算/予定/予言/予感/予報/予想 圧倒的多数)。
+# 「予め」 のみ okurigana 「め」 で 「あらかじ」 へ切替
+[[kanji]]
+char = "予"
+default = "ヨ"
+
+[[kanji.match]]
+next_eq = "め"
+reading = "あらかじ"
+
+# 「丼」 default 「どんぶり」 (= 単独使用、 「丼が/丼の」 等)。
+# 漢字 / カタカナ prefix → 「どん」 (= 「牛丼/親子丼/海鮮丼/天丼/カツ丼」)
+[[kanji]]
+char = "丼"
+default = "どんぶり"
+
+[[kanji.match]]
+prev_char_type = "漢字"
+reading = "どん"
+
+[[kanji.match]]
+prev_char_type = "カタカナ"
+reading = "どん"

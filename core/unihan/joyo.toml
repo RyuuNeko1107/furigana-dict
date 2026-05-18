@@ -14,14 +14,14 @@ description = "常用漢字 2,136 字 (文化庁 2010-11-30 改訂、 内閣告�
 # 丁 は core/kanji/overrides.toml の [[kanji]] block に移行
 # "七" は core/kanji/overrides.toml の [[kanji]] block に移行 (★round 48)
 # "万" は core/kanji/overrides.toml の [[kanji]] block に移行
-"丈" = "たけ"
+# 丈 は core/kanji/overrides.toml の [[kanji]] block に移行
 "三" = "サン"
 # 不 は core/kanji/overrides.toml の [[kanji]] block に移行
 # 与 は core/kanji/overrides.toml の [[kanji]] block に移行
 "且" = "かつ"
 "世" = "セイ"
-"丘" = "おか"
-"丙" = "ひのえ"
+# 丘 は core/kanji/overrides.toml の [[kanji]] block に移行
+# 丙 は core/kanji/overrides.toml の [[kanji]] block に移行
 # 両 は core/kanji/overrides.toml の [[kanji]] block に移行
 # 並 は core/kanji/overrides.toml の [[kanji]] block に移行
 # "中" は core/kanji/overrides.toml の [[kanji]] block に移行
@@ -29,7 +29,7 @@ description = "常用漢字 2,136 字 (文化庁 2010-11-30 改訂、 内閣告�
 "丸" = "まる"
 # 丹 は core/kanji/overrides.toml の [[kanji]] block に移行
 # "主" は core/kanji/overrides.toml の [[kanji]] block に移行
-"丼" = "どんぶり"
+# 丼 は core/kanji/overrides.toml の [[kanji]] block に移行
 # 乏 は core/kanji/overrides.toml の [[kanji]] block に移行
 # 乗 は core/kanji/overrides.toml の [[kanji]] block に移行
 "乙" = "オツ"
@@ -40,7 +40,7 @@ description = "常用漢字 2,136 字 (文化庁 2010-11-30 改訂、 内閣告�
 # 乾 は core/kanji/overrides.toml の [[kanji]] block に移行
 "亀" = "かめ"
 # 了 は core/kanji/overrides.toml の [[kanji]] block に移行
-"予" = "ヨ"
+# 予 は core/kanji/overrides.toml の [[kanji]] block に移行
 # 争 は core/kanji/overrides.toml の [[kanji]] block に移行
 "事" = "こと"
 # 二 は core/kanji/overrides.toml の [[kanji]] block に移行
