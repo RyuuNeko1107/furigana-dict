@@ -654,7 +654,7 @@ description = "常用漢字 2,136 字 (文化庁 2010-11-30 改訂、 内閣告�
 # 「急」 は overrides.toml の [[kanji]] block に移行 (★round 40)
 # 怨 は core/kanji/overrides.toml の [[kanji]] block に移行
 # 怪 は core/kanji/overrides.toml の [[kanji]] block に移行
-"恋" = "こう"
+# 恋 は core/kanji/overrides.toml の [[kanji]] block に移行
 # 恐 は core/kanji/overrides.toml の [[kanji]] block に移行
 "恒" = "つね"
 # 恣 は core/kanji/overrides.toml の [[kanji]] block に移行
@@ -730,7 +730,7 @@ description = "常用漢字 2,136 字 (文化庁 2010-11-30 改訂、 内閣告�
 # "承" は core/kanji/overrides.toml の [[kanji]] block に移行
 # 技 は core/kanji/overrides.toml の [[kanji]] block に移行
 # 抄 は core/kanji/overrides.toml の [[kanji]] block に移行
-"把" = "たば"
+# 把 は core/kanji/overrides.toml の [[kanji]] block に移行
 # 抑 は core/kanji/overrides.toml の [[kanji]] block に移行
 # 投 は core/kanji/overrides.toml の [[kanji]] block に移行
 # 抗 は core/kanji/overrides.toml の [[kanji]] block に移行
@@ -738,7 +738,7 @@ description = "常用漢字 2,136 字 (文化庁 2010-11-30 改訂、 内閣告�
 # 抜 は core/kanji/overrides.toml の [[kanji]] block に移行
 # 択 は core/kanji/overrides.toml の [[kanji]] block に移行
 # 披 は core/kanji/overrides.toml の [[kanji]] block に移行
-"抱" = "だく"
+# 抱 は core/kanji/overrides.toml の [[kanji]] block に移行
 # 抵 は core/kanji/overrides.toml の [[kanji]] block に移行
 # 抹 は core/kanji/overrides.toml の [[kanji]] block に移行
 # 押 は core/kanji/overrides.toml の [[kanji]] block に移行
@@ -759,7 +759,7 @@ description = "常用漢字 2,136 字 (文化庁 2010-11-30 改訂、 内閣告�
 # 拭 は core/kanji/overrides.toml の [[kanji]] block に移行
 "拳" = "こぶし"
 # 拶 は core/kanji/overrides.toml の [[kanji]] block に移行
-"拷" = "うつ"
+# 拷 は core/kanji/overrides.toml の [[kanji]] block に移行
 # 拾 は core/kanji/overrides.toml の [[kanji]] block に移行
 "指" = "ゆび"
 # 挑 は core/kanji/overrides.toml の [[kanji]] block に移行
@@ -768,7 +768,7 @@ description = "常用漢字 2,136 字 (文化庁 2010-11-30 改訂、 内閣告�
 "挨" = "アイ"
 # 挫 は core/kanji/overrides.toml の [[kanji]] block に移行
 # 振 は core/kanji/overrides.toml の [[kanji]] block に移行
-"挿" = "さす"
+# 挿 は core/kanji/overrides.toml の [[kanji]] block に移行
 # 捉 は core/kanji/overrides.toml の [[kanji]] block に移行
 # 捕 は core/kanji/overrides.toml の [[kanji]] block に移行
 # 捗 は core/kanji/overrides.toml の [[kanji]] block に移行
@@ -776,18 +776,18 @@ description = "常用漢字 2,136 字 (文化庁 2010-11-30 改訂、 内閣告�
 # 捨 は core/kanji/overrides.toml の [[kanji]] block に移行
 # 据 は core/kanji/overrides.toml の [[kanji]] block に移行
 # 捻 は core/kanji/overrides.toml の [[kanji]] block に移行
-"掃" = "はく"
+# 掃 は core/kanji/overrides.toml の [[kanji]] block に移行
 # 授 は core/kanji/overrides.toml の [[kanji]] block に移行
 # 掌 は core/kanji/overrides.toml の [[kanji]] block に移行
 # 排 は core/kanji/overrides.toml の [[kanji]] block に移行
-"掘" = "ほる"
+# 掘 は core/kanji/overrides.toml の [[kanji]] block に移行
 # 掛 は core/kanji/overrides.toml の [[kanji]] block に移行
-"採" = "とる"
+# 採 は core/kanji/overrides.toml の [[kanji]] block に移行
 # 探 は core/kanji/overrides.toml の [[kanji]] block に移行
 # 接 は core/kanji/overrides.toml の [[kanji]] block に移行 (★round 50)
 # 控 は core/kanji/overrides.toml の [[kanji]] block に移行
 # 推 は core/kanji/overrides.toml の [[kanji]] block に移行
-"措" = "おく"
+# 措 は core/kanji/overrides.toml の [[kanji]] block に移行
 # 掲 は core/kanji/overrides.toml の [[kanji]] block に移行
 # 描 は core/kanji/overrides.toml の [[kanji]] block に移行
 # 提 は core/kanji/overrides.toml の [[kanji]] block に移行
@@ -799,7 +799,7 @@ description = "常用漢字 2,136 字 (文化庁 2010-11-30 改訂、 内閣告�
 # 揺 は core/kanji/overrides.toml の [[kanji]] block に移行
 # 損 は core/kanji/overrides.toml の [[kanji]] block に移行
 # 搬 は core/kanji/overrides.toml の [[kanji]] block に移行
-"搭" = "うつ"
+# 搭 は core/kanji/overrides.toml の [[kanji]] block に移行
 # 携 は core/kanji/overrides.toml の [[kanji]] block に移行
 # 搾 は core/kanji/overrides.toml の [[kanji]] block に移行
 # 摂 は core/kanji/overrides.toml の [[kanji]] block に移行

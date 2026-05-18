@@ -11582,3 +11582,87 @@ default = "コ"
 [[kanji.match]]
 next_starts_any = ["は", "が", "を", "に", "の", "で", "と", "も"]
 reading = "みずうみ"
+
+# 「恋」 default 「レン」 (= 恋愛/失恋/恋人/初恋/悲恋/愛恋)。
+# 単独 + 助詞 + 形容詞「恋しい」 + 動詞「恋する」 → 「こい」
+[[kanji]]
+char = "恋"
+default = "レン"
+
+[[kanji.match]]
+next_starts_any = ["は", "が", "を", "に", "の", "で", "と", "も", "し", "す"]
+reading = "こい"
+
+# 「抱」 default 「ホウ」 (= 抱負/介抱/辛抱/抱擁/抱負)。
+# 動詞 「抱く」 は okurigana 列挙で 「だ」 へ切替
+[[kanji]]
+char = "抱"
+default = "ホウ"
+
+[[kanji.match]]
+next_starts_any = ["く", "か", "き", "っ", "け", "こ"]
+reading = "だ"
+
+# 「拷」 default 「ゴウ」 (= 拷問)。
+# unihan default 「うつ」 は古語動詞、 「打/伐」 が動詞 dominant
+[[kanji]]
+char = "拷"
+default = "ゴウ"
+
+# 「挿」 default 「ソウ」 (= 挿入/挿話/挿絵/挿頭)。
+# 動詞 「挿す」 は okurigana 列挙で 「さ」 へ切替
+[[kanji]]
+char = "挿"
+default = "ソウ"
+
+[[kanji.match]]
+next_starts_any = ["す", "さ", "し", "せ", "そ", "っ"]
+reading = "さ"
+
+# 「掃」 default 「ソウ」 (= 掃除/清掃/掃討/一掃/掃滅)。
+# 動詞 「掃く」 は okurigana 列挙で 「は」 へ切替
+[[kanji]]
+char = "掃"
+default = "ソウ"
+
+[[kanji.match]]
+next_starts_any = ["く", "か", "き", "っ", "け", "こ"]
+reading = "は"
+
+# 「掘」 default 「クツ」 (= 発掘/採掘/盗掘/試掘/濫掘)。
+# 動詞 「掘る」 は okurigana 列挙で 「ほ」 へ切替
+[[kanji]]
+char = "掘"
+default = "クツ"
+
+[[kanji.match]]
+next_starts_any = ["る", "ら", "り", "っ", "れ", "ろ"]
+reading = "ほ"
+
+# 「採」 default 「サイ」 (= 採用/採点/採取/採決/採算/採掘/採譜)。
+# 動詞 「採る」 は okurigana 列挙で 「と」 へ切替
+[[kanji]]
+char = "採"
+default = "サイ"
+
+[[kanji.match]]
+next_starts_any = ["る", "ら", "り", "っ", "れ", "ろ"]
+reading = "と"
+
+# 「措」 default 「ソ」 (= 措置/挙措/措辞/措定)。
+# unihan default 「おく」 は古語動詞、 「置」 が動詞 dominant
+[[kanji]]
+char = "措"
+default = "ソ"
+
+# 「搭」 default 「トウ」 (= 搭乗/搭載/搭組)。
+# unihan default 「うつ」 は古語動詞、 「打/伐」 が動詞 dominant
+[[kanji]]
+char = "搭"
+default = "トウ"
+
+# 「把」 default 「ハ」 (= 把握/一把/十把一絡げ)。
+# unihan default 「たば」 は古語、 「束」 が訓 dominant
+[[kanji]]
+char = "把"
+default = "ハ"
