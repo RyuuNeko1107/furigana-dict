@@ -14138,6 +14138,69 @@ default = "あお"
 prev_char_type = "漢字"
 reading = "セイ"
 
+# 「砂」 default 「すな」 (= 「砂/砂浜/砂時計」 訓)。
+# prev 漢字 → 「サ」 (= 砂糖/黄砂/土砂/流砂 等の音読み熟語、 jukugo 不在多数)。
+# 「砂漠」 等は jukugo file で対応。
+[[kanji]]
+char = "砂"
+default = "すな"
+
+[[kanji.match]]
+prev_char_type = "漢字"
+reading = "サ"
+
+# 「紫」 default 「むらさき」 (= 「紫/紫色」 訓)。
+# prev 漢字 → 「シ」 (= 紫外線/紫斑/紫煙/真紫/古紫 等の音読み熟語、 jukugo 不在多数)。
+[[kanji]]
+char = "紫"
+default = "むらさき"
+
+[[kanji.match]]
+prev_char_type = "漢字"
+reading = "シ"
+
+# 「葛」 default 「くず」 (= 「葛/葛餅/葛粉/葛湯」 訓)。
+# prev 漢字 → 「カツ」 (= 葛藤/葛根、 漢方/古典の音読み熟語)。
+[[kanji]]
+char = "葛"
+default = "くず"
+
+[[kanji.match]]
+prev_char_type = "漢字"
+reading = "カツ"
+
+# 「脚」 default 「あし」 (= 「脚/長脚/脚先」 訓)。
+# prev 漢字 → 「キャク」 (= 脚本/脚立/三脚/失脚/橋脚/雨脚 等の音読み熟語、 jukugo 不在多数)。
+[[kanji]]
+char = "脚"
+default = "あし"
+
+[[kanji.match]]
+prev_char_type = "漢字"
+reading = "キャク"
+
+# 「豆」 default 「まめ」 (= 「豆/豆腐/豆まき」 訓)。
+# prev 漢字 → 「トウ」 (= 大豆/扁桃/豆乳/緑豆 等の音読み熟語、 jukugo 不在多数)。
+# 「納豆/小豆」 等の特殊読みは jukugo file で対応。
+[[kanji]]
+char = "豆"
+default = "まめ"
+
+[[kanji.match]]
+prev_char_type = "漢字"
+reading = "トウ"
+
+# 「肝」 default 「きも」 (= 「肝が据わる/肝試し/肝煎り」 訓)。
+# prev 漢字 → 「カン」 (= 肝心/肝胆/肝硬変/心肝/胆肝 等の音読み熟語、 jukugo 不在多数)。
+# 「肝臓」 は jukugo file で対応。
+[[kanji]]
+char = "肝"
+default = "きも"
+
+[[kanji.match]]
+prev_char_type = "漢字"
+reading = "カン"
+
 # 「冬」 default 「ふゆ」 + prev 漢字 → 「トウ」 (= 越冬/初冬/厳冬)
 [[kanji]]
 char = "冬"

@@ -1268,7 +1268,7 @@ description = "常用漢字 2,136 字 (文化庁 2010-11-30 改訂、 内閣告�
 # 知 は core/kanji/overrides.toml の [[kanji]] block に移行
 # 矯 は core/kanji/overrides.toml の [[kanji]] block に移行
 # 石 は core/kanji/overrides.toml の [[kanji]] block に移行
-"砂" = "すな"
+# 砂 は core/kanji/overrides.toml の [[kanji]] block に移行
 # 砕 は core/kanji/overrides.toml の [[kanji]] block に移行
 # 砲 は core/kanji/overrides.toml の [[kanji]] block に移行
 # 破 は core/kanji/overrides.toml の [[kanji]] block に移行
@@ -1383,7 +1383,7 @@ description = "常用漢字 2,136 字 (文化庁 2010-11-30 改訂、 内閣告�
 # 素 は core/kanji/overrides.toml の [[kanji]] block に移行
 # 紡 は core/kanji/overrides.toml の [[kanji]] block に移行
 # 索 は core/kanji/overrides.toml の [[kanji]] block に移行
-"紫" = "むらさき"
+# 紫 は core/kanji/overrides.toml の [[kanji]] block に移行
 # 累 は core/kanji/overrides.toml の [[kanji]] block に移行
 # 細 は core/kanji/overrides.toml の [[kanji]] block に移行
 # 紳 は core/kanji/overrides.toml の [[kanji]] block に移行
@@ -1460,7 +1460,7 @@ description = "常用漢字 2,136 字 (文化庁 2010-11-30 改訂、 内閣告�
 "肌" = "はだ"
 # 肖 は core/kanji/overrides.toml の [[kanji]] block に移行
 "肘" = "ひじ"
-"肝" = "きも"
+# 肝 は core/kanji/overrides.toml の [[kanji]] block に移行
 "股" = "また"
 # 肢 は core/kanji/overrides.toml の [[kanji]] block に移行
 # 肥 は core/kanji/overrides.toml の [[kanji]] block に移行
@@ -1481,7 +1481,7 @@ description = "常用漢字 2,136 字 (文化庁 2010-11-30 改訂、 内閣告�
 "脇" = "わき"
 # 脈 は core/kanji/overrides.toml の [[kanji]] block に移行
 "脊" = "セキ"
-"脚" = "あし"
+# 脚 は core/kanji/overrides.toml の [[kanji]] block に移行
 # 脱 は core/kanji/overrides.toml の [[kanji]] block に移行
 "脳" = "ノウ"
 "腎" = "ジン"
@@ -1549,7 +1549,7 @@ description = "常用漢字 2,136 字 (文化庁 2010-11-30 改訂、 内閣告�
 # 萎 は core/kanji/overrides.toml の [[kanji]] block に移行
 # 葉 は core/kanji/overrides.toml の [[kanji]] block に移行
 # 著 は core/kanji/overrides.toml の [[kanji]] block に移行
-"葛" = "くず"
+# 葛 は core/kanji/overrides.toml の [[kanji]] block に移行
 # 葬 は core/kanji/overrides.toml の [[kanji]] block に移行
 # 「蒸」 は overrides.toml の [[kanji]] block に移行 (★round 36)
 # 蓄 は core/kanji/overrides.toml の [[kanji]] block に移行
@@ -1686,7 +1686,7 @@ description = "常用漢字 2,136 字 (文化庁 2010-11-30 改訂、 内閣告�
 # 譲 は core/kanji/overrides.toml の [[kanji]] block に移行
 # 護 は core/kanji/overrides.toml の [[kanji]] block に移行
 # 谷 は core/kanji/overrides.toml の [[kanji]] block に移行
-"豆" = "まめ"
+# 豆 は core/kanji/overrides.toml の [[kanji]] block に移行
 # 豊 は core/kanji/overrides.toml の [[kanji]] block に移行
 "豚" = "ぶた"
 # 象 は core/kanji/overrides.toml の [[kanji]] block に移行
