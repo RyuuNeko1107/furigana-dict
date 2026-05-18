@@ -11494,3 +11494,91 @@ default = "ロ"
 [[kanji]]
 char = "呉"
 default = "ゴ"
+
+# 「淑」 default 「シュク」 (= 淑女/貞淑/私淑/淑徳)。
+# unihan default 「よい」 は古語、 「良/善」 と被る
+[[kanji]]
+char = "淑"
+default = "シュク"
+
+# 「渓」 default 「ケイ」 (= 渓谷/渓流/雪渓)。
+# unihan default 「たに」 は古語、 「谷」 が訓 dominant
+[[kanji]]
+char = "渓"
+default = "ケイ"
+
+# 「湧」 default 「ユウ」 (= 湧出/湧水/湧泉)。
+# 動詞 「湧く」 は okurigana 列挙で 「わ」 へ切替
+[[kanji]]
+char = "湧"
+default = "ユウ"
+
+[[kanji.match]]
+next_starts_any = ["く", "か", "き", "っ", "け", "こ"]
+reading = "わ"
+
+# 「湾」 default 「ワン」 (= 湾岸/湾内/湾曲/港湾/東京湾)。
+# unihan default 「いりえ」 は古語、 現代では熟語 dominant
+[[kanji]]
+char = "湾"
+default = "ワン"
+
+# 「河」 default 「カ」 (= 河川/銀河/運河/黄河/大河/氷河)。
+# 単独 + 助詞接続 → 「かわ」 (= 「河が/河の」 等)
+[[kanji]]
+char = "河"
+default = "カ"
+
+[[kanji.match]]
+next_starts_any = ["は", "が", "を", "に", "の", "で", "と", "も"]
+reading = "かわ"
+
+# 「浪」 default 「ロウ」 (= 浪人/波浪/放浪/浪費/流浪)。
+# 単独 + 助詞接続 → 「なみ」 (= 「浪が/浪の」 等)
+[[kanji]]
+char = "浪"
+default = "ロウ"
+
+[[kanji.match]]
+next_starts_any = ["は", "が", "を", "に", "の", "で", "と", "も"]
+reading = "なみ"
+
+# 「涙」 default 「ルイ」 (= 血涙/感涙/落涙/熱涙)。
+# 単独 + 助詞接続 → 「なみだ」 (= 「涙が/涙の」 等)
+[[kanji]]
+char = "涙"
+default = "ルイ"
+
+[[kanji.match]]
+next_starts_any = ["は", "が", "を", "に", "の", "で", "と", "も"]
+reading = "なみだ"
+
+# 「洞」 default 「ドウ」 (= 洞窟/空洞/鍾乳洞/洞察)。
+# 単独 + 助詞接続 → 「ほら」 (= 「洞が/洞の」 等)
+[[kanji]]
+char = "洞"
+default = "ドウ"
+
+[[kanji.match]]
+next_starts_any = ["は", "が", "を", "に", "の", "で", "と", "も"]
+reading = "ほら"
+
+# 「港」 default 「コウ」 (= 港湾/空港/出港/帰港/良港/海港)。
+# 単独 + 助詞接続 → 「みなと」 (= 「港が/港の」 等)
+[[kanji]]
+char = "港"
+default = "コウ"
+
+[[kanji.match]]
+next_starts_any = ["は", "が", "を", "に", "の", "で", "と", "も"]
+reading = "みなと"
+
+# 「湖」 default 「コ」 (= 湖畔/湖水/湖面/湖沼/塩湖)。
+# 単独 + 助詞接続 → 「みずうみ」 (= 「湖が/湖の」 等)
+[[kanji]]
+char = "湖"
+default = "コ"
+
+[[kanji.match]]
+next_starts_any = ["は", "が", "を", "に", "の", "で", "と", "も"]
+reading = "みずうみ"
