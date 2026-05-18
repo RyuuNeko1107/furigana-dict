@@ -10049,3 +10049,75 @@ default = "タン"
 [[kanji.match]]
 next_starts_any = ["び", "ば", "ぶ", "べ", "ぼ"]
 reading = "ほころ"
+
+# 「緯」 default 「イ」 (= 緯度/経緯/北緯/南緯/緯線)。
+# unihan default 「よこいと」 は古語、 現代では熟語 dominant
+[[kanji]]
+char = "緯"
+default = "イ"
+
+# 「縫」 default 「ホウ」 (= 縫合/縫製/裁縫/手縫/縫工)。
+# 動詞 「縫う」 は okurigana 列挙で 「ぬ」 へ切替
+[[kanji]]
+char = "縫"
+default = "ホウ"
+
+[[kanji.match]]
+next_starts_any = ["う", "わ", "い", "っ", "え", "お"]
+reading = "ぬ"
+
+# 「績」 default 「セキ」 (= 成績/業績/功績/紡績/事績)。
+# unihan default 「うむ」 は古語動詞、 現代では熟語 dominant
+[[kanji]]
+char = "績"
+default = "セキ"
+
+# 「繁」 default 「ハン」 (= 繁栄/繁盛/頻繁/繁華/繁茂/繁殖)。
+# unihan default 「しげし」 は古語形容詞、 「茂」 が訓 dominant
+[[kanji]]
+char = "繁"
+default = "ハン"
+
+# 「織」 default 「ショク」 (= 組織/織機/織物/染織/紡織)。
+# 動詞 「織る」 は okurigana 列挙で 「お」 へ切替
+[[kanji]]
+char = "織"
+default = "ショク"
+
+[[kanji.match]]
+next_starts_any = ["る", "ら", "り", "っ", "れ", "ろ"]
+reading = "お"
+
+# 「羅」 default 「ラ」 (= 網羅/羅針盤/羅列/羅刹/曼陀羅)。
+# unihan default 「あみ」 は古語、 「網」 が訓 dominant
+[[kanji]]
+char = "羅"
+default = "ラ"
+
+# 「羨」 default 「セン」 (= 羨望/欽羨)。
+# unihan default 「あまり」 は古語、 「余」 が訓 dominant
+[[kanji]]
+char = "羨"
+default = "セン"
+
+# 「翁」 default 「オウ」 (= 老翁/翁長/海翁)。
+# unihan default 「おきな」 は古語、 現代では熟語 dominant
+[[kanji]]
+char = "翁"
+default = "オウ"
+
+# 「考」 default 「コウ」 (= 考慮/考察/参考/思考/再考/熟考/備考)。
+# 動詞 「考える」 は okurigana 列挙で 「かんが」 へ切替 (= 4 mora 訓読み)
+[[kanji]]
+char = "考"
+default = "コウ"
+
+[[kanji.match]]
+next_starts_any = ["え", "わ", "い", "っ", "う"]
+reading = "かんが"
+
+# 「聖」 default 「セイ」 (= 聖人/神聖/聖書/聖地/聖夜/詩聖)。
+# unihan default 「ひじり」 は古語、 現代では熟語 dominant
+[[kanji]]
+char = "聖"
+default = "セイ"
