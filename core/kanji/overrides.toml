@@ -13367,3 +13367,56 @@ default = "さら"
 [[kanji]]
 char = "或"
 default = "あ"
+
+# 「世」 default 「セイ」 (= 世界/世代/中世/近世/出世/世襲/世紀)。
+# 助詞接続 → 「よ」 (= 「世が世なら/世の中/世を渡る」 等の単独訓)。
+[[kanji]]
+char = "世"
+default = "セイ"
+
+[[kanji.match]]
+next_starts_any = ["は", "が", "を", "に", "の", "で", "と", "も"]
+reading = "よ"
+
+# 「名」 default 「メイ」 (= 命名/題名/有名/匿名/別名/改名/有名無実)。
+# 助詞接続 → 「な」 (= 「名が知れる/名を残す/名の通った」 等の単独訓)。
+# 「名前」 等の特殊 jukugo は jukugo file で対応。
+[[kanji]]
+char = "名"
+default = "メイ"
+
+[[kanji.match]]
+next_starts_any = ["は", "が", "を", "に", "の", "で", "と", "も"]
+reading = "な"
+
+# 「血」 default 「ケツ」 (= 血液/出血/献血/止血/輸血/貧血/血管/採血/血圧)。
+# 助詞接続 → 「ち」 (= 「血が出る/血の池/血まみれ/血だらけ」 等の単独訓)。
+[[kanji]]
+char = "血"
+default = "ケツ"
+
+[[kanji.match]]
+next_starts_any = ["は", "が", "を", "に", "の", "で", "と", "も"]
+reading = "ち"
+
+# 「身」 default 「シン」 (= 身体/全身/身分/出身/身辺/心身/身柄/身上)。
+# 助詞接続 → 「み」 (= 「身が引き締まる/身の上/身を引く」 等の単独訓)。
+# 「刺身/独り身」 等は jukugo file で対応。
+[[kanji]]
+char = "身"
+default = "シン"
+
+[[kanji.match]]
+next_starts_any = ["は", "が", "を", "に", "の", "で", "と", "も"]
+reading = "み"
+
+# 「益」 default 「エキ」 (= 損益/利益/便益/有益/公益/益金/益剰余金)。
+# 副詞「益々」 → next_eq = "々" で「ます」 へ切替。
+# unihan 「ます」 は副詞用法限定、 jukugo は エキ 主流 → default 訂正。
+[[kanji]]
+char = "益"
+default = "エキ"
+
+[[kanji.match]]
+next_eq = "々"
+reading = "ます"

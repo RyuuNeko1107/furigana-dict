@@ -19,7 +19,7 @@ description = "常用漢字 2,136 字 (文化庁 2010-11-30 改訂、 内閣告�
 # 不 は core/kanji/overrides.toml の [[kanji]] block に移行
 # 与 は core/kanji/overrides.toml の [[kanji]] block に移行
 "且" = "かつ"
-"世" = "セイ"
+# 世 は core/kanji/overrides.toml の [[kanji]] block に移行
 # 丘 は core/kanji/overrides.toml の [[kanji]] block に移行
 # 丙 は core/kanji/overrides.toml の [[kanji]] block に移行
 # 両 は core/kanji/overrides.toml の [[kanji]] block に移行
@@ -289,7 +289,7 @@ description = "常用漢字 2,136 字 (文化庁 2010-11-30 改訂、 内閣告�
 # 合 は core/kanji/overrides.toml の [[kanji]] block に移行
 # 吉 は core/kanji/overrides.toml の [[kanji]] block に移行
 # 同 は core/kanji/overrides.toml の [[kanji]] block に移行
-"名" = "メイ"
+# 名 は core/kanji/overrides.toml の [[kanji]] block に移行
 # 后 は core/kanji/overrides.toml の [[kanji]] block に移行
 # 吏 は core/kanji/overrides.toml の [[kanji]] block に移行
 # 吐 は core/kanji/overrides.toml の [[kanji]] block に移行
@@ -1238,7 +1238,7 @@ description = "常用漢字 2,136 字 (文化庁 2010-11-30 改訂、 内閣告�
 "皮" = "かわ"
 "皿" = "さら"
 # 盆 は core/kanji/overrides.toml の [[kanji]] block に移行
-"益" = "ます"
+# 益 は core/kanji/overrides.toml の [[kanji]] block に移行
 # 盗 は core/kanji/overrides.toml の [[kanji]] block に移行
 # 盛 は core/kanji/overrides.toml の [[kanji]] block に移行
 # 盟 は core/kanji/overrides.toml の [[kanji]] block に移行
@@ -1581,7 +1581,7 @@ description = "常用漢字 2,136 字 (文化庁 2010-11-30 改訂、 内閣告�
 "蜂" = "はち"
 "蜜" = "みつ"
 # 融 は core/kanji/overrides.toml の [[kanji]] block に移行
-"血" = "ケツ"
+# 血 は core/kanji/overrides.toml の [[kanji]] block に移行
 # 衆 は core/kanji/overrides.toml の [[kanji]] block に移行
 # "術" は core/kanji/overrides.toml の [[kanji]] block に移行
 "街" = "まち"
@@ -1744,7 +1744,7 @@ description = "常用漢字 2,136 字 (文化庁 2010-11-30 改訂、 内閣告�
 "踪" = "ソウ"
 # 蹴 は core/kanji/overrides.toml の [[kanji]] block に移行
 # 躍 は core/kanji/overrides.toml の [[kanji]] block に移行
-"身" = "シン"
+# 身 は core/kanji/overrides.toml の [[kanji]] block に移行
 # 軌 は core/kanji/overrides.toml の [[kanji]] block に移行
 # 軍 は core/kanji/overrides.toml の [[kanji]] block に移行 (★round 49)
 # 軒 は core/kanji/overrides.toml の [[kanji]] block に移行
