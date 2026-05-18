@@ -10641,3 +10641,97 @@ default = "ルイ"
 [[kanji]]
 char = "塑"
 default = "ソ"
+
+# 「墳」 default 「フン」 (= 古墳/墳墓/方墳/円墳/墳丘)。
+# unihan default 「はか」 は古語、 「墓」 が訓 dominant
+[[kanji]]
+char = "墳"
+default = "フン"
+
+# 「壌」 default 「ジョウ」 (= 土壌/天壌/腐植壌/壌土)。
+# unihan default 「つち」 は古語、 「土」 が訓 dominant
+[[kanji]]
+char = "壌"
+default = "ジョウ"
+
+# 「壮」 default 「ソウ」 (= 壮大/壮絶/勇壮/老壮/壮健/壮年/悲壮)。
+# unihan default 「さかん」 は古語形容動詞、 現代では熟語 dominant
+[[kanji]]
+char = "壮"
+default = "ソウ"
+
+# 「奈」 default 「ナ」 (= 奈良/神奈川/那奈/奈落)。
+# unihan default 「いかん」 は古語感嘆詞、 現代用例なし
+[[kanji]]
+char = "奈"
+default = "ナ"
+
+# 「妃」 default 「ヒ」 (= 妃殿下/王妃/皇太子妃/側妃)。
+# unihan default 「きさき」 は名詞単独、 熟語 dominant
+[[kanji]]
+char = "妃"
+default = "ヒ"
+
+# 「妄」 default 「モウ」 (= 妄想/虚妄/妄言/盲妄/迷妄)。
+# unihan default 「みだり」 は古語、 現代では熟語 dominant
+[[kanji]]
+char = "妄"
+default = "モウ"
+
+# 「城」 default 「ジョウ」 (= 城壁/落城/古城/城下/開城/籠城/牙城)。
+# 単独 + 助詞接続 → 「しろ」 (= 「城が/城の」 等)
+[[kanji]]
+char = "城"
+default = "ジョウ"
+
+[[kanji.match]]
+next_starts_any = ["は", "が", "を", "に", "の", "で", "と", "も"]
+reading = "しろ"
+
+[[kanji.match]]
+prev_ends_any = ["の", "が", "は", "を", "に", "で", "と", "も"]
+reading = "しろ"
+
+# 「基」 default 「キ」 (= 基本/基礎/基準/基地/基盤/基金/基幹/基層)。
+# 動詞 「基づく」 → 「もと」、 単独 + 助詞接続 → 「もと」
+[[kanji]]
+char = "基"
+default = "キ"
+
+# 「基づく/基づい/基づける」 = 動詞 → もと
+[[kanji.match]]
+next_starts_any = ["づ"]
+reading = "もと"
+
+# 「基」 単独 + 助詞接続 → もと (= 「基が/基の」 等)
+[[kanji.match]]
+next_starts_any = ["は", "が", "を", "に", "の", "で", "と", "も"]
+reading = "もと"
+
+# 「声」 default 「セイ」 (= 声明/音声/発声/和声/声紋/笑声/歓声)。
+# 単独 + 助詞接続 → 「こえ」 (= 「声が/声の」 等)
+[[kanji]]
+char = "声"
+default = "セイ"
+
+[[kanji.match]]
+next_starts_any = ["は", "が", "を", "に", "の", "で", "と", "も"]
+reading = "こえ"
+
+[[kanji.match]]
+prev_ends_any = ["の", "が", "は", "を", "に", "で", "と", "も"]
+reading = "こえ"
+
+# 「右」 default 「ウ」 (= 右翼/右折/左右/右側/右手/座右)。
+# 単独 + 助詞接続 → 「みぎ」 (= 「右が/右の」 等)
+[[kanji]]
+char = "右"
+default = "ウ"
+
+[[kanji.match]]
+next_starts_any = ["は", "が", "を", "に", "の", "で", "と", "も"]
+reading = "みぎ"
+
+[[kanji.match]]
+prev_ends_any = ["の", "が", "は", "を", "に", "で", "と", "も"]
+reading = "みぎ"
