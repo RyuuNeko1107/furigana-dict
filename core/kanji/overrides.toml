@@ -10269,3 +10269,83 @@ default = "テイ"
 [[kanji]]
 char = "艦"
 default = "カン"
+
+# 「良」 default 「リョウ」 (= 良好/良縁/不良/優良/良心/良民/良妻)。
+# 形容詞 「良い」 は okurigana 列挙で 「よ」 へ切替
+[[kanji]]
+char = "良"
+default = "リョウ"
+
+[[kanji.match]]
+next_starts_any = ["い", "く", "か", "け", "さ", "し"]
+reading = "よ"
+
+# 「芳」 default 「ホウ」 (= 芳香/芳醇/芳名/芳賀/芳紀/遺芳)。
+# unihan default 「かんばしい」 は古語形容詞、 現代では熟語 dominant
+[[kanji]]
+char = "芳"
+default = "ホウ"
+
+# 「茂」 default 「モ」 (= 繁茂)。
+# 動詞 「茂る」 は okurigana 列挙で 「しげ」 へ切替 (= 人名「茂」 = しげる も dominant)
+[[kanji]]
+char = "茂"
+default = "モ"
+
+[[kanji.match]]
+next_starts_any = ["る", "ら", "り", "っ", "れ", "ろ"]
+reading = "しげ"
+
+# 「菌」 default 「キン」 (= 菌類/細菌/真菌/雑菌/抗菌/殺菌/球菌)。
+# unihan default 「きのこ」 は名詞単独、 現代では熟語 dominant
+[[kanji]]
+char = "菌"
+default = "キン"
+
+# 「蓄」 default 「チク」 (= 蓄積/貯蓄/蓄音機/含蓄/備蓄)。
+# 動詞 「蓄える」 = たくわえる は okurigana 列挙で 「たくわ」 へ切替
+[[kanji]]
+char = "蓄"
+default = "チク"
+
+[[kanji.match]]
+next_starts_any = ["え", "わ", "い", "っ", "う"]
+reading = "たくわ"
+
+# 「藩」 default 「ハン」 (= 藩主/廃藩/藩士/外藩/藩政)。
+# unihan default 「まがき」 は古語、 現代では熟語 dominant
+[[kanji]]
+char = "藩"
+default = "ハン"
+
+# 「虐」 default 「ギャク」 (= 虐殺/虐待/暴虐/残虐/自虐/虐政)。
+# 動詞 「虐げる」 = しいたげる は okurigana 「げ」 で 「しいた」 へ切替
+[[kanji]]
+char = "虐"
+default = "ギャク"
+
+[[kanji.match]]
+next_starts_any = ["げ"]
+reading = "しいた"
+
+# 「虜」 default 「リョ」 (= 捕虜/俘虜)。
+# unihan default 「とりこ」 は古語、 現代では熟語 dominant
+[[kanji]]
+char = "虜"
+default = "リョ"
+
+# 「嗅」 default 「キュウ」 (= 嗅覚)。
+# 動詞 「嗅ぐ」 は okurigana 列挙で 「か」 へ切替
+[[kanji]]
+char = "嗅"
+default = "キュウ"
+
+[[kanji.match]]
+next_starts_any = ["ぐ", "が", "ぎ", "い", "げ", "ご"]
+reading = "か"
+
+# 「喫」 default 「キツ」 (= 喫煙/喫茶/満喫/喫驚/喫飯)。
+# unihan default 「くう」 は古語動詞、 「食」 が動詞 dominant
+[[kanji]]
+char = "喫"
+default = "キツ"

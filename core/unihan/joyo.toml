@@ -332,9 +332,9 @@ description = "常用漢字 2,136 字 (文化庁 2010-11-30 改訂、 内閣告�
 # 喝 は core/kanji/overrides.toml の [[kanji]] block に移行
 # 喩 は core/kanji/overrides.toml の [[kanji]] block に移行
 "喪" = "ソウ"
-"喫" = "くう"
+# 喫 は core/kanji/overrides.toml の [[kanji]] block に移行
 # 営 は core/kanji/overrides.toml の [[kanji]] block に移行
-"嗅" = "かぐ"
+# 嗅 は core/kanji/overrides.toml の [[kanji]] block に移行
 "嗣" = "つぐ"
 # 嘆 は core/kanji/overrides.toml の [[kanji]] block に移行
 # 嘱 は core/kanji/overrides.toml の [[kanji]] block に移行
@@ -1519,21 +1519,21 @@ description = "常用漢字 2,136 字 (文化庁 2010-11-30 改訂、 内閣告�
 # 船 は core/kanji/overrides.toml の [[kanji]] block に移行
 # 艇 は core/kanji/overrides.toml の [[kanji]] block に移行
 # 艦 は core/kanji/overrides.toml の [[kanji]] block に移行
-"良" = "よい"
+# 良 は core/kanji/overrides.toml の [[kanji]] block に移行
 # 色 は core/kanji/overrides.toml の [[kanji]] block に移行
 "艶" = "つや"
 "芋" = "いも"
 "芝" = "しば"
 "芯" = "シン"
 "花" = "はな"
-"芳" = "かんばしい"
+# 芳 は core/kanji/overrides.toml の [[kanji]] block に移行
 # 芸 は core/kanji/overrides.toml の [[kanji]] block に移行
 "芽" = "め"
 "苗" = "なえ"
 # 苛 は core/kanji/overrides.toml の [[kanji]] block に移行
 # 若 は core/kanji/overrides.toml の [[kanji]] block に移行
 # 英 は core/kanji/overrides.toml の [[kanji]] block に移行
-"茂" = "しげる"
+# 茂 は core/kanji/overrides.toml の [[kanji]] block に移行
 "茎" = "くき"
 "茨" = "いばら"
 # 茶 は core/kanji/overrides.toml の [[kanji]] block に移行
@@ -1542,7 +1542,7 @@ description = "常用漢字 2,136 字 (文化庁 2010-11-30 改訂、 内閣告�
 # 荘 は core/kanji/overrides.toml の [[kanji]] block に移行
 "荷" = "に"
 "菊" = "きく"
-"菌" = "きのこ"
+# 菌 は core/kanji/overrides.toml の [[kanji]] block に移行
 "菓" = "カ"
 "菜" = "サイ"
 # 華 は core/kanji/overrides.toml の [[kanji]] block に移行
@@ -1552,7 +1552,7 @@ description = "常用漢字 2,136 字 (文化庁 2010-11-30 改訂、 内閣告�
 "葛" = "くず"
 # 葬 は core/kanji/overrides.toml の [[kanji]] block に移行
 # 「蒸」 は overrides.toml の [[kanji]] block に移行 (★round 36)
-"蓄" = "たくわえる"
+# 蓄 は core/kanji/overrides.toml の [[kanji]] block に移行
 # 蓋 は core/kanji/overrides.toml の [[kanji]] block に移行
 # 蔑 は core/kanji/overrides.toml の [[kanji]] block に移行
 # 蔵 は core/kanji/overrides.toml の [[kanji]] block に移行 (★round 50)
@@ -1564,12 +1564,12 @@ description = "常用漢字 2,136 字 (文化庁 2010-11-30 改訂、 内閣告�
 "薬" = "くすり"
 "藍" = "あい"
 "藤" = "ふじ"
-"藩" = "まがき"
+# 藩 は core/kanji/overrides.toml の [[kanji]] block に移行
 "藻" = "ソウ"
 "虎" = "とら"
-"虐" = "しいたげる"
+# 虐 は core/kanji/overrides.toml の [[kanji]] block に移行
 # 虚 は core/kanji/overrides.toml の [[kanji]] block に移行
-"虜" = "とりこ"
+# 虜 は core/kanji/overrides.toml の [[kanji]] block に移行
 "虞" = "おそれ"
 "虫" = "むし"
 "虹" = "にじ"
