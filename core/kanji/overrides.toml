@@ -13227,3 +13227,27 @@ default = "ページ"
 [[kanji]]
 char = "鵜"
 default = "う"
+
+# 「弘」 default 「ひろ」 (= 弘前/弘法/弘樹、 名前/地名読み圧倒的)。
+# unihan 「ひろむ」 は名前の一例 (= 弘 (ひろむ))、 一般「ひろ」 主流 → default 訂正。
+[[kanji]]
+char = "弘"
+default = "ひろ"
+
+# 「喰」 default 「く」 (= 動詞「喰う/喰らう」 全活用)。
+# unihan 「くい」 (連用形) は okurigana と二重連結する → default 訂正。
+[[kanji]]
+char = "喰"
+default = "く"
+
+# 「吞」 default 「の」 (= 「飲」 異体字、 動詞「吞む/吞気」 全活用)。
+# unihan 「のむ」 (終止形) は okurigana と二重連結する → default 訂正。
+[[kanji]]
+char = "吞"
+default = "の"
+
+# 「濡」 default 「ぬ」 (= 動詞「濡れる/濡らす」 全活用 + 「濡れ衣」)。
+# unihan 「ぬれ」 (連用形) は okurigana と二重連結する → default 訂正。
+[[kanji]]
+char = "濡"
+default = "ぬ"
