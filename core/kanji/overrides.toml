@@ -12736,3 +12736,37 @@ default = "モン"
 [[kanji]]
 char = "素"
 default = "ソ"
+
+# 「缶」 default 「カン」 (= 缶詰/空き缶/缶詰め/一斗缶、 音読み圧倒的)。
+# unihan 「ほとぎ」 は古語 (= 鼓の一種)、 現代日本語では使わない → default 訂正。
+[[kanji]]
+char = "缶"
+default = "カン"
+
+# 「肪」 default 「ボウ」 (= 脂肪のみ実用)。
+# unihan 「あぶら」 は「脂」 の訓読みで、 「肪」 単独訓読み用法はない → default 訂正。
+[[kanji]]
+char = "肪"
+default = "ボウ"
+
+# 「背」 default 「ハイ」 (= 背景/背後/背任/背反/背信/背徳/背教)。
+# 助詞接続 → 「せ」 (= 「背が高い/背の高さ/背を伸ばす」 等の訓読み単独使用)。
+# 「背中/背骨/背丈/背泳ぎ/背負う」 等は jukugo file で対応。
+[[kanji]]
+char = "背"
+default = "ハイ"
+
+[[kanji.match]]
+next_starts_any = ["は", "が", "を", "に", "の", "で", "と", "も"]
+reading = "せ"
+
+# 「葉」 default 「ヨウ」 (= 葉酸/葉巻/葉脈/葉緑素/葉書/葉柄)。
+# 助詞接続 → 「は」 (= 「葉が/葉の/葉に/葉を」 等の訓読み単独使用)。
+# 「言葉/紅葉/葉っぱ」 等の jukugo は jukugo file で対応。
+[[kanji]]
+char = "葉"
+default = "ヨウ"
+
+[[kanji.match]]
+next_starts_any = ["は", "が", "を", "に", "の", "で", "と", "も", "や"]
+reading = "は"
