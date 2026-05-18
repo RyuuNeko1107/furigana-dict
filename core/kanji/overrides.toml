@@ -10349,3 +10349,87 @@ reading = "か"
 [[kanji]]
 char = "喫"
 default = "キツ"
+
+# 「丹」 default 「タン」 (= 丹念/丹精/丹田/朱丹/牡丹/丹砂)。
+# unihan default 「あか」 は古語、 「赤」 が訓 dominant
+[[kanji]]
+char = "丹"
+default = "タン"
+
+# 「乞」 default 「コツ」 (= 乞食/物乞)。
+# 動詞 「乞う」 は okurigana 列挙で 「こ」 へ切替
+[[kanji]]
+char = "乞"
+default = "コツ"
+
+[[kanji.match]]
+next_starts_any = ["う", "わ", "い", "っ", "え", "お"]
+reading = "こ"
+
+# 「乳」 default 「ニュウ」 (= 乳児/乳製品/牛乳/豆乳/母乳/哺乳/授乳/離乳食)。
+# 単独 + 助詞接続 → 「ちち」 (= 名詞用法)、 「乳房/乳首」 等は jukugo 個別
+[[kanji]]
+char = "乳"
+default = "ニュウ"
+
+[[kanji.match]]
+next_starts_any = ["は", "が", "を", "に", "の", "で", "と", "も", "や", "へ"]
+reading = "ちち"
+
+[[kanji.match]]
+prev_ends_any = ["の", "が", "は", "を", "に", "で", "と", "も"]
+reading = "ちち"
+
+# 「亡」 default 「ボウ」 (= 亡命/死亡/逃亡/未亡人/亡霊/興亡/存亡)。
+# 動詞 「亡くなる/亡くす」 + 形容詞 「亡き」 は okurigana 列挙で 「な」 へ切替
+[[kanji]]
+char = "亡"
+default = "ボウ"
+
+[[kanji.match]]
+next_starts_any = ["く", "き", "か", "け", "こ"]
+reading = "な"
+
+# 「他」 default 「タ」 (= 他人/他者/他社/他国/排他/利他/他律)。
+# 単独 + 助詞接続 → 「ほか」 (= 「他の/他に/他は」 等)
+[[kanji]]
+char = "他"
+default = "タ"
+
+[[kanji.match]]
+next_starts_any = ["に", "の", "は", "が", "を", "で", "と", "も", "や", "へ"]
+reading = "ほか"
+
+# 「令」 default 「レイ」 (= 命令/法令/号令/省令/勅令/口令/律令)。
+# unihan default 「おさ」 は古語、 現代では熟語 dominant
+[[kanji]]
+char = "令"
+default = "レイ"
+
+# 「仮」 default 「カ」 (= 仮装/仮定/仮面/仮想/仮設/仮病/仮死/仮称)。
+# 単独 + 助詞接続 → 「かり」 (= 「仮の/仮に/仮は」 等)
+[[kanji]]
+char = "仮"
+default = "カ"
+
+[[kanji.match]]
+next_starts_any = ["の", "に", "は", "が", "を", "で", "と", "も"]
+reading = "かり"
+
+# 「伎」 default 「キ」 (= 歌舞伎/伎倆/伎芸)。
+# unihan default 「わざ」 は古語、 「技」 が訓 dominant
+[[kanji]]
+char = "伎"
+default = "キ"
+
+# 「伯」 default 「ハク」 (= 伯爵/伯父/伯仲/画伯/伯母)。
+# unihan default 「おさ」 は古語、 現代では熟語 dominant
+[[kanji]]
+char = "伯"
+default = "ハク"
+
+# 「侶」 default 「リョ」 (= 伴侶/僧侶/法侶)。
+# unihan default 「とも」 は古語、 「友」 が訓 dominant
+[[kanji]]
+char = "侶"
+default = "リョ"
