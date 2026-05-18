@@ -10795,3 +10795,67 @@ default = "ジュ"
 [[kanji]]
 char = "尿"
 default = "ニョウ"
+
+# 「履」 default 「リ」 (= 履歴/履行/草履)。
+# 動詞 「履く」 は okurigana 列挙で 「は」 へ切替
+[[kanji]]
+char = "履"
+default = "リ"
+
+[[kanji.match]]
+next_starts_any = ["く", "か", "き", "っ", "け", "こ"]
+reading = "は"
+
+# 「屯」 default 「トン」 (= 屯田/駐屯/屯所)。
+# unihan default 「たむろ」 は古語、 現代では熟語 dominant
+[[kanji]]
+char = "屯"
+default = "トン"
+
+# 「峡」 default 「キョウ」 (= 海峡/峡谷/峡江)。
+# unihan default 「かい」 は古語、 現代では熟語 dominant
+[[kanji]]
+char = "峡"
+default = "キョウ"
+
+# 「巧」 default 「コウ」 (= 巧妙/技巧/精巧/巧者/老巧)。
+# unihan default 「たくみ」 は名詞単独、 熟語 dominant
+[[kanji]]
+char = "巧"
+default = "コウ"
+
+# 「己」 default 「コ」 (= 自己/利己/克己/知己/敵己)。
+# unihan default 「おのれ」 は古語、 現代では熟語 dominant
+[[kanji]]
+char = "己"
+default = "コ"
+
+# 「師」 default 「シ」 (= 師匠/師範/教師/医師/講師/牧師/技師)。
+# unihan default 「おさ」 は古語、 現代では熟語 dominant
+[[kanji]]
+char = "師"
+default = "シ"
+
+# 「帳」 default 「チョウ」 (= 手帳/通帳/帳簿/帳面/台帳/記帳)。
+# unihan default 「とばり」 は古語、 現代では熟語 dominant
+[[kanji]]
+char = "帳"
+default = "チョウ"
+
+# 「幣」 default 「ヘイ」 (= 貨幣/紙幣/造幣/神幣)。
+# unihan default 「ぜに」 は古語、 「銭」 が訓 dominant
+[[kanji]]
+char = "幣"
+default = "ヘイ"
+
+# 「幽」 default 「ユウ」 (= 幽霊/幽閉/幽玄/幽冥/深幽)。
+# unihan default 「かすか」 は古語、 現代では熟語 dominant
+[[kanji]]
+char = "幽"
+default = "ユウ"
+
+# 「序」 default 「ジョ」 (= 順序/序文/秩序/序章/序列/序破急)。
+# unihan default 「ついず」 は古語動詞、 現代では熟語 dominant
+[[kanji]]
+char = "序"
+default = "ジョ"
