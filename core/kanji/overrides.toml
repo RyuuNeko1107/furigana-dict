@@ -10735,3 +10735,63 @@ reading = "みぎ"
 [[kanji.match]]
 prev_ends_any = ["の", "が", "は", "を", "に", "で", "と", "も"]
 reading = "みぎ"
+
+# 「姓」 default 「セイ」 (= 姓名/百姓/姓氏/旧姓/同姓)。
+# unihan default 「かばね」 は古語、 現代では熟語 dominant
+[[kanji]]
+char = "姓"
+default = "セイ"
+
+# 「婦」 default 「フ」 (= 主婦/婦人/婦警/夫婦/家政婦/産婦人科)。
+# unihan default 「おんな」 は古語、 「女」 と被る
+[[kanji]]
+char = "婦"
+default = "フ"
+
+# 「嬢」 default 「ジョウ」 (= お嬢様/令嬢/愛嬢/嬢君)。
+# unihan default 「むすめ」 は古語、 「娘」 が訓 dominant
+[[kanji]]
+char = "嬢"
+default = "ジョウ"
+
+# 「嫡」 default 「チャク」 (= 嫡子/嫡流/嫡男/嫡出)。
+# unihan default 「よつぎ」 は古語、 現代では熟語 dominant
+[[kanji]]
+char = "嫡"
+default = "チャク"
+
+# 「孔」 default 「コウ」 (= 孔子/穴孔/眼孔/気孔/瞳孔/鼻孔)。
+# unihan default 「あな」 は古語、 「穴」 が訓 dominant
+[[kanji]]
+char = "孔"
+default = "コウ"
+
+# 「存」 default 「ソン」 (= 存在/保存/生存/共存/温存/併存/現存)。
+# unihan default 「ある」 は古語動詞、 「在」 が動詞 dominant
+[[kanji]]
+char = "存"
+default = "ソン"
+
+# 「宅」 default 「タク」 (= 自宅/住宅/帰宅/借宅/在宅/拙宅/帰宅)。
+# unihan default 「いえ」 は古語、 「家」 が訓 dominant
+[[kanji]]
+char = "宅"
+default = "タク"
+
+# 「宇」 default 「ウ」 (= 宇宙/気宇/堂宇)。
+# unihan default 「いえ」 は古語、 「家」 が訓 dominant
+[[kanji]]
+char = "宇"
+default = "ウ"
+
+# 「寿」 default 「ジュ」 (= 寿命/長寿/喜寿/古希/賀寿/天寿/米寿)。
+# 訓 「ことぶき」 は名詞単独、 熟語 dominant
+[[kanji]]
+char = "寿"
+default = "ジュ"
+
+# 「尿」 default 「ニョウ」 (= 糖尿病/尿素/泌尿器/排尿/血尿)。
+# unihan default 「ゆばり」 は古語、 現代では熟語 dominant
+[[kanji]]
+char = "尿"
+default = "ニョウ"
