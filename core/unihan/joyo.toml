@@ -1316,7 +1316,7 @@ description = "常用漢字 2,136 字 (文化庁 2010-11-30 改訂、 内閣告�
 # 稽 は core/kanji/overrides.toml の [[kanji]] block に移行
 # 稿 は core/kanji/overrides.toml の [[kanji]] block に移行
 # 穀 は core/kanji/overrides.toml の [[kanji]] block に移行
-"穂" = "スイ"
+# 穂 は core/kanji/overrides.toml の [[kanji]] block に移行
 # 積 は core/kanji/overrides.toml の [[kanji]] block に移行
 # 穏 は core/kanji/overrides.toml の [[kanji]] block に移行
 # 穫 は core/kanji/overrides.toml の [[kanji]] block に移行
@@ -1374,7 +1374,7 @@ description = "常用漢字 2,136 字 (文化庁 2010-11-30 改訂、 内閣告�
 # 糾 は core/kanji/overrides.toml の [[kanji]] block に移行
 # 紀 は core/kanji/overrides.toml の [[kanji]] block に移行
 "紅" = "べに"
-"紋" = "あや"
+# 紋 は core/kanji/overrides.toml の [[kanji]] block に移行
 # 納 は core/kanji/overrides.toml の [[kanji]] block に移行
 "純" = "ジュン"
 "紙" = "かみ"
