@@ -12481,3 +12481,90 @@ reading = "いずみ"
 [[kanji]]
 char = "敷"
 default = "し"
+
+# 「漢」 default 「カン」 (= 漢字/漢方/門外漢/羅漢/痴漢/和漢/巨漢)。
+# unihan default 「から」 は古語 (= 「唐」 と被る)
+[[kanji]]
+char = "漢"
+default = "カン"
+
+# 「潔」 default 「ケツ」 (= 清潔/簡潔/純潔/不潔/高潔/廉潔)。
+# 形容詞 「潔い」 = いさぎよい は okurigana 列挙で 「いさぎよ」 へ切替
+[[kanji]]
+char = "潔"
+default = "ケツ"
+
+[[kanji.match]]
+next_starts_any = ["い", "く", "か", "け", "さ", "し"]
+reading = "いさぎよ"
+
+# 「潰」 default 「カイ」 (= 潰瘍/全潰/倒潰/胃潰瘍)。
+# 動詞 「潰れる/潰す」 は okurigana 列挙で 「つぶ」 へ切替
+[[kanji]]
+char = "潰"
+default = "カイ"
+
+[[kanji.match]]
+next_starts_any = ["れ", "す", "さ", "し", "せ", "そ"]
+reading = "つぶ"
+
+# 「澄」 default 「チョウ」 (= 清澄/澄明)。
+# 動詞 「澄む/澄ます」 は okurigana 列挙で 「す」 へ切替
+[[kanji]]
+char = "澄"
+default = "チョウ"
+
+[[kanji.match]]
+next_starts_any = ["む", "ま", "み", "ん", "め", "も", "す", "さ", "し", "せ", "そ"]
+reading = "す"
+
+# 「濃」 default 「ノウ」 (= 濃度/濃淡/濃厚/濃霧/濃縮)。
+# 形容詞 「濃い」 は okurigana 列挙で 「こ」 へ切替
+[[kanji]]
+char = "濃"
+default = "ノウ"
+
+[[kanji.match]]
+next_starts_any = ["い", "く", "か", "け", "さ"]
+reading = "こ"
+
+# 「瀬」 default 「せ」 (= 「瀬戸/早瀬/中瀬/急瀬」、 訓 dominant、 unihan 「ライ」 を訂正)
+[[kanji]]
+char = "瀬"
+default = "せ"
+
+# 「炉」 default 「ロ」 (= 暖炉/原子炉/炉端/香炉/火炉/溶鉱炉)。
+# unihan default 「いろり」 は古語、 現代では熟語 dominant
+[[kanji]]
+char = "炉"
+default = "ロ"
+
+# 「煎」 default 「セン」 (= 煎茶/煎餅/焙煎)。
+# 動詞 「煎る/煎じる」 は okurigana 列挙で 「い」 へ切替
+[[kanji]]
+char = "煎"
+default = "セン"
+
+[[kanji.match]]
+next_starts_any = ["る", "ら", "り", "っ", "れ", "ろ", "じ"]
+reading = "い"
+
+# 「煮」 default 「シャ」 (= 煮沸/雑煮/煮汁)。
+# 動詞 「煮る」 は okurigana 列挙で 「に」 へ切替
+[[kanji]]
+char = "煮"
+default = "シャ"
+
+[[kanji.match]]
+next_starts_any = ["る", "ら", "り", "っ", "れ", "ろ"]
+reading = "に"
+
+# 「潮」 default 「チョウ」 (= 潮汐/満潮/干潮/赤潮/潮流/風潮)。
+# 単独 + 助詞接続 → 「しお」 (= 「潮が/潮の」 等)
+[[kanji]]
+char = "潮"
+default = "チョウ"
+
+[[kanji.match]]
+next_starts_any = ["は", "が", "を", "に", "の", "で", "と", "も"]
+reading = "しお"
