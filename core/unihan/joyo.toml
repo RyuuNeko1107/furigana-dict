@@ -396,7 +396,7 @@ description = "常用漢字 2,136 字 (文化庁 2010-11-30 改訂、 内閣告�
 # 墨 は core/kanji/overrides.toml の [[kanji]] block に移行
 # 墳 は core/kanji/overrides.toml の [[kanji]] block に移行
 # 墾 は core/kanji/overrides.toml の [[kanji]] block に移行
-"壁" = "かべ"
+# 壁 は core/kanji/overrides.toml の [[kanji]] block に移行
 "壇" = "ダン"
 # 壊 は core/kanji/overrides.toml の [[kanji]] block に移行
 # 壌 は core/kanji/overrides.toml の [[kanji]] block に移行
@@ -412,7 +412,7 @@ description = "常用漢字 2,136 字 (文化庁 2010-11-30 改訂、 内閣告�
 # 大 は core/kanji/overrides.toml の [[kanji]] block に移行
 # 「天」 = round 47 で kanji/overrides.toml [[kanji]] block (default = テン) に移行
 # 太 は core/kanji/overrides.toml の [[kanji]] block に移行
-"夫" = "おっと"
+# 夫 は core/kanji/overrides.toml の [[kanji]] block に移行
 # 央 は core/kanji/overrides.toml の [[kanji]] block に移行
 # 失 は core/kanji/overrides.toml の [[kanji]] block に移行
 # 奇 は core/kanji/overrides.toml の [[kanji]] block に移行
@@ -426,7 +426,7 @@ description = "常用漢字 2,136 字 (文化庁 2010-11-30 改訂、 内閣告�
 # 奪 は core/kanji/overrides.toml の [[kanji]] block に移行
 # 奮 は core/kanji/overrides.toml の [[kanji]] block に移行
 # 女 は core/kanji/overrides.toml の [[kanji]] block に移行
-"奴" = "やつ"
+# 奴 は core/kanji/overrides.toml の [[kanji]] block に移行
 # 好 は core/kanji/overrides.toml の [[kanji]] block に移行
 # 如 は core/kanji/overrides.toml の [[kanji]] block に移行
 # 妃 は core/kanji/overrides.toml の [[kanji]] block に移行
@@ -437,17 +437,17 @@ description = "常用漢字 2,136 字 (文化庁 2010-11-30 改訂、 内閣告�
 # 妥 は core/kanji/overrides.toml の [[kanji]] block に移行
 # 妨 は core/kanji/overrides.toml の [[kanji]] block に移行
 # 妬 は core/kanji/overrides.toml の [[kanji]] block に移行
-"妹" = "いもうと"
-"妻" = "つま"
-"姉" = "あね"
+# 妹 は core/kanji/overrides.toml の [[kanji]] block に移行
+# 妻 は core/kanji/overrides.toml の [[kanji]] block に移行
+# 姉 は core/kanji/overrides.toml の [[kanji]] block に移行
 # 始 は core/kanji/overrides.toml の [[kanji]] block に移行
 # 姓 は core/kanji/overrides.toml の [[kanji]] block に移行
 # 委 は core/kanji/overrides.toml の [[kanji]] block に移行
-"姫" = "ひめ"
+# 姫 は core/kanji/overrides.toml の [[kanji]] block に移行
 "姻" = "イン"
 # 姿 は core/kanji/overrides.toml の [[kanji]] block に移行
 # 威 は core/kanji/overrides.toml の [[kanji]] block に移行
-"娘" = "むすめ"
+# 娘 は core/kanji/overrides.toml の [[kanji]] block に移行
 # 娠 は core/kanji/overrides.toml の [[kanji]] block に移行
 # 娯 は core/kanji/overrides.toml の [[kanji]] block に移行
 # 婆 は core/kanji/overrides.toml の [[kanji]] block に移行
@@ -468,7 +468,7 @@ description = "常用漢字 2,136 字 (文化庁 2010-11-30 改訂、 内閣告�
 # 季 は core/kanji/overrides.toml の [[kanji]] block に移行
 # 孤 は core/kanji/overrides.toml の [[kanji]] block に移行
 # 学 は core/kanji/overrides.toml の [[kanji]] block に移行 (★round 49)
-"孫" = "まご"
+# 孫 は core/kanji/overrides.toml の [[kanji]] block に移行
 # 宅 は core/kanji/overrides.toml の [[kanji]] block に移行
 # 宇 は core/kanji/overrides.toml の [[kanji]] block に移行
 # 守 は core/kanji/overrides.toml の [[kanji]] block に移行
@@ -481,7 +481,7 @@ description = "常用漢字 2,136 字 (文化庁 2010-11-30 改訂、 内閣告�
 "宛" = "あて"
 # 宜 は core/kanji/overrides.toml の [[kanji]] block に移行
 # 宝 は core/kanji/overrides.toml の [[kanji]] block に移行
-"実" = "ジツ"
+# 実 は core/kanji/overrides.toml の [[kanji]] block に移行
 # 宣 は core/kanji/overrides.toml の [[kanji]] block に移行
 # 室 は core/kanji/overrides.toml の [[kanji]] block に移行 (★round 49)
 # 宮 は core/kanji/overrides.toml の [[kanji]] block に移行

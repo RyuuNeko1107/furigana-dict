@@ -11233,3 +11233,103 @@ default = "カ"
 [[kanji.match]]
 next_starts_any = ["は", "が", "を", "に", "の", "で", "と", "も"]
 reading = "なつ"
+
+# 「壁」 default 「ヘキ」 (= 壁画/絶壁/防壁/障壁/外壁/岩壁)。
+# 単独 + 助詞接続 → 「かべ」 (= 「壁が/壁の」 等)
+[[kanji]]
+char = "壁"
+default = "ヘキ"
+
+[[kanji.match]]
+next_starts_any = ["は", "が", "を", "に", "の", "で", "と", "も"]
+reading = "かべ"
+
+# 「妻」 default 「サイ」 (= 夫妻/愛妻/糟糠之妻/妻帯)。
+# 単独 + 助詞接続 → 「つま」 (= 「妻が/妻の」 等)
+[[kanji]]
+char = "妻"
+default = "サイ"
+
+[[kanji.match]]
+next_starts_any = ["は", "が", "を", "に", "の", "で", "と", "も"]
+reading = "つま"
+
+# 「妹」 default 「マイ」 (= 姉妹/兄妹/義妹/従妹)。
+# 単独 + 助詞接続 → 「いもうと」 (= 「妹が/妹の」 等)
+[[kanji]]
+char = "妹"
+default = "マイ"
+
+[[kanji.match]]
+next_starts_any = ["は", "が", "を", "に", "の", "で", "と", "も"]
+reading = "いもうと"
+
+# 「姉」 default 「シ」 (= 姉妹/義姉/従姉/長姉)。
+# 単独 + 助詞接続 → 「あね」 (= 「姉が/姉の」 等)
+[[kanji]]
+char = "姉"
+default = "シ"
+
+[[kanji.match]]
+next_starts_any = ["は", "が", "を", "に", "の", "で", "と", "も"]
+reading = "あね"
+
+# 「娘」 default 「ジョウ」 (= 看板娘/愛娘)。
+# 単独 + 助詞接続 → 「むすめ」 (= 「娘が/娘の」 等)
+[[kanji]]
+char = "娘"
+default = "ジョウ"
+
+[[kanji.match]]
+next_starts_any = ["は", "が", "を", "に", "の", "で", "と", "も"]
+reading = "むすめ"
+
+# 「孫」 default 「ソン」 (= 子孫/外孫/嫡孫/曾孫)。
+# 単独 + 助詞接続 → 「まご」 (= 「孫が/孫の」 等)
+[[kanji]]
+char = "孫"
+default = "ソン"
+
+[[kanji.match]]
+next_starts_any = ["は", "が", "を", "に", "の", "で", "と", "も"]
+reading = "まご"
+
+# 「夫」 default 「フ」 (= 夫婦/夫人/工夫/農夫/水夫/丈夫)。
+# 単独 + 助詞接続 → 「おっと」 (= 「夫が/夫の」 等)
+[[kanji]]
+char = "夫"
+default = "フ"
+
+[[kanji.match]]
+next_starts_any = ["は", "が", "を", "に", "の", "で", "と", "も"]
+reading = "おっと"
+
+# 「姫」 default 「キ」 (= 姫君/王姫/美姫)、 「姫」 = ひめ も dominant な人名/物語。
+# 単独 + 助詞接続 → 「ひめ」 (= 「姫が/姫の」 等)
+[[kanji]]
+char = "姫"
+default = "キ"
+
+[[kanji.match]]
+next_starts_any = ["は", "が", "を", "に", "の", "で", "と", "も"]
+reading = "ひめ"
+
+# 「奴」 default 「ド」 (= 奴隷/守銭奴/匈奴/売国奴)。
+# 単独 + 助詞接続 → 「やつ」 (= 「奴が/奴は」 等)
+[[kanji]]
+char = "奴"
+default = "ド"
+
+[[kanji.match]]
+next_starts_any = ["は", "が", "を", "に", "の", "で", "と", "も"]
+reading = "やつ"
+
+# 「実」 default 「ジツ」 (= 事実/真実/果実/口実/実例/実家/実は (= 副詞))。
+# 単独 + 助詞接続 → 「み」 (= 「実が成る/実を結ぶ」 等、 「は」 は除く)
+[[kanji]]
+char = "実"
+default = "ジツ"
+
+[[kanji.match]]
+next_starts_any = ["が", "を", "に", "の", "で", "と", "も"]
+reading = "み"
