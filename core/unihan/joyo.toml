@@ -299,9 +299,9 @@ description = "常用漢字 2,136 字 (文化庁 2010-11-30 改訂、 内閣告�
 # 含 は core/kanji/overrides.toml の [[kanji]] block に移行
 # 吸 は core/kanji/overrides.toml の [[kanji]] block に移行
 # 吹 は core/kanji/overrides.toml の [[kanji]] block に移行
-"呂" = "せぼね"
+# 呂 は core/kanji/overrides.toml の [[kanji]] block に移行
 # 呈 は core/kanji/overrides.toml の [[kanji]] block に移行
-"呉" = "くれ"
+# 呉 は core/kanji/overrides.toml の [[kanji]] block に移行
 # 告 は core/kanji/overrides.toml の [[kanji]] block に移行
 # 周 は core/kanji/overrides.toml の [[kanji]] block に移行
 # 呪 は core/kanji/overrides.toml の [[kanji]] block に移行
@@ -533,14 +533,14 @@ description = "常用漢字 2,136 字 (文化庁 2010-11-30 改訂、 内閣告�
 # 屯 は core/kanji/overrides.toml の [[kanji]] block に移行
 # 岐 は core/kanji/overrides.toml の [[kanji]] block に移行
 "岡" = "おか"
-"岩" = "いわ"
+# 岩 は core/kanji/overrides.toml の [[kanji]] block に移行
 "岬" = "みさき"
-"岳" = "たけ"
-"岸" = "きし"
+# 岳 は core/kanji/overrides.toml の [[kanji]] block に移行
+# 岸 は core/kanji/overrides.toml の [[kanji]] block に移行
 "峠" = "とうげ"
 # 峡 は core/kanji/overrides.toml の [[kanji]] block に移行
-"峰" = "みね"
-"島" = "しま"
+# 峰 は core/kanji/overrides.toml の [[kanji]] block に移行
+# 島 は core/kanji/overrides.toml の [[kanji]] block に移行
 # 崇 は core/kanji/overrides.toml の [[kanji]] block に移行
 "崎" = "さき"
 "崖" = "がけ"
@@ -589,7 +589,7 @@ description = "常用漢字 2,136 字 (文化庁 2010-11-30 改訂、 内閣告�
 "度" = "ド"
 # 座 は core/kanji/overrides.toml の [[kanji]] block に移行
 # 庫 は core/kanji/overrides.toml の [[kanji]] block に移行 (★round 50)
-"庭" = "にわ"
+# 庭 は core/kanji/overrides.toml の [[kanji]] block に移行
 # 庶 は core/kanji/overrides.toml の [[kanji]] block に移行
 # 康 は core/kanji/overrides.toml の [[kanji]] block に移行
 # 庸 は core/kanji/overrides.toml の [[kanji]] block に移行
@@ -609,7 +609,7 @@ description = "常用漢字 2,136 字 (文化庁 2010-11-30 改訂、 内閣告�
 # 引 は core/kanji/overrides.toml の [[kanji]] block に移行
 # 弟 は core/kanji/overrides.toml の [[kanji]] block に移行
 "弥" = "や"
-"弦" = "つる"
+# 弦 は core/kanji/overrides.toml の [[kanji]] block に移行
 "弧" = "コ"
 # 「弱」 は overrides.toml の [[kanji]] block に移行 (★round 39)
 # 張 は core/kanji/overrides.toml の [[kanji]] block に移行

@@ -11409,3 +11409,88 @@ default = "テイ"
 [[kanji.match]]
 next_starts_any = ["は", "が", "を", "に", "の", "で", "と", "も"]
 reading = "おとうと"
+
+# 「島」 default 「トウ」 (= 島民/列島/半島/孤島/諸島/離島)。
+# 単独 + 助詞接続 → 「しま」 (= 「島が/島の」 等)
+[[kanji]]
+char = "島"
+default = "トウ"
+
+[[kanji.match]]
+next_starts_any = ["は", "が", "を", "に", "の", "で", "と", "も"]
+reading = "しま"
+
+# 「庭」 default 「テイ」 (= 庭園/家庭/校庭/中庭/法廷)。
+# 単独 + 助詞接続 → 「にわ」 (= 「庭が/庭の」 等)
+[[kanji]]
+char = "庭"
+default = "テイ"
+
+[[kanji.match]]
+next_starts_any = ["は", "が", "を", "に", "の", "で", "と", "も"]
+reading = "にわ"
+
+# 「岸」 default 「ガン」 (= 岸壁/海岸/沿岸/対岸/河岸/彼岸)。
+# 単独 + 助詞接続 → 「きし」 (= 「岸が/岸の」 等)
+[[kanji]]
+char = "岸"
+default = "ガン"
+
+[[kanji.match]]
+next_starts_any = ["は", "が", "を", "に", "の", "で", "と", "も"]
+reading = "きし"
+
+# 「峰」 default 「ホウ」 (= 最高峰/連峰/孤峰/秀峰)。
+# 単独 + 助詞接続 → 「みね」 (= 「峰が/峰の」 等)
+[[kanji]]
+char = "峰"
+default = "ホウ"
+
+[[kanji.match]]
+next_starts_any = ["は", "が", "を", "に", "の", "で", "と", "も"]
+reading = "みね"
+
+# 「岳」 default 「ガク」 (= 山岳/岳父/八ヶ岳/連岳)。
+# 単独 + 助詞接続 → 「たけ」 (= 「岳が/岳の」 等)
+[[kanji]]
+char = "岳"
+default = "ガク"
+
+[[kanji.match]]
+next_starts_any = ["は", "が", "を", "に", "の", "で", "と", "も"]
+reading = "たけ"
+
+# 「弦」 default 「ゲン」 (= 弦楽器/管弦/上弦/下弦/弓弦)。
+# 単独 + 助詞接続 → 「つる」 (= 「弦が/弦の」 等)
+[[kanji]]
+char = "弦"
+default = "ゲン"
+
+[[kanji.match]]
+next_starts_any = ["は", "が", "を", "に", "の", "で", "と", "も"]
+reading = "つる"
+
+# 「岩」 default 「ガン」 (= 岩石/溶岩/岩盤/巨岩/奇岩)。
+# 単独 + 助詞接続 → 「いわ」 (= 「岩が/岩の」 等)
+[[kanji]]
+char = "岩"
+default = "ガン"
+
+[[kanji.match]]
+next_starts_any = ["は", "が", "を", "に", "の", "で", "と", "も"]
+reading = "いわ"
+
+# 「弓」 は [[kanji]] block 化 skip (= corpus regression: 「弓三人」 = ゆみさんにん
+# 期待で 漢字直後 default キュウ では 「きゅうさんにん」 になり誤読、 unihan = ゆみ keep)
+
+# 「呂」 default 「ロ」 (= 呂律/語呂/伊呂波)。
+# unihan default 「せぼね」 は古語、 現代では熟語 dominant
+[[kanji]]
+char = "呂"
+default = "ロ"
+
+# 「呉」 default 「ゴ」 (= 呉服/呉越/呉音/呉服店)。
+# unihan default 「くれ」 は地名/姓、 現代では熟語 dominant
+[[kanji]]
+char = "呉"
+default = "ゴ"
