@@ -13120,3 +13120,62 @@ default = "ネ"
 [[kanji]]
 char = "禽"
 default = "キン"
+
+# 「笙」 default 「ショウ」 (= 笙の音、 雅楽の管楽器、 名前用)。
+# unihan 「ふえ」 は「笛」 の訓で「笙」 単独訓読み用法はない → default 訂正。
+[[kanji]]
+char = "笙"
+default = "ショウ"
+
+# 「綴」 default 「テイ」 (= 綴方/連綴/補綴/綴錦)。
+# 動詞「綴る/綴じる」 → okurigana 「る/ら/り/っ/れ/ろ/じ」 で「つづ」 へ切替。
+[[kanji]]
+char = "綴"
+default = "テイ"
+
+[[kanji.match]]
+next_starts_any = ["る", "ら", "り", "っ", "れ", "ろ", "じ"]
+reading = "つづ"
+
+# 「聡」 default 「ソウ」 (= 聡明/聡敏、 名前用「聡」 もソウ)。
+# unihan 「さとい」 は古語形容詞訓、 現代日本語ではほぼ使わない → default 訂正。
+[[kanji]]
+char = "聡"
+default = "ソウ"
+
+# 「肇」 default 「チョウ」 (= 肇国/肇造、 名前用「肇/肇治」 もチョウ)。
+# unihan 「はじめ」 は名前読み一例、 一般「チョウ」 主流 → default 訂正。
+[[kanji]]
+char = "肇"
+default = "チョウ"
+
+# 「芙」 default 「フ」 (= 芙蓉 (フヨウ) / 芙渠 / 名前用)。
+# unihan 「はす」 は「蓮」 の訓で「芙」 単独訓読み用法はない → default 訂正。
+[[kanji]]
+char = "芙"
+default = "フ"
+
+# 「茸」 default 「きのこ」 (= 松茸/椎茸/茸狩り、 訓読み主流)。
+# unihan 「たけ」 は古語訓・「竹」 と混同、 現代日本語では「きのこ」 → default 訂正。
+[[kanji]]
+char = "茸"
+default = "きのこ"
+
+# 「萠」 default 「ホウ」 (= 「萌」 異体字、 萌芽 (ホウガ) / 名前用)。
+# 動詞「萠える」 (= 萌える) は活用するが、 異体字なので動詞用法はまれ → default 訂正のみ。
+[[kanji]]
+char = "萠"
+default = "ホウ"
+
+# 「葺」 default 「ふ」 (= 動詞 「葺く」 の語幹 + 「茅葺/瓦葺」 名詞用法)。
+# 動詞活用「く/か/き/っ/け/こ」 含め default のまま「ふ」 で統一。
+# unihan 「ふき」 (連用形) は okurigana と二重連結する → default 訂正。
+[[kanji]]
+char = "葺"
+default = "ふ"
+
+# 「蒲」 default 「ホ」 (= 蒲団/蒲公英/菖蒲/蒲冠者)。
+# unihan 「かま」 は「釜/鎌」 と混同、 訓「がま」 (植物) や「かば」 (蒲焼) は jukugo file で対応 → default 訂正。
+[[kanji]]
+char = "蒲"
+default = "ホ"
