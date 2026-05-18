@@ -13060,3 +13060,63 @@ default = "アン"
 [[kanji]]
 char = "晚"
 default = "バン"
+
+# 「椀」 default 「ワン」 (= 茶椀/木椀、 ほぼ容器名で音読み)。
+# unihan 「はち」 は「鉢」 の訓で「椀」 単独訓読み用法はない → default 訂正。
+[[kanji]]
+char = "椀"
+default = "ワン"
+
+# 「樋」 default 「ひ」 (= 雨樋/樋口/樋管、 訓読み圧倒的)。
+# unihan 「トウ」 は中国音読みで日本ではほぼ使わない → default 訂正。
+[[kanji]]
+char = "樋"
+default = "ひ"
+
+# 「櫂」 default 「かい」 (= 櫂、 ボートのオール、 訓読み主流)。
+# unihan 「かじ」 は「梶/舵」 の訓で「櫂」 単独訓読み用法はない → default 訂正。
+[[kanji]]
+char = "櫂"
+default = "かい"
+
+# 「滉」 default 「コウ」 (= 滉漾、 漢籍由来、 名前用)。
+# unihan 「ひろい」 は古語訓 (= 形容詞)、 現代日本語ではほぼ使わない → default 訂正。
+[[kanji]]
+char = "滉"
+default = "コウ"
+
+# 「猪」 default 「いのしし」 (= 猪/野猪/猪突、 訓読み圧倒的)。
+# unihan 「チョ」 は jukugo「猪突猛進」 等限定、 一般使用は訓 → default 訂正。
+[[kanji]]
+char = "猪"
+default = "いのしし"
+
+# 「珈」 default 「カ」 (= 珈琲 (コーヒー) ほぼ唯一の実用)。
+# unihan 「かみかざり」 は古語訓、 現代日本語ではほぼ使わない → default 訂正。
+[[kanji]]
+char = "珈"
+default = "カ"
+
+# 「甫」 default 「ホ」 (= 名前用 「甫」 / 「甫始」 等)。
+# unihan 「すけ」 は名前読み一例、 一般「ホ」 主流 → default 訂正。
+[[kanji]]
+char = "甫"
+default = "ホ"
+
+# 「祐」 default 「ユウ」 (= 天祐/神祐、 名前用 「祐輔/祐二」 等もユウ)。
+# unihan 「たすけ」 は古語訓、 現代日本語では音読みが主流 → default 訂正。
+[[kanji]]
+char = "祐"
+default = "ユウ"
+
+# 「祢」 default 「ネ」 (= 祢宜 (ネギ) / 名前用 「祢々」 等)。
+# unihan 「デイ」 は中国音読みで日本ではほぼ使わない → default 訂正。
+[[kanji]]
+char = "祢"
+default = "ネ"
+
+# 「禽」 default 「キン」 (= 家禽/猛禽/鳴禽/禽獣)。
+# unihan 「とり」 は「鳥」 の訓で「禽」 単独訓読み用法はない → default 訂正。
+[[kanji]]
+char = "禽"
+default = "キン"
