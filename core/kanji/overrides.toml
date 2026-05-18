@@ -12176,3 +12176,81 @@ reading = "あたら"
 [[kanji.match]]
 next_starts_any = ["た"]
 reading = "あらた"
+
+# 「明」 default 「メイ」 (= 明日/明白/証明/発明/明示/光明/不明/賢明)。
+# 動詞 「明ける/明く/明かす」 → 「あ」、 形容詞 「明るい」 → 「あか」、 「明らか」 は jukugo 個別
+[[kanji]]
+char = "明"
+default = "メイ"
+
+# 「明ける/明く/明かす」 = 動詞 → あ
+[[kanji.match]]
+next_starts_any = ["け", "く", "か", "き", "っ", "こ"]
+reading = "あ"
+
+# 「明るい/明るく」 = 形容詞 → あか
+[[kanji.match]]
+next_starts_any = ["る"]
+reading = "あか"
+
+# 「棺」 default 「カン」 (= 石棺/出棺/棺桶/納棺)。
+# unihan default 「ひつぎ」 は古語、 現代では熟語 dominant
+[[kanji]]
+char = "棺"
+default = "カン"
+
+# 「槽」 default 「ソウ」 (= 水槽/浴槽/油槽/槽車)。
+# unihan default 「おけ」 は古語、 「桶」 が訓 dominant
+[[kanji]]
+char = "槽"
+default = "ソウ"
+
+# 「椎」 default 「ツイ」 (= 椎間板/脊椎/腰椎/頚椎)。
+# 単独 + 助詞接続 → 「しい」 (= 木の名前、 「椎が/椎の」)
+[[kanji]]
+char = "椎"
+default = "ツイ"
+
+[[kanji.match]]
+next_starts_any = ["は", "が", "を", "に", "の", "で", "と", "も"]
+reading = "しい"
+
+# 「棟」 default 「トウ」 (= 棟梁/病棟/別棟/上棟/別棟/同棟)。
+# 単独 + 助詞接続 → 「むね」 (= 「棟が/棟の」 等)
+[[kanji]]
+char = "棟"
+default = "トウ"
+
+[[kanji.match]]
+next_starts_any = ["は", "が", "を", "に", "の", "で", "と", "も"]
+reading = "むね"
+
+# 「森」 default 「シン」 (= 森林/森閑/森厳)。
+# 単独 + 助詞接続 → 「もり」 (= 「森が/森の」 等)
+[[kanji]]
+char = "森"
+default = "シン"
+
+[[kanji.match]]
+next_starts_any = ["は", "が", "を", "に", "の", "で", "と", "も"]
+reading = "もり"
+
+# 「巾」 default 「キン」 (= 巾着/布巾/頭巾)。
+# 単独 + 助詞接続 → 「はば」 (= 「幅」 と同義、 「巾が/巾の」 等)
+[[kanji]]
+char = "巾"
+default = "キン"
+
+[[kanji.match]]
+next_starts_any = ["は", "が", "を", "に", "の", "で", "と", "も"]
+reading = "はば"
+
+# 「根」 default 「コン」 (= 根本/根拠/球根/根気/根性/根源/羽根)。
+# 単独 + 助詞接続 → 「ね」 (= 「根が/根の」 等)
+[[kanji]]
+char = "根"
+default = "コン"
+
+[[kanji.match]]
+next_starts_any = ["は", "が", "を", "に", "の", "で", "と", "も"]
+reading = "ね"

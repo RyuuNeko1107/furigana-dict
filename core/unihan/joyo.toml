@@ -555,7 +555,7 @@ description = "常用漢字 2,136 字 (文化庁 2010-11-30 改訂、 内閣告�
 # 巨 は core/kanji/overrides.toml の [[kanji]] block に移行
 # 己 は core/kanji/overrides.toml の [[kanji]] block に移行
 # 巻 は core/kanji/overrides.toml の [[kanji]] block に移行
-"巾" = "はば"
+# 巾 は core/kanji/overrides.toml の [[kanji]] block に移行
 # 「市」 は overrides.toml の [[kanji]] block に移行 (★round 45)
 # 布 は core/kanji/overrides.toml の [[kanji]] block に移行
 "帆" = "ハン"
@@ -853,7 +853,7 @@ description = "常用漢字 2,136 字 (文化庁 2010-11-30 改訂、 内閣告�
 # 旺 は core/kanji/overrides.toml の [[kanji]] block に移行
 # 昆 は core/kanji/overrides.toml の [[kanji]] block に移行
 # 昇 は core/kanji/overrides.toml の [[kanji]] block に移行
-"明" = "あかり"
+# 明 は core/kanji/overrides.toml の [[kanji]] block に移行
 # 易 は core/kanji/overrides.toml の [[kanji]] block に移行
 "昔" = "むかし"
 # 星 は core/kanji/overrides.toml の [[kanji]] block に移行
@@ -935,7 +935,7 @@ description = "常用漢字 2,136 字 (文化庁 2010-11-30 改訂、 内閣告�
 "校" = "コウ"
 "株" = "かぶ"
 # 核 は core/kanji/overrides.toml の [[kanji]] block に移行
-"根" = "コン"
+# 根 は core/kanji/overrides.toml の [[kanji]] block に移行
 "格" = "カク"
 # 栽 は core/kanji/overrides.toml の [[kanji]] block に移行
 "桁" = "けた"
@@ -952,12 +952,12 @@ description = "常用漢字 2,136 字 (文化庁 2010-11-30 改訂、 内閣告�
 # 棋 は core/kanji/overrides.toml の [[kanji]] block に移行
 "棒" = "ボウ"
 "棚" = "たな"
-"棟" = "むね"
-"森" = "もり"
-"棺" = "ひつぎ"
+# 棟 は core/kanji/overrides.toml の [[kanji]] block に移行
+# 森 は core/kanji/overrides.toml の [[kanji]] block に移行
+# 棺 は core/kanji/overrides.toml の [[kanji]] block に移行
 "椅" = "イ"
 # 植 は core/kanji/overrides.toml の [[kanji]] block に移行
-"椎" = "しい"
+# 椎 は core/kanji/overrides.toml の [[kanji]] block に移行
 "検" = "ケン"
 # 業 は core/kanji/overrides.toml の [[kanji]] block に移行 (★round 49)
 # 極 は core/kanji/overrides.toml の [[kanji]] block に移行
@@ -966,7 +966,7 @@ description = "常用漢字 2,136 字 (文化庁 2010-11-30 改訂、 内閣告�
 # 概 は core/kanji/overrides.toml の [[kanji]] block に移行
 # 構 は core/kanji/overrides.toml の [[kanji]] block に移行
 # 様 は core/kanji/overrides.toml の [[kanji]] block に移行
-"槽" = "おけ"
+# 槽 は core/kanji/overrides.toml の [[kanji]] block に移行
 # 標 は core/kanji/overrides.toml の [[kanji]] block に移行
 # 模 は core/kanji/overrides.toml の [[kanji]] block に移行
 # 権 は core/kanji/overrides.toml の [[kanji]] block に移行
