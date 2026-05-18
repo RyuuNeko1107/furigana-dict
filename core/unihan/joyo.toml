@@ -1407,7 +1407,7 @@ description = "常用漢字 2,136 字 (文化庁 2010-11-30 改訂、 内閣告�
 "綿" = "わた"
 # 緊 は core/kanji/overrides.toml の [[kanji]] block に移行
 "総" = "ソウ"
-"緑" = "みどり"
+# 緑 は core/kanji/overrides.toml の [[kanji]] block に移行
 # 緒 は core/kanji/overrides.toml の [[kanji]] block に移行
 # 締 は core/kanji/overrides.toml の [[kanji]] block に移行
 # 編 は core/kanji/overrides.toml の [[kanji]] block に移行 (★round 50)
@@ -1446,7 +1446,7 @@ description = "常用漢字 2,136 字 (文化庁 2010-11-30 改訂、 内閣告�
 "翌" = "ヨク"
 # 習 は core/kanji/overrides.toml の [[kanji]] block に移行
 # 翻 は core/kanji/overrides.toml の [[kanji]] block に移行
-"翼" = "つばさ"
+# 翼 は core/kanji/overrides.toml の [[kanji]] block に移行
 # 老 は core/kanji/overrides.toml の [[kanji]] block に移行
 # 考 は core/kanji/overrides.toml の [[kanji]] block に移行
 # 耐 は core/kanji/overrides.toml の [[kanji]] block に移行
@@ -1486,11 +1486,11 @@ description = "常用漢字 2,136 字 (文化庁 2010-11-30 改訂、 内閣告�
 "脳" = "ノウ"
 "腎" = "ジン"
 # 腐 は core/kanji/overrides.toml の [[kanji]] block に移行
-"腕" = "うで"
+# 腕 は core/kanji/overrides.toml の [[kanji]] block に移行
 # 腫 は core/kanji/overrides.toml の [[kanji]] block に移行
-"腰" = "こし"
+# 腰 は core/kanji/overrides.toml の [[kanji]] block に移行
 # 腸 は core/kanji/overrides.toml の [[kanji]] block に移行
-"腹" = "はら"
+# 腹 は core/kanji/overrides.toml の [[kanji]] block に移行
 "腺" = "セン"
 "膚" = "はだ"
 "膜" = "まく"
@@ -1507,11 +1507,11 @@ description = "常用漢字 2,136 字 (文化庁 2010-11-30 改訂、 内閣告�
 # 致 は core/kanji/overrides.toml の [[kanji]] block に移行
 "臼" = "うす"
 # 興 は core/kanji/overrides.toml の [[kanji]] block に移行
-"舌" = "した"
+# 舌 は core/kanji/overrides.toml の [[kanji]] block に移行
 # 舎 は core/kanji/overrides.toml の [[kanji]] block に移行
 # 舗 は core/kanji/overrides.toml の [[kanji]] block に移行
 # 舞 は core/kanji/overrides.toml の [[kanji]] block に移行
-"舟" = "ふね"
+# 舟 は core/kanji/overrides.toml の [[kanji]] block に移行
 # 航 は core/kanji/overrides.toml の [[kanji]] block に移行
 # 般 は core/kanji/overrides.toml の [[kanji]] block に移行
 # 舶 は core/kanji/overrides.toml の [[kanji]] block に移行
@@ -1525,16 +1525,16 @@ description = "常用漢字 2,136 字 (文化庁 2010-11-30 改訂、 内閣告�
 "芋" = "いも"
 "芝" = "しば"
 "芯" = "シン"
-"花" = "はな"
+# 花 は core/kanji/overrides.toml の [[kanji]] block に移行
 # 芳 は core/kanji/overrides.toml の [[kanji]] block に移行
 # 芸 は core/kanji/overrides.toml の [[kanji]] block に移行
-"芽" = "め"
+# 芽 は core/kanji/overrides.toml の [[kanji]] block に移行
 "苗" = "なえ"
 # 苛 は core/kanji/overrides.toml の [[kanji]] block に移行
 # 若 は core/kanji/overrides.toml の [[kanji]] block に移行
 # 英 は core/kanji/overrides.toml の [[kanji]] block に移行
 # 茂 は core/kanji/overrides.toml の [[kanji]] block に移行
-"茎" = "くき"
+# 茎 は core/kanji/overrides.toml の [[kanji]] block に移行
 "茨" = "いばら"
 # 茶 は core/kanji/overrides.toml の [[kanji]] block に移行
 # 草 は core/kanji/overrides.toml の [[kanji]] block に移行

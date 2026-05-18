@@ -13736,3 +13736,103 @@ default = "うめ"
 [[kanji.match]]
 prev_char_type = "漢字"
 reading = "バイ"
+
+# 「緑」 default 「みどり」 (= 「緑」 単独訓 + 「常緑/緑陰」 訓)。
+# prev 漢字 → 「リョク」 (= 緑茶/緑地/緑化/葉緑素/翠緑 等)。
+[[kanji]]
+char = "緑"
+default = "みどり"
+
+[[kanji.match]]
+prev_char_type = "漢字"
+reading = "リョク"
+
+# 「翼」 default 「つばさ」 (= 「翼」 単独訓)。
+# prev 漢字 → 「ヨク」 (= 右翼/左翼/主翼/尾翼/両翼/比翼 等)。
+[[kanji]]
+char = "翼"
+default = "つばさ"
+
+[[kanji.match]]
+prev_char_type = "漢字"
+reading = "ヨク"
+
+# 「腕」 default 「うで」 (= 「腕力」 訓 + 「腕」 単独訓)。
+# prev 漢字 → 「ワン」 (= 手腕/敏腕/鉄腕/腕章 等)。
+[[kanji]]
+char = "腕"
+default = "うで"
+
+[[kanji.match]]
+prev_char_type = "漢字"
+reading = "ワン"
+
+# 「腰」 default 「こし」 (= 「腰/腰痛/腰回り」 単独訓)。
+# prev 漢字 → 「ヨウ」 (= 腰部/腰椎/中腰 等)。
+[[kanji]]
+char = "腰"
+default = "こし"
+
+[[kanji.match]]
+prev_char_type = "漢字"
+reading = "ヨウ"
+
+# 「腹」 default 「はら」 (= 「腹/腹痛/腹立ち」 単独訓)。
+# prev 漢字 → 「フク」 (= 腹部/腹筋/腹腔/空腹/満腹 等)。
+[[kanji]]
+char = "腹"
+default = "はら"
+
+[[kanji.match]]
+prev_char_type = "漢字"
+reading = "フク"
+
+# 「舌」 default 「した」 (= 「舌打ち/舌足らず」 単独訓)。
+# prev 漢字 → 「ゼツ」 (= 弁舌/毒舌/筆舌/舌戦 等)。
+[[kanji]]
+char = "舌"
+default = "した"
+
+[[kanji.match]]
+prev_char_type = "漢字"
+reading = "ゼツ"
+
+# 「舟」 default 「ふね」 (= 「舟/小舟/舟旅」 単独訓)。
+# prev 漢字 → 「シュウ」 (= 方舟/舟運/舟艇 等)。
+[[kanji]]
+char = "舟"
+default = "ふね"
+
+[[kanji.match]]
+prev_char_type = "漢字"
+reading = "シュウ"
+
+# 「花」 default 「はな」 (= 「花/花畑/桜花」 単独訓)。
+# prev 漢字 → 「カ」 (= 献花/造花/花壇/花瓶/花弁/開花 等)。
+[[kanji]]
+char = "花"
+default = "はな"
+
+[[kanji.match]]
+prev_char_type = "漢字"
+reading = "カ"
+
+# 「芽」 default 「め」 (= 「芽/新芽/若芽」 単独訓)。
+# prev 漢字 → 「ガ」 (= 発芽/胚芽/麦芽/萌芽 等)。
+[[kanji]]
+char = "芽"
+default = "め"
+
+[[kanji.match]]
+prev_char_type = "漢字"
+reading = "ガ"
+
+# 「茎」 default 「くき」 (= 「茎/歯茎」 単独訓)。
+# prev 漢字 → 「ケイ」 (= 球茎/根茎/地下茎 等)。
+[[kanji]]
+char = "茎"
+default = "くき"
+
+[[kanji.match]]
+prev_char_type = "漢字"
+reading = "ケイ"
