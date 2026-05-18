@@ -12343,3 +12343,79 @@ default = "ヒョウ"
 [[kanji.match]]
 next_starts_any = ["は", "が", "を", "に", "の", "で", "と", "も"]
 reading = "こおり"
+
+# 「沸」 default 「フツ」 (= 沸騰/煮沸/沸点)。
+# 動詞 「沸く/沸かす」 は okurigana 列挙で 「わ」 へ切替
+[[kanji]]
+char = "沸"
+default = "フツ"
+
+[[kanji.match]]
+next_starts_any = ["く", "か", "き", "っ", "け", "こ"]
+reading = "わ"
+
+# 「油」 default 「ユ」 (= 油田/原油/石油/灯油/油断/重油)。
+# 単独 + 助詞接続 → 「あぶら」 (= 「油が/油の」 等)
+[[kanji]]
+char = "油"
+default = "ユ"
+
+[[kanji.match]]
+next_starts_any = ["は", "が", "を", "に", "の", "で", "と", "も"]
+reading = "あぶら"
+
+# 「波」 default 「ハ」 (= 波動/電波/波長/波及/波紋/津波/余波)。
+# 単独 + 助詞接続 → 「なみ」 (= 「波が/波の」 等)
+[[kanji]]
+char = "波"
+default = "ハ"
+
+[[kanji.match]]
+next_starts_any = ["は", "が", "を", "に", "の", "で", "と", "も"]
+reading = "なみ"
+
+# 「泡」 default 「ホウ」 (= 気泡/水泡/泡沫/発泡)。
+# 単独 + 助詞接続 → 「あわ」 (= 「泡が/泡の」 等)
+[[kanji]]
+char = "泡"
+default = "ホウ"
+
+[[kanji.match]]
+next_starts_any = ["は", "が", "を", "に", "の", "で", "と", "も"]
+reading = "あわ"
+
+# 「渋」 default 「ジュウ」 (= 渋滞/苦渋/難渋/渋面)。
+# 単独 + 助詞接続 → 「しぶ」 (= 「渋が/渋の」 等)
+[[kanji]]
+char = "渋"
+default = "ジュウ"
+
+[[kanji.match]]
+next_starts_any = ["は", "が", "を", "に", "の", "で", "と", "も"]
+reading = "しぶ"
+
+# 「淫」 default 「イン」 (= 淫乱/淫行/淫蕩/淫祠)。
+# unihan default 「みだら」 は形容動詞、 現代では熟語 dominant
+[[kanji]]
+char = "淫"
+default = "イン"
+
+# 「沢」 default 「タク」 (= 沢山/光沢/贅沢/恩沢/潤沢)。
+# 単独 + 助詞接続 → 「さわ」 (= 「沢が/沢の」 等)
+[[kanji]]
+char = "沢"
+default = "タク"
+
+[[kanji.match]]
+next_starts_any = ["は", "が", "を", "に", "の", "で", "と", "も"]
+reading = "さわ"
+
+# 「殻」 default 「カク」 (= 甲殻/卵殻/貝殻/地殻/外殻)。
+# 単独 + 助詞接続 → 「から」 (= 「殻が/殻の」 等)
+[[kanji]]
+char = "殻"
+default = "カク"
+
+[[kanji.match]]
+next_starts_any = ["は", "が", "を", "に", "の", "で", "と", "も"]
+reading = "から"
