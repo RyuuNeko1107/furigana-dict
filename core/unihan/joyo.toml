@@ -939,7 +939,7 @@ description = "常用漢字 2,136 字 (文化庁 2010-11-30 改訂、 内閣告�
 "格" = "カク"
 # 栽 は core/kanji/overrides.toml の [[kanji]] block に移行
 "桁" = "けた"
-"桃" = "もも"
+# 桃 は core/kanji/overrides.toml の [[kanji]] block に移行
 # 案 は core/kanji/overrides.toml の [[kanji]] block に移行
 # 桑 は core/kanji/overrides.toml の [[kanji]] block に移行
 # 桜 は core/kanji/overrides.toml の [[kanji]] block に移行
@@ -1091,7 +1091,7 @@ description = "常用漢字 2,136 字 (文化庁 2010-11-30 改訂、 内閣告�
 # 満 は core/kanji/overrides.toml の [[kanji]] block に移行
 # 源 は core/kanji/overrides.toml の [[kanji]] block に移行
 # 準 は core/kanji/overrides.toml の [[kanji]] block に移行
-"溝" = "みぞ"
+# 溝 は core/kanji/overrides.toml の [[kanji]] block に移行
 # 溶 は core/kanji/overrides.toml の [[kanji]] block に移行
 # 溺 は core/kanji/overrides.toml の [[kanji]] block に移行
 # 滅 は core/kanji/overrides.toml の [[kanji]] block に移行
@@ -1124,7 +1124,7 @@ description = "常用漢字 2,136 字 (文化庁 2010-11-30 改訂、 内閣告�
 # 濯 は core/kanji/overrides.toml の [[kanji]] block に移行
 # 瀬 は core/kanji/overrides.toml の [[kanji]] block に移行
 "灯" = "トウ"
-"灰" = "はい"
+# 灰 は core/kanji/overrides.toml の [[kanji]] block に移行
 # 災 は core/kanji/overrides.toml の [[kanji]] block に移行
 # 炉 は core/kanji/overrides.toml の [[kanji]] block に移行
 # 炊 は core/kanji/overrides.toml の [[kanji]] block に移行
@@ -1574,7 +1574,7 @@ description = "常用漢字 2,136 字 (文化庁 2010-11-30 改訂、 内閣告�
 # 虫 は core/kanji/overrides.toml の [[kanji]] block に移行
 "虹" = "にじ"
 "蚊" = "カ"
-"蚕" = "かいこ"
+# 蚕 は core/kanji/overrides.toml の [[kanji]] block に移行
 # 蛇 は core/kanji/overrides.toml の [[kanji]] block に移行
 # 蛍 は core/kanji/overrides.toml の [[kanji]] block に移行
 # 蛮 は core/kanji/overrides.toml の [[kanji]] block に移行

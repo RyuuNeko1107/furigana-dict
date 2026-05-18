@@ -14201,6 +14201,47 @@ default = "きも"
 prev_char_type = "漢字"
 reading = "カン"
 
+# 「灰」 default 「はい」 (= 「灰/灰色/灰皿」 単独訓)。
+# prev 漢字 → 「カイ」 (= 石灰/灰塵/灰燼 等の音読み熟語)。
+# 「火山灰 (カザンバイ)」 等の連濁は jukugo file で対応。
+[[kanji]]
+char = "灰"
+default = "はい"
+
+[[kanji.match]]
+prev_char_type = "漢字"
+reading = "カイ"
+
+# 「蚕」 default 「かいこ」 (= 「蚕/蚕の繭」 単独訓)。
+# prev 漢字 → 「サン」 (= 養蚕/蚕業/夏蚕/春蚕 等)。
+[[kanji]]
+char = "蚕"
+default = "かいこ"
+
+[[kanji.match]]
+prev_char_type = "漢字"
+reading = "サン"
+
+# 「溝」 default 「みぞ」 (= 「溝/側溝」 単独訓)。
+# prev 漢字 → 「コウ」 (= 排水溝/下水溝/側溝/海溝 等)。
+[[kanji]]
+char = "溝"
+default = "みぞ"
+
+[[kanji.match]]
+prev_char_type = "漢字"
+reading = "コウ"
+
+# 「桃」 default 「もも」 (= 「桃/桃色/白桃」 単独訓)。
+# prev 漢字 → 「トウ」 (= 桃源郷/扁桃/胡桃 (古典)/桃花/桃源 等)。
+[[kanji]]
+char = "桃"
+default = "もも"
+
+[[kanji.match]]
+prev_char_type = "漢字"
+reading = "トウ"
+
 # 「冬」 default 「ふゆ」 + prev 漢字 → 「トウ」 (= 越冬/初冬/厳冬)
 [[kanji]]
 char = "冬"
