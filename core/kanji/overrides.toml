@@ -12830,3 +12830,72 @@ default = "ボウ"
 [[kanji]]
 char = "謙"
 default = "ケン"
+
+# 「衰」 default 「スイ」 (= 衰退/衰弱/盛衰/老衰/衰亡)。
+# 動詞「衰える」 → okurigana 「え」 で「おとろ」 へ切替 (= 一段動詞 え/える/えた/えて/えない)。
+[[kanji]]
+char = "衰"
+default = "スイ"
+
+[[kanji.match]]
+next_starts_any = ["え"]
+reading = "おとろ"
+
+# 「要」 default 「ヨウ」 (= 要点/必要/重要/主要/概要/要求/要約/要望/要請 等大量)。
+# 動詞「要る」 → okurigana 「る/ら/り/っ/れ/ろ」 で「い」 へ切替 (= 五段動詞)。
+# 「要素/要件/要因/要求」 等は jukugo file で対応 (= band 100 優先)。
+[[kanji]]
+char = "要"
+default = "ヨウ"
+
+[[kanji.match]]
+next_starts_any = ["る", "ら", "り", "っ", "れ", "ろ"]
+reading = "い"
+
+# 「託」 default 「タク」 (= 託児/委託/付託/寄託/結託/信託/負託/嘱託、 動詞「託す」 もタク)。
+# unihan 「かこつける」 は古語動詞、 現代日本語ではほぼ使わない → default 訂正。
+[[kanji]]
+char = "託"
+default = "タク"
+
+# 「訟」 default 「ショウ」 (= 訴訟/争訟、 ほぼ「訴訟」 のみ実用)。
+# unihan 「うったえる」 は古語動詞、 現代日本語では「訴える」 で書く → default 訂正。
+[[kanji]]
+char = "訟"
+default = "ショウ"
+
+# 「診」 default 「シン」 (= 診察/診療/診断/聴診/打診/誤診/受診/健診/検診)。
+# 動詞「診る」 → okurigana 「る/た/て/れ/ら/ろ/よ/な」 で「み」 へ切替 (= 一段動詞)。
+[[kanji]]
+char = "診"
+default = "シン"
+
+[[kanji.match]]
+next_starts_any = ["る", "た", "て", "れ", "ら", "ろ", "よ", "な"]
+reading = "み"
+
+# 「詠」 default 「エイ」 (= 詠歌/独詠/朗詠/吟詠/題詠/詠嘆)。
+# 動詞「詠む」 → okurigana 「む/ま/み/ん/め/も」 で「よ」 へ切替 (= 五段動詞)。
+[[kanji]]
+char = "詠"
+default = "エイ"
+
+[[kanji.match]]
+next_starts_any = ["む", "ま", "み", "ん", "め", "も"]
+reading = "よ"
+
+# 「詩」 default 「シ」 (= 詩集/詩人/漢詩/抒情詩/詩歌/作詩)。
+# unihan 「うた」 は「歌」 の訓で「詩」 単独訓読み用法はない → default 訂正。
+[[kanji]]
+char = "詩"
+default = "シ"
+
+# 「請」 default 「セイ」 (= 請求/要請/申請/普請/招請)。
+# 動詞「請う」 → okurigana 「う/わ/っ/お」 で「こ」 へ切替 (= 五段動詞)。
+[[kanji]]
+char = "請"
+default = "セイ"
+
+[[kanji.match]]
+next_starts_any = ["う", "わ", "っ", "お"]
+reading = "こ"
