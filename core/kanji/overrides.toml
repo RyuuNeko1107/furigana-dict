@@ -12668,3 +12668,15 @@ reading = "むく"
 [[kanji]]
 char = "帆"
 default = "ほ"
+
+# 「江」 default 「え」 (= 入江/江戸/江東/堀江/松江、 地名 / 訓読み圧倒的)。
+# 古典熟語 「江湖 (コウコ)/松花江/長江」 の 「コウ」 は jukugo file で対応。
+[[kanji]]
+char = "江"
+default = "え"
+
+# 「沙」 default 「サ」 (= 沙汰/沙翁/長沙/沙弥/星沙、 音読み主流)。
+# unihan 「すな」 は「砂」 と通用する古語、 現代日本語ではまれ → default 訂正。
+[[kanji]]
+char = "沙"
+default = "サ"
