@@ -12929,3 +12929,68 @@ default = "す"
 [[kanji]]
 char = "黄"
 default = "き"
+
+# 「亥」 default 「い」 (= 干支「亥」 / 亥年 / 亥の刻)。
+# unihan 「ガイ」 は実用ほぼなく、 干支「い」 が圧倒的 → default 訂正。
+[[kanji]]
+char = "亥"
+default = "い"
+
+# 「侃」 default 「カン」 (= 侃侃諤諤 / 名前用)。
+# unihan 「つよい」 は古語訓、 現代日本語では音読み主流 → default 訂正。
+[[kanji]]
+char = "侃"
+default = "カン"
+
+# 「偲」 default 「シ」 (= まれ jukugo「偲懐」 等)。
+# 動詞「偲ぶ」 → okurigana 「ぶ/ば/び/ん/べ/ぼ」 で「しの」 へ切替 (= 五段動詞)。
+[[kanji]]
+char = "偲"
+default = "シ"
+
+[[kanji.match]]
+next_starts_any = ["ぶ", "ば", "び", "ん", "べ", "ぼ"]
+reading = "しの"
+
+# 「勿」 default 「ブツ」 (= 勿論 jukugo override 用)。
+# unihan 「なかれ」 は禁止 古語、 現代では「勿論」 経由のみ実用 → default 訂正。
+[[kanji]]
+char = "勿"
+default = "ブツ"
+
+# 「卯」 default 「う」 (= 干支「卯」 / 卯月 / 卯の刻 / 卯の花)。
+# unihan 「ボウ」 は中国音読みで実用なし → default 訂正。
+[[kanji]]
+char = "卯"
+default = "う"
+
+# 「叶」 default 「かな」 (= 動詞「叶う/叶え/叶い」 全活用 + 単独使用)。
+# 動詞活用「う/わ/っ/え」 含め default のまま「かな」 で統一。
+# unihan 「かない」 (連用形) は単独 + okurigana で誤読リスク → default 訂正。
+[[kanji]]
+char = "叶"
+default = "かな"
+
+# 「圃」 default 「ホ」 (= 圃場/田圃 (タンボ)/老圃)。
+# unihan 「はたけ」 は「畑」 の訓で「圃」 単独訓読み用法はない → default 訂正。
+[[kanji]]
+char = "圃"
+default = "ホ"
+
+# 「圭」 default 「ケイ」 (= 玉圭/白圭/圭角、 名前用「圭」 もケイ)。
+# unihan 「たま」 は「玉」 の訓で「圭」 単独訓読み用法はない → default 訂正。
+[[kanji]]
+char = "圭"
+default = "ケイ"
+
+# 「堵」 default 「ト」 (= 安堵/堵列、 ほぼ「安堵」 のみ実用)。
+# unihan 「かき」 は古語訓、 現代日本語では音読みのみ → default 訂正。
+[[kanji]]
+char = "堵"
+default = "ト"
+
+# 「冨」 default 「とみ」 (= 「富」 異体字、 冨樫/冨田/冨永 等の名前用)。
+# unihan 「とむ」 は動詞「富む」 終止形で「冨」 単独 (= 名前/姓) と合わない → default 訂正。
+[[kanji]]
+char = "冨"
+default = "とみ"
