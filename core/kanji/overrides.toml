@@ -12254,3 +12254,92 @@ default = "コン"
 [[kanji.match]]
 next_starts_any = ["は", "が", "を", "に", "の", "で", "と", "も"]
 reading = "ね"
+
+# 「横」 は [[kanji]] block 化 skip (= corpus regression: 「横振り斬り」 = よこふりきり
+# 期待で 漢字直後 default オウ では 「おうふり」 になり誤読、 unihan = よこ keep)
+
+# 「款」 default 「カン」 (= 款待/借款/定款/落款/分款)。
+# unihan default 「まこと」 は古語、 「誠/真」 が訓 dominant
+[[kanji]]
+char = "款"
+default = "カン"
+
+# 「歌」 default 「カ」 (= 歌詞/歌手/詩歌/校歌/和歌/演歌/賛歌)。
+# 動詞 「歌う」 + 単独 + 助詞 → 「うた」、 形容詞・動詞活用 prev 直後 → 「うた」
+[[kanji]]
+char = "歌"
+default = "カ"
+
+[[kanji.match]]
+next_starts_any = ["う", "わ", "い", "っ", "え", "お"]
+reading = "うた"
+
+[[kanji.match]]
+next_starts_any = ["は", "が", "を", "に", "の", "で", "と", "も", "だ"]
+reading = "うた"
+
+[[kanji.match]]
+prev_ends_any = ["の", "が", "は", "を", "に", "で", "と", "も", "な", "た", "い"]
+reading = "うた"
+
+# 「武」 default 「ブ」 (= 武士/武術/武力/武装/武器/武勇/文武)。
+# unihan default 「たけし」 は古語/人名、 現代では熟語 dominant
+[[kanji]]
+char = "武"
+default = "ブ"
+
+# 「歴」 default 「レキ」 (= 歴史/経歴/履歴/歴代/学歴/職歴/略歴)。
+# unihan default 「へる」 は古語動詞、 「経」 が動詞 dominant
+[[kanji]]
+char = "歴"
+default = "レキ"
+
+# 「歳」 default 「サイ」 (= 歳暮/歳時記/万歳/歳出/歳入/歳月)。
+# 単独 + 助詞接続 → 「とし」 (= 「歳が/歳の」 等)
+[[kanji]]
+char = "歳"
+default = "サイ"
+
+[[kanji.match]]
+next_starts_any = ["は", "が", "を", "に", "の", "で", "と", "も"]
+reading = "とし"
+
+# 「母」 default 「ボ」 (= 母音/母校/父母/聖母/酵母/母性/母艦)。
+# 単独 + 助詞接続 → 「はは」 (= 「母が/母の」 等)
+[[kanji]]
+char = "母"
+default = "ボ"
+
+[[kanji.match]]
+next_starts_any = ["は", "が", "を", "に", "の", "で", "と", "も"]
+reading = "はは"
+
+# 「毛」 default 「モウ」 (= 毛布/毛皮/羊毛/不毛/眉毛/抜毛)。
+# 単独 + 助詞接続 → 「け」 (= 「毛が/毛の」 等)
+[[kanji]]
+char = "毛"
+default = "モウ"
+
+[[kanji.match]]
+next_starts_any = ["は", "が", "を", "に", "の", "で", "と", "も"]
+reading = "け"
+
+# 「氏」 default 「シ」 (= 氏名/氏族/源氏/平氏/某氏/同氏)。
+# 単独 + 助詞接続 → 「うじ」 (= 「氏が/氏の」 等)
+[[kanji]]
+char = "氏"
+default = "シ"
+
+[[kanji.match]]
+next_starts_any = ["は", "が", "を", "に", "の", "で", "と", "も"]
+reading = "うじ"
+
+# 「氷」 default 「ヒョウ」 (= 氷山/氷河/氷点/結氷/解氷/流氷/氷河期)。
+# 単独 + 助詞接続 → 「こおり」 (= 「氷が/氷の」 等)
+[[kanji]]
+char = "氷"
+default = "ヒョウ"
+
+[[kanji.match]]
+next_starts_any = ["は", "が", "を", "に", "の", "で", "と", "も"]
+reading = "こおり"
