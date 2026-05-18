@@ -13309,3 +13309,61 @@ default = "ゴウ"
 [[kanji]]
 char = "杷"
 default = "ハ"
+
+# 「刈」 default 「か」 (= 動詞「刈る/刈り取る/草刈り」 全活用 + 名詞用法)。
+# unihan 「かる」 (終止形) は okurigana「る/ら/り/っ/れ/ろ」 と二重連結する → default 訂正。
+[[kanji]]
+char = "刈"
+default = "か"
+
+# 「咲」 default 「さ」 (= 動詞「咲く/咲き乱れる/開花咲き」 全活用)。
+# unihan 「さく」 (終止形) は okurigana「く/か/き/っ/け/こ」 と二重連結する → default 訂正。
+[[kanji]]
+char = "咲"
+default = "さ"
+
+# 「組」 default 「く」 (= 動詞「組む」 全活用 + 「組合/番組/組み立て」 名詞用法)。
+# unihan 「くむ」 (終止形) は okurigana「む/ま/み/ん/め/も」 と二重連結する → default 訂正。
+[[kanji]]
+char = "組"
+default = "く"
+
+# 「繰」 default 「く」 (= 動詞「繰る/繰り出す/繰り返す」 全活用)。
+# unihan 「くる」 (終止形) は okurigana「る/ら/り/っ/れ/ろ」 と二重連結する → default 訂正。
+[[kanji]]
+char = "繰"
+default = "く"
+
+# 「釣」 default 「つ」 (= 動詞「釣る/釣り上げる/魚釣り」 全活用 + 名詞用法)。
+# unihan 「つる」 (終止形) は okurigana「る/ら/り/っ/れ/ろ」 と二重連結する → default 訂正。
+[[kanji]]
+char = "釣"
+default = "つ"
+
+# 「裁」 default 「サイ」 (= 裁判/裁量/制裁/独裁/体裁、 音読み主流)。
+# 動詞「裁く」 → okurigana 「く/か/き/っ/け/こ」 で「さば」 へ切替。
+# 動詞「裁つ」 (布裁ち) → okurigana 「つ/た/ち/っ/て/と」 で「た」 へ切替。
+# unihan 「たつ」 (終止形) は「裁つ」 限定で okurigana と二重連結する → default 訂正。
+[[kanji]]
+char = "裁"
+default = "サイ"
+
+[[kanji.match]]
+next_starts_any = ["く", "か", "き", "っ", "け", "こ"]
+reading = "さば"
+
+[[kanji.match]]
+next_starts_any = ["つ", "ち", "て", "と"]
+reading = "た"
+
+# 「晒」 default 「さら」 (= 動詞「晒す」 全活用 + 「日晒し/晒し首」 名詞用法)。
+# unihan 「さらし」 (連用形) は okurigana「す/さ/し/せ/そ」 と二重連結する → default 訂正。
+[[kanji]]
+char = "晒"
+default = "さら"
+
+# 「或」 default 「あ」 (= 連体詞「或る」 + 動詞「或る」 古語、 「或いは」 接続詞)。
+# unihan 「ある」 (終止形) は okurigana「る/ら/り/っ/れ/ろ/い」 と二重連結する → default 訂正。
+[[kanji]]
+char = "或"
+default = "あ"
