@@ -12770,3 +12770,63 @@ default = "ヨウ"
 [[kanji.match]]
 next_starts_any = ["は", "が", "を", "に", "の", "で", "と", "も", "や"]
 reading = "は"
+
+# 「製」 default 「セイ」 (= 製品/製造/製作/製本/手製/和製)。
+# unihan 「たつ」 は「裁」 の訓 (= 布を裁つ) が誤割当されたもの → default 緊急訂正。
+[[kanji]]
+char = "製"
+default = "セイ"
+
+# 「衡」 default 「コウ」 (= 均衡/平衡/衡量/度量衡)。
+# unihan 「はかり」 は古語訓、 現代日本語ではほぼ使わない → default 訂正。
+[[kanji]]
+char = "衡"
+default = "コウ"
+
+# 「衷」 default 「チュウ」 (= 衷心/折衷/苦衷/衷情)。
+# unihan 「うち」 は古語訓、 現代日本語ではほぼ使わない → default 訂正。
+[[kanji]]
+char = "衷"
+default = "チュウ"
+
+# 「裕」 default 「ユウ」 (= 裕福/余裕/富裕/裕度)。
+# unihan 「ゆたか」 は「豊」 の訓で「裕」 単独訓読み用法はない → default 訂正。
+[[kanji]]
+char = "裕"
+default = "ユウ"
+
+# 「覇」 default 「ハ」 (= 覇権/制覇/連覇/覇者/覇王/争覇)。
+# unihan 「はたがしら」 は古語訓、 現代日本語ではほぼ使わない → default 訂正。
+[[kanji]]
+char = "覇"
+default = "ハ"
+
+# 「覧」 default 「ラン」 (= 閲覧/観覧/一覧/回覧/便覧/総覧/展覧)。
+# unihan 「みる」 は「見」 と混同、 「覧」 単独訓読み動詞用法はない → default 訂正。
+[[kanji]]
+char = "覧"
+default = "ラン"
+
+# 「訃」 default 「フ」 (= 訃報/訃告、 ほぼ「訃報」 のみ実用)。
+# unihan 「しらせ」 は古語訓、 現代日本語では音読みのみ → default 訂正。
+[[kanji]]
+char = "訃"
+default = "フ"
+
+# 「詔」 default 「ショウ」 (= 詔書/詔勅/大詔)。
+# unihan 「みことのり」 は古語訓、 現代日本語ではほぼ使わない → default 訂正。
+[[kanji]]
+char = "詔"
+default = "ショウ"
+
+# 「貌」 default 「ボウ」 (= 容貌/美貌/全貌/相貌/変貌/風貌)。
+# unihan 「かたち」 は「形」 の訓、 「貌」 単独訓読み用法はない → default 訂正。
+[[kanji]]
+char = "貌"
+default = "ボウ"
+
+# 「謙」 default 「ケン」 (= 謙虚/謙遜/謙譲/恭謙)。
+# unihan 「へりくだる」 は動詞古語、 現代日本語ではほぼ使わない → default 訂正。
+[[kanji]]
+char = "謙"
+default = "ケン"
