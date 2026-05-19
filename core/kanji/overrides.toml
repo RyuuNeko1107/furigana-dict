@@ -15688,6 +15688,31 @@ default = "にじ"
 char = "蚊"
 default = "カ"
 
+# 「蜜」 default 「みつ」 (= 「蜜/蜂蜜/蜜柑/蜜月」 訓・音同 pronunciation)
+[[kanji]]
+char = "蜜"
+default = "みつ"
+
+# 「袖」 default 「そで」 (= 「袖/振袖/袖口/袖の下」 訓主体)
+[[kanji]]
+char = "袖"
+default = "そで"
+
+# 「裸」 default 「はだか」 (= 「裸/裸足/赤裸々/全裸」 訓主体)
+[[kanji]]
+char = "裸"
+default = "はだか"
+
+# 「裾」 default 「すそ」 (= 「裾/裾野/山裾」 訓のみ)
+[[kanji]]
+char = "裾"
+default = "すそ"
+
+# 「褐」 default 「カツ」 (= 褐色/茶褐色/暗褐色、 音読みのみ)
+[[kanji]]
+char = "褐"
+default = "カツ"
+
 # 「冬」 default 「ふゆ」 + prev 漢字 → 「トウ」 (= 越冬/初冬/厳冬)
 [[kanji]]
 char = "冬"

@@ -1579,7 +1579,7 @@ description = "常用漢字 2,136 字 (文化庁 2010-11-30 改訂、 内閣告�
 # 蛍 は core/kanji/overrides.toml の [[kanji]] block に移行
 # 蛮 は core/kanji/overrides.toml の [[kanji]] block に移行
 # 蜂 は core/kanji/overrides.toml の [[kanji]] block に移行
-"蜜" = "みつ"
+# 蜜 は core/kanji/overrides.toml の [[kanji]] block に移行
 # 融 は core/kanji/overrides.toml の [[kanji]] block に移行
 # 血 は core/kanji/overrides.toml の [[kanji]] block に移行
 # 衆 は core/kanji/overrides.toml の [[kanji]] block に移行
@@ -1592,7 +1592,7 @@ description = "常用漢字 2,136 字 (文化庁 2010-11-30 改訂、 内閣告�
 # 衰 は core/kanji/overrides.toml の [[kanji]] block に移行
 # 衷 は core/kanji/overrides.toml の [[kanji]] block に移行
 # 袋 は core/kanji/overrides.toml の [[kanji]] block に移行
-"袖" = "そで"
+# 袖 は core/kanji/overrides.toml の [[kanji]] block に移行
 # 被 は core/kanji/overrides.toml の [[kanji]] block に移行
 # 裁 は core/kanji/overrides.toml の [[kanji]] block に移行
 # 裂 は core/kanji/overrides.toml の [[kanji]] block に移行
@@ -1600,11 +1600,11 @@ description = "常用漢字 2,136 字 (文化庁 2010-11-30 改訂、 内閣告�
 # 裏 は core/kanji/overrides.toml の [[kanji]] block に移行
 # 裕 は core/kanji/overrides.toml の [[kanji]] block に移行
 # 補 は core/kanji/overrides.toml の [[kanji]] block に移行
-"裸" = "はだか"
+# 裸 は core/kanji/overrides.toml の [[kanji]] block に移行
 # 製 は core/kanji/overrides.toml の [[kanji]] block に移行
-"裾" = "すそ"
+# 裾 は core/kanji/overrides.toml の [[kanji]] block に移行
 # 複 は core/kanji/overrides.toml の [[kanji]] block に移行
-"褐" = "カツ"
+# 褐 は core/kanji/overrides.toml の [[kanji]] block に移行
 # 褒 は core/kanji/overrides.toml の [[kanji]] block に移行
 "襟" = "えり"
 # 襲 は core/kanji/overrides.toml の [[kanji]] block に移行
