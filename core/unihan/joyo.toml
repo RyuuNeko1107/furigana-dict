@@ -1184,17 +1184,17 @@ description = "常用漢字 2,136 字 (文化庁 2010-11-30 改訂、 内閣告�
 # 球 は core/kanji/overrides.toml の [[kanji]] block に移行
 # 理 は core/kanji/overrides.toml の [[kanji]] block に移行
 # 琴 は core/kanji/overrides.toml の [[kanji]] block に移行
-"瑠" = "ル"
-"璃" = "リ"
+# 瑠 は core/kanji/overrides.toml の [[kanji]] block に移行
+# 璃 は core/kanji/overrides.toml の [[kanji]] block に移行
 # 璧 は core/kanji/overrides.toml の [[kanji]] block に移行
 # 環 は core/kanji/overrides.toml の [[kanji]] block に移行
 # 璽 は core/kanji/overrides.toml の [[kanji]] block に移行
-"瓦" = "かわら"
+# 瓦 は core/kanji/overrides.toml の [[kanji]] block に移行
 # 瓶 は core/kanji/overrides.toml の [[kanji]] block に移行
 # 甘 は core/kanji/overrides.toml の [[kanji]] block に移行
 # 甚 は core/kanji/overrides.toml の [[kanji]] block に移行
-"産" = "サン"
-"田" = "デン"
+# 産 は core/kanji/overrides.toml の [[kanji]] block に移行
+# 田 は core/kanji/overrides.toml の [[kanji]] block に移行
 # 由 は core/kanji/overrides.toml の [[kanji]] block に移行
 # 甲 は core/kanji/overrides.toml の [[kanji]] block に移行
 # 申 は core/kanji/overrides.toml の [[kanji]] block に移行

@@ -15363,6 +15363,31 @@ default = "なお"
 char = "琴"
 default = "こと"
 
+# 「瑠」 default 「ル」 (= 浄瑠璃/瑠璃、 音読み)
+[[kanji]]
+char = "瑠"
+default = "ル"
+
+# 「璃」 default 「リ」 (= 瑠璃のみ実用、 音読み)
+[[kanji]]
+char = "璃"
+default = "リ"
+
+# 「瓦」 default 「かわら」 (= 「瓦/屋根瓦/瓦版/煉瓦」 訓主体、 「瓦解」 まれ)
+[[kanji]]
+char = "瓦"
+default = "かわら"
+
+# 「産」 default 「サン」 (= 生産/産業/出産/特産/財産、 音読み)
+[[kanji]]
+char = "産"
+default = "サン"
+
+# 「田」 default 「デン」 (= 水田/田園/油田、 音読み。 名前/地名「田中/田畑」 jukugo 経由)
+[[kanji]]
+char = "田"
+default = "デン"
+
 # 「冬」 default 「ふゆ」 + prev 漢字 → 「トウ」 (= 越冬/初冬/厳冬)
 [[kanji]]
 char = "冬"
