@@ -15588,6 +15588,31 @@ default = "ノウ"
 char = "腎"
 default = "ジン"
 
+# 「腺」 default 「セン」 (= 涙腺/汗腺/腺病/扁桃腺、 音読みのみ)
+[[kanji]]
+char = "腺"
+default = "セン"
+
+# 「膚」 default 「はだ」 (= 「膚/皮膚/完膚」 訓 + jukugo)
+[[kanji]]
+char = "膚"
+default = "はだ"
+
+# 「膜」 default 「まく」 (= 鼓膜/角膜/網膜/粘膜/結膜、 訓「まく」 = 音「マク」 同 pronunciation)
+[[kanji]]
+char = "膜"
+default = "まく"
+
+# 「膝」 default 「ひざ」 (= 「膝/膝下/膝蓋/膝枕」 訓主体)
+[[kanji]]
+char = "膝"
+default = "ひざ"
+
+# 「膳」 default 「ゼン」 (= 配膳/お膳/食膳/膳部、 音読み)
+[[kanji]]
+char = "膳"
+default = "ゼン"
+
 # 「冬」 default 「ふゆ」 + prev 漢字 → 「トウ」 (= 越冬/初冬/厳冬)
 [[kanji]]
 char = "冬"
