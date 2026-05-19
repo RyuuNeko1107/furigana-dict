@@ -14563,6 +14563,80 @@ default = "えだ"
 prev_char_type = "漢字"
 reading = "シ"
 
+# 「机」 default 「つくえ」 + prev 漢字 → 「キ」 (= 机上/書机/学机)
+[[kanji]]
+char = "机"
+default = "つくえ"
+
+[[kanji.match]]
+prev_char_type = "漢字"
+reading = "キ"
+
+# 「空」 default 「そら」 + prev 漢字 → 「クウ」 (= 空気/空中/空腹/空想/架空/真空/上空)
+[[kanji]]
+char = "空"
+default = "そら"
+
+[[kanji.match]]
+prev_char_type = "漢字"
+reading = "クウ"
+
+# 「羊」 default 「ひつじ」 + prev 漢字 → 「ヨウ」 (= 羊毛/羊水/羊皮紙/牧羊/羊歯)
+[[kanji]]
+char = "羊"
+default = "ひつじ"
+
+[[kanji.match]]
+prev_char_type = "漢字"
+reading = "ヨウ"
+
+# 「皆」 default 「みな」 + prev 漢字 → 「カイ」 (= 皆勤/皆無/皆既)
+[[kanji]]
+char = "皆"
+default = "みな"
+
+[[kanji.match]]
+prev_char_type = "漢字"
+reading = "カイ"
+
+# 「魚」 default 「さかな」 + prev 漢字 → 「ギョ」 (= 金魚/魚雷/魚拓/稚魚/熱帯魚)
+# 「魚介」 等は jukugo file で対応。
+[[kanji]]
+char = "魚"
+default = "さかな"
+
+[[kanji.match]]
+prev_char_type = "漢字"
+reading = "ギョ"
+
+# 「傷」 default 「きず」 + prev 漢字 → 「ショウ」 (= 傷害/傷心/負傷/重傷/感傷/死傷)
+[[kanji]]
+char = "傷"
+default = "きず"
+
+[[kanji.match]]
+prev_char_type = "漢字"
+reading = "ショウ"
+
+# 「酒」 default 「さけ」 + prev 漢字 → 「シュ」 (= 飲酒/地酒/大酒/銘酒/洋酒/酒造)
+# 「清酒/和菓子」 等は jukugo file で対応。
+[[kanji]]
+char = "酒"
+default = "さけ"
+
+[[kanji.match]]
+prev_char_type = "漢字"
+reading = "シュ"
+
+# 「里」 default 「さと」 + prev 漢字 → 「リ」 (= 村里/郷里/千里/万里/海里)
+[[kanji]]
+char = "里"
+default = "さと"
+
+[[kanji.match]]
+prev_char_type = "漢字"
+reading = "リ"
+
 # 「冬」 default 「ふゆ」 + prev 漢字 → 「トウ」 (= 越冬/初冬/厳冬)
 [[kanji]]
 char = "冬"
