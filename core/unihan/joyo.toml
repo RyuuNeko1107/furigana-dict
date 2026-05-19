@@ -1944,7 +1944,7 @@ description = "常用漢字 2,136 字 (文化庁 2010-11-30 改訂、 内閣告�
 # 韻 は core/kanji/overrides.toml の [[kanji]] block に移行
 # 響 は core/kanji/overrides.toml の [[kanji]] block に移行
 # 頂 は core/kanji/overrides.toml の [[kanji]] block に移行
-"頃" = "ころ"
+# 頃 は core/kanji/overrides.toml の [[kanji]] block に移行
 # 項 は core/kanji/overrides.toml の [[kanji]] block に移行
 # 順 は core/kanji/overrides.toml の [[kanji]] block に移行
 # 須 は core/kanji/overrides.toml の [[kanji]] block に移行
@@ -1959,7 +1959,7 @@ description = "常用漢字 2,136 字 (文化庁 2010-11-30 改訂、 内閣告�
 # 頼 は core/kanji/overrides.toml の [[kanji]] block に移行
 # 題 は core/kanji/overrides.toml の [[kanji]] block に移行
 # 額 は core/kanji/overrides.toml の [[kanji]] block に移行
-"顎" = "あご"
+# 顎 は core/kanji/overrides.toml の [[kanji]] block に移行
 # 顔 は core/kanji/overrides.toml の [[kanji]] block に移行
 # 顕 は core/kanji/overrides.toml の [[kanji]] block に移行
 # 願 は core/kanji/overrides.toml の [[kanji]] block に移行
@@ -1970,13 +1970,13 @@ description = "常用漢字 2,136 字 (文化庁 2010-11-30 改訂、 内閣告�
 # 飼 は core/kanji/overrides.toml の [[kanji]] block に移行
 # 飽 は core/kanji/overrides.toml の [[kanji]] block に移行
 # 飾 は core/kanji/overrides.toml の [[kanji]] block に移行
-"餅" = "もち"
+# 餅 は core/kanji/overrides.toml の [[kanji]] block に移行
 # 養 は core/kanji/overrides.toml の [[kanji]] block に移行
-"餌" = "え"
+# 餌 は core/kanji/overrides.toml の [[kanji]] block に移行
 # 餓 は core/kanji/overrides.toml の [[kanji]] block に移行
 # 館 は core/kanji/overrides.toml の [[kanji]] block に移行 (★round 49)
 # 首 は core/kanji/overrides.toml の [[kanji]] block に移行
-"香" = "コウ"
+# 香 は core/kanji/overrides.toml の [[kanji]] block に移行
 # 馬 は core/kanji/overrides.toml の [[kanji]] block に移行
 # 駄 は core/kanji/overrides.toml の [[kanji]] block に移行
 "駅" = "エキ"

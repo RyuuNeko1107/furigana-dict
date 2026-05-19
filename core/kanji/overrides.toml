@@ -15888,6 +15888,31 @@ default = "フン"
 char = "面"
 default = "メン"
 
+# 「頃」 default 「ころ」 (= 「頃/頃合/年頃/見頃」 訓のみ)
+[[kanji]]
+char = "頃"
+default = "ころ"
+
+# 「顎」 default 「あご」 (= 「顎/上顎/下顎/顎関節」 訓主体)
+[[kanji]]
+char = "顎"
+default = "あご"
+
+# 「餅」 default 「もち」 (= 「餅/餅米/煎餅/焼餅」 訓主体)
+[[kanji]]
+char = "餅"
+default = "もち"
+
+# 「餌」 default 「え」 (= 「餌/餌食/餌付け」 訓 + jukugo)
+[[kanji]]
+char = "餌"
+default = "え"
+
+# 「香」 default 「コウ」 (= 香水/線香/香料/抹香/香気、 音読み)
+[[kanji]]
+char = "香"
+default = "コウ"
+
 # 「冬」 default 「ふゆ」 + prev 漢字 → 「トウ」 (= 越冬/初冬/厳冬)
 [[kanji]]
 char = "冬"
