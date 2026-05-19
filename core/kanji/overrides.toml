@@ -15813,6 +15813,31 @@ default = "コウ"
 char = "釜"
 default = "かま"
 
+# 「鉢」 default 「ハチ」 (= 鉢/植木鉢/火鉢、 音「ハチ」 = 訓「はち」 同 pronunciation)
+[[kanji]]
+char = "鉢"
+default = "ハチ"
+
+# 「銘」 default 「メイ」 (= 銘柄/銘酒/感銘/正銘/銘文、 音読み)
+[[kanji]]
+char = "銘"
+default = "メイ"
+
+# 「錠」 default 「ジョウ」 (= 錠剤/施錠/開錠/南京錠、 音読み)
+[[kanji]]
+char = "錠"
+default = "ジョウ"
+
+# 「錦」 default 「にしき」 (= 「錦/錦糸/錦秋/錦繍」 訓主体)
+[[kanji]]
+char = "錦"
+default = "にしき"
+
+# 「鍋」 default 「なべ」 (= 「鍋/土鍋/鉄鍋/鍋物」 訓主体)
+[[kanji]]
+char = "鍋"
+default = "なべ"
+
 # 「冬」 default 「ふゆ」 + prev 漢字 → 「トウ」 (= 越冬/初冬/厳冬)
 [[kanji]]
 char = "冬"

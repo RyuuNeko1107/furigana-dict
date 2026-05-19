@@ -1849,22 +1849,22 @@ description = "常用漢字 2,136 字 (文化庁 2010-11-30 改訂、 内閣告�
 # 鈍 は core/kanji/overrides.toml の [[kanji]] block に移行
 # 鈴 は core/kanji/overrides.toml の [[kanji]] block に移行
 # 鉛 は core/kanji/overrides.toml の [[kanji]] block に移行
-"鉢" = "ハチ"
+# 鉢 は core/kanji/overrides.toml の [[kanji]] block に移行
 # 鉱 は core/kanji/overrides.toml の [[kanji]] block に移行
 # 「銃」 = round 47 で kanji/overrides.toml [[kanji]] block (default = ジュウ) に移行
 # 銅 は core/kanji/overrides.toml の [[kanji]] block に移行
-"銘" = "メイ"
+# 銘 は core/kanji/overrides.toml の [[kanji]] block に移行
 # 銭 は core/kanji/overrides.toml の [[kanji]] block に移行
 # 鋭 は core/kanji/overrides.toml の [[kanji]] block に移行
 # 鋳 は core/kanji/overrides.toml の [[kanji]] block に移行
 # 鋼 は core/kanji/overrides.toml の [[kanji]] block に移行
-"錠" = "ジョウ"
-"錦" = "にしき"
+# 錠 は core/kanji/overrides.toml の [[kanji]] block に移行
+# 錦 は core/kanji/overrides.toml の [[kanji]] block に移行
 # 錬 は core/kanji/overrides.toml の [[kanji]] block に移行
 # 錮 は core/kanji/overrides.toml の [[kanji]] block に移行
 # 錯 は core/kanji/overrides.toml の [[kanji]] block に移行
 # 録 は core/kanji/overrides.toml の [[kanji]] block に移行
-"鍋" = "なべ"
+# 鍋 は core/kanji/overrides.toml の [[kanji]] block に移行
 # 鍛 は core/kanji/overrides.toml の [[kanji]] block に移行
 # 鍵 は core/kanji/overrides.toml の [[kanji]] block に移行
 "鎌" = "かま"
