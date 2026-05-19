@@ -15063,6 +15063,31 @@ default = "スン"
 char = "尻"
 default = "しり"
 
+# 「岡」 default 「おか」 (= 「岡山/福岡/静岡」 等の jukugo + 「岡」 単独訓)
+[[kanji]]
+char = "岡"
+default = "おか"
+
+# 「岬」 default 「みさき」 (= 「岬」 訓のみ実用)
+[[kanji]]
+char = "岬"
+default = "みさき"
+
+# 「崎」 default 「さき」 (= 「長崎/川崎/宮崎」 等の jukugo + 「崎」 単独訓・名前)
+[[kanji]]
+char = "崎"
+default = "さき"
+
+# 「嵐」 default 「あらし」 (= 「嵐/嵐山/砂嵐」 訓主体)
+[[kanji]]
+char = "嵐"
+default = "あらし"
+
+# 「州」 default 「シュウ」 (= 九州/欧州/濠州/本州/三角州、 音読み主体)
+[[kanji]]
+char = "州"
+default = "シュウ"
+
 # 「冬」 default 「ふゆ」 + prev 漢字 → 「トウ」 (= 越冬/初冬/厳冬)
 [[kanji]]
 char = "冬"
