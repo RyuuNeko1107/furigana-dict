@@ -1301,14 +1301,14 @@ description = "常用漢字 2,136 字 (文化庁 2010-11-30 改訂、 内閣告�
 # 私 は core/kanji/overrides.toml の [[kanji]] block に移行
 # 秋 は core/kanji/overrides.toml の [[kanji]] block に移行
 # 科 は core/kanji/overrides.toml の [[kanji]] block に移行
-"秒" = "ビョウ"
+# 秒 は core/kanji/overrides.toml の [[kanji]] block に移行
 # 秘 は core/kanji/overrides.toml の [[kanji]] block に移行
-"租" = "ソ"
-"秩" = "チツ"
+# 租 は core/kanji/overrides.toml の [[kanji]] block に移行
+# 秩 は core/kanji/overrides.toml の [[kanji]] block に移行
 # 称 は core/kanji/overrides.toml の [[kanji]] block に移行
 # 移 は core/kanji/overrides.toml の [[kanji]] block に移行
 # 程 は core/kanji/overrides.toml の [[kanji]] block に移行
-"税" = "ゼイ"
+# 税 は core/kanji/overrides.toml の [[kanji]] block に移行
 # 稚 は core/kanji/overrides.toml の [[kanji]] block に移行
 # "種" は core/kanji/overrides.toml の [[kanji]] block に移行
 # 稲 は core/kanji/overrides.toml の [[kanji]] block に移行
@@ -1326,7 +1326,7 @@ description = "常用漢字 2,136 字 (文化庁 2010-11-30 改訂、 内閣告�
 # 突 は core/kanji/overrides.toml の [[kanji]] block に移行
 # 窃 は core/kanji/overrides.toml の [[kanji]] block に移行
 # 窒 は core/kanji/overrides.toml の [[kanji]] block に移行
-"窓" = "まど"
+# 窓 は core/kanji/overrides.toml の [[kanji]] block に移行
 # 窟 は core/kanji/overrides.toml の [[kanji]] block に移行
 # 窮 は core/kanji/overrides.toml の [[kanji]] block に移行
 "窯" = "かま"

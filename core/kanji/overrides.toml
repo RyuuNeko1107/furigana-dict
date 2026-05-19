@@ -15463,6 +15463,31 @@ default = "ジ"
 char = "票"
 default = "ヒョウ"
 
+# 「秒」 default 「ビョウ」 (= 一秒/秒針/秒速、 音読みのみ)
+[[kanji]]
+char = "秒"
+default = "ビョウ"
+
+# 「租」 default 「ソ」 (= 租税/地租/租借、 音読みのみ)
+[[kanji]]
+char = "租"
+default = "ソ"
+
+# 「秩」 default 「チツ」 (= 秩序/秩父、 音読み)
+[[kanji]]
+char = "秩"
+default = "チツ"
+
+# 「税」 default 「ゼイ」 (= 税金/消費税/関税/所得税/減税、 音読み)
+[[kanji]]
+char = "税"
+default = "ゼイ"
+
+# 「窓」 default 「まど」 (= 「窓/窓口/出窓/天窓」 訓主体)
+[[kanji]]
+char = "窓"
+default = "まど"
+
 # 「冬」 default 「ふゆ」 + prev 漢字 → 「トウ」 (= 越冬/初冬/厳冬)
 [[kanji]]
 char = "冬"
