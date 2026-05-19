@@ -1376,7 +1376,7 @@ description = "常用漢字 2,136 字 (文化庁 2010-11-30 改訂、 内閣告�
 # 紅 は core/kanji/overrides.toml の [[kanji]] block に移行
 # 紋 は core/kanji/overrides.toml の [[kanji]] block に移行
 # 納 は core/kanji/overrides.toml の [[kanji]] block に移行
-"純" = "ジュン"
+# 純 は core/kanji/overrides.toml の [[kanji]] block に移行
 # 紙 は core/kanji/overrides.toml の [[kanji]] block に移行
 # 級 は core/kanji/overrides.toml の [[kanji]] block に移行
 # 紛 は core/kanji/overrides.toml の [[kanji]] block に移行
@@ -1388,7 +1388,7 @@ description = "常用漢字 2,136 字 (文化庁 2010-11-30 改訂、 内閣告�
 # 細 は core/kanji/overrides.toml の [[kanji]] block に移行
 # 紳 は core/kanji/overrides.toml の [[kanji]] block に移行
 # 紹 は core/kanji/overrides.toml の [[kanji]] block に移行
-"紺" = "コン"
+# 紺 は core/kanji/overrides.toml の [[kanji]] block に移行
 # 組 は core/kanji/overrides.toml の [[kanji]] block に移行
 # 経 は core/kanji/overrides.toml の [[kanji]] block に移行
 # 結 は core/kanji/overrides.toml の [[kanji]] block に移行
@@ -1423,15 +1423,15 @@ description = "常用漢字 2,136 字 (文化庁 2010-11-30 改訂、 内閣告�
 # 縮 は core/kanji/overrides.toml の [[kanji]] block に移行
 # 績 は core/kanji/overrides.toml の [[kanji]] block に移行
 # 繁 は core/kanji/overrides.toml の [[kanji]] block に移行
-"繊" = "セン"
+# 繊 は core/kanji/overrides.toml の [[kanji]] block に移行
 # 織 は core/kanji/overrides.toml の [[kanji]] block に移行
 # 繕 は core/kanji/overrides.toml の [[kanji]] block に移行
-"繭" = "まゆ"
+# 繭 は core/kanji/overrides.toml の [[kanji]] block に移行
 # 繰 は core/kanji/overrides.toml の [[kanji]] block に移行
 # 缶 は core/kanji/overrides.toml の [[kanji]] block に移行
 # 罪 は core/kanji/overrides.toml の [[kanji]] block に移行
 # 置 は core/kanji/overrides.toml の [[kanji]] block に移行
-"罰" = "バツ"
+# 罰 は core/kanji/overrides.toml の [[kanji]] block に移行
 # 署 は core/kanji/overrides.toml の [[kanji]] block に移行
 # 罵 は core/kanji/overrides.toml の [[kanji]] block に移行
 # 罷 は core/kanji/overrides.toml の [[kanji]] block に移行

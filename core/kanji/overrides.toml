@@ -15513,6 +15513,31 @@ default = "はし"
 char = "簿"
 default = "ボ"
 
+# 「純」 default 「ジュン」 (= 純粋/単純/純白/不純/清純、 音読み)
+[[kanji]]
+char = "純"
+default = "ジュン"
+
+# 「紺」 default 「コン」 (= 紺色/濃紺/紺青/茄子紺、 音読み)
+[[kanji]]
+char = "紺"
+default = "コン"
+
+# 「繊」 default 「セン」 (= 繊維/繊細/化繊/混繊、 音読み)
+[[kanji]]
+char = "繊"
+default = "セン"
+
+# 「繭」 default 「まゆ」 (= 「繭/繭玉/蚕の繭」 訓主体)
+[[kanji]]
+char = "繭"
+default = "まゆ"
+
+# 「罰」 default 「バツ」 (= 罰金/処罰/天罰/賞罰/罰則、 音読み)
+[[kanji]]
+char = "罰"
+default = "バツ"
+
 # 「冬」 default 「ふゆ」 + prev 漢字 → 「トウ」 (= 越冬/初冬/厳冬)
 [[kanji]]
 char = "冬"
