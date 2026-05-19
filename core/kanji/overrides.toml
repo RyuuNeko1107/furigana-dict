@@ -15913,6 +15913,31 @@ default = "え"
 char = "香"
 default = "コウ"
 
+# 「駅」 default 「エキ」 (= 駅/駅前/各駅/終駅、 音読み主体)
+[[kanji]]
+char = "駅"
+default = "エキ"
+
+# 「駒」 default 「こま」 (= 「駒/将棋の駒/駒形」 訓主体)
+[[kanji]]
+char = "駒"
+default = "こま"
+
+# 「髄」 default 「ズイ」 (= 骨髄/脊髄/真髄/精髄、 音読み)
+[[kanji]]
+char = "髄"
+default = "ズイ"
+
+# 「鬱」 default 「ウツ」 (= 鬱病/鬱憤/抑鬱/鬱屈、 音読み)
+[[kanji]]
+char = "鬱"
+default = "ウツ"
+
+# 「魅」 default 「ミ」 (= 魅力/魅了/魅惑/魅入る、 音読み)
+[[kanji]]
+char = "魅"
+default = "ミ"
+
 # 「冬」 default 「ふゆ」 + prev 漢字 → 「トウ」 (= 越冬/初冬/厳冬)
 [[kanji]]
 char = "冬"
