@@ -14838,6 +14838,31 @@ default = "かめ"
 char = "仁"
 default = "ジン"
 
+# 「仙」 default 「セン」 (= 仙人/神仙/酒仙/水仙 等の音読み主流、 訓「やまびと」 古語)
+[[kanji]]
+char = "仙"
+default = "セン"
+
+# 「以」 default 「イ」 (= 以上/以下/以前/以後/所以 等の音読み圧倒的、 訓「もって」 副詞のみ)
+[[kanji]]
+char = "以"
+default = "イ"
+
+# 「価」 default 「カ」 (= 価格/価値/評価/物価 等の音読み主流、 訓「あたい」 まれ)
+[[kanji]]
+char = "価"
+default = "カ"
+
+# 「侯」 default 「コウ」 (= 諸侯/王侯/侯爵/列侯、 ほぼ音読みのみ)
+[[kanji]]
+char = "侯"
+default = "コウ"
+
+# 「俗」 default 「ゾク」 (= 俗世/世俗/民俗/俗悪/通俗/低俗、 音読み圧倒的)
+[[kanji]]
+char = "俗"
+default = "ゾク"
+
 # 「冬」 default 「ふゆ」 + prev 漢字 → 「トウ」 (= 越冬/初冬/厳冬)
 [[kanji]]
 char = "冬"

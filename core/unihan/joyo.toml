@@ -59,10 +59,10 @@ description = "常用漢字 2,136 字 (文化庁 2010-11-30 改訂、 内閣告�
 # 仕 は core/kanji/overrides.toml の [[kanji]] block に移行
 # 他 は core/kanji/overrides.toml の [[kanji]] block に移行
 # 付 は core/kanji/overrides.toml の [[kanji]] block に移行
-"仙" = "セン"
+# 仙 は core/kanji/overrides.toml の [[kanji]] block に移行
 # 代 は core/kanji/overrides.toml の [[kanji]] block に移行
 # 令 は core/kanji/overrides.toml の [[kanji]] block に移行
-"以" = "イ"
+# 以 は core/kanji/overrides.toml の [[kanji]] block に移行
 # 仮 は core/kanji/overrides.toml の [[kanji]] block に移行
 # 仰 は core/kanji/overrides.toml の [[kanji]] block に移行
 # 仲 は core/kanji/overrides.toml の [[kanji]] block に移行
@@ -90,16 +90,16 @@ description = "常用漢字 2,136 字 (文化庁 2010-11-30 改訂、 内閣告�
 # 侍 は core/kanji/overrides.toml の [[kanji]] block に移行
 # 供 は core/kanji/overrides.toml の [[kanji]] block に移行
 # 依 は core/kanji/overrides.toml の [[kanji]] block に移行
-"価" = "カ"
+# 価 は core/kanji/overrides.toml の [[kanji]] block に移行
 # 侮 は core/kanji/overrides.toml の [[kanji]] block に移行
-"侯" = "コウ"
+# 侯 は core/kanji/overrides.toml の [[kanji]] block に移行
 # 侵 は core/kanji/overrides.toml の [[kanji]] block に移行
 # 侶 は core/kanji/overrides.toml の [[kanji]] block に移行
 # 便 は core/kanji/overrides.toml の [[kanji]] block に移行
 # 係 は core/kanji/overrides.toml の [[kanji]] block に移行
 # 促 は core/kanji/overrides.toml の [[kanji]] block に移行
 # 俊 は core/kanji/overrides.toml の [[kanji]] block に移行
-"俗" = "ゾク"
+# 俗 は core/kanji/overrides.toml の [[kanji]] block に移行
 # 保 は core/kanji/overrides.toml の [[kanji]] block に移行
 # 信 は core/kanji/overrides.toml の [[kanji]] block に移行
 # 修 は core/kanji/overrides.toml の [[kanji]] block に移行
