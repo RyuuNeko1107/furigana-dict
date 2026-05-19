@@ -15313,6 +15313,31 @@ default = "はま"
 char = "浦"
 default = "うら"
 
+# 「液」 default 「エキ」 (= 液体/血液/果汁/胃液/汁液、 音読み主体)
+[[kanji]]
+char = "液"
+default = "エキ"
+
+# 「滝」 default 「たき」 (= 「滝/滝壺/滝行/滝川」 訓主体、 国字)
+[[kanji]]
+char = "滝"
+default = "たき"
+
+# 「漠」 default 「バク」 (= 砂漠/漠然/広漠/茫漠、 音読みのみ)
+[[kanji]]
+char = "漠"
+default = "バク"
+
+# 「潟」 default 「かた」 (= 「潟/新潟/干潟」 訓 + jukugo)
+[[kanji]]
+char = "潟"
+default = "かた"
+
+# 「灯」 default 「トウ」 (= 電灯/灯台/街灯/灯火/点灯、 音読み)
+[[kanji]]
+char = "灯"
+default = "トウ"
+
 # 「冬」 default 「ふゆ」 + prev 漢字 → 「トウ」 (= 越冬/初冬/厳冬)
 [[kanji]]
 char = "冬"
