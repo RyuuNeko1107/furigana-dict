@@ -16805,6 +16805,106 @@ default = "コ"
 char = "琳"
 default = "リン"
 
+# 「琵」 default 「ビ」 (= 琵琶のみ実用)
+[[kanji]]
+char = "琵"
+default = "ビ"
+
+# 「琶」 default 「ハ」 (= 琵琶のみ実用)
+[[kanji]]
+char = "琶"
+default = "ハ"
+
+# 「瑚」 default 「コ」 (= 珊瑚のみ実用)
+[[kanji]]
+char = "瑚"
+default = "コ"
+
+# 「瑛」 default 「エイ」 (= 「瑛」 名前 + 「水瑛」)
+[[kanji]]
+char = "瑛"
+default = "エイ"
+
+# 「瓜」 default 「うり」 (= 「瓜/胡瓜/西瓜」 訓主体)
+[[kanji]]
+char = "瓜"
+default = "うり"
+
+# 「甥」 default 「おい」 (= 「甥/外甥」 訓のみ)
+[[kanji]]
+char = "甥"
+default = "おい"
+
+# 「畠」 default 「はたけ」 (= 「畠/田畠/畠山」 訓 + 名前、 「畑」 異体字)
+[[kanji]]
+char = "畠"
+default = "はたけ"
+
+# 「疋」 default 「ひき」 (= 「疋/一疋」 訓のみ、 「匹」 異体字)
+[[kanji]]
+char = "疋"
+default = "ひき"
+
+# 「皐」 default 「さつき」 (= 「皐月/五月」 訓 + 名前)
+[[kanji]]
+char = "皐"
+default = "さつき"
+
+# 「眸」 default 「ひとみ」 (= 「眸」 訓主体 + 名前)
+[[kanji]]
+char = "眸"
+default = "ひとみ"
+
+# 「瞥」 default 「ベツ」 (= 一瞥のみ実用)
+[[kanji]]
+char = "瞥"
+default = "ベツ"
+
+# 「砥」 default 「と」 (= 「砥/砥石」 訓主体)
+[[kanji]]
+char = "砥"
+default = "と"
+
+# 「砦」 default 「とりで」 (= 「砦/岩砦」 訓のみ)
+[[kanji]]
+char = "砦"
+default = "とりで"
+
+# 「砧」 default 「きぬた」 (= 「砧/砧打ち」 訓のみ)
+[[kanji]]
+char = "砧"
+default = "きぬた"
+
+# 「硯」 default 「すずり」 (= 「硯/硯墨」 訓のみ)
+[[kanji]]
+char = "硯"
+default = "すずり"
+
+# 「碓」 default 「うす」 (= 「碓/碓氷」 訓 + 名前、 「臼」 同字)
+[[kanji]]
+char = "碓"
+default = "うす"
+
+# 「碗」 default 「ワン」 (= 茶碗/丼碗、 音読み)
+[[kanji]]
+char = "碗"
+default = "ワン"
+
+# 「碧」 default 「あお」 (= 「碧/碧空/紺碧」 訓主体 + 名前)
+[[kanji]]
+char = "碧"
+default = "あお"
+
+# 「磐」 default 「いわ」 (= 「磐/磐石」 訓主体 + 名前)
+[[kanji]]
+char = "磐"
+default = "いわ"
+
+# 「磯」 default 「いそ」 (= 「磯/磯辺」 訓主体 + 名前)
+[[kanji]]
+char = "磯"
+default = "いそ"
+
 # 「冬」 default 「ふゆ」 + prev 漢字 → 「トウ」 (= 越冬/初冬/厳冬)
 [[kanji]]
 char = "冬"
