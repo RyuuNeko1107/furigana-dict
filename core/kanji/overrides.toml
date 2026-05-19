@@ -15413,6 +15413,31 @@ default = "リ"
 char = "癖"
 default = "くせ"
 
+# 「百」 default 「ヒャク」 (= 数詞、 jukugo「百年/百貨店/百科事典」 完備)
+[[kanji]]
+char = "百"
+default = "ヒャク"
+
+# 「皿」 default 「さら」 (= 「皿/灰皿/茶皿/小皿」 訓主体)
+[[kanji]]
+char = "皿"
+default = "さら"
+
+# 「眉」 default 「まゆ」 (= 「眉/眉毛/眉間/眉墨」 訓 + jukugo)
+[[kanji]]
+char = "眉"
+default = "まゆ"
+
+# 「瞳」 default 「ひとみ」 (= 「瞳/瞳孔」 訓主体)
+[[kanji]]
+char = "瞳"
+default = "ひとみ"
+
+# 「真」 default 「シン」 (= 真実/真理/真意/真剣/真摯/写真、 音読み)
+[[kanji]]
+char = "真"
+default = "シン"
+
 # 「冬」 default 「ふゆ」 + prev 漢字 → 「トウ」 (= 越冬/初冬/厳冬)
 [[kanji]]
 char = "冬"

@@ -1232,11 +1232,11 @@ description = "常用漢字 2,136 字 (文化庁 2010-11-30 改訂、 内閣告�
 # 発 は core/kanji/overrides.toml の [[kanji]] block に移行
 # 登 は core/kanji/overrides.toml の [[kanji]] block に移行
 # 白 は core/kanji/overrides.toml の [[kanji]] block に移行
-"百" = "ヒャク"
+# 百 は core/kanji/overrides.toml の [[kanji]] block に移行
 # 皆 は core/kanji/overrides.toml の [[kanji]] block に移行
 # 皇 は core/kanji/overrides.toml の [[kanji]] block に移行
 # 皮 は core/kanji/overrides.toml の [[kanji]] block に移行
-"皿" = "さら"
+# 皿 は core/kanji/overrides.toml の [[kanji]] block に移行
 # 盆 は core/kanji/overrides.toml の [[kanji]] block に移行
 # 益 は core/kanji/overrides.toml の [[kanji]] block に移行
 # 盗 は core/kanji/overrides.toml の [[kanji]] block に移行
@@ -1249,10 +1249,10 @@ description = "常用漢字 2,136 字 (文化庁 2010-11-30 改訂、 内閣告�
 # 相 は core/kanji/overrides.toml の [[kanji]] block に移行
 # 盾 は core/kanji/overrides.toml の [[kanji]] block に移行
 # 省 は core/kanji/overrides.toml の [[kanji]] block に移行
-"眉" = "まゆ"
+# 眉 は core/kanji/overrides.toml の [[kanji]] block に移行
 # 看 は core/kanji/overrides.toml の [[kanji]] block に移行
 # 県 は core/kanji/overrides.toml の [[kanji]] block に移行
-"真" = "シン"
+# 真 は core/kanji/overrides.toml の [[kanji]] block に移行
 # 眠 は core/kanji/overrides.toml の [[kanji]] block に移行
 # 眺 は core/kanji/overrides.toml の [[kanji]] block に移行
 # 「眼」 は overrides.toml の [[kanji]] block に移行 (★round 37)
@@ -1262,7 +1262,7 @@ description = "常用漢字 2,136 字 (文化庁 2010-11-30 改訂、 内閣告�
 # 睦 は core/kanji/overrides.toml の [[kanji]] block に移行
 # 瞬 は core/kanji/overrides.toml の [[kanji]] block に移行
 # 瞭 は core/kanji/overrides.toml の [[kanji]] block に移行
-"瞳" = "ひとみ"
+# 瞳 は core/kanji/overrides.toml の [[kanji]] block に移行
 # 矛 は core/kanji/overrides.toml の [[kanji]] block に移行
 # 矢 は core/kanji/overrides.toml の [[kanji]] block に移行
 # 知 は core/kanji/overrides.toml の [[kanji]] block に移行
