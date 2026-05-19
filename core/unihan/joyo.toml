@@ -1141,12 +1141,12 @@ description = "常用漢字 2,136 字 (文化庁 2010-11-30 改訂、 内閣告�
 # 照 は core/kanji/overrides.toml の [[kanji]] block に移行
 # 煩 は core/kanji/overrides.toml の [[kanji]] block に移行
 # 煮 は core/kanji/overrides.toml の [[kanji]] block に移行
-"熊" = "くま"
+# 熊 は core/kanji/overrides.toml の [[kanji]] block に移行
 # 熟 は core/kanji/overrides.toml の [[kanji]] block に移行
 # 燃 は core/kanji/overrides.toml の [[kanji]] block に移行
 # 燥 は core/kanji/overrides.toml の [[kanji]] block に移行
 # 爆 は core/kanji/overrides.toml の [[kanji]] block に移行
-"爪" = "つめ"
+# 爪 は core/kanji/overrides.toml の [[kanji]] block に移行
 # 爵 は core/kanji/overrides.toml の [[kanji]] block に移行
 # 父 は core/kanji/overrides.toml の [[kanji]] block に移行
 # 爽 は core/kanji/overrides.toml の [[kanji]] block に移行
@@ -1168,9 +1168,9 @@ description = "常用漢字 2,136 字 (文化庁 2010-11-30 改訂、 内閣告�
 # 狭 は core/kanji/overrides.toml の [[kanji]] block に移行
 # 猛 は core/kanji/overrides.toml の [[kanji]] block に移行
 # 猟 は core/kanji/overrides.toml の [[kanji]] block に移行
-"猫" = "ねこ"
+# 猫 は core/kanji/overrides.toml の [[kanji]] block に移行
 # 献 は core/kanji/overrides.toml の [[kanji]] block に移行
-"猶" = "なお"
+# 猶 は core/kanji/overrides.toml の [[kanji]] block に移行
 # 猿 は core/kanji/overrides.toml の [[kanji]] block に移行
 # 獄 は core/kanji/overrides.toml の [[kanji]] block に移行
 # 獣 は core/kanji/overrides.toml の [[kanji]] block に移行
@@ -1183,7 +1183,7 @@ description = "常用漢字 2,136 字 (文化庁 2010-11-30 改訂、 内閣告�
 # 現 は core/kanji/overrides.toml の [[kanji]] block に移行
 # 球 は core/kanji/overrides.toml の [[kanji]] block に移行
 # 理 は core/kanji/overrides.toml の [[kanji]] block に移行
-"琴" = "こと"
+# 琴 は core/kanji/overrides.toml の [[kanji]] block に移行
 "瑠" = "ル"
 "璃" = "リ"
 # 璧 は core/kanji/overrides.toml の [[kanji]] block に移行

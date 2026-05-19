@@ -15338,6 +15338,31 @@ default = "かた"
 char = "灯"
 default = "トウ"
 
+# 「熊」 default 「くま」 (= 「熊/熊本/熊野/白熊」 訓 + jukugo)
+[[kanji]]
+char = "熊"
+default = "くま"
+
+# 「爪」 default 「つめ」 (= 「爪/爪先/手の爪/爪痕」 訓主体)
+[[kanji]]
+char = "爪"
+default = "つめ"
+
+# 「猫」 default 「ねこ」 (= 「猫/愛猫/野良猫」 訓主体)
+[[kanji]]
+char = "猫"
+default = "ねこ"
+
+# 「猶」 default 「なお」 (= 副詞「猶」/接続詞、 「猶予」 等 jukugo)
+[[kanji]]
+char = "猶"
+default = "なお"
+
+# 「琴」 default 「こと」 (= 「琴/和琴/木琴/竪琴」 訓主体、 「琴線」 まれ音)
+[[kanji]]
+char = "琴"
+default = "こと"
+
 # 「冬」 default 「ふゆ」 + prev 漢字 → 「トウ」 (= 越冬/初冬/厳冬)
 [[kanji]]
 char = "冬"
