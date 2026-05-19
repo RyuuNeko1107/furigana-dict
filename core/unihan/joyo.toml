@@ -1529,22 +1529,22 @@ description = "常用漢字 2,136 字 (文化庁 2010-11-30 改訂、 内閣告�
 # 芳 は core/kanji/overrides.toml の [[kanji]] block に移行
 # 芸 は core/kanji/overrides.toml の [[kanji]] block に移行
 # 芽 は core/kanji/overrides.toml の [[kanji]] block に移行
-"苗" = "なえ"
+# 苗 は core/kanji/overrides.toml の [[kanji]] block に移行
 # 苛 は core/kanji/overrides.toml の [[kanji]] block に移行
 # 若 は core/kanji/overrides.toml の [[kanji]] block に移行
 # 英 は core/kanji/overrides.toml の [[kanji]] block に移行
 # 茂 は core/kanji/overrides.toml の [[kanji]] block に移行
 # 茎 は core/kanji/overrides.toml の [[kanji]] block に移行
-"茨" = "いばら"
+# 茨 は core/kanji/overrides.toml の [[kanji]] block に移行
 # 茶 は core/kanji/overrides.toml の [[kanji]] block に移行
 # 草 は core/kanji/overrides.toml の [[kanji]] block に移行
 # 荒 は core/kanji/overrides.toml の [[kanji]] block に移行
 # 荘 は core/kanji/overrides.toml の [[kanji]] block に移行
 # 荷 は core/kanji/overrides.toml の [[kanji]] block に移行
-"菊" = "きく"
+# 菊 は core/kanji/overrides.toml の [[kanji]] block に移行
 # 菌 は core/kanji/overrides.toml の [[kanji]] block に移行
-"菓" = "カ"
-"菜" = "サイ"
+# 菓 は core/kanji/overrides.toml の [[kanji]] block に移行
+# 菜 は core/kanji/overrides.toml の [[kanji]] block に移行
 # 華 は core/kanji/overrides.toml の [[kanji]] block に移行
 # 萎 は core/kanji/overrides.toml の [[kanji]] block に移行
 # 葉 は core/kanji/overrides.toml の [[kanji]] block に移行

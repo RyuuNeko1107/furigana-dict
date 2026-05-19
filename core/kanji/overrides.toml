@@ -15638,6 +15638,31 @@ default = "しば"
 char = "芯"
 default = "シン"
 
+# 「苗」 default 「なえ」 (= 「苗/苗字/苗代/早苗」 訓 + jukugo)
+[[kanji]]
+char = "苗"
+default = "なえ"
+
+# 「茨」 default 「いばら」 (= 「茨/茨城」 訓 + jukugo)
+[[kanji]]
+char = "茨"
+default = "いばら"
+
+# 「菊」 default 「きく」 (= 「菊/野菊/菊花/秋菊」 訓主体)
+[[kanji]]
+char = "菊"
+default = "きく"
+
+# 「菓」 default 「カ」 (= 菓子/和菓子/洋菓子/茶菓、 音読み)
+[[kanji]]
+char = "菓"
+default = "カ"
+
+# 「菜」 default 「サイ」 (= 野菜/白菜/前菜/菜食/惣菜、 音読み)
+[[kanji]]
+char = "菜"
+default = "サイ"
+
 # 「冬」 default 「ふゆ」 + prev 漢字 → 「トウ」 (= 越冬/初冬/厳冬)
 [[kanji]]
 char = "冬"
