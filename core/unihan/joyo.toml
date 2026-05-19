@@ -1756,14 +1756,14 @@ description = "常用漢字 2,136 字 (文化庁 2010-11-30 改訂、 内閣告�
 # 載 は core/kanji/overrides.toml の [[kanji]] block に移行
 # 輝 は core/kanji/overrides.toml の [[kanji]] block に移行
 # 輩 は core/kanji/overrides.toml の [[kanji]] block に移行
-"輪" = "リン"
+# 輪 は core/kanji/overrides.toml の [[kanji]] block に移行
 # 輸 は core/kanji/overrides.toml の [[kanji]] block に移行
 # 轄 は core/kanji/overrides.toml の [[kanji]] block に移行
 # 「辛」 は overrides.toml の [[kanji]] block に移行 (★round 39)
 # 辞 は core/kanji/overrides.toml の [[kanji]] block に移行
 # 辣 は core/kanji/overrides.toml の [[kanji]] block に移行
 # "辱" は core/kanji/overrides.toml の [[kanji]] block に移行
-"農" = "ノウ"
+# 農 は core/kanji/overrides.toml の [[kanji]] block に移行
 # 辺 は core/kanji/overrides.toml の [[kanji]] block に移行
 # 込 は core/kanji/overrides.toml の [[kanji]] block に移行
 # 迅 は core/kanji/overrides.toml の [[kanji]] block に移行
@@ -1782,7 +1782,7 @@ description = "常用漢字 2,136 字 (文化庁 2010-11-30 改訂、 内閣告�
 # 透 は core/kanji/overrides.toml の [[kanji]] block に移行
 # 逐 は core/kanji/overrides.toml の [[kanji]] block に移行
 # 逓 は core/kanji/overrides.toml の [[kanji]] block に移行
-"途" = "ト"
+# 途 は core/kanji/overrides.toml の [[kanji]] block に移行
 # 通 は core/kanji/overrides.toml の [[kanji]] block に移行
 # 逝 は core/kanji/overrides.toml の [[kanji]] block に移行
 # 造 は core/kanji/overrides.toml の [[kanji]] block に移行
@@ -1814,9 +1814,9 @@ description = "常用漢字 2,136 字 (文化庁 2010-11-30 改訂、 内閣告�
 # 還 は core/kanji/overrides.toml の [[kanji]] block に移行
 # 那 は core/kanji/overrides.toml の [[kanji]] block に移行
 # 邦 は core/kanji/overrides.toml の [[kanji]] block に移行
-"邪" = "ジャ"
+# 邪 は core/kanji/overrides.toml の [[kanji]] block に移行
 # 邸 は core/kanji/overrides.toml の [[kanji]] block に移行
-"郊" = "コウ"
+# 郊 は core/kanji/overrides.toml の [[kanji]] block に移行
 "郎" = "ロウ"
 # 郡 は core/kanji/overrides.toml の [[kanji]] block に移行
 # 部 は core/kanji/overrides.toml の [[kanji]] block に移行

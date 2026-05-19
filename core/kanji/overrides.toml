@@ -15763,6 +15763,31 @@ default = "ソウ"
 char = "軸"
 default = "じく"
 
+# 「輪」 default 「リン」 (= 車輪/輪郭/五輪/年輪/輪番、 音読み)
+[[kanji]]
+char = "輪"
+default = "リン"
+
+# 「農」 default 「ノウ」 (= 農業/農村/農産/酪農/帰農、 音読み)
+[[kanji]]
+char = "農"
+default = "ノウ"
+
+# 「途」 default 「ト」 (= 途中/前途/別途/中途/帰途、 音読み)
+[[kanji]]
+char = "途"
+default = "ト"
+
+# 「邪」 default 「ジャ」 (= 邪魔/邪悪/風邪/邪推/邪心、 音読み)
+[[kanji]]
+char = "邪"
+default = "ジャ"
+
+# 「郊」 default 「コウ」 (= 近郊/郊外/郊野、 音読み)
+[[kanji]]
+char = "郊"
+default = "コウ"
+
 # 「冬」 default 「ふゆ」 + prev 漢字 → 「トウ」 (= 越冬/初冬/厳冬)
 [[kanji]]
 char = "冬"
