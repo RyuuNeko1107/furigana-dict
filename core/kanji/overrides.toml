@@ -16905,6 +16905,131 @@ default = "いわ"
 char = "磯"
 default = "いそ"
 
+# 「祁」 default 「キ」 (= 名前用「祁」、 漢籍まれ)
+[[kanji]]
+char = "祁"
+default = "キ"
+
+# 「禎」 default 「テイ」 (= 名前用「禎」、 「禎祥」 まれ)
+[[kanji]]
+char = "禎"
+default = "テイ"
+
+# 「禰」 default 「ネ」 (= 「禰宜 (ネギ)」 jukugo + 名前)
+[[kanji]]
+char = "禰"
+default = "ネ"
+
+# 「秤」 default 「はかり」 (= 「秤/天秤」 訓主体)
+[[kanji]]
+char = "秤"
+default = "はかり"
+
+# 「秦」 default 「はた」 (= 「秦/秦野」 名前 + 「秦」 古代中国)
+[[kanji]]
+char = "秦"
+default = "はた"
+
+# 「稀」 default 「まれ」 (= 「稀/稀有/稀代」 副詞・形容動詞主体)
+[[kanji]]
+char = "稀"
+default = "まれ"
+
+# 「稔」 default 「みのり」 (= 「稔/稔実」 訓主体 + 名前)
+[[kanji]]
+char = "稔"
+default = "みのり"
+
+# 「穣」 default 「ジョウ」 (= 「穀穣/豊穣」 音読み + 名前)
+[[kanji]]
+char = "穣"
+default = "ジョウ"
+
+# 「窪」 default 「くぼ」 (= 「窪/窪地/大久保」 訓主体 + 名前)
+[[kanji]]
+char = "窪"
+default = "くぼ"
+
+# 「竺」 default 「ジク」 (= 天竺/月竺、 音読み + 名前)
+[[kanji]]
+char = "竺"
+default = "ジク"
+
+# 「竿」 default 「さお」 (= 「竿/釣り竿」 訓のみ)
+[[kanji]]
+char = "竿"
+default = "さお"
+
+# 「笈」 default 「おい」 (= 「笈/笈摺」 古語訓のみ)
+[[kanji]]
+char = "笈"
+default = "おい"
+
+# 「笠」 default 「かさ」 (= 「笠/編み笠/三笠」 訓主体)
+[[kanji]]
+char = "笠"
+default = "かさ"
+
+# 「笹」 default 「ささ」 (= 「笹/笹竹/笹原」 訓のみ、 国字)
+[[kanji]]
+char = "笹"
+default = "ささ"
+
+# 「筈」 default 「はず」 (= 「筈/弓筈」 訓のみ)
+[[kanji]]
+char = "筈"
+default = "はず"
+
+# 「筑」 default 「チク」 (= 筑波/筑紫、 音読み + 地名)
+[[kanji]]
+char = "筑"
+default = "チク"
+
+# 「箕」 default 「み」 (= 「箕/箕作」 訓主体)
+[[kanji]]
+char = "箕"
+default = "み"
+
+# 「篇」 default 「ヘン」 (= 章篇/長篇/短篇、 音読み)
+[[kanji]]
+char = "篇"
+default = "ヘン"
+
+# 「篠」 default 「しの」 (= 「篠/篠田/篠原」 訓 + 名前)
+[[kanji]]
+char = "篠"
+default = "しの"
+
+# 「簾」 default 「レン」 (= 御簾/簾中、 音読み)
+[[kanji]]
+char = "簾"
+default = "レン"
+
+# 「籾」 default 「もみ」 (= 「籾/籾殻」 訓のみ、 国字)
+[[kanji]]
+char = "籾"
+default = "もみ"
+
+# 「粟」 default 「あわ」 (= 「粟/粟粒/淡粟」 訓主体)
+[[kanji]]
+char = "粟"
+default = "あわ"
+
+# 「粥」 default 「かゆ」 (= 「粥/お粥/七草粥」 訓主体)
+[[kanji]]
+char = "粥"
+default = "かゆ"
+
+# 「糊」 default 「のり」 (= 「糊/糊塗」 訓主体)
+[[kanji]]
+char = "糊"
+default = "のり"
+
+# 「紐」 default 「ひも」 (= 「紐/紐結び」 訓主体)
+[[kanji]]
+char = "紐"
+default = "ひも"
+
 # 「冬」 default 「ふゆ」 + prev 漢字 → 「トウ」 (= 越冬/初冬/厳冬)
 [[kanji]]
 char = "冬"
