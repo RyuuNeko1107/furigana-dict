@@ -15388,6 +15388,31 @@ default = "サン"
 char = "田"
 default = "デン"
 
+# 「畑」 default 「はたけ」 (= 「畑/畑作/田畑/麦畑」 訓のみ、 国字)
+[[kanji]]
+char = "畑"
+default = "はたけ"
+
+# 「畔」 default 「あぜ」 (= 「畔/湖畔」 訓 + jukugo)
+[[kanji]]
+char = "畔"
+default = "あぜ"
+
+# 「症」 default 「ショウ」 (= 症状/感染症/重症/軽症/不定愁訴症、 音読み)
+[[kanji]]
+char = "症"
+default = "ショウ"
+
+# 「痢」 default 「リ」 (= 下痢/疫痢/赤痢、 音読み)
+[[kanji]]
+char = "痢"
+default = "リ"
+
+# 「癖」 default 「くせ」 (= 「癖/口癖/酒癖/泣き癖」 訓主体)
+[[kanji]]
+char = "癖"
+default = "くせ"
+
 # 「冬」 default 「ふゆ」 + prev 漢字 → 「トウ」 (= 越冬/初冬/厳冬)
 [[kanji]]
 char = "冬"

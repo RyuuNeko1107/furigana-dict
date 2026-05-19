@@ -1203,8 +1203,8 @@ description = "常用漢字 2,136 字 (文化庁 2010-11-30 改訂、 内閣告�
 # 画 は core/kanji/overrides.toml の [[kanji]] block に移行
 # 界 は core/kanji/overrides.toml の [[kanji]] block に移行
 # 畏 は core/kanji/overrides.toml の [[kanji]] block に移行
-"畑" = "はたけ"
-"畔" = "あぜ"
+# 畑 は core/kanji/overrides.toml の [[kanji]] block に移行
+# 畔 は core/kanji/overrides.toml の [[kanji]] block に移行
 # 留 は core/kanji/overrides.toml の [[kanji]] block に移行
 # 畜 は core/kanji/overrides.toml の [[kanji]] block に移行
 # 畝 は core/kanji/overrides.toml の [[kanji]] block に移行
@@ -1218,17 +1218,17 @@ description = "常用漢字 2,136 字 (文化庁 2010-11-30 改訂、 内閣告�
 # 疲 は core/kanji/overrides.toml の [[kanji]] block に移行
 # 疾 は core/kanji/overrides.toml の [[kanji]] block に移行
 # 病 は core/kanji/overrides.toml の [[kanji]] block に移行
-"症" = "ショウ"
+# 症 は core/kanji/overrides.toml の [[kanji]] block に移行
 # 痕 は core/kanji/overrides.toml の [[kanji]] block に移行
 # 痘 は core/kanji/overrides.toml の [[kanji]] block に移行
 # 痛 は core/kanji/overrides.toml の [[kanji]] block に移行
-"痢" = "リ"
+# 痢 は core/kanji/overrides.toml の [[kanji]] block に移行
 # 痩 は core/kanji/overrides.toml の [[kanji]] block に移行
 # 痴 は core/kanji/overrides.toml の [[kanji]] block に移行
 # 瘍 は core/kanji/overrides.toml の [[kanji]] block に移行
 # 療 は core/kanji/overrides.toml の [[kanji]] block に移行
 # 癒 は core/kanji/overrides.toml の [[kanji]] block に移行
-"癖" = "くせ"
+# 癖 は core/kanji/overrides.toml の [[kanji]] block に移行
 # 発 は core/kanji/overrides.toml の [[kanji]] block に移行
 # 登 は core/kanji/overrides.toml の [[kanji]] block に移行
 # 白 は core/kanji/overrides.toml の [[kanji]] block に移行
