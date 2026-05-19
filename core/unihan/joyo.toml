@@ -1329,7 +1329,7 @@ description = "常用漢字 2,136 字 (文化庁 2010-11-30 改訂、 内閣告�
 # 窓 は core/kanji/overrides.toml の [[kanji]] block に移行
 # 窟 は core/kanji/overrides.toml の [[kanji]] block に移行
 # 窮 は core/kanji/overrides.toml の [[kanji]] block に移行
-"窯" = "かま"
+# 窯 は core/kanji/overrides.toml の [[kanji]] block に移行
 # 立 は core/kanji/overrides.toml の [[kanji]] block に移行
 # 竜 は core/kanji/overrides.toml の [[kanji]] block に移行
 # 章 は core/kanji/overrides.toml の [[kanji]] block に移行
@@ -1346,18 +1346,18 @@ description = "常用漢字 2,136 字 (文化庁 2010-11-30 改訂、 内閣告�
 # 筒 は core/kanji/overrides.toml の [[kanji]] block に移行
 # 答 は core/kanji/overrides.toml の [[kanji]] block に移行
 # 策 は core/kanji/overrides.toml の [[kanji]] block に移行
-"箇" = "カ"
+# 箇 は core/kanji/overrides.toml の [[kanji]] block に移行
 # 箋 は core/kanji/overrides.toml の [[kanji]] block に移行
 # 算 は core/kanji/overrides.toml の [[kanji]] block に移行
 # 管 は core/kanji/overrides.toml の [[kanji]] block に移行
-"箱" = "はこ"
-"箸" = "はし"
+# 箱 は core/kanji/overrides.toml の [[kanji]] block に移行
+# 箸 は core/kanji/overrides.toml の [[kanji]] block に移行
 # 節 は core/kanji/overrides.toml の [[kanji]] block に移行
 # 範 は core/kanji/overrides.toml の [[kanji]] block に移行
 # 築 は core/kanji/overrides.toml の [[kanji]] block に移行
 # 篤 は core/kanji/overrides.toml の [[kanji]] block に移行
 # 簡 は core/kanji/overrides.toml の [[kanji]] block に移行
-"簿" = "ボ"
+# 簿 は core/kanji/overrides.toml の [[kanji]] block に移行
 # 籍 は core/kanji/overrides.toml の [[kanji]] block に移行
 # 籠 は core/kanji/overrides.toml の [[kanji]] block に移行
 # 粉 は core/kanji/overrides.toml の [[kanji]] block に移行

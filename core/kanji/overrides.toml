@@ -15488,6 +15488,31 @@ default = "ゼイ"
 char = "窓"
 default = "まど"
 
+# 「窯」 default 「かま」 (= 「窯/窯元」 訓主体、 「窯業」 ヨウ まれ)
+[[kanji]]
+char = "窯"
+default = "かま"
+
+# 「箇」 default 「カ」 (= 一箇/箇所/箇条、 音読みのみ)
+[[kanji]]
+char = "箇"
+default = "カ"
+
+# 「箱」 default 「はこ」 (= 「箱/重箱/箱詰め/書箱」 訓主体)
+[[kanji]]
+char = "箱"
+default = "はこ"
+
+# 「箸」 default 「はし」 (= 「箸/塗箸/箸置」 訓のみ実用)
+[[kanji]]
+char = "箸"
+default = "はし"
+
+# 「簿」 default 「ボ」 (= 帳簿/名簿/家計簿/出席簿、 音読みのみ)
+[[kanji]]
+char = "簿"
+default = "ボ"
+
 # 「冬」 default 「ふゆ」 + prev 漢字 → 「トウ」 (= 越冬/初冬/厳冬)
 [[kanji]]
 char = "冬"
