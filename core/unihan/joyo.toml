@@ -1272,13 +1272,13 @@ description = "常用漢字 2,136 字 (文化庁 2010-11-30 改訂、 内閣告�
 # 砕 は core/kanji/overrides.toml の [[kanji]] block に移行
 # 砲 は core/kanji/overrides.toml の [[kanji]] block に移行
 # 破 は core/kanji/overrides.toml の [[kanji]] block に移行
-"硝" = "ショウ"
-"硫" = "リュウ"
+# 硝 は core/kanji/overrides.toml の [[kanji]] block に移行
+# 硫 は core/kanji/overrides.toml の [[kanji]] block に移行
 # 硬 は core/kanji/overrides.toml の [[kanji]] block に移行
-"碁" = "ゴ"
+# 碁 は core/kanji/overrides.toml の [[kanji]] block に移行
 # 碑 は core/kanji/overrides.toml の [[kanji]] block に移行
 # 「確」 は overrides.toml の [[kanji]] block に移行 (★round 38)
-"磁" = "ジ"
+# 磁 は core/kanji/overrides.toml の [[kanji]] block に移行
 # 磨 は core/kanji/overrides.toml の [[kanji]] block に移行
 # 礁 は core/kanji/overrides.toml の [[kanji]] block に移行
 # 礎 は core/kanji/overrides.toml の [[kanji]] block に移行
@@ -1291,7 +1291,7 @@ description = "常用漢字 2,136 字 (文化庁 2010-11-30 改訂、 内閣告�
 # 祝 は core/kanji/overrides.toml の [[kanji]] block に移行
 # 神 は core/kanji/overrides.toml の [[kanji]] block に移行
 # 祥 は core/kanji/overrides.toml の [[kanji]] block に移行
-"票" = "ヒョウ"
+# 票 は core/kanji/overrides.toml の [[kanji]] block に移行
 # 祭 は core/kanji/overrides.toml の [[kanji]] block に移行
 # 禁 は core/kanji/overrides.toml の [[kanji]] block に移行
 # 禅 は core/kanji/overrides.toml の [[kanji]] block に移行

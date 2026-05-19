@@ -15438,6 +15438,31 @@ default = "ひとみ"
 char = "真"
 default = "シン"
 
+# 「硝」 default 「ショウ」 (= 硝石/硝酸/硝煙/塩硝、 音読み)
+[[kanji]]
+char = "硝"
+default = "ショウ"
+
+# 「硫」 default 「リュウ」 (= 硫黄/硫酸/脱硫、 音読み)
+[[kanji]]
+char = "硫"
+default = "リュウ"
+
+# 「碁」 default 「ゴ」 (= 囲碁/碁石/碁盤、 音読み)
+[[kanji]]
+char = "碁"
+default = "ゴ"
+
+# 「磁」 default 「ジ」 (= 磁気/磁石/磁器/磁場、 音読み)
+[[kanji]]
+char = "磁"
+default = "ジ"
+
+# 「票」 default 「ヒョウ」 (= 投票/伝票/得票/開票/票数、 音読み)
+[[kanji]]
+char = "票"
+default = "ヒョウ"
+
 # 「冬」 default 「ふゆ」 + prev 漢字 → 「トウ」 (= 越冬/初冬/厳冬)
 [[kanji]]
 char = "冬"
