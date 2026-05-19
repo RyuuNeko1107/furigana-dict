@@ -23,12 +23,12 @@ git に commit されている master HEAD の状態を基準にする。
 <!-- AUTO-GENERATED:SUMMARY:BEGIN -->
 | カテゴリ | エントリ数 | サイズ |
 |---|---:|---:|
-| [**単漢字**](#単漢字) (`core/unihan/*`、 水準別 5 ファイル) | **41,223** | **748 KB** |
+| [**単漢字**](#単漢字) (`core/unihan/*`、 水準別 5 ファイル) | **41,218** | **748 KB** |
 | [**熟語**](#熟語) (`core/jukugo/*`、手動 PR メンテ) | **8,097** | **273 KB** |
 | [**作品造語**](#作品造語) (`core/works/*`、作品単位 1 ファイル) | **311** | **10 KB** |
 | [**外来語**](#外来語) (`core/loanwords/*`、IT 用語等の英字 surface) | **168** | **5.2 KB** |
 | [**分類前 inbox**](#分類前-inbox) (`core/_inbox.toml`、 後で振り分ける一時置き場) | **0** | **180 B** |
-| [**単漢字 [[kanji]] format**](#単漢字-kanji-format) (`core/kanji/*`、 default + 文脈分岐 reading) | **2,232** | **159 KB** |
+| [**単漢字 [[kanji]] format**](#単漢字-kanji-format) (`core/kanji/*`、 default + 文脈分岐 reading) | **2,237** | **159 KB** |
 | [**異体字**](#異体字) (`core/compat.toml`) | **435** | **6.1 KB** |
 | [**エンジンルール**](#エンジンルール) (`rules/`) | **180** | **10.0 KB** |
 | **合計** | **52,646** | **1.18 MB** |
@@ -45,12 +45,12 @@ git に commit されている master HEAD の状態を基準にする。
 
 | ファイル | エントリ数 | サイズ | 用途 |
 |---|---:|---:|---|
-| [`core/unihan/joyo.toml`](core/unihan/joyo.toml) | 229 | 4.7 KB | 常用漢字 2,136 字 (文化庁 2010-11-30 改訂、 内閣告示) — 利用頻度高、 default reading review 対象 |
+| [`core/unihan/joyo.toml`](core/unihan/joyo.toml) | 224 | 4.6 KB | 常用漢字 2,136 字 (文化庁 2010-11-30 改訂、 内閣告示) — 利用頻度高、 default reading review 対象 |
 | [`core/unihan/jinmeiyou.toml`](core/unihan/jinmeiyou.toml) | 315 | 5.6 KB | 人名用漢字 (法務省、 子の名に使用可、 常用と重複する 128 字を除外した残り 855 字) |
 | [`core/unihan/jis_basic.toml`](core/unihan/jis_basic.toml) | 13,051 | 236 KB | JIS 基本 (CJK Basic Block U+4E00-U+9FFF のうち常用 / 人名用以外、 概ね JIS X 0208 第1+第2水準カバー) |
 | [`core/unihan/jis_supplement.toml`](core/unihan/jis_supplement.toml) | 4,825 | 83 KB | JIS 補助 (CJK Extension A + Compatibility Ideographs、 概ね JIS X 0213 第3+第4水準カバー) |
 | [`core/unihan/extension.toml`](core/unihan/extension.toml) | 22,803 | 418 KB | 拡張漢字 (CJK Extension B 以降、 表外字 / 中国専用字 / 異体字、 機械的扱い、 ほぼ lib lookup されない) |
-| **小計** (5 ファイル) | **41,223** | **748 KB** | |
+| **小計** (5 ファイル) | **41,218** | **748 KB** | |
 
 ### 熟語
 
@@ -194,7 +194,7 @@ git に commit されている master HEAD の状態を基準にする。
 
 | ファイル | 文字数 | ルール数 | サイズ | 用途 |
 |---|---:|---:|---:|---|
-| [`core/kanji/overrides.toml`](core/kanji/overrides.toml) | 2,232 | 3,008 | 159 KB | 単漢字 default override + 文脈分岐 reading |
+| [`core/kanji/overrides.toml`](core/kanji/overrides.toml) | 2,237 | 3,013 | 159 KB | 単漢字 default override + 文脈分岐 reading |
 
 ### 異体字
 
