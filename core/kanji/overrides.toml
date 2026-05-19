@@ -14913,6 +14913,31 @@ default = "ロク"
 char = "冗"
 default = "ジョウ"
 
+# 「券」 default 「ケン」 (= 入場券/旅券/債券/乗車券/有価証券、 音読み圧倒的)
+[[kanji]]
+char = "券"
+default = "ケン"
+
+# 「刹」 default 「セツ」 (= 古刹/名刹/刹那、 仏教用語の音読み)
+[[kanji]]
+char = "刹"
+default = "セツ"
+
+# 「劾」 default 「ガイ」 (= ほぼ「弾劾」 のみ実用)
+[[kanji]]
+char = "劾"
+default = "ガイ"
+
+# 「千」 default 「セン」 (= 数詞、 jukugo「千葉/千年/千差万別」 完備、 訓「ち」 連濁)
+[[kanji]]
+char = "千"
+default = "セン"
+
+# 「厘」 default 「リン」 (= 一厘/分厘/釐 (異体)、 音読みのみ)
+[[kanji]]
+char = "厘"
+default = "リン"
+
 # 「冬」 default 「ふゆ」 + prev 漢字 → 「トウ」 (= 越冬/初冬/厳冬)
 [[kanji]]
 char = "冬"

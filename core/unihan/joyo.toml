@@ -197,8 +197,8 @@ description = "常用漢字 2,136 字 (文化庁 2010-11-30 改訂、 内閣告�
 # 到 は core/kanji/overrides.toml の [[kanji]] block に移行
 # 制 は core/kanji/overrides.toml の [[kanji]] block に移行
 # 刷 は core/kanji/overrides.toml の [[kanji]] block に移行
-"券" = "ケン"
-"刹" = "セツ"
+# 券 は core/kanji/overrides.toml の [[kanji]] block に移行
+# 刹 は core/kanji/overrides.toml の [[kanji]] block に移行
 # 刺 は core/kanji/overrides.toml の [[kanji]] block に移行
 # 刻 は core/kanji/overrides.toml の [[kanji]] block に移行
 # 則 は core/kanji/overrides.toml の [[kanji]] block に移行
@@ -218,7 +218,7 @@ description = "常用漢字 2,136 字 (文化庁 2010-11-30 改訂、 内閣告�
 # 励 は core/kanji/overrides.toml の [[kanji]] block に移行
 # 労 は core/kanji/overrides.toml の [[kanji]] block に移行
 # 効 は core/kanji/overrides.toml の [[kanji]] block に移行
-"劾" = "ガイ"
+# 劾 は core/kanji/overrides.toml の [[kanji]] block に移行
 # 勃 は core/kanji/overrides.toml の [[kanji]] block に移行
 # 勅 は core/kanji/overrides.toml の [[kanji]] block に移行
 # 勇 は core/kanji/overrides.toml の [[kanji]] block に移行
@@ -241,7 +241,7 @@ description = "常用漢字 2,136 字 (文化庁 2010-11-30 改訂、 内閣告�
 # 医 は core/kanji/overrides.toml の [[kanji]] block に移行
 # 匿 は core/kanji/overrides.toml の [[kanji]] block に移行
 # "十" は core/kanji/overrides.toml の [[kanji]] block に移行 (★round 48)
-"千" = "セン"
+# 千 は core/kanji/overrides.toml の [[kanji]] block に移行
 # 升 は core/kanji/overrides.toml の [[kanji]] block に移行
 # 午 は core/kanji/overrides.toml の [[kanji]] block に移行
 # 卑 は core/kanji/overrides.toml の [[kanji]] block に移行
@@ -259,7 +259,7 @@ description = "常用漢字 2,136 字 (文化庁 2010-11-30 改訂、 内閣告�
 # 卵 は core/kanji/overrides.toml の [[kanji]] block に移行
 # 卸 は core/kanji/overrides.toml の [[kanji]] block に移行
 # 厄 は core/kanji/overrides.toml の [[kanji]] block に移行
-"厘" = "リン"
+# 厘 は core/kanji/overrides.toml の [[kanji]] block に移行
 # 厚 は core/kanji/overrides.toml の [[kanji]] block に移行
 # 原 は core/kanji/overrides.toml の [[kanji]] block に移行
 # 厳 は core/kanji/overrides.toml の [[kanji]] block に移行
