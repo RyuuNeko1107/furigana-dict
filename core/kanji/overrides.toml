@@ -15288,6 +15288,31 @@ default = "キ"
 char = "汽"
 default = "キ"
 
+# 「沖」 default 「おき」 (= 「沖/沖縄/沖合」 訓 + jukugo)
+[[kanji]]
+char = "沖"
+default = "おき"
+
+# 「洋」 default 「ヨウ」 (= 太平洋/洋風/洋楽/西洋/海洋、 音読み)
+[[kanji]]
+char = "洋"
+default = "ヨウ"
+
+# 「洪」 default 「コウ」 (= 洪水/洪積層、 音読みのみ)
+[[kanji]]
+char = "洪"
+default = "コウ"
+
+# 「浜」 default 「はま」 (= 「浜/浜辺/横浜/砂浜/海浜」 訓主体)
+[[kanji]]
+char = "浜"
+default = "はま"
+
+# 「浦」 default 「うら」 (= 「浦/浦島/津々浦々」 訓主体)
+[[kanji]]
+char = "浦"
+default = "うら"
+
 # 「冬」 default 「ふゆ」 + prev 漢字 → 「トウ」 (= 越冬/初冬/厳冬)
 [[kanji]]
 char = "冬"
