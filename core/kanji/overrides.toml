@@ -15263,6 +15263,31 @@ default = "イ"
 char = "検"
 default = "ケン"
 
+# 「楷」 default 「カイ」 (= 楷書/楷行草、 音読みのみ)
+[[kanji]]
+char = "楷"
+default = "カイ"
+
+# 「横」 default 「よこ」 (= 「横/横顔/横向き」 訓主体。 ※ 過去 revert 経緯あり (横振り問題)、 default 維持)
+[[kanji]]
+char = "横"
+default = "よこ"
+
+# 「段」 default 「ダン」 (= 段階/階段/手段/普段/値段、 音読み)
+[[kanji]]
+char = "段"
+default = "ダン"
+
+# 「気」 default 「キ」 (= 元気/気分/天気/勇気/空気/雰囲気、 音読み圧倒的)
+[[kanji]]
+char = "気"
+default = "キ"
+
+# 「汽」 default 「キ」 (= 汽車/汽船/汽笛/蒸汽、 音読みのみ)
+[[kanji]]
+char = "汽"
+default = "キ"
+
 # 「冬」 default 「ふゆ」 + prev 漢字 → 「トウ」 (= 越冬/初冬/厳冬)
 [[kanji]]
 char = "冬"

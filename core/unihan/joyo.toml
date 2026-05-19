@@ -961,7 +961,7 @@ description = "常用漢字 2,136 字 (文化庁 2010-11-30 改訂、 内閣告�
 # 検 は core/kanji/overrides.toml の [[kanji]] block に移行
 # 業 は core/kanji/overrides.toml の [[kanji]] block に移行 (★round 49)
 # 極 は core/kanji/overrides.toml の [[kanji]] block に移行
-"楷" = "カイ"
+# 楷 は core/kanji/overrides.toml の [[kanji]] block に移行
 # 楼 は core/kanji/overrides.toml の [[kanji]] block に移行
 # 概 は core/kanji/overrides.toml の [[kanji]] block に移行
 # 構 は core/kanji/overrides.toml の [[kanji]] block に移行
@@ -970,7 +970,7 @@ description = "常用漢字 2,136 字 (文化庁 2010-11-30 改訂、 内閣告�
 # 標 は core/kanji/overrides.toml の [[kanji]] block に移行
 # 模 は core/kanji/overrides.toml の [[kanji]] block に移行
 # 権 は core/kanji/overrides.toml の [[kanji]] block に移行
-"横" = "よこ"
+# 横 は core/kanji/overrides.toml の [[kanji]] block に移行
 # 樹 は core/kanji/overrides.toml の [[kanji]] block に移行
 # 橋 は core/kanji/overrides.toml の [[kanji]] block に移行
 # 機 は core/kanji/overrides.toml の [[kanji]] block に移行 (★round 50)
@@ -994,7 +994,7 @@ description = "常用漢字 2,136 字 (文化庁 2010-11-30 改訂、 内閣告�
 # 残 は core/kanji/overrides.toml の [[kanji]] block に移行
 # 殖 は core/kanji/overrides.toml の [[kanji]] block に移行
 # 殴 は core/kanji/overrides.toml の [[kanji]] block に移行
-"段" = "ダン"
+# 段 は core/kanji/overrides.toml の [[kanji]] block に移行
 # 殺 は core/kanji/overrides.toml の [[kanji]] block に移行
 # 殻 は core/kanji/overrides.toml の [[kanji]] block に移行
 # 殿 は core/kanji/overrides.toml の [[kanji]] block に移行
@@ -1006,7 +1006,7 @@ description = "常用漢字 2,136 字 (文化庁 2010-11-30 改訂、 内閣告�
 # 毛 は core/kanji/overrides.toml の [[kanji]] block に移行
 # 氏 は core/kanji/overrides.toml の [[kanji]] block に移行
 # 民 は core/kanji/overrides.toml の [[kanji]] block に移行
-"気" = "キ"
+# 気 は core/kanji/overrides.toml の [[kanji]] block に移行
 # 氷 は core/kanji/overrides.toml の [[kanji]] block に移行
 # 永 は core/kanji/overrides.toml の [[kanji]] block に移行
 # 氾 は core/kanji/overrides.toml の [[kanji]] block に移行
@@ -1019,7 +1019,7 @@ description = "常用漢字 2,136 字 (文化庁 2010-11-30 改訂、 内閣告�
 # 池 は core/kanji/overrides.toml の [[kanji]] block に移行
 # 汰 は core/kanji/overrides.toml の [[kanji]] block に移行
 # 決 は core/kanji/overrides.toml の [[kanji]] block に移行
-"汽" = "キ"
+# 汽 は core/kanji/overrides.toml の [[kanji]] block に移行
 # 沃 は core/kanji/overrides.toml の [[kanji]] block に移行
 # 沈 は core/kanji/overrides.toml の [[kanji]] block に移行
 "沖" = "おき"
