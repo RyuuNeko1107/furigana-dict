@@ -14938,6 +14938,31 @@ default = "セン"
 char = "厘"
 default = "リン"
 
+# 「又」 default 「また」 (= 副詞「又」/接続詞、 訓のみ)
+[[kanji]]
+char = "又"
+default = "また"
+
+# 「句」 default 「ク」 (= 句読/俳句/語句/字句、 音読み主流)
+[[kanji]]
+char = "句"
+default = "ク"
+
+# 「史」 default 「シ」 (= 歴史/史実/史料/略史/前史、 音読み圧倒的)
+[[kanji]]
+char = "史"
+default = "シ"
+
+# 「喪」 default 「ソウ」 (= 喪服/喪失/喪中/服喪、 音読み主流。 訓「も」 jukugo 経由)
+[[kanji]]
+char = "喪"
+default = "ソウ"
+
+# 「圏」 default 「ケン」 (= 圏外/首都圏/北極圏/勢力圏、 音読みのみ)
+[[kanji]]
+char = "圏"
+default = "ケン"
+
 # 「冬」 default 「ふゆ」 + prev 漢字 → 「トウ」 (= 越冬/初冬/厳冬)
 [[kanji]]
 char = "冬"

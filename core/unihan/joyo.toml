@@ -265,7 +265,7 @@ description = "常用漢字 2,136 字 (文化庁 2010-11-30 改訂、 内閣告�
 # 厳 は core/kanji/overrides.toml の [[kanji]] block に移行
 # 去 は core/kanji/overrides.toml の [[kanji]] block に移行
 # 参 は core/kanji/overrides.toml の [[kanji]] block に移行
-"又" = "また"
+# 又 は core/kanji/overrides.toml の [[kanji]] block に移行
 # 及 は core/kanji/overrides.toml の [[kanji]] block に移行
 # 友 は core/kanji/overrides.toml の [[kanji]] block に移行
 # 双 は core/kanji/overrides.toml の [[kanji]] block に移行
@@ -275,13 +275,13 @@ description = "常用漢字 2,136 字 (文化庁 2010-11-30 改訂、 内閣告�
 # 取 は core/kanji/overrides.toml の [[kanji]] block に移行
 # 受 は core/kanji/overrides.toml の [[kanji]] block に移行
 # 叙 は core/kanji/overrides.toml の [[kanji]] block に移行
-"句" = "ク"
+# 句 は core/kanji/overrides.toml の [[kanji]] block に移行
 # 叫 は core/kanji/overrides.toml の [[kanji]] block に移行
 # 召 は core/kanji/overrides.toml の [[kanji]] block に移行
 # 可 は core/kanji/overrides.toml の [[kanji]] block に移行
 # 「台」 は overrides.toml の [[kanji]] block に移行 (★round 36)
 # 叱 は core/kanji/overrides.toml の [[kanji]] block に移行
-"史" = "シ"
+# 史 は core/kanji/overrides.toml の [[kanji]] block に移行
 # 右 は core/kanji/overrides.toml の [[kanji]] block に移行
 # 号 は core/kanji/overrides.toml の [[kanji]] block に移行
 # 司 は core/kanji/overrides.toml の [[kanji]] block に移行
@@ -331,7 +331,7 @@ description = "常用漢字 2,136 字 (文化庁 2010-11-30 改訂、 内閣告�
 # 喜 は core/kanji/overrides.toml の [[kanji]] block に移行
 # 喝 は core/kanji/overrides.toml の [[kanji]] block に移行
 # 喩 は core/kanji/overrides.toml の [[kanji]] block に移行
-"喪" = "ソウ"
+# 喪 は core/kanji/overrides.toml の [[kanji]] block に移行
 # 喫 は core/kanji/overrides.toml の [[kanji]] block に移行
 # 営 は core/kanji/overrides.toml の [[kanji]] block に移行
 # 嗅 は core/kanji/overrides.toml の [[kanji]] block に移行
@@ -350,7 +350,7 @@ description = "常用漢字 2,136 字 (文化庁 2010-11-30 改訂、 内閣告�
 # 囲 は core/kanji/overrides.toml の [[kanji]] block に移行
 # 図 は core/kanji/overrides.toml の [[kanji]] block に移行
 # 固 は core/kanji/overrides.toml の [[kanji]] block に移行
-"圏" = "ケン"
+# 圏 は core/kanji/overrides.toml の [[kanji]] block に移行
 # 土 は core/kanji/overrides.toml の [[kanji]] block に移行
 # 「圧」 は overrides.toml の [[kanji]] block に移行 (★round 39)
 # 在 は core/kanji/overrides.toml の [[kanji]] block に移行
