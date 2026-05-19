@@ -16235,6 +16235,81 @@ default = "うば"
 char = "姪"
 default = "めい"
 
+# 「宋」 default 「ソウ」 (= 宋朝/宋人/宋元、 音読み + 名前)
+[[kanji]]
+char = "宋"
+default = "ソウ"
+
+# 「宕」 default 「トウ」 (= 「愛宕 (アタゴ)」 jukugo + 跌宕 まれ)
+[[kanji]]
+char = "宕"
+default = "トウ"
+
+# 「寅」 default 「とら」 (= 干支「寅」/「寅年」、 訓主体)
+[[kanji]]
+char = "寅"
+default = "とら"
+
+# 「寓」 default 「グウ」 (= 寓話/寓意/寓居/寄寓、 音読み)
+[[kanji]]
+char = "寓"
+default = "グウ"
+
+# 「寵」 default 「チョウ」 (= 寵愛/寵児/恩寵、 音読み)
+[[kanji]]
+char = "寵"
+default = "チョウ"
+
+# 「尤」 default 「もっとも」 (= 「尤も」 副詞、 訓のみ)
+[[kanji]]
+char = "尤"
+default = "もっとも"
+
+# 「屑」 default 「くず」 (= 「屑/紙屑/木屑/星屑」 訓主体)
+[[kanji]]
+char = "屑"
+default = "くず"
+
+# 「峯」 default 「みね」 (= 「峯」 異体字 (峰)、 名前 + 訓)
+[[kanji]]
+char = "峯"
+default = "みね"
+
+# 「崚」 default 「リョウ」 (= 崚嶒、 漢籍まれ + 名前)
+[[kanji]]
+char = "崚"
+default = "リョウ"
+
+# 「嵯」 default 「サ」 (= 嵯峨/参差、 漢籍まれ + 名前)
+[[kanji]]
+char = "嵯"
+default = "サ"
+
+# 「嶺」 default 「みね」 (= 「嶺/銀嶺/嶺南」 訓 + jukugo)
+[[kanji]]
+char = "嶺"
+default = "みね"
+
+# 「巌」 default 「いわお」 (= 「巌/巨巌/老巌」 訓 + 名前)
+[[kanji]]
+char = "巌"
+default = "いわお"
+
+# 「巳」 default 「み」 (= 干支「巳」、 訓のみ実用)
+[[kanji]]
+char = "巳"
+default = "み"
+
+# 「巴」 default 「ともえ」 (= 「巴/三つ巴/巴形」 訓主体)
+[[kanji]]
+char = "巴"
+default = "ともえ"
+
+# 「巷」 default 「ちまた」 (= 「巷/巷説/世間の巷/陋巷」 訓のみ)
+[[kanji]]
+char = "巷"
+default = "ちまた"
+
 # 「冬」 default 「ふゆ」 + prev 漢字 → 「トウ」 (= 越冬/初冬/厳冬)
 [[kanji]]
 char = "冬"
