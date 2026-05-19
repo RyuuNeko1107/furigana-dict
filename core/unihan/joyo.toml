@@ -26,7 +26,7 @@ description = "常用漢字 2,136 字 (文化庁 2010-11-30 改訂、 内閣告�
 # 並 は core/kanji/overrides.toml の [[kanji]] block に移行
 # "中" は core/kanji/overrides.toml の [[kanji]] block に移行
 "串" = "くし"
-"丸" = "まる"
+# 丸 は core/kanji/overrides.toml の [[kanji]] block に移行
 # 丹 は core/kanji/overrides.toml の [[kanji]] block に移行
 # "主" は core/kanji/overrides.toml の [[kanji]] block に移行
 # 丼 は core/kanji/overrides.toml の [[kanji]] block に移行
@@ -87,7 +87,7 @@ description = "常用漢字 2,136 字 (文化庁 2010-11-30 改訂、 内閣告�
 # 作 は core/kanji/overrides.toml の [[kanji]] block に移行
 # 佳 は core/kanji/overrides.toml の [[kanji]] block に移行
 # 併 は core/kanji/overrides.toml の [[kanji]] block に移行
-"侍" = "さむらい"
+# 侍 は core/kanji/overrides.toml の [[kanji]] block に移行
 # 供 は core/kanji/overrides.toml の [[kanji]] block に移行
 # 依 は core/kanji/overrides.toml の [[kanji]] block に移行
 "価" = "カ"
@@ -104,7 +104,7 @@ description = "常用漢字 2,136 字 (文化庁 2010-11-30 改訂、 内閣告�
 # 信 は core/kanji/overrides.toml の [[kanji]] block に移行
 # 修 は core/kanji/overrides.toml の [[kanji]] block に移行
 "俳" = "ハイ"
-"俵" = "たわら"
+# 俵 は core/kanji/overrides.toml の [[kanji]] block に移行
 # 俸 は core/kanji/overrides.toml の [[kanji]] block に移行
 "俺" = "おれ"
 # 倉 は core/kanji/overrides.toml の [[kanji]] block に移行
@@ -125,9 +125,9 @@ description = "常用漢字 2,136 字 (文化庁 2010-11-30 改訂、 内閣告�
 # 偵 は core/kanji/overrides.toml の [[kanji]] block に移行
 # 偶 は core/kanji/overrides.toml の [[kanji]] block に移行
 # "偽" は core/kanji/overrides.toml の [[kanji]] block に移行 (★round 48)
-"傍" = "かたわら"
+# 傍 は core/kanji/overrides.toml の [[kanji]] block に移行
 # 傑 は core/kanji/overrides.toml の [[kanji]] block に移行
-"傘" = "かさ"
+# 傘 は core/kanji/overrides.toml の [[kanji]] block に移行
 # 備 は core/kanji/overrides.toml の [[kanji]] block に移行
 # 催 は core/kanji/overrides.toml の [[kanji]] block に移行
 # 傲 は core/kanji/overrides.toml の [[kanji]] block に移行

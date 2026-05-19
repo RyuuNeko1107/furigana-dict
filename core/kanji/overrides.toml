@@ -14637,6 +14637,52 @@ default = "さと"
 prev_char_type = "漢字"
 reading = "リ"
 
+# 「丸」 default 「まる」 + prev 漢字 → 「ガン」 (= 丸薬/弾丸/銃丸)
+# 「本丸/丸太」 等の jukugo は jukugo file で対応。
+[[kanji]]
+char = "丸"
+default = "まる"
+
+[[kanji.match]]
+prev_char_type = "漢字"
+reading = "ガン"
+
+# 「侍」 default 「さむらい」 + prev 漢字 → 「ジ」 (= 侍女/侍従/侍者/近侍)
+[[kanji]]
+char = "侍"
+default = "さむらい"
+
+[[kanji.match]]
+prev_char_type = "漢字"
+reading = "ジ"
+
+# 「俵」 default 「たわら」 + prev 漢字 → 「ヒョウ」 (= 土俵/米俵/俵物)
+[[kanji]]
+char = "俵"
+default = "たわら"
+
+[[kanji.match]]
+prev_char_type = "漢字"
+reading = "ヒョウ"
+
+# 「傍」 default 「かたわら」 + prev 漢字 → 「ボウ」 (= 傍観/傍受/傍聴/傍点/路傍)
+[[kanji]]
+char = "傍"
+default = "かたわら"
+
+[[kanji.match]]
+prev_char_type = "漢字"
+reading = "ボウ"
+
+# 「傘」 default 「かさ」 + prev 漢字 → 「サン」 (= 傘下/落下傘)
+[[kanji]]
+char = "傘"
+default = "かさ"
+
+[[kanji.match]]
+prev_char_type = "漢字"
+reading = "サン"
+
 # 「冬」 default 「ふゆ」 + prev 漢字 → 「トウ」 (= 越冬/初冬/厳冬)
 [[kanji]]
 char = "冬"
