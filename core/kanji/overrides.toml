@@ -16705,6 +16705,106 @@ default = "かいり"
 char = "淀"
 default = "よど"
 
+# 「淵」 default 「ふち」 (= 「淵/深淵/海淵」 訓主体)
+[[kanji]]
+char = "淵"
+default = "ふち"
+
+# 「渚」 default 「なぎさ」 (= 「渚/汀渚」 訓主体)
+[[kanji]]
+char = "渚"
+default = "なぎさ"
+
+# 「湊」 default 「みなと」 (= 「湊/湊町」 訓主体 + 名前)
+[[kanji]]
+char = "湊"
+default = "みなと"
+
+# 「湘」 default 「ショウ」 (= 「湘南」 jukugo + 名前、 音読み)
+[[kanji]]
+char = "湘"
+default = "ショウ"
+
+# 「澪」 default 「みお」 (= 「澪/澪標」 訓のみ + 名前)
+[[kanji]]
+char = "澪"
+default = "みお"
+
+# 「灘」 default 「なだ」 (= 「灘/玄界灘/瀬戸灘」 訓主体)
+[[kanji]]
+char = "灘"
+default = "なだ"
+
+# 「烏」 default 「からす」 (= 「烏/烏龍茶/烏合の衆」 訓主体)
+[[kanji]]
+char = "烏"
+default = "からす"
+
+# 「煤」 default 「すす」 (= 「煤/煤煙/煤竹」 訓主体)
+[[kanji]]
+char = "煤"
+default = "すす"
+
+# 「燕」 default 「つばめ」 (= 「燕/燕京/燕尾服」 訓 + jukugo)
+[[kanji]]
+char = "燕"
+default = "つばめ"
+
+# 「牟」 default 「ボウ」 (= 「牟」 姓 + 漢籍まれ)
+[[kanji]]
+char = "牟"
+default = "ボウ"
+
+# 「牡」 default 「おす」 (= 「牡/牡牛/牡鹿/牡丹」 訓主体)
+[[kanji]]
+char = "牡"
+default = "おす"
+
+# 「犀」 default 「さい」 (= 「犀/犀利」 訓主体)
+[[kanji]]
+char = "犀"
+default = "さい"
+
+# 「獅」 default 「しし」 (= 「獅子/獅子奮迅」 訓主体)
+[[kanji]]
+char = "獅"
+default = "しし"
+
+# 「玖」 default 「キュウ」 (= 「玖」 漢字、 漢籍まれ + 名前)
+[[kanji]]
+char = "玖"
+default = "キュウ"
+
+# 「玲」 default 「レイ」 (= 「玲」 漢字、 名前)
+[[kanji]]
+char = "玲"
+default = "レイ"
+
+# 「珀」 default 「ハク」 (= 琥珀のみ実用)
+[[kanji]]
+char = "珀"
+default = "ハク"
+
+# 「珂」 default 「カ」 (= 「珂」 名前用)
+[[kanji]]
+char = "珂"
+default = "カ"
+
+# 「琉」 default 「リュウ」 (= 琉球/瑠璃/琉璃)
+[[kanji]]
+char = "琉"
+default = "リュウ"
+
+# 「琥」 default 「コ」 (= 琥珀のみ実用)
+[[kanji]]
+char = "琥"
+default = "コ"
+
+# 「琳」 default 「リン」 (= 「琳」 名前 + 「琳派」)
+[[kanji]]
+char = "琳"
+default = "リン"
+
 # 「冬」 default 「ふゆ」 + prev 漢字 → 「トウ」 (= 越冬/初冬/厳冬)
 [[kanji]]
 char = "冬"
