@@ -15188,6 +15188,31 @@ default = "あかつき"
 char = "札"
 default = "サツ"
 
+# 「杉」 default 「すぎ」 (= 「杉/秋田杉/杉並木」 訓主体、 名前)
+[[kanji]]
+char = "杉"
+default = "すぎ"
+
+# 「松」 default 「まつ」 (= 「松/老松/松林/松島」 訓主体、 「松柏」 まれ音)
+[[kanji]]
+char = "松"
+default = "まつ"
+
+# 「枕」 default 「まくら」 (= 「枕/枕詞/枕辺」 訓主体)
+[[kanji]]
+char = "枕"
+default = "まくら"
+
+# 「枠」 default 「わく」 (= 「枠/枠組み」 訓のみ、 国字)
+[[kanji]]
+char = "枠"
+default = "わく"
+
+# 「柄」 default 「がら」 (= 「人柄/家柄/横柄」 訓主体、 訓「え」 もあり)
+[[kanji]]
+char = "柄"
+default = "がら"
+
 # 「冬」 default 「ふゆ」 + prev 漢字 → 「トウ」 (= 越冬/初冬/厳冬)
 [[kanji]]
 char = "冬"

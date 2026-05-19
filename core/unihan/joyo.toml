@@ -902,26 +902,26 @@ description = "常用漢字 2,136 字 (文化庁 2010-11-30 改訂、 内閣告�
 # 朴 は core/kanji/overrides.toml の [[kanji]] block に移行
 # 机 は core/kanji/overrides.toml の [[kanji]] block に移行
 # 朽 は core/kanji/overrides.toml の [[kanji]] block に移行
-"杉" = "すぎ"
+# 杉 は core/kanji/overrides.toml の [[kanji]] block に移行
 "材" = "ザイ"
 # 村 は core/kanji/overrides.toml の [[kanji]] block に移行 (★round 49)
 # 束 は core/kanji/overrides.toml の [[kanji]] block に移行
 # 条 は core/kanji/overrides.toml の [[kanji]] block に移行
 # 杯 は core/kanji/overrides.toml の [[kanji]] block に移行
 # 東 は core/kanji/overrides.toml の [[kanji]] block に移行
-"松" = "まつ"
+# 松 は core/kanji/overrides.toml の [[kanji]] block に移行
 # 板 は core/kanji/overrides.toml の [[kanji]] block に移行
 # 析 は core/kanji/overrides.toml の [[kanji]] block に移行
-"枕" = "まくら"
+# 枕 は core/kanji/overrides.toml の [[kanji]] block に移行
 # 林 は core/kanji/overrides.toml の [[kanji]] block に移行
 # 枚 は core/kanji/overrides.toml の [[kanji]] block に移行
 # 果 は core/kanji/overrides.toml の [[kanji]] block に移行
 # 枝 は core/kanji/overrides.toml の [[kanji]] block に移行
-"枠" = "わく"
+# 枠 は core/kanji/overrides.toml の [[kanji]] block に移行
 # 枢 は core/kanji/overrides.toml の [[kanji]] block に移行
 # 枯 は core/kanji/overrides.toml の [[kanji]] block に移行
 # 架 は core/kanji/overrides.toml の [[kanji]] block に移行
-"柄" = "がら"
+# 柄 は core/kanji/overrides.toml の [[kanji]] block に移行
 # 染 は core/kanji/overrides.toml の [[kanji]] block に移行
 # 柔 は core/kanji/overrides.toml の [[kanji]] block に移行
 # 柱 は core/kanji/overrides.toml の [[kanji]] block に移行
