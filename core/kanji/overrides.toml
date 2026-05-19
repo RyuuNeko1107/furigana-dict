@@ -14683,6 +14683,44 @@ default = "かさ"
 prev_char_type = "漢字"
 reading = "サン"
 
+# 「刀」 default 「かたな」 + prev 漢字 → 「トウ」 (= 短刀/小刀/刀剣/軍刀/竹刀)
+# 「日本刀」 等は jukugo file で対応。
+[[kanji]]
+char = "刀"
+default = "かたな"
+
+[[kanji.match]]
+prev_char_type = "漢字"
+reading = "トウ"
+
+# 「匹」 default 「ひき」 + prev 漢字 → 「ヒツ」 (= 匹敵/匹夫/数匹)
+# 「一匹」 等の数え方 jukugo は jukugo file で対応。
+[[kanji]]
+char = "匹"
+default = "ひき"
+
+[[kanji.match]]
+prev_char_type = "漢字"
+reading = "ヒツ"
+
+# 「南」 default 「みなみ」 + prev 漢字 → 「ナン」 (= 南部/指南/南無/南方)
+[[kanji]]
+char = "南"
+default = "みなみ"
+
+[[kanji.match]]
+prev_char_type = "漢字"
+reading = "ナン"
+
+# 「升」 default 「ます」 + prev 漢字 → 「ショウ」 (= 一升/升酒)
+[[kanji]]
+char = "升"
+default = "ます"
+
+[[kanji.match]]
+prev_char_type = "漢字"
+reading = "ショウ"
+
 # 「冬」 default 「ふゆ」 + prev 漢字 → 「トウ」 (= 越冬/初冬/厳冬)
 [[kanji]]
 char = "冬"

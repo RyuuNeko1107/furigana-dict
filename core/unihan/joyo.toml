@@ -182,7 +182,7 @@ description = "常用漢字 2,136 字 (文化庁 2010-11-30 改訂、 内閣告�
 # 凶 は core/kanji/overrides.toml の [[kanji]] block に移行
 # 「凸」 は overrides.toml の [[kanji]] block に移行 (★round 41)
 # 凹 は core/kanji/overrides.toml の [[kanji]] block に移行
-"刀" = "かたな"
+# 刀 は core/kanji/overrides.toml の [[kanji]] block に移行
 # 刃 は core/kanji/overrides.toml の [[kanji]] block に移行
 # 分 は core/kanji/overrides.toml の [[kanji]] block に移行
 # 切 は core/kanji/overrides.toml の [[kanji]] block に移行
@@ -236,19 +236,19 @@ description = "常用漢字 2,136 字 (文化庁 2010-11-30 改訂、 内閣告�
 # 「化」 は overrides.toml の [[kanji]] block に移行 (★round 37)
 # 北 は core/kanji/overrides.toml の [[kanji]] block に移行
 # 匠 は core/kanji/overrides.toml の [[kanji]] block に移行
-"匹" = "ひき"
+# 匹 は core/kanji/overrides.toml の [[kanji]] block に移行
 # 区 は core/kanji/overrides.toml の [[kanji]] block に移行 (★round 49)
 # 医 は core/kanji/overrides.toml の [[kanji]] block に移行
 # 匿 は core/kanji/overrides.toml の [[kanji]] block に移行
 # "十" は core/kanji/overrides.toml の [[kanji]] block に移行 (★round 48)
 "千" = "セン"
-"升" = "ます"
+# 升 は core/kanji/overrides.toml の [[kanji]] block に移行
 # 午 は core/kanji/overrides.toml の [[kanji]] block に移行
 # 卑 は core/kanji/overrides.toml の [[kanji]] block に移行
 # 卒 は core/kanji/overrides.toml の [[kanji]] block に移行
 # 卓 は core/kanji/overrides.toml の [[kanji]] block に移行
 # 協 は core/kanji/overrides.toml の [[kanji]] block に移行
-"南" = "みなみ"
+# 南 は core/kanji/overrides.toml の [[kanji]] block に移行
 # 単 は core/kanji/overrides.toml の [[kanji]] block に移行
 # 博 は core/kanji/overrides.toml の [[kanji]] block に移行
 # 占 は core/kanji/overrides.toml の [[kanji]] block に移行
