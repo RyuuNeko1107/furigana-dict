@@ -184,6 +184,10 @@ reading = "かぜ"
 prev_ends_any = ["の", "が", "は", "を", "に", "で", "と", "も"]
 reading = "かぜ"
 
+# 訓「カゼ」 系 jukugo は jukugo file で対応 (= 夜風/朝風/海風/山風/北風 等)。
+# 「強風/微風/突風/台風/疾風」 等 音「フウ」 jukugo は jukugo file で band 100 hit、
+# default 「フウ」 では動かない訓カゼ 系を直接 jukugo 補強。
+
 [[kanji.match]]
 next_eq = "々"
 reading = "かぜ"
