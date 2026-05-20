@@ -2470,6 +2470,12 @@ default = "すじ"
 char = "様"
 default = "さま"
 
+# 「できる様に / 見る様な / -した様で / -ない様」 等 動詞・形容詞活用 prev = 「ヨウ」 (= ような/ように/ようだ)
+# (= 「神様 / 王様」 等 漢字 prev は default さま 維持)
+[[kanji.match]]
+prev_ends_any = ["る", "た", "い", "ない", "って", "う"]
+reading = "ヨウ"
+
 # === default 倒し 1 字 ===
 
 # 「須」: unihan default 「ひげ」 → ヒゲ系 jukugo 0 件 (= 「鬚」 別字使用、
@@ -6119,6 +6125,11 @@ default = "イ"
 [[kanji]]
 char = "避"
 default = "ヒ"
+
+# 避ける / 避けた / 避けて / 避けない / 避けよう / 避けれない / 避けられる
+[[kanji.match]]
+next_starts_any = ["け"]
+reading = "ヨケ"
 
 [[kanji]]
 char = "還"
@@ -11292,8 +11303,9 @@ reading = "なつ"
 char = "壁"
 default = "ヘキ"
 
+# 「壁ない / 壁な」 形容詞「ない」 / 形容動詞「-な」 prev case も訓「かべ」
 [[kanji.match]]
-next_starts_any = ["は", "が", "を", "に", "の", "で", "と", "も"]
+next_starts_any = ["は", "が", "を", "に", "の", "で", "と", "も", "な"]
 reading = "かべ"
 
 # 「妻」 default 「サイ」 (= 夫妻/愛妻/糟糠之妻/妻帯)。
@@ -11313,7 +11325,7 @@ char = "妹"
 default = "マイ"
 
 [[kanji.match]]
-next_starts_any = ["は", "が", "を", "に", "の", "で", "と", "も"]
+next_starts_any = ["は", "が", "を", "に", "の", "で", "と", "も", "よ"]
 reading = "いもうと"
 
 # 「姉」 default 「シ」 (= 姉妹/義姉/従姉/長姉)。
@@ -12063,8 +12075,9 @@ reading = "ひる"
 char = "暇"
 default = "カ"
 
+# 「暇だ / 暇だから」 コピュラ「だ」 prev case も訓「ひま」
 [[kanji.match]]
-next_starts_any = ["は", "が", "を", "に", "の", "で", "と", "も"]
+next_starts_any = ["は", "が", "を", "に", "の", "で", "と", "も", "だ"]
 reading = "ひま"
 
 # 「戸」 default 「コ」 (= 戸籍/扉戸/門戸/各戸/戸別)。
