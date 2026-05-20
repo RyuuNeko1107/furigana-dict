@@ -30,8 +30,8 @@ git に commit されている master HEAD の状態を基準にする。
 | [**分類前 inbox**](#分類前-inbox) (`core/_inbox.toml`、 後で振り分ける一時置き場) | **0** | **180 B** |
 | [**単漢字 [[kanji]] format**](#単漢字-kanji-format) (`core/kanji/*`、 default + 文脈分岐 reading) | **2,767** | **181 KB** |
 | [**異体字**](#異体字) (`core/compat.toml`) | **435** | **6.1 KB** |
-| [**エンジンルール**](#エンジンルール) (`rules/`) | **224** | **12 KB** |
-| **合計** | **52,738** | **1.20 MB** |
+| [**エンジンルール**](#エンジンルール) (`rules/`) | **228** | **13 KB** |
+| **合計** | **52,742** | **1.20 MB** |
 <!-- AUTO-GENERATED:SUMMARY:END -->
 
 ## 内訳
@@ -210,7 +210,7 @@ git に commit されている master HEAD の状態を基準にする。
 `rules/` — エンジン挙動 (助数詞 / 文脈 / 後処理 等) を制御するルール群。 lib コードに embed されるのではなく、 ここで宣言的に外部化されている。
 
 <!-- AUTO-GENERATED:RULES:BEGIN -->
-**合計**: 224 エントリ / 261 ルール / 12 KB (genre 2 区分)
+**合計**: 228 エントリ / 274 ルール / 13 KB (genre 2 区分)
 
 #### 数値系
 
@@ -220,8 +220,8 @@ git に commit されている master HEAD の状態を基準にする。
 
 | ファイル | エントリ数 | ルール数 | サイズ | 用途 |
 |---|---:|---:|---:|---|
-| [`rules/numbers/counters/simple.toml`](rules/numbers/counters/simple.toml) | 83 | 83 | 1.8 KB | 単純サフィックス助数詞 (円 / 点 / 度 / 名 / 話 等、 数値カナ + value 連結のみ) |
-| [`rules/numbers/counters/objects.toml`](rules/numbers/counters/objects.toml) | 20 | 46 | 3.0 KB | 物を数える助数詞 (本 / 匹 / 杯 / 個 / 歳 / 冊、 連濁 / 促音化) |
+| [`rules/numbers/counters/simple.toml`](rules/numbers/counters/simple.toml) | 80 | 80 | 1.8 KB | 単純サフィックス助数詞 (円 / 点 / 度 / 名 / 話 等、 数値カナ + value 連結のみ) |
+| [`rules/numbers/counters/objects.toml`](rules/numbers/counters/objects.toml) | 27 | 62 | 3.9 KB | 物を数える助数詞 (本 / 匹 / 杯 / 個 / 歳 / 冊、 連濁 / 促音化) |
 | [`rules/numbers/days.toml`](rules/numbers/days.toml) | 31 | 31 | 978 B | 1〜31 日の特殊読み (1→ツイタチ / 20→ハツカ 等) |
 | [`rules/numbers/numeric_phrases.toml`](rules/numbers/numeric_phrases.toml) | 23 | 23 | 893 B | 数字を含む例外語句 (二十歳→ハタチ / 明後日→アサッテ 等、 助数詞ルールより先に確定) |
 | [`rules/numbers/scales.toml`](rules/numbers/scales.toml) | 19 | 19 | 1.0 KB | 大数スケール (万 / 億 / 兆 / 京 / 垓 / 不可思議 / 無量大数 等、 大→小順、 N+漢字単位 連結用) |
@@ -230,7 +230,7 @@ git に commit されている master HEAD の状態を基準にする。
 | [`rules/numbers/counters/percent.toml`](rules/numbers/counters/percent.toml) | 2 | 4 | 408 B | パーセンテージ (% / ％、 1/6/8/0 で促音化 + パーセント) |
 | [`rules/numbers/counters/people.toml`](rules/numbers/counters/people.toml) | 1 | 1 | 225 B | 人を数える助数詞 (人、 1=ヒトリ / 2=フタリ の特殊読み) |
 | [`rules/numbers/counters/recursive.toml`](rules/numbers/counters/recursive.toml) | 1 | 1 | 202 B | 再帰モード助数詞 (個目 / 階目 等、 既存助数詞解決後に末尾連結) |
-| **小計** (10 ファイル) | **195** | **232** | **11 KB** | |
+| **小計** (10 ファイル) | **199** | **245** | **12 KB** | |
 
 #### テキスト系
 
