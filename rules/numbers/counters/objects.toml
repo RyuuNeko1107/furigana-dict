@@ -147,5 +147,115 @@ default = "ツ"
 specials = { "1" = "ヒトツ", "2" = "フタツ", "3" = "ミッツ", "4" = "ヨッツ", "5" = "イツツ", "6" = "ムッツ", "7" = "ナナツ", "8" = "ヤッツ", "9" = "ココノツ" }
 # === end: つ ===
 
+# === begin: 隻 === (船等、 1/6/8/10 で促音化、 ★round 51)
+[counter."隻"]
+default = "セキ"
+
+[[counter."隻".rules]]
+last_digit = [1, 6, 8, 0]
+suffix = "セキ"
+sokuonize = true
+# === end: 隻 ===
+
+# === begin: 頭 === (大型動物、 1/6/8/10 で促音化)
+[counter."頭"]
+default = "トウ"
+
+[[counter."頭".rules]]
+last_digit = [1, 6, 8, 0]
+suffix = "トウ"
+sokuonize = true
+# === end: 頭 ===
+
+# === begin: 句 === (俳句、 1/6/8/10 で促音化)
+[counter."句"]
+default = "ク"
+
+[[counter."句".rules]]
+last_digit = [1, 6, 8, 0]
+suffix = "ク"
+sokuonize = true
+# === end: 句 ===
+
+# === begin: 局 === (将棋/テレビ局、 1/6/8/10 で促音化)
+[counter."局"]
+default = "キョク"
+
+[[counter."局".rules]]
+last_digit = [1, 6, 8, 0]
+suffix = "キョク"
+sokuonize = true
+# === end: 局 ===
+
+# === begin: 種 === (種類、 1/6/8/10 で促音化)
+[counter."種"]
+default = "シュ"
+
+[[counter."種".rules]]
+last_digit = [1, 6, 8, 0]
+suffix = "シュ"
+sokuonize = true
+# === end: 種 ===
+
+# === begin: 首 === (詩歌、 1/6/8/10 で促音化)
+[counter."首"]
+default = "シュ"
+
+[[counter."首".rules]]
+last_digit = [1, 6, 8, 0]
+suffix = "シュ"
+sokuonize = true
+# === end: 首 ===
+
+# === begin: 軒 === (家屋、 1/6/8/10 で促音化 + ケン、 3 で連濁ゲン、 ★round 51)
+# simple.toml の「軒 = ケン」 を override (= rule 優先で動的合成)
+[counter."軒"]
+default = "ケン"
+
+[[counter."軒".rules]]
+last_digit = [1, 6, 8, 0]
+suffix = "ケン"
+sokuonize = true
+
+[[counter."軒".rules]]
+last_digit = [3]
+suffix = "ゲン"
+# === end: 軒 ===
+
+# === begin: 着 === (衣類/到着順、 1/6/8/10 で促音化、 ★round 51)
+[counter."着"]
+default = "チャク"
+
+[[counter."着".rules]]
+last_digit = [1, 6, 8, 0]
+suffix = "チャク"
+sokuonize = true
+# === end: 着 ===
+
+# === begin: 通 === (手紙/書類、 1/6/8/10 で促音化、 ★round 51)
+[counter."通"]
+default = "ツウ"
+
+[[counter."通".rules]]
+last_digit = [1, 6, 8, 0]
+suffix = "ツウ"
+sokuonize = true
+# === end: 通 ===
+
+# === begin: 発 === (弾薬/球数、 1/6/8/10 で促音化 + パツ、 3 で連濁、 ★round 51)
+# simple.toml の「発 = ハツ」 を override (= rule 優先で動的合成)
+[counter."発"]
+default = "ハツ"
+
+[[counter."発".rules]]
+last_digit = [1, 6, 8, 0]
+suffix = "パツ"
+sokuonize = true
+
+[[counter."発".rules]]
+last_digit = [3]
+suffix = "パツ"
+# === end: 発 ===
+
 # inline test は隣接の `objects.test.toml` に分離 (CI 専用、 release tar 除外、
 # runtime memory には載らない)。 contributor は `<name>.test.toml` ペアで追記する。
