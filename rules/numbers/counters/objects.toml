@@ -257,5 +257,30 @@ last_digit = [3]
 suffix = "パツ"
 # === end: 発 ===
 
+# === begin: 羽 === (鳥、 1/3/6/8/10 で促音化/連濁、 ★round 51)
+# 1=イチワ (連濁/促音なし)、 3=サンバ、 6=ロッパ、 8=ハッパ、 10=ジュッパ
+[counter."羽"]
+default = "ワ"
+
+[[counter."羽".rules]]
+last_digit = [6, 8, 0]
+suffix = "パ"
+sokuonize = true
+
+[[counter."羽".rules]]
+last_digit = [3]
+suffix = "バ"
+# === end: 羽 ===
+
+# === begin: 週 === (週数、 1/6/8/10 で促音化)
+[counter."週"]
+default = "シュウ"
+
+[[counter."週".rules]]
+last_digit = [1, 6, 8, 0]
+suffix = "シュウ"
+sokuonize = true
+# === end: 週 ===
+
 # inline test は隣接の `objects.test.toml` に分離 (CI 専用、 release tar 除外、
 # runtime memory には載らない)。 contributor は `<name>.test.toml` ペアで追記する。
