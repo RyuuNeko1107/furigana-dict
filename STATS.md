@@ -194,7 +194,7 @@ git に commit されている master HEAD の状態を基準にする。
 
 | ファイル | 文字数 | ルール数 | サイズ | 用途 |
 |---|---:|---:|---:|---|
-| [`core/kanji/overrides.toml`](core/kanji/overrides.toml) | 2,767 | 3,551 | 182 KB | 単漢字 default override + 文脈分岐 reading |
+| [`core/kanji/overrides.toml`](core/kanji/overrides.toml) | 2,767 | 3,552 | 182 KB | 単漢字 default override + 文脈分岐 reading |
 
 ### 異体字
 
