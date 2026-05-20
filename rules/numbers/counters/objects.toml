@@ -282,5 +282,87 @@ suffix = "シュウ"
 sokuonize = true
 # === end: 週 ===
 
+# === begin: 派 === (派閥、 1/6/8/10 で促音化)
+[counter."派"]
+default = "ハ"
+
+[[counter."派".rules]]
+last_digit = [1, 6, 8, 0]
+suffix = "パ"
+sokuonize = true
+# === end: 派 ===
+
+# === begin: 節 === (節数、 1/6/8/10 で促音化)
+[counter."節"]
+default = "セツ"
+
+[[counter."節".rules]]
+last_digit = [1, 6, 8, 0]
+suffix = "セツ"
+sokuonize = true
+# === end: 節 ===
+
+# === begin: 編 === (書物の編、 1/6/8/10 で促音化)
+[counter."編"]
+default = "ヘン"
+
+[[counter."編".rules]]
+last_digit = [1, 6, 8, 0]
+suffix = "ペン"
+sokuonize = true
+
+[[counter."編".rules]]
+last_digit = [3]
+suffix = "ペン"
+# === end: 編 ===
+
+# === begin: 篇 === (詩篇、 「編」 異体字、 1/6/8/10 で促音化)
+[counter."篇"]
+default = "ヘン"
+
+[[counter."篇".rules]]
+last_digit = [1, 6, 8, 0]
+suffix = "ペン"
+sokuonize = true
+
+[[counter."篇".rules]]
+last_digit = [3]
+suffix = "ペン"
+# === end: 篇 ===
+
+# === begin: 件 === (件数、 1/6/8/10 で促音化、 simple.toml の「件 = ケン」 を override)
+[counter."件"]
+default = "ケン"
+
+[[counter."件".rules]]
+last_digit = [1, 6, 8, 0]
+suffix = "ケン"
+sokuonize = true
+# === end: 件 ===
+
+# === begin: 軒 === (家屋、 既上で定義済、 重複しない)
+
+# === begin: 階 === (places.toml に既、 重複しない)
+
+# === begin: 食 === (食事、 1/6/8/10 で促音化)
+[counter."食"]
+default = "ショク"
+
+[[counter."食".rules]]
+last_digit = [1, 6, 8, 0]
+suffix = "ショク"
+sokuonize = true
+# === end: 食 ===
+
+# === begin: 戦 === (試合、 1/6/8/10 で促音化、 「1 戦 = イッセン」)
+[counter."戦"]
+default = "セン"
+
+[[counter."戦".rules]]
+last_digit = [1, 6, 8, 0]
+suffix = "セン"
+sokuonize = true
+# === end: 戦 ===
+
 # inline test は隣接の `objects.test.toml` に分離 (CI 専用、 release tar 除外、
 # runtime memory には載らない)。 contributor は `<name>.test.toml` ペアで追記する。
