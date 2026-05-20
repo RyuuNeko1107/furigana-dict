@@ -633,6 +633,12 @@ default = "ケン"
 next_starts_any = ["る", "た", "て", "ま", "よ", "ら", "せ", "つ", "な"]
 reading = "ミ"
 
+# 「見に来た / 見はる / 見つける / 見の話」 等 助詞・「は」 連用 = 連用形「ミ」
+# (= jukugo「見学/見識」 等 漢字+漢字 は band 100 / default ケン 連結で先勝)
+[[kanji.match]]
+next_starts_any = ["に", "は", "が", "を", "の", "で", "と", "も"]
+reading = "ミ"
+
 [[kanji]]
 char = "思"
 default = "シ"
@@ -4596,6 +4602,11 @@ default = "ヨ"
 [[kanji]]
 char = "作"
 default = "サク"
+
+# 作る / 作った / 作って / 作らない / 作ろう / 作れる / 作り (= 作り方/作り直し)
+[[kanji.match]]
+next_starts_any = ["る", "ら", "っ", "れ", "ろ", "り"]
+reading = "ツク"
 
 [[kanji]]
 char = "侵"
