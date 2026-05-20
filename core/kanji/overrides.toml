@@ -5374,6 +5374,11 @@ default = "ショク"
 char = "樹"
 default = "ジュ"
 
+# 「樹は / 樹が / 樹を / 樹に / 樹の / 樹で 等」 単独訓「き」 (= jukugo 樹木/樹立 等は band 100)
+[[kanji.match]]
+next_starts_any = ["は", "が", "を", "に", "の", "で", "と", "も"]
+reading = "き"
+
 [[kanji]]
 char = "欠"
 default = "ケツ"
