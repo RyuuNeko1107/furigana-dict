@@ -24,14 +24,14 @@ git に commit されている master HEAD の状態を基準にする。
 | カテゴリ | エントリ数 | サイズ |
 |---|---:|---:|
 | [**単漢字**](#単漢字) (`core/unihan/*`、 水準別 5 ファイル) | **40,688** | **739 KB** |
-| [**熟語**](#熟語) (`core/jukugo/*`、手動 PR メンテ) | **8,133** | **274 KB** |
+| [**熟語**](#熟語) (`core/jukugo/*`、手動 PR メンテ) | **8,135** | **274 KB** |
 | [**作品造語**](#作品造語) (`core/works/*`、作品単位 1 ファイル) | **311** | **10 KB** |
 | [**外来語**](#外来語) (`core/loanwords/*`、IT 用語等の英字 surface) | **168** | **5.2 KB** |
 | [**分類前 inbox**](#分類前-inbox) (`core/_inbox.toml`、 後で振り分ける一時置き場) | **0** | **180 B** |
 | [**単漢字 [[kanji]] format**](#単漢字-kanji-format) (`core/kanji/*`、 default + 文脈分岐 reading) | **2,767** | **181 KB** |
 | [**異体字**](#異体字) (`core/compat.toml`) | **435** | **6.1 KB** |
 | [**エンジンルール**](#エンジンルール) (`rules/`) | **180** | **10.0 KB** |
-| **合計** | **52,682** | **1.20 MB** |
+| **合計** | **52,684** | **1.20 MB** |
 <!-- AUTO-GENERATED:SUMMARY:END -->
 
 ## 内訳
@@ -56,7 +56,7 @@ git に commit されている master HEAD の状態を基準にする。
 
 `core/jukugo/<genre>/*` — 手動 PR メンテのジャンル別 jukugo (≥ 2 字 surface)。 lib の Step 3 (jukugo lookup) で Lindera より優先採用。 各 genre dir の `_genre.toml` がカテゴリ description を持つ。
 
-**合計**: 8,133 件 / 274 KB (genre 6 区分)
+**合計**: 8,135 件 / 274 KB (genre 6 区分)
 
 #### 自然・生命
 
@@ -140,9 +140,9 @@ git に commit されている master HEAD の状態を基準にする。
 
 | ファイル | エントリ数 | サイズ | 用途 |
 |---|---:|---:|---|
-| [`core/jukugo/basic/general.toml`](core/jukugo/basic/general.toml) | 4,040 | 141 KB | 二字・三字の一般熟語 (季節 / 行事 / 慣用句 含む) |
+| [`core/jukugo/basic/general.toml`](core/jukugo/basic/general.toml) | 4,042 | 141 KB | 二字・三字の一般熟語 (季節 / 行事 / 慣用句 含む) |
 | [`core/jukugo/basic/four_char.toml`](core/jukugo/basic/four_char.toml) | 183 | 7.6 KB | 四字熟語 (4 字 + 全 CJK 漢字) |
-| **小計** (2 ファイル) | **4,223** | **148 KB** | |
+| **小計** (2 ファイル) | **4,225** | **148 KB** | |
 
 
 ### 作品造語
