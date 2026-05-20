@@ -262,6 +262,11 @@ reading = "もの"
 char = "山"
 default = "サン"
 
+# 「山メガネ」 等 next カタカナ = 訓「やま」 (= 訓 + loanword pattern、 配信者名)
+[[kanji.match]]
+next_char_type = "カタカナ"
+reading = "やま"
+
 [[kanji.match]]
 next_starts_any = ["は", "が", "を", "に", "の", "で", "と", "も", "や", "へ", "か", "ま", "よ"]
 reading = "やま"
@@ -764,10 +769,11 @@ reading = "オト"
 [[kanji]]
 char = "出"
 default = "シュツ"
-# 「出る / 出て / 出ない / 出よう / 出ろ / 出た / 出ます」 = デ + 送りがな
+# 「出る / 出て / 出ない / 出よう / 出ろ / 出た / 出ます / 出ねぇ」 = デ + 送りがな
 # (★round 16 「た」 「ま」 追加 = round 2 漏れ、 「出た → でた」 「出ます → でます」 fix)
+# (★round 7 「ね」 追加 = 「出ねぇ」 colloquial of 「出ない」)
 [[kanji.match]]
-next_starts_any = ["る", "て", "な", "よ", "ろ", "た", "ま"]
+next_starts_any = ["る", "て", "な", "よ", "ろ", "た", "ま", "ね"]
 reading = "デ"
 # 「出す / 出した / 出して / 出さない / 出せ / 出そう」 = ダ + 送りがな
 [[kanji.match]]
@@ -2429,6 +2435,11 @@ default = "ミャク"
 [[kanji]]
 char = "技"
 default = "ギ"
+
+# 「技は / 技が / 技を / 技に / 技の / 技で / 技と / 技も」 = 名詞用法、 訓「わざ」
+[[kanji.match]]
+next_starts_any = ["は", "が", "を", "に", "の", "で", "と", "も", "や"]
+reading = "わざ"
 
 # 「管」: unihan default 「くだ」 → カン系 14 件 (= 管理 / 管轄 / 配管 /
 # 血管 / 管楽器 / 鉄管 等)。 クダ系 1 件 (= 手練手管=テレンテクダ) は
@@ -11948,6 +11959,11 @@ default = "シ"
 next_starts_any = ["す", "さ", "し", "せ", "そ"]
 reading = "さ"
 
+# 「N 本指 / 4 本指 / 5 本指」 等 数詞 + 助数詞「本」 prev = 訓「ゆび」
+[[kanji.match]]
+prev_eq = "本"
+reading = "ゆび"
+
 [[kanji.match]]
 next_starts_any = ["は", "が", "を", "に", "の", "で", "と", "も"]
 reading = "ゆび"
@@ -12178,6 +12194,11 @@ default = "バン"
 
 [[kanji.match]]
 next_starts_any = ["は", "が", "を", "に", "の", "で", "と", "も"]
+reading = "いた"
+
+# 「板チョコ」 等 next カタカナ = 訓「いた」 (= 訓 + loanword pattern)
+[[kanji.match]]
+next_char_type = "カタカナ"
 reading = "いた"
 
 # 「柱」 default 「チュウ」 (= 柱状/支柱/電柱/円柱/帆柱/角柱)。
