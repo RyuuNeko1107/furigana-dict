@@ -4400,7 +4400,12 @@ default = "ゴ"
 
 [[kanji]]
 char = "楠"
-default = "ナン"
+default = "クスノキ"
+
+# 「楠木 / 樟楠」 等 漢字 prev → 音「ナン」
+[[kanji.match]]
+prev_char_type = "漢字"
+reading = "ナン"
 
 [[kanji]]
 char = "榛"
@@ -11390,7 +11395,7 @@ char = "妹"
 default = "マイ"
 
 [[kanji.match]]
-next_starts_any = ["は", "が", "を", "に", "の", "で", "と", "も", "よ"]
+next_starts_any = ["は", "が", "を", "に", "の", "で", "と", "も", "よ", "さ"]
 reading = "いもうと"
 
 # 「姉」 default 「シ」 (= 姉妹/義姉/従姉/長姉)。
@@ -11535,8 +11540,9 @@ reading = "かげ"
 char = "弟"
 default = "テイ"
 
+# 「弟さん」 敬称も訓「おとうと」
 [[kanji.match]]
-next_starts_any = ["は", "が", "を", "に", "の", "で", "と", "も"]
+next_starts_any = ["は", "が", "を", "に", "の", "で", "と", "も", "さ"]
 reading = "おとうと"
 
 # 「島」 default 「トウ」 (= 島民/列島/半島/孤島/諸島/離島)。
