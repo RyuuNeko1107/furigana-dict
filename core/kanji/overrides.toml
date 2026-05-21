@@ -4578,7 +4578,12 @@ default = "ダ"
 
 [[kanji]]
 char = "隼"
-default = "シュン"
+default = "はやぶさ"
+
+# 「隼 + 漢字 jukugo」 = 音「シュン」 (= 隼人/隼鷹 等)
+[[kanji.match]]
+prev_char_type = "漢字"
+reading = "シュン"
 
 [[kanji]]
 char = "頗"
