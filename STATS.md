@@ -24,14 +24,14 @@ git に commit されている master HEAD の状態を基準にする。
 | カテゴリ | エントリ数 | サイズ |
 |---|---:|---:|
 | [**単漢字**](#単漢字) (`core/unihan/*`、 水準別 5 ファイル) | **40,688** | **739 KB** |
-| [**熟語**](#熟語) (`core/jukugo/*`、手動 PR メンテ) | **8,253** | **277 KB** |
+| [**熟語**](#熟語) (`core/jukugo/*`、手動 PR メンテ) | **8,261** | **277 KB** |
 | [**作品造語**](#作品造語) (`core/works/*`、作品単位 1 ファイル) | **311** | **10 KB** |
 | [**外来語**](#外来語) (`core/loanwords/*`、IT 用語等の英字 surface) | **168** | **5.2 KB** |
 | [**分類前 inbox**](#分類前-inbox) (`core/_inbox.toml`、 後で振り分ける一時置き場) | **0** | **180 B** |
 | [**単漢字 [[kanji]] format**](#単漢字-kanji-format) (`core/kanji/*`、 default + 文脈分岐 reading) | **2,767** | **184 KB** |
 | [**異体字**](#異体字) (`core/compat.toml`) | **435** | **6.1 KB** |
 | [**エンジンルール**](#エンジンルール) (`rules/`) | **228** | **13 KB** |
-| **合計** | **52,850** | **1.21 MB** |
+| **合計** | **52,858** | **1.21 MB** |
 <!-- AUTO-GENERATED:SUMMARY:END -->
 
 ## 内訳
@@ -56,7 +56,7 @@ git に commit されている master HEAD の状態を基準にする。
 
 `core/jukugo/<genre>/*` — 手動 PR メンテのジャンル別 jukugo (≥ 2 字 surface)。 lib の Step 3 (jukugo lookup) で Lindera より優先採用。 各 genre dir の `_genre.toml` がカテゴリ description を持つ。
 
-**合計**: 8,253 件 / 277 KB (genre 6 区分)
+**合計**: 8,261 件 / 277 KB (genre 6 区分)
 
 #### 自然・生命
 
@@ -69,10 +69,10 @@ git に commit されている master HEAD の状態を基準にする。
 | [`core/jukugo/nature/weather.toml`](core/jukugo/nature/weather.toml) | 189 | 5.7 KB | 気象 / 天候 / 季語的気象 / 二十四節気 / 海洋気象 |
 | [`core/jukugo/nature/animals.toml`](core/jukugo/nature/animals.toml) | 186 | 5.0 KB | 動植物 / 魚介 / 鳥 / 昆虫 / 茸 / 海藻の難読 |
 | [`core/jukugo/nature/science.toml`](core/jukugo/nature/science.toml) | 184 | 5.4 KB | 自然科学 (天文 / 物理 / 化学 / 生物 / 地学) |
-| [`core/jukugo/nature/body_parts.toml`](core/jukugo/nature/body_parts.toml) | 168 | 5.1 KB | 体の部位 / 内臓 / 骨格 / 筋肉 / 神経 |
+| [`core/jukugo/nature/body_parts.toml`](core/jukugo/nature/body_parts.toml) | 171 | 5.2 KB | 体の部位 / 内臓 / 骨格 / 筋肉 / 神経 |
 | [`core/jukugo/nature/place_names.toml`](core/jukugo/nature/place_names.toml) | 167 | 5.3 KB | 地名 (47 都道府県 / 主要都市 / 駅 / 寺社仏閣 / 観光地) |
 | [`core/jukugo/nature/foods.toml`](core/jukugo/nature/foods.toml) | 157 | 4.6 KB | 食べ物 / 料理 / 和菓子 / 郷土料理 / 食材 / 調味料 |
-| **小計** (6 ファイル) | **1,051** | **31 KB** | |
+| **小計** (6 ファイル) | **1,054** | **31 KB** | |
 
 #### 人文・芸術
 
@@ -140,9 +140,9 @@ git に commit されている master HEAD の状態を基準にする。
 
 | ファイル | エントリ数 | サイズ | 用途 |
 |---|---:|---:|---|
-| [`core/jukugo/basic/general.toml`](core/jukugo/basic/general.toml) | 4,142 | 144 KB | 二字・三字の一般熟語 (季節 / 行事 / 慣用句 含む) |
+| [`core/jukugo/basic/general.toml`](core/jukugo/basic/general.toml) | 4,147 | 144 KB | 二字・三字の一般熟語 (季節 / 行事 / 慣用句 含む) |
 | [`core/jukugo/basic/four_char.toml`](core/jukugo/basic/four_char.toml) | 183 | 7.6 KB | 四字熟語 (4 字 + 全 CJK 漢字) |
-| **小計** (2 ファイル) | **4,325** | **151 KB** | |
+| **小計** (2 ファイル) | **4,330** | **151 KB** | |
 
 
 ### 作品造語
@@ -194,7 +194,7 @@ git に commit されている master HEAD の状態を基準にする。
 
 | ファイル | 文字数 | ルール数 | サイズ | 用途 |
 |---|---:|---:|---:|---|
-| [`core/kanji/overrides.toml`](core/kanji/overrides.toml) | 2,767 | 3,576 | 184 KB | 単漢字 default override + 文脈分岐 reading |
+| [`core/kanji/overrides.toml`](core/kanji/overrides.toml) | 2,767 | 3,577 | 184 KB | 単漢字 default override + 文脈分岐 reading |
 
 ### 異体字
 
