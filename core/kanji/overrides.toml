@@ -11238,8 +11238,10 @@ reading = "かたまり"
 char = "大"
 default = "ダイ"
 
+# 「大きい / 大きな / 大いに / 大慌て / 大喜び / 大忙し / 大はずれ / 大まじめ / 大よろこび」 等
+# (= 漢字 jukugo「大-」 は band 100 で先勝)
 [[kanji.match]]
-next_starts_any = ["き", "く"]
+next_starts_any = ["き", "く", "あ", "い", "は", "ま", "よ"]
 reading = "おお"
 
 # 「姿」 default 「シ」 (= 姿勢/英姿/雄姿/容姿)。
