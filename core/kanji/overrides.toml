@@ -1577,6 +1577,11 @@ default = "カタ"
 prev_char_type = "漢字"  # 「N 漢字 + 型」 = ガタ 連濁
 reading = "ガタ"
 
+# 「ハート型 / アスペクト型」 等 カタカナ prev = 連濁「ガタ」
+[[kanji.match]]
+prev_char_type = "カタカナ"
+reading = "ガタ"
+
 
 # 「確」 unihan default 「たしか」 → 「カク」 (= 「確認 / 正確 / 確実 / N 確」 接尾辞)、
 # 副詞 / 形容動詞 「タシカ」 は next ひらがな (= 「確かに / 確かな」)
@@ -5503,6 +5508,11 @@ default = "ヨク"
 char = "浸"
 default = "シン"
 
+# 「浸み込む / 浸み出る / 浸まない / 浸めば」 = 動詞訓「し」
+[[kanji.match]]
+next_starts_any = ["み", "む", "ま", "め", "もう"]
+reading = "し"
+
 [[kanji]]
 char = "消"
 default = "ショウ"
@@ -6766,6 +6776,11 @@ default = "ミセ"
 
 [[kanji.match]]
 prev_char_type = "漢字"
+reading = "テン"
+
+# 「ラーメン店 / コンビニ店」 等 カタカナ prev = 接尾辞「テン」
+[[kanji.match]]
+prev_char_type = "カタカナ"
 reading = "テン"
 
 # 「場」 default 「バ」、 漢字直前なら 「ジョウ」 (= 競技場/野球場/工場/会場/球場)
@@ -12068,6 +12083,11 @@ default = "シュン"
 
 [[kanji.match]]
 next_starts_any = ["は", "が", "を", "に", "の", "で", "と", "も"]
+reading = "はる"
+
+# 「春キャベツ / 春トマト」 等 カタカナ prev = 訓「はる」
+[[kanji.match]]
+next_char_type = "カタカナ"
 reading = "はる"
 
 # 「星」 default 「セイ」 (= 星座/惑星/恒星/明星/木星/火星/衛星)。
